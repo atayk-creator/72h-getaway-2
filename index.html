@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>72h Getaway · Kendi Turunu Kur</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #FBF6EC; --surface: #FFFFFF; --ink: #0F2A43; --muted: #5B6B7C; --line: #E3DCCB;
+  --accent: #F4A62A; --band: #0F2A43; --bar: #0F2A43; --bar-soft: #E7E0CF;
+  --chip-ink: #6B4A00; --chip-bg: #FCE9C4; --focus: #0F2A43; --pick: #FFF4D6;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F2A43; --surface: #153552; --ink: #FBF6EC; --muted: #A9B8C7; --line: #2F506D;
+    --band: #0A1F33; --bar: #F4A62A; --bar-soft: #284866; --chip-ink: #FBE3B0; --chip-bg: #5A4313; --focus: #F4A62A; --pick: #3A4A52;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F2A43; --surface: #153552; --ink: #FBF6EC; --muted: #A9B8C7; --line: #2F506D;
+  --band: #0A1F33; --bar: #F4A62A; --bar-soft: #284866; --chip-ink: #FBE3B0; --chip-bg: #5A4313; --focus: #F4A62A; --pick: #3A4A52;
+}
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 96px); }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; line-height: 1.5; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+a { color: inherit; }
+.wrap { max-width: 1040px; margin: 0 auto; }
+[hidden] { display: none !important; }
+
+/* ---------- üst bant ---------- */
+header { background: var(--band); color: #FBF6EC; position: relative; overflow: hidden; padding: 28px 20px 30px; }
+header .deco { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+header .wrap { position: relative; }
+@media (max-width: 700px) { header .deco { display: none; } }
+.brand svg { display: block; width: min(320px, 74vw); height: auto; }
+header h1 { font-size: clamp(1.5rem, 4.4vw, 2.3rem); font-weight: 700; margin: 14px 0 8px; letter-spacing: -0.02em; line-height: 1.12; }
+header p { margin: 0; color: #D5DEE8; max-width: 54ch; font-size: 1rem; }
+
+/* ---------- eski tasarımın bölümleri ---------- */
+.steps { display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+.steps li { background: rgba(251,246,236,0.12); border: 1.5px solid rgba(251,246,236,0.28); border-radius: 999px; padding: 5px 14px 5px 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+.steps b { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #F4A62A; color: #0F2A43; font-size: 0.82rem; }
+.grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 38px; align-items: start; }
+@media (max-width: 820px) { .grid { grid-template-columns: 1fr; gap: 30px; } }
+.result { border-top: 5px solid #F4A62A; padding-top: 18px; }
+.city-line { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.city-line strong { font-size: 1.3rem; }
+.result .big { font-size: clamp(2.5rem, 8.4vw, 3.8rem); margin: 10px 0 4px; }
+.picked { font-size: 0.92rem; margin: 0 0 14px; }
+.brk li.air { grid-template-columns: 112px 1fr; color: var(--muted); }
+.hotels { margin-top: 44px; border-top: 1.5px solid var(--line); padding-top: 26px; }
+.hotels + .hotels { margin-top: 36px; }
+.stops .why { font-size: 0.86rem; margin: 2px 0 0; }
+.pdfrow { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+/* ---------- tek bölüm: gezilecek yerler + plan ---------- */
+.tripgrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+@media (max-width: 820px) { .tripgrid { grid-template-columns: 1fr; gap: 22px; } }
+.tripgrid h3 { margin: 0 0 10px; font-size: 1.02rem; }
+.plist { display: grid; gap: 8px; }
+.prow { position: relative; display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; background: var(--surface); border: 2px solid var(--line); border-radius: 12px; padding: 10px 12px; cursor: pointer; }
+.prow:hover { border-color: #F4A62A; }
+.prow.on { border-color: #F4A62A; background: var(--pick); }
+.prow > input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.prow:has(> input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.prow .ck { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--line); display: grid; place-items: center; font-size: 0.8rem; font-weight: 800; color: #0F2A43; margin-top: 2px; }
+.prow.on .ck { background: #F4A62A; border-color: #F4A62A; }
+.prow.on .ck::after { content: "✓"; }
+.prow .pt { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.prow .pt b { font-size: 0.98rem; line-height: 1.25; }
+.prow .tg { font-size: 0.74rem; font-weight: 700; color: var(--muted); white-space: nowrap; }
+.prow .dist { font-size: 0.84rem; margin: 2px 0 0; }
+.prow .meta { margin: 2px 0 0; font-size: 0.8rem; }
+.prow details { margin-top: 4px; position: relative; z-index: 1; }
+.prow summary { cursor: pointer; font-size: 0.82rem; font-weight: 700; }
+.prow details p { font-size: 0.84rem; color: var(--muted); margin: 6px 0; }
+.prow details a { font-size: 0.84rem; font-weight: 700; }
+
+/* ---------- yatay kaydırmalı gezi satırları ---------- */
+.rowhead { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 0 0 8px; }
+.rowhead h3 { margin: 0; }
+.arrows { display: flex; gap: 6px; flex: none; }
+.arrows button { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.arrows button:hover { border-color: #F4A62A; }
+.hs { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x proximity; padding: 4px 2px 12px; align-items: flex-start; scrollbar-width: thin; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.hs > * { flex: 0 0 auto; scroll-snap-align: start; }
+.hs .prow { width: 270px; }
+.hs .day { width: 300px; }
+.hs:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 12px; }
+.hs .hotel { width: 320px; } .hs.eq { align-items: stretch; }
+@media (max-width: 560px) { .hs .prow { width: 78vw; } .hs .day { width: 84vw; } .hs .hotel { width: 80vw; } }
+
+/* ---------- borsa bandı ---------- */
+.board { background: #0A1F33; color: #FBF6EC; border-bottom: 3px solid #F4A62A; display: flex; align-items: stretch; overflow: hidden; }
+.bpause { flex: none; font: inherit; width: 48px; background: #0F2A43; color: #FBF6EC; border: 0; border-right: 1px solid rgba(251,246,236,0.22); cursor: pointer; font-size: 0.95rem; }
+.bview { flex: 1; overflow: hidden; min-width: 0; }
+.btrack { display: flex; width: max-content; animation: tick var(--dur, 60s) linear infinite; }
+.bview:hover .btrack, .btrack:has(.bitem:focus-visible), .board.paused .btrack { animation-play-state: paused; }
+@keyframes tick { to { transform: translateX(-50%); } }
+.bitem { font: inherit; color: inherit; background: transparent; border: 0; border-right: 1px solid rgba(251,246,236,0.16); padding: 10px 22px; display: flex; gap: 10px; align-items: baseline; cursor: pointer; white-space: nowrap; min-height: 46px; }
+.bitem:hover, .bitem.sel { background: rgba(244,166,42,0.2); }
+.bitem .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); align-self: center; flex: none; }
+.bitem .nm { font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; font-size: 0.88rem; }
+.bitem .pr { font-variant-numeric: tabular-nums; font-size: 0.92rem; }
+.bitem .ch { font-size: 0.82rem; font-weight: 800; color: #C9D3DE; }
+.bitem .ch.up { color: #FF7A8A; } .bitem .ch.dn { color: #5BD59B; }
+@media (prefers-reduced-motion: reduce) { .btrack { animation: none; } .bview { overflow-x: auto; } }
+
+/* ---------- aşama çubuğu (kullanılmıyor) ---------- */
+.stepbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1.5px solid var(--line); padding: 10px 20px 8px; }
+.stepper { display: flex; gap: 6px; list-style: none; margin: 0 auto; padding: 0; max-width: 1040px; }
+.stepper li { flex: 1 1 0; min-width: 0; }
+.stepper button { width: 100%; font: inherit; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 6px; min-height: 40px; border-radius: 999px; border: 2px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; }
+.stepper b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--line); color: var(--ink); font-size: 0.78rem; flex: none; }
+.stepper button.done { color: var(--ink); border-color: var(--ink); }
+.stepper button.done b { background: var(--ink); color: var(--bg); }
+.stepper button.cur { background: #F4A62A; border-color: #F4A62A; color: #0F2A43; }
+.stepper button.cur b { background: #0F2A43; color: #FBF6EC; }
+.stepper button:disabled { opacity: 0.55; cursor: default; }
+@media (max-width: 560px) { .stepper button span { display: none; } .stepper button.cur span { display: inline; } .stepper li.cur { flex: 3 1 0; } }
+.topline { max-width: 1040px; margin: 8px auto 0; font-size: 0.88rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 14px; align-items: baseline; }
+.topline b { color: var(--ink); }
+.topline .tot { color: var(--ink); font-weight: 800; font-size: 1rem; margin-left: auto; font-variant-numeric: tabular-nums; }
+
+main { padding: 26px 20px 52px; }
+h2 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 800; }
+h3 { font-size: 1rem; margin: 0 0 8px; }
+.lead { color: var(--muted); font-size: 0.93rem; margin: 0 0 16px; }
+
+.field { margin-bottom: 16px; }
+label, .lab { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; }
+.hint { font-weight: 400; color: var(--muted); font-size: 0.82rem; }
+select, input[type="number"], input[type="date"] { width: 100%; font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; min-height: 44px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 6px; } }
+.cityrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
+.btn { font: inherit; font-weight: 700; font-size: 0.95rem; background: #F4A62A; color: #0F2A43; border: 0; border-radius: 10px; padding: 0 18px; min-height: 46px; cursor: pointer; white-space: nowrap; }
+.btn:hover { filter: brightness(1.06); }
+.btn.ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--line); }
+.seg { display: flex; border: 1.5px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.seg button { flex: 1; font: inherit; font-size: 0.9rem; color: var(--ink); background: transparent; border: 0; padding: 10px 6px; min-height: 44px; cursor: pointer; }
+.seg button + button { border-left: 1.5px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); font-weight: 700; }
+.check { display: flex; gap: 10px; align-items: center; font-weight: 600; font-size: 0.92rem; }
+.check input { width: 20px; height: 20px; accent-color: #F4A62A; }
+.dnote { font-size: 0.86rem; margin: -6px 0 16px; color: var(--muted); }
+.pricebox { background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; padding: 8px 14px; margin: 0 0 14px; }
+.pricebox summary { cursor: pointer; font-weight: 700; font-size: 0.92rem; }
+.pricebox ul { list-style: none; margin: 8px 0 6px; padding: 0; display: grid; gap: 6px; }
+.pricebox li { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; font-size: 0.86rem; align-items: baseline; }
+.pricebox .ph { margin: 10px 0 0; font-size: 0.8rem; font-weight: 700; color: var(--muted); }
+.pricebox .pn { margin: 8px 0 2px; font-size: 0.8rem; color: var(--muted); }
+.datanote { font-size: 0.86rem; color: var(--muted); background: var(--surface); border-left: 4px solid #2E9E6B; padding: 8px 12px; border-radius: 0 10px 10px 0; margin: 0 0 16px; }
+.datanote.old { border-left-color: #D9455B; background: var(--chip-bg); color: var(--chip-ink); }
+.dnote.warn { background: var(--chip-bg); color: var(--chip-ink); padding: 8px 12px; border-radius: 10px; }
+.dnote b { color: var(--ink); }
+details.more { border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; }
+details.more summary { cursor: pointer; font-weight: 700; font-size: 0.92rem; }
+details.more .field { margin: 14px 0 4px; }
+
+/* ---------- şehir kısayolları ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+.t1 { --c: #2E9E6B; --on: #FFFFFF; } .t2 { --c: #E9C03A; --on: #0F2A43; }
+.t3 { --c: #EE8A3C; --on: #0F2A43; } .t4 { --c: #D9455B; --on: #FFFFFF; }
+.cchip { font: inherit; color: var(--ink); background: var(--surface); border: 2px solid var(--c); border-radius: 12px; padding: 6px 11px; min-height: 46px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; text-align: left; }
+.cchip { background: color-mix(in srgb, var(--c) 16%, var(--surface)); }
+.cchip b { font-size: 0.92rem; }
+.cchip small { font-size: 0.76rem; color: var(--muted); }
+.cchip[aria-pressed="true"] { background: var(--c); color: var(--on); box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--c); }
+.cchip[aria-pressed="true"] small { color: var(--on); }
+.cleg { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.8rem; color: var(--muted); margin: 0 0 12px; }
+.cleg span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--c); margin-right: 6px; vertical-align: -1px; }
+
+.ticketbox { background: var(--pick); border: 1.5px dashed #F4A62A; border-radius: 12px; padding: 14px 16px; font-size: 0.92rem; }
+.ticketbox strong { display: block; margin-bottom: 4px; }
+.ticketbox .links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; font-weight: 600; }
+
+.chip { display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
+.chip.est { background: transparent; color: var(--muted); border: 1.5px solid var(--line); }
+.chip.res { background: var(--chip-bg); color: var(--chip-ink); }
+.chip.ver { background: #2E7D5B; color: #fff; }
+.chip.no { background: var(--ink); color: var(--bg); }
+
+/* ---------- kartlar ---------- */
+.hgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 820px) { .hgrid { grid-template-columns: 1fr; } }
+.hotel { position: relative; display: flex; flex-direction: column; background: var(--surface); border: 2px solid var(--line); border-radius: 16px; padding: 16px 16px 14px; cursor: pointer; }
+.hotel:hover { border-color: #F4A62A; }
+.hotel.on { border-color: #F4A62A; background: var(--pick); box-shadow: 0 0 0 3px rgba(244,166,42,0.35); }
+.hotel input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.hotel:has(input:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+.hotel .top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+.tier { font-weight: 800; font-size: 0.95rem; }
+.score { background: #0F2A43; color: #FBF6EC; font-weight: 800; font-size: 0.85rem; padding: 2px 9px; border-radius: 8px 8px 8px 2px; }
+.hname { font-size: 1.05rem; font-weight: 700; line-height: 1.25; margin: 0 0 2px; min-height: 2.6em; }
+.price { font-size: 1.35rem; font-weight: 800; font-variant-numeric: tabular-nums; margin: 8px 0 0; }
+.price small { font-size: 0.82rem; font-weight: 500; color: var(--muted); }
+.hdesc { font-size: 0.86rem; color: var(--muted); margin: 8px 0 10px; flex: 1; }
+.hfoot { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 2px dashed var(--line); padding-top: 10px; position: relative; z-index: 1; }
+.hfoot a { font-size: 0.86rem; font-weight: 700; }
+.dist { font-size: 0.88rem; font-weight: 700; margin: 4px 0 0; }
+.dist span { color: var(--muted); font-weight: 400; }
+.meta { font-size: 0.82rem; color: var(--muted); margin: 0 0 10px; }
+
+/* ---------- plan / program ---------- */
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; }
+.plan { margin-top: 16px; display: grid; gap: 14px; }
+.day { background: var(--surface); border: 2px solid var(--line); border-left: 6px solid #F4A62A; border-radius: 14px; padding: 14px 16px; }
+.day h3 { margin: 0 0 10px; font-size: 1rem; }
+.stops, .tl { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.stops li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 10px; }
+.stops .n { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: var(--bg); font-size: 0.8rem; font-weight: 800; }
+.tl li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 10px; }
+.tl .tm { font-weight: 800; font-variant-numeric: tabular-nums; font-size: 0.92rem; }
+.tl .meal b::before { content: "● "; color: #F4A62A; }
+.leg { font-size: 0.84rem; color: var(--muted); }
+.day .foot { font-size: 0.84rem; color: var(--muted); border-top: 2px dashed var(--line); margin-top: 10px; padding-top: 8px; }
+.plansum { font-size: 0.9rem; background: var(--pick); border-radius: 12px; padding: 10px 14px; }
+.empty { color: var(--muted); font-size: 0.93rem; border: 2px dashed var(--line); border-radius: 12px; padding: 14px 16px; }
+
+/* ---------- özet ---------- */
+.sumhead { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 4px; }
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 14px 0 18px; }
+@media (max-width: 760px) { .tiles { grid-template-columns: 1fr; } }
+.tile { background: var(--surface); border: 2px solid var(--line); border-radius: 14px; padding: 12px 14px; font-size: 0.92rem; }
+.tile small { display: block; color: var(--muted); font-weight: 700; margin-bottom: 2px; }
+.tile b { font-size: 1rem; }
+.sumtotal { border-top: 5px solid #F4A62A; padding-top: 14px; margin-bottom: 8px; }
+.big { font-size: clamp(2.3rem, 8vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; font-variant-numeric: tabular-nums; margin: 4px 0; }
+.sub { color: var(--muted); font-size: 0.95rem; margin: 0 0 12px; }
+.brk { list-style: none; margin: 0; padding: 0; }
+.brk li { display: grid; grid-template-columns: 112px 1fr auto; gap: 12px; align-items: center; padding: 7px 0; font-size: 0.95rem; }
+.track { height: 10px; background: var(--bar-soft); border-radius: 6px; overflow: hidden; }
+.fill { height: 100%; background: var(--bar); border-radius: 6px; }
+.brk .amt { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
+.note { font-size: 0.88rem; color: var(--muted); background: var(--surface); border-left: 4px solid #F4A62A; padding: 10px 12px; border-radius: 0 10px 10px 0; margin: 14px 0; }
+.pdfmsg { font-size: 0.88rem; color: var(--muted); margin: 0; align-self: center; }
+
+/* ---------- gezinti butonları ---------- */
+.nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 30px; padding-top: 18px; border-top: 1.5px solid var(--line); flex-wrap: wrap; }
+
+.legend { margin-top: 36px; font-size: 0.88rem; color: var(--muted); display: grid; gap: 8px; }
+.legend div { display: flex; gap: 10px; align-items: baseline; }
+.legend .chip { flex: none; }
+footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 74ch; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="deco" viewBox="0 0 1000 300" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <circle class="sun" cx="900" cy="40" r="120" fill="#F4A62A" opacity="0.95"/>
+    <path id="route" d="M 560 215 C 650 70 800 30 960 140" fill="none" stroke="#FBF6EC" stroke-opacity="0.6" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 13"/>
+    <path d="M 640 40 C 643 62 650 68 672 70 C 650 72 643 78 640 100 C 637 78 630 72 608 70 C 630 68 637 62 640 40 Z" fill="#FBF6EC" opacity="0.8"/>
+    <path d="M 785 215 C 786 225 789 228 799 229 C 789 230 786 233 785 243 C 784 233 781 230 771 229 C 781 228 784 225 785 215 Z" fill="#F4A62A"/>
+    <g id="plane"><path d="M -18,-8 L 20,0 L -18,8 L -10,0 Z" fill="#FBF6EC"/>
+      <animateMotion id="fly" dur="3.4s" begin="0.4s" fill="freeze" rotate="auto" calcMode="spline" keyTimes="0;1" keySplines="0.3 0.1 0.2 1"><mpath href="#route"/></animateMotion>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="brand">
+      <svg viewBox="0 0 1040 360" role="img" aria-label="72h Getaway">
+        <defs><mask id="hm"><rect width="1040" height="360" rx="34" fill="#fff"/><circle cx="330" cy="0" r="26" fill="#000"/><circle cx="330" cy="360" r="26" fill="#000"/></mask></defs>
+        <g mask="url(#hm)"><rect width="1040" height="360" fill="#FBF6EC"/><rect width="330" height="360" fill="#F4A62A"/></g>
+        <line x1="330" y1="36" x2="330" y2="324" stroke="#0F2A43" stroke-width="4" stroke-dasharray="3 12" stroke-linecap="round" opacity=".55"/>
+        <text x="30" y="68" font-family="'DejaVu Sans Mono',Consolas,'Courier New',monospace" font-weight="700" font-size="26" fill="#0F2A43" letter-spacing="4">UÇUŞ</text>
+        <text x="26" y="230" font-family="'Liberation Sans',Arial,Helvetica,sans-serif" font-weight="800" font-size="150" fill="#0F2A43" letter-spacing="-5">72H</text>
+        <text x="370" y="68" font-family="'DejaVu Sans Mono',Consolas,'Courier New',monospace" font-weight="700" font-size="26" fill="#0F2A43" letter-spacing="5">BİNİŞ KARTI</text>
+        <text x="366" y="200" font-family="'Liberation Sans',Arial,Helvetica,sans-serif" font-weight="800" font-size="118" fill="#0F2A43" letter-spacing="3">GETAWAY</text>
+        <path d="M 372 266 C 520 230 640 300 780 250" fill="none" stroke="#0F2A43" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 13"/>
+        <g transform="translate(792,246) rotate(-20) scale(1.1)"><path d="M -18,-8 L 20,0 L -18,8 L -10,0 Z" fill="#F4A62A"/></g>
+        <text x="370" y="328" font-family="'DejaVu Sans Mono',Consolas,'Courier New',monospace" font-size="22" fill="#0F2A43" opacity=".85" letter-spacing="3">ŞEHİR KAÇAMAĞI · 3 GECE</text>
+        <g fill="#0F2A43"><rect x="840" y="214" width="3" height="46"/><rect x="851" y="214" width="5" height="46"/><rect x="862" y="214" width="7" height="46"/><rect x="873" y="214" width="4" height="46"/><rect x="884" y="214" width="6" height="46"/><rect x="895" y="214" width="3" height="46"/><rect x="906" y="214" width="5" height="46"/><rect x="917" y="214" width="7" height="46"/><rect x="928" y="214" width="4" height="46"/><rect x="939" y="214" width="6" height="46"/><rect x="950" y="214" width="3" height="46"/></g>
+      </svg>
+    </div>
+    <h1>Biletini al, turunu kendin kur!</h1>
+    <p>Bir başkent seç, otelini ve yemeğini seç, gezini planla, kaça geleceğini gör. Uçak biletini sen alıyorsun, gerisini burada hallediyoruz.</p>
+    <ol class="steps" aria-label="Nasıl kullanılır">
+      <li><b>1</b> Biletini al</li>
+      <li><b>2</b> Şehir ve tarih seç</li>
+      <li><b>3</b> Otelini seç</li>
+      <li><b>4</b> Yemeğini seç</li>
+      <li><b>5</b> Gezini planla</li>
+      <li><b>6</b> Bütçeni gör</li>
+    </ol>
+  </div>
+</header>
+
+<div class="board" role="region" aria-label="Başkent fiyat bandı">
+  <button type="button" class="bpause" id="bpause" aria-pressed="false" aria-label="Bandı durdur">⏸</button>
+  <div class="bview"><div class="btrack" id="btrack"></div></div>
+</div>
+
+<main>
+<div class="wrap">
+  <div class="grid">
+
+    <section aria-labelledby="h-form">
+      <h2 id="h-form">Turunu kur</h2>
+      <p class="lead">Şehri ve tarihini seç, kaç kişi olduğunu yaz. Otelini, yemeğini ve gezini aşağıdan seçeceksin.</p>
+      <p class="datanote" id="datanote"></p>
+
+      <div class="field">
+        <span class="lab" id="lc">Başkent</span>
+        <div class="chips" id="chips" role="group" aria-labelledby="lc"></div>
+        <p class="cleg" id="cleg"></p>
+        <div class="cityrow">
+          <select id="city" aria-label="Tüm başkentler"></select>
+          <button type="button" class="btn" id="dice">🎲 Beni şaşırt</button>
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="field">
+          <label for="d1">Gidiş tarihi</label>
+          <input id="d1" type="date" value="2026-12-08" min="2026-10-02">
+        </div>
+        <div class="field">
+          <label for="d2">Dönüş tarihi</label>
+          <input id="d2" type="date" value="2026-12-11" min="2026-10-03">
+        </div>
+      </div>
+      <p class="dnote" id="dnote"></p>
+
+      <div class="field">
+        <label for="ppl">Kişi sayısı</label>
+        <input id="ppl" type="number" min="1" max="6" value="2" inputmode="numeric">
+      </div>
+
+      <div class="field">
+        <span class="lab" id="lf">Yemek keyfi</span>
+        <div class="seg" role="group" aria-labelledby="lf" id="foodSeg">
+          <button type="button" data-v="0.65">Ucuz</button>
+          <button type="button" data-v="1" aria-pressed="true">Orta</button>
+          <button type="button" data-v="1.5">Rahat</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="lab" id="lv">Viral restoranda kaç öğün? <span class="hint">(günlük yemek bütçesinden düşülür)</span></span>
+        <div class="seg" role="group" aria-labelledby="lv" id="visSeg">
+          <button type="button" data-v="0">Hiç</button>
+          <button type="button" data-v="1" aria-pressed="true">1</button>
+          <button type="button" data-v="2">2</button>
+          <button type="button" data-v="3">3</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="check"><input id="act" type="checkbox" checked> Müze, hamam, tur gibi gezi harcamalarını ekle</label>
+      </div>
+
+      <div class="field">
+        <label for="rate">Euro / TL kuru <span class="hint" id="rateHint">(güncelleyebilirsin)</span></label>
+        <input id="rate" type="number" min="1" step="0.1" value="55.3" inputmode="decimal">
+      </div>
+
+      <div class="ticketbox">
+        <strong>✈️ Uçak biletin burada hesaplanmıyor</strong>
+        Biletini kendin bul, tarihini sen seç. Toplam bütçene biletinin fiyatını ayrıca ekle.
+        <div class="links">
+          <a href="https://www.google.com/travel/flights" target="_blank" rel="noopener noreferrer">Google Flights</a>
+          <a href="https://www.skyscanner.com.tr" target="_blank" rel="noopener noreferrer">Skyscanner</a>
+          <a href="https://www.enuygun.com/ucak-bileti/" target="_blank" rel="noopener noreferrer">Enuygun</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="result" aria-live="polite" aria-labelledby="h-res">
+      <h2 id="h-res" style="position:absolute;left:-9999px">Sonuç</h2>
+      <div class="city-line"><strong id="rCity"></strong><span id="rChip" class="chip"></span><span class="chip no">uçak hariç</span></div>
+      <div class="big" id="rTotal"></div>
+      <p class="sub" id="rSub"></p>
+      <p class="picked" id="rHotel"></p>
+      <p class="note" id="rNote" hidden></p>
+      <ul class="brk" id="brk"></ul>
+      <div class="pdfrow">
+        <button type="button" class="btn ghost" id="pdfBtn">📄 Programı PDF olarak kaydet</button>
+        <p class="pdfmsg" id="pdfMsg" role="status"></p>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="hotels" aria-labelledby="h-hot">
+    <h2 id="h-hot">Otelini seç: <span id="hCity"></span> için 3 seçenek</h2>
+    <div class="rowhead"><p class="lead" style="margin:0">Sade, orta ve şık. Birine dokun, bütçe o otele göre güncellensin.</p>
+      <div class="arrows"><button type="button" data-t="hgrid" data-d="-1" aria-label="Önceki oteller">‹</button><button type="button" data-t="hgrid" data-d="1" aria-label="Sonraki oteller">›</button></div></div>
+    <div class="hs eq" id="hgrid" role="radiogroup" aria-labelledby="h-hot"></div>
+  </section>
+
+  <section class="hotels" aria-labelledby="h-rest">
+    <h2 id="h-rest">Yemeğini seç: <span id="rcCity"></span> için 3 viral durak</h2>
+    <div class="rowhead"><p class="lead" id="rLead" style="margin:0"></p>
+      <div class="arrows"><button type="button" data-t="rgrid" data-d="-1" aria-label="Önceki restoranlar">‹</button><button type="button" data-t="rgrid" data-d="1" aria-label="Sonraki restoranlar">›</button></div></div>
+    <div class="hs eq" id="rgrid" role="radiogroup" aria-labelledby="h-rest"></div>
+  </section>
+
+  <section class="hotels" aria-labelledby="h-trip">
+    <h2 id="h-trip">Gezini planla: <span id="tcCity"></span></h2>
+    <div id="tripBody"></div>
+  </section>
+
+  <section class="legend" aria-label="Etiketlerin anlamı">
+    <div><span class="chip res">Araştırıldı</span><span>Otel, restoran ve gezi yerlerinin adı, bilgisi ve fiyatları kaynaklarla bulundu. Tarihine ve saatine göre mutlaka kontrol et.</span></div>
+    <div><span class="chip est">Tahmini</span><span>Bölge ortalamalarından türetilmiş yaklaşık değer. Örnek otel, restoran ya da gezi yeri yok, arama bağlantısı var.</span></div>
+    <div><span class="chip ver">Doğrulandı</span><span>Gidip gerçek harcamayla teyit ettiğimiz şehirler. Her videodan sonra bir şehir daha buraya geçecek.</span></div>
+  </section>
+
+  <footer>
+    Fiyatlar euro cinsinden, iki kişilik oda başına gecelik hesaplanır. Şehir vergisi, bagaj ücreti, vize ve seyahat sigortası dahil değildir. Şehir kısayollarının renkleri, seçtiğin tura göre 37 başkent arasındaki sıralamadan gelir. Gezi planındaki mesafeler yer koordinatlarından tahmin edilir: yürüyüşe yaklaşık %30 dolambaç payı eklenir, taksi süresi şehir içi ortalama hızla hesaplanır, gerçek süre trafiğe ve rotaya göre değişir. Güvenlik ve seyahat uyarıları nedeniyle Kiev, Moskova ve Minsk listeye eklenmedi. Bu araç bilgi amaçlıdır, rezervasyondan ve gezi saatlerinden önce güncel bilgilere bak.
+  </footer>
+</div>
+</main>
+
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json";</script>
+<script>
+(function () {
+  // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
+  var DATA = { updated: "2026-10-02", eurTry: 55.3, eurHuf: 368.5, source: "elle girilmiş piyasa orta kuru" };
+  var HUF_PER_EUR = DATA.eurHuf;
+  // Resmî bilet fiyatları. Kendi sitende prices.json (haftalık robot + senin onayınla) bunların üstüne yazar.
+  var PRICES = {"version": 1, "updated": "2026-10-02", "items": {"szechenyi_weekday": {"label": "Széchenyi hamamı, pazartesi-perşembe, dolaplı günlük bilet", "value": 13200, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "szechenyi_weekend": {"label": "Széchenyi hamamı, cuma-pazar, dolaplı günlük bilet", "value": 14800, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "szechenyi_early": {"label": "Széchenyi \"Good morning\" bileti (9:00'a kadar), pazartesi-perşembe", "value": 10500, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "szechenyi_friday_early": {"label": "Széchenyi \"Good morning\" bileti, yalnızca cuma", "value": 11800, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "parlament_noneea": {"label": "Parlamento turu, AEA dışı yetişkin", "value": 14000, "currency": "Ft", "source": "https://www.parlament.hu/en/web/orszaghaz/jegyarak", "checked": "2026-10-02", "tier": "resmi"}, "bkk_72h": {"label": "BKK 72 saatlik seyahat kartı", "value": 5750, "currency": "Ft", "source": "https://bkk.hu/en/tickets-and-passes/prices/", "checked": "2026-10-02", "tier": "resmi"}, "bkk_100e": {"label": "Havalimanı otobüsü 100E, tek yön", "value": 2500, "currency": "Ft", "source": "https://bkk.hu/en/tickets-and-passes/prices/airport-shuttle-bus-single-ticket/", "checked": "2026-10-02", "tier": "resmi"}, "opera_tour_en": {"label": "Macar Devlet Operası, OperaTour (İngilizce tur)", "value": 12000, "currency": "Ft", "tier": "resmi", "source": "https://www.opera.hu/en/services/operatour/", "checked": "2026-10-02"}, "basilica_church": {"label": "Aziz Stephen Bazilikası, kilise salonu (yetişkin)", "value": 2600, "currency": "Ft", "tier": "ikincil", "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "sources": ["https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "https://budapestfrontier.com/st-stephens-basilica/"], "checked": "2026-10-02"}, "basilica_panorama": {"label": "Bazilika, panorama terası ve hazine", "value": 5000, "currency": "Ft", "tier": "ikincil", "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "sources": ["https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest"], "checked": "2026-10-02"}, "basilica_all": {"label": "Bazilika, hepsi bir arada bilet", "value": 6800, "currency": "Ft", "tier": "ikincil", "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "sources": ["https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest"], "checked": "2026-10-02"}, "bastion_upper": {"label": "Balıkçı Tabyası, üst kuleler (yetişkin)", "value": 1700, "currency": "Ft", "tier": "ikincil", "source": "https://hungaryunlocked.com/fishermans-bastion-budapest-guide/", "sources": ["https://hungaryunlocked.com/fishermans-bastion-budapest-guide/"], "checked": "2026-10-02"}}};
+  var PRICE_STATUS = null;
+  var FONT_R = "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", FONT_B = "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";
+
+  /* ====================== VERİ ====================== */
+  var BUD_HOTELS = [
+    { t: "Sade", name: "K+K Hotel Opera", p: 75, sc: "8,3", s: "res", lat: 47.5022, lon: 19.0577,
+      desc: "Opera ve Andrássy bölgesinde, bütçe dostu 4 yıldızlı otel. Puan yaklaşık, fiyat tarihe göre değişir." },
+    { t: "Orta", name: "Three Corners Avenue Hotel", p: 95, sc: "9,3", s: "res", lat: 47.5031, lon: 19.0613,
+      desc: "Opera'ya 4 dakika yürüyüş, konum puanı 9,7. Sauna var. Kahvaltı ayrı (kişi başı yaklaşık 15 €)." },
+    { t: "Şık", name: "Casati Hotel – Adults Only", p: 130, sc: "9,5", s: "res", lat: 47.5012, lon: 19.0589,
+      desc: "Sadece yetişkinlere, metroya yakın butik otel, konum puanı 9,8. Kahvaltı dahil olabilir, rezervasyonda teyit et." }
+  ];
+  var BUD_RESTOS = [
+    { t: "Ucuz", name: "Fini'Z Burger", p: 11, sc: "", s: "res", q: "Fini'Z Burger Ráday utca 8 Budapest",
+      desc: "Ráday utca'da, sosyal medyada viral olan smash burger. Burger ve patates yaklaşık 4.000–5.000 Ft." },
+    { t: "Orta", name: "Twentysix", p: 22, sc: "4,0", sct: "Tripadvisor puanı", s: "res", q: "Twentysix Király utca 26 Budapest",
+      desc: "TikTok'un bilinen 'şehir ormanı' mekânı, Akdeniz mutfağı. Kişi başı 4.000–16.000 Ft, rezervasyon önerilir. Yorumlar karışık: atmosfer güçlü, porsiyon ve fiyat tartışmalı." },
+    { t: "Şık", name: "ISSEI Skybar & Restaurant", p: 68, sc: "", s: "res", q: "ISSEI Skybar Restaurant Szent István tér Budapest",
+      desc: "Bazilika manzaralı çatı katı, Japon-Peru (Nikkei) mutfağı. Tam akşam yemeği kişi başı yaklaşık 25.000–35.000 Ft. Kışın dış teras ısıtmasız, iç mekân ısıtmalı." }
+  ];
+  var BUD_PLACES = [
+    { n: "Parlamento (Országház)", tag: "Tarihi bina", z: "parlamento", lat: 47.5072, lon: 19.0462, mins: 105, ft: 14000,
+      info: "Tuna kıyısındaki dev neo-Gotik meclis binası. 45 dakikalık rehberli turla kubbe salonunu ve Kutsal Taç'ı görürsün. Biletler tarih ve saatlidir, geç kalan hakkını kaybedebilir, önceden al.",
+      price: "Tur bileti: AEA dışı yetişkin 14.000 Ft" },
+    { n: "Széchenyi Termal Hamamı", tag: "Termal hamam", z: "park", lat: 47.5189, lon: 19.0819, mins: 240, ft: 13200, ftWe: 14800,
+      priceWe: "Cuma–pazar dolaplı 14.800 Ft, cuma 9:00 öncesi 11.800 Ft",
+      info: "Avrupa'nın en büyük termal hamamı. Kışın dış havuzlar buharlı ve çok keyifli. Hafta içi (Pzt–Prş) daha ucuz, sabah erken giriş en iyi fiyat. Havlunu yanında getir.",
+      price: "Hafta içi dolaplı 13.200 Ft, 9:00 öncesi 10.500 Ft" },
+    { n: "Buda Kalesi ve Kale Tepesi", tag: "Tarihi bölge", z: "buda", lat: 47.4961, lon: 19.0396, mins: 150, ft: 0,
+      info: "Tuna'nın Buda yakasında tarihi kale tepesi, Kraliyet Sarayı ve dar sokaklar. Tepede dolaşmak ücretsiz, saray içindeki müzeler ayrı biletlidir. Balıkçı Tabyası ile aynı günde gez.",
+      price: "Dolaşmak ücretsiz, müzeler ayrı" },
+    { n: "Balıkçı Tabyası", tag: "Manzara", z: "buda", lat: 47.5022, lon: 19.0347, mins: 45, ft: 0,
+      info: "Masal şatosunu andıran seyir terasları, Parlamento ve Tuna manzarası. Bazı bölümleri saate ve sezona göre ücretli olabilir, giriş koşulunu yerinde kontrol et.",
+      price: "Bazı bölümler ücretli olabilir" },
+    { n: "Aziz Stephen Bazilikası", tag: "Kilise", z: "merkez", lat: 47.5009, lon: 19.0539, mins: 60, ft: 0,
+      info: "Budapeşte'nin en büyük kilisesi. Önünde Noel pazarı ve akşam ışık gösterisi var. İç mekân ve kubbe terası için güncel bilet fiyatına bak.",
+      price: "İç mekân ve kubbe için güncel fiyata bak" },
+    { n: "Zincirli Köprü", tag: "Köprü", z: "buda", lat: 47.4989, lon: 19.0436, mins: 25, ft: 0,
+      info: "Tuna'nın iki yakasını birleştiren simge köprü. Yürüyerek geçmek ücretsiz, akşam ışıklarıyla çok güzel.",
+      price: "Ücretsiz" },
+    { n: "Vörösmarty Meydanı Noel Pazarı", tag: "Noel pazarı", z: "merkez", lat: 47.4975, lon: 19.0511, mins: 60, ft: 0,
+      info: "Sıcak şarap, kürtőskalács ve el işi tezgâhları. 2026 tarihleri henüz resmen açıklanmadı, kasım ortasında açılıp yılbaşına kadar sürmesi bekleniyor. Gitmeden teyit et.",
+      price: "Giriş ücretsiz, yiyecek ve içecek ayrı" },
+    { n: "Büyük Çarşı Salonu", tag: "Yemek pazarı", z: "guney", lat: 47.4873, lon: 19.0585, mins: 75, ft: 0,
+      info: "Lángos, yerel şarküteri ve hediyelik ürünler. Öğle yemeği için güzel bir durak. Pazar günleri kapalı olabilir, saatlerini kontrol et.",
+      price: "Giriş ücretsiz" },
+    { n: "Macar Devlet Operası", tag: "Opera", z: "merkez", lat: 47.5026, lon: 19.0583, mins: 45, ft: 0,
+      info: "Andrássy Caddesi üzerindeki neo-Rönesans bina. Fındıkkıran balesi 19 Kasım 2026–10 Ocak 2027 arasında programda görünüyor, bilet için resmi siteye bak. Dışarıdan görmek ücretsiz.",
+      price: "Gösteri biletleri ayrı" },
+    { n: "Tuna Kıyısındaki Ayakkabılar", tag: "Anıt", z: "parlamento", lat: 47.5047, lon: 19.0472, mins: 15, ft: 0,
+      info: "Tuna kıyısında, II. Dünya Savaşı'nda burada öldürülen Yahudiler için yapılmış dökme demir ayakkabılı anıt. Sessiz ve saygılı bir ziyaret için.",
+      price: "Ücretsiz" },
+    { n: "Kahramanlar Meydanı", tag: "Meydan", z: "park", lat: 47.5149, lon: 19.0772, mins: 30, ft: 0,
+      info: "Macar tarihinin kahramanlarını anan büyük anıt meydanı. Széchenyi Hamamı'na yürüme mesafesinde, onunla aynı gün planlamak mantıklı.",
+      price: "Ücretsiz" }
+  ];
+  var D = [
+    ["Londra","Birleşik Krallık","Batı Avrupa",200,80,10,28],
+    ["Dublin","İrlanda","Batı Avrupa",170,62,8,22],
+    ["Paris","Fransa","Batı Avrupa",165,70,10,25],
+    ["Brüksel","Belçika","Batı Avrupa",120,55,8,20],
+    ["Amsterdam","Hollanda","Batı Avrupa",170,62,10,25],
+    ["Lüksemburg","Lüksemburg","Batı Avrupa",135,62,0,15],
+    ["Berlin","Almanya","Batı Avrupa",105,50,8,20],
+    ["Bern","İsviçre","Batı Avrupa",190,80,10,22],
+    ["Viyana","Avusturya","Batı Avrupa",120,55,8,22],
+    ["Madrid","İspanya","Güney Avrupa",100,45,6,20],
+    ["Lizbon","Portekiz","Güney Avrupa",100,42,6,18],
+    ["Roma","İtalya","Güney Avrupa",140,55,8,25],
+    ["Valletta","Malta","Güney Avrupa",95,40,4,15],
+    ["Atina","Yunanistan","Güney Avrupa",85,40,5,20],
+    ["Reykjavik","İzlanda","Kuzey Avrupa",190,80,10,28],
+    ["Oslo","Norveç","Kuzey Avrupa",170,78,12,22],
+    ["Stokholm","İsveç","Kuzey Avrupa",150,66,10,20],
+    ["Kopenhag","Danimarka","Kuzey Avrupa",165,72,12,25],
+    ["Helsinki","Finlandiya","Kuzey Avrupa",135,60,9,18],
+    ["Tallinn","Estonya","Baltık",90,40,5,15],
+    ["Riga","Letonya","Baltık",85,38,5,15],
+    ["Vilnius","Litvanya","Baltık",80,36,4,14],
+    ["Varşova","Polonya","Orta ve Doğu Avrupa",80,36,4,14],
+    ["Prag","Çekya","Orta ve Doğu Avrupa",85,38,5,16],
+    ["Bratislava","Slovakya","Orta ve Doğu Avrupa",80,36,5,14],
+    ["Budapeşte","Macaristan","Orta ve Doğu Avrupa",95,39,7,24,"res",
+      "Resmi bilet ve hamam fiyatları kaynaklı, üç otel, üç restoran ve on bir gezi yeri araştırıldı. Otel fiyatları Aralık için yaklaşık, Booking'de kendi tarihine bak. Yemek tahmini.", BUD_HOTELS, BUD_RESTOS, BUD_PLACES],
+    ["Ljubljana","Slovenya","Orta ve Doğu Avrupa",100,42,5,14],
+    ["Zagreb","Hırvatistan","Orta ve Doğu Avrupa",85,38,4,14],
+    ["Bükreş","Romanya","Orta ve Doğu Avrupa",65,32,3,12],
+    ["Sofya","Bulgaristan","Orta ve Doğu Avrupa",60,30,3,10],
+    ["Kişinev","Moldova","Orta ve Doğu Avrupa",55,26,2,8],
+    ["Belgrad","Sırbistan","Balkanlar",65,32,3,10],
+    ["Saraybosna","Bosna-Hersek","Balkanlar",60,28,3,10],
+    ["Podgorica","Karadağ","Balkanlar",70,32,3,10],
+    ["Üsküp","Kuzey Makedonya","Balkanlar",55,26,2,9],
+    ["Tiran","Arnavutluk","Balkanlar",60,26,2,9],
+    ["Priştine","Kosova","Balkanlar",55,26,2,8]
+  ].map(function (a) {
+    return { n:a[0], c:a[1], r:a[2], h:a[3], f:a[4], t:a[5], a:a[6], s:a[7] || "est", note:a[8] || "",
+             hotels:a[9] || null, restos:a[10] || null, places:a[11] || null };
+  });
+  var QUICK = ["Budapeşte","Prag","Atina","Lizbon","Sofya","Belgrad","Roma","Viyana","Paris","Londra","Berlin","Madrid","Amsterdam","Varşova"];
+  var TNAME = ["", "ucuz", "orta", "pahalı", "çok pahalı"];
+  var STEPS = ["Şehir", "Otel", "Yemek", "Gezi", "Özet"];
+
+  var r5 = function (x) { return Math.round(x / 5) * 5; };
+  var TIER = [
+    { t: "Sade", m: 0.7, label: "3 yıldız civarı otel", desc: "Sade ve temiz bir otel ya da butik pansiyon. Örnek otel henüz araştırılmadı." },
+    { t: "Orta", m: 1,   label: "3–4 yıldızlı otel", desc: "Merkezi konumda, rahat bir otel. Örnek otel henüz araştırılmadı." },
+    { t: "Şık",  m: 1.5, label: "4–5 yıldızlı şık otel", desc: "Konforlu, şık bir otel. Örnek otel henüz araştırılmadı." }
+  ];
+  var RTIER = [
+    { t: "Ucuz", m: 0.3,  label: "Sokak lezzeti, hızlı servis", desc: "Sosyal medyada öne çıkan ucuz bir durak. Örnek restoran henüz araştırılmadı." },
+    { t: "Orta", m: 0.55, label: "Orta seviye restoran", desc: "Yerel mutfaktan, gezginlerin sevdiği bir restoran. Örnek restoran henüz araştırılmadı." },
+    { t: "Şık",  m: 1.3,  label: "Şık akşam yemeği", desc: "Manzaralı ya da gösterişli, özel bir akşam için. Örnek restoran henüz araştırılmadı." }
+  ];
+  function hotelsOf(c) {
+    if (c.hotels) return c.hotels;
+    return TIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: r5(c.h * x.m), sc: "", s: "est", desc: x.desc }; });
+  }
+  function restosOf(c) {
+    if (c.restos) return c.restos;
+    return RTIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: Math.max(3, Math.round(c.f * x.m)), sc: "", s: "est", desc: x.desc }; });
+  }
+  var CHIP = { est:["Tahmini","est"], res:["Araştırıldı","res"], ver:["Doğrulandı","ver"] };
+
+  /* ====================== DURUM VE YARDIMCILAR ====================== */
+  var $ = function (id) { return document.getElementById(id); };
+  var step = 1, maxStep = 1, foodMult = 1, hIdx = 1, rIdx = 1, visits = 1, picked = [];
+  var nf = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 });
+  var nf1 = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
+  var tl = function (n) { return nf.format(Math.round(n)) + " TL"; };
+  var num = function (el, def, min, max) { var v = parseFloat(el.value); if (!isFinite(v)) v = def; return Math.min(max, Math.max(min, v)); };
+  var DAYS = ["pazar","pazartesi","salı","çarşamba","perşembe","cuma","cumartesi"];
+  var dShort = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "short", timeZone: "UTC" });
+  var dLong = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", timeZone: "UTC" });
+  var dLongY = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  function parseD(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ""); return m ? new Date(Date.UTC(+m[1], +m[2] - 1, +m[3])) : null; }
+  function isoD(d) { return d.toISOString().slice(0, 10); }
+  var idxOf = function (n) { return D.findIndex(function (c) { return c.n === n; }); };
+  var fmtMin = function (m) { return m < 60 ? m + " dk" : Math.floor(m / 60) + " sa" + (m % 60 ? " " + (m % 60) + " dk" : ""); };
+  var fmtT = function (m) { m = Math.round(m); var h = Math.floor(m / 60) % 24, mm = m % 60; return (h < 10 ? "0" : "") + h + ":" + (mm < 10 ? "0" : "") + mm; };
+  var rateTouched = false;
+  function applyPrices() {
+    var c = D.filter(function (x) { return x.n === "Budapeşte"; })[0]; if (!c || !c.places) return;
+    var it = PRICES.items || {}, g = function (k, d) { return it[k] && typeof it[k].value === "number" ? it[k].value : d; };
+    c.places.forEach(function (p) {
+      if (p.n.indexOf("Széchenyi") === 0) {
+        p.ft = g("szechenyi_weekday", p.ft); p.ftWe = g("szechenyi_weekend", p.ftWe);
+        p.price = "Hafta içi dolaplı " + nf.format(p.ft) + " Ft, 9:00 öncesi " + nf.format(g("szechenyi_early", 10500)) + " Ft";
+        p.priceWe = "Cuma–pazar dolaplı " + nf.format(p.ftWe) + " Ft, cuma 9:00 öncesi " + nf.format(g("szechenyi_friday_early", 11800)) + " Ft";
+      }
+      if (p.n.indexOf("Parlamento") === 0) { p.ft = g("parlament_noneea", p.ft); p.price = "Tur bileti: AEA dışı yetişkin " + nf.format(p.ft) + " Ft"; }
+    });
+  }
+  function dateTr(s) { var d = Date.parse(s + "T00:00:00Z"); return isFinite(d) ? dLongY.format(new Date(d)) : "tarih yok"; }
+  function priceBox() {
+    var it = PRICES.items || {}, keys = Object.keys(it), esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
+    var row = function (k) { var i = it[k]; return '<li><span>' + esc(i.label) + '</span><b>' + nf.format(i.value) + ' ' + esc(i.currency || "Ft") + '</b><a href="' + esc(i.source) + '" target="_blank" rel="noopener noreferrer">kaynak ↗</a></li>'; };
+    var off = keys.filter(function (k) { return it[k].tier !== "ikincil"; }), sec = keys.filter(function (k) { return it[k].tier === "ikincil"; });
+    var last = PRICE_STATUS && PRICE_STATUS.lastRun ? "Robot son kontrol: " + dateTr(PRICE_STATUS.lastRun) : "Son elle kontrol: " + dateTr(PRICES.updated);
+    return '<details class="pricebox"><summary>Bilet fiyatları ve kaynakları (Ft)</summary>' +
+      '<p class="ph">Resmî sayfalardan okunanlar</p><ul>' + off.map(row).join("") + '</ul>' +
+      (sec.length ? '<p class="ph">Güncel rehberlerden (resmî sayfası bulunamadı, otomatik kontrol edilmiyor)</p><ul>' + sec.map(row).join("") + '</ul>' : "") +
+      '<p class="pn">' + last + '. Gitmeden önce kendin de kontrol et.</p></details>';
+  }
+  function dataDateText() { var d = Date.parse(DATA.updated + "T00:00:00Z"); return isFinite(d) ? dLongY.format(new Date(d)) : "tarih bilinmiyor"; }
+  function dataAgeDays() { var d = Date.parse(DATA.updated + "T00:00:00Z"); return isFinite(d) ? Math.floor((Date.now() - d) / 86400000) : null; }
+  function applyData() {
+    HUF_PER_EUR = DATA.eurHuf;
+    if (!rateTouched) $("rate").value = DATA.eurTry;
+    $("rateHint").textContent = "(" + dataDateText() + " itibarıyla, güncelleyebilirsin)";
+    var age = dataAgeDays(), n = $("datanote"), old = age !== null && age > 14;
+    n.className = "datanote" + (old ? " old" : "");
+    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı." +
+      (old ? " Bu veri " + age + " gündür güncellenmedi, rakamlar eski olabilir." : "");
+  }
+  function mapsUrl(q) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); }
+  function bookingUrl(q, o) {
+    return "https://www.booking.com/searchresults.html?ss=" + encodeURIComponent(q) +
+      (o.a && o.b ? "&checkin=" + isoD(o.a) + "&checkout=" + isoD(o.b) : "") +
+      "&group_adults=" + o.ppl + "&no_rooms=" + o.rooms + "&nflt=review_score%3D80";
+  }
+  function chipEl(el, s) { el.textContent = CHIP[s][0]; el.className = "chip " + CHIP[s][1]; }
+  function seasonNote(a, b) {
+    var day = 86400000, yule = false, summer = false;
+    for (var t = a.getTime(); t <= b.getTime(); t += day) {
+      var d = new Date(t), m = d.getUTCMonth() + 1, dd = d.getUTCDate();
+      if ((m === 12 && dd >= 20) || (m === 1 && dd <= 2)) yule = true;
+      if (m === 7 || m === 8) summer = true;
+    }
+    return yule ? "Yılbaşı dönemi: otel ve uçak fiyatları genelde yükselir." : summer ? "Yaz sezonu: popüler şehirlerde otel fiyatları genelde yükselir." : "";
+  }
+  function inputs() {
+    var ppl = Math.round(num($("ppl"), 2, 1, 6));
+    var a = parseD($("d1").value), b = parseD($("d2").value), nights = 3, msg = "", warn = false;
+    if (a && b) {
+      var n = Math.round((b - a) / 86400000);
+      if (n < 1) { warn = true; msg = "Dönüş tarihi gidişten sonra olmalı. Şimdilik 3 gece hesaplıyorum."; a = b = null; }
+      else if (n > 14) { warn = true; msg = "En fazla 14 gece hesaplanır."; nights = 14; }
+      else { nights = n; msg = "<b>" + n + " gece</b> · " + DAYS[a.getUTCDay()] + " → " + DAYS[b.getUTCDay()]; var s = seasonNote(a, b); if (s) msg += "<br>" + s + " Hesap ortalama fiyatla yapıldı, Booking'de tarihine bak."; }
+    } else { warn = true; msg = "Tarihleri seçince gece sayısı kendiliğinden hesaplanır. Şimdilik 3 gece."; a = b = null; }
+    var el = $("dnote"); el.innerHTML = msg; el.className = "dnote" + (warn ? " warn" : "");
+    return { nights: nights, ppl: ppl, rooms: Math.ceil(ppl / 2), rate: num($("rate"), 55.3, 1, 1000), act: $("act").checked, a: a, b: b };
+  }
+  function cost(c, o, idx, ridx) {
+    var days = o.nights + 1, hp = hotelsOf(c)[idx].p, rp = restosOf(c)[ridx].p;
+    var v = Math.min(visits, days);
+    var hotel = hp * o.nights * o.rooms;
+    var food = Math.max(0, c.f * foodMult * o.ppl * days - v * c.f * foodMult * 0.4 * o.ppl);
+    var resto = v * rp * o.ppl;
+    var trans = c.t * o.ppl * days;
+    var act = o.act ? c.a * o.ppl * o.nights : 0;
+    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, sum: hotel + food + resto + trans + act };
+  }
+
+  /* ====================== MESAFE VE PLAN ====================== */
+  function hav(a, b) {
+    var R = 6371, rad = Math.PI / 180, dLat = (b.lat - a.lat) * rad, dLon = (b.lon - a.lon) * rad;
+    var x = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return 2 * R * Math.asin(Math.sqrt(x));
+  }
+  function leg(a, b) {
+    var km = hav(a, b) * 1.3;
+    return { km: km, walk: Math.max(1, Math.round(km / 5 * 60)), taxi: Math.max(3, Math.round(4 + km / 22 * 60)) };
+  }
+  var legTxt = function (l) {
+    return "🚶 " + fmtMin(l.walk) + " · 🚕 " + fmtMin(l.taxi) + " · " + nf1.format(l.km) + " km" + (l.walk > 35 ? " (uzun, taksi ya da metro mantıklı)" : "");
+  };
+  function split(n, w) {
+    var sw = w.reduce(function (a, b) { return a + b; }, 0), raw = w.map(function (x) { return x * n / sw; });
+    var cnt = raw.map(Math.floor), rem = n - cnt.reduce(function (a, b) { return a + b; }, 0);
+    raw.map(function (x, i) { return [x - Math.floor(x), i]; }).sort(function (a, b) { return b[0] - a[0]; }).slice(0, rem).forEach(function (p) { cnt[p[1]]++; });
+    return cnt;
+  }
+  function defaultPicks(c, o) {
+    var n = Math.min(c.places.length, Math.round(2.5 * (o.nights + 1))), r = [];
+    for (var i = 0; i < n; i++) r.push(i);
+    return r;
+  }
+  function buildPlan(places, hotel, o, sel) {
+    var days = o.nights + 1, w = [];
+    for (var i = 0; i < days; i++) w.push(i === 0 || i === days - 1 ? 0.7 : 1);
+    var sum = function (a) { return a.reduce(function (s, x) { return s + x; }, 0); };
+    var total = sum(sel.map(function (pi) { return places[pi].mins; })), sw = sum(w);
+    var target = w.map(function (x) { return total * x / sw; });
+    var zmap = {}, zlist = [];
+    sel.forEach(function (pi) { var z = places[pi].z || "x" + pi; if (!zmap[z]) { zmap[z] = []; zlist.push(z); } zmap[z].push(pi); });
+    var zinfo = zlist.map(function (z) { return { items: zmap[z], load: sum(zmap[z].map(function (pi) { return places[pi].mins; })) }; })
+      .sort(function (a, b) { return b.load - a.load; });
+    var bucket = []; for (var d = 0; d < days; d++) bucket.push({ load: 0, zones: [] });
+    zinfo.forEach(function (zi) {
+      var cands = [];
+      for (var k = 0; k < days; k++) { if (days >= 3 && zi.load >= 200 && (k === 0 || k === days - 1)) continue; cands.push(k); }
+      if (!cands.length) for (var m = 0; m < days; m++) cands.push(m);
+      var best = cands[0], bo = Infinity, bend = 2;
+      cands.forEach(function (k) {
+        var ov = Math.max(0, bucket[k].load + zi.load - target[k]), end = (k === 0 || k === days - 1) ? 1 : 0;
+        if (ov < bo || (ov === bo && end < bend)) { bo = ov; best = k; bend = end; }
+      });
+      bucket[best].zones.push(zi); bucket[best].load += zi.load;
+    });
+    var centroid = function (arr) { var la = 0, lo = 0; arr.forEach(function (pi) { la += places[pi].lat; lo += places[pi].lon; }); return { lat: la / arr.length, lon: lo / arr.length }; };
+    return bucket.map(function (bk) {
+      var cur = { lat: hotel.lat, lon: hotel.lon }, list = [], zs = bk.zones.slice();
+      while (zs.length) {
+        var bz = 0, bd = Infinity;
+        zs.forEach(function (zi, k) { var dd = hav(cur, centroid(zi.items)); if (dd < bd) { bd = dd; bz = k; } });
+        var left = zs.splice(bz, 1)[0].items.slice();
+        while (left.length) {
+          var b = 0, bdd = Infinity;
+          left.forEach(function (pi, k) { var dd = hav(cur, places[pi]); if (dd < bdd) { bdd = dd; b = k; } });
+          var pk = left.splice(b, 1)[0]; list.push(pk); cur = places[pk];
+        }
+      }
+      return list;
+    });
+  }
+  function mealDays(days, n) {
+    var el = []; for (var i = 1; i <= days - 2; i++) el.push(i); el.push(0);
+    return el.slice(0, Math.min(n, el.length));
+  }
+  // gün gün saatli program
+  function buildSchedule(c, o, hotel, resto, sel) {
+    var P = c.places, days = o.nights + 1, out = [], plan = buildPlan(P, hotel, o, sel), md = mealDays(days, visits), ft = 0;
+    for (var di = 0; di < days; di++) {
+      var first = di === 0, last = di === days - 1, items = [], t;
+      var date = o.a ? new Date(o.a.getTime() + di * 86400000) : null;
+      var wk = date && [5, 6, 0].indexOf(date.getUTCDay()) >= 0;
+      var head = (di + 1) + ". Gün" + (date ? " · " + DAYS[date.getUTCDay()] + ", " + dLong.format(date) : "") + (first ? " (varış günü)" : last ? " (dönüş günü)" : "");
+      if (first) { items.push({ t: "14:30", title: "Otele yerleş", sub: (hotel.name || "Otel") + ". Check-in saatini otelden teyit et.", kind: "hotel" }); t = 15 * 60 + 30; }
+      else if (last) { items.push({ t: "08:30", title: "Kahvaltı ve check-out", sub: "Otelin çıkış saatini kontrol et (genelde 11:00).", kind: "hotel" }); t = 10 * 60; }
+      else { items.push({ t: "09:30", title: "Kahvaltı", sub: "Otelde ya da yakında bir kafede.", kind: "meal" }); t = 10 * 60 + 30; }
+      var prev = hotel, lunch = false;
+      plan[di].forEach(function (pi) {
+        var p = P[pi], l = leg(prev, p), walk = l.walk <= 20, tr = walk ? l.walk : l.taxi;
+        var pr = (wk && p.priceWe) ? p.priceWe : p.price; ft += (wk && p.ftWe) ? p.ftWe : p.ft;
+        if (!lunch && !last && t < 15 * 60 && t + tr >= 13 * 60) { items.push({ t: fmtT(t), title: "Öğle molası", sub: "Yakında bir yerde hafif bir öğle yemeği.", kind: "meal" }); t += 60; lunch = true; }
+        t += tr;
+        items.push({ t: fmtT(t), title: p.n, sub: (walk ? "Yürüyüş " : "Taksi ") + tr + " dk (" + nf1.format(l.km) + " km) · " + pr + " · yaklaşık " + fmtMin(p.mins), note: p.info, kind: "place" });
+        t += p.mins; prev = p;
+      });
+      if (last) items.push({ t: fmtT(Math.max(t, 12 * 60)), title: "Havalimanına git", sub: "Uçuş saatine göre bu günü kısalt, havalimanına erken ulaşacak şekilde planla.", kind: "fly" });
+      else {
+        var dt = Math.max(19 * 60 + 30, t + 15);
+        if (md.indexOf(di) >= 0) items.push({ t: fmtT(dt), title: "Akşam yemeği: " + (resto.name || resto.label), sub: "~" + resto.p + " € kişi başı · rezervasyon yapmanı öneririz.", kind: "meal", viral: true });
+        else items.push({ t: fmtT(dt), title: "Akşam yemeği (serbest)", sub: "Otel çevresinde bir restoran seç.", kind: "meal" });
+      }
+      out.push({ head: head, items: items });
+    }
+    return { days: out, ft: ft };
+  }
+
+  /* ====================== ÖZET MODELİ ====================== */
+  function makeModel() {
+    var o = inputs(), c = D[+$("city").value], hs = hotelsOf(c), rs = restosOf(c), hotel = hs[hIdx], resto = rs[rIdx];
+    var k = cost(c, o, hIdx, rIdx), total = k.sum * o.rate;
+    var range = o.a && o.b ? dLong.format(o.a) + " – " + dLongY.format(o.b) : o.nights + " gece";
+    var m = {
+      city: c.n, country: c.c, status: c.s, o: o, total: total, perPerson: total / o.ppl, c: c,
+      title: c.n + " · " + range,
+      sub: o.ppl + " kişi · " + o.nights + " gece · uçak hariç",
+      picks: [
+        ["Otel", (hotel.name || hotel.label) + " · ~" + hotel.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (hotel.sc ? " · Booking " + hotel.sc : "")],
+        ["Yemek", visits === 0 ? "Viral restoran eklenmedi" : (resto.name || resto.label) + " · ~" + resto.p + " € kişi başı · " + Math.min(visits, o.nights + 1) + " öğün"],
+        ["Kişi ve süre", o.ppl + " kişi · " + o.nights + " gece / " + (o.nights + 1) + " gün"]
+      ],
+      budget: [["Otel", tl(k.hotel * o.rate), k.hotel * o.rate], ["Yemek (diğer öğünler)", tl(k.food * o.rate), k.food * o.rate], ["Viral restoran", tl(k.resto * o.rate), k.resto * o.rate],
+               ["Ulaşım", tl(k.trans * o.rate), k.trans * o.rate], ["Gezi harcamaları", tl(k.act * o.rate), k.act * o.rate]],
+      days: [], tickets: null, notes: [], autoSel: false, hotel: hotel, resto: resto
+    };
+    if (c.places) {
+      var sel = picked.length ? picked : defaultPicks(c, o); m.autoSel = !picked.length;
+      var sch = buildSchedule(c, o, hotel, resto, sel);
+      m.days = sch.days;
+      if (sch.ft > 0) m.tickets = { ft: sch.ft * o.ppl, tl: sch.ft * o.ppl / HUF_PER_EUR * o.rate };
+    }
+    if (m.autoSel) m.notes.push("Gezi yerlerini kendin seçmediğin için önerilen yerler programa konuldu.");
+    if (!c.places) m.notes.push(c.n + " için gezi planı henüz hazır değil, program yalnızca otel, yemek ve bütçeyi içeriyor.");
+    if (c.note) m.notes.push(c.note);
+    m.notes.push("Kur: 1 € = " + nf1.format(o.rate) + " TL, 1 € = " + nf1.format(HUF_PER_EUR) + " Ft (" + dataDateText() + "). Fiyatlar ve saatler yaklaşık, rezervasyondan önce güncel bilgilere bak.");
+    m.notes.push("Mesafeler yer koordinatlarından tahmin edilir: yürüyüşe yaklaşık %30 dolambaç payı eklenir, taksi süresi şehir içi ortalama hızla hesaplanır.");
+    return m;
+  }
+
+  /* ====================== MİNİ PDF YAZICI (gömülü Türkçe font) ====================== */
+  var NAVY = "#0F2A43", SAFF = "#F4A62A", CREAM = "#FBF6EC", MUTED = "#5B6B7C", LINE = "#D9D2C1";
+  function b64(s) { var bin = atob(s), u = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u; }
+  var enc = function (s) { return new TextEncoder().encode(s); };
+  function clean(s) {
+    return String(s == null ? "" : s).replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\uFE0F\u200D]/gu, "").replace(/\s+/g, " ").trim();
+  }
+  function loadFont(bytes) {
+    var dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength), n = dv.getUint16(4), tabs = {};
+    for (var i = 0; i < n; i++) {
+      var o = 12 + i * 16, tag = String.fromCharCode(dv.getUint8(o), dv.getUint8(o + 1), dv.getUint8(o + 2), dv.getUint8(o + 3));
+      tabs[tag] = { off: dv.getUint32(o + 8), len: dv.getUint32(o + 12) };
+    }
+    var upm = dv.getUint16(tabs.head.off + 18);
+    var bbox = [dv.getInt16(tabs.head.off + 36), dv.getInt16(tabs.head.off + 38), dv.getInt16(tabs.head.off + 40), dv.getInt16(tabs.head.off + 42)];
+    var nh = dv.getUint16(tabs.hhea.off + 34), asc = dv.getInt16(tabs.hhea.off + 4), desc = dv.getInt16(tabs.hhea.off + 6), hm = tabs.hmtx.off;
+    var adv = function (g) { return dv.getUint16(hm + (g < nh ? g : nh - 1) * 4); };
+    var cm = tabs.cmap.off, nt = dv.getUint16(cm + 2), sub = null;
+    for (var j = 0; j < nt; j++) {
+      var pid = dv.getUint16(cm + 4 + j * 8), eid = dv.getUint16(cm + 6 + j * 8), so = dv.getUint32(cm + 8 + j * 8);
+      if (pid === 3 && eid === 1) sub = cm + so; else if (!sub && pid === 0) sub = cm + so;
+    }
+    var segX2 = dv.getUint16(sub + 6), segs = segX2 / 2, endO = sub + 14, startO = endO + segX2 + 2, deltaO = startO + segX2, rangeO = deltaO + segX2, map = {};
+    for (var s = 0; s < segs; s++) {
+      var end = dv.getUint16(endO + s * 2), st = dv.getUint16(startO + s * 2), dl = dv.getInt16(deltaO + s * 2), ro = dv.getUint16(rangeO + s * 2);
+      for (var ch = st; ch <= end && ch !== 0xFFFF; ch++) {
+        var g;
+        if (ro === 0) g = (ch + dl) & 0xFFFF;
+        else { g = dv.getUint16(rangeO + s * 2 + ro + (ch - st) * 2); if (g !== 0) g = (g + dl) & 0xFFFF; }
+        if (g) map[ch] = g;
+      }
+    }
+    return { bytes: bytes, upm: upm, bbox: bbox, asc: asc, desc: desc, adv: adv, map: map, used: {} };
+  }
+  function gidOf(f, ch) { var cp = ch.codePointAt(0); var g = f.map[cp]; if (!g) { cp = 63; g = f.map[63] || 0; } return [g, cp]; }
+  function hexg(f, s) {
+    var out = "";
+    for (var ch of s) { var r = gidOf(f, ch); f.used[r[0]] = r[1]; out += ("0000" + r[0].toString(16)).slice(-4); }
+    return out;
+  }
+  function tw(f, s, size) { var w = 0; for (var ch of s) w += f.adv(gidOf(f, ch)[0]); return w * size / f.upm; }
+  function rgbOp(hex, stroke) {
+    var n = parseInt(hex.slice(1), 16);
+    return ((n >> 16) / 255).toFixed(3) + " " + (((n >> 8) & 255) / 255).toFixed(3) + " " + ((n & 255) / 255).toFixed(3) + (stroke ? " RG" : " rg");
+  }
+  function PdfDoc() {
+    this.W = 595.28; this.H = 841.89; this.M = 42; this.pages = [];
+    this.fr = loadFont(b64(FONT_R)); this.fb = loadFont(b64(FONT_B)); this.newPage();
+  }
+  PdfDoc.prototype.newPage = function () { this.ops = []; this.pages.push(this.ops); this.y = this.M; };
+  PdfDoc.prototype.ensure = function (h) { if (this.y + h > this.H - 52) this.newPage(); };
+  PdfDoc.prototype.rect = function (x, top, w, h, color) {
+    this.ops.push(rgbOp(color, false) + " " + x.toFixed(2) + " " + (this.H - top - h).toFixed(2) + " " + w.toFixed(2) + " " + h.toFixed(2) + " re f");
+  };
+  PdfDoc.prototype.line = function (x1, y1, x2, y2, color, w) {
+    this.ops.push(rgbOp(color, true) + " " + w + " w " + x1.toFixed(2) + " " + (this.H - y1).toFixed(2) + " m " + x2.toFixed(2) + " " + (this.H - y2).toFixed(2) + " l S");
+  };
+  PdfDoc.prototype.text = function (s, x, top, size, bold, color) {
+    s = clean(s); if (!s) return;
+    var f = bold ? this.fb : this.fr;
+    this.ops.push(rgbOp(color, false) + " BT /" + (bold ? "F2" : "F1") + " " + size + " Tf 1 0 0 1 " + x.toFixed(2) + " " + (this.H - top - size * 0.82).toFixed(2) + " Tm <" + hexg(f, s) + "> Tj ET");
+  };
+  PdfDoc.prototype.wrap = function (s, w, size, bold) {
+    var f = bold ? this.fb : this.fr, words = clean(s).split(" ").filter(Boolean), lines = [], cur = "";
+    words.forEach(function (wd) { var t = cur ? cur + " " + wd : wd; if (!cur || tw(f, t, size) <= w) cur = t; else { lines.push(cur); cur = wd; } });
+    if (cur) lines.push(cur); return lines;
+  };
+  PdfDoc.prototype.rpath = function (x, top, w, h, r1, r2, r3, r4, color) {
+    var k = 0.5523, y0 = this.H - top, y1 = this.H - top - h, f = function (n) { return n.toFixed(2); };
+    var p = f(x + r1) + " " + f(y0) + " m " + f(x + w - r2) + " " + f(y0) + " l " +
+      f(x + w - r2 + r2 * k) + " " + f(y0) + " " + f(x + w) + " " + f(y0 - r2 + r2 * k) + " " + f(x + w) + " " + f(y0 - r2) + " c " +
+      f(x + w) + " " + f(y1 + r3) + " l " +
+      f(x + w) + " " + f(y1 + r3 - r3 * k) + " " + f(x + w - r3 + r3 * k) + " " + f(y1) + " " + f(x + w - r3) + " " + f(y1) + " c " +
+      f(x + r4) + " " + f(y1) + " l " +
+      f(x + r4 - r4 * k) + " " + f(y1) + " " + f(x) + " " + f(y1 + r4 - r4 * k) + " " + f(x) + " " + f(y1 + r4) + " c " +
+      f(x) + " " + f(y0 - r1) + " l " +
+      f(x) + " " + f(y0 - r1 + r1 * k) + " " + f(x + r1 - r1 * k) + " " + f(y0) + " " + f(x + r1) + " " + f(y0) + " c h f";
+    this.ops.push(rgbOp(color, false) + " " + p);
+  };
+  PdfDoc.prototype.circle = function (cx, top, r, color) {
+    var cy = this.H - top, k = 0.5523 * r, f = function (n) { return n.toFixed(2); };
+    this.ops.push(rgbOp(color, false) + " " + f(cx + r) + " " + f(cy) + " m " +
+      f(cx + r) + " " + f(cy + k) + " " + f(cx + k) + " " + f(cy + r) + " " + f(cx) + " " + f(cy + r) + " c " +
+      f(cx - k) + " " + f(cy + r) + " " + f(cx - r) + " " + f(cy + k) + " " + f(cx - r) + " " + f(cy) + " c " +
+      f(cx - r) + " " + f(cy - k) + " " + f(cx - k) + " " + f(cy - r) + " " + f(cx) + " " + f(cy - r) + " c " +
+      f(cx + k) + " " + f(cy - r) + " " + f(cx + r) + " " + f(cy - k) + " " + f(cx + r) + " " + f(cy) + " c h f");
+  };
+  // 72h Getaway biniş kartı logosu (vektör). band: kartın üstünde durduğu zemin rengi (çentikler için)
+  PdfDoc.prototype.ticket = function (x, top, s, band) {
+    var self = this, W = 1040 * s, Hh = 360 * s, sw = 330 * s, r = 34 * s;
+    var P = function (px, py) { return (x + px * s).toFixed(2) + " " + (self.H - top - py * s).toFixed(2); };
+    this.rpath(x + sw, top, W - sw, Hh, 0, r, r, 0, CREAM);
+    this.rpath(x, top, sw, Hh, r, 0, 0, r, SAFF);
+    this.circle(x + sw, top, 26 * s, band); this.circle(x + sw, top + Hh, 26 * s, band);
+    this.ops.push(rgbOp(NAVY, true) + " 1.1 w 1 J [0.1 3.4] 0 d " + P(330, 36) + " m " + P(330, 324) + " l S [] 0 d 0 J");
+    var ty = function (yb, size) { return top + yb * s - size * 0.82; };
+    this.text("UÇUŞ", x + 24 * s, ty(68, 6), 6, true, NAVY);
+    this.text("72H", x + 22 * s, ty(230, 33), 33, true, NAVY);
+    this.text("BİNİŞ KARTI", x + 370 * s, ty(68, 6), 6, true, NAVY);
+    this.text("GETAWAY", x + 362 * s, ty(200, 29), 29, true, NAVY);
+    this.ops.push(rgbOp(NAVY, true) + " 1.3 w 1 J [0.1 3.2] 0 d " + P(372, 266) + " m " + P(520, 230) + " " + P(640, 300) + " " + P(780, 250) + " c S [] 0 d 0 J");
+    var th = -20 * Math.PI / 180, pts = [[-18, -8], [20, 0], [-18, 8], [-10, 0]].map(function (q) {
+      var qx = q[0] * 1.1, qy = q[1] * 1.1; return P(792 + qx * Math.cos(th) - qy * Math.sin(th), 246 + qx * Math.sin(th) + qy * Math.cos(th));
+    });
+    this.ops.push(rgbOp(SAFF, false) + " " + pts[0] + " m " + pts[1] + " l " + pts[2] + " l " + pts[3] + " l h f");
+    this.text("ŞEHİR KAÇAMAĞI · 3 GECE", x + 370 * s, ty(328, 5.5), 5.5, false, NAVY);
+    for (var i = 0; i < 11; i++) this.rect(x + (840 + i * 11) * s, top + 214 * s, (3 + (i * 7) % 5) * s, 46 * s, NAVY);
+  };
+  PdfDoc.prototype.build = function (title) {
+    var self = this, N = this.pages.length, total = N;
+    // sayfa numaraları ve alt bilgi
+    for (var i = 0; i < N; i++) {
+      this.ops = this.pages[i];
+      this.line(this.M, this.H - 40, this.W - this.M, this.H - 40, LINE, 0.6);
+      this.text("72h Getaway · bilgi amaçlıdır, fiyatlar ve saatler değişebilir", this.M, this.H - 32, 8, false, MUTED);
+      var pn = (i + 1) + " / " + total;
+      this.text(pn, this.W - this.M - tw(this.fr, pn, 8), this.H - 32, 8, false, MUTED);
+    }
+    var pieces = [], pos = 0, offs = {};
+    var w = function (x) { var u = typeof x === "string" ? enc(x) : x; pieces.push(u); pos += u.length; };
+    var start = function (id) { offs[id] = pos; w(id + " 0 obj\n"); };
+    var dict = function (id, s) { start(id); w(s); w("\nendobj\n"); };
+    var stream = function (id, d, bytes) { start(id); w("<< " + d + " /Length " + bytes.length + " >>\nstream\n"); w(bytes); w("\nendstream\nendobj\n"); };
+    var fontObjs = function (f, base, name) {
+      var gl = Object.keys(f.used).map(Number).sort(function (a, b) { return a - b; });
+      var W = gl.map(function (g) { return g + " [" + Math.round(f.adv(g) * 1000 / f.upm) + "]"; }).join(" "), sc = 1000 / f.upm;
+      dict(base, "<< /Type /Font /Subtype /Type0 /BaseFont /" + name + " /Encoding /Identity-H /DescendantFonts [" + (base + 1) + " 0 R] /ToUnicode " + (base + 4) + " 0 R >>");
+      dict(base + 1, "<< /Type /Font /Subtype /CIDFontType2 /BaseFont /" + name + " /CIDSystemInfo << /Registry (Adobe) /Ordering (Identity) /Supplement 0 >> /FontDescriptor " + (base + 2) + " 0 R /DW 600 /W [" + W + "] /CIDToGIDMap /Identity >>");
+      dict(base + 2, "<< /Type /FontDescriptor /FontName /" + name + " /Flags 32 /FontBBox [" + f.bbox.map(function (v) { return Math.round(v * sc); }).join(" ") + "] /ItalicAngle 0 /Ascent " + Math.round(f.asc * sc) + " /Descent " + Math.round(f.desc * sc) + " /CapHeight 729 /StemV 80 /FontFile2 " + (base + 3) + " 0 R >>");
+      stream(base + 3, "/Length1 " + f.bytes.length, f.bytes);
+      var chunks = [], cur = [];
+      gl.forEach(function (g) { cur.push("<" + ("0000" + g.toString(16)).slice(-4) + "> <" + ("0000" + f.used[g].toString(16)).slice(-4) + ">"); if (cur.length === 100) { chunks.push(cur); cur = []; } });
+      if (cur.length) chunks.push(cur);
+      var cmap = "/CIDInit /ProcSet findresource begin 12 dict begin begincmap /CIDSystemInfo << /Registry (Adobe) /Ordering (UCS) /Supplement 0 >> def /CMapName /Adobe-Identity-UCS def /CMapType 2 def 1 begincodespacerange <0000> <FFFF> endcodespacerange\n" +
+        chunks.map(function (c) { return c.length + " beginbfchar\n" + c.join("\n") + "\nendbfchar"; }).join("\n") + "\nendcmap CMapName currentdict /CMap defineresource pop end end";
+      stream(base + 4, "", enc(cmap));
+    };
+    w(new Uint8Array([37, 80, 68, 70, 45, 49, 46, 52, 10, 37, 226, 227, 207, 211, 10]));
+    var kids = [], first = 13;
+    dict(1, "<< /Type /Catalog /Pages 2 0 R >>");
+    for (var p = 0; p < N; p++) kids.push((first + 2 * p + 1) + " 0 R");
+    dict(2, "<< /Type /Pages /Kids [" + kids.join(" ") + "] /Count " + N + " >>");
+    fontObjs(this.fr, 3, "DejaVuSansSubset"); fontObjs(this.fb, 8, "DejaVuSansBoldSubset");
+    for (var q = 0; q < N; q++) {
+      var cid = first + 2 * q, pid = cid + 1;
+      stream(cid, "", enc(this.pages[q].join("\n")));
+      dict(pid, "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + this.W + " " + this.H + "] /Resources << /Font << /F1 3 0 R /F2 8 0 R >> >> /Contents " + cid + " 0 R >>");
+    }
+    var info = first + 2 * N, hexT = "FEFF";
+    for (var ch of clean(title)) { var cp = ch.codePointAt(0); hexT += ("0000" + (cp > 0xFFFF ? 63 : cp).toString(16)).slice(-4); }
+    dict(info, "<< /Title <" + hexT + "> /Creator (72h Getaway) >>");
+    var count = info + 1, xpos = pos, xr = "xref\n0 " + count + "\n0000000000 65535 f \n";
+    for (var id = 1; id < count; id++) xr += ("0000000000" + offs[id]).slice(-10) + " 00000 n \n";
+    w(xr + "trailer\n<< /Size " + count + " /Root 1 0 R /Info " + info + " 0 R >>\nstartxref\n" + xpos + "\n%%EOF\n");
+    var all = new Uint8Array(pos), at = 0;
+    pieces.forEach(function (u) { all.set(u, at); at += u.length; });
+    return all;
+  };
+  function buildPdf(m) {
+    var d = new PdfDoc(), M = d.M, R = d.W - M, CW = R - M;
+    d.rect(0, 0, d.W, 150, NAVY);
+    d.ticket(M, 16, 0.26, NAVY);
+    d.text(m.title, M, 120, 15, true, CREAM);
+    d.text(m.sub, M, 140, 10, false, "#D5DEE8");
+    d.y = 176;
+    var sec = function (t) { d.ensure(44); d.text(t, M, d.y, 13, true, NAVY); d.rect(M, d.y + 19, 34, 3, SAFF); d.y += 32; };
+    sec("Seçimlerin");
+    m.picks.forEach(function (p) {
+      var lines = d.wrap(p[1], CW - 86, 10.5, false); d.ensure(lines.length * 15 + 6);
+      d.text(p[0], M, d.y + 1, 9, true, MUTED);
+      lines.forEach(function (ln, i) { d.text(ln, M + 86, d.y + i * 15, 10.5, false, NAVY); });
+      d.y += lines.length * 15 + 5;
+    });
+    d.y += 8; sec("Bütçe (uçak hariç)");
+    m.budget.forEach(function (r) {
+      d.ensure(24); d.text(r[0], M + 4, d.y + 3, 10.5, false, NAVY);
+      var s = clean(r[1]); d.text(s, R - 4 - tw(d.fr, s, 10.5), d.y + 3, 10.5, false, NAVY);
+      d.line(M, d.y + 21, R, d.y + 21, LINE, 0.6); d.y += 23;
+    });
+    d.ensure(34); d.rect(M, d.y + 4, CW, 26, SAFF);
+    d.text("Toplam", M + 8, d.y + 10, 12, true, NAVY);
+    var ts = clean(tl(m.total)); d.text(ts, R - 8 - tw(d.fb, ts, 12), d.y + 10, 12, true, NAVY); d.y += 38;
+    d.text("Kişi başı yaklaşık " + tl(m.perPerson) + " · uçak bileti dahil değildir.", M + 4, d.y, 10, false, MUTED); d.y += 16;
+    if (m.tickets) { d.text("Fiyatı bilinen biletler (" + m.o.ppl + " kişi): " + nf.format(m.tickets.ft) + " Ft ≈ " + tl(m.tickets.tl), M + 4, d.y, 10, false, MUTED); d.y += 16; }
+    if (m.days.length) {
+      d.y += 10; sec("Programın (" + m.o.nights + " gece / " + (m.o.nights + 1) + " gün)");
+      m.days.forEach(function (day) {
+        d.ensure(70); d.rect(M, d.y, CW, 24, CREAM); d.rect(M, d.y, 4, 24, SAFF);
+        d.text(day.head, M + 12, d.y + 6, 11.5, true, NAVY); d.y += 32;
+        day.items.forEach(function (it) {
+          var tl1 = d.wrap(it.title, CW - 64, 10.5, true), sl = d.wrap(it.sub || "", CW - 64, 9, false), nl = d.wrap(it.note || "", CW - 64, 8.5, false);
+          var h = tl1.length * 14 + sl.length * 12 + nl.length * 11 + 8; d.ensure(h);
+          d.text(it.t, M + 4, d.y, 10, true, NAVY);
+          var y = d.y;
+          tl1.forEach(function (ln) { d.text(ln, M + 60, y, 10.5, true, NAVY); y += 14; });
+          sl.forEach(function (ln) { d.text(ln, M + 60, y, 9, false, MUTED); y += 12; });
+          nl.forEach(function (ln) { d.text(ln, M + 60, y, 8.5, false, MUTED); y += 11; });
+          d.y += h;
+        });
+        d.y += 8;
+      });
+    }
+    d.y += 4; sec("Notlar");
+    m.notes.forEach(function (n) {
+      var lines = d.wrap(n, CW - 14, 9.5, false); d.ensure(lines.length * 13 + 5);
+      d.text("•", M + 2, d.y, 9.5, false, NAVY);
+      lines.forEach(function (ln, i) { d.text(ln, M + 14, d.y + i * 13, 9.5, false, MUTED); });
+      d.y += lines.length * 13 + 5;
+    });
+    return d.build("72h Getaway · " + m.title);
+  }
+  window.__makePdf = function () { return buildPdf(makeModel()); };
+  var slug = function (s) { return s.toLowerCase().replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ç/g, "c").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); };
+  async function savePdf() {
+    var msg = $("pdfMsg"); msg.textContent = "";
+    var m = makeModel(), bytes;
+    try { bytes = buildPdf(m); } catch (e) { msg.textContent = "PDF hazırlanamadı: " + (e && e.message); return; }
+    var name = "72h-getaway-" + slug(m.city) + (m.o.a ? "-" + isoD(m.o.a) : "") + ".pdf", dl = null;
+    try { dl = (window.claude && window.claude.use) ? await window.claude.use("downloads") : null; } catch (e) { dl = null; }
+    if (dl) {
+      try { await dl.save({ filename: name, data: bytes }); msg.textContent = "PDF kaydedildi."; }
+      catch (e) { msg.textContent = (e && e.code === "declined") ? "Kaydetmekten vazgeçtin." : "PDF kaydedilemedi, tekrar dene."; }
+    } else {
+      try { window.print(); msg.textContent = "Yazdır penceresinde 'PDF olarak kaydet'i seç."; } catch (e) { msg.textContent = "Bu görünümde indirme kullanılamıyor."; }
+    }
+  }
+
+  /* ====================== EKRANLAR ====================== */
+  function renderChips(o) {
+    var totals = D.map(function (d) { return cost(d, o, hIdx, rIdx).sum * o.rate; });
+    var sorted = totals.slice().sort(function (a, b) { return a - b; });
+    var q = [sorted[Math.floor(sorted.length * 0.25)], sorted[Math.floor(sorted.length * 0.5)], sorted[Math.floor(sorted.length * 0.75)]];
+    var tier = function (t) { return t <= q[0] ? 1 : t <= q[1] ? 2 : t <= q[2] ? 3 : 4; };
+    var box = $("chips"); box.innerHTML = "";
+    QUICK.forEach(function (name) {
+      var i = idxOf(name), t = totals[i], tr = tier(t), b = document.createElement("button");
+      b.type = "button"; b.className = "cchip t" + tr;
+      b.setAttribute("aria-pressed", i === +$("city").value ? "true" : "false");
+      b.setAttribute("aria-label", name + ", yaklaşık " + nf.format(Math.round(t / 1000)) + " bin lira, " + TNAME[tr]);
+      b.innerHTML = "<b>" + name + "</b><small>~" + nf.format(Math.round(t / 1000)) + " bin TL</small>";
+      b.addEventListener("click", function () { $("city").value = i; resetCity(); render(); });
+      box.appendChild(b);
+    });
+    $("cleg").innerHTML = '<span class="t1">ucuz</span><span class="t2">orta</span><span class="t3">pahalı</span><span class="t4">çok pahalı</span>';
+    return { totals: totals, tier: tier };
+  }
+  // borsa bandı: bir kez kurulur, her değişiklikte yalnızca rakamlar güncellenir (animasyon kesilmez)
+  function buildBoard() {
+    var track = $("btrack");
+    for (var rep = 0; rep < 2; rep++) QUICK.forEach(function (name) {
+      var i = idxOf(name), b = document.createElement("button");
+      b.type = "button"; b.className = "bitem"; b.dataset.c = i;
+      if (rep) { b.tabIndex = -1; b.setAttribute("aria-hidden", "true"); }
+      b.innerHTML = '<span class="dot"></span><span class="nm">' + name + '</span><span class="pr"></span><span class="ch"></span>';
+      b.addEventListener("click", function () {
+        $("city").value = i; resetCity(); render();
+        $("h-form").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      track.appendChild(b);
+    });
+  }
+  function updateBoard(res) {
+    var cur = +$("city").value, selT = res.totals[cur];
+    document.querySelectorAll(".bitem").forEach(function (b) {
+      var i = +b.dataset.c, t = res.totals[i], d = (t - selT) / selT * 100, ch = b.querySelector(".ch");
+      b.className = "bitem t" + res.tier(t) + (i === cur ? " sel" : "");
+      b.querySelector(".pr").textContent = nf.format(Math.round(t)) + " TL";
+      if (i === cur) { ch.textContent = "SEÇİLİ"; ch.className = "ch"; }
+      else { ch.textContent = (d >= 0 ? "▲ +" : "▼ ") + Math.abs(Math.round(d)) + "%"; ch.className = "ch " + (d >= 0 ? "up" : "dn"); }
+    });
+    if (!$("btrack").dataset.set) {
+      $("btrack").dataset.set = "1";
+      $("btrack").style.setProperty("--dur", Math.max(30, $("btrack").scrollWidth / 2 / 70).toFixed(1) + "s");
+    }
+  }
+  function renderHotels(c, o) {
+    var hs = hotelsOf(c), g = $("hgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("hCity").textContent = c.n;
+    hs.forEach(function (h, i) {
+      var q = (h.name ? h.name + ", " : "") + c.n + ", " + c.c, lab = document.createElement("label");
+      lab.className = "hotel" + (i === hIdx ? " on" : "");
+      lab.innerHTML =
+        '<input type="radio" name="hotel" value="' + i + '"' + (i === hIdx ? " checked" : "") + '>' +
+        '<div class="top"><span class="tier">' + h.t + '</span>' + (h.sc ? '<span class="score" title="Booking puanı">' + h.sc + '</span>' : '') + '</div>' +
+        '<p class="hname">' + (h.name || h.label) + '</p>' +
+        '<div class="price">~' + h.p + ' € <small>/ gece</small></div>' +
+        '<p class="hdesc">' + h.desc + '</p>' +
+        '<div class="hfoot"><span class="chip"></span><a href="' + bookingUrl(q, o) + '" target="_blank" rel="noopener noreferrer">' + (h.name ? "Booking'de bak" : "Booking'de ara") + ' ↗</a></div>';
+      chipEl(lab.querySelector(".chip"), h.s);
+      lab.querySelector("input").addEventListener("change", function () { hIdx = i; render(); });
+      lab.querySelector("a").addEventListener("click", function (e) { e.stopPropagation(); });
+      g.appendChild(lab);
+    });
+    var card = g.children[hIdx];
+    if (hFocus && card) { g.scrollLeft = Math.max(0, card.offsetLeft - (g.clientWidth - card.offsetWidth) / 2); hFocus = false; }
+    else g.scrollLeft = sl;
+  }
+  function renderRestos(c) {
+    var rs = restosOf(c), g = $("rgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("rcCity").textContent = c.n;
+    $("rLead").innerHTML = (visits === 0 ? "Şu an <b>Hiç</b> seçili, bu yüzden viral restoran bütçeye eklenmiyor. Yukarıdan öğün sayısını artır." : "Ucuz, orta ve şık. Birine dokun, bütçe o restorana göre güncellensin.") +
+      ' <a href="https://www.tiktok.com/search?q=' + encodeURIComponent(c.n + " restaurants") + '" target="_blank" rel="noopener noreferrer">TikTok\'ta ' + c.n + ' yemek önerilerine bak ↗</a>';
+    rs.forEach(function (r, i) {
+      var q = r.q || ("popular viral restaurants in " + c.n + " " + c.c), lab = document.createElement("label");
+      lab.className = "hotel" + (i === rIdx ? " on" : "");
+      lab.innerHTML =
+        '<input type="radio" name="resto" value="' + i + '"' + (i === rIdx ? " checked" : "") + '>' +
+        '<div class="top"><span class="tier">' + r.t + '</span>' + (r.sc ? '<span class="score" title="' + (r.sct || "Puan") + '">' + r.sc + '</span>' : '') + '</div>' +
+        '<p class="hname">' + (r.name || r.label) + '</p>' +
+        '<div class="price">~' + r.p + ' € <small>/ kişi</small></div>' +
+        '<p class="hdesc">' + r.desc + '</p>' +
+        '<div class="hfoot"><span class="chip"></span><a href="' + mapsUrl(q) + '" target="_blank" rel="noopener noreferrer">' + (r.name ? "Haritada aç" : "Haritada ara") + ' ↗</a></div>';
+      chipEl(lab.querySelector(".chip"), r.s);
+      lab.querySelector("input").addEventListener("change", function () { rIdx = i; render(); });
+      lab.querySelector("a").addEventListener("click", function (e) { e.stopPropagation(); });
+      g.appendChild(lab);
+    });
+    var card = g.children[rIdx];
+    if (rFocus && card) { g.scrollLeft = Math.max(0, card.offsetLeft - (g.clientWidth - card.offsetWidth) / 2); rFocus = false; }
+    else g.scrollLeft = sl;
+  }
+  var openInfo = {}, trKeep = true, hFocus = true, rFocus = true;
+  function renderTrip(c, o) {
+    $("tcCity").textContent = c.n;
+    var body = $("tripBody");
+    var s1 = trKeep && $("plist") ? $("plist").scrollLeft : 0, s2 = trKeep && $("pscroll") ? $("pscroll").scrollLeft : 0; trKeep = true;
+    if (!c.places) {
+      body.innerHTML = '<p class="empty">Gezi planı şimdilik <b>Budapeşte</b> için hazır. ' + c.n + ' için gezilecek yerleri, bilgilerini ve otelden mesafelerini araştırıp sırayla ekleyeceğiz. Şimdilik ' +
+        '<a href="' + mapsUrl("tourist attractions in " + c.n + " " + c.c) + '" target="_blank" rel="noopener noreferrer">haritada gezilecek yerlere bak ↗</a></p>';
+      return;
+    }
+    var hotel = hotelsOf(c)[hIdx], P = c.places;
+    var arrows = function (id, what) {
+      return '<div class="arrows"><button type="button" data-t="' + id + '" data-d="-1" aria-label="Önceki ' + what + '">‹</button><button type="button" data-t="' + id + '" data-d="1" aria-label="Sonraki ' + what + '">›</button></div>';
+    };
+    body.innerHTML = '<p class="lead">Seçtiğin otelden (<b>' + hotel.name + '</b>) uzaklıklar kartlarda. Yana kaydırarak gez, dokunarak seç ya da planı bize bırak.</p>' + priceBox() +
+      '<div class="actions"><button type="button" class="btn" id="autoPlan">✨ Bana tur planı çıkar</button><button type="button" class="btn ghost" id="clearPlan">Seçimi temizle</button></div>' +
+      '<div class="rowhead"><h3>Gezilecek yerler <span class="hint">(' + P.length + ' yer · ' + picked.length + ' seçili)</span></h3>' + arrows("plist", "yerler") + '</div>' +
+      '<div class="hs" id="plist" tabindex="0" role="region" aria-label="Gezilecek yerler, yatay kaydırılır"></div>' +
+      '<div class="rowhead" style="margin-top:14px"><h3>Öneri tur planın</h3>' + arrows("pscroll", "günler") + '</div>' +
+      '<div id="planOut"></div>';
+    var g = $("plist");
+    P.forEach(function (p, i) {
+      var l = leg(hotel, p), lab = document.createElement("label"), on = picked.indexOf(i) >= 0;
+      lab.className = "prow" + (on ? " on" : "");
+      lab.innerHTML =
+        '<input type="checkbox"' + (on ? " checked" : "") + '><span class="ck" aria-hidden="true"></span>' +
+        '<div><div class="pt"><b>' + p.n + '</b></div><span class="tg">' + p.tag + '</span>' +
+        '<p class="dist">' + legTxt(l).replace(" (uzun, taksi ya da metro mantıklı)", "") + (l.walk > 35 ? ' <span>· uzak</span>' : '') + '</p>' +
+        '<p class="meta">' + p.price + ' · yaklaşık ' + fmtMin(p.mins) + '</p>' +
+        '<details' + (openInfo[i] ? " open" : "") + '><summary>Bilgi</summary><p>' + p.info + '</p>' +
+        '<a href="' + mapsUrl(p.n + " " + c.n) + '" target="_blank" rel="noopener noreferrer">Haritada aç ↗</a></details></div>';
+      lab.querySelector("input").addEventListener("change", function () {
+        var k = picked.indexOf(i); if (k >= 0) picked.splice(k, 1); else picked.push(i); render();
+      });
+      var dt = lab.querySelector("details");
+      dt.addEventListener("toggle", function () { openInfo[i] = dt.open; });
+      lab.querySelector("a").addEventListener("click", function (e) { e.stopPropagation(); });
+      g.appendChild(lab);
+    });
+    $("autoPlan").addEventListener("click", function () { picked = defaultPicks(c, o); trKeep = false; render(); });
+    $("clearPlan").addEventListener("click", function () { picked = []; trKeep = false; render(); });
+    var out = $("planOut");
+    if (!picked.length) { out.innerHTML = '<p class="empty">Henüz yer seçmedin. Yukarıdan dokunarak seç ya da <b>Bana tur planı çıkar</b>\'a bas.</p>'; g.scrollLeft = s1; return; }
+    var plan = buildPlan(P, hotel, o, picked), h = '<div class="hs" id="pscroll" tabindex="0" role="region" aria-label="Gün gün plan, yatay kaydırılır">', ft = 0;
+    plan.forEach(function (stops, di) {
+      var date = o.a ? new Date(o.a.getTime() + di * 86400000) : null, wk = date && [5, 6, 0].indexOf(date.getUTCDay()) >= 0;
+      var head = (di + 1) + ". Gün" + (date ? " · " + DAYS[date.getUTCDay()] + ", " + dShort.format(date) : "");
+      h += '<div class="day"><h3>' + head + (di === 0 ? " (varış, hafif)" : di === plan.length - 1 ? " (dönüş, hafif)" : "") + '</h3>';
+      if (!stops.length) { h += '<p class="leg">Bu gün serbest.</p></div>'; return; }
+      h += '<ol class="stops">'; var prev = hotel, prevName = "Otelden", dur = 0, taxi = 0;
+      stops.forEach(function (pi, si) {
+        var p = P[pi], l = leg(prev, p), pr = (wk && p.priceWe) ? p.priceWe : p.price;
+        dur += p.mins; taxi += l.taxi; ft += (wk && p.ftWe) ? p.ftWe : p.ft;
+        h += '<li><span class="n">' + (si + 1) + '</span><div><b>' + p.n + '</b><div class="leg">' + prevName + ': ' + legTxt(l) + '</div><p class="why">' + pr + ' · yaklaşık ' + fmtMin(p.mins) + '</p></div></li>';
+        prev = p; prevName = "Önceki duraktan";
+      });
+      h += '</ol><div class="foot">Gezi: ' + fmtMin(dur) + ' · taksi yol: ~' + fmtMin(taxi) + '. Çalışma saatlerini kontrol et.</div></div>';
+    });
+    h += '</div>';
+    if (ft > 0) {
+      var tot = ft * o.ppl;
+      h += '<p class="plansum" style="margin-top:6px">Fiyatı bilinen biletler (' + o.ppl + ' kişi): <b>' + nf.format(tot) + ' Ft</b> ≈ <b>' + tl(tot / HUF_PER_EUR * o.rate) + '</b>. Diğer yerler ücretsiz ya da fiyatı belli değil, bütçedeki "Gezi" kalemiyle birlikte düşün.</p>';
+    }
+    out.innerHTML = h;
+    g.scrollLeft = s1; var ps = $("pscroll"); if (ps) ps.scrollLeft = s2;
+  }
+  function syncArrows() {
+    document.querySelectorAll(".arrows").forEach(function (box) {
+      var btn = box.querySelector("button"), tg = btn && $(btn.dataset.t);
+      box.style.display = tg && tg.scrollWidth > tg.clientWidth + 2 ? "flex" : "none";
+    });
+  }
+  function resetCity() { hIdx = 1; rIdx = 1; picked = []; openInfo = {}; trKeep = false; hFocus = true; rFocus = true; }
+
+  function render() {
+    var o = inputs(), c = D[+$("city").value], hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx), total = k.sum * o.rate;
+    $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), c.s);
+    $("rTotal").textContent = tl(total);
+    $("rSub").textContent = (o.a && o.b ? dShort.format(o.a) + " – " + dShort.format(o.b) + " · " : "") + o.ppl + " kişi · " + o.nights + " gece · kişi başı yaklaşık " + tl(total / o.ppl);
+    var h = hs[hIdx], r = rs[rIdx];
+    $("rHotel").innerHTML = "Otel: " + (h.name || h.label) + " · ~" + h.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") +
+      "<br>Restoran: " + (visits === 0 ? "eklenmedi" : (r.name || r.label) + " · ~" + r.p + " € / kişi × " + Math.min(visits, o.nights + 1) + " öğün");
+    var note = $("rNote"); note.hidden = !c.note; note.textContent = c.note;
+    var parts = [["Otel", k.hotel * o.rate], ["Yemek", k.food * o.rate], ["Restoran", k.resto * o.rate], ["Ulaşım", k.trans * o.rate], ["Gezi", k.act * o.rate]];
+    var max = Math.max.apply(null, parts.map(function (p) { return p[1]; })) || 1;
+    $("brk").innerHTML = '<li class="air"><span>Uçak</span><span>Biletini sen alıyorsun ✈️</span></li>' + parts.map(function (p) {
+      return '<li><span>' + p[0] + '</span><div class="track"><div class="fill" style="width:' + (p[1] / max * 100).toFixed(1) + '%"></div></div><span class="amt">' + tl(p[1]) + '</span></li>';
+    }).join("");
+    var res = renderChips(o); updateBoard(res);
+    renderHotels(c, o); renderRestos(c); renderTrip(c, o);
+    syncArrows();
+  }
+
+  /* ====================== BAŞLANGIÇ ====================== */
+  var sel = $("city"), regions = [];
+  D.forEach(function (c) { if (regions.indexOf(c.r) < 0) regions.push(c.r); });
+  regions.forEach(function (r) {
+    var g = document.createElement("optgroup"); g.label = r;
+    D.forEach(function (c, i) { if (c.r !== r) return; var o = document.createElement("option"); o.value = i; o.textContent = c.n + " · " + c.c; g.appendChild(o); });
+    sel.appendChild(g);
+  });
+  sel.value = idxOf("Budapeşte");
+  buildBoard();
+
+  $("foodSeg").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    foodMult = parseFloat(b.dataset.v); render();
+  });
+  $("visSeg").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+    visits = parseInt(b.dataset.v, 10); render();
+  });
+  sel.addEventListener("change", function () { resetCity(); render(); });
+  ["d1", "d2", "ppl", "rate", "act"].forEach(function (id) { $(id).addEventListener("input", render); $(id).addEventListener("change", render); });
+  $("rate").addEventListener("input", function () { rateTouched = true; });
+  $("d1").addEventListener("change", function () {
+    var a = parseD($("d1").value), b = parseD($("d2").value);
+    if (a && (!b || b <= a)) $("d2").value = isoD(new Date(a.getTime() + 3 * 86400000));
+    if (a) $("d2").min = isoD(new Date(a.getTime() + 86400000));
+    render();
+  });
+  $("dice").addEventListener("click", function () {
+    var i; do { i = Math.floor(Math.random() * D.length); } while (i === +sel.value);
+    sel.value = i; resetCity(); render();
+  });
+  $("pdfBtn").addEventListener("click", savePdf);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".arrows button[data-t]"); if (!b) return;
+    var tg = $(b.dataset.t); if (!tg) return;
+    var rm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    tg.scrollBy({ left: +b.dataset.d * Math.max(260, tg.clientWidth * 0.8), behavior: rm ? "auto" : "smooth" });
+  });
+  window.addEventListener("resize", syncArrows);
+  $("bpause").addEventListener("click", function () {
+    var p = $("btrack").parentNode.parentNode.classList.toggle("paused");
+    this.setAttribute("aria-pressed", p ? "true" : "false"); this.textContent = p ? "▶" : "⏸";
+    this.setAttribute("aria-label", p ? "Bandı başlat" : "Bandı durdur");
+  });
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fly = $("fly"), plane = $("plane");
+  if (reduce && fly) { fly.parentNode.removeChild(fly); plane.setAttribute("transform", "translate(960,140) rotate(35)"); }
+
+  applyData();
+  applyPrices();
+  render();
+  // Kendi sitende barındırılan sürümde (window.DATA_URL tanımlı) güncel kur dosyasını oku. claude.ai'da bu satır çalışmaz.
+  if (window.PRICES_URL && window.fetch) {
+    fetch(window.PRICES_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.items && typeof d.items === "object") { PRICES = d; applyPrices(); render(); }
+    }).catch(function () {});
+    if (window.PRICE_STATUS_URL) fetch(window.PRICE_STATUS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.lastRun) { PRICE_STATUS = d; render(); } }).catch(function () {});
+  }
+  if (window.DATA_URL && window.fetch) {
+    fetch(window.DATA_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && typeof d.eurTry === "number" && typeof d.eurHuf === "number" && d.updated) { DATA = d; applyData(); render(); }
+    }).catch(function () {});
+  }
+})();
+</script>
+</body>
+</html>

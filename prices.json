@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "updated": "2026-10-02",
+  "items": {
+    "szechenyi_weekday": {
+      "label": "Széchenyi hamamı, pazartesi-perşembe, dolaplı günlük bilet",
+      "value": 13200,
+      "currency": "Ft",
+      "source": "https://www.szechenyibath.hu/prices",
+      "checked": "2026-10-02",
+      "tier": "resmi"
+    },
+    "szechenyi_weekend": {
+      "label": "Széchenyi hamamı, cuma-pazar, dolaplı günlük bilet",
+      "value": 14800,
+      "currency": "Ft",
+      "source": "https://www.szechenyibath.hu/prices",
+      "checked": "2026-10-02",
+      "tier": "resmi"
+    },
+    "szechenyi_early": {
+      "label": "Széchenyi \"Good morning\" bileti (9:00'a kadar), pazartesi-perşembe",
+      "value": 10500,
+      "currency": "Ft",
+      "source": "https://www.szechenyibath.hu/prices",
+      "checked": "2026-10-02",
+      "tier": "resmi"
+    },
+    "szechenyi_friday_early": {
+      "label": "Széchenyi \"Good morning\" bileti, yalnızca cuma",
+      "value": 11800,
+      "currency": "Ft",
+      "source": "https://www.szechenyibath.hu/prices",
+      "checked": "2026-10-02",
+      "tier": "resmi"
+    },
+    "parlament_noneea": {
+      "label": "Parlamento turu, AEA dışı yetişkin",
+      "value": 14000,
+      "currency": "Ft",
+      "source": "https://www.parlament.hu/en/web/orszaghaz/jegyarak",
+      "checked": "2026-10-02",
+      "tier": "resmi"
+    },
+    "bkk_72h": {
+      "label": "BKK 72 saatlik seyahat kartı",
+      "value": 5750,
+      "currency": "Ft",
+      "source": "https://bkk.hu/en/tickets-and-passes/prices/",
+      "checked": "2026-10-02",
+      "tier": "resmi"
+    },
+    "bkk_100e": {
+      "label": "Havalimanı otobüsü 100E, tek yön",
+      "value": 2500,
+      "currency": "Ft",
+      "source": "https://bkk.hu/en/tickets-and-passes/prices/airport-shuttle-bus-single-ticket/",
+      "checked": "2026-10-02",
+      "tier": "resmi"
+    },
+    "opera_tour_en": {
+      "label": "Macar Devlet Operası, OperaTour (İngilizce tur)",
+      "value": 12000,
+      "currency": "Ft",
+      "tier": "resmi",
+      "source": "https://www.opera.hu/en/services/operatour/",
+      "checked": "2026-10-02"
+    },
+    "basilica_church": {
+      "label": "Aziz Stephen Bazilikası, kilise salonu (yetişkin)",
+      "value": 2600,
+      "currency": "Ft",
+      "tier": "ikincil",
+      "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest",
+      "sources": [
+        "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest",
+        "https://budapestfrontier.com/st-stephens-basilica/"
+      ],
+      "checked": "2026-10-02"
+    },
+    "basilica_panorama": {
+      "label": "Bazilika, panorama terası ve hazine",
+      "value": 5000,
+      "currency": "Ft",
+      "tier": "ikincil",
+      "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest",
+      "sources": [
+        "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest"
+      ],
+      "checked": "2026-10-02"
+    },
+    "basilica_all": {
+      "label": "Bazilika, hepsi bir arada bilet",
+      "value": 6800,
+      "currency": "Ft",
+      "tier": "ikincil",
+      "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest",
+      "sources": [
+        "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest"
+      ],
+      "checked": "2026-10-02"
+    },
+    "bastion_upper": {
+      "label": "Balıkçı Tabyası, üst kuleler (yetişkin)",
+      "value": 1700,
+      "currency": "Ft",
+      "tier": "ikincil",
+      "source": "https://hungaryunlocked.com/fishermans-bastion-budapest-guide/",
+      "sources": [
+        "https://hungaryunlocked.com/fishermans-bastion-budapest-guide/"
+      ],
+      "checked": "2026-10-02"
+    }
+  }
+}
