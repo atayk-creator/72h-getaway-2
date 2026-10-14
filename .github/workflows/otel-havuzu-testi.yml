@@ -1,0 +1,28 @@
+name: Otel havuzu testi (Paris, Hotellook)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Testler
+        run: node scripts/test-paris-otel.mjs
+      - name: Hotellook'tan Paris havuzunu çek
+        env:
+          TRAVELPAYOUTS_TOKEN: ${{ secrets.TRAVELPAYOUTS_TOKEN }}
+        run: node scripts/paris-otel-havuzu.mjs
+      - name: Sonucu indirilebilir yap
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: paris-otel-havuzu
+          path: |
+            paris-otel-havuzu.json
+            paris-otel-ozet.md
+          if-no-files-found: ignore
