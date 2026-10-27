@@ -1,0 +1,33 @@
+{
+  "aciklama": "Otel fiyat robotunun listesi. Robot bu dosyayi okur. Otel eklemek ya da cikarmak icin sadece bu dosyayi degistir.",
+  "ayarlar": {
+    "konaklama": "Cuma giris, Pazar cikis (2 gece)",
+    "kisi": 2,
+    "para_birimi": "EUR",
+    "pazar": "tr",
+    "kac_hafta_sonu": 26,
+    "ozel_tarihler": [],
+    "kontrol_takvimi": [
+      { "kademe": "sicak",    "ilk": 1,  "son": 4,  "gunler": ["Pzt", "Car", "Cum"], "iki_haftada_bir": false },
+      { "kademe": "ilik",     "ilk": 5,  "son": 8,  "gunler": ["Pzt", "Per"],        "iki_haftada_bir": false },
+      { "kademe": "planlama", "ilk": 9,  "son": 13, "gunler": ["Pzt"],               "iki_haftada_bir": false },
+      { "kademe": "uzak",     "ilk": 14, "son": 26, "gunler": ["Pzt"],               "iki_haftada_bir": true }
+    ]
+  },
+  "sehirler": [
+    {
+      "sehir": "Budapeşte",
+      "ulke": "Macaristan",
+      "oteller": [
+        { "id": "bud-parisi-udvar", "ad": "Párisi Udvar Hotel",              "arama": "Párisi Udvar Hotel Budapest",         "kategori": "ikonik",   "not": "Tarihi, cam tavanlı bir pasajın içinde. Ulaşılabilir ikonik seçenek." },
+        { "id": "bud-kempinski",    "ad": "Kempinski Hotel Corvinus",        "arama": "Kempinski Hotel Corvinus Budapest",   "kategori": "pahali",   "not": "2025'te baştan yenilendi, merkezi, ödüllü spa." },
+        { "id": "bud-aria",         "ad": "Aria Hotel Budapest",             "arama": "Aria Hotel Budapest",                 "kategori": "pahali",   "not": "Müzik temalı butik otel, ünlü çatı barı." },
+        { "id": "bud-clark",        "ad": "Hotel Clark",                     "arama": "Hotel Clark Budapest",                "kategori": "konforlu", "not": "Sadece yetişkin, Zincirli Köprü'nün dibinde, çatı terası." },
+        { "id": "bud-moments",      "ad": "Hotel Moments",                   "arama": "Hotel Moments Budapest",              "kategori": "konforlu", "not": "Andrássy Caddesi'nde tarihi bina, kahvaltısı övülüyor." },
+        { "id": "bud-rum",          "ad": "Hotel Rum",                       "arama": "Hotel Rum Budapest",                  "kategori": "konforlu", "not": "Modern tasarım, bar sokaklarına yürüme mesafesinde." },
+        { "id": "bud-d8",           "ad": "D8 Hotel",                        "arama": "D8 Hotel Budapest",                   "kategori": "ucuz",     "not": "Yüksek puanlı bütçe oteli, merkezde." },
+        { "id": "bud-roombach",     "ad": "Roombach Hotel Budapest Center",  "arama": "Roombach Hotel Budapest Center",      "kategori": "ucuz",     "not": "Yüksek puanlı, sade ve merkezi." }
+      ]
+    }
+  ]
+}

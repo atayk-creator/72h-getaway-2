@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>72h Getaway · Hafta Sonu Otel Fiyatları</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #FBF6EC; --surface: #FFFFFF; --ink: #0F2A43; --muted: #5B6B7C; --line: #E3DCCB;
+  --accent: #F4A62A; --band: #0F2A43; --chip-ink: #6B4A00; --chip-bg: #FCE9C4; --focus: #0F2A43; --pick: #FFF4D6;
+  --good: #1F8A5B; --good-bg: #DDF1E6; --bad: #B8364A; --bad-bg: #F8DDE1; --mid-bg: #F1ECDF; --full: #8C96A1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F2A43; --surface: #153552; --ink: #FBF6EC; --muted: #A9B8C7; --line: #2F506D;
+    --band: #0A1F33; --chip-ink: #FBE3B0; --chip-bg: #5A4313; --focus: #F4A62A; --pick: #3A4A52;
+    --good: #7BD6A6; --good-bg: #1D4A3C; --bad: #F2A0AC; --bad-bg: #5A2A35; --mid-bg: #22405C; --full: #7C8C9C;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F2A43; --surface: #153552; --ink: #FBF6EC; --muted: #A9B8C7; --line: #2F506D;
+  --band: #0A1F33; --chip-ink: #FBE3B0; --chip-bg: #5A4313; --focus: #F4A62A; --pick: #3A4A52;
+  --good: #7BD6A6; --good-bg: #1D4A3C; --bad: #F2A0AC; --bad-bg: #5A2A35; --mid-bg: #22405C; --full: #7C8C9C;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; line-height: 1.5; padding-bottom: env(safe-area-inset-bottom, 0px); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+a { color: inherit; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+[hidden] { display: none !important; }
+
+header { background: var(--band); color: #FBF6EC; padding: calc(env(safe-area-inset-top, 0px) + 22px) 0 26px; }
+header .back { display: inline-block; color: #F4A62A; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+header .back:hover { text-decoration: underline; }
+header h1 { font-size: clamp(1.45rem, 4.4vw, 2.2rem); margin: 10px 0 6px; letter-spacing: -0.02em; line-height: 1.15; }
+header p { margin: 0; color: #D5DEE8; max-width: 62ch; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.meta span { background: rgba(251,246,236,0.12); border: 1.5px solid rgba(251,246,236,0.28); border-radius: 999px; padding: 4px 12px; font-size: 0.86rem; }
+
+main.wrap { padding-top: 26px; padding-bottom: 40px; }
+h2 { font-size: 1.25rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+.lead { color: var(--muted); margin: 0 0 14px; }
+section + section { margin-top: 38px; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.filters button { font: inherit; font-size: 0.92rem; background: var(--surface); color: var(--ink); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #0F2A43; font-weight: 600; }
+
+.strip { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 12px; scroll-snap-type: x proximity; }
+.wk { flex: 0 0 auto; width: 132px; scroll-snap-align: start; background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+.wk .d { font-weight: 700; font-size: 0.95rem; }
+.wk .k { font-size: 0.78rem; color: var(--muted); }
+.wk .v { margin-top: 6px; font-weight: 700; font-size: 1.05rem; }
+.wk .n { font-size: 0.78rem; color: var(--muted); }
+.wk.good { background: var(--good-bg); border-color: var(--good); }
+.wk.good .v { color: var(--good); }
+.wk.bad .v { color: var(--bad); }
+.wk.top { box-shadow: 0 0 0 3px rgba(244,166,42,0.55); }
+.badge { display: inline-block; font-size: 0.72rem; font-weight: 700; background: var(--accent); color: #0F2A43; border-radius: 6px; padding: 1px 6px; margin-left: 4px; vertical-align: 1px; }
+
+.cat { margin-top: 26px; }
+.cat h3 { font-size: 1.02rem; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card .top { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; }
+.card h4 { margin: 0; font-size: 1.05rem; line-height: 1.25; }
+.card .note { margin: 2px 0 0; color: var(--muted); font-size: 0.9rem; }
+.chip { flex: 0 0 auto; font-size: 0.75rem; font-weight: 700; background: var(--chip-bg); color: var(--chip-ink); border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+.now { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.now .p { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; }
+.now .s { color: var(--muted); font-size: 0.88rem; }
+.best { font-size: 0.9rem; background: var(--pick); border-radius: 10px; padding: 7px 10px; }
+.cal { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin: 0; list-style: none; padding-left: 0; }
+.cal li { flex: 0 0 auto; width: 62px; border-radius: 9px; padding: 5px 4px; text-align: center; font-size: 0.74rem; background: var(--mid-bg); }
+.cal li b { display: block; font-size: 0.86rem; }
+.cal li.lo { background: var(--good-bg); color: var(--good); }
+.cal li.hi { background: var(--bad-bg); color: var(--bad); }
+.cal li.full { background: repeating-linear-gradient(135deg, var(--mid-bg) 0 6px, transparent 6px 12px); color: var(--full); }
+.cal li.none { color: var(--muted); }
+.card .foot { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 0.82rem; color: var(--muted); margin-top: auto; }
+.card .foot a { color: var(--ink); font-weight: 600; }
+.wait { color: var(--muted); font-size: 0.92rem; }
+
+.empty { background: var(--surface); border: 1.5px dashed var(--line); border-radius: 16px; padding: 18px; color: var(--muted); }
+.notes { margin-top: 40px; border-top: 1.5px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 0.88rem; }
+.notes ul { margin: 6px 0 0; padding-left: 18px; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--muted); margin: 6px 0 0; }
+.legend i { display: inline-block; width: 14px; height: 14px; border-radius: 4px; vertical-align: -2px; margin-right: 5px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="back" href="index.html">← Turunu kur</a>
+    <h1 id="title">Hafta sonu otel fiyatları</h1>
+    <p>Seçtiğimiz otellerin <b>Cuma giriş, Pazar çıkış</b> fiyatları. 2 kişi, 2 gece, en ucuz teklif. Fiyatlar robot tarafından düzenli kontrol edilir.</p>
+    <div class="meta" id="meta"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="filters" role="group" aria-label="Kategori filtresi" id="filters"></div>
+
+  <section aria-labelledby="h-cheap">
+    <h2 id="h-cheap">En ucuz hafta sonları</h2>
+    <p class="lead">Seçili otellerin her hafta sonu fiyatı, o otelin kendi ortalamasıyla karşılaştırılır. Yeşil olanlar ortalamadan ucuz.</p>
+    <div class="strip" id="strip"></div>
+  </section>
+
+  <section aria-labelledby="h-hotels">
+    <h2 id="h-hotels">Oteller</h2>
+    <p class="lead">Her kartta en yakın hafta sonunun fiyatı ve önümüzdeki hafta sonlarının takvimi var.</p>
+    <div class="legend"><span><i style="background:var(--good-bg);border:1.5px solid var(--good)"></i>Otelin en ucuz üçte biri</span><span><i style="background:var(--bad-bg);border:1.5px solid var(--bad)"></i>En pahalı üçte biri</span><span><i style="background:repeating-linear-gradient(135deg,var(--mid-bg) 0 4px,transparent 4px 8px);border:1.5px solid var(--line)"></i>Dolu</span></div>
+    <div id="list"></div>
+  </section>
+
+  <div class="notes">
+    <b>Bilmen gerekenler</b>
+    <ul>
+      <li>Fiyatlar kontrol anındaki en ucuz tekliftir. Otel fiyatları gün içinde değişebilir, rezervasyondan önce güncel fiyata bak.</li>
+      <li>Fiyat, Google Hotels'te görünen rezervasyon sitelerinin en ucuzudur. Hangi siteden geldiği kartta yazar.</li>
+      <li>"Dolu" otelin o tarihler için satışta oda göstermediği anlamına gelir. İptallerle yer açılabilir, robot kontrol etmeye devam eder.</li>
+      <li>Yakın hafta sonları haftada 3 kez, uzak hafta sonları daha seyrek kontrol edilir.</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+(function () {
+  var CAT = { ikonik: "👑 İkonik", pahali: "💎 Pahalı", konforlu: "🛋️ Konforlu", ucuz: "💸 Ucuz" };
+  var ORDER = ["ikonik", "pahali", "konforlu", "ucuz"];
+  var LABEL = { dolu: "Dolu", bulunamadi: "Bulunamadı", hata: "Kontrol edilemedi", sonuc_yok: "Sonuç yok" };
+  var $ = function (id) { return document.getElementById(id); };
+  var hotelsDoc = null, prices = null, filter = "hepsi";
+  var dShort = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "short", timeZone: "UTC" });
+  var dTime = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", weekday: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Istanbul" });
+  var eur = function (n) { return Math.round(n).toLocaleString("tr-TR") + " €"; };
+  var esc = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); };
+  var safeUrl = function (u) { return /^https:\/\//i.test(u || "") ? u : null; };
+  var day = function (s) { return new Date(s + "T00:00:00Z"); };
+  var range = function (giris, cikis) {
+    var a = day(giris), b = day(cikis);
+    if (a.getUTCMonth() === b.getUTCMonth()) return a.getUTCDate() + "–" + dShort.format(b);
+    return dShort.format(a) + " – " + dShort.format(b);
+  };
+  var today = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Istanbul" }).format(new Date());
+  function median(a) { var s = a.slice().sort(function (x, y) { return x - y; }); var m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
+  function ago(isoStr) {
+    var h = (Date.now() - new Date(isoStr).getTime()) / 3600000;
+    if (h < 1) return "az önce"; if (h < 24) return Math.round(h) + " saat önce"; return Math.round(h / 24) + " gün önce";
+  }
+  function getJson(url) { return fetch(url + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(url); return r.json(); }); }
+
+  function weekends() {
+    return Object.keys((prices && prices.haftaSonlari) || {}).filter(function (g) { return prices.haftaSonlari[g].cikis >= today; }).sort();
+  }
+  function slot(g, id) { var w = prices.haftaSonlari[g]; return w && w.oteller[id] ? w.oteller[id].son : null; }
+  function hotelPrices(id, ws) { return ws.map(function (g) { var s = slot(g, id); return s && s.durum === "fiyat" ? s.fiyat : null; }); }
+
+  function renderMeta(city) {
+    $("title").textContent = city.sehir + " · Hafta sonu otel fiyatları";
+    document.title = "72h Getaway · " + city.sehir + " otel fiyatları";
+    var m = [city.oteller.length + " seçilmiş otel", "Cuma–Pazar · 2 gece · 2 kişi"];
+    m.push(prices && prices.guncellendi ? "Son kontrol: " + dTime.format(new Date(prices.guncellendi)) : "Robot henüz çalışmadı");
+    $("meta").innerHTML = m.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("");
+  }
+
+  function renderFilters(city) {
+    var have = ORDER.filter(function (c) { return city.oteller.some(function (h) { return h.kategori === c; }); });
+    var opts = [["hepsi", "Hepsi"]].concat(have.map(function (c) { return [c, CAT[c]]; }));
+    $("filters").innerHTML = opts.map(function (o) { return '<button type="button" data-f="' + o[0] + '" aria-pressed="' + (filter === o[0]) + '">' + esc(o[1]) + "</button>"; }).join("");
+  }
+
+  function renderStrip(hotels, ws) {
+    var el = $("strip");
+    if (!ws.length) { el.innerHTML = '<div class="empty">Robot ilk kontrolü yaptığında burada önümüzdeki hafta sonları ucuzdan pahalıya işaretlenecek.</div>'; return; }
+    var meds = {};
+    hotels.forEach(function (h) { var p = hotelPrices(h.id, ws).filter(function (x) { return x != null; }); if (p.length) meds[h.id] = median(p); });
+    var rows = ws.map(function (g) {
+      var r = [], full = 0;
+      hotels.forEach(function (h) { var s = slot(g, h.id); if (!s) return; if (s.durum === "fiyat" && meds[h.id]) r.push(s.fiyat / meds[h.id]); else if (s.durum === "dolu") full++; });
+      return { g: g, cikis: prices.haftaSonlari[g].cikis, n: r.length, full: full, score: r.length ? r.reduce(function (a, b) { return a + b; }, 0) / r.length : null };
+    });
+    var ranked = rows.filter(function (x) { return x.score != null; }).slice().sort(function (a, b) { return a.score - b.score; });
+    var top = ranked.slice(0, 3).filter(function (x) { return x.score < 0.995; }).map(function (x) { return x.g; });
+    el.innerHTML = rows.map(function (x) {
+      var cls = "wk", v = "Fiyat yok";
+      if (x.score != null) { var pct = Math.round((x.score - 1) * 100); v = pct === 0 ? "Ortalama" : pct < 0 ? "%" + (-pct) + " ucuz" : "%" + pct + " pahalı"; cls += pct <= -3 ? " good" : pct >= 3 ? " bad" : ""; }
+      if (top.indexOf(x.g) >= 0) cls += " top";
+      var info = x.n + "/" + hotels.length + " otel fiyatlı" + (x.full ? " · " + x.full + " dolu" : "");
+      return '<div class="' + cls + '"><div class="d">' + esc(range(x.g, x.cikis)) + (top[0] === x.g ? '<span class="badge">En ucuz</span>' : "") + '</div><div class="k">Cuma–Pazar</div><div class="v">' + esc(v) + '</div><div class="n">' + esc(info) + "</div></div>";
+    }).join("");
+  }
+
+  function card(h, ws) {
+    var ps = hotelPrices(h.id, ws), known = ps.filter(function (x) { return x != null; }).sort(function (a, b) { return a - b; });
+    var lo = known.length >= 3 ? known[Math.floor((known.length - 1) / 3)] : null, hi = known.length >= 3 ? known[Math.ceil(((known.length - 1) * 2) / 3)] : null;
+    var nearest = null, cheapest = null, last = null;
+    ws.forEach(function (g) {
+      var s = slot(g, h.id); if (!s) return;
+      if (!last || s.kontrol > last.kontrol) last = s;
+      if (!nearest) nearest = { g: g, s: s };
+      if (s.durum === "fiyat" && (!cheapest || s.fiyat < cheapest.s.fiyat)) cheapest = { g: g, s: s };
+    });
+    var now;
+    if (!nearest) now = '<div class="wait">Fiyat bekleniyor. Robot ilk kontrolde bu oteli dolduracak.</div>';
+    else if (nearest.s.durum === "fiyat") now = '<div class="now"><span class="p">' + eur(nearest.s.fiyat) + '</span><span class="s">' + esc(range(nearest.g, prices.haftaSonlari[nearest.g].cikis)) + " · gecelik " + eur(nearest.s.gecelik) + "</span></div>";
+    else now = '<div class="now"><span class="p" style="font-size:1.2rem">' + esc(LABEL[nearest.s.durum] || nearest.s.durum) + '</span><span class="s">' + esc(range(nearest.g, prices.haftaSonlari[nearest.g].cikis)) + "</span></div>";
+    var best = cheapest && known.length > 1 ? '<div class="best">En ucuz hafta sonu: <b>' + esc(range(cheapest.g, prices.haftaSonlari[cheapest.g].cikis)) + "</b> · " + eur(cheapest.s.fiyat) + "</div>" : "";
+    var cal = ws.length ? '<ul class="cal" aria-label="' + esc(h.ad) + ' hafta sonu takvimi">' + ws.map(function (g) {
+      var s = slot(g, h.id), lab = dShort.format(day(g));
+      if (!s) return '<li class="none"><b>–</b>' + esc(lab) + "</li>";
+      if (s.durum === "fiyat") { var c = lo != null && s.fiyat <= lo ? "lo" : hi != null && s.fiyat >= hi ? "hi" : ""; return '<li class="' + c + '"><b>' + eur(s.fiyat) + "</b>" + esc(lab) + "</li>"; }
+      return '<li class="' + (s.durum === "dolu" ? "full" : "none") + '"><b>' + esc(s.durum === "dolu" ? "Dolu" : "?") + "</b>" + esc(lab) + "</li>";
+    }).join("") + "</ul>" : "";
+    var link = nearest && nearest.s.durum === "fiyat" && safeUrl(nearest.s.link) ? '<a href="' + esc(safeUrl(nearest.s.link)) + '" target="_blank" rel="noopener nofollow">' + esc(nearest.s.site || "Rezervasyon") + " →</a>" : "";
+    var foot = last ? '<div class="foot"><span>Son kontrol: ' + esc(ago(last.kontrol)) + "</span>" + link + "</div>" : "";
+    return '<article class="card"><div class="top"><div><h4>' + esc(h.ad) + '</h4><p class="note">' + esc(h.not) + '</p></div><span class="chip">' + esc(CAT[h.kategori] || h.kategori) + "</span></div>" + now + best + cal + foot + "</article>";
+  }
+
+  function render() {
+    var city = hotelsDoc.sehirler[0];
+    renderMeta(city); renderFilters(city);
+    var hotels = city.oteller.filter(function (h) { return filter === "hepsi" || h.kategori === filter; });
+    var ws = weekends();
+    renderStrip(hotels, ws);
+    $("list").innerHTML = ORDER.map(function (c) {
+      var hs = hotels.filter(function (h) { return h.kategori === c; });
+      if (!hs.length) return "";
+      return '<div class="cat"><h3>' + esc(CAT[c]) + '</h3><div class="cards">' + hs.map(function (h) { return card(h, ws); }).join("") + "</div></div>";
+    }).join("");
+  }
+
+  $("filters").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-f]"); if (!b) return;
+    filter = b.getAttribute("data-f"); render();
+  });
+
+  Promise.all([getJson("data/hotels.json"), getJson("data/otel-fiyatlari.json").catch(function () { return { haftaSonlari: {} }; })])
+    .then(function (r) { hotelsDoc = r[0]; prices = r[1]; render(); })
+    .catch(function () { $("list").innerHTML = '<div class="empty">Otel listesi yüklenemedi. Sayfayı yenilemeyi dene.</div>'; });
+})();
+</script>
+</body>
+</html>
