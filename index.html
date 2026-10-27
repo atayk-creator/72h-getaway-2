@@ -390,11 +390,11 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   </div>
 
   <section class="hotels" aria-labelledby="h-hot">
-    <h2 id="h-hot">Otelini seç: <span id="hCity"></span> için 3 seçenek</h2>
-    <div class="rowhead"><p class="lead" style="margin:0">Sade, orta ve şık. Birine dokun, bütçe o otele göre güncellensin.</p>
+    <h2 id="h-hot">Otelini seç: <span id="hCity"></span> için <span id="hCount">3</span> seçenek</h2>
+    <div class="rowhead"><p class="lead" style="margin:0" id="hLead">Sade, orta ve şık. Birine dokun, bütçe o otele göre güncellensin.</p>
       <div class="arrows"><button type="button" data-t="hgrid" data-d="-1" aria-label="Önceki oteller">‹</button><button type="button" data-t="hgrid" data-d="1" aria-label="Sonraki oteller">›</button></div></div>
     <div class="hs eq" id="hgrid" role="radiogroup" aria-labelledby="h-hot"></div>
-    <p class="lead" style="margin:14px 0 0"><a href="oteller.html"><b>Yeni:</b> Budapeşte'de seçtiğimiz 8 otelin güncel Cuma–Pazar fiyatlarını ve en ucuz hafta sonlarını gör →</a></p>
+    <p class="lead" style="margin:14px 0 0" id="hLive" hidden></p>
   </section>
 
   <section class="hotels" aria-labelledby="h-rest">
@@ -421,7 +421,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 </div>
 </main>
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -544,6 +544,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     { t: "Şık",  m: 1.3,  label: "Şık akşam yemeği", desc: "Manzaralı ya da gösterişli, özel bir akşam için. Örnek restoran henüz araştırılmadı." }
   ];
   function hotelsOf(c) {
+    var lh = liveHotels(c);
+    if (lh) return lh;
     if (c.hotels) return c.hotels;
     return TIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: r5(c.h * x.m), sc: "", s: "est", desc: x.desc }; });
   }
@@ -551,11 +553,86 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     if (c.restos) return c.restos;
     return RTIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: Math.max(3, Math.round(c.f * x.m)), sc: "", s: "est", desc: x.desc }; });
   }
-  var CHIP = { est:["Tahmini","est"], res:["Araştırıldı","res"], ver:["Doğrulandı","ver"] };
+  var CHIP = { est:["Tahmini","est"], res:["Araştırıldı","res"], ver:["Doğrulandı","ver"], live:["Canlı fiyat","ver"], avg:["Hafta sonu ort.","res"] };
+
+  /* ====================== CANLI OTEL FİYATLARI ====================== */
+  // Otel fiyat robotu (GitHub Actions) data/hotels.json'daki otellerin Cuma–Pazar fiyatlarını
+  // data/fiyatlar/<şehir>.json dosyalarına yazar. Şehir dosyası sadece o şehir seçilince indirilir.
+  var LIVE = { doc: null, meta: null, files: {} };
+  var LCAT = { ikonik: { t: "İkonik", lvl: 2, m: 2.2 }, pahali: { t: "Pahalı", lvl: 2, m: 2.0 }, konforlu: { t: "Konforlu", lvl: 1, m: 1.05 }, ucuz: { t: "Ucuz", lvl: 0, m: 0.65 } };
+  var LVL = { Sade: 0, Orta: 1, "Şık": 2 };
+  var dRange = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "short", timeZone: "UTC" });
+  function liveSlug(n) { return n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function liveCity(c) {
+    if (!LIVE.doc) return null;
+    for (var i = 0; i < LIVE.doc.sehirler.length; i++) if (LIVE.doc.sehirler[i].sehir === c.n) return LIVE.doc.sehirler[i];
+    return null;
+  }
+  function liveFileUrl(c) { return (LIVE.meta && LIVE.meta.sehirler && LIVE.meta.sehirler[c.n]) || ("data/fiyatlar/" + liveSlug(c.n) + ".json"); }
+  function ensureLiveCity(c) {
+    if (!liveCity(c) || LIVE.files[c.n] || !window.fetch) return;
+    LIVE.files[c.n] = "yukleniyor";
+    fetch(liveFileUrl(c) + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { LIVE.files[c.n] = d && d.haftaSonlari ? d : "yok"; render(); })
+      .catch(function () { LIVE.files[c.n] = "yok"; });
+  }
+  function median(a) { var s = a.slice().sort(function (x, y) { return x - y; }), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
+  function agoText(t) {
+    var h = (Date.now() - new Date(t).getTime()) / 3600000;
+    return h < 1 ? "az önce" : h < 24 ? Math.round(h) + " saat önce" : Math.round(h / 24) + " gün önce";
+  }
+  function weekendText(g, cikis) { return dRange.format(new Date(g + "T00:00:00Z")) + " – " + dRange.format(new Date(cikis + "T00:00:00Z")); }
+  // Seçilen tarihlere denk gelen hafta sonunun fiyatı; yoksa önümüzdeki hafta sonlarının ortancası
+  function stayPrice(file, id, o) {
+    var hs = (file && file.haftaSonlari) || {}, today = isoD(new Date());
+    var keys = Object.keys(hs).filter(function (k) { return hs[k].cikis >= today; }).sort();
+    var at = null;
+    if (o && o.a && o.b) {
+      var a = isoD(o.a), b = isoD(o.b);
+      for (var i = 0; i < keys.length; i++) if (keys[i] < b && hs[keys[i]].cikis > a) { at = keys[i]; break; }
+    }
+    var vals = [], puan = null;
+    keys.forEach(function (k) { var s = hs[k].oteller[id] && hs[k].oteller[id].son; if (s && s.puan) puan = s.puan; if (s && s.durum === "fiyat") vals.push(s.gecelik); });
+    var avg = vals.length ? median(vals) : null;
+    if (at) {
+      var s = hs[at].oteller[id] && hs[at].oteller[id].son;
+      if (s && s.durum === "fiyat") return { p: s.gecelik, kind: "live", g: at, cikis: hs[at].cikis, s: s, puan: puan };
+      if (s && s.durum === "dolu") return { p: avg, kind: "full", g: at, cikis: hs[at].cikis, s: s, n: vals.length, puan: puan };
+    }
+    if (avg != null) return { p: avg, kind: "avg", n: vals.length, puan: puan };
+    return null;
+  }
+  function liveHotels(c) {
+    var city = liveCity(c);
+    if (!city) return null;
+    var file = typeof LIVE.files[c.n] === "object" ? LIVE.files[c.n] : null, o = lastO, konum = (LIVE.meta && LIVE.meta.konum) || {};
+    var fb = c.hotels && c.hotels[1];
+    return city.oteller.map(function (h) {
+      var cat = LCAT[h.kategori] || LCAT.konforlu, sp = file ? stayPrice(file, h.id, o) : null, k = konum[h.id];
+      var p = sp && sp.p != null ? sp.p : c.h * cat.m, note, chip;
+      if (sp && sp.kind === "live") { chip = "live"; note = weekendText(sp.g, sp.cikis) + " için " + sp.s.site + " fiyatı, " + agoText(sp.s.kontrol) + " kontrol edildi."; }
+      else if (sp && sp.kind === "full") { chip = sp.p != null ? "avg" : "est"; note = weekendText(sp.g, sp.cikis) + " hafta sonu dolu görünüyor. Fiyat " + (sp.p != null ? "diğer hafta sonlarının ortalaması." : "tahmini."); }
+      else if (sp && sp.kind === "avg") { chip = "avg"; note = "Fiyat, önümüzdeki " + sp.n + " hafta sonunun ortalaması."; }
+      else { chip = "est"; note = file ? "Bu otelin fiyatı henüz kontrol edilmedi, şehir ortalamasından tahmin." : "Fiyat yükleniyor…"; }
+      return { t: cat.t, lvl: cat.lvl, name: h.ad, label: h.ad, p: Math.round(p), s: chip, desc: h.not + ". " + note,
+        sc: sp && sp.puan ? String(sp.puan).replace(".", ",") : "", sct: "Google puanı", live: true,
+        lat: k ? k[0] : fb ? fb.lat : undefined, lon: k ? k[1] : fb ? fb.lon : undefined };
+    });
+  }
+  function lvlOf(h) { return h.lvl != null ? h.lvl : LVL[h.t] != null ? LVL[h.t] : 1; }
+  function defaultIdx(hs) { for (var i = 0; i < hs.length; i++) if (lvlOf(hs[i]) === 1) return i; return Math.min(1, hs.length - 1); }
+  function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
+  // Şehir karşılaştırmasında diğer şehirlerden aynı seviyedeki otel seçilir
+  function idxFor(d) {
+    var cur = hotelsOf(D[+$("city").value])[hIdx], lvl = cur ? lvlOf(cur) : 1, hs = hotelsOf(d);
+    if (hs[hIdx] && lvlOf(hs[hIdx]) === lvl && hs.length === hotelsOf(D[+$("city").value]).length) return hIdx;
+    for (var i = 0; i < hs.length; i++) if (lvlOf(hs[i]) === lvl) return i;
+    return Math.min(hIdx, hs.length - 1);
+  }
 
   /* ====================== DURUM VE YARDIMCILAR ====================== */
   var $ = function (id) { return document.getElementById(id); };
-  var step = 1, maxStep = 1, foodMult = 1, hIdx = 1, rIdx = 1, visits = 1, picked = [];
+  var step = 1, maxStep = 1, foodMult = 1, hIdx = 1, hDefault = true, rIdx = 1, visits = 1, picked = [], lastO = null;
   var nf = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 });
   var nf1 = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
   var tl = function (n) { return nf.format(Math.round(n)) + " TL"; };
@@ -601,7 +678,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     $("rateHint").textContent = "(" + dataDateText() + " itibarıyla, güncelleyebilirsin)";
     var age = dataAgeDays(), n = $("datanote"), old = age !== null && age > 14;
     n.className = "datanote" + (old ? " old" : "");
-    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı." +
+    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). " + (LIVE.doc ? "Otel fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor, yemek fiyatları tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
       (old ? " Bu veri " + age + " gündür güncellenmedi, rakamlar eski olabilir." : "");
   }
   function mapsUrl(q) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); }
@@ -630,7 +707,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       else { nights = n; msg = "<b>" + n + " gece</b> · " + DAYS[a.getUTCDay()] + " → " + DAYS[b.getUTCDay()]; var s = seasonNote(a, b); if (s) msg += "<br>" + s + " Hesap ortalama fiyatla yapıldı, Booking'de tarihine bak."; }
     } else { warn = true; msg = "Tarihleri seçince gece sayısı kendiliğinden hesaplanır. Şimdilik 3 gece."; a = b = null; }
     var el = $("dnote"); el.innerHTML = msg; el.className = "dnote" + (warn ? " warn" : "");
-    return { nights: nights, ppl: ppl, rooms: Math.ceil(ppl / 2), rate: num($("rate"), 55.3, 1, 1000), act: $("act").checked, a: a, b: b };
+    lastO = { nights: nights, ppl: ppl, rooms: Math.ceil(ppl / 2), rate: num($("rate"), 55.3, 1, 1000), act: $("act").checked, a: a, b: b };
+    return lastO;
   }
   function cost(c, o, idx, ridx) {
     var days = o.nights + 1, hp = hotelsOf(c)[idx].p, rp = restosOf(c)[ridx].p;
@@ -750,7 +828,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       title: c.n + " · " + range,
       sub: o.ppl + " kişi · " + o.nights + " gece · uçak hariç",
       picks: [
-        ["Otel", (hotel.name || hotel.label) + " · ~" + hotel.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (hotel.sc ? " · Booking " + hotel.sc : "")],
+        ["Otel", (hotel.name || hotel.label) + " · ~" + hotel.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (hotel.sc ? (hotel.sct ? " · Google " : " · Booking ") + hotel.sc : "")],
         ["Yemek", visits === 0 ? "Viral restoran eklenmedi" : (resto.name || resto.label) + " · ~" + resto.p + " € kişi başı · " + Math.min(visits, o.nights + 1) + " öğün"],
         ["Kişi ve süre", o.ppl + " kişi · " + o.nights + " gece / " + (o.nights + 1) + " gün"]
       ],
@@ -1001,7 +1079,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 
   /* ====================== EKRANLAR ====================== */
   function renderChips(o) {
-    var totals = D.map(function (d) { return cost(d, o, hIdx, rIdx).sum * o.rate; });
+    var totals = D.map(function (d) { return cost(d, o, idxFor(d), rIdx).sum * o.rate; });
     var sorted = totals.slice().sort(function (a, b) { return a - b; });
     var q = [sorted[Math.floor(sorted.length * 0.25)], sorted[Math.floor(sorted.length * 0.5)], sorted[Math.floor(sorted.length * 0.75)]];
     var tier = function (t) { return t <= q[0] ? 1 : t <= q[1] ? 2 : t <= q[2] ? 3 : 4; };
@@ -1048,19 +1126,23 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     }
   }
   function renderHotels(c, o) {
-    var hs = hotelsOf(c), g = $("hgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("hCity").textContent = c.n;
+    var hs = hotelsOf(c), g = $("hgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("hCity").textContent = c.n; $("hCount").textContent = hs.length;
+    var lc = liveCity(c), hl = $("hLive");
+    $("hLead").textContent = lc ? "Seçtiğimiz " + hs.length + " otel: ikonik, pahalı, konforlu ve ucuz. Fiyatlar robotun Cuma–Pazar kontrollerinden gelir, birine dokun, bütçe güncellensin." : "Sade, orta ve şık. Birine dokun, bütçe o otele göre güncellensin.";
+    hl.hidden = !lc;
+    if (lc) hl.innerHTML = '<a href="oteller.html?sehir=' + encodeURIComponent(c.n) + '"><b>' + c.n + '</b> için hafta sonu fiyat takvimini ve en ucuz hafta sonlarını gör →</a>';
     hs.forEach(function (h, i) {
       var q = (h.name ? h.name + ", " : "") + c.n + ", " + c.c, lab = document.createElement("label");
       lab.className = "hotel" + (i === hIdx ? " on" : "");
       lab.innerHTML =
         '<input type="radio" name="hotel" value="' + i + '"' + (i === hIdx ? " checked" : "") + '>' +
-        '<div class="top"><span class="tier">' + h.t + '</span>' + (h.sc ? '<span class="score" title="Booking puanı">' + h.sc + '</span>' : '') + '</div>' +
+        '<div class="top"><span class="tier">' + h.t + '</span>' + (h.sc ? '<span class="score" title="' + (h.sct || "Booking puanı") + '">' + h.sc + '</span>' : '') + '</div>' +
         '<p class="hname">' + (h.name || h.label) + '</p>' +
         '<div class="price">~' + h.p + ' € <small>/ gece</small></div>' +
         '<p class="hdesc">' + h.desc + '</p>' +
         '<div class="hfoot"><span class="chip"></span><a href="' + bookingUrl(q, o) + '" target="_blank" rel="noopener noreferrer">' + (h.name ? "Booking'de bak" : "Booking'de ara") + ' ↗</a></div>';
       chipEl(lab.querySelector(".chip"), h.s);
-      lab.querySelector("input").addEventListener("change", function () { hIdx = i; render(); });
+      lab.querySelector("input").addEventListener("change", function () { hIdx = i; hDefault = false; render(); });
       lab.querySelector("a").addEventListener("click", function (e) { e.stopPropagation(); });
       g.appendChild(lab);
     });
@@ -1163,10 +1245,12 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       box.style.display = tg && tg.scrollWidth > tg.clientWidth + 2 ? "flex" : "none";
     });
   }
-  function resetCity() { hIdx = 1; rIdx = 1; picked = []; openInfo = {}; trKeep = false; hFocus = true; rFocus = true; }
+  function resetCity() { hIdx = 1; hDefault = true; rIdx = 1; picked = []; openInfo = {}; trKeep = false; hFocus = true; rFocus = true; }
 
   function render() {
-    var o = inputs(), c = D[+$("city").value], hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx), total = k.sum * o.rate;
+    var o = inputs(), c0 = D[+$("city").value];
+    ensureLiveCity(c0); fixHotelIdx(hotelsOf(c0));
+    var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx), total = k.sum * o.rate;
     $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), c.s);
     $("rTotal").textContent = tl(total);
     $("rSub").textContent = (o.a && o.b ? dShort.format(o.a) + " – " + dShort.format(o.b) + " · " : "") + o.ppl + " kişi · " + o.nights + " gece · kişi başı yaklaşık " + tl(total / o.ppl);
@@ -1245,6 +1329,12 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       if (d && d.items && typeof d.items === "object") { PRICES = d; applyPrices(); render(); }
     }).catch(function () {});
     if (window.PRICE_STATUS_URL) fetch(window.PRICE_STATUS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.lastRun) { PRICE_STATUS = d; render(); } }).catch(function () {});
+  }
+  if (window.HOTELS_URL && window.fetch) {
+    var getJ = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }); };
+    Promise.all([getJ(window.HOTELS_URL), getJ(window.HOTEL_META_URL).catch(function () { return null; })]).then(function (r) {
+      if (r[0] && Array.isArray(r[0].sehirler)) { LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
+    }).catch(function () {});
   }
   if (window.DATA_URL && window.fetch) {
     fetch(window.DATA_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {

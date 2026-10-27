@@ -43,6 +43,11 @@ h2 { font-size: 1.25rem; margin: 0 0 4px; letter-spacing: -0.01em; }
 .lead { color: var(--muted); margin: 0 0 14px; }
 section + section { margin-top: 38px; }
 
+.picker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 14px; }
+.picker label { font-weight: 600; }
+.picker select { font: inherit; font-size: 1rem; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 8px 12px; min-width: 220px; max-width: 100%; }
+.cheaper { font-size: 0.82rem; color: var(--muted); }
+.warnsite { font-size: 0.78rem; font-weight: 700; color: var(--chip-ink); background: var(--chip-bg); border-radius: 6px; padding: 1px 6px; }
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
 .filters button { font: inherit; font-size: 0.92rem; background: var(--surface); color: var(--ink); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
 .filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #0F2A43; font-weight: 600; }
@@ -94,12 +99,13 @@ section + section { margin-top: 38px; }
   <div class="wrap">
     <a class="back" href="index.html">← Turunu kur</a>
     <h1 id="title">Hafta sonu otel fiyatları</h1>
-    <p>Seçtiğimiz otellerin <b>Cuma giriş, Pazar çıkış</b> fiyatları. 2 kişi, 2 gece, en ucuz teklif. Fiyatlar robot tarafından düzenli kontrol edilir.</p>
+    <p>Seçtiğimiz otellerin <b>Cuma giriş, Pazar çıkış</b> fiyatları. 2 kişi, 2 gece, tanınmış rezervasyon sitelerindeki en ucuz teklif. Fiyatlar robot tarafından düzenli kontrol edilir.</p>
     <div class="meta" id="meta"></div>
   </div>
 </header>
 
 <main class="wrap">
+  <div class="picker"><label for="city">Şehir</label><select id="city"></select></div>
   <div class="filters" role="group" aria-label="Kategori filtresi" id="filters"></div>
 
   <section aria-labelledby="h-cheap">
@@ -119,7 +125,7 @@ section + section { margin-top: 38px; }
     <b>Bilmen gerekenler</b>
     <ul>
       <li>Fiyatlar kontrol anındaki en ucuz tekliftir. Otel fiyatları gün içinde değişebilir, rezervasyondan önce güncel fiyata bak.</li>
-      <li>Fiyat, Google Hotels'te görünen rezervasyon sitelerinin en ucuzudur. Hangi siteden geldiği kartta yazar.</li>
+      <li>Fiyat, Google Hotels'te görünen tanınmış rezervasyon sitelerinin (Booking, Expedia, Hotels.com, Agoda, Trip.com, otelin kendi sitesi) en ucuzudur. Daha ucuz bir az bilinen site varsa kartta ayrıca yazar.</li>
       <li>"Dolu" otelin o tarihler için satışta oda göstermediği anlamına gelir. İptallerle yer açılabilir, robot kontrol etmeye devam eder.</li>
       <li>Yakın hafta sonları haftada 3 kez, uzak hafta sonları daha seyrek kontrol edilir.</li>
     </ul>
@@ -132,7 +138,7 @@ section + section { margin-top: 38px; }
   var ORDER = ["ikonik", "pahali", "konforlu", "ucuz"];
   var LABEL = { dolu: "Dolu", bulunamadi: "Bulunamadı", hata: "Kontrol edilemedi", sonuc_yok: "Sonuç yok" };
   var $ = function (id) { return document.getElementById(id); };
-  var hotelsDoc = null, prices = null, filter = "hepsi";
+  var hotelsDoc = null, meta = null, prices = null, filter = "hepsi", cityName = null, files = {};
   var dShort = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "short", timeZone: "UTC" });
   var dTime = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", weekday: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Istanbul" });
   var eur = function (n) { return Math.round(n).toLocaleString("tr-TR") + " €"; };
@@ -205,7 +211,9 @@ section + section { margin-top: 38px; }
     });
     var now;
     if (!nearest) now = '<div class="wait">Fiyat bekleniyor. Robot ilk kontrolde bu oteli dolduracak.</div>';
-    else if (nearest.s.durum === "fiyat") now = '<div class="now"><span class="p">' + eur(nearest.s.fiyat) + '</span><span class="s">' + esc(range(nearest.g, prices.haftaSonlari[nearest.g].cikis)) + " · gecelik " + eur(nearest.s.gecelik) + "</span></div>";
+    else if (nearest.s.durum === "fiyat") now = '<div class="now"><span class="p">' + eur(nearest.s.fiyat) + '</span><span class="s">' + esc(range(nearest.g, prices.haftaSonlari[nearest.g].cikis)) + " · gecelik " + eur(nearest.s.gecelik) + "</span></div>" +
+      (nearest.s.guvenilir === false ? '<div class="cheaper"><span class="warnsite">Az bilinen site</span> Bu fiyat sadece ' + esc(nearest.s.site) + "'da bulundu.</div>" : "") +
+      (nearest.s.enUcuz ? '<div class="cheaper">Daha ucuzu: ' + eur(nearest.s.enUcuz.fiyat) + " (" + esc(nearest.s.enUcuz.site) + ", az bilinen site)</div>" : "");
     else now = '<div class="now"><span class="p" style="font-size:1.2rem">' + esc(LABEL[nearest.s.durum] || nearest.s.durum) + '</span><span class="s">' + esc(range(nearest.g, prices.haftaSonlari[nearest.g].cikis)) + "</span></div>";
     var best = cheapest && known.length > 1 ? '<div class="best">En ucuz hafta sonu: <b>' + esc(range(cheapest.g, prices.haftaSonlari[cheapest.g].cikis)) + "</b> · " + eur(cheapest.s.fiyat) + "</div>" : "";
     var cal = ws.length ? '<ul class="cal" aria-label="' + esc(h.ad) + ' hafta sonu takvimi">' + ws.map(function (g) {
@@ -220,7 +228,7 @@ section + section { margin-top: 38px; }
   }
 
   function render() {
-    var city = hotelsDoc.sehirler[0];
+    var city = cityOf(cityName);
     renderMeta(city); renderFilters(city);
     var hotels = city.oteller.filter(function (h) { return filter === "hepsi" || h.kategori === filter; });
     var ws = weekends();
@@ -237,8 +245,29 @@ section + section { margin-top: 38px; }
     filter = b.getAttribute("data-f"); render();
   });
 
-  Promise.all([getJson("data/hotels.json"), getJson("data/otel-fiyatlari.json").catch(function () { return { haftaSonlari: {} }; })])
-    .then(function (r) { hotelsDoc = r[0]; prices = r[1]; render(); })
+  function cityOf(n) { for (var i = 0; i < hotelsDoc.sehirler.length; i++) if (hotelsDoc.sehirler[i].sehir === n) return hotelsDoc.sehirler[i]; return hotelsDoc.sehirler[0]; }
+  function slug(n) { return n.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  // Fiyatlar şehir şehir ayrı dosyalarda; eski tek dosya biçimi de okunur
+  function loadCity(n) {
+    cityName = n;
+    try { history.replaceState(null, "", "?sehir=" + encodeURIComponent(n)); } catch (e) {}
+    if (files[n]) { prices = files[n]; render(); return; }
+    var url = (meta && meta.sehirler && meta.sehirler[n]) || ("data/fiyatlar/" + slug(n) + ".json");
+    getJson(url).catch(function () { return meta && meta.haftaSonlari ? meta : { haftaSonlari: {} }; }).then(function (d) {
+      if (!d.guncellendi && meta) d.guncellendi = meta.guncellendi;
+      files[n] = d; if (cityName === n) { prices = d; render(); }
+    });
+  }
+  $("city").addEventListener("change", function () { filter = "hepsi"; loadCity(this.value); });
+
+  Promise.all([getJson("data/hotels.json"), getJson("data/otel-fiyatlari.json").catch(function () { return null; })])
+    .then(function (r) {
+      hotelsDoc = r[0]; meta = r[1];
+      var names = hotelsDoc.sehirler.map(function (c) { return c.sehir; }).sort(function (a, b) { return a.localeCompare(b, "tr"); });
+      $("city").innerHTML = names.map(function (n) { return '<option value="' + esc(n) + '">' + esc(n + " · " + cityOf(n).ulke) + "</option>"; }).join("");
+      var q = new URLSearchParams(location.search).get("sehir"), start = names.indexOf(q) >= 0 ? q : (names.indexOf("Budapeşte") >= 0 ? "Budapeşte" : names[0]);
+      $("city").value = start; prices = { haftaSonlari: {} }; cityName = start; render(); loadCity(start);
+    })
     .catch(function () { $("list").innerHTML = '<div class="empty">Otel listesi yüklenemedi. Sayfayı yenilemeyi dene.</div>'; });
 })();
 </script>

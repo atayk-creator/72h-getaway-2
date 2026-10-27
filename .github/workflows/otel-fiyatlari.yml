@@ -1,16 +1,20 @@
 name: Otel fiyat robotu (Cuma-Pazar fiyatları)
-# Pazartesi, Çarşamba, Perşembe ve Cuma sabahı 06:17'de (İstanbul) çalışır.
-# Hangi gün hangi hafta sonlarına bakılacağını data/hotels.json'daki takvim belirler.
+# Pazartesi ve Perşembe sabahı 06:17'de (İstanbul) çalışır.
+# Hangi gün hangi hafta sonlarına bakılacağını ve aylık bütçe sınırını data/hotels.json belirler.
 on:
   schedule:
-    - cron: "17 3 * * 1,3,4,5"
+    - cron: "17 3 * * 1,4"
   workflow_dispatch:
     inputs:
       mod:
-        description: "test = sadece en yakın hafta sonu (ucuz deneme), takvim = bugünün planı, hepsi = 26 hafta sonunun hepsi"
+        description: "test = sadece en yakın hafta sonu (ucuz deneme), takvim = bugünün planı, hepsi = 13 hafta sonunun hepsi"
         type: choice
         options: [test, takvim, hepsi]
         default: test
+      sehir:
+        description: "Sadece bu şehir(ler) (virgülle, örnek: Paris,Roma). Boş = hepsi"
+        type: string
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -19,7 +23,7 @@ concurrency:
 jobs:
   fiyatlar:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -31,8 +35,10 @@ jobs:
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           MOD: ${{ github.event.inputs.mod || 'takvim' }}
+          SEHIR: ${{ github.event.inputs.sehir || '' }}
         run: node scripts/otel-fiyatlari.mjs
       - name: Sonuçları depoya kaydet
+        if: always()
         run: |
           git config user.name "otel-fiyat-robotu"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
