@@ -139,6 +139,32 @@ export function nameScore(ours, theirs) {
   return n / a.size;
 }
 
+// Google'ın döndürdüğü otel bizim otelimiz mi? Bizim adımızdaki ayırt edici kelimelerin çoğu onun adında geçmeli.
+const CITY_WORDS = new Set("dublin paris brussels bruxelles amsterdam luxembourg berlin vienna wien madrid lisbon lisboa rome roma valletta malta floriana athens stockholm copenhagen helsinki tallinn riga vilnius warsaw warszawa prague praha bratislava budapest ljubljana zagreb bucharest sofia city centre center centrum old town".split(" "));
+export function nameOk(h, googleName) {
+  const strip = (s) => new Set([...tokens(s)].filter((t) => !CITY_WORDS.has(t)));
+  const theirs = strip(googleName);
+  const cover = (ours) => { const a = strip(ours); if (!a.size) return 1; let n = 0; for (const t of a) if (theirs.has(t)) n++; return n / a.size; };
+  return Math.max(cover(h.ad), cover(h.arama)) >= 0.6;
+}
+// Ad uyuşmazsa ya da iki otel aynı Google oteline eşleştiyse o fiyat kullanılmaz
+export function validateRecords(hotels, records) {
+  const byId = {};
+  for (const h of hotels) {
+    const r = records[h.id];
+    if (!r || !r.googleAd) continue;
+    if (!nameOk(h, r.googleAd)) { records[h.id] = { durum: "bulunamadi", not: "Google başka bir otel döndürdü: " + r.googleAd, googleAd: r.googleAd }; continue; }
+    if (r.googleKimlik) (byId[r.googleKimlik] ||= []).push(h);
+  }
+  for (const hs of Object.values(byId)) {
+    if (hs.length < 2) continue;
+    const score = (h) => Math.max(nameScore(h.ad, records[h.id].googleAd), nameScore(h.arama, records[h.id].googleAd));
+    hs.sort((a, b) => score(b) - score(a));
+    for (const h of hs.slice(1)) records[h.id] = { durum: "bulunamadi", not: "Google bu oteli başka bir otelle karıştırdı: " + records[h.id].googleAd, googleAd: records[h.id].googleAd };
+  }
+  return records;
+}
+
 export function matchRows(hotels, rows, ids = {}) {
   const pool = (rows || []).filter((r) => r && typeof r === "object" && r.recordType !== "summary");
   const used = new Set(), out = {};
@@ -306,7 +332,8 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
       const rows = await runActor(actorInput(hotels, w, settings, ids), { token, fetchImpl, sleep });
       const matched = matchRows(hotels, rows, ids);
       records = Object.fromEntries(hotels.map((h) => [h.id, toRecord(matched[h.id], nights, settings.para_birimi || "EUR", trusted)]));
-      charged = Object.values(records).filter((r) => r.durum === "fiyat" || r.durum === "dolu").length;
+      charged = Object.values(records).filter((r) => r.durum === "fiyat" || r.durum === "dolu").length; // Apify bulduğu her otel için ücret alır
+      validateRecords(hotels, records);
       okRuns++; report.haftaSonlari.push(w.giris);
     } catch (e) {
       const msg = redact(e.message, token);

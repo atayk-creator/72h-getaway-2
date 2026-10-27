@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import {
   istanbulToday, upcomingWeekends, planFor, estimateMonthly, billingPeriod, actorInput, matchRows, toRecord, nameScore, isTrusted,
-  mergeWeekend, archivePast, pruneRemoved, emptyState, splitState, joinState, citySlug, run, toMarkdown, runActor, PLAN_RATES,
+  mergeWeekend, archivePast, pruneRemoved, nameOk, validateRecords, emptyState, splitState, joinState, citySlug, run, toMarkdown, runActor, PLAN_RATES,
 } from "./otel-fiyatlari.mjs";
 
 const doc = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
@@ -70,6 +70,17 @@ console.log("ok 5: fatura dönemi");
   assert.equal(m["bud-rum"].hotelId, "R1"); assert.equal(m["bud-d8"].hotelId, "X"); assert.equal(m["bud-kempinski"].hotelId, "K1");
   assert.equal(m["bud-aria"].hotelId, "ARIA"); assert.equal(m["bud-clark"].errorCode, "NOT_FOUND"); assert.equal(m["bud-moments"], null); console.log("ok 7: eşleştirme"); }
 
+// 7b) Google'ın döndürdüğü ad kontrolü ve aynı otele çift eşleşme
+{ assert.ok(nameOk({ ad: "Hôtel Lutetia", arama: "Hotel Lutetia Paris" }, "Mandarin Oriental Lutetia, Paris"));
+  assert.ok(nameOk({ ad: "Polonia Palace Hotel", arama: "Polonia Palace Hotel Warsaw" }, "Hotel Polonia Palace"));
+  assert.ok(nameOk({ ad: "Hotel Cru", arama: "Cru Hotel Tallinn" }, "Cru hotell"));
+  assert.ok(!nameOk({ ad: "ibis Warszawa Stare Miasto", arama: "ibis Warszawa Stare Miasto" }, "ibis budget Warszawa Centrum"));
+  assert.ok(!nameOk({ ad: "Palace Hotel Zagreb", arama: "Palace Hotel Zagreb" }, "Sheraton Zagreb Hotel"));
+  const hs = [{ id: "a", ad: "Sheraton Zagreb Hotel", arama: "Sheraton Zagreb Hotel" }, { id: "b", ad: "Esplanade", arama: "Esplanade Zagreb" }, { id: "c", ad: "Hotel Sheraton Zagreb Center", arama: "Hotel Sheraton Zagreb Center" }];
+  const v = validateRecords(hs, { a: { durum: "fiyat", googleAd: "Sheraton Zagreb Hotel", googleKimlik: "S" }, b: { durum: "fiyat", googleAd: "Westin Zagreb", googleKimlik: "W" }, c: { durum: "fiyat", googleAd: "Sheraton Zagreb Hotel", googleKimlik: "S" } });
+  assert.equal(v.a.durum, "fiyat"); assert.equal(v.b.durum, "bulunamadi"); assert.match(v.b.not, /başka bir otel/); assert.equal(v.c.durum, "bulunamadi"); assert.match(v.c.not, /karıştırdı/);
+  console.log("ok 7b: ad kontrolü ve çift eşleşme"); }
+
 // 8) tanınmış site tespiti
 { const T = S.guvenilir_siteler;
   for (const s of ["Booking.com", "booking.com", "Expedia.com", "Expedia", "Hotels.com", "Agoda", "Trip.com", "Priceline"]) assert.ok(isTrusted({ site: s }, T), s);
@@ -126,8 +137,8 @@ function fakeApify(rowsFor, { failDates = [], status = 200, body = null, seen = 
     return res("bilinmeyen adres", 404);
   };
 }
-const rowsOk = (input) => input.hotels.map((q, i) => (i % 8 === 7 ? { recordType: "error", errorCode: "NOT_FOUND", input: q } : i % 8 === 6 ? { recordType: "hotel", searchQuery: q, name: q, hotelId: "id" + i, bookingOptions: [] }
-  : { recordType: "hotel", searchQuery: q, name: q, hotelId: "id" + i, currency: "EUR", latitude: 47 + i / 1000, longitude: 19, totalPrice: 220 + i, bookingOptions: [{ provider: "Booking.com", totalStayPrice: 200 + i, bookingUrl: "https://b/" + i }, { provider: "Super.com", totalStayPrice: 180 + i }] }));
+const rowsOk = (input) => input.hotels.map((q, i) => (i % 8 === 7 ? { recordType: "error", errorCode: "NOT_FOUND", input: q } : i % 8 === 6 ? { recordType: "hotel", searchQuery: q, name: q.startsWith("id") ? ALL[+q.slice(2)].arama : q, hotelId: "id" + i, bookingOptions: [] }
+  : { recordType: "hotel", searchQuery: q, name: q.startsWith("id") ? ALL[+q.slice(2)].arama : q, hotelId: "id" + i, currency: "EUR", latitude: 47 + i / 1000, longitude: 19, totalPrice: 220 + i, bookingOptions: [{ provider: "Booking.com", totalStayPrice: 200 + i, bookingUrl: "https://b/" + i }, { provider: "Super.com", totalStayPrice: 180 + i }] }));
 const big = { ...S, apify_plan: "starter", aylik_butce_usd: 100 };
 const base = { token: TOKEN, hotelsDoc: { ...doc, ayarlar: big }, sleep: async () => {} };
 const N = ALL.length, perCity = 6 / 8 * N; // her 8 otelden 6'sı fiyatlı

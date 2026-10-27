@@ -150,7 +150,6 @@
   "waw-indigo": "ChkIq_6u88a9g4AiGg0vZy8xMWc3eTZybDJqEAE",
   "waw-polonia-palace": "ChcIuquBj9-NvdVRGgsvbS8wMTBma3luYxAB",
   "waw-motel-one-chopin": "ChkInoaYi4izu8dqGg0vZy8xMWgxMHZ2N3l2EAE",
-  "waw-ibis-stare-miasto": "ChgIg9K1n87KlYOgARoLL2cvMXRmNTZtdjcQAQ",
   "prg-hotel-paris": "ChYI5NK56dbtpbMCGgovbS8wYzAxMTloEAE",
   "prg-four-seasons": "ChYIlbig4rSKitt5GgovbS8wM3dkcG5qEAE",
   "prg-mandarin-oriental": "ChoIooDVpMzmgp6hARoNL2cvMTFienQ0ODVybRAB",
@@ -204,9 +203,7 @@
   "cph-nimb": "ChYI28rkxKGDvskgGgovbS8wNnc5MG5qEAE",
   "cph-ottilia": "ChkIwpf1_urV1cpGGg0vZy8xMWZ6c3h4NTE5EAE",
   "tll-hotel-cru": "ChcI7rzD3bf9hKs1GgsvZy8xdG5jcmtobhAB",
-  "vno-grand-hotel-vilnius": "ChkIuonoiI2M4tU3Gg0vZy8xMWw2XzF0djZnEAE",
-  "waw-puro": "ChoI28aAjMb6yfTIARoNL2cvMTFoMXRwMXo5cRAB",
-  "zag-palace": "ChcI3fzjkoeKy_l_GgsvZy8xdGNfZDEzMRAB"
+  "waw-puro": "ChoI28aAjMb6yfTIARoNL2cvMTFoMXRwMXo5cRAB"
  },
  "konum": {
   "dub-shelbourne": [
@@ -761,10 +758,6 @@
    52.23689,
    21.02309
   ],
-  "waw-ibis-stare-miasto": [
-   52.226639999999996,
-   21.04193
-  ],
   "prg-hotel-paris": [
    50.08815,
    14.42749
@@ -1009,17 +1002,9 @@
    59.436730000000004,
    24.747490000000003
   ],
-  "vno-grand-hotel-vilnius": [
-   54.677800000000005,
-   25.28825
-  ],
   "waw-puro": [
    52.23116,
    21.01487
-  ],
-  "zag-palace": [
-   45.80697,
-   15.98465
   ]
  },
  "harcama": {
