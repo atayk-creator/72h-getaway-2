@@ -1,0 +1,47 @@
+name: Şehir Araştırmacısı
+# Her çarşamba 10:00 (TR) sıradaki şehri araştırır. Elle çalıştırırken şehir adı da yazabilirsin.
+on:
+  schedule:
+    - cron: "0 7 * * 3"
+  workflow_dispatch:
+    inputs:
+      sehir:
+        description: "Şehir adı (uygulamadaki gibi, ör. Paris). Boş bırakırsan sıradaki şehir."
+        required: false
+        default: ""
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: depo-yazma
+  cancel-in-progress: false
+jobs:
+  sehir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node --test "scripts/test/*.test.mjs"
+      - name: Araştır
+        id: arastir
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL_ORTA: ${{ vars.CLAUDE_MODEL_ORTA }}
+          SEHIR: ${{ github.event.inputs.sehir }}
+        run: node scripts/sehir-arastirmaci.mjs
+      - name: Onayına sun
+        if: steps.arastir.outputs.slug != ''
+        uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: |
+            sehirler/${{ steps.arastir.outputs.slug }}.json
+            sehirler/index.json
+          branch: robot/sehir-${{ steps.arastir.outputs.slug }}
+          delete-branch: true
+          commit-message: "Şehir Araştırmacısı: ${{ steps.arastir.outputs.sehir }}"
+          title: "Şehir araştırması: ${{ steps.arastir.outputs.sehir }} (onayın gerekli)"
+          body-path: sehir-raporu.md
+          labels: robot

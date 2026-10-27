@@ -1,0 +1,33 @@
+name: Uçuş Robotu
+# Salı ve cuma 08:20 (TR). Önbellek verisi 2-7 günde bir tazelendiği için haftada iki kez yeterli.
+on:
+  schedule:
+    - cron: "20 5 * * 2,5"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: depo-yazma
+  cancel-in-progress: false
+jobs:
+  ucus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node --test "scripts/test/*.test.mjs"
+      - name: Uçuş fiyatlarını çek
+        env:
+          TRAVELPAYOUTS_TOKEN: ${{ secrets.TRAVELPAYOUTS_TOKEN }}
+        run: node scripts/ucus-fiyatlari.mjs
+      - name: Kaydet
+        run: |
+          git config user.name "72h-robot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add flights.json
+          git diff --cached --quiet && { echo "Değişiklik yok"; exit 0; }
+          git commit -m "Uçuş Robotu: fiyatlar güncellendi"
+          git pull --rebase origin main && git push

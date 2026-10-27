@@ -1,0 +1,31 @@
+name: İçerik Robotu
+# Her pazar 11:00 (TR) haftanın 4 Shorts taslağını yazar ve sana kayıt (issue) olarak gönderir.
+on:
+  schedule:
+    - cron: "0 8 * * 0"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  icerik:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node --test "scripts/test/*.test.mjs"
+      - name: Taslakları yaz
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL_ORTA: ${{ vars.CLAUDE_MODEL_ORTA }}
+        run: node scripts/icerik-robotu.mjs
+      - name: Sana gönder
+        if: hashFiles('icerik-taslak.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create icerik --color F4A62A --description "İçerik Robotu taslakları" 2>/dev/null || true
+          gh issue create --title "Haftanın Shorts taslakları ($(date -u +%d.%m.%Y))" --body-file icerik-taslak.md --label icerik

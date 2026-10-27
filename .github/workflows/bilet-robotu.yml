@@ -1,0 +1,44 @@
+name: Bilet Robotu
+# Her pazartesi 09:00 (TR). Değişen fiyat varsa senin onayına (Pull request) sunar.
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: depo-yazma
+  cancel-in-progress: false
+jobs:
+  bilet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node --test "scripts/test/*.test.mjs"
+      - name: Resmî sayfaları kontrol et
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_MODEL_UCUZ: ${{ vars.CLAUDE_MODEL_UCUZ }}
+        run: node scripts/bilet-robotu.mjs
+      - name: Kontrol durumunu kaydet
+        run: |
+          git config user.name "72h-robot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add price-status.json
+          git diff --cached --quiet || { git commit -m "Bilet Robotu: kontrol durumu"; git pull --rebase --autostash origin main && git push; }
+      - name: Fiyat değiştiyse onay iste
+        if: hashFiles('bilet-raporu.md') != ''
+        uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: prices.json
+          branch: robot/bilet-fiyatlari
+          delete-branch: true
+          commit-message: "Bilet Robotu: değişen fiyatlar"
+          title: "Bilet Robotu: değişen fiyatlar (onayın gerekli)"
+          body-path: bilet-raporu.md
+          labels: robot

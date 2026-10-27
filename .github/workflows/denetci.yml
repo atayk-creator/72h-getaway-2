@@ -1,0 +1,37 @@
+name: Denetçi
+# Her sabah 09:40 (TR). Sorun varsa tek bir "Denetçi" kaydı açar/günceller; düzelince kapatır.
+on:
+  schedule:
+    - cron: "40 6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+  actions: read
+jobs:
+  denetle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Denetle
+        id: d
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          HAS_ANTHROPIC: ${{ secrets.ANTHROPIC_API_KEY != '' && '1' || '' }}
+          HAS_TRAVELPAYOUTS: ${{ secrets.TRAVELPAYOUTS_TOKEN != '' && '1' || '' }}
+        run: node scripts/denetci.mjs
+      - name: Kaydı aç, güncelle ya da kapat
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create denetci --color B60205 --description "Denetçi uyarıları" 2>/dev/null || true
+          acik=$(gh issue list --label denetci --state open --json number --jq '.[0].number')
+          if [ "${{ steps.d.outputs.sorun }}" != "0" ]; then
+            if [ -n "$acik" ]; then gh issue edit "$acik" --body-file denetci-raporu.md && gh issue comment "$acik" --body "Sorun devam ediyor. Güncel rapor yukarıda."
+            else gh issue create --title "Denetçi: robotlarda sorun var" --body-file denetci-raporu.md --label denetci; fi
+          elif [ -n "$acik" ]; then
+            gh issue comment "$acik" --body "Her şey düzeldi, kayıt kapatılıyor." && gh issue close "$acik"
+          fi

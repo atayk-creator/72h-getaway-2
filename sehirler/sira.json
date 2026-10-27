@@ -1,0 +1,4 @@
+{
+  "aciklama": "Şehir araştırmacısı her hafta bu listedeki sıradaki araştırılmamış şehri alır. Sırayı değiştirmek için isimlerin yerini değiştir; isimler uygulamadaki gibi yazılmalı.",
+  "sira": ["Paris", "Prag", "Lizbon", "Viyana", "Roma", "Atina", "Amsterdam", "Berlin", "Varşova", "Sofya", "Belgrad", "Madrid", "Londra", "Kopenhag", "Dublin", "Brüksel", "Zagreb", "Ljubljana", "Bratislava", "Tallinn", "Riga", "Vilnius", "Bükreş", "Saraybosna", "Tiran", "Üsküp", "Podgorica", "Priştine", "Kişinev", "Helsinki", "Stokholm", "Oslo", "Bern", "Lüksemburg", "Valletta", "Reykjavik"]
+}
