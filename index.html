@@ -179,6 +179,9 @@ details.more .field { margin: 14px 0 4px; }
 
 .ticketbox { background: var(--pick); border: 1.5px dashed #F4A62A; border-radius: 12px; padding: 14px 16px; font-size: 0.92rem; }
 .ticketbox strong { display: block; margin-bottom: 4px; }
+.ticketbox .fprice { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.01em; }
+.ticketbox .fsub { color: var(--muted); font-size: 0.86rem; }
+.ticketbox label.fadd { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-weight: 600; cursor: pointer; }
 .ticketbox .links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; font-weight: 600; }
 
 .chip { display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
@@ -281,7 +284,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       </svg>
     </div>
     <h1>Biletini al, turunu kendin kur!</h1>
-    <p>Bir başkent seç, otelini ve yemeğini seç, gezini planla, kaça geleceğini gör. Uçak biletini sen alıyorsun, gerisini burada hallediyoruz.</p>
+    <p>Bir başkent seç, otelini ve yemeğini seç, gezini planla, kaça geleceğini gör. İstanbul çıkışlı uçak ve otel fiyatlarını robotumuz düzenli olarak kontrol ediyor.</p>
     <ol class="steps" aria-label="Nasıl kullanılır">
       <li><b>1</b> Biletini al</li>
       <li><b>2</b> Şehir ve tarih seç</li>
@@ -362,7 +365,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         <input id="rate" type="number" min="1" step="0.1" value="55.3" inputmode="decimal">
       </div>
 
-      <div class="ticketbox">
+      <div class="ticketbox" id="ticketbox">
         <strong>✈️ Uçak biletin burada hesaplanmıyor</strong>
         Biletini kendin bul, tarihini sen seç. Toplam bütçene biletinin fiyatını ayrıca ekle.
         <div class="links">
@@ -375,7 +378,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 
     <section class="result" aria-live="polite" aria-labelledby="h-res">
       <h2 id="h-res" style="position:absolute;left:-9999px">Sonuç</h2>
-      <div class="city-line"><strong id="rCity"></strong><span id="rChip" class="chip"></span><span class="chip no">uçak hariç</span></div>
+      <div class="city-line"><strong id="rCity"></strong><span id="rChip" class="chip"></span><span class="chip no" id="rAir">uçak hariç</span></div>
       <div class="big" id="rTotal"></div>
       <p class="sub" id="rSub"></p>
       <p class="picked" id="rHotel"></p>
@@ -421,7 +424,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 </div>
 </main>
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -622,6 +625,52 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   function lvlOf(h) { return h.lvl != null ? h.lvl : LVL[h.t] != null ? LVL[h.t] : 1; }
   function defaultIdx(hs) { for (var i = 0; i < hs.length; i++) if (lvlOf(hs[i]) === 1) return i; return Math.min(1, hs.length - 1); }
   function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
+  /* ====================== UÇAK FİYATLARI ====================== */
+  // Uçak robotu (GitHub Actions) İstanbul'dan (IST, SAW) Cuma gidiş Pazar dönüş kişi başı en ucuz gidiş-dönüşü data/ucuslar.json'a yazar.
+  var FLY = null, addFlight = true;
+  function flightFor(c, o) {
+    if (!FLY || !FLY.haftaSonlari) return null;
+    var hs = FLY.haftaSonlari, today = isoD(new Date());
+    var keys = Object.keys(hs).filter(function (k) { return hs[k].cikis >= today; }).sort();
+    // Aktarmasız uçuş en ucuzdan en fazla %20 pahalıysa onu tercih et (karışık havayollu çok aktarmalı uçuşlar yorucu ve riskli)
+    var prefer = function (s) {
+      if (s.aktarmasiz && s.aktarma !== 0 && s.aktarmasiz.fiyat <= s.fiyat * 1.2) { var d = Object.assign({}, s.aktarmasiz); d.kontrol = s.kontrol; d.ucuzAktarmali = { fiyat: s.fiyat, havayolu: s.havayolu, aktarmaYazi: s.aktarmaYazi }; return d; }
+      return s;
+    };
+    var get = function (k) { var x = hs[k].sehirler[c.n]; return x && x.son && x.son.durum === "fiyat" ? prefer(x.son) : null; };
+    if (o && o.a && o.b) {
+      var a = isoD(o.a), b = isoD(o.b);
+      for (var i = 0; i < keys.length; i++) if (keys[i] < b && hs[keys[i]].cikis > a) { var s = get(keys[i]); if (s) return { p: s.fiyat, kind: "live", g: keys[i], cikis: hs[keys[i]].cikis, s: s, exact: keys[i] === a && hs[keys[i]].cikis === b }; break; }
+    }
+    var vals = [], best = null;
+    keys.forEach(function (k) { var s = get(k); if (s) { vals.push(s.fiyat); if (!best || s.fiyat < best.s.fiyat) best = { g: k, cikis: hs[k].cikis, s: s }; } });
+    if (!vals.length) return null;
+    return { p: median(vals), kind: "avg", n: vals.length, best: best };
+  }
+  function renderFlight(c, o, k) {
+    var box = $("ticketbox"), f = flightFor(c, o);
+    if (!f) {
+      box.innerHTML = '<strong>✈️ Uçak biletin burada hesaplanmıyor</strong>' + (FLY ? c.n + " için İstanbul çıkışlı uçuş verisi henüz yok. " : "") + 'Biletini kendin bul, tarihini sen seç. Toplam bütçene biletinin fiyatını ayrıca ekle.' +
+        '<div class="links"><a href="https://www.google.com/travel/flights" target="_blank" rel="noopener noreferrer">Google Flights</a><a href="https://www.skyscanner.com.tr" target="_blank" rel="noopener noreferrer">Skyscanner</a><a href="https://www.enuygun.com/ucak-bileti/" target="_blank" rel="noopener noreferrer">Enuygun</a></div>';
+      return;
+    }
+    var stopsTr = function (x) { var m = /^(\d+)\s*stop/i.exec(String(x || "")); return m ? m[1] + " aktarma" : /nonstop/i.test(String(x || "")) ? "aktarmasız" : (x || "aktarmalı"); };
+    var s = f.kind === "live" ? f.s : f.best.s, esc2 = function (x) { return String(x == null ? "" : x).replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); };
+    var head = f.kind === "live"
+      ? "İstanbul ↔ " + c.n + ", " + weekendText(f.g, f.cikis) + (f.exact ? "" : " hafta sonu")
+      : "İstanbul ↔ " + c.n + ", Cuma–Pazar ortalaması";
+    var detail = f.kind === "live"
+      ? esc2(s.havayolu) + " · " + (s.aktarma === 0 ? "aktarmasız" : esc2(stopsTr(s.aktarmaYazi))) + " · " + esc2(s.kalkis) + " çıkışlı" + (s.aktarmasiz && s.aktarmasiz.fiyat > s.fiyat ? "<br>Aktarmasız en ucuz: " + Math.round(s.aktarmasiz.fiyat) + " € (" + esc2(s.aktarmasiz.havayolu) + ", " + esc2(s.aktarmasiz.kalkis) + ")" : "") + (s.ucuzAktarmali ? "<br>Aktarmalı daha ucuzu: " + Math.round(s.ucuzAktarmali.fiyat) + " € (" + esc2(stopsTr(s.ucuzAktarmali.aktarmaYazi)) + ")" : "") + "<br>" + agoText(s.kontrol) + " Google Flights'ta kontrol edildi."
+      : "Önümüzdeki " + f.n + " hafta sonunun ortalaması. En ucuzu " + weekendText(f.best.g, f.best.cikis) + ": " + Math.round(f.best.s.fiyat) + " € (" + esc2(f.best.s.havayolu) + ").";
+    var link = /^https:\/\//.test(s.link || "") ? s.link : "https://www.google.com/travel/flights";
+    box.innerHTML = "<strong>" + esc2(head) + "</strong>" +
+      '<div><span class="fprice">' + (f.kind === "live" ? "" : "~") + Math.round(f.p) + ' €</span> <span class="fsub">kişi başı gidiş-dönüş</span></div>' +
+      '<div class="fsub">' + detail + "</div>" +
+      '<label class="fadd"><input type="checkbox" id="addFlight"' + (addFlight ? " checked" : "") + "> Uçağı bütçeye ekle (" + o.ppl + " kişi" + (k.fly ? ": " + tl(k.fly * o.rate) : "") + ")</label>" +
+      '<div class="links"><a href="' + esc2(link) + '" target="_blank" rel="noopener noreferrer">Google Flights\'ta aç</a><a href="https://www.skyscanner.com.tr" target="_blank" rel="noopener noreferrer">Skyscanner</a><a href="https://www.enuygun.com/ucak-bileti/" target="_blank" rel="noopener noreferrer">Enuygun</a></div>';
+    $("addFlight").addEventListener("change", function () { addFlight = this.checked; render(); });
+  }
+
   // Şehir karşılaştırmasında diğer şehirlerden aynı seviyedeki otel seçilir
   function idxFor(d) {
     var cur = hotelsOf(D[+$("city").value])[hIdx], lvl = cur ? lvlOf(cur) : 1, hs = hotelsOf(d);
@@ -710,15 +759,16 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     lastO = { nights: nights, ppl: ppl, rooms: Math.ceil(ppl / 2), rate: num($("rate"), 55.3, 1, 1000), act: $("act").checked, a: a, b: b };
     return lastO;
   }
-  function cost(c, o, idx, ridx) {
+  function cost(c, o, idx, ridx, withFlight) {
     var days = o.nights + 1, hp = hotelsOf(c)[idx].p, rp = restosOf(c)[ridx].p;
+    var fp = withFlight && addFlight ? flightFor(c, o) : null, fly = fp ? fp.p * o.ppl : 0;
     var v = Math.min(visits, days);
     var hotel = hp * o.nights * o.rooms;
     var food = Math.max(0, c.f * foodMult * o.ppl * days - v * c.f * foodMult * 0.4 * o.ppl);
     var resto = v * rp * o.ppl;
     var trans = c.t * o.ppl * days;
     var act = o.act ? c.a * o.ppl * o.nights : 0;
-    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, sum: hotel + food + resto + trans + act };
+    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, fly: fly, flight: fp, sum: hotel + food + resto + trans + act + fly };
   }
 
   /* ====================== MESAFE VE PLAN ====================== */
@@ -821,20 +871,20 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   /* ====================== ÖZET MODELİ ====================== */
   function makeModel() {
     var o = inputs(), c = D[+$("city").value], hs = hotelsOf(c), rs = restosOf(c), hotel = hs[hIdx], resto = rs[rIdx];
-    var k = cost(c, o, hIdx, rIdx), total = k.sum * o.rate;
+    var k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate;
     var range = o.a && o.b ? dLong.format(o.a) + " – " + dLongY.format(o.b) : o.nights + " gece";
     var m = {
       city: c.n, country: c.c, status: c.s, o: o, total: total, perPerson: total / o.ppl, c: c,
       title: c.n + " · " + range,
-      sub: o.ppl + " kişi · " + o.nights + " gece · uçak hariç",
+      sub: o.ppl + " kişi · " + o.nights + " gece · " + (k.fly ? "uçak dahil" : "uçak hariç"),
       picks: [
         ["Otel", (hotel.name || hotel.label) + " · ~" + hotel.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (hotel.sc ? (hotel.sct ? " · Google " : " · Booking ") + hotel.sc : "")],
         ["Yemek", visits === 0 ? "Viral restoran eklenmedi" : (resto.name || resto.label) + " · ~" + resto.p + " € kişi başı · " + Math.min(visits, o.nights + 1) + " öğün"],
         ["Kişi ve süre", o.ppl + " kişi · " + o.nights + " gece / " + (o.nights + 1) + " gün"]
       ],
       budget: [["Otel", tl(k.hotel * o.rate), k.hotel * o.rate], ["Yemek (diğer öğünler)", tl(k.food * o.rate), k.food * o.rate], ["Viral restoran", tl(k.resto * o.rate), k.resto * o.rate],
-               ["Ulaşım", tl(k.trans * o.rate), k.trans * o.rate], ["Gezi harcamaları", tl(k.act * o.rate), k.act * o.rate]],
-      days: [], tickets: null, notes: [], autoSel: false, hotel: hotel, resto: resto
+               ["Ulaşım", tl(k.trans * o.rate), k.trans * o.rate], ["Gezi harcamaları", tl(k.act * o.rate), k.act * o.rate]].concat(k.fly ? [["Uçak (gidiş-dönüş, " + o.ppl + " kişi)", tl(k.fly * o.rate), k.fly * o.rate]] : []),
+      days: [], tickets: null, notes: [], autoSel: false, hotel: hotel, resto: resto, fly: k.fly
     };
     if (c.places) {
       var sel = picked.length ? picked : defaultPicks(c, o); m.autoSel = !picked.length;
@@ -1023,7 +1073,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       lines.forEach(function (ln, i) { d.text(ln, M + 86, d.y + i * 15, 10.5, false, NAVY); });
       d.y += lines.length * 15 + 5;
     });
-    d.y += 8; sec("Bütçe (uçak hariç)");
+    d.y += 8; sec("Bütçe (" + (m.fly ? "uçak dahil" : "uçak hariç") + ")");
     m.budget.forEach(function (r) {
       d.ensure(24); d.text(r[0], M + 4, d.y + 3, 10.5, false, NAVY);
       var s = clean(r[1]); d.text(s, R - 4 - tw(d.fr, s, 10.5), d.y + 3, 10.5, false, NAVY);
@@ -1250,7 +1300,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   function render() {
     var o = inputs(), c0 = D[+$("city").value];
     ensureLiveCity(c0); fixHotelIdx(hotelsOf(c0));
-    var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx), total = k.sum * o.rate;
+    var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate;
+    renderFlight(c, o, k); $("rAir").textContent = k.fly ? "uçak dahil" : "uçak hariç";
     $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), c.s);
     $("rTotal").textContent = tl(total);
     $("rSub").textContent = (o.a && o.b ? dShort.format(o.a) + " – " + dShort.format(o.b) + " · " : "") + o.ppl + " kişi · " + o.nights + " gece · kişi başı yaklaşık " + tl(total / o.ppl);
@@ -1259,8 +1310,9 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       "<br>Restoran: " + (visits === 0 ? "eklenmedi" : (r.name || r.label) + " · ~" + r.p + " € / kişi × " + Math.min(visits, o.nights + 1) + " öğün");
     var note = $("rNote"); note.hidden = !c.note; note.textContent = c.note;
     var parts = [["Otel", k.hotel * o.rate], ["Yemek", k.food * o.rate], ["Restoran", k.resto * o.rate], ["Ulaşım", k.trans * o.rate], ["Gezi", k.act * o.rate]];
+    if (k.fly) parts.unshift(["Uçak", k.fly * o.rate]);
     var max = Math.max.apply(null, parts.map(function (p) { return p[1]; })) || 1;
-    $("brk").innerHTML = '<li class="air"><span>Uçak</span><span>Biletini sen alıyorsun ✈️</span></li>' + parts.map(function (p) {
+    $("brk").innerHTML = (k.fly ? "" : '<li class="air"><span>Uçak</span><span>' + (flightFor(c, o) ? "Bütçeye eklenmedi ✈️" : "Biletini sen alıyorsun ✈️") + '</span></li>') + parts.map(function (p) {
       return '<li><span>' + p[0] + '</span><div class="track"><div class="fill" style="width:' + (p[1] / max * 100).toFixed(1) + '%"></div></div><span class="amt">' + tl(p[1]) + '</span></li>';
     }).join("");
     var res = renderChips(o); updateBoard(res);
@@ -1334,6 +1386,11 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var getJ = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }); };
     Promise.all([getJ(window.HOTELS_URL), getJ(window.HOTEL_META_URL).catch(function () { return null; })]).then(function (r) {
       if (r[0] && Array.isArray(r[0].sehirler)) { LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
+    }).catch(function () {});
+  }
+  if (window.FLIGHTS_URL && window.fetch) {
+    fetch(window.FLIGHTS_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.haftaSonlari) { FLY = d; render(); }
     }).catch(function () {});
   }
   if (window.DATA_URL && window.fetch) {
