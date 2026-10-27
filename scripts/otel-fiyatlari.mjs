@@ -98,8 +98,8 @@ async function call(fetchImpl, url, token, init = {}) {
 }
 
 // Robotu başlatır, bitmesini bekler, sonuç satırlarını döndürür. Anahtar adrese yazılmaz, başlıkla gider.
-export async function runActor(input, { token, fetchImpl = fetch, sleep, maxPolls = 40 }) {
-  let j = await call(fetchImpl, `${API}/acts/${ACTOR}/runs?waitForFinish=60`, token, { method: "POST", body: JSON.stringify(input) });
+export async function runActor(input, { token, fetchImpl = fetch, sleep, maxPolls = 40, actor = ACTOR }) {
+  let j = await call(fetchImpl, `${API}/acts/${actor}/runs?waitForFinish=60`, token, { method: "POST", body: JSON.stringify(input) });
   let run = j && j.data;
   if (!run || !run.id) throw new Error("Apify çalışması başlatılamadı");
   for (let i = 0; !TERMINAL.has(run.status); i++) {
