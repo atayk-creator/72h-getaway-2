@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-27T22:50:14.456Z",
+ "guncellendi": "2026-10-27T22:53:30.373Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -203,7 +203,14 @@
   "cph-nimb": "ChYI28rkxKGDvskgGgovbS8wNnc5MG5qEAE",
   "cph-ottilia": "ChkIwpf1_urV1cpGGg0vZy8xMWZ6c3h4NTE5EAE",
   "tll-hotel-cru": "ChcI7rzD3bf9hKs1GgsvZy8xdG5jcmtobhAB",
-  "waw-puro": "ChoI28aAjMb6yfTIARoNL2cvMTFoMXRwMXo5cRAB"
+  "waw-puro": "ChoI28aAjMb6yfTIARoNL2cvMTFoMXRwMXo5cRAB",
+  "dub-hendrick": "ChkIx6ayu7_iwL1KGg0vZy8xMWg1cl9xeTkzEAE",
+  "ber-zoe-amano": "ChoInO_gnr-RpqSLARoNL2cvMTFjM3R4dzJ6ORAB",
+  "rom-hotel-smeraldo": "ChgIsL_58t32y8S4ARoLL2cvMXRmbl9xbHEQAQ",
+  "vno-astorija": "ChcI3YC0nbW90o40GgsvZy8xdnE5a3puNRAB",
+  "vno-stikliai": "ChgI84OvhpvpmPD5ARoLL2cvMXRkZ3l6cWIQAQ",
+  "waw-ibis-stare-miasto": "ChcIvd6-l5uAyMkfGgsvZy8xdGdiNjMxaxAB",
+  "zag-dubrovnik": "ChkIgJrVnOjqo8LfARoML2cvMWhjMGdjMTRzEAE"
  },
  "konum": {
   "dub-shelbourne": [
@@ -1005,19 +1012,47 @@
   "waw-puro": [
    52.23116,
    21.01487
+  ],
+  "dub-hendrick": [
+   53.347879999999996,
+   -6.2809
+  ],
+  "ber-zoe-amano": [
+   52.523050000000005,
+   13.40085
+  ],
+  "rom-hotel-smeraldo": [
+   41.89457,
+   12.47449
+  ],
+  "vno-astorija": [
+   54.67741,
+   25.28745
+  ],
+  "vno-stikliai": [
+   54.68047,
+   25.28604
+  ],
+  "waw-ibis-stare-miasto": [
+   52.25446,
+   20.9991
+  ],
+  "zag-dubrovnik": [
+   45.81225,
+   15.976479999999999
   ]
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 1.06
+  "usd": 1.32
  },
  "sonCalisma": {
-  "tarih": "2026-10-27T22:50:14.456Z",
+  "tarih": "2026-10-27T22:53:30.373Z",
   "mod": "test",
   "hafta_sonu": 1,
-  "kontrol": 96,
-  "fiyatli": 80,
-  "tahminiMaliyetUsd": 0.34,
+  "kontrol": 72,
+  "fiyatli": 60,
+  "tahminiMaliyetUsd": 0.26,
   "butceAtlanan": 0
  },
  "sehirler": {
