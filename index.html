@@ -614,7 +614,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       else if (sp && sp.kind === "full") { chip = sp.p != null ? "avg" : "est"; note = weekendText(sp.g, sp.cikis) + " hafta sonu dolu görünüyor. Fiyat " + (sp.p != null ? "diğer hafta sonlarının ortalaması." : "tahmini."); }
       else if (sp && sp.kind === "avg") { chip = "avg"; note = "Fiyat, önümüzdeki " + sp.n + " hafta sonunun ortalaması."; }
       else { chip = "est"; note = file ? "Bu otelin fiyatı henüz kontrol edilmedi, şehir ortalamasından tahmin." : "Fiyat yükleniyor…"; }
-      return { t: cat.t, lvl: cat.lvl, name: h.ad, label: h.ad, p: Math.round(p), s: chip, desc: h.not + ". " + note,
+      return { t: cat.t, lvl: cat.lvl, name: h.ad, label: h.ad, p: Math.round(p), s: chip, desc: h.not.replace(/[.\s]+$/, "") + ". " + note,
         sc: sp && sp.puan ? String(sp.puan).replace(".", ",") : "", sct: "Google puanı", live: true,
         lat: k ? k[0] : fb ? fb.lat : undefined, lon: k ? k[1] : fb ? fb.lon : undefined };
     });

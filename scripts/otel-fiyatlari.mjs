@@ -191,7 +191,7 @@ const siteKey = (s) => norm(s).replace(/\b(com|net|co|uk|www|deals)\b/g, "").rep
 export function isTrusted(option, trusted = DEFAULT_TRUSTED) {
   if (option.resmi) return trusted.some((t) => /kendi sitesi|official/i.test(t));
   const k = siteKey(option.site);
-  return !!k && trusted.some((t) => { const tk = siteKey(t); return tk && (k === tk || k.startsWith(tk)); });
+  return !!k && trusted.some((t) => siteKey(t) === k); // tam eşleşme: "Hotelscombined" ≠ "Hotels.com"
 }
 
 // Tek satırı kayda çevirir. Ana fiyat = tanınmış sitelerin en ucuz toplamı (2 gece). Tanınmış site yoksa en ucuz.

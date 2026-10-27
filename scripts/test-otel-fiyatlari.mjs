@@ -84,7 +84,7 @@ console.log("ok 5: fatura dönemi");
 // 8) tanınmış site tespiti
 { const T = S.guvenilir_siteler;
   for (const s of ["Booking.com", "booking.com", "Expedia.com", "Expedia", "Hotels.com", "Agoda", "Trip.com", "Priceline"]) assert.ok(isTrusted({ site: s }, T), s);
-  for (const s of ["Super.com", "Amimir.com", "Clicktrip.com", "trivago DEALS", "KAYAK.com", "Vio.com", "?", ""]) assert.ok(!isTrusted({ site: s }, T), s);
+  for (const s of ["Super.com", "Amimir.com", "Clicktrip.com", "trivago DEALS", "KAYAK.com", "Vio.com", "Hotelscombined.com", "Tripening Hotels", "?", ""]) assert.ok(!isTrusted({ site: s }, T), s);
   assert.ok(isTrusted({ site: "Hotel Rum", resmi: true }, T), "otelin kendi sitesi"); console.log("ok 8: tanınmış siteler"); }
 
 // 9) kayıt: tanınmış en ucuz öne, daha ucuz bilinmeyen site ayrı; tanınmış yoksa en ucuz; dolu/bulunamadı; konum
