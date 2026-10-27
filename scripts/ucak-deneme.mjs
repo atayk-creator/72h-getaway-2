@@ -5,19 +5,20 @@ import { runActor, upcomingWeekends, istanbulToday } from "./otel-fiyatlari.mjs"
 
 const ACTOR = "dz_omar~google-flights-scraper";
 const w = upcomingWeekends(istanbulToday(), 2)[1]; // gelecek haftanın hafta sonu
-const base = { tripType: "round_trip", destination: "BUD", departureDate: w.giris, returnDate: w.cikis, adults: 1, currency: "EUR", market: "TR", language: "en-US", resultsView: "cheapest", maxResults: 4 };
+const base = { tripType: "round_trip", destination: ["BUD"], departureDate: w.giris, returnDate: w.cikis, adults: 1, currency: "EUR", market: "TR", language: "en-US", resultsView: "cheapest", maxResults: 4 };
 const tests = [
-  { ad: "IST tek", input: { ...base, origin: "IST" } },
-  { ad: "SAW tek", input: { ...base, origin: "SAW" } },
-  { ad: "IST,SAW birlikte", input: { ...base, origin: "IST,SAW" } },
-  { ad: "IST 2 kişi", input: { ...base, origin: "IST", adults: 2, maxResults: 2 } },
+  { ad: "IST tek", input: { ...base, origin: ["IST"] } },
+  { ad: "SAW tek", input: { ...base, origin: ["SAW"] } },
+  { ad: "IST+SAW birlikte", input: { ...base, origin: ["IST", "SAW"] } },
+  { ad: "IST+SAW, 3 şehir", input: { ...base, origin: ["IST", "SAW"], destination: ["BUD", "PRG", "VIE"], maxResults: 9 } },
+  { ad: "IST 2 kişi", input: { ...base, origin: ["IST"], adults: 2, maxResults: 2 } },
 ];
 const out = { tarih: new Date().toISOString(), hafta_sonu: w, sonuclar: [] };
 for (const t of tests) {
   try {
     const rows = await runActor(t.input, { token: process.env.APIFY_TOKEN, actor: ACTOR, sleep: (ms) => new Promise((r) => setTimeout(r, ms)) });
-    out.sonuclar.push({ ad: t.ad, girdi: t.input, satir: rows.length, ilk: rows.slice(0, 3) });
-    console.log(t.ad, "→", rows.length, "satır", rows.slice(0, 3).map((r) => `${r.origin}-${r.destination} ${r.price} ${r.currency} ${r.stopsLabel || r.stops} ${r.airlines}`).join(" | "));
+    out.sonuclar.push({ ad: t.ad, girdi: t.input, satir: rows.length, ilk: rows.slice(0, 6) });
+    console.log(t.ad, "→", rows.length, "satır", rows.slice(0, 6).map((r) => `${r.origin}-${r.destination} ${r.price} ${r.currency} ${r.stopsLabel || r.stops} ${r.airlines}`).join(" | "));
   } catch (e) {
     out.sonuclar.push({ ad: t.ad, girdi: t.input, hata: String(e.message).split(process.env.APIFY_TOKEN || "§").join("***") });
     console.log(t.ad, "→ HATA", e.message);
