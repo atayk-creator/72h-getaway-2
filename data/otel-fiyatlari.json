@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-27T22:47:07.206Z",
+ "guncellendi": "2026-10-27T22:50:14.456Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -196,7 +196,17 @@
   "sof-les-fleurs": "ChcIvpazmdCyhsF-GgsvZy8xdGQ4Zzk1ahAB",
   "sof-arena-di-serdica": "ChgI88-1zrup063DARoLL2cvMXRkNTF5OG0QAQ",
   "sof-favorit": "ChcI3NfMztSq7IVAGgsvZy8xdGtjMG0weRAB",
-  "sof-art-plaza": "ChkI0OKP857GzpxzGg0vZy8xMWI2Mzg4ZjB4EAE"
+  "sof-art-plaza": "ChkI0OKP857GzpxzGg0vZy8xMWI2Mzg4ZjB4EAE",
+  "par-du-cygne": "ChcIp76F8MTBu_tTGgsvZy8xdGRjX18zNBAB",
+  "lis-memmo-alfama": "ChgI4--UnavF4akXGgwvZy8xaG01YnJ6NXMQAQ",
+  "rom-hotel-eden": "ChkIm-e-sLTNq9yqARoML2cvMXlsNDlkd2hfEAE",
+  "vlt-the-cumberland": "ChoI6dj47onhrMmBARoNL2cvMTFmMzJkYjRkcBAB",
+  "cph-nimb": "ChYI28rkxKGDvskgGgovbS8wNnc5MG5qEAE",
+  "cph-ottilia": "ChkIwpf1_urV1cpGGg0vZy8xMWZ6c3h4NTE5EAE",
+  "tll-hotel-cru": "ChcI7rzD3bf9hKs1GgsvZy8xdG5jcmtobhAB",
+  "vno-grand-hotel-vilnius": "ChkIuonoiI2M4tU3Gg0vZy8xMWw2XzF0djZnEAE",
+  "waw-puro": "ChoI28aAjMb6yfTIARoNL2cvMTFoMXRwMXo5cRAB",
+  "zag-palace": "ChcI3fzjkoeKy_l_GgsvZy8xdGNfZDEzMRAB"
  },
  "konum": {
   "dub-shelbourne": [
@@ -970,19 +980,59 @@
   "sof-art-plaza": [
    42.68951,
    23.320400000000003
+  ],
+  "par-du-cygne": [
+   48.86316,
+   2.34937
+  ],
+  "lis-memmo-alfama": [
+   38.71022,
+   -9.13058
+  ],
+  "rom-hotel-eden": [
+   41.906639999999996,
+   12.48637
+  ],
+  "vlt-the-cumberland": [
+   35.89682,
+   14.512709999999998
+  ],
+  "cph-nimb": [
+   55.67367,
+   12.56611
+  ],
+  "cph-ottilia": [
+   55.66697,
+   12.533209999999999
+  ],
+  "tll-hotel-cru": [
+   59.436730000000004,
+   24.747490000000003
+  ],
+  "vno-grand-hotel-vilnius": [
+   54.677800000000005,
+   25.28825
+  ],
+  "waw-puro": [
+   52.23116,
+   21.01487
+  ],
+  "zag-palace": [
+   45.80697,
+   15.98465
   ]
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 0.72
+  "usd": 1.06
  },
  "sonCalisma": {
-  "tarih": "2026-10-27T22:47:07.206Z",
+  "tarih": "2026-10-27T22:50:14.456Z",
   "mod": "test",
   "hafta_sonu": 1,
-  "kontrol": 208,
-  "fiyatli": 176,
-  "tahminiMaliyetUsd": 0.72,
+  "kontrol": 96,
+  "fiyatli": 80,
+  "tahminiMaliyetUsd": 0.34,
   "butceAtlanan": 0
  },
  "sehirler": {
