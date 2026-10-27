@@ -1,0 +1,41 @@
+{
+  "aciklama": "Uçak fiyat robotunun ayarları. İstanbul'dan (IST ve SAW) her başkente Cuma gidiş, Pazar dönüş, 1 kişi, gidiş-dönüş en ucuz fiyat.",
+  "kalkis": ["IST", "SAW"],
+  "kisi": 1,
+  "para_birimi": "EUR",
+  "pazar": "TR",
+  "kac_hafta_sonu": 8,
+  "sonuc_sayisi": 6,
+  "kontrol_takvimi": [
+    {"kademe":"yakin","ilk":1,"son":4,"gunler":["Sal"],"her_n_haftada":1},
+    {"kademe":"uzak","ilk":5,"son":8,"gunler":["Sal"],"her_n_haftada":2}
+  ],
+  "sehirler": [
+    {"sehir":"Dublin","havalimani":["DUB"]},
+    {"sehir":"Paris","havalimani":["CDG","ORY"]},
+    {"sehir":"Brüksel","havalimani":["BRU","CRL"]},
+    {"sehir":"Amsterdam","havalimani":["AMS"]},
+    {"sehir":"Lüksemburg","havalimani":["LUX"]},
+    {"sehir":"Berlin","havalimani":["BER"]},
+    {"sehir":"Viyana","havalimani":["VIE"]},
+    {"sehir":"Madrid","havalimani":["MAD"]},
+    {"sehir":"Lizbon","havalimani":["LIS"]},
+    {"sehir":"Roma","havalimani":["FCO","CIA"]},
+    {"sehir":"Valletta","havalimani":["MLA"]},
+    {"sehir":"Atina","havalimani":["ATH"]},
+    {"sehir":"Stokholm","havalimani":["ARN"]},
+    {"sehir":"Kopenhag","havalimani":["CPH"]},
+    {"sehir":"Helsinki","havalimani":["HEL"]},
+    {"sehir":"Tallinn","havalimani":["TLL"]},
+    {"sehir":"Riga","havalimani":["RIX"]},
+    {"sehir":"Vilnius","havalimani":["VNO"]},
+    {"sehir":"Varşova","havalimani":["WAW","WMI"]},
+    {"sehir":"Prag","havalimani":["PRG"]},
+    {"sehir":"Bratislava","havalimani":["BTS"]},
+    {"sehir":"Budapeşte","havalimani":["BUD"]},
+    {"sehir":"Ljubljana","havalimani":["LJU"]},
+    {"sehir":"Zagreb","havalimani":["ZAG"]},
+    {"sehir":"Bükreş","havalimani":["OTP"]},
+    {"sehir":"Sofya","havalimani":["SOF"]}
+  ]
+}
