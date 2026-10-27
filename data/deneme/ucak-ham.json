@@ -1,0 +1,78 @@
+{
+ "tarih": "2026-10-27T23:36:37.782Z",
+ "hafta_sonu": {
+  "no": 2,
+  "giris": "2026-11-06",
+  "cikis": "2026-11-08"
+ },
+ "sonuclar": [
+  {
+   "ad": "IST tek",
+   "girdi": {
+    "tripType": "round_trip",
+    "destination": "BUD",
+    "departureDate": "2026-11-06",
+    "returnDate": "2026-11-08",
+    "adults": 1,
+    "currency": "EUR",
+    "market": "TR",
+    "language": "en-US",
+    "resultsView": "cheapest",
+    "maxResults": 4,
+    "origin": "IST"
+   },
+   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+  },
+  {
+   "ad": "SAW tek",
+   "girdi": {
+    "tripType": "round_trip",
+    "destination": "BUD",
+    "departureDate": "2026-11-06",
+    "returnDate": "2026-11-08",
+    "adults": 1,
+    "currency": "EUR",
+    "market": "TR",
+    "language": "en-US",
+    "resultsView": "cheapest",
+    "maxResults": 4,
+    "origin": "SAW"
+   },
+   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+  },
+  {
+   "ad": "IST,SAW birlikte",
+   "girdi": {
+    "tripType": "round_trip",
+    "destination": "BUD",
+    "departureDate": "2026-11-06",
+    "returnDate": "2026-11-08",
+    "adults": 1,
+    "currency": "EUR",
+    "market": "TR",
+    "language": "en-US",
+    "resultsView": "cheapest",
+    "maxResults": 4,
+    "origin": "IST,SAW"
+   },
+   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+  },
+  {
+   "ad": "IST 2 kişi",
+   "girdi": {
+    "tripType": "round_trip",
+    "destination": "BUD",
+    "departureDate": "2026-11-06",
+    "returnDate": "2026-11-08",
+    "adults": 2,
+    "currency": "EUR",
+    "market": "TR",
+    "language": "en-US",
+    "resultsView": "cheapest",
+    "maxResults": 2,
+    "origin": "IST"
+   },
+   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+  }
+ ]
+}
