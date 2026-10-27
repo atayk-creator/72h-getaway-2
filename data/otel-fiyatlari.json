@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-27T22:14:19.790Z",
+ "guncellendi": "2026-10-27T22:47:07.206Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -11,218 +11,1006 @@
   "bud-moments": "ChkIjaSP8Lri_ahdGg0vZy8xMWI4emxjcGQzEAE",
   "bud-rum": "ChoI1qmGwdPUn-DTARoNL2cvMTFjbmRiMXAwchAB",
   "bud-d8": "ChoIwu757Lvb6N2lARoNL2cvMTFmNWx5Nnk0MhAB",
-  "bud-roombach": "ChgImoPF4PiQxNB3GgwvZy8xcHR2cWI3d2wQAQ"
+  "bud-roombach": "ChgImoPF4PiQxNB3GgwvZy8xcHR2cWI3d2wQAQ",
+  "dub-shelbourne": "ChYI5PPw0ajI-K9SGgovbS8wMnJncjgxEAE",
+  "dub-merrion": "ChYIgPfloKal7cICGgovbS8wYjZqaDcyEAE",
+  "dub-westbury": "ChcIgI-Zn7-a5apgGgsvZy8xdGs4bjAxbBAB",
+  "dub-iveagh-garden": "ChkItPW9zeWzhtd6Gg0vZy8xMWdjcXhjdDk1EAE",
+  "dub-the-dean": "ChoIgvDRkYfItYyFARoNL2cvMTFiNnp3NDgxaxAB",
+  "dub-wren": "ChoI0rqnz_WMy63gARoNL2cvMTFqMDhiazkzcxAB",
+  "dub-point-a-parnell": "ChoIreL_krzWqvq9ARoNL2cvMTFsc210dDIyXxAB",
+  "par-lutetia": "ChYIspSn8IKetKmzARoJL20vMDdfYzQwEAE",
+  "par-le-meurice": "ChoIlLmp1ce33NDgARoNL2cvMTFqOWZ5aGd6MhAB",
+  "par-regina-louvre": "ChcIsv_suu3j88vMARoKL20vMDJ2bDc5chAB",
+  "par-le-walt": "ChgIhseSmYKEu6HtARoLL2cvMXYyZF90d3YQAQ",
+  "par-bachaumont": "ChoI1d6hrv_Fi_r9ARoNL2cvMTFiN3Z3cXAycRAB",
+  "par-fabric": "ChkIlsuZ2piWhKvJARoML2cvMTJxaDV0bjJ6EAE",
+  "par-chopin": "ChcIxKGH2eDekqdBGgsvZy8xd3JnamdxeRAB",
+  "bru-amigo": "ChcIsair5YqA2acGGgsvZy8xdGY1NzB6ZhAB",
+  "bru-corinthia": "ChkI2q_J9YOu3LYVGg0vZy8xMXZzdjNtcjliEAE",
+  "bru-wiltchers": "ChgI6Mm29sXmgJs4GgwvZy8xcTViZmdqcjAQAQ",
+  "bru-des-galeries": "ChkIqYSqqYq29o6BARoML2cvMXE2OW1faGd6EAE",
+  "bru-dixseptieme": "ChgIxZ3Dm8KtypqEARoLL2cvMXRjeTNna3gQAQ",
+  "bru-made-in-louise": "ChgIsZ6K0ZqKkt-RARoLL2cvMXZsazBxeTQQAQ",
+  "bru-motel-one": "ChoIzo69m7Xd9_v5ARoNL2cvMTFiNjIwZmwwdBAB",
+  "bru-ibis-ste-catherine": "ChgI5peBo6XQqeNdGgwvZy8xcHljbHRzbDQQAQ",
+  "ams-krasnapolsky": "ChYItPHvq5edvtgfGgovbS8wYnkxOWRmEAE",
+  "ams-pulitzer": "ChYItsyq5KHvhJpUGgovbS8wYnkwc19jEAE",
+  "ams-de-leurope": "ChYI6dqZpaj64alGGgovbS8wOWc4djVwEAE",
+  "ams-v-nesplein": "ChkI3OCIrrP29_LEARoML2cvMTJoa2Y1NXdzEAE",
+  "ams-max-brown": "ChgIk7yVnfO1xf-bARoLL2cvMXRtcWZkbTIQAQ",
+  "ams-estherea": "ChcIpNnUo5zgyNGSARoKL20vMDRzeHpoORAB",
+  "ams-motel-one": "ChoIwuXUuKLLyZuHARoNL2cvMTFmeWxqMl93ZxAB",
+  "ams-ibis-styles-cs": "ChgI5Ie3qvKOuchvGgwvZy8xMnE0dmp3bDIQAQ",
+  "lux-place-darmes": "ChgI3o2i5rCr5bkUGgwvZy8xMmNwOXpqNHIQAQ",
+  "lux-le-royal": "ChcIq97N9M_jxt8dGgsvZy8xd2s3cHQycBAB",
+  "lux-sofitel-grand-ducal": "ChcIhOnBvqn9ocZsGgsvZy8xdGNfazF4eRAB",
+  "lux-cravat": "ChcI7-3ejsP8_44sGgsvZy8xdGY2X3dreBAB",
+  "lux-parc-beaux-arts": "ChgI5q-unZ7Z1dehARoLL2cvMXRmOXhidnEQAQ",
+  "lux-simoncini": "ChcIg8_x8qLcvvpxGgsvZy8xd3J0YnNfYhAB",
+  "lux-vauban": "ChgI6_bRt5HXwaHoARoLL2cvMXRwMXhybHcQAQ",
+  "lux-ibis-styles-gare": "ChgI_vuizvKin77DARoLL2cvMXRkZHIzcTQQAQ",
+  "ber-adlon": "ChUI2f3tmL_9t_IZGgkvbS8wOG1mdzIQAQ",
+  "ber-ritz-carlton": "ChgIveLHqY3365ykARoLL2cvMTIzMjYwN3gQAQ",
+  "ber-waldorf-astoria": "ChcIlb2fkJjIvrVsGgsvbS8wMTEzZmJ6ahAB",
+  "ber-oderberger": "ChcI0drKnIvrtYx_GgsvZy8xMjE3NWxrZBAB",
+  "ber-provocateur": "ChkIhsDnuc3p8tcQGg0vZy8xMWoyZm1rZF85EAE",
+  "ber-motel-one-hackescher": "ChcIkoW7-aXHse84GgsvZy8xdGRmYjQxNxAB",
+  "ber-premier-inn-alex": "ChkI9rmNhYGcxIN6Gg0vZy8xMXN3em1zbTd4EAE",
+  "vie-sacher": "ChUIiKX-t_ztvJZOGgkvbS8wN19iOTgQAQ",
+  "vie-park-hyatt": "ChoI4rWPjqSCj9PrARoNL2cvMTFiYnJsZ3pkXxAB",
+  "vie-ritz-carlton": "ChgIteOIxcni3fJnGgwvZy8xMWdfanA2X2QQAQ",
+  "vie-kaiserhof": "ChgIs5_Zp_bB5Mq_ARoLL2cvMXRnNm55MGIQAQ",
+  "vie-motto": "ChoI5o3doYbSh7WFARoNL2cvMTFrNWZ2bGNxMxAB",
+  "vie-altstadt": "ChcIzbWnt5GVuJYyGgsvZy8xdGtqal9qcBAB",
+  "vie-motel-one-westbahnhof": "ChgIipHJxd_esfT8ARoLL2cvMXY5Z2hzd24QAQ",
+  "vie-zipser": "ChYIssDn0d7AtP8dGgovbS8wazB0cjE3EAE",
+  "mad-the-palace": "ChoIz5K9l7qW-rigARoNL2cvMTFjMm45eHBmMRAB",
+  "mad-rosewood-villa-magna": "ChgIq-TC39rxhZT7ARoLL2cvMXRkZGM0Z2IQAQ",
+  "mad-gran-hotel-ingles": "ChkIx_aRy62ixal_Gg0vZy8xMWdiM19id2hyEAE",
+  "mad-only-you-boutique": "ChgIkPa3_Y2k5owfGgwvZy8xMnZya2hkemcQAQ",
+  "mad-catalonia-las-cortes": "ChgIiYGkgNn3w-mhARoLL2cvMXYzXzNfOHgQAQ",
+  "mad-hotel-preciados": "ChkIz8n398DbmrE3Gg0vZy8xMWI2Z2N6NmZ5EAE",
+  "mad-hotel-moderno": "ChgIruDXtMGTroXUARoLL2cvMXZ2ZHdqYnQQAQ",
+  "mad-hotel-europa": "ChgIsK679fHI7J9GGgwvZy8xamdsenY5bDAQAQ",
+  "lis-avenida-palace": "ChgI782c2Z2f8OMdGgwvZy8xMWR5anhtYjcQAQ",
+  "lis-tivoli-avenida": "ChgIzeXetOXZ3uOVARoLL2cvMTIwdDl2eW0QAQ",
+  "lis-bairro-alto-hotel": "ChgIgIq5-Jq-qecMGgwvZy8xMTNocGxnaGgQAQ",
+  "lis-almalusa-baixa-chiado": "ChoI6IDEuLbsne_fARoNL2cvMTFieW14anZncxAB",
+  "lis-inspira-liberdade": "ChcIkoiYtZukqJkEGgsvZy8xd2N4ZmMxbBAB",
+  "lis-hotel-florescente": "ChgI88rKp5SRmPwHGgwvZy8xMmhrXzB4ZmoQAQ",
+  "lis-my-story-rossio": "ChoIu4LlrLyn7_jwARoNL2cvMTFiN3J0cG1naxAB",
+  "rom-hotel-raphael": "ChgItpnF8JrrlphqGgwvZy8xMV9rMmJkNnAQAQ",
+  "rom-hotel-de-russie": "ChgI3tK41OfV-8LqARoLL2cvMXc2d3JfejkQAQ",
+  "rom-hotel-artemide": "ChcIiuSl0rK53e0uGgsvZy8xdGc5N200dBAB",
+  "rom-hotel-locarno": "ChcIsfiF7P-C2vcUGgsvZy8xdGY1Z3dzdhAB",
+  "rom-hotel-campo-de-fiori": "ChkI_oa4gICd58izARoML2cvMTF4bnJjXzIxEAE",
+  "rom-hotel-panda": "ChgI7fGD7v7L-u26ARoLL2cvMXg1Y3duX2oQAQ",
+  "vlt-the-phoenicia": "ChoIrvDVwsDQpNrwARoNL2cvMTFieDFidnk2YxAB",
+  "vlt-rosselli": "ChkIvdDQo5eE4aRfGg0vZy8xMWYzdmNsNmdoEAE",
+  "vlt-iniala-harbour-house": "ChkI7tHNv4Ss-LZRGg0vZy8xMWgwM2diOTVkEAE",
+  "vlt-casa-ellul": "ChkIhfrQ1rvIpdxpGg0vZy8xMWI1eW5tZDdwEAE",
+  "vlt-ursulino": "ChoI1ZHKtM70lJzrARoNL2cvMTFieXA4MDNjehAB",
+  "vlt-osborne-hotel": "ChcIgdyrqrX0_a0sGgsvZy8xdGQ2XzZoXxAB",
+  "vlt-british-hotel": "ChoI1ZHKtM70lJzrARoNL2cvMTFieXA4MDNjehAB",
+  "ath-grande-bretagne": "ChcIy6qXuMTLmZOxARoKL20vMDI2eWN5XxAB",
+  "ath-electra-metropolis": "ChoIns6eg4eD8ZbsARoNL2cvMTFidzQwODJzZBAB",
+  "ath-athenswas": "ChoInd6tjsPlo-SEARoNL2cvMTFiNzc2bDc5dhAB",
+  "ath-ava-hotel": "ChcI1r-GoqypnaQ0GgsvZy8xdGt4ajlyOBAB",
+  "ath-the-modernist": "ChkIpofr-_a_rIkIGg0vZy8xMWpjbXRwNHo5EAE",
+  "ath-herodion": "ChcIvYKjlK_D4NQwGgsvZy8xdHh2N3FxaxAB",
+  "ath-phaedra": "ChcIpLKz7pfD2fVLGgsvZy8xdGhscTd4chAB",
+  "ath-attalos": "ChgIiLz90J_R-KiTARoLL2cvMXRkOGc5MngQAQ",
+  "sto-grand-hotel": "ChYI5_jTmO_81e2MARoJL20vMGRtXzJyEAE",
+  "sto-hotel-diplomat": "ChgIp8KDv5S579dqGgwvZy8xMWR5bGNydmQQAQ",
+  "sto-lydmar": "ChkI7tKl0s7Jp8b-ARoML2cvMTFkeWo4cDlnEAE",
+  "sto-miss-clara": "ChgI4_jxsuTV-dUnGgwvZy8xcTVncnB3bWIQAQ",
+  "sto-hotel-rival": "ChYI_qDM8NfNwpAkGgovbS8wOWc3X25uEAE",
+  "sto-skeppsholmen": "ChcIps3Q49bznPf4ARoKL20vMDI4OXpweBAB",
+  "sto-scandic-go-upplandsgatan": "ChoI_77i7uej54uXARoNL2cvMTFidHY2OTk0bBAB",
+  "sto-scandic-go-sankt-eriksgatan": "ChkIxPDWk9yEyvoYGg0vZy8xMXcza3htbnI2EAE",
+  "cph-radisson-royal": "ChUI0pX6uP_01JAKGgkvbS8wOXo1a2oQAQ",
+  "cph-d-angleterre": "ChYI9vy_x4TEybxTGgovbS8wNXp2NHh6EAE",
+  "cph-nyhavn-71": "ChYIisKL-6XHqspZGgovbS8wZ21kOGZ6EAE",
+  "cph-sp34": "ChgI1vPg1YW7sadHGgwvZy8xcHYyZ3g5cjAQAQ",
+  "cph-wakeup-borgergade": "ChkIp4WI-Kqi7e9wGg0vZy8xMWI1cGxzZGcyEAE",
+  "cph-cabinn-city": "ChgI1om14fSj-ti3ARoLL2cvMXRjdjAwdjUQAQ",
+  "hel-sokos-torni": "ChcIscyJsfW0pouoARoKL20vMDI2cm14NBAB",
+  "hel-kamp": "ChUI1LuUoYa0gYhxGgkvbS8wZjNwNTkQAQ",
+  "hel-st-george": "ChkI77yogpHey_ZOGg0vZy8xMWNwN3czN3c2EAE",
+  "hel-lilla-roberts": "ChkIzfraiKiF-5YxGg0vZy8xMWMweHRkNWc5EAE",
+  "hel-fabian": "ChcIyv3MgIWJoPtNGgsvZy8xdHI4azZ4MBAB",
+  "hel-f6": "ChkIzYnYlpHft4oXGg0vZy8xMWNuN3Iza2w5EAE",
+  "hel-omena-lonnrotinkatu": "ChkIgb2ttpfNhPDTARoML2cvMWhtNTg1anZyEAE",
+  "hel-hotel-arthur": "ChkI4MTs-_SBlusDGg0vZy8xMWI2aHlxbGxtEAE",
+  "tll-sokos-viru": "ChYIwb_wuqqV1818GgovbS8wazhuaDM5EAE",
+  "tll-telegraaf": "ChgIoIeAnf6c_qGtARoLL2cvMXRqNTE3eDgQAQ",
+  "tll-schlossle": "ChcIyJT7utSv6uVLGgsvZy8xdGpkdmt0OBAB",
+  "tll-nordic-forum": "ChoI2cG8mfXSppGHARoNL2cvMTFiNmdwMGM1ZBAB",
+  "tll-kreutzwald": "ChoIhMWxtuvooIrMARoNL2cvMTFnY2ZteGNtbBAB",
+  "tll-go-hotel-shnelli": "ChkInLCfvZH8k7EwGg0vZy8xMWdjajloX3JnEAE",
+  "tll-tallink-express": "ChoImNLlmaWR1-zpARoNL2cvMTFkZjF2c3Z0ZhAB",
+  "rix-grand-palace": "ChYI-tj4nOvB8bY4GgovbS8wZHJ3NmdzEAE",
+  "rix-kempinski": "ChcInJjxkdqC6NI_GgsvZy8xdGN2MDNkNhAB",
+  "rix-hotel-bergs": "ChcI0fib2sP2__MxGgsvZy8xdGQzcTU5bRAB",
+  "rix-neiburgs": "ChkIt-n56JSp3uiTARoML2cvMWhjMjh2OF95EAE",
+  "rix-pullman-old-town": "ChoI6b_PruDZ9IqcARoNL2cvMTFjbTE3dDI0dhAB",
+  "rix-hotel-justus": "ChcIierxrseQzcMyGgsvZy8xdGR4emxkbRAB",
+  "rix-hanza-hotel": "ChgI5ZiP84HThIz5ARoLL2cvMXRteTNyaG4QAQ",
+  "rix-bruninieks": "ChoI6t65mM_M56KzARoNL2cvMTF5ZGIweHFucBAB",
+  "vno-pacai": "ChoIpuK194KL4KuOARoNL2cvMTFmNWx5N21xZhAB",
+  "vno-artagonist": "ChoIoMaQ78Tcob_2ARoNL2cvMTFjMnBtc3lnNRAB",
+  "vno-shakespeare": "ChkIw7r5vIuG7ulfGg0vZy8xMWI1d3F0bGp6EAE",
+  "vno-neringa": "ChcI65ODi-_U2qtvGgsvZy8xdGpsNGw3ZBAB",
+  "vno-ibis-styles": "ChkIqcjbzM6jpKCGARoML2cvMXloNGc3YmxtEAE",
+  "vno-city-gate": "ChgIh5eUtOKf1t2XARoLL2cvMXRsenl2d3EQAQ",
+  "waw-bristol": "ChYI3pusjovJ3-UOGgovbS8wM3kzOW1sEAE",
+  "waw-raffles": "ChYIsumup9GglMJfGgovbS8wMnJmbnI1EAE",
+  "waw-verte": "ChkIt7ewu42n2NIuGg0vZy8xMXQ2eWp2M2NkEAE",
+  "waw-indigo": "ChkIq_6u88a9g4AiGg0vZy8xMWc3eTZybDJqEAE",
+  "waw-polonia-palace": "ChcIuquBj9-NvdVRGgsvbS8wMTBma3luYxAB",
+  "waw-motel-one-chopin": "ChkInoaYi4izu8dqGg0vZy8xMWgxMHZ2N3l2EAE",
+  "waw-ibis-stare-miasto": "ChgIg9K1n87KlYOgARoLL2cvMXRmNTZtdjcQAQ",
+  "prg-hotel-paris": "ChYI5NK56dbtpbMCGgovbS8wYzAxMTloEAE",
+  "prg-four-seasons": "ChYIlbig4rSKitt5GgovbS8wM3dkcG5qEAE",
+  "prg-mandarin-oriental": "ChoIooDVpMzmgp6hARoNL2cvMTFienQ0ODVybRAB",
+  "prg-josef": "ChcI-6jTuv7yzPw9GgsvZy8xMjF5eWg2dhAB",
+  "prg-pod-vezi": "ChcIzOi0sffk24xoGgsvZy8xdGN3azhtNxAB",
+  "prg-ibis-old-town": "ChcIkIbJjbqhwpV-GgsvZy8xdHQwcHZmcxAB",
+  "prg-clement": "ChkI-aaBya6s2ZzzARoML2cvMWhjYmgzazZsEAE",
+  "bts-carlton": "ChcI0oqx9ZTCqJ1WGgsvZy8xMjI3cF82bhAB",
+  "bts-river-park": "ChoIjpnyk8XN25WXARoNL2cvMTFjNzJqOTZfORAB",
+  "bts-sheraton": "ChkIt4DVzcOckOYoGg0vZy8xMWR4bm0xMDQzEAE",
+  "bts-marrols": "ChcIvbC7k7Wq7s8GGgsvZy8xdGdjODlyMxAB",
+  "bts-loft": "ChkIjLqqq7Kjr9KOARoML2cvMXE2Mmg2bjdiEAE",
+  "bts-arcadia": "ChkIq_LTmv_arJeZARoML2cvMTFoMW00ZzU3EAE",
+  "bts-elisabeth": "ChoIzvDWvNjwuN-LARoNL2cvMTFjc3JjMzNmahAB",
+  "bts-ibis-centrum": "ChgIn72V3r_P1N4HGgwvZy8xaGMydzN5dmYQAQ",
+  "lju-grand-union": "ChcItdS_wsngkLiqARoKL20vMDN5MGR6aBAB",
+  "lju-intercontinental": "ChoIwrO_2cD-q7KUARoNL2cvMTFjNV90NTFiehAB",
+  "lju-vander-urbani": "ChgItJWC38_G0cx1GgwvZy8xamt5Yl9sdjMQAQ",
+  "lju-cubo": "ChgInuPIiai4zqWxARoLL2cvMXRrNnRxMjIQAQ",
+  "lju-adora": "ChkI_rez5qfw4a2-ARoML2cvMTF4aG5wc255EAE",
+  "lju-zlata-ladjica": "ChkI2LX3nYOC7vdLGg0vZy8xMW5uM3B0eXE1EAE",
+  "lju-emonec": "ChcI5L3vo8-Ai8hyGgsvZy8xdGQxXzEzcRAB",
+  "lju-bb-park": "ChgI96ePkYq79uPDARoLL2cvMXZtNzk3a3IQAQ",
+  "zag-esplanade": "ChYIkrCDl_n98J5eGgovbS8wYjZwMnJnEAE",
+  "zag-artotel": "ChkIjejv0uyc7oAeGg0vZy8xMXN0ZHQ3X3o1EAE",
+  "zag-sheraton": "ChcI3fzjkoeKy_l_GgsvZy8xdGNfZDEzMRAB",
+  "zag-academia": "ChkI3YaBvIfeiNVDGg0vZy8xMWMxcGd5ajN6EAE",
+  "zag-canopy": "ChkI7JzFwqKa8t4NGg0vZy8xMWcwem5qNTEyEAE",
+  "zag-central": "ChkImumQmZ3Ew9uYARoML2cvMTI1X3N3dDV0EAE",
+  "zag-slisko": "ChcIt-aPxfXIu9slGgsvZy8xdGRxczl4ZBAB",
+  "buh-athenee-palace": "ChUIkpvlucLz0PAkGgkvbS8wYnE4ODQQAQ",
+  "buh-corinthia": "ChgIqIup2bPLuM3FARoLL2cvMTU1cTdsNnYQAQ",
+  "buh-epoque": "ChgI6p66pYqyg570ARoLL2cvMXRkZzY4eTcQAQ",
+  "buh-hgi-old-town": "ChoIvOLJ06v_htmfARoNL2cvMTFjMXF5dGM2NBAB",
+  "buh-novotel": "ChkI0qvy28b4yf0cGg0vZy8xMWI2YjRjMGtyEAE",
+  "buh-cismigiu": "ChcIvNedhq74h9RWGgsvZy8xMjBzXzZxOBAB",
+  "buh-ibis-styles": "ChoI1MjaopSJsJm2ARoNL2cvMTFqMHQ5ajdrYhAB",
+  "buh-rembrandt": "ChgIh4KEt97EpvzeARoLL2cvMXRkMXN5dF8QAQ",
+  "sof-balkan-palace": "ChoIpeLN7f7N59nZARoNL2cvMTFiNmxrNTMzchAB",
+  "sof-intercontinental": "ChkI6I_u_dfk9ctJGg0vZy8xMWMxcDRjeXpiEAE",
+  "sof-hyatt-regency": "ChoI2L6Tz4CGm4GBARoNL2cvMTFqMnA2N3cwZBAB",
+  "sof-sense": "ChkI7NWk_PXr_tb6ARoML2cvMWhtNjZqbTBjEAE",
+  "sof-les-fleurs": "ChcIvpazmdCyhsF-GgsvZy8xdGQ4Zzk1ahAB",
+  "sof-arena-di-serdica": "ChgI88-1zrup063DARoLL2cvMXRkNTF5OG0QAQ",
+  "sof-favorit": "ChcI3NfMztSq7IVAGgsvZy8xdGtjMG0weRAB",
+  "sof-art-plaza": "ChkI0OKP857GzpxzGg0vZy8xMWI2Mzg4ZjB4EAE"
+ },
+ "konum": {
+  "dub-shelbourne": [
+   53.33903,
+   -6.2561
+  ],
+  "dub-merrion": [
+   53.33857,
+   -6.25286
+  ],
+  "dub-westbury": [
+   53.34149,
+   -6.26149
+  ],
+  "dub-iveagh-garden": [
+   53.33524,
+   -6.2630799999999995
+  ],
+  "dub-the-dean": [
+   53.33521,
+   -6.26375
+  ],
+  "dub-wren": [
+   53.34346,
+   -6.262479999999999
+  ],
+  "dub-point-a-parnell": [
+   53.35173,
+   -6.26264
+  ],
+  "par-lutetia": [
+   48.85119,
+   2.3272399999999998
+  ],
+  "par-le-meurice": [
+   48.865190000000005,
+   2.32808
+  ],
+  "par-regina-louvre": [
+   48.863870000000006,
+   2.3325500000000003
+  ],
+  "par-le-walt": [
+   48.85475,
+   2.30666
+  ],
+  "par-bachaumont": [
+   48.86624,
+   2.34507
+  ],
+  "par-fabric": [
+   48.86307,
+   2.37286
+  ],
+  "par-chopin": [
+   48.87263,
+   2.34238
+  ],
+  "bru-amigo": [
+   50.84614,
+   4.3514
+  ],
+  "bru-corinthia": [
+   50.85116,
+   4.36509
+  ],
+  "bru-wiltchers": [
+   50.83246,
+   4.35747
+  ],
+  "bru-des-galeries": [
+   50.847879999999996,
+   4.35474
+  ],
+  "bru-dixseptieme": [
+   50.84558,
+   4.35462
+  ],
+  "bru-made-in-louise": [
+   50.829209999999996,
+   4.3579300000000005
+  ],
+  "bru-motel-one": [
+   50.848690000000005,
+   4.36313
+  ],
+  "bru-ibis-ste-catherine": [
+   50.88227,
+   4.437069999999999
+  ],
+  "ams-krasnapolsky": [
+   52.37267,
+   4.89409
+  ],
+  "ams-pulitzer": [
+   52.372870000000006,
+   4.883310000000001
+  ],
+  "ams-de-leurope": [
+   52.36751,
+   4.89429
+  ],
+  "ams-v-nesplein": [
+   52.371,
+   4.89375
+  ],
+  "ams-max-brown": [
+   52.378879999999995,
+   4.89214
+  ],
+  "ams-estherea": [
+   52.37054,
+   4.8886400000000005
+  ],
+  "ams-motel-one": [
+   52.36985,
+   4.907
+  ],
+  "ams-ibis-styles-cs": [
+   52.37806,
+   4.8964799999999995
+  ],
+  "lux-place-darmes": [
+   49.61155,
+   6.12878
+  ],
+  "lux-le-royal": [
+   49.613839999999996,
+   6.12646
+  ],
+  "lux-sofitel-grand-ducal": [
+   49.60521,
+   6.13752
+  ],
+  "lux-cravat": [
+   49.609660000000005,
+   6.12986
+  ],
+  "lux-parc-beaux-arts": [
+   49.6115,
+   6.13354
+  ],
+  "lux-simoncini": [
+   49.61018,
+   6.12993
+  ],
+  "lux-vauban": [
+   49.61094,
+   6.1306400000000005
+  ],
+  "lux-ibis-styles-gare": [
+   49.60082,
+   6.1312299999999995
+  ],
+  "ber-adlon": [
+   52.51627,
+   13.38016
+  ],
+  "ber-ritz-carlton": [
+   52.51038,
+   13.37527
+  ],
+  "ber-waldorf-astoria": [
+   52.50569,
+   13.33301
+  ],
+  "ber-oderberger": [
+   52.53774,
+   13.410290000000002
+  ],
+  "ber-provocateur": [
+   52.49577,
+   13.30867
+  ],
+  "ber-motel-one-hackescher": [
+   52.52325,
+   13.40859
+  ],
+  "ber-premier-inn-alex": [
+   52.52391,
+   13.41751
+  ],
+  "vie-sacher": [
+   48.204,
+   16.369799999999998
+  ],
+  "vie-park-hyatt": [
+   48.210519999999995,
+   16.36836
+  ],
+  "vie-ritz-carlton": [
+   48.20244,
+   16.3761
+  ],
+  "vie-kaiserhof": [
+   48.197480000000006,
+   16.36861
+  ],
+  "vie-motto": [
+   48.19822,
+   16.350649999999998
+  ],
+  "vie-altstadt": [
+   48.204879999999996,
+   16.35146
+  ],
+  "vie-motel-one-westbahnhof": [
+   48.197410000000005,
+   16.33796
+  ],
+  "vie-zipser": [
+   48.211059999999996,
+   16.35142
+  ],
+  "mad-the-palace": [
+   40.41519,
+   -3.69482
+  ],
+  "mad-rosewood-villa-magna": [
+   40.43011,
+   -3.68818
+  ],
+  "mad-gran-hotel-ingles": [
+   40.41594,
+   -3.69981
+  ],
+  "mad-only-you-boutique": [
+   40.42225,
+   -3.6957
+  ],
+  "mad-catalonia-las-cortes": [
+   40.414629999999995,
+   -3.69944
+  ],
+  "mad-hotel-preciados": [
+   40.41969,
+   -3.7075
+  ],
+  "mad-hotel-moderno": [
+   40.41704,
+   -3.70489
+  ],
+  "mad-hotel-europa": [
+   40.4175,
+   -3.7033899999999997
+  ],
+  "lis-avenida-palace": [
+   38.714690000000004,
+   -9.14112
+  ],
+  "lis-tivoli-avenida": [
+   38.720980000000004,
+   -9.14718
+  ],
+  "lis-bairro-alto-hotel": [
+   38.71028,
+   -9.14333
+  ],
+  "lis-almalusa-baixa-chiado": [
+   38.70826,
+   -9.139629999999999
+  ],
+  "lis-inspira-liberdade": [
+   38.72318,
+   -9.145610000000001
+  ],
+  "lis-hotel-florescente": [
+   38.71631,
+   -9.14067
+  ],
+  "lis-my-story-rossio": [
+   38.7141,
+   -9.14017
+  ],
+  "rom-hotel-raphael": [
+   41.89994,
+   12.47209
+  ],
+  "rom-hotel-de-russie": [
+   41.90994,
+   12.477459999999999
+  ],
+  "rom-hotel-artemide": [
+   41.90082,
+   12.493649999999999
+  ],
+  "rom-hotel-locarno": [
+   41.90976,
+   12.47471
+  ],
+  "rom-hotel-campo-de-fiori": [
+   41.89561,
+   12.47287
+  ],
+  "rom-hotel-panda": [
+   41.90607,
+   12.47952
+  ],
+  "vlt-the-phoenicia": [
+   35.8954,
+   14.50715
+  ],
+  "vlt-rosselli": [
+   35.89888,
+   14.515379999999999
+  ],
+  "vlt-iniala-harbour-house": [
+   35.896260000000005,
+   14.51427
+  ],
+  "vlt-casa-ellul": [
+   35.90008,
+   14.512
+  ],
+  "vlt-ursulino": [
+   35.89754,
+   14.51533
+  ],
+  "vlt-osborne-hotel": [
+   35.89855,
+   14.50875
+  ],
+  "vlt-british-hotel": [
+   35.89754,
+   14.51533
+  ],
+  "ath-grande-bretagne": [
+   37.97618,
+   23.735310000000002
+  ],
+  "ath-electra-metropolis": [
+   37.9751,
+   23.73215
+  ],
+  "ath-athenswas": [
+   37.96951,
+   23.73086
+  ],
+  "ath-ava-hotel": [
+   37.9706,
+   23.73116
+  ],
+  "ath-the-modernist": [
+   37.97737,
+   23.74931
+  ],
+  "ath-herodion": [
+   37.96832,
+   23.72712
+  ],
+  "ath-phaedra": [
+   37.97103,
+   23.73057
+  ],
+  "ath-attalos": [
+   37.978449999999995,
+   23.72645
+  ],
+  "sto-grand-hotel": [
+   59.329730000000005,
+   18.07571
+  ],
+  "sto-hotel-diplomat": [
+   59.33199,
+   18.08028
+  ],
+  "sto-lydmar": [
+   59.32905,
+   18.07703
+  ],
+  "sto-miss-clara": [
+   59.33759,
+   18.0619
+  ],
+  "sto-hotel-rival": [
+   59.31818,
+   18.0638
+  ],
+  "sto-skeppsholmen": [
+   59.324760000000005,
+   18.08769
+  ],
+  "sto-scandic-go-upplandsgatan": [
+   59.33641,
+   18.055
+  ],
+  "sto-scandic-go-sankt-eriksgatan": [
+   59.33133,
+   18.03098
+  ],
+  "cph-radisson-royal": [
+   55.674910000000004,
+   12.56377
+  ],
+  "cph-d-angleterre": [
+   55.68061,
+   12.584700000000002
+  ],
+  "cph-nyhavn-71": [
+   55.67936,
+   12.59359
+  ],
+  "cph-sp34": [
+   55.67875,
+   12.56677
+  ],
+  "cph-wakeup-borgergade": [
+   55.68307,
+   12.58432
+  ],
+  "cph-cabinn-city": [
+   55.67062,
+   12.570829999999999
+  ],
+  "hel-sokos-torni": [
+   60.16783,
+   24.93836
+  ],
+  "hel-kamp": [
+   60.16788,
+   24.94722
+  ],
+  "hel-st-george": [
+   60.16683999999999,
+   24.940669999999997
+  ],
+  "hel-lilla-roberts": [
+   60.16459,
+   24.94716
+  ],
+  "hel-fabian": [
+   60.16418,
+   24.950020000000002
+  ],
+  "hel-f6": [
+   60.166230000000006,
+   24.94944
+  ],
+  "hel-omena-lonnrotinkatu": [
+   60.165699999999994,
+   24.93634
+  ],
+  "hel-hotel-arthur": [
+   60.17292,
+   24.94754
+  ],
+  "tll-sokos-viru": [
+   59.436510000000006,
+   24.754900000000003
+  ],
+  "tll-telegraaf": [
+   59.43779,
+   24.74724
+  ],
+  "tll-schlossle": [
+   59.43871,
+   24.747490000000003
+  ],
+  "tll-nordic-forum": [
+   59.43743,
+   24.755080000000003
+  ],
+  "tll-kreutzwald": [
+   59.42889,
+   24.732779999999998
+  ],
+  "tll-go-hotel-shnelli": [
+   59.43946,
+   24.736349999999998
+  ],
+  "tll-tallink-express": [
+   59.444309999999994,
+   24.75546
+  ],
+  "rix-grand-palace": [
+   56.950230000000005,
+   24.10296
+  ],
+  "rix-kempinski": [
+   56.949220000000004,
+   24.11324
+  ],
+  "rix-hotel-bergs": [
+   56.95029,
+   24.12241
+  ],
+  "rix-neiburgs": [
+   56.94833,
+   24.105430000000002
+  ],
+  "rix-pullman-old-town": [
+   56.952239999999996,
+   24.105439999999998
+  ],
+  "rix-hotel-justus": [
+   56.94835,
+   24.10518
+  ],
+  "rix-hanza-hotel": [
+   56.94191,
+   24.12318
+  ],
+  "rix-bruninieks": [
+   56.96141,
+   24.10717
+  ],
+  "vno-pacai": [
+   54.68016,
+   25.28808
+  ],
+  "vno-artagonist": [
+   54.68185,
+   25.289279999999998
+  ],
+  "vno-shakespeare": [
+   54.68353,
+   25.29168
+  ],
+  "vno-neringa": [
+   54.687940000000005,
+   25.27609
+  ],
+  "vno-ibis-styles": [
+   54.650800000000004,
+   25.31718
+  ],
+  "vno-city-gate": [
+   54.67369,
+   25.288169999999997
+  ],
+  "waw-bristol": [
+   52.242230000000006,
+   21.015880000000003
+  ],
+  "waw-raffles": [
+   52.241699999999994,
+   21.014650000000003
+  ],
+  "waw-verte": [
+   52.24682,
+   21.011400000000002
+  ],
+  "waw-indigo": [
+   52.23254,
+   21.02118
+  ],
+  "waw-polonia-palace": [
+   52.22921,
+   21.00989
+  ],
+  "waw-motel-one-chopin": [
+   52.23689,
+   21.02309
+  ],
+  "waw-ibis-stare-miasto": [
+   52.226639999999996,
+   21.04193
+  ],
+  "prg-hotel-paris": [
+   50.08815,
+   14.42749
+  ],
+  "prg-four-seasons": [
+   50.08782,
+   14.41425
+  ],
+  "prg-mandarin-oriental": [
+   50.08532,
+   14.40535
+  ],
+  "prg-josef": [
+   50.09,
+   14.426110000000001
+  ],
+  "prg-pod-vezi": [
+   50.08745,
+   14.40675
+  ],
+  "prg-ibis-old-town": [
+   50.089349999999996,
+   14.430879999999998
+  ],
+  "prg-clement": [
+   50.091989999999996,
+   14.431049999999999
+  ],
+  "bts-carlton": [
+   48.14108,
+   17.10911
+  ],
+  "bts-river-park": [
+   48.14174,
+   17.08999
+  ],
+  "bts-sheraton": [
+   48.14053,
+   17.122349999999997
+  ],
+  "bts-marrols": [
+   48.14134,
+   17.11348
+  ],
+  "bts-loft": [
+   48.15193,
+   17.10719
+  ],
+  "bts-arcadia": [
+   48.145089999999996,
+   17.10818
+  ],
+  "bts-elisabeth": [
+   48.144510000000004,
+   17.117849999999997
+  ],
+  "bts-ibis-centrum": [
+   48.14449,
+   17.10247
+  ],
+  "bud-parisi-udvar": [
+   47.49359,
+   19.055
+  ],
+  "bud-kempinski": [
+   47.49742,
+   19.05224
+  ],
+  "bud-aria": [
+   47.49986,
+   19.05343
+  ],
+  "bud-clark": [
+   47.49873,
+   19.03992
+  ],
+  "bud-moments": [
+   47.501050000000006,
+   19.05675
+  ],
+  "bud-rum": [
+   47.49051,
+   19.05912
+  ],
+  "bud-d8": [
+   47.497730000000004,
+   19.048830000000002
+  ],
+  "bud-roombach": [
+   47.497800000000005,
+   19.05818
+  ],
+  "lju-grand-union": [
+   46.05272,
+   14.50633
+  ],
+  "lju-intercontinental": [
+   46.05717,
+   14.50559
+  ],
+  "lju-vander-urbani": [
+   46.04958,
+   14.505840000000001
+  ],
+  "lju-cubo": [
+   46.04914,
+   14.50199
+  ],
+  "lju-adora": [
+   46.04588,
+   14.50792
+  ],
+  "lju-zlata-ladjica": [
+   46.04829,
+   14.505360000000001
+  ],
+  "lju-emonec": [
+   46.05074,
+   14.50511
+  ],
+  "lju-bb-park": [
+   46.05356,
+   14.51483
+  ],
+  "zag-esplanade": [
+   45.80539,
+   15.97601
+  ],
+  "zag-artotel": [
+   45.81157,
+   15.979700000000001
+  ],
+  "zag-sheraton": [
+   45.80697,
+   15.98465
+  ],
+  "zag-academia": [
+   45.81936,
+   15.97652
+  ],
+  "zag-canopy": [
+   45.80572,
+   15.98517
+  ],
+  "zag-central": [
+   45.80543,
+   15.98001
+  ],
+  "zag-slisko": [
+   45.803599999999996,
+   15.99779
+  ],
+  "buh-athenee-palace": [
+   44.44096,
+   26.09573
+  ],
+  "buh-corinthia": [
+   44.43467,
+   26.09786
+  ],
+  "buh-epoque": [
+   44.43683,
+   26.0869
+  ],
+  "buh-hgi-old-town": [
+   44.433099999999996,
+   26.10068
+  ],
+  "buh-novotel": [
+   44.436879999999995,
+   26.097279999999998
+  ],
+  "buh-cismigiu": [
+   44.43481,
+   26.09489
+  ],
+  "buh-ibis-styles": [
+   44.44015,
+   26.082060000000002
+  ],
+  "buh-rembrandt": [
+   44.43236,
+   26.10018
+  ],
+  "sof-balkan-palace": [
+   42.69703,
+   23.3223
+  ],
+  "sof-intercontinental": [
+   42.6933,
+   23.33225
+  ],
+  "sof-hyatt-regency": [
+   42.69649,
+   23.33577
+  ],
+  "sof-sense": [
+   42.694160000000004,
+   23.331259999999997
+  ],
+  "sof-les-fleurs": [
+   42.693760000000005,
+   23.32066
+  ],
+  "sof-arena-di-serdica": [
+   42.697449999999996,
+   23.328319999999998
+  ],
+  "sof-favorit": [
+   42.70686,
+   23.321720000000003
+  ],
+  "sof-art-plaza": [
+   42.68951,
+   23.320400000000003
+  ]
+ },
+ "harcama": {
+  "donem": "2026-10-28",
+  "usd": 0.72
  },
  "sonCalisma": {
-  "tarih": "2026-10-27T22:14:19.790Z",
+  "tarih": "2026-10-27T22:47:07.206Z",
   "mod": "test",
-  "kontrol": 8,
-  "fiyatli": 8,
-  "tahminiMaliyetUsd": 0.03
+  "hafta_sonu": 1,
+  "kontrol": 208,
+  "fiyatli": 176,
+  "tahminiMaliyetUsd": 0.72,
+  "butceAtlanan": 0
  },
- "haftaSonlari": {
-  "2026-10-30": {
-   "cikis": "2026-11-01",
-   "oteller": {
-    "bud-parisi-udvar": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 646,
-      "gecelik": 323,
-      "site": "Amimir.com",
-      "link": "https://www.amimir.com/en/book/?start=30%2F10%2F2026&end=01%2F11%2F2026&hotelId=89976&highlightHotel=true&hab1=2&ehab1=&metasearch&utm_content=89976&checkV=false&totalPrice=704.16&userCountry=US&utm_source=googleMetasearch&utm_medium=organic&currency=EUR",
-      "googleFiyat": 704,
-      "resmiSiteFiyat": null,
-      "firsat": null,
-      "tipikGecelik": null,
-      "googleKimlik": "ChkIs6L2n6nv9bAXGg0vZy8xMWc4eGh6MmxxEAE",
-      "puan": 4.7,
-      "yildiz": 5,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 646
-      }
-     ]
-    },
-    "bud-kempinski": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 607,
-      "gecelik": 303.5,
-      "site": "Super.com",
-      "link": "https://www.super.com/travel/transition/?data=price=2672.77%26total_price=2913.33%26retail_price=3085.93%26retail_total_price=3363.67%26request_id=9248431397199478784%26ps=22284431%26pb=0-slAkZlDjP06IhVxwa_7FxUROdB-qTMCd3bgWg087QC1CqC3vBPBaKHJDav7Y7XwxUmQ1k1j6F2GCvi-W03ywIH5gkPUirdKZ9kJwCmeGgl49Gek1Nb_HvUxoZicqpnEMvvou-RUl0wS31FPsnWKg%253D%253D%26gha_pull_request=True%26alwd_rand=false%26gt=1793114521%26sg=A2YFw%26sid=GHA_MD4%26cmab_id=33%26ib=false%26all_inclusive=false&utm_source=gha&utm_content=localuniversal&currency=PLN&user_country=US&verification=false&rate_rule_ids=&date_type=selected&rate_rule_id=signedout_desktop&display_currency=EUR&display_all_inclusive_price=662.13&checkin_at=2026-10-30&checkout_at=2026-11-01&provider_hotel_id=10004221996&provider=htl&num_adults=2&children=[]&hotel_campaign=&utm_campaign=&user_locale=en-US&user_list_id=&utm_medium=organic&utm_id=gha_organic",
-      "googleFiyat": 662,
-      "resmiSiteFiyat": null,
-      "firsat": null,
-      "tipikGecelik": null,
-      "googleKimlik": "ChYIhOfF3dfH9tRAGgovbS8wZ2piMXoxEAE",
-      "puan": 4.7,
-      "yildiz": 5,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 607
-      }
-     ]
-    },
-    "bud-aria": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 952,
-      "gecelik": 476,
-      "site": "Amimir.com",
-      "link": "https://www.amimir.com/en/book/?start=30%2F10%2F2026&end=01%2F11%2F2026&hotelId=68583&highlightHotel=true&hab1=2&ehab1=&metasearch&utm_content=68583&checkV=false&totalPrice=1037.38&userCountry=US&utm_source=googleMetasearch&utm_medium=organic&currency=EUR",
-      "googleFiyat": 1037,
-      "resmiSiteFiyat": null,
-      "firsat": null,
-      "tipikGecelik": [
-       287,
-       431
-      ],
-      "googleKimlik": "ChkIhIz7_9Sz4Jx1Gg0vZy8xMWI2eDhtX2JwEAE",
-      "puan": 4.8,
-      "yildiz": 5,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 952
-      }
-     ]
-    },
-    "bud-clark": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 421,
-      "gecelik": 210.5,
-      "site": "Clicktrip.com",
-      "link": "https://clicktrip.com/hotels/details/SwB-BN3EGXU4ok8lCPr45N6PJMhKD3FLCOussuZ2UiVmYV9Dbk7eFjLrLbcok8bGOgLJE31HHoSf2R79rnFUeWe9ozGcwYlteH5fk6ng5txKVLWvSPYJPJOzYaLmanyx0?locale=en&currency=EUR&pos=US&date_type=selected&taf=pZkKKo00jX9CQLqznWqhTaovGns2Xk56D0v3bs4RtKsp5qE7OIXhEr4Vvl1aCkQe0&verification=false&clk_src=&utm_source=gha&rate_rule_id=",
-      "googleFiyat": 441,
-      "resmiSiteFiyat": null,
-      "firsat": null,
-      "tipikGecelik": null,
-      "googleKimlik": "ChoI3Zj7pOaokr_pARoNL2cvMTFnZjVsMzVrbRAB",
-      "puan": 4.7,
-      "yildiz": 5,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 421
-      }
-     ]
-    },
-    "bud-moments": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 361,
-      "gecelik": 180.5,
-      "site": "trivago DEALS",
-      "link": "https://www.trivago.deals/hotels/hungary_07_budapest/405594_hotel-moments-budapest?checkIn=2026-10-30&checkOut=2026-11-01&placeId=H405594&campaignName=TrivagoDeals_Google_US&currencyCode=EUR&dealKey=CAIQjQYiDAiPtITXBhCAwLODAypQDQAAW0MVAADHQyVSuKBBLVyPgEEwATjFAUW4_tpDSgwIibSE1wYQyOHZ8wFiClN1cGVyaW9yIFJoAoIBAI0BuB5bQ5gBAaABvdeXBKgByAYwjQY42uAYQKb3D0gCUggQDFy3td_v6ljIBmIDCgEg&countryCode=US&languageCode=en&rule=Google_US&site=localuniversal&ads=&origin=31&priceDisplayedTotal=393.63&priceDisplayedTax=32.49&device=desktop&adults=2&children=0",
-      "googleFiyat": 394,
-      "resmiSiteFiyat": null,
-      "firsat": null,
-      "tipikGecelik": null,
-      "googleKimlik": "ChkIjaSP8Lri_ahdGg0vZy8xMWI4emxjcGQzEAE",
-      "puan": 4.8,
-      "yildiz": 4,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 361
-      }
-     ]
-    },
-    "bud-rum": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 308,
-      "gecelik": 154,
-      "site": "Super.com",
-      "link": "https://www.super.com/travel/transition/?data=price=1325.84%26total_price=1392.16%26retail_price=1904.04%26retail_total_price=1999.28%26surcharge=29.61%26request_id=11428363760029683712%26ps=330056%26pb=0-slAkZlDjP06IhVxwa_7LiLYaXBAMjcIhSIHhDgu42of8kL5d9awNrVaNdH3Ka_4K82c_iObCuNx9z8hdqlhGAFFzKvNU_mZ5kt9XOuV7vhX24AGNu703SP4DpcuxKSm-sd_0vPvvlUonNRAN38xVSIdro8OoTUBIEmOjfHdHU%253D%26gha_pull_request=True%26alwd_rand=false%26gt=1793137123%26sg=Xcssa%26sid=GHA_MD4%26cmab_id=33%26ib=false%26all_inclusive=false&utm_source=gha&utm_content=localuniversal&currency=PLN&user_country=US&verification=false&rate_rule_ids=&date_type=selected&rate_rule_id=signedout_desktop&display_currency=EUR&display_all_inclusive_price=323.14&checkin_at=2026-10-30&checkout_at=2026-11-01&provider_hotel_id=10006835357&provider=htl&num_adults=2&children=[]&hotel_campaign=&utm_campaign=&user_locale=en-US&user_list_id=&utm_medium=organic&utm_id=gha_organic",
-      "googleFiyat": 323,
-      "resmiSiteFiyat": 354,
-      "firsat": null,
-      "tipikGecelik": [
-       99,
-       118
-      ],
-      "googleKimlik": "ChoI1qmGwdPUn-DTARoNL2cvMTFjbmRiMXAwchAB",
-      "puan": 4.4,
-      "yildiz": null,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 308
-      }
-     ]
-    },
-    "bud-d8": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 281,
-      "gecelik": 140.5,
-      "site": "KAYAK.com",
-      "link": "https://www.kayak.com/semi/ha/hotel_ads/3927079/en.html?utm_source=google&utm_medium=cpc&utm_term=3927079&adType=0&utm_content=localuniversal&utm_campaign=HotelAds&ci=2026-10-30&co=2026-11-01&gs=localuniversal&l=2&pc=USD&rid=&pdtax=24.29&pdtotal=304.81&rpid=&uc=US&ucuc=EUR&d=desktop&lc=en&v=false&rrid=UFJJQ0VMSU5FQ09SRQ&k_pc=~UENMTkhPVEVMV0hJU0tZ&k_rt=&k_sid=2hAEXYE_rL&k_kct=1793111486&k_gct=1793133752&g=2&r=1&ac=2&k_cc=us&dt=selected&cmpid=&cmptrack=",
-      "googleFiyat": 305,
-      "resmiSiteFiyat": 312,
-      "firsat": null,
-      "tipikGecelik": null,
-      "googleKimlik": "ChoIwu757Lvb6N2lARoNL2cvMTFmNWx5Nnk0MhAB",
-      "puan": 4.6,
-      "yildiz": 4,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 281
-      }
-     ]
-    },
-    "bud-roombach": {
-     "son": {
-      "durum": "fiyat",
-      "fiyat": 251,
-      "gecelik": 125.5,
-      "site": "Super.com",
-      "link": "https://www.super.com/travel/transition/?data=price=1057.47%26total_price=1110.3%26retail_price=1398.66%26retail_total_price=1468.54%26surcharge=47.13%26request_id=13246980952125884416%26ps=1671382491%26pb=0-slAkZlDjP06IhVxwa_7DwqkSisVnaSR4ROFzkSZ7nWChRYIFPS1X8ICRsI-0G78gjUZQ3xxFXzLbNHGEirpLnlLgwxUfrhChBv0cNiG8BsGc7ZK31AZ4yMpWYYXBhBowXoRK0zt-3Y6TWZaJBqju98ID7-KdyPrZrfLdDvFPc%253D%26gha_pull_request=True%26alwd_rand=false%26gt=1793111640%26sg=l_YkY%26sid=GHA_MD4%26cmab_id=33%26ib=false%26all_inclusive=false&utm_source=gha&utm_content=localuniversal&currency=PLN&user_country=US&verification=false&rate_rule_ids=&date_type=selected&rate_rule_id=signedout_desktop&display_currency=EUR&display_all_inclusive_price=263.05&checkin_at=2026-10-30&checkout_at=2026-11-01&provider_hotel_id=10004710059&provider=htl&num_adults=2&children=[]&hotel_campaign=&utm_campaign=&user_locale=en-US&user_list_id=&utm_medium=organic&utm_id=gha_organic",
-      "googleFiyat": 263,
-      "resmiSiteFiyat": null,
-      "firsat": null,
-      "tipikGecelik": null,
-      "googleKimlik": "ChgImoPF4PiQxNB3GgwvZy8xcHR2cWI3d2wQAQ",
-      "puan": 4.6,
-      "yildiz": 3,
-      "kontrol": "2026-10-27T22:14:19.790Z"
-     },
-     "gecmis": [
-      {
-       "t": "2026-10-27T22:14:19.790Z",
-       "durum": "fiyat",
-       "fiyat": 251
-      }
-     ]
-    }
-   }
-  }
+ "sehirler": {
+  "Dublin": "data/fiyatlar/dublin.json",
+  "Paris": "data/fiyatlar/paris.json",
+  "Brüksel": "data/fiyatlar/bruksel.json",
+  "Amsterdam": "data/fiyatlar/amsterdam.json",
+  "Lüksemburg": "data/fiyatlar/luksemburg.json",
+  "Berlin": "data/fiyatlar/berlin.json",
+  "Viyana": "data/fiyatlar/viyana.json",
+  "Madrid": "data/fiyatlar/madrid.json",
+  "Lizbon": "data/fiyatlar/lizbon.json",
+  "Roma": "data/fiyatlar/roma.json",
+  "Valletta": "data/fiyatlar/valletta.json",
+  "Atina": "data/fiyatlar/atina.json",
+  "Stokholm": "data/fiyatlar/stokholm.json",
+  "Kopenhag": "data/fiyatlar/kopenhag.json",
+  "Helsinki": "data/fiyatlar/helsinki.json",
+  "Tallinn": "data/fiyatlar/tallinn.json",
+  "Riga": "data/fiyatlar/riga.json",
+  "Vilnius": "data/fiyatlar/vilnius.json",
+  "Varşova": "data/fiyatlar/varsova.json",
+  "Prag": "data/fiyatlar/prag.json",
+  "Bratislava": "data/fiyatlar/bratislava.json",
+  "Budapeşte": "data/fiyatlar/budapeste.json",
+  "Ljubljana": "data/fiyatlar/ljubljana.json",
+  "Zagreb": "data/fiyatlar/zagreb.json",
+  "Bükreş": "data/fiyatlar/bukres.json",
+  "Sofya": "data/fiyatlar/sofya.json"
  }
 }
