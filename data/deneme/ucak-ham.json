@@ -1,5 +1,5 @@
 {
- "tarih": "2026-10-27T23:36:37.782Z",
+ "tarih": "2026-10-27T23:37:23.766Z",
  "hafta_sonu": {
   "no": 2,
   "giris": "2026-11-06",
@@ -10,7 +10,9 @@
    "ad": "IST tek",
    "girdi": {
     "tripType": "round_trip",
-    "destination": "BUD",
+    "destination": [
+     "BUD"
+    ],
     "departureDate": "2026-11-06",
     "returnDate": "2026-11-08",
     "adults": 1,
@@ -19,15 +21,508 @@
     "language": "en-US",
     "resultsView": "cheapest",
     "maxResults": 4,
-    "origin": "IST"
+    "origin": [
+     "IST"
+    ]
    },
-   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+   "satir": 4,
+   "ilk": [
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVEABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GkASCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQiIAoDSVNUEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQyNDMwGh4SCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNJU1RAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 0,
+     "bucket": "best",
+     "price": 126,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T09:55",
+     "arrivalTime": "2026-11-06T10:00",
+     "airlines": [
+      "Wizz Air"
+     ],
+     "carrierCode": "W6",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 125,
+     "duration": "2h 05m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T09:55",
+       "arrivalTime": "2026-11-06T10:00",
+       "durationMinutes": 125,
+       "duration": "2h 05m",
+       "airline": "Wizz Air",
+       "flightNumber": "W62430",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 75000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:37:56.430Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVEABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmISCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQiIAoDSVNUEgoyMDI2LTExLTA2GgNTT0YqAlRLMgQxMTI3IiAKA1NPRhIKMjAyNi0xMS0wNhoDQlVEKgJXNjIENDM0ORoeEgoyMDI2LTExLTA4agcIARIDQlVEcgcIARIDSVNUQAFIAZgBAQ&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 1,
+     "bucket": "best",
+     "price": 211,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T10:30",
+     "arrivalTime": "2026-11-06T15:00",
+     "airlines": [
+      "Turkish Airlines",
+      "Wizz Air"
+     ],
+     "carrierCode": "multi",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 390,
+     "duration": "6h 30m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "SOF",
+       "arrivalAirportName": "Sofia International Airport",
+       "departureTime": "2026-11-06T10:30",
+       "arrivalTime": "2026-11-06T10:50",
+       "durationMinutes": 80,
+       "duration": "1h 20m",
+       "airline": "Turkish Airlines",
+       "flightNumber": "TK1127",
+       "aircraft": "Boeing 737"
+      },
+      {
+       "departureAirport": "SOF",
+       "departureAirportName": "Sofia International Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T14:35",
+       "arrivalTime": "2026-11-06T15:00",
+       "durationMinutes": 85,
+       "duration": "1h 25m",
+       "airline": "Wizz Air",
+       "flightNumber": "W64349",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 125000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:37:56.430Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVEABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmASCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQiHwoDSVNUEgoyMDI2LTExLTA2GgNCRUcqAkpVMgM0MjciHwoDQkVHEgoyMDI2LTExLTA2GgNCVUQqAkpVMgMxNDIaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVEABSAGYAQE&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 2,
+     "bucket": "best",
+     "price": 246,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T05:25",
+     "arrivalTime": "2026-11-06T14:40",
+     "airlines": [
+      "Air Serbia"
+     ],
+     "carrierCode": "JU",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 675,
+     "duration": "11h 15m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "BEG",
+       "arrivalAirportName": "Belgrade Nikola Tesla Airport",
+       "departureTime": "2026-11-06T05:25",
+       "arrivalTime": "2026-11-06T05:10",
+       "durationMinutes": 105,
+       "duration": "1h 45m",
+       "airline": "Air Serbia",
+       "flightNumber": "JU427",
+       "aircraft": "Embraer 190"
+      },
+      {
+       "departureAirport": "BEG",
+       "departureAirportName": "Belgrade Nikola Tesla Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T13:30",
+       "arrivalTime": "2026-11-06T14:40",
+       "durationMinutes": 70,
+       "duration": "1h 10m",
+       "airline": "Air Serbia",
+       "flightNumber": "JU142",
+       "aircraft": "ATR 72"
+      }
+     ],
+     "carbonEmissionsGrams": 140000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:37:56.430Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVEABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GkASCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQiIAoDSVNUEgoyMDI2LTExLTA2GgNCVUQqAlRLMgQxMDM1Gh4SCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNJU1RAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 3,
+     "bucket": "best",
+     "price": 350,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T08:10",
+     "arrivalTime": "2026-11-06T08:15",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "carrierCode": "TK",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 125,
+     "duration": "2h 05m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T08:10",
+       "arrivalTime": "2026-11-06T08:15",
+       "durationMinutes": 125,
+       "duration": "2h 05m",
+       "airline": "Turkish Airlines",
+       "flightNumber": "TK1035",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 95000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:37:56.430Z"
+    }
+   ]
   },
   {
    "ad": "SAW tek",
    "girdi": {
     "tripType": "round_trip",
-    "destination": "BUD",
+    "destination": [
+     "BUD"
+    ],
     "departureDate": "2026-11-06",
     "returnDate": "2026-11-08",
     "adults": 1,
@@ -36,15 +531,523 @@
     "language": "en-US",
     "resultsView": "cheapest",
     "maxResults": 4,
-    "origin": "SAW"
+    "origin": [
+     "SAW"
+    ]
    },
-   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+   "satir": 4,
+   "ilk": [
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmESCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQiHwoDU0FXEgoyMDI2LTExLTA2GgNTS1AqAlBDMgMzNTMiIAoDU0tQEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQyMjMwGh4SCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 0,
+     "bucket": "best",
+     "price": 190,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T17:10",
+     "arrivalTime": "2026-11-06T22:55",
+     "airlines": [
+      "Pegasus",
+      "Wizz Air"
+     ],
+     "carrierCode": "multi",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 465,
+     "duration": "7h 45m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "SKP",
+       "arrivalAirportName": "Skopje International Airport",
+       "departureTime": "2026-11-06T17:10",
+       "arrivalTime": "2026-11-06T16:35",
+       "durationMinutes": 85,
+       "duration": "1h 25m",
+       "airline": "Pegasus",
+       "flightNumber": "PC353",
+       "aircraft": "Airbus A321"
+      },
+      {
+       "departureAirport": "SKP",
+       "departureAirportName": "Skopje International Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T21:30",
+       "arrivalTime": "2026-11-06T22:55",
+       "durationMinutes": 85,
+       "duration": "1h 25m",
+       "airline": "Wizz Air",
+       "flightNumber": "W62230",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 122000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:35.530Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmESCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQiHwoDU0FXEgoyMDI2LTExLTA2GgNUSUEqAlBDMgMyODUiIAoDVElBEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQyMjM0Gh4SCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 1,
+     "bucket": "best",
+     "price": 227,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T11:05",
+     "arrivalTime": "2026-11-06T15:20",
+     "airlines": [
+      "Pegasus",
+      "Wizz Air"
+     ],
+     "carrierCode": "multi",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 375,
+     "duration": "6h 15m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "TIA",
+       "arrivalAirportName": "Tirana International Airport",
+       "departureTime": "2026-11-06T11:05",
+       "arrivalTime": "2026-11-06T10:50",
+       "durationMinutes": 105,
+       "duration": "1h 45m",
+       "airline": "Pegasus",
+       "flightNumber": "PC285",
+       "aircraft": "Boeing 737"
+      },
+      {
+       "departureAirport": "TIA",
+       "departureAirportName": "Tirana International Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T13:45",
+       "arrivalTime": "2026-11-06T15:20",
+       "durationMinutes": 95,
+       "duration": "1h 35m",
+       "airline": "Wizz Air",
+       "flightNumber": "W62234",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 138000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:35.531Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmESCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQiHwoDU0FXEgoyMDI2LTExLTA2GgNTT0YqAlBDMgMyNzEiIAoDU09GEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQ0MzQ5Gh4SCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 2,
+     "bucket": "best",
+     "price": 235,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T13:00",
+     "arrivalTime": "2026-11-06T15:00",
+     "airlines": [
+      "Pegasus",
+      "Wizz Air"
+     ],
+     "carrierCode": "multi",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 240,
+     "duration": "4h 00m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "SOF",
+       "arrivalAirportName": "Sofia International Airport",
+       "departureTime": "2026-11-06T13:00",
+       "arrivalTime": "2026-11-06T13:20",
+       "durationMinutes": 80,
+       "duration": "1h 20m",
+       "airline": "Pegasus",
+       "flightNumber": "PC271",
+       "aircraft": "Airbus A320"
+      },
+      {
+       "departureAirport": "SOF",
+       "departureAirportName": "Sofia International Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T14:35",
+       "arrivalTime": "2026-11-06T15:00",
+       "durationMinutes": 85,
+       "duration": "1h 25m",
+       "airline": "Wizz Air",
+       "flightNumber": "W64349",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 115000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:35.531Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=Gj8SCjIwMjYtMTEtMDZqBwgBEgNTQVdyBwgBEgNCVUQiHwoDU0FXEgoyMDI2LTExLTA2GgNCVUQqAlBDMgMzMzEaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 3,
+     "bucket": "best",
+     "price": 270,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T14:10",
+     "arrivalTime": "2026-11-06T14:15",
+     "airlines": [
+      "Pegasus"
+     ],
+     "carrierCode": "PC",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 125,
+     "duration": "2h 05m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T14:10",
+       "arrivalTime": "2026-11-06T14:15",
+       "durationMinutes": 125,
+       "duration": "2h 05m",
+       "airline": "Pegasus",
+       "flightNumber": "PC331",
+       "aircraft": "Airbus A320"
+      }
+     ],
+     "carbonEmissionsGrams": 98000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:35.531Z"
+    }
+   ]
   },
   {
-   "ad": "IST,SAW birlikte",
+   "ad": "IST+SAW birlikte",
    "girdi": {
     "tripType": "round_trip",
-    "destination": "BUD",
+    "destination": [
+     "BUD"
+    ],
     "departureDate": "2026-11-06",
     "returnDate": "2026-11-08",
     "adults": 1,
@@ -53,15 +1056,1531 @@
     "language": "en-US",
     "resultsView": "cheapest",
     "maxResults": 4,
-    "origin": "IST,SAW"
+    "origin": [
+     "IST",
+     "SAW"
+    ]
    },
-   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+   "satir": 4,
+   "ilk": [
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GicSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVUQaJxIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GkkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVUQiIAoDSVNUEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQyNDMwGicSCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNJU1RyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 0,
+     "bucket": "best",
+     "price": 126,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T09:55",
+     "arrivalTime": "2026-11-06T10:00",
+     "airlines": [
+      "Wizz Air"
+     ],
+     "carrierCode": "W6",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 125,
+     "duration": "2h 05m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T09:55",
+       "arrivalTime": "2026-11-06T10:00",
+       "durationMinutes": 125,
+       "duration": "2h 05m",
+       "airline": "Wizz Air",
+       "flightNumber": "W62430",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 75000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:43.199Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GicSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVUQaJxIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmsSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVUQiIAoDSVNUEgoyMDI2LTExLTA2GgNTT0YqAlRLMgQxMTI3IiAKA1NPRhIKMjAyNi0xMS0wNhoDQlVEKgJXNjIENDM0ORonEgoyMDI2LTExLTA4agcIARIDQlVEcgcIARIDSVNUcgcIARIDU0FXQAFIAZgBAQ&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 1,
+     "bucket": "best",
+     "price": 211,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T10:30",
+     "arrivalTime": "2026-11-06T15:00",
+     "airlines": [
+      "Turkish Airlines",
+      "Wizz Air"
+     ],
+     "carrierCode": "multi",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 390,
+     "duration": "6h 30m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "SOF",
+       "arrivalAirportName": "Sofia International Airport",
+       "departureTime": "2026-11-06T10:30",
+       "arrivalTime": "2026-11-06T10:50",
+       "durationMinutes": 80,
+       "duration": "1h 20m",
+       "airline": "Turkish Airlines",
+       "flightNumber": "TK1127",
+       "aircraft": "Boeing 737"
+      },
+      {
+       "departureAirport": "SOF",
+       "departureAirportName": "Sofia International Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T14:35",
+       "arrivalTime": "2026-11-06T15:00",
+       "durationMinutes": 85,
+       "duration": "1h 25m",
+       "airline": "Wizz Air",
+       "flightNumber": "W64349",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 125000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:43.200Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GicSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVUQaJxIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVUQiHwoDSVNUEgoyMDI2LTExLTA2GgNCRUcqAkpVMgM0MjciHwoDQkVHEgoyMDI2LTExLTA2GgNCVUQqAkpVMgMxNDIaJxIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 2,
+     "bucket": "best",
+     "price": 246,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T05:25",
+     "arrivalTime": "2026-11-06T14:40",
+     "airlines": [
+      "Air Serbia"
+     ],
+     "carrierCode": "JU",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 675,
+     "duration": "11h 15m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "BEG",
+       "arrivalAirportName": "Belgrade Nikola Tesla Airport",
+       "departureTime": "2026-11-06T05:25",
+       "arrivalTime": "2026-11-06T05:10",
+       "durationMinutes": 105,
+       "duration": "1h 45m",
+       "airline": "Air Serbia",
+       "flightNumber": "JU427",
+       "aircraft": "Embraer 190"
+      },
+      {
+       "departureAirport": "BEG",
+       "departureAirportName": "Belgrade Nikola Tesla Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T13:30",
+       "arrivalTime": "2026-11-06T14:40",
+       "durationMinutes": 70,
+       "duration": "1h 10m",
+       "airline": "Air Serbia",
+       "flightNumber": "JU142",
+       "aircraft": "ATR 72"
+      }
+     ],
+     "carbonEmissionsGrams": 140000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:43.200Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GicSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVUQaJxIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=Go0BEgoyMDI2LTExLTA2agcIARIDSVNUagcIARIDU0FXcgcIARIDQlVEIiAKA0lTVBIKMjAyNi0xMS0wNhoDU09GKgJUSzIEMTEyNyIgCgNTT0YSCjIwMjYtMTEtMDYaA0NUQSoCRlIyBDUwMzciIAoDQ1RBEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQyMzU0GicSCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNJU1RyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 3,
+     "bucket": "other",
+     "price": 182,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T10:30",
+     "arrivalTime": "2026-11-06T23:35",
+     "airlines": [
+      "Turkish Airlines",
+      "Ryanair",
+      "Wizz Air"
+     ],
+     "carrierCode": "multi",
+     "stops": 2,
+     "stopsLabel": "2 stops",
+     "durationMinutes": 905,
+     "duration": "15h 05m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "SOF",
+       "arrivalAirportName": "Sofia International Airport",
+       "departureTime": "2026-11-06T10:30",
+       "arrivalTime": "2026-11-06T10:50",
+       "durationMinutes": 80,
+       "duration": "1h 20m",
+       "airline": "Turkish Airlines",
+       "flightNumber": "TK1127",
+       "aircraft": "Boeing 737"
+      },
+      {
+       "departureAirport": "SOF",
+       "departureAirportName": "Sofia International Airport",
+       "arrivalAirport": "CTA",
+       "arrivalAirportName": "Vincenzo Bellini Catania Airport",
+       "departureTime": "2026-11-06T15:35",
+       "arrivalTime": "2026-11-06T16:25",
+       "durationMinutes": 110,
+       "duration": "1h 50m",
+       "airline": "Ryanair",
+       "flightNumber": "FR5037",
+       "aircraft": "Boeing 737"
+      },
+      {
+       "departureAirport": "CTA",
+       "departureAirportName": "Vincenzo Bellini Catania Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T21:25",
+       "arrivalTime": "2026-11-06T23:35",
+       "durationMinutes": 130,
+       "duration": "2h 10m",
+       "airline": "Wizz Air",
+       "flightNumber": "W62354",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 244000,
+     "typicalCarbonEmissionsGrams": 110000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:38:43.200Z"
+    }
+   ]
+  },
+  {
+   "ad": "IST+SAW, 3 şehir",
+   "girdi": {
+    "tripType": "round_trip",
+    "destination": [
+     "BUD",
+     "PRG",
+     "VIE"
+    ],
+    "departureDate": "2026-11-06",
+    "returnDate": "2026-11-08",
+    "adults": 1,
+    "currency": "EUR",
+    "market": "TR",
+    "language": "en-US",
+    "resultsView": "cheapest",
+    "maxResults": 9,
+    "origin": [
+     "IST",
+     "SAW"
+    ]
+   },
+   "satir": 9,
+   "ilk": [
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GjkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GlsSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUiIAoDSVNUEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQyNDMwGjkSCjIwMjYtMTEtMDhqBwgBEgNCVURqBwgBEgNQUkdqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 0,
+     "bucket": "best",
+     "price": 126,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD · PRG · VIE",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD · PRG · VIE",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T09:55",
+     "arrivalTime": "2026-11-06T10:00",
+     "airlines": [
+      "Wizz Air"
+     ],
+     "carrierCode": "W6",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 125,
+     "duration": "2h 05m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T09:55",
+       "arrivalTime": "2026-11-06T10:00",
+       "durationMinutes": 125,
+       "duration": "2h 05m",
+       "airline": "Wizz Air",
+       "flightNumber": "W62430",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 75000,
+     "typicalCarbonEmissionsGrams": null,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:28.087Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GjkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GloSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUiHwoDU0FXEgoyMDI2LTExLTA2GgNQUkcqAlZGMgMzMzUaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 1,
+     "bucket": "best",
+     "price": 137,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD · PRG · VIE",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD · PRG · VIE",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "PRG",
+     "departureTime": "2026-11-06T11:10",
+     "arrivalTime": "2026-11-06T12:05",
+     "airlines": [
+      "AJet"
+     ],
+     "carrierCode": "VF",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 175,
+     "duration": "2h 55m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "PRG",
+       "arrivalAirportName": "Letiště Václava Havla Praha",
+       "departureTime": "2026-11-06T11:10",
+       "arrivalTime": "2026-11-06T12:05",
+       "durationMinutes": 175,
+       "duration": "2h 55m",
+       "airline": "AJet",
+       "flightNumber": "VF335",
+       "aircraft": "Boeing 737"
+      }
+     ],
+     "carbonEmissionsGrams": 131000,
+     "typicalCarbonEmissionsGrams": null,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:28.088Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GjkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GloSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUiHwoDU0FXEgoyMDI2LTExLTA2GgNQUkcqAlBDMgMzMDMaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 2,
+     "bucket": "best",
+     "price": 161,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD · PRG · VIE",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD · PRG · VIE",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "PRG",
+     "departureTime": "2026-11-06T08:50",
+     "arrivalTime": "2026-11-06T09:35",
+     "airlines": [
+      "Pegasus"
+     ],
+     "carrierCode": "PC",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 165,
+     "duration": "2h 45m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "PRG",
+       "arrivalAirportName": "Letiště Václava Havla Praha",
+       "departureTime": "2026-11-06T08:50",
+       "arrivalTime": "2026-11-06T09:35",
+       "durationMinutes": 165,
+       "duration": "2h 45m",
+       "airline": "Pegasus",
+       "flightNumber": "PC303",
+       "aircraft": "Airbus A321"
+      }
+     ],
+     "carbonEmissionsGrams": 126000,
+     "typicalCarbonEmissionsGrams": null,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:28.089Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GjkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GlsSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUiIAoDSVNUEgoyMDI2LTExLTA2GgNQUkcqAlRLMgQxNzY5GjkSCjIwMjYtMTEtMDhqBwgBEgNCVURqBwgBEgNQUkdqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 3,
+     "bucket": "best",
+     "price": 200,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD · PRG · VIE",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD · PRG · VIE",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "PRG",
+     "departureTime": "2026-11-06T17:25",
+     "arrivalTime": "2026-11-06T18:00",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "carrierCode": "TK",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 155,
+     "duration": "2h 35m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "PRG",
+       "arrivalAirportName": "Letiště Václava Havla Praha",
+       "departureTime": "2026-11-06T17:25",
+       "arrivalTime": "2026-11-06T18:00",
+       "durationMinutes": 155,
+       "duration": "2h 35m",
+       "airline": "Turkish Airlines",
+       "flightNumber": "TK1769",
+       "aircraft": "Airbus A330"
+      }
+     ],
+     "carbonEmissionsGrams": 136000,
+     "typicalCarbonEmissionsGrams": null,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:28.089Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GjkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GloSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUiHwoDU0FXEgoyMDI2LTExLTA2GgNWSUUqAlBDMgM5MDMaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 4,
+     "bucket": "other",
+     "price": 155,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD · PRG · VIE",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD · PRG · VIE",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "VIE",
+     "departureTime": "2026-11-06T13:30",
+     "arrivalTime": "2026-11-06T13:50",
+     "airlines": [
+      "Pegasus"
+     ],
+     "carrierCode": "PC",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 140,
+     "duration": "2h 20m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "VIE",
+       "arrivalAirportName": "Vienna International Airport",
+       "departureTime": "2026-11-06T13:30",
+       "arrivalTime": "2026-11-06T13:50",
+       "durationMinutes": 140,
+       "duration": "2h 20m",
+       "airline": "Pegasus",
+       "flightNumber": "PC903",
+       "aircraft": "Airbus A321"
+      }
+     ],
+     "carbonEmissionsGrams": 110000,
+     "typicalCarbonEmissionsGrams": null,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:28.089Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=GjkSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUaORIKMjAyNi0xMS0wOGoHCAESA0JVRGoHCAESA1BSR2oHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAGYAQE&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GnwSCjIwMjYtMTEtMDZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNCVURyBwgBEgNQUkdyBwgBEgNWSUUiHwoDU0FXEgoyMDI2LTExLTA2GgNUSUEqAlBDMgMyODMiIAoDVElBEgoyMDI2LTExLTA3GgNWSUUqAkZSMgQ2ODg5GjkSCjIwMjYtMTEtMDhqBwgBEgNCVURqBwgBEgNQUkdqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 5,
+     "bucket": "other",
+     "price": 158,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 1,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 1
+     },
+     "tripLegs": [
+      {
+       "origin": "IST · SAW",
+       "destination": "BUD · PRG · VIE",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD · PRG · VIE",
+       "destination": "IST · SAW",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "PRG",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "VIE",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        },
+        {
+         "type": "airport",
+         "value": "SAW",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "SAW",
+     "destination": "VIE",
+     "departureTime": "2026-11-06T22:55",
+     "arrivalTime": "2026-11-07T21:45",
+     "airlines": [
+      "Pegasus",
+      "Ryanair"
+     ],
+     "carrierCode": "multi",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 1490,
+     "duration": "24h 50m",
+     "segments": [
+      {
+       "departureAirport": "SAW",
+       "departureAirportName": "Sabiha Gökçen International Airport",
+       "arrivalAirport": "TIA",
+       "arrivalAirportName": "Tirana International Airport",
+       "departureTime": "2026-11-06T22:55",
+       "arrivalTime": "2026-11-06T22:40",
+       "durationMinutes": 105,
+       "duration": "1h 45m",
+       "airline": "Pegasus",
+       "flightNumber": "PC283",
+       "aircraft": "Airbus A321"
+      },
+      {
+       "departureAirport": "TIA",
+       "departureAirportName": "Tirana International Airport",
+       "arrivalAirport": "VIE",
+       "arrivalAirportName": "Vienna International Airport",
+       "departureTime": "2026-11-07T20:05",
+       "arrivalTime": "2026-11-07T21:45",
+       "durationMinutes": 100,
+       "duration": "1h 40m",
+       "airline": "Ryanair",
+       "flightNumber": "FR6889",
+       "aircraft": "Airbus A320"
+      }
+     ],
+     "carbonEmissionsGrams": 160000,
+     "typicalCarbonEmissionsGrams": null,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:28.089Z"
+    }
+   ]
   },
   {
    "ad": "IST 2 kişi",
    "girdi": {
     "tripType": "round_trip",
-    "destination": "BUD",
+    "destination": [
+     "BUD"
+    ],
     "departureDate": "2026-11-06",
     "returnDate": "2026-11-08",
     "adults": 2,
@@ -70,9 +2589,257 @@
     "language": "en-US",
     "resultsView": "cheapest",
     "maxResults": 2,
-    "origin": "IST"
+    "origin": [
+     "IST"
+    ]
    },
-   "hata": "Apify HTTP 400: {\n  \"error\": {\n    \"type\": \"invalid-input\",\n    \"message\": \"Input is not valid: Field input.origin must be array\"\n  }\n}"
+   "satir": 2,
+   "ilk": [
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVEABQAFIAZgBAQ&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GkASCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQiIAoDSVNUEgoyMDI2LTExLTA2GgNCVUQqAlc2MgQyNDMwGh4SCjIwMjYtMTEtMDhqBwgBEgNCVURyBwgBEgNJU1RAAUABSAGYAQE&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 0,
+     "bucket": "best",
+     "price": 251,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 2,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 2
+     },
+     "tripLegs": [
+      {
+       "origin": "IST",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T09:55",
+     "arrivalTime": "2026-11-06T10:00",
+     "airlines": [
+      "Wizz Air"
+     ],
+     "carrierCode": "W6",
+     "stops": 0,
+     "stopsLabel": "Nonstop",
+     "durationMinutes": 125,
+     "duration": "2h 05m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T09:55",
+       "arrivalTime": "2026-11-06T10:00",
+       "durationMinutes": 125,
+       "duration": "2h 05m",
+       "airline": "Wizz Air",
+       "flightNumber": "W62430",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 150000,
+     "typicalCarbonEmissionsGrams": 220000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:47.286Z"
+    },
+    {
+     "_source": "google-flights",
+     "rowType": "flight",
+     "source_url": "https://www.google.com/travel/flights/search?tfs=Gh4SCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQaHhIKMjAyNi0xMS0wOGoHCAESA0JVRHIHCAESA0lTVEABQAFIAZgBAQ&tfu=EggIABABIAIoAyIA&hl=en-US&gl=tr&curr=EUR",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=GmISCjIwMjYtMTEtMDZqBwgBEgNJU1RyBwgBEgNCVUQiIAoDSVNUEgoyMDI2LTExLTA2GgNTT0YqAlRLMgQxMTI3IiAKA1NPRhIKMjAyNi0xMS0wNhoDQlVEKgJXNjIENDM0ORoeEgoyMDI2LTExLTA4agcIARIDQlVEcgcIARIDSVNUQAFAAUgBmAEB&tfu=EggIABABIAEoByIA&hl=en-US&gl=tr&curr=EUR",
+     "searchSource": "route",
+     "searchLabel": "route form",
+     "resultsView": "cheapest",
+     "sortedBy": "top_flights",
+     "index": 1,
+     "bucket": "best",
+     "price": 422,
+     "priceAvailable": true,
+     "currency": "EUR",
+     "priceIsTotal": true,
+     "tripType": "round-trip",
+     "cabinClass": "economy",
+     "passengers": {
+      "adults": 2,
+      "children": 0,
+      "infantsInSeat": 0,
+      "infantsOnLap": 0,
+      "total": 2
+     },
+     "tripLegs": [
+      {
+       "origin": "IST",
+       "destination": "BUD",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-06"
+      },
+      {
+       "origin": "BUD",
+       "destination": "IST",
+       "originSearched": [
+        {
+         "type": "airport",
+         "value": "BUD",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "destinationSearched": [
+        {
+         "type": "airport",
+         "value": "IST",
+         "name": null,
+         "matchedBy": "code"
+        }
+       ],
+       "date": "2026-11-08"
+      }
+     ],
+     "segmentsForLeg": 1,
+     "appliedFilters": {
+      "maxStops": "any",
+      "maxPrice": null,
+      "excludeBasicEconomy": false,
+      "lessEmissionsOnly": false,
+      "maxDurationHours": null,
+      "carryOnBags": 0,
+      "checkedBags": 0,
+      "layoverHours": null,
+      "connectingAirports": null,
+      "airlines": null,
+      "times": null
+     },
+     "filterWarnings": [],
+     "origin": "IST",
+     "destination": "BUD",
+     "departureTime": "2026-11-06T10:30",
+     "arrivalTime": "2026-11-06T15:00",
+     "airlines": [
+      "Turkish Airlines",
+      "Wizz Air"
+     ],
+     "carrierCode": "multi",
+     "stops": 1,
+     "stopsLabel": "1 stop",
+     "durationMinutes": 390,
+     "duration": "6h 30m",
+     "segments": [
+      {
+       "departureAirport": "IST",
+       "departureAirportName": "Istanbul Airport",
+       "arrivalAirport": "SOF",
+       "arrivalAirportName": "Sofia International Airport",
+       "departureTime": "2026-11-06T10:30",
+       "arrivalTime": "2026-11-06T10:50",
+       "durationMinutes": 80,
+       "duration": "1h 20m",
+       "airline": "Turkish Airlines",
+       "flightNumber": "TK1127",
+       "aircraft": "Boeing 737"
+      },
+      {
+       "departureAirport": "SOF",
+       "departureAirportName": "Sofia International Airport",
+       "arrivalAirport": "BUD",
+       "arrivalAirportName": "Budapest Ferenc Liszt International Airport",
+       "departureTime": "2026-11-06T14:35",
+       "arrivalTime": "2026-11-06T15:00",
+       "durationMinutes": 85,
+       "duration": "1h 25m",
+       "airline": "Wizz Air",
+       "flightNumber": "W64349",
+       "aircraft": "Airbus A321neo"
+      }
+     ],
+     "carbonEmissionsGrams": 250000,
+     "typicalCarbonEmissionsGrams": 220000,
+     "priceInsights": null,
+     "scrapedAt": "2026-10-27T23:39:47.286Z"
+    }
+   ]
   }
  ]
 }
