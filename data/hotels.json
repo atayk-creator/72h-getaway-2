@@ -28,7 +28,7 @@
         {"id":"dub-iveagh-garden","ad":"Iveagh Garden Hotel","arama":"Iveagh Garden Hotel Dublin","kategori":"konforlu","not":"Harcourt Street'te, St Stephen's Green'e yakın, yeşil enerjili modern otel"},
         {"id":"dub-the-dean","ad":"The Dean Dublin","arama":"The Dean Hotel Dublin Harcourt Street","kategori":"konforlu","not":"Harcourt Street'te çatı barıyla ünlü, genç ve tasarım odaklı butik otel"},
         {"id":"dub-wren","ad":"Wren Urban Nest","arama":"Wren Urban Nest Dublin","kategori":"konforlu","not":"Temple Bar ile Trinity arasında, sürdürülebilir tasarımlı yeni nesil otel"},
-        {"id":"dub-motel-one","ad":"Motel One Dublin","arama":"Motel One Dublin","kategori":"ucuz","not":"Liffey kıyısına yakın, Trinity ve O'Connell Street'e yürüme mesafesinde"},
+        {"id":"dub-motel-one","ad":"Motel One Dublin","arama":"Motel One Dublin Ormond Quay","kategori":"ucuz","not":"Liffey kıyısına yakın, Trinity ve O'Connell Street'e yürüme mesafesinde"},
         {"id":"dub-point-a-parnell","ad":"Point A Hotel Parnell Street","arama":"Point A Hotel Dublin Parnell Street","kategori":"ucuz","not":"O'Connell Street'e 2 dk, kompakt ama temiz odalı merkezi bütçe otel"}
       ]
     },
@@ -42,7 +42,7 @@
         {"id":"par-le-walt","ad":"Hôtel Le Walt","arama":"Hotel Le Walt Paris","kategori":"konforlu","not":"7. bölgede, Eyfel Kulesi ve Invalides'e yürüme mesafesinde şık butik otel"},
         {"id":"par-bachaumont","ad":"Hôtel Bachaumont","arama":"Hotel Bachaumont Paris","kategori":"konforlu","not":"Montorgueil çarşı sokağında, 2. bölgede kokteyl barıyla ünlü butik otel"},
         {"id":"par-fabric","ad":"Hôtel Fabric","arama":"Hotel Fabric Paris","kategori":"konforlu","not":"Oberkampf'ta eski tekstil fabrikası, Marais'ye yakın, hamamlı samimi otel"},
-        {"id":"par-du-cygne","ad":"Hôtel du Cygne","arama":"Hotel du Cygne Paris Chatelet","kategori":"ucuz","not":"Châtelet-Les Halles'te, Louvre ve Marais'ye yürüme mesafesinde sade 2 yıldızlı"},
+        {"id":"par-du-cygne","ad":"Hôtel du Cygne","arama":"Hôtel du Cygne Paris","kategori":"ucuz","not":"Châtelet-Les Halles'te, Louvre ve Marais'ye yürüme mesafesinde sade 2 yıldızlı"},
         {"id":"par-chopin","ad":"Hôtel Chopin","arama":"Hotel Chopin Paris Passage Jouffroy","kategori":"ucuz","not":"Opéra yakınında, tarihi Passage Jouffroy pasajının içinde nostaljik bütçe otel"}
       ]
     },
@@ -96,7 +96,7 @@
         {"id":"ber-ritz-carlton","ad":"The Ritz-Carlton Berlin","arama":"The Ritz-Carlton Berlin Potsdamer Platz","kategori":"pahali","not":"Potsdamer Platz'da, yenilenmiş art deco odalar ve şık barıyla 5 yıldızlı"},
         {"id":"ber-waldorf-astoria","ad":"Waldorf Astoria Berlin","arama":"Waldorf Astoria Berlin","kategori":"pahali","not":"Zoo/Kurfürstendamm'da 32 katlı kulede, şehir manzaralı lüks odalar"},
         {"id":"ber-oderberger","ad":"Hotel Oderberger","arama":"Hotel Oderberger Berlin","kategori":"konforlu","not":"Prenzlauer Berg'de tarihi hamam binası; 1902'den kalma havuzda yüzebilirsin"},
-        {"id":"ber-orania","ad":"Orania.Berlin","arama":"Orania.Berlin Hotel Kreuzberg","kategori":"konforlu","not":"Kreuzberg Oranienplatz'da butik otel, canlı müzikli bar ve iyi restoran"},
+        {"id":"ber-orania","ad":"Orania.Berlin","arama":"Orania Berlin Oranienstrasse","kategori":"konforlu","not":"Kreuzberg Oranienplatz'da butik otel, canlı müzikli bar ve iyi restoran"},
         {"id":"ber-provocateur","ad":"Provocateur Berlin","arama":"Hotel Provocateur Berlin","kategori":"konforlu","not":"Charlottenburg'da 1920'ler Paris tarzı butik otel, Ku'damm'a yürüme mesafesi"},
         {"id":"ber-motel-one-hackescher","ad":"Motel One Hackescher Markt","arama":"Motel One Berlin-Hackescher Markt","kategori":"ucuz","not":"Mitte'de Hackescher Markt'ta, Müzeler Adası'na yürüyerek; temiz ve şık"},
         {"id":"ber-premier-inn-alex","ad":"Premier Inn Alexanderplatz","arama":"Premier Inn Berlin Alexanderplatz","kategori":"ucuz","not":"Alexanderplatz'a birkaç dakika, rahat yataklarıyla bilinen uygun fiyatlı zincir"}
@@ -138,7 +138,7 @@
         {"id":"lis-tivoli-avenida","ad":"Tivoli Avenida Liberdade","arama":"Tivoli Avenida Liberdade Lisboa","kategori":"pahali","not":"Avenida da Liberdade'de; şehir manzaralı çatı barı ve havuzlu bahçesi var"},
         {"id":"lis-bairro-alto-hotel","ad":"Bairro Alto Hotel","arama":"Bairro Alto Hotel Lisbon","kategori":"pahali","not":"Chiado'da Camões Meydanı'nda; Tejo manzaralı terası olan 5 yıldızlı butik"},
         {"id":"lis-almalusa-baixa-chiado","ad":"AlmaLusa Baixa/Chiado","arama":"AlmaLusa Baixa Chiado Lisbon","kategori":"konforlu","not":"Praça do Município'de 18. yy binasında; Baixa'nın tam ortasında butik otel"},
-        {"id":"lis-memmo-alfama","ad":"Memmo Alfama","arama":"Memmo Alfama Design Hotel Lisbon","kategori":"konforlu","not":"Alfama'nın dar sokaklarında; havuz terasından Tejo manzarası meşhur"},
+        {"id":"lis-memmo-alfama","ad":"Memmo Alfama","arama":"Memmo Alfama Lisbon","kategori":"konforlu","not":"Alfama'nın dar sokaklarında; havuz terasından Tejo manzarası meşhur"},
         {"id":"lis-inspira-liberdade","ad":"Inspira Liberdade Boutique Hotel","arama":"Inspira Liberdade Boutique Hotel Lisbon","kategori":"konforlu","not":"Avenida da Liberdade yakınında sürdürülebilir butik otel; metroya yakın, sessiz"},
         {"id":"lis-hotel-florescente","ad":"Hotel Florescente","arama":"Hotel Florescente Lisbon","kategori":"ucuz","not":"Restauradores'te Portas de Santo Antão üzerinde; merkezi, uygun 3 yıldızlı"},
         {"id":"lis-my-story-rossio","ad":"My Story Hotel Rossio","arama":"My Story Hotel Rossio Lisbon","kategori":"ucuz","not":"Rossio meydanının üzerinde; konumu harika, odaları küçük ama yeni ve temiz"}
@@ -150,12 +150,12 @@
       "oteller": [
         {"id":"rom-hotel-raphael","ad":"Hotel Raphaël","arama":"Hotel Raphael Relais Chateaux Rome","kategori":"ikonik","not":"Piazza Navona'nın arkasında, cephesi sarmaşıkla kaplı ünlü otel; manzaralı teras"},
         {"id":"rom-hotel-de-russie","ad":"Hotel de Russie","arama":"Hotel de Russie Rocco Forte Rome","kategori":"pahali","not":"Piazza del Popolo'nun yanında; gizli teras bahçesiyle Rocco Forte'nin 5 yıldızlısı"},
-        {"id":"rom-hotel-eden","ad":"Hotel Eden","arama":"Hotel Eden Dorchester Collection Rome","kategori":"pahali","not":"İspanyol Merdivenleri'nin yakınında; çatı restoranından bütün Roma görünüyor"},
+        {"id":"rom-hotel-eden","ad":"Hotel Eden","arama":"Hotel Eden Rome","kategori":"pahali","not":"İspanyol Merdivenleri'nin yakınında; çatı restoranından bütün Roma görünüyor"},
         {"id":"rom-hotel-artemide","ad":"Hotel Artemide","arama":"Hotel Artemide Via Nazionale Rome","kategori":"konforlu","not":"Via Nazionale'de; yorumları çok yüksek, Monti'ye ve Termini'ye yürüme mesafesi"},
         {"id":"rom-hotel-locarno","ad":"Hotel Locarno","arama":"Hotel Locarno Rome","kategori":"konforlu","not":"Piazza del Popolo'nun yanında 1925'ten kalma art deco otel; barı ünlü"},
         {"id":"rom-hotel-campo-de-fiori","ad":"Hotel Campo de' Fiori","arama":"Hotel Campo de Fiori Rome","kategori":"konforlu","not":"Campo de' Fiori meydanında butik otel; çatı terasından kubbeler görünüyor"},
         {"id":"rom-hotel-panda","ad":"Hotel Panda","arama":"Hotel Panda Via della Croce Rome","kategori":"ucuz","not":"İspanyol Merdivenleri'ne 2 dakika, Via della Croce'de; sade ama çok merkezi"},
-        {"id":"rom-hotel-trastevere","ad":"Hotel Trastevere","arama":"Hotel Trastevere Via Luciano Manara Rome","kategori":"ucuz","not":"Trastevere'nin kalbinde 3 yıldızlı; restoranlar ve gece hayatı kapının önünde"}
+        {"id":"rom-hotel-trastevere","ad":"Hotel Trastevere","arama":"Hotel Trastevere Rome","kategori":"ucuz","not":"Trastevere'nin kalbinde 3 yıldızlı; restoranlar ve gece hayatı kapının önünde"}
       ]
     },
     {
@@ -166,7 +166,7 @@
         {"id":"vlt-rosselli","ad":"Rosselli AX Privilege","arama":"Rosselli AX Privilege Valletta","kategori":"pahali","not":"Merchants Street'te 17. yy sarayında; Michelin yıldızlı restoranı var"},
         {"id":"vlt-iniala-harbour-house","ad":"Iniala Harbour House","arama":"Iniala Harbour House Valletta","kategori":"pahali","not":"Grand Harbour'a bakan surların üzerinde; çatı restoranı ve havuzu olan tasarım otel"},
         {"id":"vlt-casa-ellul","ad":"Casa Ellul","arama":"Casa Ellul Valletta","kategori":"konforlu","not":"Viktorya dönemi konağında küçük butik otel; St John's Co-Cathedral'a yakın"},
-        {"id":"vlt-the-cumberland","ad":"The Cumberland by NEU Collective","arama":"The Cumberland Hotel by NEU Collective Valletta","kategori":"konforlu","not":"St John Street'te tarihi binada; çatıda havuz ve bar, 4 yıldızlı"},
+        {"id":"vlt-the-cumberland","ad":"The Cumberland by NEU Collective","arama":"The Cumberland Hotel Valletta","kategori":"konforlu","not":"St John Street'te tarihi binada; çatıda havuz ve bar, 4 yıldızlı"},
         {"id":"vlt-ursulino","ad":"Ursulino Valletta","arama":"Ursulino Valletta Hotel","kategori":"konforlu","not":"Eski manastır binasında; liman manzaralı çatı havuzu, Upper Barrakka'ya yakın"},
         {"id":"vlt-osborne-hotel","ad":"Osborne Hotel","arama":"Osborne Hotel Valletta","kategori":"ucuz","not":"South Street'te şövalyeler döneminden kalma binada 3 yıldızlı; çatı havuzlu"},
         {"id":"vlt-british-hotel","ad":"British Hotel","arama":"British Hotel Valletta Malta","kategori":"ucuz","not":"Aile işletmesi; birçok odası Grand Harbour'a bakıyor, Barrakka bahçelerine yakın"}
@@ -206,9 +206,9 @@
       "oteller": [
         {"id":"cph-radisson-royal","ad":"Radisson Collection Royal Hotel","arama":"Radisson Collection Royal Hotel Copenhagen","kategori":"ikonik","not":"Arne Jacobsen'in tasarladığı efsane kule; Tivoli'nin karşısında, ünlü Oda 606"},
         {"id":"cph-d-angleterre","ad":"Hotel d'Angleterre","arama":"Hotel d'Angleterre Copenhagen","kategori":"pahali","not":"Kongens Nytorv'da 1755'ten beri; Nyhavn'a 2 dk, Michelin yıldızlı restoranı var"},
-        {"id":"cph-nimb","ad":"Nimb Hotel","arama":"Nimb Hotel Copenhagen Tivoli","kategori":"pahali","not":"Tivoli Bahçeleri'nin içinde Mağribi tarzı saray; şömineli odalar ve çatı havuzu"},
+        {"id":"cph-nimb","ad":"Nimb Hotel","arama":"Nimb Hotel Copenhagen","kategori":"pahali","not":"Tivoli Bahçeleri'nin içinde Mağribi tarzı saray; şömineli odalar ve çatı havuzu"},
         {"id":"cph-nyhavn-71","ad":"71 Nyhavn Hotel","arama":"71 Nyhavn Hotel Copenhagen","kategori":"konforlu","not":"Nyhavn kanalının ucunda tarihi depo binası; ahşap kirişli, liman manzaralı"},
-        {"id":"cph-ottilia","ad":"Hotel Ottilia","arama":"Hotel Ottilia Copenhagen Carlsberg","kategori":"konforlu","not":"Carlsberg City'de eski bira fabrikası binası; çatı terası ve akşam şarap ikramı"},
+        {"id":"cph-ottilia","ad":"Hotel Ottilia","arama":"Hotel Ottilia Copenhagen","kategori":"konforlu","not":"Carlsberg City'de eski bira fabrikası binası; çatı terası ve akşam şarap ikramı"},
         {"id":"cph-sp34","ad":"Hotel SP34","arama":"Hotel SP34 Copenhagen","kategori":"konforlu","not":"Latin Mahallesi'nde, Strøget'e 2 dk; tasarım odaklı butik otel"},
         {"id":"cph-wakeup-borgergade","ad":"Wakeup Copenhagen Borgergade","arama":"Wakeup Copenhagen Borgergade","kategori":"ucuz","not":"Kongens Have ve Nyhavn'a yürüme mesafesi; küçük ama şık odalı ucuz seçenek"},
         {"id":"cph-cabinn-city","ad":"Cabinn City","arama":"Cabinn City Hotel Copenhagen","kategori":"ucuz","not":"Tivoli ve Merkez İstasyon'a 5 dk; kamara tarzı kompakt odalar, çok uygun"}
@@ -235,7 +235,7 @@
         {"id":"tll-sokos-viru","ad":"Original Sokos Hotel Viru","arama":"Original Sokos Hotel Viru Tallinn","kategori":"ikonik","not":"Sovyet döneminin efsane kulesi, içinde KGB müzesi var; Eski Şehir'in yanında"},
         {"id":"tll-telegraaf","ad":"Hotel Telegraaf","arama":"Hotel Telegraaf Autograph Collection Tallinn","kategori":"pahali","not":"Eski Şehir'de 19. yy telgraf binası; Belle Époque şıklığı, spa ve havuz"},
         {"id":"tll-schlossle","ad":"Schlössle Hotel","arama":"Schlossle Hotel Tallinn","kategori":"pahali","not":"Eski Şehir'de ortaçağ tüccar evi; şöminesi ve dar sokak atmosferi"},
-        {"id":"tll-hotel-cru","ad":"Hotel Cru","arama":"Hotel Cru Tallinn Old Town","kategori":"konforlu","not":"Eski Şehir'in kalbinde 14. yy binası; ahşap tavanlar, Belediye Meydanı'na 3 dk"},
+        {"id":"tll-hotel-cru","ad":"Hotel Cru","arama":"Cru Hotel Tallinn","kategori":"konforlu","not":"Eski Şehir'in kalbinde 14. yy binası; ahşap tavanlar, Belediye Meydanı'na 3 dk"},
         {"id":"tll-nordic-forum","ad":"Nordic Hotel Forum","arama":"Nordic Hotel Forum Tallinn","kategori":"konforlu","not":"Viru Kapısı'nın karşısında; çatıda havuz ve sauna, Eski Şehir manzarası"},
         {"id":"tll-kreutzwald","ad":"Kreutzwald Hotel","arama":"Kreutzwald Hotel Tallinn","kategori":"konforlu","not":"Merkezde, Eski Şehir'e 10 dk; sakin, iyi fiyatlı ve spa'lı bir otel"},
         {"id":"tll-go-hotel-shnelli","ad":"Go Hotel Shnelli","arama":"Go Hotel Shnelli Tallinn","kategori":"ucuz","not":"Balti Jaam istasyonunun yanında, Eski Şehir'e 5 dk; ucuz ve temiz"},
@@ -260,9 +260,9 @@
       "sehir": "Vilnius",
       "ulke": "Litvanya",
       "oteller": [
-        {"id":"vno-grand-hotel-vilnius","ad":"Grand Hotel Vilnius","arama":"Grand Hotel Vilnius Curio Collection by Hilton","kategori":"ikonik","not":"Katedral Meydanı'nın karşısında tarihi yapı; şehrin en prestijli adresi"},
+        {"id":"vno-grand-hotel-vilnius","ad":"Grand Hotel Vilnius","arama":"Grand Hotel Vilnius","kategori":"ikonik","not":"Katedral Meydanı'nın karşısında tarihi yapı; şehrin en prestijli adresi"},
         {"id":"vno-pacai","ad":"Hotel PACAI","arama":"Hotel PACAI Vilnius","kategori":"pahali","not":"Eski Şehir'de 17. yy barok sarayı; spa ve hamam kullanımı ücretsiz"},
-        {"id":"vno-stikliai","ad":"Stikliai Hotel","arama":"Stikliai Hotel Relais & Chateaux Vilnius","kategori":"pahali","not":"Eski Yahudi mahallesinde Relais & Châteaux üyesi klasik lüks otel"},
+        {"id":"vno-stikliai","ad":"Stikliai Hotel","arama":"Relais & Châteaux Stikliai Hotel Vilnius","kategori":"pahali","not":"Eski Yahudi mahallesinde Relais & Châteaux üyesi klasik lüks otel"},
         {"id":"vno-artagonist","ad":"Artagonist Hotel","arama":"Artagonist Hotel Vilnius","kategori":"konforlu","not":"Eski Şehir'de; her odayı ayrı bir Litvanyalı sanatçı tasarlamış"},
         {"id":"vno-shakespeare","ad":"Shakespeare Boutique Hotel","arama":"Shakespeare Boutique Hotel Vilnius","kategori":"konforlu","not":"Eski Şehir'de edebiyat temalı butik otel; Bernardine Parkı'na yakın"},
         {"id":"vno-neringa","ad":"Neringa Hotel","arama":"Neringa Hotel Vilnius Gediminas Avenue","kategori":"konforlu","not":"Gediminas Bulvarı'nda yenilenmiş otel; Eski Şehir'e yürüme mesafesi"},
@@ -277,7 +277,7 @@
         {"id":"waw-bristol","ad":"Hotel Bristol Warsaw","arama":"Hotel Bristol Luxury Collection Warsaw","kategori":"ikonik","not":"Kraliyet Yolu'nda 1901 yapımı efsane otel, Cumhurbaşkanlığı Sarayı'nın yanında"},
         {"id":"waw-raffles","ad":"Raffles Europejski Warsaw","arama":"Raffles Europejski Warsaw","kategori":"pahali","not":"Krakowskie Przedmieście'de tarihi binada, şehrin en yüksek puanlı lüks oteli"},
         {"id":"waw-verte","ad":"Hotel Verte, Autograph Collection","arama":"Hotel Verte Warsaw Autograph Collection","kategori":"pahali","not":"Kraliyet Kalesi'ne yakın, Eski Şehir sınırında yeni ve şık lüks otel"},
-        {"id":"waw-puro","ad":"PURO Warszawa Centrum","arama":"PURO Warsaw Centrum Hotel","kategori":"konforlu","not":"Śródmieście'de modern tasarım otel, Bilim ve Kültür Sarayı'na yürüme mesafesi"},
+        {"id":"waw-puro","ad":"PURO Warszawa Centrum","arama":"PURO Warszawa Centrum","kategori":"konforlu","not":"Śródmieście'de modern tasarım otel, Bilim ve Kültür Sarayı'na yürüme mesafesi"},
         {"id":"waw-indigo","ad":"Hotel Indigo Nowy Świat","arama":"Hotel Indigo Warsaw Nowy Swiat","kategori":"konforlu","not":"Nowy Świat caddesinde, kafeler arasında; Eski Şehir'e 15 dakika yürüyüş"},
         {"id":"waw-polonia-palace","ad":"Polonia Palace Hotel","arama":"Polonia Palace Hotel Warsaw","kategori":"konforlu","not":"1913'ten kalma tarihi otel, Merkez Garı ve Bilim Sarayı'nın karşısında"},
         {"id":"waw-motel-one-chopin","ad":"Motel One Warsaw-Chopin","arama":"Motel One Warsaw-Chopin","kategori":"ucuz","not":"Powiśle'de Chopin Müzesi yakınında, Nowy Świat'a 5 dakika; şık ve uygun"},
@@ -293,7 +293,7 @@
         {"id":"prg-mandarin-oriental","ad":"Mandarin Oriental Prague","arama":"Mandarin Oriental Prague","kategori":"pahali","not":"Malá Strana'da 14. yüzyıl manastırında; eski şapelde spa"},
         {"id":"prg-josef","ad":"Hotel Josef","arama":"Hotel Josef Prague","kategori":"konforlu","not":"Eski Şehir'de minimalist tasarım oteli, Eski Şehir Meydanı'na 5 dakika"},
         {"id":"prg-pod-vezi","ad":"Hotel Pod Věží","arama":"Hotel Pod Vezi Prague","kategori":"konforlu","not":"Malá Strana'da Karl Köprüsü kulesinin dibinde, tarihi binada butik otel"},
-        {"id":"prg-icon","ad":"The ICON Hotel & Lounge","arama":"The ICON Hotel & Lounge Prague","kategori":"konforlu","not":"Nové Město'da modern butik otel, Václav Meydanı'na yürüme mesafesi"},
+        {"id":"prg-icon","ad":"The ICON Hotel & Lounge","arama":"The ICON Hotel and Lounge Prague","kategori":"konforlu","not":"Nové Město'da modern butik otel, Václav Meydanı'na yürüme mesafesi"},
         {"id":"prg-ibis-old-town","ad":"ibis Praha Old Town","arama":"ibis Praha Old Town","kategori":"ucuz","not":"Na Poříčí'de, Barut Kulesi ve Eski Şehir'e 5-10 dakika; uygun fiyatlı"},
         {"id":"prg-clement","ad":"Hotel Clement","arama":"Hotel Clement Prague","kategori":"ucuz","not":"Nové Město'da, tramvayla her yere kolay; yüksek puanlı ve bütçe dostu"}
       ]
@@ -347,7 +347,7 @@
         {"id":"zag-esplanade","ad":"Esplanade Zagreb Hotel","arama":"Esplanade Zagreb Hotel","kategori":"ikonik","not":"1925 Orient Express oteli; garın karşısında, şehrin efsane adresi"},
         {"id":"zag-artotel","ad":"art'otel Zagreb","arama":"art'otel Zagreb","kategori":"pahali","not":"Sava kıyısında yeni 5 yıldızlı sanat temalı otel; çatı barı var"},
         {"id":"zag-sheraton","ad":"Sheraton Zagreb Hotel","arama":"Sheraton Zagreb Hotel","kategori":"pahali","not":"Merkezde 5 yıldızlı; havuz ve spa, Jelačić Meydanı'na 15 dk yürüme"},
-        {"id":"zag-palace","ad":"Palace Hotel Zagreb","arama":"Palace Hotel Zagreb","kategori":"konforlu","not":"Zrinjevac Parkı'nda 1891 tarihli Viyana tarzı saray binası"},
+        {"id":"zag-palace","ad":"Palace Hotel Zagreb","arama":"Palace Hotel Zagreb Strossmayerov trg","kategori":"konforlu","not":"Zrinjevac Parkı'nda 1891 tarihli Viyana tarzı saray binası"},
         {"id":"zag-academia","ad":"Hotel Academia","arama":"Hotel Academia Zagreb","kategori":"konforlu","not":"Ban Jelačić Meydanı yakınında modern 4 yıldızlı otel; yorumları çok iyi"},
         {"id":"zag-canopy","ad":"Canopy by Hilton Zagreb","arama":"Canopy by Hilton Zagreb City Centre","kategori":"konforlu","not":"Gar yanında Branimir bölgesinde renkli, yerel ruhlu modern otel"},
         {"id":"zag-central","ad":"Hotel Central","arama":"Hotel Central Zagreb","kategori":"ucuz","not":"Ana garın tam karşısında; merkeze 10 dk yürüme, uygun fiyat"},

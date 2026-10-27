@@ -179,7 +179,7 @@ export function toRecord(row, nights = 2, currency = "EUR", trusted = DEFAULT_TR
   }).filter(Boolean);
   const google = num(row.totalPrice) ? row.totalPrice : num(row.pricePerNight) ? row.pricePerNight * nights : null;
   const base = {
-    googleKimlik: row.hotelId || null, puan: num(row.rating) ? row.rating : null, yildiz: row.hotelClass ?? null,
+    googleKimlik: row.hotelId || null, googleAd: row.name || null, puan: num(row.rating) ? row.rating : null, yildiz: row.hotelClass ?? null,
     konum: num(row.latitude) && num(row.longitude) ? [r2(row.latitude * 1000) / 1000, r2(row.longitude * 1000) / 1000] : null,
   };
   const min = (a) => a.reduce((x, y) => (!x || y.toplam < x.toplam ? y : x), null);
