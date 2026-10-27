@@ -1,9 +1,228 @@
 {
- "guncellendi": null,
+ "guncellendi": "2026-10-27T22:14:19.790Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
- "googleKimlik": {},
- "sonCalisma": null,
- "haftaSonlari": {}
+ "googleKimlik": {
+  "bud-parisi-udvar": "ChkIs6L2n6nv9bAXGg0vZy8xMWc4eGh6MmxxEAE",
+  "bud-kempinski": "ChYIhOfF3dfH9tRAGgovbS8wZ2piMXoxEAE",
+  "bud-aria": "ChkIhIz7_9Sz4Jx1Gg0vZy8xMWI2eDhtX2JwEAE",
+  "bud-clark": "ChoI3Zj7pOaokr_pARoNL2cvMTFnZjVsMzVrbRAB",
+  "bud-moments": "ChkIjaSP8Lri_ahdGg0vZy8xMWI4emxjcGQzEAE",
+  "bud-rum": "ChoI1qmGwdPUn-DTARoNL2cvMTFjbmRiMXAwchAB",
+  "bud-d8": "ChoIwu757Lvb6N2lARoNL2cvMTFmNWx5Nnk0MhAB",
+  "bud-roombach": "ChgImoPF4PiQxNB3GgwvZy8xcHR2cWI3d2wQAQ"
+ },
+ "sonCalisma": {
+  "tarih": "2026-10-27T22:14:19.790Z",
+  "mod": "test",
+  "kontrol": 8,
+  "fiyatli": 8,
+  "tahminiMaliyetUsd": 0.03
+ },
+ "haftaSonlari": {
+  "2026-10-30": {
+   "cikis": "2026-11-01",
+   "oteller": {
+    "bud-parisi-udvar": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 646,
+      "gecelik": 323,
+      "site": "Amimir.com",
+      "link": "https://www.amimir.com/en/book/?start=30%2F10%2F2026&end=01%2F11%2F2026&hotelId=89976&highlightHotel=true&hab1=2&ehab1=&metasearch&utm_content=89976&checkV=false&totalPrice=704.16&userCountry=US&utm_source=googleMetasearch&utm_medium=organic&currency=EUR",
+      "googleFiyat": 704,
+      "resmiSiteFiyat": null,
+      "firsat": null,
+      "tipikGecelik": null,
+      "googleKimlik": "ChkIs6L2n6nv9bAXGg0vZy8xMWc4eGh6MmxxEAE",
+      "puan": 4.7,
+      "yildiz": 5,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 646
+      }
+     ]
+    },
+    "bud-kempinski": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 607,
+      "gecelik": 303.5,
+      "site": "Super.com",
+      "link": "https://www.super.com/travel/transition/?data=price=2672.77%26total_price=2913.33%26retail_price=3085.93%26retail_total_price=3363.67%26request_id=9248431397199478784%26ps=22284431%26pb=0-slAkZlDjP06IhVxwa_7FxUROdB-qTMCd3bgWg087QC1CqC3vBPBaKHJDav7Y7XwxUmQ1k1j6F2GCvi-W03ywIH5gkPUirdKZ9kJwCmeGgl49Gek1Nb_HvUxoZicqpnEMvvou-RUl0wS31FPsnWKg%253D%253D%26gha_pull_request=True%26alwd_rand=false%26gt=1793114521%26sg=A2YFw%26sid=GHA_MD4%26cmab_id=33%26ib=false%26all_inclusive=false&utm_source=gha&utm_content=localuniversal&currency=PLN&user_country=US&verification=false&rate_rule_ids=&date_type=selected&rate_rule_id=signedout_desktop&display_currency=EUR&display_all_inclusive_price=662.13&checkin_at=2026-10-30&checkout_at=2026-11-01&provider_hotel_id=10004221996&provider=htl&num_adults=2&children=[]&hotel_campaign=&utm_campaign=&user_locale=en-US&user_list_id=&utm_medium=organic&utm_id=gha_organic",
+      "googleFiyat": 662,
+      "resmiSiteFiyat": null,
+      "firsat": null,
+      "tipikGecelik": null,
+      "googleKimlik": "ChYIhOfF3dfH9tRAGgovbS8wZ2piMXoxEAE",
+      "puan": 4.7,
+      "yildiz": 5,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 607
+      }
+     ]
+    },
+    "bud-aria": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 952,
+      "gecelik": 476,
+      "site": "Amimir.com",
+      "link": "https://www.amimir.com/en/book/?start=30%2F10%2F2026&end=01%2F11%2F2026&hotelId=68583&highlightHotel=true&hab1=2&ehab1=&metasearch&utm_content=68583&checkV=false&totalPrice=1037.38&userCountry=US&utm_source=googleMetasearch&utm_medium=organic&currency=EUR",
+      "googleFiyat": 1037,
+      "resmiSiteFiyat": null,
+      "firsat": null,
+      "tipikGecelik": [
+       287,
+       431
+      ],
+      "googleKimlik": "ChkIhIz7_9Sz4Jx1Gg0vZy8xMWI2eDhtX2JwEAE",
+      "puan": 4.8,
+      "yildiz": 5,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 952
+      }
+     ]
+    },
+    "bud-clark": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 421,
+      "gecelik": 210.5,
+      "site": "Clicktrip.com",
+      "link": "https://clicktrip.com/hotels/details/SwB-BN3EGXU4ok8lCPr45N6PJMhKD3FLCOussuZ2UiVmYV9Dbk7eFjLrLbcok8bGOgLJE31HHoSf2R79rnFUeWe9ozGcwYlteH5fk6ng5txKVLWvSPYJPJOzYaLmanyx0?locale=en&currency=EUR&pos=US&date_type=selected&taf=pZkKKo00jX9CQLqznWqhTaovGns2Xk56D0v3bs4RtKsp5qE7OIXhEr4Vvl1aCkQe0&verification=false&clk_src=&utm_source=gha&rate_rule_id=",
+      "googleFiyat": 441,
+      "resmiSiteFiyat": null,
+      "firsat": null,
+      "tipikGecelik": null,
+      "googleKimlik": "ChoI3Zj7pOaokr_pARoNL2cvMTFnZjVsMzVrbRAB",
+      "puan": 4.7,
+      "yildiz": 5,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 421
+      }
+     ]
+    },
+    "bud-moments": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 361,
+      "gecelik": 180.5,
+      "site": "trivago DEALS",
+      "link": "https://www.trivago.deals/hotels/hungary_07_budapest/405594_hotel-moments-budapest?checkIn=2026-10-30&checkOut=2026-11-01&placeId=H405594&campaignName=TrivagoDeals_Google_US&currencyCode=EUR&dealKey=CAIQjQYiDAiPtITXBhCAwLODAypQDQAAW0MVAADHQyVSuKBBLVyPgEEwATjFAUW4_tpDSgwIibSE1wYQyOHZ8wFiClN1cGVyaW9yIFJoAoIBAI0BuB5bQ5gBAaABvdeXBKgByAYwjQY42uAYQKb3D0gCUggQDFy3td_v6ljIBmIDCgEg&countryCode=US&languageCode=en&rule=Google_US&site=localuniversal&ads=&origin=31&priceDisplayedTotal=393.63&priceDisplayedTax=32.49&device=desktop&adults=2&children=0",
+      "googleFiyat": 394,
+      "resmiSiteFiyat": null,
+      "firsat": null,
+      "tipikGecelik": null,
+      "googleKimlik": "ChkIjaSP8Lri_ahdGg0vZy8xMWI4emxjcGQzEAE",
+      "puan": 4.8,
+      "yildiz": 4,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 361
+      }
+     ]
+    },
+    "bud-rum": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 308,
+      "gecelik": 154,
+      "site": "Super.com",
+      "link": "https://www.super.com/travel/transition/?data=price=1325.84%26total_price=1392.16%26retail_price=1904.04%26retail_total_price=1999.28%26surcharge=29.61%26request_id=11428363760029683712%26ps=330056%26pb=0-slAkZlDjP06IhVxwa_7LiLYaXBAMjcIhSIHhDgu42of8kL5d9awNrVaNdH3Ka_4K82c_iObCuNx9z8hdqlhGAFFzKvNU_mZ5kt9XOuV7vhX24AGNu703SP4DpcuxKSm-sd_0vPvvlUonNRAN38xVSIdro8OoTUBIEmOjfHdHU%253D%26gha_pull_request=True%26alwd_rand=false%26gt=1793137123%26sg=Xcssa%26sid=GHA_MD4%26cmab_id=33%26ib=false%26all_inclusive=false&utm_source=gha&utm_content=localuniversal&currency=PLN&user_country=US&verification=false&rate_rule_ids=&date_type=selected&rate_rule_id=signedout_desktop&display_currency=EUR&display_all_inclusive_price=323.14&checkin_at=2026-10-30&checkout_at=2026-11-01&provider_hotel_id=10006835357&provider=htl&num_adults=2&children=[]&hotel_campaign=&utm_campaign=&user_locale=en-US&user_list_id=&utm_medium=organic&utm_id=gha_organic",
+      "googleFiyat": 323,
+      "resmiSiteFiyat": 354,
+      "firsat": null,
+      "tipikGecelik": [
+       99,
+       118
+      ],
+      "googleKimlik": "ChoI1qmGwdPUn-DTARoNL2cvMTFjbmRiMXAwchAB",
+      "puan": 4.4,
+      "yildiz": null,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 308
+      }
+     ]
+    },
+    "bud-d8": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 281,
+      "gecelik": 140.5,
+      "site": "KAYAK.com",
+      "link": "https://www.kayak.com/semi/ha/hotel_ads/3927079/en.html?utm_source=google&utm_medium=cpc&utm_term=3927079&adType=0&utm_content=localuniversal&utm_campaign=HotelAds&ci=2026-10-30&co=2026-11-01&gs=localuniversal&l=2&pc=USD&rid=&pdtax=24.29&pdtotal=304.81&rpid=&uc=US&ucuc=EUR&d=desktop&lc=en&v=false&rrid=UFJJQ0VMSU5FQ09SRQ&k_pc=~UENMTkhPVEVMV0hJU0tZ&k_rt=&k_sid=2hAEXYE_rL&k_kct=1793111486&k_gct=1793133752&g=2&r=1&ac=2&k_cc=us&dt=selected&cmpid=&cmptrack=",
+      "googleFiyat": 305,
+      "resmiSiteFiyat": 312,
+      "firsat": null,
+      "tipikGecelik": null,
+      "googleKimlik": "ChoIwu757Lvb6N2lARoNL2cvMTFmNWx5Nnk0MhAB",
+      "puan": 4.6,
+      "yildiz": 4,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 281
+      }
+     ]
+    },
+    "bud-roombach": {
+     "son": {
+      "durum": "fiyat",
+      "fiyat": 251,
+      "gecelik": 125.5,
+      "site": "Super.com",
+      "link": "https://www.super.com/travel/transition/?data=price=1057.47%26total_price=1110.3%26retail_price=1398.66%26retail_total_price=1468.54%26surcharge=47.13%26request_id=13246980952125884416%26ps=1671382491%26pb=0-slAkZlDjP06IhVxwa_7DwqkSisVnaSR4ROFzkSZ7nWChRYIFPS1X8ICRsI-0G78gjUZQ3xxFXzLbNHGEirpLnlLgwxUfrhChBv0cNiG8BsGc7ZK31AZ4yMpWYYXBhBowXoRK0zt-3Y6TWZaJBqju98ID7-KdyPrZrfLdDvFPc%253D%26gha_pull_request=True%26alwd_rand=false%26gt=1793111640%26sg=l_YkY%26sid=GHA_MD4%26cmab_id=33%26ib=false%26all_inclusive=false&utm_source=gha&utm_content=localuniversal&currency=PLN&user_country=US&verification=false&rate_rule_ids=&date_type=selected&rate_rule_id=signedout_desktop&display_currency=EUR&display_all_inclusive_price=263.05&checkin_at=2026-10-30&checkout_at=2026-11-01&provider_hotel_id=10004710059&provider=htl&num_adults=2&children=[]&hotel_campaign=&utm_campaign=&user_locale=en-US&user_list_id=&utm_medium=organic&utm_id=gha_organic",
+      "googleFiyat": 263,
+      "resmiSiteFiyat": null,
+      "firsat": null,
+      "tipikGecelik": null,
+      "googleKimlik": "ChgImoPF4PiQxNB3GgwvZy8xcHR2cWI3d2wQAQ",
+      "puan": 4.6,
+      "yildiz": 3,
+      "kontrol": "2026-10-27T22:14:19.790Z"
+     },
+     "gecmis": [
+      {
+       "t": "2026-10-27T22:14:19.790Z",
+       "durum": "fiyat",
+       "fiyat": 251
+      }
+     ]
+    }
+   }
+  }
+ }
 }
