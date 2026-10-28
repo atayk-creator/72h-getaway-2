@@ -11,6 +11,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 | `data/hotels.json` | Otel fiyat robotunun listesi ve kontrol takvimi. Otel eklemek/çıkarmak için bunu değiştir |
 | `data/otel-fiyatlari.json`, `data/fiyatlar/` | Robotun bulduğu fiyatlar (robot yazar, elle değiştirme) |
 | `data/arsiv/` | Geçmiş hafta sonlarının fiyatları (robot yazar) |
+| `data/ucus-ayarlari.json`, `data/ucuslar.json` | Uçak robotunun ayarları ve bulduğu fiyatlar |
 | `data.json` | Euro/TL ve euro/forint kuru (otomatik güncellenir) |
 | `prices.json`, `price-status.json` | Resmî bilet fiyatları ve kontrol durumu |
 | `scripts/` | Kuru güncelleyen, uçuş ve otel fiyatlarını çeken programlar ve testleri |
@@ -36,6 +37,20 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 - Elle çalıştırma: Actions > "Otel fiyat robotu" > Run workflow. `test` = sadece en yakın hafta sonu,
   `sehir` kutusuna "Paris,Roma" yazılırsa sadece o şehirler.
 - Sayfalar: hesaplayıcının otel adımı bu fiyatları kullanır; `oteller.html?sehir=Paris` şehir şehir fiyat takvimini gösterir.
+
+## Uçak fiyat robotu
+
+- İstanbul (IST ve SAW) çıkışlı, Cuma gidiş Pazar dönüş, 1 kişi gidiş-dönüş en ucuz ve en ucuz aktarmasız uçuş, 26 başkent.
+- Kaynak: Google Flights, Apify'daki hazır robot ile (`dz_omar/google-flights-scraper`). Ayarlar `data/ucus-ayarlari.json`, sonuç `data/ucuslar.json`.
+- Takvim: her Salı 06:17; 1–4. hafta sonu her hafta, 5–8. hafta sonu iki haftada bir.
+- Hesaplayıcı: seçilen tarihe denk gelen hafta sonunun fiyatını gösterir, "Uçağı bütçeye ekle" ile toplama katar.
+  Aktarmasız uçuş en ucuzdan en fazla %20 pahalıysa onu öne çıkarır.
+
+## Apify bütçesi (iki robot ortak)
+
+- Robotlar çalışmadan önce Apify'ın kendi kullanım sayacını okur (`/users/me/limits`); harcama sınırı geçecekse kalan aramaları atlar.
+- Her çalışmanın gerçek maliyeti, çalışma öncesi ve sonrası sayaç farkıyla ölçülüp `data/otel-fiyatlari.json` > `olcumler` alanına yazılır.
+- Sınır: `data/hotels.json` > `aylik_butce_usd` ve Apify hesabının kendi aylık sınırı (hangisi düşükse).
 
 ## Gerekli ayarlar
 1. Settings > Pages > Source: Deploy from a branch, branch: main, klasör: / (root)

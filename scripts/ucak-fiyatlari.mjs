@@ -6,7 +6,7 @@
 // Fiyat bulunamazsa tahmin yürütmez: "yok" ya da "hata" yazar.
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { runActor, planFor, istanbulToday, billingPeriod, emptyState, apifyUsage, makeBudget } from "./otel-fiyatlari.mjs";
+import { runActor, planFor, istanbulToday, billingPeriod, emptyState, apifyUsage, makeBudget, measureCost } from "./otel-fiyatlari.mjs";
 
 export const FLIGHT_ACTOR = "dz_omar~google-flights-scraper";
 // Tahmini maliyet: uçuş satırı başına 0,0003 $ + çalışma başına güvenlik payı
@@ -111,6 +111,7 @@ export async function run({ token, cfg, state = emptyFlights(), meta = emptyStat
   });
   if (report.arama > 0 && ok === 0) throw new Error("Hiçbir uçuş araması başarılı olmadı: " + (fatal || report.hatalar[0] || "bilinmeyen hata"));
   meta.harcama.usd = r2(meta.harcama.usd); report.tahminiMaliyetUsd = r2(report.tahminiMaliyetUsd);
+  report.gercekMaliyet = await measureCost({ token, fetchImpl, sleep, before: usage, holder: meta, robot: "ucak", queries: report.arama, t });
   report.silinen = dropPast(state, today);
   if (ok > 0) state.guncellendi = t;
   return { state, meta, report, plan, fatal };
@@ -119,7 +120,7 @@ export async function run({ token, cfg, state = emptyFlights(), meta = emptyStat
 export function toMarkdown({ report, state, cfg }) {
   const p = ["# Uçak fiyat robotu", "", `Tarih: ${report.tarih}, mod: ${report.mod}. Hafta sonları: ${report.plan.join(", ") || "yok (bugün kontrol günü değil)"}.`];
   if (!report.plan.length) return p.join("\n");
-  p.push(`Arama: ${report.arama}, fiyat: ${report.fiyat}, uçuş yok: ${report.yok}, hata: ${report.hata}, bütçe yüzünden atlanan: ${report.butceAtlanan}. Tahmini maliyet: ~${report.tahminiMaliyetUsd} $. Apify'ın kendi sayacı (çalışma öncesi): ${report.gercekKullanim ?? "okunamadı"} $, sınır ${report.sinir} $.`, "");
+  p.push(`Arama: ${report.arama}, fiyat: ${report.fiyat}, uçuş yok: ${report.yok}, hata: ${report.hata}, bütçe yüzünden atlanan: ${report.butceAtlanan}. Tahmini maliyet: ~${report.tahminiMaliyetUsd} $${report.gercekMaliyet != null ? `, Apify sayacına göre ${report.gercekMaliyet} $` : ""}. Apify'ın kendi sayacı (çalışma öncesi): ${report.gercekKullanim ?? "okunamadı"} $, sınır ${report.sinir} $.`, "");
   const g = report.plan[0], w = state.haftaSonlari[g];
   if (w) {
     p.push(`## ${g} hafta sonu (kişi başı gidiş-dönüş)`, "", "| Şehir | En ucuz | Havayolu | Kalkış | Aktarmasız en ucuz |", "| --- | --- | --- | --- | --- |");
