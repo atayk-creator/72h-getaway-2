@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-28T00:14:36.866Z",
+ "guncellendi": "2026-10-28T00:26:54.785Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -194,7 +194,6 @@
   "par-du-cygne": "ChcIp76F8MTBu_tTGgsvZy8xdGRjX18zNBAB",
   "lis-memmo-alfama": "ChgI4--UnavF4akXGgwvZy8xaG01YnJ6NXMQAQ",
   "rom-hotel-eden": "ChkIm-e-sLTNq9yqARoML2cvMXlsNDlkd2hfEAE",
-  "vlt-the-cumberland": "ChoI6dj47onhrMmBARoNL2cvMTFmMzJkYjRkcBAB",
   "cph-nimb": "ChYI28rkxKGDvskgGgovbS8wNnc5MG5qEAE",
   "cph-ottilia": "ChkIwpf1_urV1cpGGg0vZy8xMWZ6c3h4NTE5EAE",
   "tll-hotel-cru": "ChcI7rzD3bf9hKs1GgsvZy8xdG5jcmtobhAB",
@@ -206,7 +205,9 @@
   "vno-stikliai": "ChgI84OvhpvpmPD5ARoLL2cvMXRkZ3l6cWIQAQ",
   "waw-ibis-stare-miasto": "ChcIvd6-l5uAyMkfGgsvZy8xdGdiNjMxaxAB",
   "zag-dubrovnik": "ChkIgJrVnOjqo8LfARoML2cvMWhjMGdjMTRzEAE",
-  "prg-emblem": "ChgI7Iy23qHh1ep1GgwvZy8xMm05Y2Qyc3cQAQ"
+  "prg-emblem": "ChgI7Iy23qHh1ep1GgwvZy8xMm05Y2Qyc3cQAQ",
+  "ams-v-nesplein": "ChkI3OCIrrP29_LEARoML2cvMTJoa2Y1NXdzEAE",
+  "vlt-the-cumberland": "ChoI6dj47onhrMmBARoNL2cvMTFmMzJkYjRkcBAB"
  },
  "konum": {
   "dub-shelbourne": [
@@ -1044,23 +1045,23 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 0.62
+  "usd": 8.68
  },
  "sonCalisma": {
-  "tarih": "2026-10-28T00:14:36.866Z",
-  "mod": "test",
-  "hafta_sonu": 1,
-  "kontrol": 212,
-  "fiyatli": 184,
-  "tahminiMaliyetUsd": 0.62,
+  "tarih": "2026-10-28T00:26:54.785Z",
+  "mod": "hepsi",
+  "hafta_sonu": 13,
+  "kontrol": 2754,
+  "fiyatli": 2397,
+  "tahminiMaliyetUsd": 8.06,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 1.89,
-  "sinir": 19,
+  "usd": 9.47,
+  "sinir": 45,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-10-28T00:14:36.866Z"
+  "kontrol": "2026-10-28T00:26:54.785Z"
  },
  "olcumler": [
   {
@@ -1075,6 +1076,13 @@
    "t": "2026-10-28T00:14:36.866Z",
    "sorgu": 206,
    "usd": 0.58,
+   "sorguBasi": 0.00282
+  },
+  {
+   "robot": "otel",
+   "t": "2026-10-28T00:26:54.785Z",
+   "sorgu": 2688,
+   "usd": 7.58,
    "sorguBasi": 0.00282
   }
  ],
