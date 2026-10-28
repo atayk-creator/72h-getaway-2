@@ -6,7 +6,7 @@
 // Fiyat bulunamazsa tahmin yürütmez: "yok" ya da "hata" yazar.
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { runActor, planFor, istanbulToday, billingPeriod, emptyState } from "./otel-fiyatlari.mjs";
+import { runActor, planFor, istanbulToday, billingPeriod, emptyState, apifyUsage, makeBudget } from "./otel-fiyatlari.mjs";
 
 export const FLIGHT_ACTOR = "dz_omar~google-flights-scraper";
 // Tahmini maliyet: uçuş satırı başına 0,0003 $ + çalışma başına güvenlik payı
@@ -80,18 +80,20 @@ export async function run({ token, cfg, state = emptyFlights(), meta = emptyStat
   const today = istanbulToday(now), t = now.toISOString();
   const donem = billingPeriod(today, hotelSettings.fatura_gunu || 1);
   if (!meta.harcama || meta.harcama.donem !== donem) meta.harcama = { donem, usd: 0 };
-  const budget = num(hotelSettings.aylik_butce_usd) ? hotelSettings.aylik_butce_usd : Infinity;
+  const usage = planFor(today, cfg, mode).length ? await apifyUsage({ token, fetchImpl }) : null;
+  if (usage) meta.apifyKullanim = { ...usage, kontrol: now.toISOString() };
+  const B = makeBudget(meta, hotelSettings.aylik_butce_usd, usage);
   const cities = cfg.sehirler.filter((c) => !only || only.includes(c.sehir));
   const plan = planFor(today, cfg, mode);
   const jobs = [];
   for (const w of plan) for (const c of cities) jobs.push({ w, c });
-  const report = { tarih: today, mod: mode, plan: plan.map((w) => w.giris), arama: 0, fiyat: 0, yok: 0, hata: 0, butceAtlanan: 0, tahminiMaliyetUsd: 0, hatalar: [] };
-  let ok = 0, reserved = 0, fatal = null;
+  const report = { gercekKullanim: usage ? usage.usd : null, sinir: B.cap, tarih: today, mod: mode, plan: plan.map((w) => w.giris), arama: 0, fiyat: 0, yok: 0, hata: 0, butceAtlanan: 0, tahminiMaliyetUsd: 0, hatalar: [] };
+  let ok = 0, fatal = null;
   const est = COST_PER_RUN + (cfg.sonuc_sayisi || 6) * COST_PER_ROW;
   await pool(jobs, concurrency, async ({ w, c }) => {
     if (fatal) return;
-    if (meta.harcama.usd + reserved + est > budget + 1e-9) { report.butceAtlanan++; return; }
-    reserved += est; report.arama++;
+    if (!B.reserve(est)) { report.butceAtlanan++; return; }
+    report.arama++;
     let rec, cost = COST_PER_RUN;
     try {
       const rows = await runActor(flightInput(cfg, c, w), { token, fetchImpl, sleep, actor: FLIGHT_ACTOR });
@@ -99,11 +101,11 @@ export async function run({ token, cfg, state = emptyFlights(), meta = emptyStat
       rec = toFlightRecord(rows, cfg, c); ok++;
     } catch (e) {
       const msg = String(e.message).split(token).join("***");
-      if (e.fatal) { fatal = msg; reserved -= est; return; }
+      if (e.fatal) { fatal = msg; B.release(est); return; }
       rec = { durum: "hata", not: msg }; report.hatalar.push(`${c.sehir} ${w.giris}: ${msg}`);
     }
-    reserved -= est;
-    meta.harcama.usd += cost; report.tahminiMaliyetUsd += cost; // küçük tutarlar: yuvarlama en sonda
+    B.release(est);
+    B.spend(cost); report.tahminiMaliyetUsd += cost; // küçük tutarlar: yuvarlama en sonda
     report[rec.durum] = (report[rec.durum] || 0) + 1;
     mergeFlight(state, w, c.sehir, rec, t);
   });
@@ -117,7 +119,7 @@ export async function run({ token, cfg, state = emptyFlights(), meta = emptyStat
 export function toMarkdown({ report, state, cfg }) {
   const p = ["# Uçak fiyat robotu", "", `Tarih: ${report.tarih}, mod: ${report.mod}. Hafta sonları: ${report.plan.join(", ") || "yok (bugün kontrol günü değil)"}.`];
   if (!report.plan.length) return p.join("\n");
-  p.push(`Arama: ${report.arama}, fiyat: ${report.fiyat}, uçuş yok: ${report.yok}, hata: ${report.hata}, bütçe yüzünden atlanan: ${report.butceAtlanan}. Tahmini maliyet: ~${report.tahminiMaliyetUsd} $.`, "");
+  p.push(`Arama: ${report.arama}, fiyat: ${report.fiyat}, uçuş yok: ${report.yok}, hata: ${report.hata}, bütçe yüzünden atlanan: ${report.butceAtlanan}. Tahmini maliyet: ~${report.tahminiMaliyetUsd} $. Apify'ın kendi sayacı (çalışma öncesi): ${report.gercekKullanim ?? "okunamadı"} $, sınır ${report.sinir} $.`, "");
   const g = report.plan[0], w = state.haftaSonlari[g];
   if (w) {
     p.push(`## ${g} hafta sonu (kişi başı gidiş-dönüş)`, "", "| Şehir | En ucuz | Havayolu | Kalkış | Aktarmasız en ucuz |", "| --- | --- | --- | --- | --- |");

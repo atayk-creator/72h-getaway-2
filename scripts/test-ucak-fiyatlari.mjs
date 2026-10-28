@@ -69,7 +69,7 @@ const hs = { ...hotels.ayarlar, apify_plan: "starter", aylik_butce_usd: 100, fat
 
 // 6) ortak bütçe dolunca arama yapılmaz; şehir filtresi; kontrol günü değilse boş
 { const seen = []; const out = await run({ token: TOKEN, cfg, meta: { ...emptyState(), harcama: { donem: "2026-10-28", usd: 99.999 } }, hotelSettings: hs, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen }), sleep: async () => {} });
-  assert.equal(seen.length, 0); assert.ok(out.report.butceAtlanan > 0);
+  assert.equal(seen.filter((x) => x.init.method === "POST").length, 0); assert.ok(out.report.butceAtlanan > 0);
   const seen2 = []; await run({ token: TOKEN, cfg, hotelSettings: hs, mode: "test", only: ["Paris"], now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen: seen2 }), sleep: async () => {} });
   assert.equal(seen2.filter((s) => s.init.method === "POST").length, 1);
   const out3 = await run({ token: TOKEN, cfg, hotelSettings: hs, now: new Date("2026-11-02T03:17:00Z"), fetchImpl: async () => { throw new Error("çağrılmamalı"); } });

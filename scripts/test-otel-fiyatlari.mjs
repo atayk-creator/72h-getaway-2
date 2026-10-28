@@ -176,7 +176,15 @@ const N = ALL.length, perCity = 6 / 8 * N; // her 8 otelden 6'sı fiyatlı
 
 // 15) SEHIR filtresi sadece o şehri sorgular
 { const seen = []; await run({ ...base, only: ["Budapeşte"], mode: "test", now: new Date("2026-11-09T03:17:00Z"), fetchImpl: fakeApify(rowsOk, { seen }) });
-  assert.equal(JSON.parse(seen[0].init.body).hotels.length, 8); console.log("ok 15: tek şehir filtresi"); }
+  assert.equal(JSON.parse(seen.find((x) => x.init.method === "POST").init.body).hotels.length, 8); console.log("ok 15: tek şehir filtresi"); }
+
+// 15b) Apify'ın gerçek kullanım sayacı: sınıra yakınsa çalışma yapılmaz, okunan değer kaydedilir
+{ const limits = (usd, max) => { const inner = fakeApify(rowsOk); return async (url, init = {}) => { if (url.includes("/users/me/limits")) return res({ data: { current: { monthlyUsageUsd: usd }, limits: { maxMonthlyUsageUsd: max }, monthlyUsageCycle: { startAt: "2026-10-28T00:00:00Z", endAt: "2026-11-27T23:59:59Z" } } }); return inner(url, init); }; };
+  const out = await run({ ...base, mode: "test", now: new Date("2026-11-09T03:17:00Z"), fetchImpl: limits(4.98, 5) });
+  assert.equal(out.report.haftaSonlari.length, 0); assert.equal(out.report.butceAtlanan.length, 1); assert.equal(out.state.apifyKullanim.usd, 4.98); assert.equal(out.state.apifyKullanim.donemSonu, "2026-11-27");
+  assert.match(toMarkdown({ ...out, hotelsDoc: doc }), /Apify'ın kendi sayacı: 4.98/);
+  const ok2 = await run({ ...base, mode: "test", now: new Date("2026-11-09T03:17:00Z"), fetchImpl: limits(1, 5) }); assert.equal(ok2.report.haftaSonlari.length, 1);
+  console.log("ok 15b: gerçek kullanım sayacı"); }
 
 // 16) kontrol günü değilse hiçbir şey çekmez
 { let called = 0; const out = await run({ ...base, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: async () => { called++; return res({}); } });

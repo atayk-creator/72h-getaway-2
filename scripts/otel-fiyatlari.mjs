@@ -114,6 +114,34 @@ export async function runActor(input, { token, fetchImpl = fetch, sleep, maxPoll
   return Array.isArray(items) ? items : [];
 }
 
+// Apify'ın kendi kullanım sayacı: bu fatura döneminde gerçekten harcanan tutar ve hesabın aylık sınırı.
+// Robotlar bütçeyi tahmine değil buna göre kontrol eder. Okunamazsa null döner (tahmini sayaç kullanılır).
+export async function apifyUsage({ token, fetchImpl = fetch }) {
+  try {
+    const j = await call(fetchImpl, `${API}/users/me/limits`, token);
+    const d = j && j.data, usd = d && d.current && d.current.monthlyUsageUsd, sinir = d && d.limits && d.limits.maxMonthlyUsageUsd;
+    if (!num(usd)) return null;
+    const cyc = d.monthlyUsageCycle || {};
+    return { usd: r2(usd), sinir: num(sinir) ? sinir : null, donemBasi: cyc.startAt ? String(cyc.startAt).slice(0, 10) : null, donemSonu: cyc.endAt ? String(cyc.endAt).slice(0, 10) : null };
+  } catch (e) {
+    if (e.fatal && /geçersiz/.test(e.message)) throw e;
+    return null;
+  }
+}
+// Bütçe kontrolü: gerçek kullanım (varsa) + bu çalışmada eklenen tahmin + ayrılmış tutar, sınırı geçmemeli
+export function makeBudget(state, settingsBudget, usage) {
+  const cap = Math.min(num(settingsBudget) ? settingsBudget : Infinity, usage && num(usage.sinir) ? usage.sinir - 0.1 : Infinity);
+  const base = usage ? usage.usd : state.harcama.usd;
+  let added = 0, reserved = 0;
+  return {
+    cap, base,
+    reserve(est) { if (base + added + reserved + est > cap + 1e-9) return false; reserved += est; return true; },
+    release(est) { reserved -= est; },
+    spend(cost) { added += cost; state.harcama.usd += cost; },
+    get added() { return added; },
+  };
+}
+
 export function actorInput(hotels, weekend, settings, ids = {}) {
   return {
     hotels: hotels.map((h) => ids[h.id] || h.arama),
@@ -313,18 +341,19 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
   // bütçe: fatura dönemi değiştiyse sayaç sıfırlanır
   const donem = billingPeriod(today, settings.fatura_gunu || 1);
   if (!state.harcama || state.harcama.donem !== donem) state.harcama = { donem, usd: 0 };
-  const budget = num(settings.aylik_butce_usd) ? settings.aylik_butce_usd : Infinity;
-
   const plan = planFor(today, settings, mode);
-  const report = { tarih: today, gun: DAY_NAME[weekday(today)], mod: mode, plan: settings.apify_plan || "free", haftaSonlari: [], butceAtlanan: [], otelSayisi: hotels.length, fiyat: 0, dolu: 0, bulunamadi: 0, hata: 0, sonuc_yok: 0, guvenilirDisi: 0, ucretliSatir: 0, tahminiMaliyetUsd: 0, hatalar: [], butce: { donem, sinir: budget, harcanan: 0 } };
+  const usage = plan.length ? await apifyUsage({ token, fetchImpl }) : null;
+  if (usage) state.apifyKullanim = { ...usage, kontrol: now.toISOString() };
+  const B = makeBudget(state, settings.aylik_butce_usd, usage);
+  const report = { tarih: today, gun: DAY_NAME[weekday(today)], mod: mode, plan: settings.apify_plan || "free", haftaSonlari: [], butceAtlanan: [], otelSayisi: hotels.length, fiyat: 0, dolu: 0, bulunamadi: 0, hata: 0, sonuc_yok: 0, guvenilirDisi: 0, ucretliSatir: 0, tahminiMaliyetUsd: 0, hatalar: [], butce: { donem, sinir: B.cap, harcanan: 0, gercek: usage ? usage.usd : null } };
   const checkedAt = now.toISOString();
-  let okRuns = 0, tried = 0, reserved = 0, fatal = null;
+  let okRuns = 0, tried = 0, fatal = null;
 
   await pool(plan, concurrency, async (w) => {
     if (fatal) return;
     const est = hotels.length * rate;
-    if (state.harcama.usd + reserved + est > budget + 1e-9) { report.butceAtlanan.push(w.giris); return; }
-    reserved += est; tried++;
+    if (!B.reserve(est)) { report.butceAtlanan.push(w.giris); return; }
+    tried++;
     const ids = state.googleKimlik, usedIds = {};
     for (const h of hotels) if (ids[h.id]) usedIds[h.id] = ids[h.id];
     let records, charged = 0;
@@ -338,11 +367,11 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
     } catch (e) {
       const msg = redact(e.message, token);
       report.hatalar.push(`${w.giris}: ${msg}`);
-      if (e.fatal) { fatal = e; reserved -= est; return; }
+      if (e.fatal) { fatal = e; B.release(est); return; }
       records = Object.fromEntries(hotels.map((h) => [h.id, { durum: "hata", not: msg }]));
     }
-    reserved -= est;
-    state.harcama.usd = r2(state.harcama.usd + charged * rate);
+    B.release(est);
+    B.spend(charged * rate);
     report.ucretliSatir += charged;
     mergeWeekend(state, w, hotels, records, checkedAt, usedIds);
     for (const rec of Object.values(records)) {
@@ -354,7 +383,8 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
   if (tried > 0 && okRuns === 0) throw new Error("Hiçbir kontrol başarılı olmadı: " + (report.hatalar[0] || "bilinmeyen hata"));
   report.haftaSonlari.sort();
   report.tahminiMaliyetUsd = r2(report.ucretliSatir * rate);
-  report.butce.harcanan = state.harcama.usd;
+  state.harcama.usd = r2(state.harcama.usd);
+  report.butce.harcanan = usage ? r2(usage.usd + B.added) : state.harcama.usd;
   report.arsivlenen = archivePast(state, archive, today);
   if (okRuns > 0) { state.guncellendi = checkedAt; state.sonCalisma = { tarih: checkedAt, mod: mode, hafta_sonu: report.haftaSonlari.length, kontrol: report.ucretliSatir + report.bulunamadi + report.hata + report.sonuc_yok, fiyatli: report.fiyat, tahminiMaliyetUsd: report.tahminiMaliyetUsd, butceAtlanan: report.butceAtlanan.length }; }
   return { state, archive, report, plan, fatal: fatal ? redact(fatal.message, token) : null };
@@ -367,7 +397,7 @@ export function toMarkdown({ report, plan, state, hotelsDoc }) {
   p.push(`Kontrol edilen hafta sonları: ${report.haftaSonlari.join(", ") || "yok"} (${report.otelSayisi} otel).`);
   if (report.butceAtlanan.length) p.push(`Bütçe sınırı yüzünden atlanan hafta sonları: ${report.butceAtlanan.sort().join(", ")}.`);
   p.push(`Sonuç: ${report.fiyat} fiyat (${report.guvenilirDisi} tanesi sadece bilinmeyen sitelerde), ${report.dolu} dolu, ${report.bulunamadi} bulunamadı, ${report.hata} hata.`);
-  p.push(`Bu çalışma: ~${report.tahminiMaliyetUsd} $. Fatura dönemi (başlangıç ${report.butce.donem}): ~${report.butce.harcanan} $ / sınır ${report.butce.sinir} $.`, "");
+  p.push(`Bu çalışma: ~${report.tahminiMaliyetUsd} $. Fatura dönemi (başlangıç ${report.butce.donem}): ~${report.butce.harcanan} $ / sınır ${report.butce.sinir} $${report.butce.gercek != null ? ` (Apify'ın kendi sayacı: ${report.butce.gercek} $)` : " (Apify sayacı okunamadı, tahmin)"}.`, "");
   const shown = report.haftaSonlari.slice(0, 3);
   const label = { fiyat: "", dolu: "dolu", bulunamadi: "BULUNAMADI", hata: "HATA", sonuc_yok: "sonuç yok" };
   if (shown.length) for (const city of hotelsDoc.sehirler) {
