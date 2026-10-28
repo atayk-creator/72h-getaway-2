@@ -2,11 +2,12 @@
 // gidiş-dönüş en ucuz uçuşu ve en ucuz aktarmasız uçuşu Google Flights'tan çeker.
 // Google Flights'ı Apify'daki hazır robot okur: https://apify.com/dz_omar/google-flights-scraper
 // Ayarlar: data/ucus-ayarlari.json. Sonuç: data/ucuslar.json.
-// Apify harcaması otel robotuyla ortak sayılır (data/otel-fiyatlari.json > harcama), sınır data/hotels.json'da.
+// Bütçe: Apify'ın kendi kullanım sayacı (iki robot ortak) ve data/hotels.json > aylik_butce_usd. Ölçümler bu dosyada tutulur.
+// "toplu": true ise bir hafta sonu için tüm şehirler tek Apify çalışmasında aranır (çalışma başına ücret tek sefer ödenir).
 // Fiyat bulunamazsa tahmin yürütmez: "yok" ya da "hata" yazar.
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { runActor, planFor, istanbulToday, billingPeriod, emptyState, apifyUsage, makeBudget, measureCost } from "./otel-fiyatlari.mjs";
+import { runActor, planFor, istanbulToday, billingPeriod, apifyUsage, makeBudget, measureCost } from "./otel-fiyatlari.mjs";
 
 export const FLIGHT_ACTOR = "dz_omar~google-flights-scraper";
 // Tahmini maliyet: uçuş satırı başına 0,0003 $ + çalışma başına güvenlik payı
@@ -15,12 +16,13 @@ const r2 = (x) => Math.round(x * 100) / 100;
 const num = (x) => typeof x === "number" && Number.isFinite(x);
 const HISTORY_MAX = 30;
 
-export function flightInput(cfg, city, w) {
+export function flightInput(cfg, city, w, cities = null) {
+  const dest = cities ? [...new Set(cities.flatMap((c) => c.havalimani))] : city.havalimani;
   return {
-    tripType: "round_trip", origin: cfg.kalkis, destination: city.havalimani,
+    tripType: "round_trip", origin: cfg.kalkis, destination: dest,
     departureDate: w.giris, returnDate: w.cikis, adults: cfg.kisi || 1,
     currency: cfg.para_birimi || "EUR", market: cfg.pazar || "TR", language: "en-US",
-    resultsView: "cheapest", maxResults: cfg.sonuc_sayisi || 6,
+    resultsView: "cheapest", maxResults: cities ? Math.min(500, (cfg.toplu_sonuc_sayisi || 8) * cities.length) : cfg.sonuc_sayisi || 6,
   };
 }
 
@@ -50,7 +52,7 @@ export function toFlightRecord(rows, cfg, city) {
 }
 
 export function emptyFlights() {
-  return { guncellendi: null, kaynak: "Google Flights (Apify: dz_omar/google-flights-scraper)", paraBirimi: "EUR", kisi: 1, aciklama: "Kişi başı gidiş-dönüş, Cuma gidiş Pazar dönüş, İstanbul (IST veya SAW) çıkışlı", haftaSonlari: {} };
+  return { harcama: { donem: null, usd: 0 }, apifyKullanim: null, olcumler: [], guncellendi: null, kaynak: "Google Flights (Apify: dz_omar/google-flights-scraper)", paraBirimi: "EUR", kisi: 1, aciklama: "Kişi başı gidiş-dönüş, Cuma gidiş Pazar dönüş, İstanbul (IST veya SAW) çıkışlı", haftaSonlari: {} };
 }
 
 export function mergeFlight(state, w, sehir, rec, t) {
@@ -73,54 +75,52 @@ async function pool(items, size, fn) {
 }
 
 // meta: otel robotunun özet dosyası (ortak harcama sayacı burada), hotelSettings: data/hotels.json > ayarlar
-export async function run({ token, cfg, state = emptyFlights(), meta = emptyState(), hotelSettings = {}, now = new Date(), mode = "takvim", only = null, fetchImpl = fetch, sleep = (ms) => new Promise((r) => setTimeout(r, ms)), concurrency = 4 }) {
+export async function run({ token, cfg, state = emptyFlights(), hotelSettings = {}, now = new Date(), mode = "takvim", only = null, fetchImpl = fetch, sleep = (ms) => new Promise((r) => setTimeout(r, ms)), concurrency = 4 }) {
   if (!token) throw new Error("APIFY_TOKEN tanımlı değil (GitHub > Settings > Secrets and variables > Actions bölümüne eklenmeli)");
   state = { ...emptyFlights(), ...structuredClone(state) };
-  meta = structuredClone(meta);
   const today = istanbulToday(now), t = now.toISOString();
   const donem = billingPeriod(today, hotelSettings.fatura_gunu || 1);
-  if (!meta.harcama || meta.harcama.donem !== donem) meta.harcama = { donem, usd: 0 };
+  if (!state.harcama || state.harcama.donem !== donem) state.harcama = { donem, usd: 0 };
   const usage = planFor(today, cfg, mode).length ? await apifyUsage({ token, fetchImpl }) : null;
-  if (usage) meta.apifyKullanim = { ...usage, kontrol: now.toISOString() };
-  const B = makeBudget(meta, hotelSettings.aylik_butce_usd, usage);
+  if (usage) state.apifyKullanim = { ...usage, kontrol: now.toISOString() };
+  const B = makeBudget(state, hotelSettings.aylik_butce_usd, usage);
   const cities = cfg.sehirler.filter((c) => !only || only.includes(c.sehir));
   const plan = planFor(today, cfg, mode);
   const jobs = [];
-  for (const w of plan) for (const c of cities) jobs.push({ w, c });
+  for (const w of plan) { if (cfg.toplu) jobs.push({ w, group: cities }); else for (const c of cities) jobs.push({ w, group: [c] }); }
   const report = { gercekKullanim: usage ? usage.usd : null, sinir: B.cap, tarih: today, mod: mode, plan: plan.map((w) => w.giris), arama: 0, fiyat: 0, yok: 0, hata: 0, butceAtlanan: 0, tahminiMaliyetUsd: 0, hatalar: [] };
   let ok = 0, fatal = null;
-  const est = COST_PER_RUN + (cfg.sonuc_sayisi || 6) * COST_PER_ROW;
-  await pool(jobs, concurrency, async ({ w, c }) => {
+  const perSearch = cfg.arama_basi_usd || 0.03; // ölçülen: tek tek aramada ~0,028 $
+  await pool(jobs, concurrency, async ({ w, group }) => {
     if (fatal) return;
-    if (!B.reserve(est)) { report.butceAtlanan++; return; }
-    report.arama++;
-    let rec, cost = COST_PER_RUN;
+    const est = perSearch * group.length;
+    if (!B.reserve(est)) { report.butceAtlanan += group.length; return; }
+    report.arama += group.length; report.calisma = (report.calisma || 0) + 1;
+    let recs;
     try {
-      const rows = await runActor(flightInput(cfg, c, w), { token, fetchImpl, sleep, actor: FLIGHT_ACTOR });
-      cost += rows.length * COST_PER_ROW;
-      rec = toFlightRecord(rows, cfg, c); ok++;
+      const rows = await runActor(group.length > 1 ? flightInput(cfg, null, w, group) : flightInput(cfg, group[0], w), { token, fetchImpl, sleep, actor: FLIGHT_ACTOR, maxPolls: 60 });
+      recs = group.map((c) => [c, toFlightRecord(rows, cfg, c)]); ok++;
     } catch (e) {
       const msg = String(e.message).split(token).join("***");
       if (e.fatal) { fatal = msg; B.release(est); return; }
-      rec = { durum: "hata", not: msg }; report.hatalar.push(`${c.sehir} ${w.giris}: ${msg}`);
+      recs = group.map((c) => [c, { durum: "hata", not: msg }]); report.hatalar.push(`${w.giris} (${group.length} şehir): ${msg}`);
     }
     B.release(est);
-    B.spend(cost); report.tahminiMaliyetUsd += cost; // küçük tutarlar: yuvarlama en sonda
-    report[rec.durum] = (report[rec.durum] || 0) + 1;
-    mergeFlight(state, w, c.sehir, rec, t);
+    B.spend(est); report.tahminiMaliyetUsd += est;
+    for (const [c, rec] of recs) { report[rec.durum] = (report[rec.durum] || 0) + 1; mergeFlight(state, w, c.sehir, rec, t); }
   });
   if (report.arama > 0 && ok === 0) throw new Error("Hiçbir uçuş araması başarılı olmadı: " + (fatal || report.hatalar[0] || "bilinmeyen hata"));
-  meta.harcama.usd = r2(meta.harcama.usd); report.tahminiMaliyetUsd = r2(report.tahminiMaliyetUsd);
-  report.gercekMaliyet = await measureCost({ token, fetchImpl, sleep, before: usage, holder: meta, robot: "ucak", queries: report.arama, t });
+  state.harcama.usd = r2(state.harcama.usd); report.tahminiMaliyetUsd = r2(report.tahminiMaliyetUsd);
+  report.gercekMaliyet = await measureCost({ token, fetchImpl, sleep, before: usage, holder: state, robot: cfg.toplu ? "ucak-toplu" : "ucak", queries: report.arama, t });
   report.silinen = dropPast(state, today);
   if (ok > 0) state.guncellendi = t;
-  return { state, meta, report, plan, fatal };
+  return { state, report, plan, fatal };
 }
 
 export function toMarkdown({ report, state, cfg }) {
   const p = ["# Uçak fiyat robotu", "", `Tarih: ${report.tarih}, mod: ${report.mod}. Hafta sonları: ${report.plan.join(", ") || "yok (bugün kontrol günü değil)"}.`];
   if (!report.plan.length) return p.join("\n");
-  p.push(`Arama: ${report.arama}, fiyat: ${report.fiyat}, uçuş yok: ${report.yok}, hata: ${report.hata}, bütçe yüzünden atlanan: ${report.butceAtlanan}. Tahmini maliyet: ~${report.tahminiMaliyetUsd} $${report.gercekMaliyet != null ? `, Apify sayacına göre ${report.gercekMaliyet} $` : ""}. Apify'ın kendi sayacı (çalışma öncesi): ${report.gercekKullanim ?? "okunamadı"} $, sınır ${report.sinir} $.`, "");
+  p.push(`Arama: ${report.arama} (${report.calisma || 0} Apify çalışması), fiyat: ${report.fiyat}, uçuş yok: ${report.yok}, hata: ${report.hata}, bütçe yüzünden atlanan: ${report.butceAtlanan}. Tahmini maliyet: ~${report.tahminiMaliyetUsd} $${report.gercekMaliyet != null ? `, Apify sayacına göre ${report.gercekMaliyet} $` : ""}. Apify'ın kendi sayacı (çalışma öncesi): ${report.gercekKullanim ?? "okunamadı"} $, sınır ${report.sinir} $.`, "");
   const g = report.plan[0], w = state.haftaSonlari[g];
   if (w) {
     p.push(`## ${g} hafta sonu (kişi başı gidiş-dönüş)`, "", "| Şehir | En ucuz | Havayolu | Kalkış | Aktarmasız en ucuz |", "| --- | --- | --- | --- | --- |");
@@ -135,16 +135,16 @@ async function readJson(path, fallback) { try { return JSON.parse(await readFile
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const root = fileURLToPath(new URL("..", import.meta.url));
-  const P = { cfg: root + "data/ucus-ayarlari.json", state: root + "data/ucuslar.json", meta: root + "data/otel-fiyatlari.json", hotels: root + "data/hotels.json" };
+  const P = { cfg: root + "data/ucus-ayarlari.json", state: root + "data/ucuslar.json", hotels: root + "data/hotels.json" };
   (async () => {
     const cfg = await readJson(P.cfg), hotels = await readJson(P.hotels, { ayarlar: {} });
     const only = (process.env.SEHIR || "").split(",").map((s) => s.trim()).filter(Boolean);
-    const out = await run({ token: process.env.APIFY_TOKEN, cfg, state: await readJson(P.state, emptyFlights()), meta: await readJson(P.meta, emptyState()), hotelSettings: hotels.ayarlar, mode: (process.env.MOD || "takvim").trim(), only: only.length ? only : null });
+    if (process.env.TOPLU) cfg.toplu = process.env.TOPLU === "1";
+    const out = await run({ token: process.env.APIFY_TOKEN, cfg, state: await readJson(P.state, emptyFlights()), hotelSettings: hotels.ayarlar, mode: (process.env.MOD || "takvim").trim(), only: only.length ? only : null });
     const md = toMarkdown({ ...out, cfg }); console.log(md);
     if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, md + "\n", { flag: "a" });
     if (out.plan.length) {
       await writeFile(P.state, JSON.stringify(out.state) + "\n");
-      await writeFile(P.meta, JSON.stringify(out.meta, null, 1) + "\n");
     }
     if (out.fatal) { console.error("HATA:", out.fatal); process.exit(1); }
   })().catch((e) => { console.error("HATA:", String(e.message).split(process.env.APIFY_TOKEN || "§").join("***")); process.exit(1); });

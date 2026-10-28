@@ -155,7 +155,7 @@ const N = ALL.length, perCity = 6 / 8 * N; // her 8 otelden 6'sı fiyatlı
   assert.equal(posts.length, 8, "8 hafta sonu = 8 çalışma"); assert.equal(JSON.parse(posts[0].init.body).hotels.length, N, "tüm oteller tek çalışmada");
   assert.equal(out.report.haftaSonlari.length, 8); assert.equal(out.report.fiyat, 8 * perCity); assert.equal(out.report.ucretliSatir, 8 * 7 / 8 * N);
   const a = out.state.haftaSonlari["2026-11-13"].oteller["bud-aria"].son; assert.equal(a.site, "Booking.com"); assert.ok(a.enUcuz && a.enUcuz.site === "Super.com");
-  assert.equal(out.state.harcama.donem, "2026-10-27"); assert.ok(Math.abs(out.state.harcama.usd - 8 * 7 / 8 * N * PLAN_RATES.starter) < 0.05, "harcama " + out.state.harcama.usd);
+  assert.equal(out.state.harcama.donem, billingPeriod("2026-11-09", S.fatura_gunu)); assert.ok(Math.abs(out.state.harcama.usd - 8 * 7 / 8 * N * PLAN_RATES.starter) < 0.05, "harcama " + out.state.harcama.usd);
   assert.ok(out.state.konum["bud-aria"]); assert.equal(out.state.googleKimlik["bud-aria"], "id" + ALL.findIndex((h) => h.id === "bud-aria"));
   const md = toMarkdown({ ...out, hotelsDoc: doc }); assert.match(md, /Budapeşte/); assert.match(md, /BULUNAMADI/); assert.ok(!md.includes(TOKEN));
   // ikinci çalışma: öğrenilen kimlikler kullanılır, harcama birikir
@@ -171,7 +171,7 @@ const N = ALL.length, perCity = 6 / 8 * N; // her 8 otelden 6'sı fiyatlı
   const next = await run({ ...base, hotelsDoc: tight, state: out.state, now: new Date("2026-11-12T03:17:00Z"), fetchImpl: fakeApify(rowsOk) });
   assert.equal(next.report.haftaSonlari.length, 0, "aynı dönemde bütçe bitti");
   const newPeriod = await run({ ...base, hotelsDoc: tight, state: out.state, now: new Date("2026-11-30T03:17:00Z"), fetchImpl: fakeApify(rowsOk) });
-  assert.equal(newPeriod.state.harcama.donem, "2026-11-27"); assert.ok(newPeriod.report.haftaSonlari.length >= 1, "yeni dönemde sayaç sıfırlanır");
+  assert.equal(newPeriod.state.harcama.donem, billingPeriod("2026-11-30", S.fatura_gunu)); assert.ok(newPeriod.report.haftaSonlari.length >= 1, "yeni dönemde sayaç sıfırlanır");
   console.log("ok 14: bütçe sınırı ve yeni fatura dönemi"); }
 
 // 15) SEHIR filtresi sadece o şehri sorgular

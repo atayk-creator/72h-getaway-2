@@ -6,6 +6,9 @@
   "pazar": "TR",
   "kac_hafta_sonu": 8,
   "sonuc_sayisi": 6,
+  "toplu": false,
+  "toplu_sonuc_sayisi": 8,
+  "arama_basi_usd": 0.03,
   "kontrol_takvimi": [
     {"kademe":"yakin","ilk":1,"son":4,"gunler":["Sal"],"her_n_haftada":1},
     {"kademe":"uzak","ilk":5,"son":8,"gunler":["Sal"],"her_n_haftada":2}

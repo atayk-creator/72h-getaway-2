@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { flightInput, toFlightRecord, run, toMarkdown, emptyFlights, dropPast, mergeFlight, COST_PER_ROW, COST_PER_RUN } from "./ucak-fiyatlari.mjs";
-import { planFor, emptyState } from "./otel-fiyatlari.mjs";
+import { planFor } from "./otel-fiyatlari.mjs";
 
 const cfg = JSON.parse(await readFile(new URL("../data/ucus-ayarlari.json", import.meta.url), "utf8"));
 const hotels = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
@@ -57,18 +57,30 @@ function fake({ seen = [], status = 200, body = null } = {}) {
 }
 const hs = { ...hotels.ayarlar, apify_plan: "starter", aylik_butce_usd: 100, fatura_gunu: 28 };
 
-// 5) uçtan uca Salı: yakın hafta sonları x 26 şehir, ortak harcama sayacına eklenir
-{ const seen = [], meta = { ...emptyState(), harcama: { donem: "2026-10-28", usd: 1.5 }, sehirler: { a: 1 } };
-  const out = await run({ token: TOKEN, cfg, meta, hotelSettings: hs, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen }), sleep: async () => {} });
+// 5) uçtan uca Salı: yakın hafta sonları x 26 şehir (tek tek), harcama uçak dosyasında
+{ const seen = [], st = { ...emptyFlights(), harcama: { donem: "2026-10-28", usd: 1.5 } };
+  const out = await run({ token: TOKEN, cfg, state: st, hotelSettings: hs, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen }), sleep: async () => {} });
   const posts = seen.filter((s) => s.init.method === "POST").length, n = out.plan.length * cfg.sehirler.length;
   assert.equal(posts, n); assert.equal(out.report.fiyat, n - out.plan.length); assert.equal(out.report.yok, out.plan.length, "Valletta: uçuş yok");
   const s = out.state.haftaSonlari["2026-11-06"].sehirler["Budapeşte"].son; assert.equal(s.fiyat, 150); assert.equal(s.aktarmasiz.fiyat, 190);
-  assert.ok(Math.abs(out.meta.harcama.usd - (1.5 + posts * COST_PER_RUN + (n - out.plan.length) * 2 * COST_PER_ROW)) < 0.02); assert.equal(out.meta.sehirler.a, 1, "otel özet dosyasının diğer alanları korunur");
-  assert.equal(meta.harcama.usd, 1.5, "girdi değiştirilmez");
-  assert.ok(seen.every((x) => !x.url.includes(TOKEN))); assert.match(toMarkdown({ ...out, cfg }), /Budapeşte \| 150 €/); console.log("ok 5: uçtan uca, ortak harcama"); }
+  assert.ok(Math.abs(out.state.harcama.usd - (1.5 + n * cfg.arama_basi_usd)) < 0.02); assert.equal(st.harcama.usd, 1.5, "girdi değiştirilmez");
+  assert.ok(seen.every((x) => !x.url.includes(TOKEN))); assert.match(toMarkdown({ ...out, cfg }), /Budapeşte \| 150 €/); console.log("ok 5: uçtan uca, tek tek arama"); }
+
+// 5b) toplu arama: hafta sonu başına tek çalışma, satırlar şehirlere havalimanına göre dağıtılır
+{ const seen = []; const tcfg = { ...cfg, toplu: true };
+  const multi = async (url, init = {}) => { seen.push({ url, init }); const u = new URL(url);
+    if (init.method === "POST") return res({ data: { id: "r1", status: "SUCCEEDED", defaultDatasetId: "ds1" } });
+    if (u.pathname.startsWith("/v2/datasets/")) { const inp = JSON.parse(seen.find((x) => x.init.method === "POST").init.body);
+      return res(inp.destination.filter((d) => d !== "MLA").map((d, i) => fl(100 + i, { destination: d }))); }
+    return res("yok", 404); };
+  const out = await run({ token: TOKEN, cfg: tcfg, hotelSettings: hs, mode: "test", now: new Date("2026-11-03T03:17:00Z"), fetchImpl: multi, sleep: async () => {} });
+  const posts = seen.filter((x) => x.init.method === "POST"); assert.equal(posts.length, 1);
+  const inp = JSON.parse(posts[0].init.body); assert.ok(inp.destination.includes("CDG") && inp.destination.includes("ORY") && inp.destination.includes("BUD")); assert.ok(inp.maxResults >= 26 * 2);
+  const w = out.state.haftaSonlari["2026-11-06"].sehirler; assert.equal(w["Paris"].son.durum, "fiyat"); assert.equal(w["Valletta"].son.durum, "yok"); assert.equal(out.report.calisma, 1); assert.equal(out.report.arama, cfg.sehirler.length);
+  console.log("ok 5b: toplu arama"); }
 
 // 6) ortak bütçe dolunca arama yapılmaz; şehir filtresi; kontrol günü değilse boş
-{ const seen = []; const out = await run({ token: TOKEN, cfg, meta: { ...emptyState(), harcama: { donem: "2026-10-28", usd: 99.999 } }, hotelSettings: hs, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen }), sleep: async () => {} });
+{ const seen = []; const out = await run({ token: TOKEN, cfg, state: { ...emptyFlights(), harcama: { donem: "2026-10-28", usd: 99.999 } }, hotelSettings: hs, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen }), sleep: async () => {} });
   assert.equal(seen.filter((x) => x.init.method === "POST").length, 0); assert.ok(out.report.butceAtlanan > 0);
   const seen2 = []; await run({ token: TOKEN, cfg, hotelSettings: hs, mode: "test", only: ["Paris"], now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen: seen2 }), sleep: async () => {} });
   assert.equal(seen2.filter((s) => s.init.method === "POST").length, 1);
