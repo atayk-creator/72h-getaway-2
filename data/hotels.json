@@ -7,7 +7,7 @@
     "pazar": "tr",
     "kac_hafta_sonu": 13,
     "apify_plan": "starter",
-    "aylik_butce_usd": 25,
+    "aylik_butce_usd": 45,
     "fatura_gunu": 28,
     "guvenilir_siteler": ["Booking.com","Expedia","Hotels.com","Agoda","Trip.com","Priceline","Otelin kendi sitesi"],
     "ozel_tarihler": [],

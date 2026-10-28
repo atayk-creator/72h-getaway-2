@@ -31,7 +31,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 - `ozel_tarihler`: buraya yazılan Cuma tarihleri (yılbaşı, büyük etkinlik) her zaman en sık kontrol edilir.
 - Bütçe: `apify_plan` (free / starter), `aylik_butce_usd` ve `fatura_gunu` (Apify fatura döneminin başladığı gün).
   Dönem içinde tahmini harcama sınıra gelince robot kalan hafta sonlarını atlar, önce en yakınlar çekilir.
-  208 otel için tahmini aylık tutar Starter planda yaklaşık 22 $.
+  Ölçülen maliyet: otel başına ~0,0028 $ (bir hafta sonunun 208 oteli ~0,59 $); bu takvimle ayda ~21 $.
 - Sonuçlar: `data/otel-fiyatlari.json` (özet, konumlar, harcama) ve `data/fiyatlar/<şehir>.json` (fiyatlar).
   Geçmiş hafta sonları `data/arsiv/<yıl-ay>.json`'a taşınır.
 - Elle çalıştırma: Actions > "Otel fiyat robotu" > Run workflow. `test` = sadece en yakın hafta sonu,
@@ -43,6 +43,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 - İstanbul (IST ve SAW) çıkışlı, Cuma gidiş Pazar dönüş, 1 kişi gidiş-dönüş en ucuz ve en ucuz aktarmasız uçuş, 26 başkent.
 - Kaynak: Google Flights, Apify'daki hazır robot ile (`dz_omar/google-flights-scraper`). Ayarlar `data/ucus-ayarlari.json`, sonuç `data/ucuslar.json`.
 - Takvim: her Salı 06:17; 1–4. hafta sonu her hafta, 5–8. hafta sonu iki haftada bir.
+- Ölçülen maliyet: şehir-hafta sonu başına ~0,028 $ (26 şehir ~0,73 $); bu takvimle ayda ~19 $. Toplu arama ucuzlatmıyor.
 - Hesaplayıcı: seçilen tarihe denk gelen hafta sonunun fiyatını gösterir, "Uçağı bütçeye ekle" ile toplama katar.
   Aktarmasız uçuş en ucuzdan en fazla %20 pahalıysa onu öne çıkarır.
 
@@ -50,7 +51,8 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 
 - Robotlar çalışmadan önce Apify'ın kendi kullanım sayacını okur (`/users/me/limits`); harcama sınırı geçecekse kalan aramaları atlar.
 - Her çalışmanın gerçek maliyeti, çalışma öncesi ve sonrası sayaç farkıyla ölçülüp `data/otel-fiyatlari.json` > `olcumler` alanına yazılır.
-- Sınır: `data/hotels.json` > `aylik_butce_usd` ve Apify hesabının kendi aylık sınırı (hangisi düşükse).
+- Sınır: `data/hotels.json` > `aylik_butce_usd` (45 $) ve Apify hesabının kendi aylık sınırı (hangisi düşükse). İki robotun toplamı ayda ~40 $.
+- Uçak robotunun ölçümleri `data/ucuslar.json` > `olcumler` alanındadır.
 
 ## Gerekli ayarlar
 1. Settings > Pages > Source: Deploy from a branch, branch: main, klasör: / (root)
