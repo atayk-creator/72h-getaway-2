@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-27T22:53:30.373Z",
+ "guncellendi": "2026-10-28T00:14:36.866Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -33,11 +33,9 @@
   "bru-dixseptieme": "ChgIxZ3Dm8KtypqEARoLL2cvMXRjeTNna3gQAQ",
   "bru-made-in-louise": "ChgIsZ6K0ZqKkt-RARoLL2cvMXZsazBxeTQQAQ",
   "bru-motel-one": "ChoIzo69m7Xd9_v5ARoNL2cvMTFiNjIwZmwwdBAB",
-  "bru-ibis-ste-catherine": "ChgI5peBo6XQqeNdGgwvZy8xcHljbHRzbDQQAQ",
   "ams-krasnapolsky": "ChYItPHvq5edvtgfGgovbS8wYnkxOWRmEAE",
   "ams-pulitzer": "ChYItsyq5KHvhJpUGgovbS8wYnkwc19jEAE",
   "ams-de-leurope": "ChYI6dqZpaj64alGGgovbS8wOWc4djVwEAE",
-  "ams-v-nesplein": "ChkI3OCIrrP29_LEARoML2cvMTJoa2Y1NXdzEAE",
   "ams-max-brown": "ChgIk7yVnfO1xf-bARoLL2cvMXRtcWZkbTIQAQ",
   "ams-estherea": "ChcIpNnUo5zgyNGSARoKL20vMDRzeHpoORAB",
   "ams-motel-one": "ChoIwuXUuKLLyZuHARoNL2cvMTFmeWxqMl93ZxAB",
@@ -71,7 +69,6 @@
   "mad-only-you-boutique": "ChgIkPa3_Y2k5owfGgwvZy8xMnZya2hkemcQAQ",
   "mad-catalonia-las-cortes": "ChgIiYGkgNn3w-mhARoLL2cvMXYzXzNfOHgQAQ",
   "mad-hotel-preciados": "ChkIz8n398DbmrE3Gg0vZy8xMWI2Z2N6NmZ5EAE",
-  "mad-hotel-moderno": "ChgIruDXtMGTroXUARoLL2cvMXZ2ZHdqYnQQAQ",
   "mad-hotel-europa": "ChgIsK679fHI7J9GGgwvZy8xamdsenY5bDAQAQ",
   "lis-avenida-palace": "ChgI782c2Z2f8OMdGgwvZy8xMWR5anhtYjcQAQ",
   "lis-tivoli-avenida": "ChgIzeXetOXZ3uOVARoLL2cvMTIwdDl2eW0QAQ",
@@ -121,7 +118,6 @@
   "hel-lilla-roberts": "ChkIzfraiKiF-5YxGg0vZy8xMWMweHRkNWc5EAE",
   "hel-fabian": "ChcIyv3MgIWJoPtNGgsvZy8xdHI4azZ4MBAB",
   "hel-f6": "ChkIzYnYlpHft4oXGg0vZy8xMWNuN3Iza2w5EAE",
-  "hel-omena-lonnrotinkatu": "ChkIgb2ttpfNhPDTARoML2cvMWhtNTg1anZyEAE",
   "hel-hotel-arthur": "ChkI4MTs-_SBlusDGg0vZy8xMWI2aHlxbGxtEAE",
   "tll-sokos-viru": "ChYIwb_wuqqV1818GgovbS8wazhuaDM5EAE",
   "tll-telegraaf": "ChgIoIeAnf6c_qGtARoLL2cvMXRqNTE3eDgQAQ",
@@ -137,7 +133,6 @@
   "rix-pullman-old-town": "ChoI6b_PruDZ9IqcARoNL2cvMTFjbTE3dDI0dhAB",
   "rix-hotel-justus": "ChcIierxrseQzcMyGgsvZy8xdGR4emxkbRAB",
   "rix-hanza-hotel": "ChgI5ZiP84HThIz5ARoLL2cvMXRteTNyaG4QAQ",
-  "rix-bruninieks": "ChoI6t65mM_M56KzARoNL2cvMTF5ZGIweHFucBAB",
   "vno-pacai": "ChoIpuK194KL4KuOARoNL2cvMTFmNWx5N21xZhAB",
   "vno-artagonist": "ChoIoMaQ78Tcob_2ARoNL2cvMTFjMnBtc3lnNRAB",
   "vno-shakespeare": "ChkIw7r5vIuG7ulfGg0vZy8xMWI1d3F0bGp6EAE",
@@ -210,7 +205,8 @@
   "vno-astorija": "ChcI3YC0nbW90o40GgsvZy8xdnE5a3puNRAB",
   "vno-stikliai": "ChgI84OvhpvpmPD5ARoLL2cvMXRkZ3l6cWIQAQ",
   "waw-ibis-stare-miasto": "ChcIvd6-l5uAyMkfGgsvZy8xdGdiNjMxaxAB",
-  "zag-dubrovnik": "ChkIgJrVnOjqo8LfARoML2cvMWhjMGdjMTRzEAE"
+  "zag-dubrovnik": "ChkIgJrVnOjqo8LfARoML2cvMWhjMGdjMTRzEAE",
+  "prg-emblem": "ChgI7Iy23qHh1ep1GgwvZy8xMm05Y2Qyc3cQAQ"
  },
  "konum": {
   "dub-shelbourne": [
@@ -1040,21 +1036,48 @@
   "zag-dubrovnik": [
    45.81225,
    15.976479999999999
+  ],
+  "prg-emblem": [
+   50.08755,
+   14.4184
   ]
  },
  "harcama": {
-  "donem": "2026-10-27",
-  "usd": 0.15
+  "donem": "2026-10-28",
+  "usd": 0.62
  },
  "sonCalisma": {
-  "tarih": "2026-10-27T22:53:30.373Z",
+  "tarih": "2026-10-28T00:14:36.866Z",
   "mod": "test",
   "hafta_sonu": 1,
-  "kontrol": 72,
-  "fiyatli": 60,
-  "tahminiMaliyetUsd": 0.26,
+  "kontrol": 212,
+  "fiyatli": 184,
+  "tahminiMaliyetUsd": 0.62,
   "butceAtlanan": 0
  },
+ "apifyKullanim": {
+  "usd": 1.89,
+  "sinir": 19,
+  "donemBasi": "2026-10-28",
+  "donemSonu": "2026-11-27",
+  "kontrol": "2026-10-28T00:14:36.866Z"
+ },
+ "olcumler": [
+  {
+   "robot": "ucak",
+   "t": "2026-10-28T00:06:07.050Z",
+   "sorgu": 26,
+   "usd": 0.73,
+   "sorguBasi": 0.02808
+  },
+  {
+   "robot": "otel",
+   "t": "2026-10-28T00:14:36.866Z",
+   "sorgu": 206,
+   "usd": 0.58,
+   "sorguBasi": 0.00282
+  }
+ ],
  "sehirler": {
   "Dublin": "data/fiyatlar/dublin.json",
   "Paris": "data/fiyatlar/paris.json",
@@ -1082,21 +1105,5 @@
   "Zagreb": "data/fiyatlar/zagreb.json",
   "Bükreş": "data/fiyatlar/bukres.json",
   "Sofya": "data/fiyatlar/sofya.json"
- },
- "apifyKullanim": {
-  "usd": 0.73,
-  "sinir": 19,
-  "donemBasi": "2026-10-28",
-  "donemSonu": "2026-11-27",
-  "kontrol": "2026-10-28T00:06:07.050Z"
- },
- "olcumler": [
-  {
-   "robot": "ucak",
-   "t": "2026-10-28T00:06:07.050Z",
-   "sorgu": 26,
-   "usd": 0.73,
-   "sorguBasi": 0.02808
-  }
- ]
+ }
 }
