@@ -13,7 +13,8 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 | `data/arsiv/` | Geçmiş hafta sonlarının fiyatları (robot yazar) |
 | `data/ucus-ayarlari.json`, `data/ucuslar.json` | Uçak robotunun ayarları ve bulduğu fiyatlar |
 | `data/restoran-ayarlari.json`, `data/restoranlar.json`, `data/restoran-adaylari.json` | Restoran robotunun ayarları, seçtiği restoranlar ve adaylar |
-| `data.json` | Euro/TL ve euro/forint kuru (her gün 18:23, ECB referans kuru) |
+| `data.json` | Euro/TL, euro/forint ve diğer kurlar (her gün 18:23, ECB referans kuru) |
+| `data/gezi.json` | 26 şehrin gezi yerleri ve toplu taşıma fiyatları |
 | `prices.json`, `price-status.json` | Resmî bilet fiyatları ve kontrol durumu |
 | `scripts/` | Kuru güncelleyen, uçuş ve otel fiyatlarını çeken programlar ve testleri |
 | `.github/workflows/` | Otomatik çalışan görevler |
@@ -56,6 +57,15 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 - Sonuç `data/restoranlar.json`, tüm adaylar `data/restoran-adaylari.json`.
 - Takvim: her ayın 3'ünde `yenile` (seçilenlerin puan/fiyat/açık bilgisini tazeler, kapananı değiştirir, ~1 $).
   Elle: `kesif` (baştan arama, ~0,36 $/şehir), `sec` (kurallar değişince adaylardan yeniden seçim, ücretsiz).
+
+## Şehir turu ve ulaşım (data/gezi.json)
+
+- 26 başkent: toplu taşıma fiyatları (tek bilet, günlük, 72 saatlik kart, havalimanı) ve 25 şehirde 10'ar gezi yeri
+  (Budapeşte'nin yerleri `index.html` içinde). Fiyatlar yerel para biriminde, resmî sayfalardan; `fiyat: null` = henüz doğrulanmadı.
+- Konumlar Google Maps'ten: Actions > "Gezi yerleri konum robotu" (sadece konumu olmayanları arar, ~0,003 $/yer).
+- Hesaplayıcı: ulaşım bütçesi = havalimanı gidiş-dönüş + kalınan günler için en ucuz seçenek (günde 2 yolculuk);
+  gezi bütçesi = programdaki yerlerin biletleri (fiyatı bilinmeyenler için şehrin ortanca bilet fiyatı).
+- Para birimleri `data.json` > `kurlar` (ECB, her gün) ile euroya çevrilir.
 
 ## Apify bütçesi (tüm robotlar ortak)
 

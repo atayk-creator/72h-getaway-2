@@ -700,7 +700,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var row = function (lab, x) {
       if (!x || typeof x.fiyat !== "number") return "";
       var src = /^https:\/\//.test(x.kaynak || "") ? '<a href="' + escH(x.kaynak) + '" target="_blank" rel="noopener noreferrer">kaynak ↗</a>' : "";
-      return "<li><span>" + lab + ": " + escH(x.aciklama || "") + "</span><b>" + (x.fiyat === 0 ? "Ücretsiz" : nf1.format(x.fiyat).replace(/,0$/, "") + " " + sym) + "</b>" + src + "</li>";
+      return "<li><span>" + lab + ": " + escH(x.aciklama || "") + "</span><b>" + (x.fiyat === 0 ? "Ücretsiz" : x.fiyat.toLocaleString("tr-TR", { maximumFractionDigits: 2 }) + " " + sym) + "</b>" + src + "</li>";
     };
     return '<p class="ph">Toplu taşıma (resmî fiyatlar, yetişkin)</p><ul>' + row("Tek bilet", u.tek_bilet) + row("Günlük", u.gunluk) + row((u.cok_gunluk && u.cok_gunluk.gun || 3) + " günlük", u.cok_gunluk) + row("Havalimanı", u.havalimani) + "</ul>" + (u.not ? '<p class="pn">' + escH(u.not) + "</p>" : "");
   }
