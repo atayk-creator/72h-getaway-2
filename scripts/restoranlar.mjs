@@ -80,14 +80,16 @@ export function eligible(c, cfg) {
 const bayes = (c, m = 200, C = 4.3) => (c.yorum * c.puan + m * C) / (c.yorum + m);
 const isFine = (c) => /fine dining/i.test(c.mutfak || "") || (c.kategoriler || []).some((k) => /fine dining/i.test(k));
 
-// Seçim: şehrin fiyatlı adaylarını kişi başı fiyata göre üçe ayırır (alt %35 uygun, üst %20 ya da "X+"/fine dining lüks).
+// Seçim: şehrin fiyatlı adaylarını kişi başı fiyata göre üçe ayırır. Uygun: en ucuz %35.
+// Lüks: şehrin ortanca fiyatının en az 1,8 katı (ve üst %25). "Fine dining" etiketi tek başına yetmez, sadece öncelik verir.
 export function selectRestaurants(cands, cfg) {
   const R = cfg.secim;
   const pool = cands.filter((c) => eligible(c, cfg));
   const byPrice = pool.slice().sort((a, b) => a.kisiBasiEur - b.kisiBasiEur);
   const q = (f) => byPrice.length ? byPrice[Math.min(byPrice.length - 1, Math.floor(f * byPrice.length))].kisiBasiEur : 0;
-  const lo = q(0.35), hi = q(0.8);
-  const tierOf = (c) => (c.artiFiyat || isFine(c) || c.kisiBasiEur >= hi ? "luks" : c.kisiBasiEur <= lo ? "uygun" : "populer");
+  const lo = q(0.35), med = q(0.5), hi = Math.max(q(0.75), Math.round(med * 1.8 * 10) / 10);
+  const isLux = (c) => c.kisiBasiEur >= hi || (isFine(c) && c.kisiBasiEur >= hi * 0.8) || (c.artiFiyat && c.kisiBasiEur >= med * 1.5);
+  const tierOf = (c) => (isLux(c) ? "luks" : c.kisiBasiEur <= lo ? "uygun" : "populer");
   const used = new Set(), out = [];
   const pick = (tier, list, n) => {
     const got = [];
@@ -108,7 +110,7 @@ export function selectRestaurants(cands, cfg) {
   for (const t of TIERS) {
     const need = R[t] - out.filter((x) => x.seviye === t).length;
     if (need <= 0) continue;
-    const backup = pool.filter((c) => okP(c) && c.yorum >= Math.min(minY, R.luks_min_yorum) && !used.has(c.id))
+    const backup = pool.filter((c) => okP(c) && c.yorum >= Math.min(minY, R.luks_min_yorum) && !used.has(c.id) && (t !== "luks" || isLux(c)) && (t !== "uygun" || c.kisiBasiEur <= med))
       .sort((a, b) => (t === "uygun" ? a.kisiBasiEur - b.kisiBasiEur : t === "luks" ? b.kisiBasiEur - a.kisiBasiEur : b.yorum - a.yorum));
     out.push(...pick(t, backup, need).map((x) => ({ ...x, yedek: true })));
   }

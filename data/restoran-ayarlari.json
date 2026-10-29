@@ -40,7 +40,12 @@
   "Taco Bell",
   "Popeyes",
   "Wendy",
-  "Leon "
+  "Leon ",
+  "Croisière",
+  "Croisiere",
+  "Cruise",
+  "Péniche",
+  "Bateaux"
  ],
  "haric_kategori": [
   "Hotel",
@@ -55,7 +60,13 @@
   "Grocery store",
   "Supermarket",
   "Food court",
-  "Hostel"
+  "Hostel",
+  "Jazz club",
+  "Live music venue",
+  "Boat tour agency",
+  "Tour operator",
+  "Event venue",
+  "Karaoke bar"
  ],
  "sabit_kur": {
   "BGN": 1.95583

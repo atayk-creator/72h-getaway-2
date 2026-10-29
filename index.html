@@ -401,7 +401,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   </section>
 
   <section class="hotels" aria-labelledby="h-rest">
-    <h2 id="h-rest">Yemeğini seç: <span id="rcCity"></span> için 3 viral durak</h2>
+    <h2 id="h-rest">Yemeğini seç: <span id="rcCity"></span> için <span id="rCount">3</span> durak</h2>
     <div class="rowhead"><p class="lead" id="rLead" style="margin:0"></p>
       <div class="arrows"><button type="button" data-t="rgrid" data-d="-1" aria-label="Önceki restoranlar">‹</button><button type="button" data-t="rgrid" data-d="1" aria-label="Sonraki restoranlar">›</button></div></div>
     <div class="hs eq" id="rgrid" role="radiogroup" aria-labelledby="h-rest"></div>
@@ -424,7 +424,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 </div>
 </main>
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -553,6 +553,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     return TIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: r5(c.h * x.m), sc: "", s: "est", desc: x.desc }; });
   }
   function restosOf(c) {
+    var lr = liveRestos(c);
+    if (lr) return lr;
     if (c.restos) return c.restos;
     return RTIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: Math.max(3, Math.round(c.f * x.m)), sc: "", s: "est", desc: x.desc }; });
   }
@@ -632,6 +634,29 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   function lvlOf(h) { return h.lvl != null ? h.lvl : LVL[h.t] != null ? LVL[h.t] : 1; }
   function defaultIdx(hs) { for (var i = 0; i < hs.length; i++) if (lvlOf(hs[i]) === 1) return i; return Math.min(1, hs.length - 1); }
   function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
+  /* ====================== RESTORANLAR ====================== */
+  // Restoran robotu (GitHub Actions) her başkentin merkezinde Google Maps'ten 2 uygun, 2 popüler, 2 lüks restoran seçer.
+  // Kişi başı fiyat: Google kullanıcılarının bildirdiği aralığın ortası, euroya çevrilmiş.
+  var RESTO = null, RLV = { uygun: { t: "Uygun", lvl: 0 }, populer: { t: "Popüler", lvl: 1 }, luks: { t: "Lüks", lvl: 2 } };
+  // Google'dan gelen metinler sayfaya güvenli eklensin
+  function escH(x) { return String(x == null ? "" : x).replace(/[&<>"']/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]; }); }
+  function liveRestos(c) {
+    var s = RESTO && RESTO.sehirler && RESTO.sehirler[c.n];
+    if (!s || !s.restoranlar || !s.restoranlar.length) return null;
+    return s.restoranlar.map(function (r) {
+      var lv = RLV[r.seviye] || RLV.populer;
+      var bits = [r.mutfak && r.mutfak !== "Restaurant" ? r.mutfak.replace(/ restaurant$/i, "") : null, r.semt, r.yorum ? r.yorum.toLocaleString("tr-TR") + " Google yorumu" : null].filter(Boolean).join(" · ");
+      return { t: lv.t, lvl: lv.lvl, name: escH(r.ad), label: escH(r.ad), p: Math.max(3, Math.round(r.kisiBasiEur)), s: "res", url: /^https:\/\/www\.google\.com\/maps\//.test(r.url || "") ? escH(r.url) : null,
+        sc: r.puan ? String(r.puan).replace(".", ",") : "", sct: "Google puanı", lat: r.konum ? r.konum[0] : undefined, lon: r.konum ? r.konum[1] : undefined,
+        desc: escH(bits + ". Kişi başı " + r.fiyatYazi + " (Google kullanıcılarının bildirdiği aralık, içecek dahil ortalama).") };
+    });
+  }
+  function fixRestoIdx(rs) {
+    if (!rDefault && rIdx < rs.length) return;
+    for (var i = 0; i < rs.length; i++) if ((rs[i].lvl != null ? rs[i].lvl : LVL[rs[i].t] != null ? LVL[rs[i].t] : 1) === 1) { rIdx = i; return; }
+    rIdx = Math.min(1, rs.length - 1);
+  }
+
   /* ====================== UÇAK FİYATLARI ====================== */
   // Uçak robotu (GitHub Actions) İstanbul'dan (IST, SAW) Cuma gidiş Pazar dönüş kişi başı en ucuz gidiş-dönüşü data/ucuslar.json'a yazar.
   var FLY = null, addFlight = true;
@@ -688,7 +713,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 
   /* ====================== DURUM VE YARDIMCILAR ====================== */
   var $ = function (id) { return document.getElementById(id); };
-  var step = 1, maxStep = 1, foodMult = 1, hIdx = 1, hDefault = true, rIdx = 1, visits = 1, picked = [], lastO = null;
+  var step = 1, maxStep = 1, foodMult = 1, hIdx = 1, hDefault = true, rIdx = 1, rDefault = true, visits = 1, picked = [], lastO = null;
   var nf = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 });
   var nf1 = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
   var tl = function (n) { return nf.format(Math.round(n)) + " TL"; };
@@ -734,7 +759,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     $("rateHint").textContent = "(" + dataDateText() + " itibarıyla, güncelleyebilirsin)";
     var age = dataAgeDays(), n = $("datanote"), old = age !== null && age > 14;
     n.className = "datanote" + (old ? " old" : "");
-    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). " + (LIVE.doc ? "Otel fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor, yemek fiyatları tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
+    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). " + (LIVE.doc ? "Otel, uçak ve restoran fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor; günlük yemek ve ulaşım tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
       (old ? " Bu veri " + age + " gündür güncellenmedi, rakamlar eski olabilir." : "");
   }
   function mapsUrl(q) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); }
@@ -1208,8 +1233,9 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     else g.scrollLeft = sl;
   }
   function renderRestos(c) {
-    var rs = restosOf(c), g = $("rgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("rcCity").textContent = c.n;
-    $("rLead").innerHTML = (visits === 0 ? "Şu an <b>Hiç</b> seçili, bu yüzden viral restoran bütçeye eklenmiyor. Yukarıdan öğün sayısını artır." : "Ucuz, orta ve şık. Birine dokun, bütçe o restorana göre güncellensin.") +
+    var rs = restosOf(c), g = $("rgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("rcCity").textContent = c.n; $("rCount").textContent = rs.length;
+    var live = !!liveRestos(c);
+    $("rLead").innerHTML = (visits === 0 ? "Şu an <b>Hiç</b> seçili, bu yüzden restoran bütçeye eklenmiyor. Yukarıdan öğün sayısını artır." : live ? "Merkezde, Google'da yüksek puanlı 2 uygun, 2 popüler ve 2 lüks restoran. Birine dokun, bütçe güncellensin." : "Ucuz, orta ve şık. Birine dokun, bütçe o restorana göre güncellensin.") +
       ' <a href="https://www.tiktok.com/search?q=' + encodeURIComponent(c.n + " restaurants") + '" target="_blank" rel="noopener noreferrer">TikTok\'ta ' + c.n + ' yemek önerilerine bak ↗</a>';
     rs.forEach(function (r, i) {
       var q = r.q || ("popular viral restaurants in " + c.n + " " + c.c), lab = document.createElement("label");
@@ -1220,9 +1246,9 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         '<p class="hname">' + (r.name || r.label) + '</p>' +
         '<div class="price">~' + r.p + ' € <small>/ kişi</small></div>' +
         '<p class="hdesc">' + r.desc + '</p>' +
-        '<div class="hfoot"><span class="chip"></span><a href="' + mapsUrl(q) + '" target="_blank" rel="noopener noreferrer">' + (r.name ? "Haritada aç" : "Haritada ara") + ' ↗</a></div>';
+        '<div class="hfoot"><span class="chip"></span><a href="' + (r.url || mapsUrl(q)) + '" target="_blank" rel="noopener noreferrer">' + (r.name ? "Haritada aç" : "Haritada ara") + ' ↗</a></div>';
       chipEl(lab.querySelector(".chip"), r.s);
-      lab.querySelector("input").addEventListener("change", function () { rIdx = i; render(); });
+      lab.querySelector("input").addEventListener("change", function () { rIdx = i; rDefault = false; render(); });
       lab.querySelector("a").addEventListener("click", function (e) { e.stopPropagation(); });
       g.appendChild(lab);
     });
@@ -1302,11 +1328,11 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       box.style.display = tg && tg.scrollWidth > tg.clientWidth + 2 ? "flex" : "none";
     });
   }
-  function resetCity() { hIdx = 1; hDefault = true; rIdx = 1; picked = []; openInfo = {}; trKeep = false; hFocus = true; rFocus = true; }
+  function resetCity() { hIdx = 1; hDefault = true; rIdx = 1; rDefault = true; picked = []; openInfo = {}; trKeep = false; hFocus = true; rFocus = true; }
 
   function render() {
     var o = inputs(), c0 = D[+$("city").value];
-    ensureLiveCity(c0); fixHotelIdx(hotelsOf(c0));
+    ensureLiveCity(c0); fixHotelIdx(hotelsOf(c0)); fixRestoIdx(restosOf(c0));
     var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate;
     renderFlight(c, o, k); $("rAir").textContent = k.fly ? "uçak dahil" : "uçak hariç";
     $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), cityStatus(c, o, k));
@@ -1393,6 +1419,11 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var getJ = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }); };
     Promise.all([getJ(window.HOTELS_URL), getJ(window.HOTEL_META_URL).catch(function () { return null; })]).then(function (r) {
       if (r[0] && Array.isArray(r[0].sehirler)) { LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
+    }).catch(function () {});
+  }
+  if (window.RESTOS_URL && window.fetch) {
+    fetch(window.RESTOS_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.sehirler) { RESTO = d; render(); }
     }).catch(function () {});
   }
   if (window.FLIGHTS_URL && window.fetch) {
