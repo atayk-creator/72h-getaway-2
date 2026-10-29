@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-29T22:25:04.401Z",
+ "guncellendi": "2026-10-29T22:43:48.273Z",
  "kaynak": "Google Maps (Apify: compass/crawler-google-places)",
  "aciklama": "Kişi başı fiyat: Google'daki kullanıcıların bildirdiği aralığın ortası, euroya çevrilmiş",
  "kur": {
@@ -35,7 +35,7 @@
  ],
  "sehirler": {
   "Budapeşte": {
-   "guncellendi": "2026-10-29T22:21:31.503Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 19.1,
     "luks": 71
@@ -165,10 +165,10 @@
    ]
   },
   "Brüksel": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 15,
-    "luks": 60
+    "luks": 45
    },
    "aday": 53,
    "restoranlar": [
@@ -213,42 +213,42 @@
      "seviye": "uygun"
     },
     {
-     "id": "ChIJbdetfX_Ew0cRAL4hMPgqkxE",
-     "ad": "Le Marmiton",
-     "mutfak": "Belgian restaurant",
+     "id": "ChIJ35F0AnLEw0cRN0VThppwIyE",
+     "ad": "Asturias",
+     "mutfak": "Spanish restaurant",
      "puan": 4.5,
-     "yorum": 4264,
-     "fiyatYazi": "€30–60",
-     "kisiBasiEur": 45,
+     "yorum": 852,
+     "fiyatYazi": "€20–30",
+     "kisiBasiEur": 25,
      "artiFiyat": false,
      "semt": null,
      "konum": [
-      50.84772,
-      4.35487
+      50.83845,
+      4.33836
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Le%20Marmiton&query_place_id=ChIJbdetfX_Ew0cRAL4hMPgqkxE",
-     "web": "https://lemarmiton.be/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/JiAgP_L9hE4?source=pa,gmm&opi=79508299&hl=en-US&gei=78fjaofbNZjMkPIPxKjmyQI&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DLe%2BMarmiton%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=Asturias&query_place_id=ChIJ35F0AnLEw0cRN0VThppwIyE",
+     "web": "https://www.facebook.com/profile.php?id=100057115883708",
+     "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "populer"
     },
     {
-     "id": "ChIJ6bU4fX_Ew0cRML3v5b5nilc",
-     "ad": "The Lobster House",
-     "mutfak": "Seafood restaurant",
-     "puan": 4.8,
-     "yorum": 14259,
-     "fiyatYazi": "€30–80",
-     "kisiBasiEur": 55,
+     "id": "ChIJZ60hiWTEw0cReGOD85F-3l8",
+     "ad": "Au Stekerlapatte",
+     "mutfak": "Belgian restaurant",
+     "puan": 4.5,
+     "yorum": 1186,
+     "fiyatYazi": "€30–50",
+     "kisiBasiEur": 40,
      "artiFiyat": false,
      "semt": null,
      "konum": [
-      50.84789,
-      4.35465
+      50.83528,
+      4.34944
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=The%20Lobster%20House&query_place_id=ChIJ6bU4fX_Ew0cRML3v5b5nilc",
-     "web": "http://thelobsterhouse.be/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/G1DAjHwuKB8?source=pa,gmm&opi=79508299&hl=en-US&gei=8sfjau79GrndwN4P772S0Ac&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BLobster%2BHouse%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=Au%20Stekerlapatte&query_place_id=ChIJZ60hiWTEw0cReGOD85F-3l8",
+     "web": "http://www.austekerlapatte.be/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/-tNbJF5anDY?source=pa,gmm&opi=79508299&hl=en-US&gei=8Mfjaoi2Jru3gLQP4JiCkA8&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DAu%2BStekerlapatte%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "populer"
     },
@@ -295,10 +295,10 @@
    ]
   },
   "Dublin": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 20,
-    "luks": 75
+    "luks": 65
    },
    "aday": 42,
    "restoranlar": [
@@ -425,12 +425,12 @@
    ]
   },
   "Paris": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
-    "uygun": 50,
+    "uygun": 45,
     "luks": 130
    },
-   "aday": 52,
+   "aday": 51,
    "restoranlar": [
     {
      "id": "ChIJZ4mKm_Nv5kcR8ZePEIwQOp4",
@@ -493,44 +493,24 @@
      "seviye": "populer"
     },
     {
-     "id": "ChIJm3Ls6I9v5kcRgZwKVlBNXZU",
-     "ad": "Eiffel Croisières - Péniche Ivoire - Croisière bistronomique",
-     "mutfak": "Restaurant",
-     "puan": 4.6,
-     "yorum": 4230,
-     "fiyatYazi": "€50–100",
-     "kisiBasiEur": 75,
+     "id": "ChIJ05AX-wJu5kcR-2CTIOumOiw",
+     "ad": "Le Colimaçon",
+     "mutfak": "French restaurant",
+     "puan": 4.7,
+     "yorum": 3407,
+     "fiyatYazi": "€40–90",
+     "kisiBasiEur": 65,
      "artiFiyat": false,
      "semt": null,
      "konum": [
-      48.86318,
-      2.3125
+      48.85795,
+      2.358
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Eiffel%20Croisi%C3%A8res%20-%20P%C3%A9niche%20Ivoire%20-%20Croisi%C3%A8re%20bistronomique&query_place_id=ChIJm3Ls6I9v5kcRgZwKVlBNXZU",
-     "web": "http://www.eiffelcroisieres.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/eaFXQIvJuj8?source=pa,gmm&opi=79508299&hl=en-US&gei=7sfjas7DKtnLkPIPkInd0Qo&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DEiffel%2BCroisi%25C3%25A8res%2B-%2BP%25C3%25A9niche%2BIvoire%2B-%2BCroisi%25C3%25A8re%2Bbistronomique%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=Le%20Colima%C3%A7on&query_place_id=ChIJ05AX-wJu5kcR-2CTIOumOiw",
+     "web": "https://le-colimacon.fr/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/5AyLLELTpQw?source=pa,gmm&opi=79508299&hl=en-US&gei=_MfjataSAZ6CgLQP7ZHC4Ag&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DLe%2BColima%25C3%25A7on%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "populer"
-    },
-    {
-     "id": "ChIJe7cQj3Zv5kcRJ0YfQ8LFNzc",
-     "ad": "Gloria Osteria",
-     "mutfak": "Italian restaurant",
-     "puan": 4.9,
-     "yorum": 2845,
-     "fiyatYazi": "€40–100",
-     "kisiBasiEur": 70,
-     "artiFiyat": false,
-     "semt": null,
-     "konum": [
-      48.85883,
-      2.32826
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Gloria%20Osteria&query_place_id=ChIJe7cQj3Zv5kcRJ0YfQ8LFNzc",
-     "web": "https://gloria-osteria.com/fr/gloria-osteria-paris?tracking=mybusiness-website&utm_source=google&utm_medium=organic&utm_campaign=mybusiness-website",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/GJzcUO6dgOw?source=pa,gmm&opi=79508299&hl=en-US&gei=0MfjasrhM87PgLQPiJq8-AY&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DGloria%2BOsteria%26hl%3Den-US&oiwv=1&allowGuest=1",
-     "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "luks"
     },
     {
      "id": "ChIJR4kFR0xv5kcR-x6duNRh3uE",
@@ -551,11 +531,31 @@
      "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "luks"
+    },
+    {
+     "id": "ChIJGZbt11dv5kcRxGUcs6VnlSc",
+     "ad": "Restaurant Anne - Place des Vosges, le Pavillon de la Reine",
+     "mutfak": "Fine dining restaurant",
+     "puan": 4.8,
+     "yorum": 622,
+     "fiyatYazi": "€100+",
+     "kisiBasiEur": 130,
+     "artiFiyat": true,
+     "semt": null,
+     "konum": [
+      48.85635,
+      2.36606
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Anne%20-%20Place%20des%20Vosges%2C%20le%20Pavillon%20de%20la%20Reine&query_place_id=ChIJGZbt11dv5kcRxGUcs6VnlSc",
+     "web": "http://www.pavillon-de-la-reine.com/fr/restaurant-et-bar/restaurant-anne.html",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/W_d3IyEK2VQ?source=pa,gmm&opi=79508299&hl=en-US&gei=-cfjasLfOqb2yckPraXYmQU&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DRestaurant%2BAnne%2B-%2BPlace%2Bdes%2BVosges,%2Ble%2BPavillon%2Bde%2Bla%2BReine%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "kontrol": "2026-10-29T22:25:04.401Z",
+     "seviye": "luks"
     }
    ]
   },
   "Amsterdam": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 15,
     "luks": 130
@@ -685,10 +685,10 @@
    ]
   },
   "Lüksemburg": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 25,
-    "luks": 65
+    "luks": 63
    },
    "aday": 50,
    "restoranlar": [
@@ -815,7 +815,7 @@
    ]
   },
   "Berlin": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 15,
     "luks": 45
@@ -945,10 +945,10 @@
    ]
   },
   "Viyana": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 25,
-    "luks": 130
+    "luks": 55
    },
    "aday": 55,
    "restoranlar": [
@@ -1075,10 +1075,10 @@
    ]
   },
   "Madrid": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 15,
-    "luks": 25
+    "luks": 27
    },
    "aday": 55,
    "restoranlar": [
@@ -1123,26 +1123,6 @@
      "seviye": "uygun"
     },
     {
-     "id": "ChIJOUrXTCInQg0REfj8oahTAAI",
-     "ad": "Verdeo Bar",
-     "mutfak": "Restaurant",
-     "puan": 4.7,
-     "yorum": 621,
-     "fiyatYazi": "€1–30",
-     "kisiBasiEur": 15.5,
-     "artiFiyat": false,
-     "semt": "Arganzuela",
-     "konum": [
-      40.40548,
-      -3.71374
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Verdeo%20Bar&query_place_id=ChIJOUrXTCInQg0REfj8oahTAAI",
-     "web": "https://verdeobar.com/",
-     "rezervasyon": null,
-     "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "populer"
-    },
-    {
      "id": "ChIJB2C5CXMnQg0Rb7_g6Z1K7lY",
      "ad": "PORNEAT",
      "mutfak": "Hamburger restaurant",
@@ -1160,8 +1140,27 @@
      "web": "http://porneat.es/",
      "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/-ES77PNq9vI?source=pa,gmm&opi=79508299&hl=en&gei=x8jjaqP9OKvvwPAPksu5eQ&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DPORNEAT%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "populer",
-     "yedek": true
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJdaUUmCgmQg0RXUetV7ML58o",
+     "ad": "Oven Mozzarella Atocha | Restaurante Italiano Madrid",
+     "mutfak": "Italian restaurant",
+     "puan": 4.6,
+     "yorum": 7619,
+     "fiyatYazi": "€20–30",
+     "kisiBasiEur": 25,
+     "artiFiyat": false,
+     "semt": "Centro",
+     "konum": [
+      40.40944,
+      -3.69331
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Oven%20Mozzarella%20Atocha%20%7C%20Restaurante%20Italiano%20Madrid&query_place_id=ChIJdaUUmCgmQg0RXUetV7ML58o",
+     "web": "http://www.oven.es/?utm_source=gmb&utm_medium=organic&utm_campaign=gmb_website",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/qn4DVpnu9bo?source=pa,gmm&opi=79508299&hl=en-US&gei=vcjjavyaD6ynmtkP6ZjQkQM&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DOven%2BMozzarella%2BAtocha%2B%257C%2BRestaurante%2BItaliano%2BMadrid%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "kontrol": "2026-10-29T22:25:04.401Z",
+     "seviye": "populer"
     },
     {
      "id": "ChIJcfNWJ9YnQg0RZLL0hcVboYA",
@@ -1206,10 +1205,10 @@
    ]
   },
   "Lizbon": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 15,
-    "luks": 35
+    "luks": 36
    },
    "aday": 51,
    "restoranlar": [
@@ -1336,10 +1335,10 @@
    ]
   },
   "Roma": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 25,
-    "luks": 130
+    "luks": 70
    },
    "aday": 52,
    "restoranlar": [
@@ -1424,52 +1423,52 @@
      "seviye": "populer"
     },
     {
-     "id": "ChIJQ-CLBE9hLxMRyMobu5MuaRg",
-     "ad": "Clorofilla | Giardino Urbano",
-     "mutfak": "Fine dining restaurant",
-     "puan": 4.7,
-     "yorum": 941,
-     "fiyatYazi": "€20–60",
-     "kisiBasiEur": 40,
+     "id": "ChIJs_u08JxhLxMRGrIDKkT9bfM",
+     "ad": "Enoteca Bellini Roma",
+     "mutfak": "Italian restaurant",
+     "puan": 4.9,
+     "yorum": 248,
+     "fiyatYazi": "€40–100",
+     "kisiBasiEur": 70,
      "artiFiyat": false,
      "semt": null,
      "konum": [
-      41.89452,
-      12.47261
+      41.89881,
+      12.47151
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Clorofilla%20%7C%20Giardino%20Urbano&query_place_id=ChIJQ-CLBE9hLxMRyMobu5MuaRg",
-     "web": "http://www.clorofillacucinaedistillati.it/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/VLTYPk9fdm4?source=pa,gmm&opi=79508299&hl=en-US&gei=0cjjaoSlHs6vj94P5Omr4A4&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DClorofilla%2B%257C%2BGiardino%2BUrbano%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=Enoteca%20Bellini%20Roma&query_place_id=ChIJs_u08JxhLxMRGrIDKkT9bfM",
+     "web": "http://www.enotecabellini.it/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/3lLOrMwjggo?source=pa,gmm&opi=79508299&hl=en-US&gei=ssjjasHhKobHkPIP4bqvwAQ&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DEnoteca%2BBellini%2BRoma%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "luks"
     },
     {
-     "id": "ChIJazkDjcdhLxMRj5-WnvGr0vE",
-     "ad": "CAMPOCORI Restaurant",
-     "mutfak": "Modern European restaurant",
+     "id": "ChIJmYbImQNhLxMRHBgz6XzHZXA",
+     "ad": "Pulejo ristorante",
+     "mutfak": "Fine dining restaurant",
      "puan": 4.8,
-     "yorum": 279,
+     "yorum": 333,
      "fiyatYazi": "€100+",
      "kisiBasiEur": 130,
      "artiFiyat": true,
      "semt": null,
      "konum": [
-      41.8932,
-      12.47572
+      41.90721,
+      12.45959
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=CAMPOCORI%20Restaurant&query_place_id=ChIJazkDjcdhLxMRj5-WnvGr0vE",
-     "web": "http://www.chapter-roma.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/s-L_uObYdXQ?source=pa,gmm&opi=79508299&hl=en-US&gei=qMjjasivD7vAkPIPgOnhuA4&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DCAMPOCORI%2BRestaurant%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=Pulejo%20ristorante&query_place_id=ChIJmYbImQNhLxMRHBgz6XzHZXA",
+     "web": "http://www.pulejo.it/",
+     "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "luks"
     }
    ]
   },
   "Valletta": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 25,
-    "luks": 70
+    "luks": 65
    },
    "aday": 50,
    "restoranlar": [
@@ -1596,10 +1595,10 @@
    ]
   },
   "Atina": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 12.5,
-    "luks": 30
+    "luks": 31.5
    },
    "aday": 53,
    "restoranlar": [
@@ -1664,22 +1663,22 @@
      "seviye": "populer"
     },
     {
-     "id": "ChIJtXQszjC9oRQRs2-d32HTveA",
-     "ad": "Ouzeri Lesvos",
-     "mutfak": "Restaurant",
-     "puan": 4.5,
-     "yorum": 2215,
-     "fiyatYazi": "€15–25",
-     "kisiBasiEur": 20,
+     "id": "ChIJG_YSizC9oRQRP4lupGP1K-M",
+     "ad": "ΤΡΑΤΑ",
+     "mutfak": "Seafood restaurant",
+     "puan": 4.7,
+     "yorum": 2349,
+     "fiyatYazi": "€20–40",
+     "kisiBasiEur": 30,
      "artiFiyat": false,
      "semt": null,
      "konum": [
-      37.98448,
-      23.73301
+      37.98424,
+      23.73093
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Ouzeri%20Lesvos&query_place_id=ChIJtXQszjC9oRQRs2-d32HTveA",
-     "web": "https://www.instagram.com/ouzeri_lesvos",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/qm60ry0Eimc?source=pa,gmm&opi=79508299&hl=en-US&gei=WMnjasCBOoC4w8cP3M2cmQM&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DOuzeri%2BLesvos%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=%CE%A4%CE%A1%CE%91%CE%A4%CE%91&query_place_id=ChIJG_YSizC9oRQRP4lupGP1K-M",
+     "web": "http://www.athenstrata.gr/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/68IxPz5LVqM?source=pa,gmm&opi=79508299&hl=en-US&gei=TcnjatTwLcjAkPIP-siWYA&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3D%25CE%25A4%25CE%25A1%25CE%2591%25CE%25A4%25CE%2591%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "populer"
     },
@@ -1726,7 +1725,7 @@
    ]
   },
   "Stokholm": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 31.8,
     "luks": 118.2
@@ -1774,26 +1773,6 @@
      "seviye": "uygun"
     },
     {
-     "id": "ChIJCU3qSwCdX0YR5mTnMcNZyUk",
-     "ad": "House of Smorgasbord",
-     "mutfak": "Swedish restaurant",
-     "puan": 4.8,
-     "yorum": 334,
-     "fiyatYazi": "kr 200–600",
-     "kisiBasiEur": 36.4,
-     "artiFiyat": false,
-     "semt": null,
-     "konum": [
-      59.32572,
-      18.07397
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=House%20of%20Smorgasbord&query_place_id=ChIJCU3qSwCdX0YR5mTnMcNZyUk",
-     "web": "http://www.thesmorgasbord.se/",
-     "rezervasyon": null,
-     "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "populer"
-    },
-    {
      "id": "ChIJbUwut2CdX0YRc2Ctv0LIzIM",
      "ad": "Bistro Bestick City",
      "mutfak": "Bistro",
@@ -1831,7 +1810,7 @@
      "web": "http://www.restaurangkrypin.se/",
      "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/q5yOuA-EKac?source=pa,gmm&opi=79508299&hl=en-US&gei=UsnjarnEPJTNkPIPxojpyQ0&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DRestaurang%2BKryp%2BIn%2BGamla%2BStan%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "luks"
+     "seviye": "populer"
     },
     {
      "id": "ChIJhwomM2edX0YR9gW2q53gJRg",
@@ -1852,14 +1831,34 @@
      "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "luks"
+    },
+    {
+     "id": "ChIJeYnGrHqdX0YROs3FN3yA4yk",
+     "ad": "NISCH",
+     "mutfak": "Scandinavian restaurant",
+     "puan": 4.6,
+     "yorum": 530,
+     "fiyatYazi": "kr 1,000+",
+     "kisiBasiEur": 118.2,
+     "artiFiyat": true,
+     "semt": null,
+     "konum": [
+      59.34093,
+      18.04657
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=NISCH&query_place_id=ChIJeYnGrHqdX0YROs3FN3yA4yk",
+     "web": "https://www.nischrestaurant.com/",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:25:04.401Z",
+     "seviye": "luks"
     }
    ]
   },
   "Kopenhag": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 20.1,
-    "luks": 173.9
+    "luks": 100.4
    },
    "aday": 45,
    "restoranlar": [
@@ -1986,7 +1985,7 @@
    ]
   },
   "Helsinki": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 17.5,
     "luks": 65
@@ -2116,10 +2115,10 @@
    ]
   },
   "Tallinn": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 20,
-    "luks": 50
+    "luks": 45
    },
    "aday": 50,
    "restoranlar": [
@@ -2224,29 +2223,29 @@
      "seviye": "luks"
     },
     {
-     "id": "ChIJFdzatuGTkkYRvJMhgi65-Ho",
-     "ad": "KOGU Resto",
+     "id": "ChIJIXcwdmKTkkYR-HGY5aqV4Ew",
+     "ad": "Väike-rataskaevu​",
      "mutfak": "Restaurant",
      "puan": 4.8,
-     "yorum": 491,
-     "fiyatYazi": "€40–90",
-     "kisiBasiEur": 65,
+     "yorum": 1567,
+     "fiyatYazi": "€30–60",
+     "kisiBasiEur": 45,
      "artiFiyat": false,
-     "semt": "Põhja-Tallinn",
+     "semt": "Kesklinn",
      "konum": [
-      59.44539,
-      24.7478
+      59.43642,
+      24.7429
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=KOGU%20Resto&query_place_id=ChIJFdzatuGTkkYRvJMhgi65-Ho",
-     "web": "https://koguresto.ee/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/HkNsP-gBTx4?source=pa,gmm&opi=79508299&hl=en-US&gei=2MnjauL8IO2e5NoP-K3IUA&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DKOGU%2BResto%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=V%C3%A4ike-rataskaevu%E2%80%8B&query_place_id=ChIJIXcwdmKTkkYR-HGY5aqV4Ew",
+     "web": "http://rataskaevu16.ee/",
+     "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "luks"
     }
    ]
   },
   "Vilnius": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 15,
     "luks": 65
@@ -2376,7 +2375,7 @@
    ]
   },
   "Riga": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 22.5,
     "luks": 65
@@ -2506,10 +2505,10 @@
    ]
   },
   "Varşova": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 11.4,
-    "luks": 31.9
+    "luks": 20.5
    },
    "aday": 48,
    "restoranlar": [
@@ -2574,22 +2573,22 @@
      "seviye": "populer"
     },
     {
-     "id": "ChIJBdQn-bPNHkcRnw4GcgzoW2Y",
-     "ad": "PaTaThai - Elektrownia Powiśle",
-     "mutfak": "Thai restaurant",
-     "puan": 4.8,
-     "yorum": 4303,
-     "fiyatYazi": "zł 40–140",
-     "kisiBasiEur": 20.5,
+     "id": "ChIJ6b8a2YDNHkcRgDeYnem9cOA",
+     "ad": "Pełną Parą",
+     "mutfak": "Asian fusion restaurant",
+     "puan": 4.5,
+     "yorum": 3341,
+     "fiyatYazi": "zł 40–120",
+     "kisiBasiEur": 18.2,
      "artiFiyat": false,
      "semt": "Śródmieście",
      "konum": [
-      52.24011,
-      21.02837
+      52.24024,
+      21.02813
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=PaTaThai%20-%20Elektrownia%20Powi%C5%9Ble&query_place_id=ChIJBdQn-bPNHkcRnw4GcgzoW2Y",
-     "web": "https://patathai.pl/powisle/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/WpM9ct6hQ8U?source=pa,gmm&opi=79508299&hl=en-US&gei=V8rjarfNMq25qtsPlJuUuA0&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DPaTaThai%2B-%2BElektrownia%2BPowi%25C5%259Ble%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=Pe%C5%82n%C4%85%20Par%C4%85&query_place_id=ChIJ6b8a2YDNHkcRgDeYnem9cOA",
+     "web": "https://pelnapara.pl/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/1-S_ka-o0cU?source=pa,gmm&opi=79508299&hl=en-US&gei=Xcrjavu9MoWygLQP_8zy6Q0&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DPe%25C5%2582n%25C4%2585%2BPar%25C4%2585%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "populer"
     },
@@ -2636,12 +2635,12 @@
    ]
   },
   "Prag": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 10.3,
-    "luks": 53.4
+    "luks": 29.5
    },
-   "aday": 50,
+   "aday": 49,
    "restoranlar": [
     {
      "id": "ChIJ-SkPSkmVC0cRS65QyELfp6o",
@@ -2704,44 +2703,24 @@
      "seviye": "populer"
     },
     {
-     "id": "ChIJVwJW9fmUC0cRu3WAFHD1hEc",
-     "ad": "Jazz Dock",
-     "mutfak": "Jazz club",
-     "puan": 4.7,
-     "yorum": 4168,
-     "fiyatYazi": "Kč 200–700",
-     "kisiBasiEur": 18.5,
+     "id": "ChIJ1Y-8Bx-VC0cR-F3MYvePBVA",
+     "ad": "OMG restaurant",
+     "mutfak": "Japanese restaurant",
+     "puan": 4.8,
+     "yorum": 3748,
+     "fiyatYazi": "Kč 200–600",
+     "kisiBasiEur": 16.4,
      "artiFiyat": false,
      "semt": null,
      "konum": [
-      50.07739,
-      14.40849
+      50.07791,
+      14.41838
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Jazz%20Dock&query_place_id=ChIJVwJW9fmUC0cRu3WAFHD1hEc",
-     "web": "http://www.jazzdock.cz/",
+     "url": "https://www.google.com/maps/search/?api=1&query=OMG%20restaurant&query_place_id=ChIJ1Y-8Bx-VC0cR-F3MYvePBVA",
+     "web": "https://oishipraha.com/omg/?utm_source=google&utm_medium=organic&utm_campaign=gbp&utm_content=omg",
      "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "populer"
-    },
-    {
-     "id": "ChIJAxed1Y-UC0cRxR2Vi55TDSw",
-     "ad": "Lal Qila The Indian Restaurant in Prague",
-     "mutfak": "Indian restaurant",
-     "puan": 4.5,
-     "yorum": 1897,
-     "fiyatYazi": "Kč 200–300",
-     "kisiBasiEur": 10.3,
-     "artiFiyat": false,
-     "semt": null,
-     "konum": [
-      50.0788,
-      14.43706
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Lal%20Qila%20The%20Indian%20Restaurant%20in%20Prague&query_place_id=ChIJAxed1Y-UC0cRxR2Vi55TDSw",
-     "web": "http://lalqila.cz/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/Q2FJUYrhRf0?source=pa,gmm&opi=79508299&hl=en-US&gei=u8rjap2RM8TQkPIP2cXBoAU&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DLal%2BQila%2BThe%2BIndian%2BRestaurant%2Bin%2BPrague%26hl%3Den-US&oiwv=1&allowGuest=1",
-     "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "luks"
     },
     {
      "id": "ChIJxyKFfMKUC0cRauBsYpvume8",
@@ -2762,14 +2741,34 @@
      "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "luks"
+    },
+    {
+     "id": "ChIJ3V4V1pGUC0cR4-xKL0jiyE0",
+     "ad": "LA VIE",
+     "mutfak": "Restaurant",
+     "puan": 4.8,
+     "yorum": 811,
+     "fiyatYazi": "Kč 1,000+",
+     "kisiBasiEur": 53.4,
+     "artiFiyat": true,
+     "semt": null,
+     "konum": [
+      50.07908,
+      14.4364
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=LA%20VIE&query_place_id=ChIJ3V4V1pGUC0cR4-xKL0jiyE0",
+     "web": "https://laviebistro.cz/",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:25:04.401Z",
+     "seviye": "luks"
     }
    ]
   },
   "Bratislava": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 17.5,
-    "luks": 37.5
+    "luks": 36
    },
    "aday": 46,
    "restoranlar": [
@@ -2896,7 +2895,7 @@
    ]
   },
   "Ljubljana": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 12.5,
     "luks": 65
@@ -3026,10 +3025,10 @@
    ]
   },
   "Zagreb": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 12.5,
-    "luks": 65
+    "luks": 37.5
    },
    "aday": 45,
    "restoranlar": [
@@ -3074,6 +3073,26 @@
      "seviye": "uygun"
     },
     {
+     "id": "ChIJIxeqvlzXZUcRpJNqNYSPPfk",
+     "ad": "Torikaya Ramen Bar",
+     "mutfak": "Asian restaurant",
+     "puan": 4.8,
+     "yorum": 4651,
+     "fiyatYazi": "€15–20",
+     "kisiBasiEur": 17.5,
+     "artiFiyat": false,
+     "semt": null,
+     "konum": [
+      45.81226,
+      15.97895
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Torikaya%20Ramen%20Bar&query_place_id=ChIJIxeqvlzXZUcRpJNqNYSPPfk",
+     "web": "http://www.torikaya.hr/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/9OBlpmxLe58?source=pa,gmm&opi=79508299&hl=en-US&gei=Asvjapi9IqiVgLQP5qKA8Ag&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DTorikaya%2BRamen%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "kontrol": "2026-10-29T22:25:04.401Z",
+     "seviye": "populer"
+    },
+    {
      "id": "ChIJe5zq4vzWZUcR95dS1OQ-YA0",
      "ad": "​Batak Centar Cvjetni",
      "mutfak": "Restaurant",
@@ -3090,26 +3109,6 @@
      "url": "https://www.google.com/maps/search/?api=1&query=%E2%80%8BBatak%20Centar%20Cvjetni&query_place_id=ChIJe5zq4vzWZUcR95dS1OQ-YA0",
      "web": "http://batak.hr/",
      "rezervasyon": null,
-     "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "populer"
-    },
-    {
-     "id": "ChIJtYO76rV1ZkcRQKqO82ZbbUg",
-     "ad": "Restoran Boban",
-     "mutfak": "Italian restaurant",
-     "puan": 4.5,
-     "yorum": 5957,
-     "fiyatYazi": "€25–50",
-     "kisiBasiEur": 37.5,
-     "artiFiyat": false,
-     "semt": null,
-     "konum": [
-      45.8116,
-      15.97646
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Restoran%20Boban&query_place_id=ChIJtYO76rV1ZkcRQKqO82ZbbUg",
-     "web": "https://www.boban.hr/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/1TV425S-kAI?source=pa,gmm&opi=79508299&hl=en-US&gei=CMvjarWSO5PT5NoP4pS4gQM&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DRestoran%2BBoban%26hl%3Den-US&oiwv=1&allowGuest=1",
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "populer"
     },
@@ -3156,10 +3155,10 @@
    ]
   },
   "Bükreş": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 15,
-    "luks": 26.2
+    "luks": 37.1
    },
    "aday": 36,
    "restoranlar": [
@@ -3204,64 +3203,44 @@
      "seviye": "uygun"
     },
     {
-     "id": "ChIJLfCWGUz_sUARpjMTZcdoCP4",
-     "ad": "POINT",
-     "mutfak": "Restaurant",
+     "id": "ChIJM2w4Q0j_sUARhkXr6vJyKE4",
+     "ad": "Osteria Zucca",
+     "mutfak": "Italian restaurant",
      "puan": 4.7,
-     "yorum": 1045,
-     "fiyatYazi": "lei 60–120",
-     "kisiBasiEur": 16.8,
-     "artiFiyat": false,
-     "semt": "Sector 1",
-     "konum": [
-      44.44468,
-      26.10253
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=POINT&query_place_id=ChIJLfCWGUz_sUARpjMTZcdoCP4",
-     "web": "http://pointhub.ro/",
-     "rezervasyon": null,
-     "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "populer"
-    },
-    {
-     "id": "ChIJN_GhVEn_sUARuCvmORfzrm8",
-     "ad": "Il Villagio - Icoanei",
-     "mutfak": "Italian restaurant",
-     "puan": 4.5,
-     "yorum": 1440,
-     "fiyatYazi": "lei 100–120",
-     "kisiBasiEur": 20.6,
-     "artiFiyat": false,
-     "semt": "Sector 1",
-     "konum": [
-      44.44366,
-      26.10326
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Il%20Villagio%20-%20Icoanei&query_place_id=ChIJN_GhVEn_sUARuCvmORfzrm8",
-     "web": "https://www.ilvillagio.ro/",
-     "rezervasyon": null,
-     "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "populer"
-    },
-    {
-     "id": "ChIJg8sKeW7_sUAR2EkEop6lsIk",
-     "ad": "Restaurant Ciao Niki",
-     "mutfak": "Italian restaurant",
-     "puan": 4.6,
-     "yorum": 1647,
+     "yorum": 2628,
      "fiyatYazi": "lei 80–200",
      "kisiBasiEur": 26.2,
      "artiFiyat": false,
      "semt": "Sector 2",
      "konum": [
-      44.44069,
-      26.11046
+      44.44018,
+      26.10468
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Ciao%20Niki&query_place_id=ChIJg8sKeW7_sUAR2EkEop6lsIk",
-     "web": "https://www.restaurantciaoniki.ro/meniu",
+     "url": "https://www.google.com/maps/search/?api=1&query=Osteria%20Zucca&query_place_id=ChIJM2w4Q0j_sUARhkXr6vJyKE4",
+     "web": "https://osteriazucca.ro/meniu/",
      "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
-     "seviye": "luks"
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJu8FXMkn_sUARKY79t7kLZpc",
+     "ad": "El Pato",
+     "mutfak": "Eclectic restaurant",
+     "puan": 4.6,
+     "yorum": 1832,
+     "fiyatYazi": "lei 80–200",
+     "kisiBasiEur": 26.2,
+     "artiFiyat": false,
+     "semt": "Sector 2",
+     "konum": [
+      44.44265,
+      26.10214
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=El%20Pato&query_place_id=ChIJu8FXMkn_sUARKY79t7kLZpc",
+     "web": "https://www.elpato.ro/",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:25:04.401Z",
+     "seviye": "populer"
     },
     {
      "id": "ChIJ5QRc_kj_sUARpHirp7_g6dg",
@@ -3282,14 +3261,34 @@
      "rezervasyon": null,
      "kontrol": "2026-10-29T22:25:04.401Z",
      "seviye": "luks"
+    },
+    {
+     "id": "ChIJqYhTKBX_sUAR0wY2R6NRWjw",
+     "ad": "ARTO Restaurant",
+     "mutfak": "Restaurant",
+     "puan": 4.8,
+     "yorum": 1423,
+     "fiyatYazi": "lei 200+",
+     "kisiBasiEur": 48.7,
+     "artiFiyat": true,
+     "semt": "Sector 2",
+     "konum": [
+      44.43813,
+      26.11282
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=ARTO%20Restaurant&query_place_id=ChIJqYhTKBX_sUAR0wY2R6NRWjw",
+     "web": "https://restaurantarto.ro/en/",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:25:04.401Z",
+     "seviye": "luks"
     }
    ]
   },
   "Sofya": {
-   "guncellendi": "2026-10-29T22:25:04.401Z",
+   "guncellendi": "2026-10-29T22:43:48.273Z",
    "esik": {
     "uygun": 20,
-    "luks": 35
+    "luks": 36.9
    },
    "aday": 55,
    "restoranlar": [
