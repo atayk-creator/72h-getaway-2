@@ -6,17 +6,17 @@
    "para": "EUR",
    "ulasim": {
     "tek_bilet": {
-     "fiyat": 2.0,
+     "fiyat": 2,
      "aciklama": "TFI 90 dakika bileti, Leap kartla 2 € (Dublin Bus'ta nakit 2,60 €, sadece bozuk para; şoför kart/banknot almaz)",
      "kaynak": "https://transportforireland.ie/fares/bus-fares"
     },
     "gunluk": {
-     "fiyat": 8.0,
+     "fiyat": 8,
      "aciklama": "Leap Visitor Card 1 gün (24 saat): Dublin Bus, Luas, DART sınırsız. Normal Leap kartta günlük tavan 6 €",
      "kaynak": "https://www.dublinbus.ie/fares-and-tickets/adult"
     },
     "cok_gunluk": {
-     "fiyat": 18.0,
+     "fiyat": 18,
      "gun": 3,
      "aciklama": "Leap Visitor Card 72 saat, Dublin Bus/Luas/DART sınırsız; havalimanında satılır",
      "kaynak": "https://www.dublinbus.ie/fares-and-tickets/adult"
@@ -42,7 +42,14 @@
      "fiyat_yazi": "Yetişkin 21,50 €'dan başlar (dinamik fiyat), online saatli bilet önerilir",
      "bilgi": "9. yüzyıldan kalma Kells Kitabı ve ünlü Long Room kütüphanesi. Sabah ilk seansı alırsanız kalabalıktan kurtulursunuz.",
      "kaynak": "https://thebettervacation.com/dublin/book-of-kells-dublin/",
-     "konum": null
+     "konum": [
+      53.34389,
+      -6.25676
+     ],
+     "googleAd": "The Book of Kells Experience",
+     "puan": 4.4,
+     "yorum": 20487,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Book%20of%20Kells%20Experience&query_place_id=ChIJ3Y7HLZsOZ0gRpE8_XUYbw1A"
     },
     {
      "id": "guinness-storehouse",
@@ -56,7 +63,14 @@
      "fiyat_yazi": "Hafta içi 26 €'dan, hafta sonu yaklaşık 30–36 € (dinamik fiyat, bir bira dahil)",
      "bilgi": "Guinness'in hikâyesini anlatan yedi katlı müze; bilete dahil birayı en üstteki Gravity Bar'da 360° şehir manzarasıyla için. Hafta içi sabah en ucuz.",
      "kaynak": "https://thebettervacation.com/dublin/guinness-storehouse/",
-     "konum": null
+     "konum": [
+      53.34181,
+      -6.28672
+     ],
+     "googleAd": "Guinness Storehouse",
+     "puan": 4.4,
+     "yorum": 27245,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Guinness%20Storehouse&query_place_id=ChIJawXFQIQOZ0gRoucFdZIzGbM"
     },
     {
      "id": "irlanda-ulusal-muzesi-arkeoloji",
@@ -70,7 +84,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kelt altın eserleri ve turbalıkta korunmuş 'bog bodies' burada. Pazar ve pazartesi saatleri kısa olabilir, gitmeden kontrol edin.",
      "kaynak": "https://www.museum.ie/",
-     "konum": null
+     "konum": [
+      53.34022,
+      -6.25492
+     ],
+     "googleAd": "National Museum of Ireland",
+     "puan": 4.6,
+     "yorum": 15648,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20Ireland&query_place_id=ChIJS7Q-vDEMZ0gRWoYY0_5aAVY"
     },
     {
      "id": "irlanda-ulusal-galerisi",
@@ -84,7 +105,14 @@
      "fiyat_yazi": "Kalıcı koleksiyon ücretsiz, geçici sergiler ücretli",
      "bilgi": "Caravaggio'dan Jack B. Yeats'e geniş bir koleksiyon; yağmurlu bir öğleden sonra için ideal.",
      "kaynak": "https://www.nationalgallery.ie/",
-     "konum": null
+     "konum": [
+      53.34089,
+      -6.2523
+     ],
+     "googleAd": "National Gallery of Ireland",
+     "puan": 4.7,
+     "yorum": 18882,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Gallery%20of%20Ireland&query_place_id=ChIJb1ecSpcOZ0gRMQ3w0Qyz_Vg"
     },
     {
      "id": "aziz-patrick-katedrali",
@@ -98,7 +126,8 @@
      "fiyat_yazi": "Yetişkin 11,50 € (sesli rehber dahil)",
      "bilgi": "İrlanda'nın en büyük katedrali; Gulliver'in yazarı Jonathan Swift burada gömülü. Pazar günleri ayin nedeniyle turist girişi çok sınırlı.",
      "kaynak": "https://thebettervacation.com/dublin/st-patricks-cathedral/",
-     "konum": null
+     "konum": null,
+     "konumNotu": "Google 5110 km uzakta bir yer buldu: St. Patrick's Cathedral"
     },
     {
      "id": "christ-church-katedrali",
@@ -112,7 +141,14 @@
      "fiyat_yazi": "Yetişkin 12 €",
      "bilgi": "Dublin'in en eski katedrali; ortaçağdan kalma mahzeni görülmeye değer. Kışın 17:00'de kapanır, son giriş 45 dk önce.",
      "kaynak": "https://thebettervacation.com/dublin/christ-church-cathedral/",
-     "konum": null
+     "konum": [
+      53.34351,
+      -6.27106
+     ],
+     "googleAd": "Christ Church Cathedral",
+     "puan": 4.5,
+     "yorum": 12292,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Christ%20Church%20Cathedral&query_place_id=ChIJGw9ASiYMZ0gRy9yiaCZxNZI"
     },
     {
      "id": "temple-bar-ve-ha-penny-koprusu",
@@ -126,7 +162,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Arnavut kaldırımlı sokaklar, canlı müzikli pub'lar ve hemen yanında Liffey üzerindeki demir Ha'penny Köprüsü. Bira burada pahalı; müzik için gidip içkiyi yakın sokaklarda için.",
      "kaynak": "https://www.visitdublin.com/",
-     "konum": null
+     "konum": [
+      53.34494,
+      -6.26747
+     ],
+     "googleAd": "Temple Bar",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Temple%20Bar&query_place_id=ChIJc-pZtZwOZ0gREjDIGajHACY"
     },
     {
      "id": "st-stephen-s-green-ve-grafton-street",
@@ -140,7 +183,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin Viktorya dönemi parkı ve ona bağlanan, sokak müzisyenleriyle dolu yaya caddesi Grafton Street.",
      "kaynak": "https://www.visitdublin.com/",
-     "konum": null
+     "konum": [
+      53.33695,
+      -6.26
+     ],
+     "googleAd": "St Stephen's Green",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St%20Stephen's%20Green&query_place_id=ChIJLaxzLpkOZ0gRglayQz8vRKA"
     },
     {
      "id": "george-s-street-arcade",
@@ -154,7 +204,14 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "1881'den kalma kapalı çarşı: plak, vintage dükkânlar ve küçük yemek tezgâhları. Yakınındaki South William Street akşam yemeği için iyi.",
      "kaynak": "https://www.visitdublin.com/",
-     "konum": null
+     "konum": [
+      53.34253,
+      -6.26349
+     ],
+     "googleAd": "George's Street Arcade",
+     "puan": 4.1,
+     "yorum": 139,
+     "harita": "https://www.google.com/maps/search/?api=1&query=George's%20Street%20Arcade&query_place_id=ChIJMS2MVZwOZ0gReejRbsgyYSc"
     },
     {
      "id": "howth-ucurum-yuruyusu",
@@ -168,7 +225,14 @@
      "fiyat_yazi": "Ücretsiz (DART ile ulaşım, Leap geçerli)",
      "bilgi": "Merkezden DART ile ~30 dk; deniz kenarı uçurumlarda yürüyüş, dönüşte limanda balık-patates. Rüzgârlıdır, iyi ayakkabı ve mont alın.",
      "kaynak": "https://www.visitdublin.com/",
-     "konum": null
+     "konum": [
+      53.37497,
+      -6.04918
+     ],
+     "googleAd": "Howth Cliff Walk (Green Route)",
+     "puan": 4.9,
+     "yorum": 2349,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Howth%20Cliff%20Walk%20(Green%20Route)&query_place_id=ChIJt1HgQ2wDZ0gRmjy6v2LOpYU"
     }
    ]
   },
@@ -212,7 +276,14 @@
      "fiyat_yazi": "Zirve asansörle 36,70 €; 2. kat asansörle 23,50 €, merdivenle 14,80 €",
      "bilgi": "Resmî siteden saatli bilet alın, özellikle zirve hızla tükenir. Gün batımı seansı en güzeli; akşam saat başı ışık gösterisi var.",
      "kaynak": "https://www.francophilesanonymes.com/en/paris/eiffel-tower/tickets/",
-     "konum": null
+     "konum": [
+      48.85837,
+      2.29448
+     ],
+     "googleAd": "Eiffel Tower",
+     "puan": 4.7,
+     "yorum": 499429,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Eiffel%20Tower&query_place_id=ChIJLU7jZClu5kcR4PcOOO6p3I0"
     },
     {
      "id": "louvre-muzesi",
@@ -226,7 +297,14 @@
      "fiyat_yazi": "AB/AEA dışı yetişkin 32 € (AB vatandaşları 22 €), online saatli bilet şart",
      "bilgi": "Mona Lisa, Venüs de Milo ve Semadirek Nike'si. Salı kapalı; çarşamba ve cuma geç saate kadar açık, akşam daha sakin.",
      "kaynak": "https://www.thelocal.com/20260114/explained-frances-new-museum-prices-for-tourists-and-residents",
-     "konum": null
+     "konum": [
+      48.86061,
+      2.33764
+     ],
+     "googleAd": "Louvre Museum",
+     "puan": 4.7,
+     "yorum": 381446,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Louvre%20Museum&query_place_id=ChIJD3uTd9hx5kcR1IQvGfr8dbk"
     },
     {
      "id": "orsay-muzesi",
@@ -240,7 +318,14 @@
      "fiyat_yazi": "Yetişkin yaklaşık 16 € (online saatli bilet 17,50 €'ya kadar çıkabiliyor)",
      "bilgi": "Eski bir tren garında Monet, Van Gogh, Renoir gibi izlenimciler. Pazartesi kapalı; perşembe akşamı 21:45'e kadar açık.",
      "kaynak": "https://www.tarifs.org/musee-orsay-tarif",
-     "konum": null
+     "konum": [
+      48.85996,
+      2.32656
+     ],
+     "googleAd": "Musée d'Orsay",
+     "puan": 4.8,
+     "yorum": 118134,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mus%C3%A9e%20d'Orsay&query_place_id=ChIJG5Qwtitu5kcR2CNEsYy9cdA"
     },
     {
      "id": "notre-dame-katedrali",
@@ -254,7 +339,14 @@
      "fiyat_yazi": "Ücretsiz (online ücretsiz saat rezervasyonu kuyruğu kısaltır)",
      "bilgi": "2024 sonunda restorasyondan sonra yeniden açılan gotik katedral. Kuyruk uzun olabilir, sabah erken gidin.",
      "kaynak": "https://www.notredamedeparis.fr/",
-     "konum": null
+     "konum": [
+      48.85297,
+      2.3499
+     ],
+     "googleAd": "Notre-Dame Cathedral of Paris",
+     "puan": 4.7,
+     "yorum": 102874,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Notre-Dame%20Cathedral%20of%20Paris&query_place_id=ChIJATr1n-Fx5kcRjQb6q6cdQDY"
     },
     {
      "id": "sainte-chapelle",
@@ -268,7 +360,14 @@
      "fiyat_yazi": "AB/AEA dışı yetişkin 22 € (AEA 16 €), Conciergerie'li kombine 30 €",
      "bilgi": "Duvarları neredeyse tamamen vitraydan oluşan 13. yüzyıl şapeli; güneşli öğle saatlerinde en etkileyici hâlinde. Güvenlik kuyruğu için zaman ayırın.",
      "kaynak": "https://www.monuments-nationaux.fr/en/groups-tourism-professionals/what-is-advance-ticketing/rates-2026",
-     "konum": null
+     "konum": [
+      48.85538,
+      2.34496
+     ],
+     "googleAd": "Sainte-Chapelle",
+     "puan": 4.6,
+     "yorum": 50776,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sainte-Chapelle&query_place_id=ChIJR3122B9u5kcRaCck3PlB9DM"
     },
     {
      "id": "montmartre-ve-sacre-c-ur",
@@ -282,7 +381,14 @@
      "fiyat_yazi": "Bazilika ücretsiz, kubbe 8 €",
      "bilgi": "Ressamların Place du Tertre'si, dik merdivenli sokaklar ve basamaklardan ücretsiz Paris manzarası. Merdivenlerdeki 'bileklik' satıcılarına dikkat.",
      "kaynak": "https://www.sortiraparis.com/en/child-and-family/articles/352228-visiting-the-sacre-coeur-in-montmartre-everything-you-need-to-know-to-discover-it-with-your-family",
-     "konum": null
+     "konum": [
+      48.8867,
+      2.3431
+     ],
+     "googleAd": "Basilique du Sacré-Cœur de Montmartre",
+     "puan": 4.7,
+     "yorum": 169878,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Basilique%20du%20Sacr%C3%A9-C%C5%93ur%20de%20Montmartre&query_place_id=ChIJ442GNENu5kcRGYUrvgqHw88"
     },
     {
      "id": "zafer-tak",
@@ -296,7 +402,14 @@
      "fiyat_yazi": "Kasım–Mart 16 € (Nisan–Eylül 22 €)",
      "bilgi": "284 basamakla çatıya çıkıp Champs-Élysées ve Eyfel'i tepeden görün. Girişe meydanın altındaki yaya tünelinden ulaşılır.",
      "kaynak": "https://www.monuments-nationaux.fr/en/groups-tourism-professionals/what-is-advance-ticketing/rates-2026",
-     "konum": null
+     "konum": [
+      48.87379,
+      2.29503
+     ],
+     "googleAd": "Arc de Triomphe",
+     "puan": 4.7,
+     "yorum": 301817,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Arc%20de%20Triomphe&query_place_id=ChIJjx37cOxv5kcRPWQuEW5ntdk"
     },
     {
      "id": "le-marais-ve-place-des-vosges",
@@ -310,7 +423,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Paris'in en eski meydanı, butikler, falafel sırası olan Rue des Rosiers ve tarihî konaklar. Pazar günü de dükkânların çoğu açık.",
      "kaynak": "https://parisjetaime.com/",
-     "konum": null
+     "konum": [
+      48.85561,
+      2.36553
+     ],
+     "googleAd": "Place des Vosges",
+     "puan": 4.6,
+     "yorum": 33910,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Place%20des%20Vosges&query_place_id=ChIJUeiI4P9x5kcRqEwHl6V32GQ"
     },
     {
      "id": "marche-des-enfants-rouges",
@@ -324,7 +444,15 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "1615'ten kalma, Paris'in en eski kapalı pazarı; Fas, Japon, İtalyan tezgâhlarında öğle yemeği yiyin. Pazartesi kapalı.",
      "kaynak": "https://parisjetaime.com/",
-     "konum": null
+     "konum": [
+      48.86287,
+      2.36204
+     ],
+     "googleAd": "Marché couvert des Enfants Rouges",
+     "puan": 4.4,
+     "yorum": 5488,
+     "harita": "https://www.google.com/maps/search/?api=1&query=March%C3%A9%20couvert%20des%20Enfants%20Rouges&query_place_id=ChIJF4z0gwZu5kcRmxOUEU2R8Iw",
+     "kapali": "gecici"
     },
     {
      "id": "tuileries-noel-pazar",
@@ -338,7 +466,15 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Louvre'un hemen yanında chalet'ler, dönme dolap ve lunapark; 14 Kasım 2026–3 Ocak 2027 açıklandı, tarihleri teyit et. Champs-Élysées'deki büyük pazar da 22 Kasım'da açılıyor.",
      "kaynak": "https://www.sortiraparis.com/en/news/christmas-and-holidays/guides/34166-the-christmas-markets-to-discover-in-paris-and-ile-de-france-in-2026",
-     "konum": null
+     "konum": [
+      48.86349,
+      2.32749
+     ],
+     "googleAd": "Tuileries Garden",
+     "puan": 4.6,
+     "yorum": 119943,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tuileries%20Garden&query_place_id=ChIJAQAAMCxu5kcRx--_4QnbGcI",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Tuileries Garden\" buldu"
     }
    ]
   },
@@ -377,7 +513,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Gotik belediye sarayı ve lonca binalarıyla Avrupa'nın en güzel meydanlarından. Akşam ışıklandırmasıyla bir kez daha görün.",
      "kaynak": "https://www.visit.brussels/",
-     "konum": null
+     "konum": [
+      50.84679,
+      4.35244
+     ],
+     "googleAd": "Grand Place",
+     "puan": 4.7,
+     "yorum": 178479,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Grand%20Place&query_place_id=ChIJ8fEURn_Ew0cRts_ij101PLA"
     },
     {
      "id": "manneken-pis",
@@ -391,7 +534,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Grand-Place'a 3 dakika yürüme mesafesindeki minik heykel; çoğu gün farklı bir kostüm giyer. Beklentinizi düşük tutun, keyfini çıkarın.",
      "kaynak": "https://www.visit.brussels/",
-     "konum": null
+     "konum": [
+      50.84499,
+      4.34999
+     ],
+     "googleAd": "Manneken Pis",
+     "puan": 4,
+     "yorum": 85978,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Manneken%20Pis&query_place_id=ChIJ0T1eGXnEw0cRH8GwIKZAuBc"
     },
     {
      "id": "saint-hubert-kraliyet-galerileri",
@@ -405,7 +555,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "1847'den kalma cam çatılı pasaj; Neuhaus gibi çikolatacılar ve kafeler burada. Pralin tadımı için en şık durak.",
      "kaynak": "https://www.visit.brussels/",
-     "konum": null
+     "konum": [
+      50.84808,
+      4.35525
+     ],
+     "googleAd": "Royal Gallery of Saint Hubert",
+     "puan": 4.5,
+     "yorum": 46469,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Royal%20Gallery%20of%20Saint%20Hubert&query_place_id=ChIJu1XHbn_Ew0cRMNenwioHHhM"
     },
     {
      "id": "atomium",
@@ -419,7 +576,14 @@
      "fiyat_yazi": "Yetişkin 17 €",
      "bilgi": "1958 Dünya Fuarı'ndan kalan dev demir atomu modeli; en üst küreden şehir manzarası. Şu an bilet sadece gişede, hafta sonu 45 dk–2 saat kuyruk olabilir, açılışta gidin.",
      "kaynak": "https://atomium.be/atomium-price",
-     "konum": null
+     "konum": [
+      50.89488,
+      4.34155
+     ],
+     "googleAd": "Atomium",
+     "puan": 4.4,
+     "yorum": 114587,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Atomium&query_place_id=ChIJAQAAAKzDw0cRCTemaB0Hk1I"
     },
     {
      "id": "belcika-kraliyet-guzel-sanatlar-muzeleri",
@@ -433,7 +597,14 @@
      "fiyat_yazi": "Yetişkin yaklaşık 16 € (Magritte + Eski Ustalar tek bilet)",
      "bilgi": "Bruegel ve Rubens'ten Magritte'e Belçika resmi. Eski Ustalar bölümü pazartesi kapalı; her ayın ilk çarşambası 13:00'ten sonra ücretsiz.",
      "kaynak": "https://www.365.be/en/attractions/culture-art-brussels-royal-museums-of-fine-arts-of-belgium/",
-     "konum": null
+     "konum": [
+      50.84162,
+      4.35818
+     ],
+     "googleAd": "Belgium Royal Museums of Fine Arts",
+     "puan": 4.5,
+     "yorum": 10540,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Belgium%20Royal%20Museums%20of%20Fine%20Arts&query_place_id=ChIJa5YBW4fEw0cRXEdEmmrHNzM"
     },
     {
      "id": "mont-des-arts",
@@ -447,7 +618,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Bahçeli merdivenlerin tepesinden Grand-Place'ın belediye kulesine uzanan şehir manzarası; gün batımında en güzel.",
      "kaynak": "https://www.visit.brussels/",
-     "konum": null
+     "konum": [
+      50.84348,
+      4.35742
+     ],
+     "googleAd": "Mont des Arts",
+     "puan": 4.6,
+     "yorum": 18003,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mont%20des%20Arts&query_place_id=ChIJ4clK53rEw0cRedyFK8jjvrM"
     },
     {
      "id": "parlamentarium",
@@ -461,7 +639,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Avrupa Parlamentosu'nun interaktif ziyaretçi merkezi, Türkçe dahil çok dilli multimedya rehberiyle. Hafta sonu 10:00–18:00 açık.",
      "kaynak": "https://visiting.europarl.europa.eu/homepage/pagecontent/offer/parlamentarium.html",
-     "konum": null
+     "konum": [
+      50.83983,
+      4.37404
+     ],
+     "googleAd": "Parlamentarium",
+     "puan": 4.5,
+     "yorum": 8726,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Parlamentarium&query_place_id=ChIJwV3mU5rEw0cRMPz-d_jabj8"
     },
     {
      "id": "cinquantenaire-park",
@@ -475,7 +660,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Belçika'nın 50. yılı için yapılan büyük zafer takı ve geniş park; Parlamentarium'dan yürüyerek 15 dk.",
      "kaynak": "https://www.visit.brussels/",
-     "konum": null
+     "konum": [
+      50.84139,
+      4.39048
+     ],
+     "googleAd": "Parc du Cinquantenaire",
+     "puan": 4.6,
+     "yorum": 41311,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Parc%20du%20Cinquantenaire&query_place_id=ChIJX1tyKaTEw0cRWjLH8frzAq8"
     },
     {
      "id": "sainte-catherine-ve-bal-k-r-ht-mlar",
@@ -489,7 +681,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Midye-patates ve deniz ürünü restoranlarıyla dolu meydan; Rue des Bouchers'teki turist tuzaklarından daha iyi bir seçim.",
      "kaynak": "https://www.visit.brussels/",
-     "konum": null
+     "konum": [
+      50.85065,
+      4.34879
+     ],
+     "googleAd": "Pl. Sainte-Catherine",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pl.%20Sainte-Catherine&query_place_id=ChIJ4WdGTYbDw0cR2vAN-Jqccnc"
     },
     {
      "id": "winter-wonders-noel-pazar",
@@ -503,7 +702,15 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Grand-Place'tan Sainte-Catherine'e uzanan chalet'ler, dönme dolap ve Grand-Place'ta ışık-ses gösterisi; her gün 12:00–22:00. 2026 tarihleri 27/28 Kasım 2026–1/3 Ocak 2027 olarak geçiyor, tarihleri teyit et.",
      "kaynak": "https://www.plaisirsdhiver.be/en/practical",
-     "konum": null
+     "konum": [
+      50.84571,
+      4.35653
+     ],
+     "googleAd": "Winterpret",
+     "puan": 4,
+     "yorum": 354,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Winterpret&query_place_id=ChIJmXblKonDw0cRaN5P1OwoIEU",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Winterpret\" buldu"
     }
    ]
   },
@@ -547,7 +754,14 @@
      "fiyat_yazi": "Yetişkin 25 €, sadece online saatli bilet",
      "bilgi": "Rembrandt'ın Gece Devriyesi ve Vermeer'ler. Sabah ilk saatte veya kapanışa 2 saat kala daha sakin.",
      "kaynak": "https://www.artvisitguide.com/rijksmuseum-tickets-guide/",
-     "konum": null
+     "konum": [
+      52.36,
+      4.88522
+     ],
+     "googleAd": "Rijksmuseum",
+     "puan": 4.7,
+     "yorum": 116907,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Rijksmuseum&query_place_id=ChIJ5Ra7we4JxkcRhYVAaq5zQ9U"
     },
     {
      "id": "van-gogh-muzesi",
@@ -561,7 +775,14 @@
      "fiyat_yazi": "Yetişkin 25 €, online saatli bilet şart",
      "bilgi": "Dünyanın en büyük Van Gogh koleksiyonu; Ayçiçekleri ve Patates Yiyenler. Kapıda bilet satılmaz, hafta sonu günler önceden tükenir.",
      "kaynak": "https://thebettervacation.com/van-gogh-museum",
-     "konum": null
+     "konum": [
+      52.35808,
+      4.88121
+     ],
+     "googleAd": "Van Gogh Museum",
+     "puan": 4.6,
+     "yorum": 110686,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Van%20Gogh%20Museum&query_place_id=ChIJX1rTlu8JxkcRGsV8-a4oKMI"
     },
     {
      "id": "anne-frank-evi",
@@ -575,7 +796,14 @@
      "fiyat_yazi": "Yetişkin 16,50 €, sadece annefrank.org'dan",
      "bilgi": "Anne Frank'in saklandığı arka ev. Biletler her salı 6 hafta sonrası için satışa çıkar; kalanlar ziyaret günü 09:00'da açılır.",
      "kaynak": "https://www.artvisitguide.com/anne-frank-house-tickets-guide/",
-     "konum": null
+     "konum": [
+      52.37522,
+      4.88398
+     ],
+     "googleAd": "Anne Frank House",
+     "puan": 4.5,
+     "yorum": 76765,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Anne%20Frank%20House&query_place_id=ChIJSRE-IcUJxkcRCltjPmVdmtQ"
     },
     {
      "id": "dam-meydan",
@@ -589,7 +817,14 @@
      "fiyat_yazi": "Ücretsiz (Kraliyet Sarayı içi ayrıca ücretli)",
      "bilgi": "Kraliyet Sarayı, Nieuwe Kerk ve Ulusal Anıt'la şehrin kalbi. Kalabalıktır, cebinize dikkat edin.",
      "kaynak": "https://www.iamsterdam.com/",
-     "konum": null
+     "konum": [
+      52.37303,
+      4.89325
+     ],
+     "googleAd": "Dam",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Dam&query_place_id=ChIJ7xRLO8cJxkcR-QTagFuyCZg"
     },
     {
      "id": "begijnhof",
@@ -603,7 +838,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kalabalığın ortasında sessiz, 14. yüzyıldan kalma avlu; şehrin en eski ahşap evi burada. Sakinler yaşadığı için alçak sesle gezin.",
      "kaynak": "https://www.iamsterdam.com/",
-     "konum": null
+     "konum": [
+      52.36942,
+      4.89044
+     ],
+     "googleAd": "Begijnhof",
+     "puan": 4.5,
+     "yorum": 10245,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Begijnhof&query_place_id=ChIJeSe5CsEJxkcRdRlM21_MA9s"
     },
     {
      "id": "jordaan-ve-dokuz-sokak",
@@ -617,7 +859,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kanal kenarı evler, 'kahverengi kafeler' ve butik dükkânlar (De 9 Straatjes). Anne Frank Evi'nden sonra yürüyerek devam edin.",
      "kaynak": "https://www.iamsterdam.com/",
-     "konum": null
+     "konum": [
+      52.37325,
+      4.88024
+     ],
+     "googleAd": "Jordaan",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Jordaan&query_place_id=ChIJf-GU6NoJxkcRHOqk5aT6MoY"
     },
     {
      "id": "vondelpark",
@@ -631,7 +880,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Müze Meydanı'nın hemen yanındaki şehrin en büyük parkı; müze arası nefes molası için ideal.",
      "kaynak": "https://www.iamsterdam.com/",
-     "konum": null
+     "konum": [
+      52.35799,
+      4.86865
+     ],
+     "googleAd": "Vondelpark",
+     "puan": 4.7,
+     "yorum": 61676,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Vondelpark&query_place_id=ChIJz3y0xeIJxkcRNcogBVV41Gw"
     },
     {
      "id": "a-dam-lookout",
@@ -645,7 +901,14 @@
      "fiyat_yazi": "Standart bilet yaklaşık 15 € (gişede/online fiyatı teyit edin)",
      "bilgi": "Centraal'in arkasından ücretsiz feribotla 5 dk; 100 m'deki terastan şehir manzarası ve uçurum kenarı salıncak.",
      "kaynak": "https://thebettervacation.com/amsterdam/adam-lookout-swing/",
-     "konum": null
+     "konum": [
+      52.38396,
+      4.90211
+     ],
+     "googleAd": "A'DAM Lookout",
+     "puan": 4.6,
+     "yorum": 31153,
+     "harita": "https://www.google.com/maps/search/?api=1&query=A'DAM%20Lookout&query_place_id=ChIJu0txQLQJxkcR9gp6-ShcF6Y"
     },
     {
      "id": "albert-cuyp-pazar",
@@ -659,7 +922,14 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "De Pijp'teki büyük açık pazar; taze stroopwafel, ringa balığı ve Hollanda peynirleri. Pazar günü kapalı.",
      "kaynak": "https://www.iamsterdam.com/",
-     "konum": null
+     "konum": [
+      52.35531,
+      4.89155
+     ],
+     "googleAd": "Albert Cuyp Markt",
+     "puan": 4.5,
+     "yorum": 1840,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Albert%20Cuyp%20Markt&query_place_id=ChIJZapZuvIJxkcRmAvJTwrtnNE"
     },
     {
      "id": "kanal-kusag-grachtengordel",
@@ -673,7 +943,14 @@
      "fiyat_yazi": "Yürüyerek ücretsiz (tekne turu ayrıca ücretli)",
      "bilgi": "UNESCO listesindeki Herengracht, Keizersgracht ve Prinsengracht kanalları; akşam köprü ışıkları yanınca yürüyün.",
      "kaynak": "https://www.iamsterdam.com/",
-     "konum": null
+     "konum": [
+      52.37219,
+      4.88725
+     ],
+     "googleAd": "Herengracht",
+     "puan": 4.6,
+     "yorum": 274,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Herengracht&query_place_id=ChIJPdcBy8AJxkcRliIZlE9jFj8"
     }
    ]
   },
@@ -717,7 +994,14 @@
      "fiyat_yazi": "Yetişkin 11 €",
      "bilgi": "Kayalara oyulmuş kilometrelerce savunma tüneli; pencerelerden Alzette vadisi manzarası. Kışın saatler kısalabilir, gitmeden kontrol edin.",
      "kaynak": "https://visitluxembourg.com/en/place/castle/bock-casemates-luxembourg",
-     "konum": null
+     "konum": [
+      49.61159,
+      6.1366
+     ],
+     "googleAd": "Casemates du Bock",
+     "puan": 4.4,
+     "yorum": 10493,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Casemates%20du%20Bock&query_place_id=ChIJNW7n4zJPlUcRc95AAJEMmcY"
     },
     {
      "id": "chemin-de-la-corniche",
@@ -731,7 +1015,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "'Avrupa'nın en güzel balkonu' denen sur üstü yürüyüş yolu; aşağıda Grund mahallesi ve nehir.",
      "kaynak": "https://www.luxembourg-city.com/",
-     "konum": null
+     "konum": [
+      49.6101,
+      6.13436
+     ],
+     "googleAd": "Chem. de la Corniche",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Chem.%20de%20la%20Corniche&query_place_id=ChIJOwUzkdJIlUcRsm1WX7BzObU"
     },
     {
      "id": "grund-mahallesi",
@@ -745,7 +1036,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Vadi tabanındaki taş evler, Neumünster Manastırı ve nehir kenarı pub'lar. Dönüşte ücretsiz Plateau du Saint-Esprit asansörüyle yukarı çıkın.",
      "kaynak": "https://www.luxembourg-city.com/",
-     "konum": null
+     "konum": [
+      49.61087,
+      6.14082
+     ],
+     "googleAd": "Grund",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Grund&query_place_id=ChIJF1bPSc1IlUcRUbq-zdfRACY"
     },
     {
      "id": "notre-dame-katedrali",
@@ -759,7 +1057,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "17. yüzyıl Cizvit kilisesi; kriptinde Grandük ailesinin mezarları var.",
      "kaynak": "https://www.luxembourg-city.com/",
-     "konum": null
+     "konum": [
+      49.60994,
+      6.13156
+     ],
+     "googleAd": "Cathedral Notre-Dame of Luxembourg",
+     "puan": 4.6,
+     "yorum": 7285,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Cathedral%20Notre-Dame%20of%20Luxembourg&query_place_id=ChIJ8Yc5p9RIlUcRxiaoQPb0gI0"
     },
     {
      "id": "ulusal-arkeoloji-tarih-ve-sanat-muzesi-m",
@@ -773,7 +1078,14 @@
      "fiyat_yazi": "Kalıcı sergiler ücretsiz",
      "bilgi": "Eski şehrin Fischmarkt meydanında; Roma mozaiklerinden modern sanata ülke tarihi. Pazartesi kapalı, perşembe 20:00'ye kadar açık; pazar saatlerini kontrol edin.",
      "kaynak": "https://www.visitluxembourg.com/place/mnaha-nationalmusee-um-feschmaart",
-     "konum": null
+     "konum": [
+      49.61164,
+      6.13386
+     ],
+     "googleAd": "National Art & History Museum",
+     "puan": 4.6,
+     "yorum": 2417,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Art%20%26%20History%20Museum&query_place_id=ChIJrSiEeU9JlUcRH13pFmtgueM"
     },
     {
      "id": "mudam-modern-sanat-muzesi",
@@ -787,7 +1099,14 @@
      "fiyat_yazi": "Yetişkin 10 €",
      "bilgi": "I. M. Pei'nin cam binasında çağdaş sanat; yanındaki Fort Thüngen ile birlikte gezin. Pazartesi kapalı, tramvayla merkeze 10 dk.",
      "kaynak": "https://www.visitluxembourg.com/en/place/museum/museum-of-modern-art-mudam-luxembourg",
-     "konum": null
+     "konum": [
+      49.61712,
+      6.14034
+     ],
+     "googleAd": "Mudam Museum of Modern Art",
+     "puan": 4.2,
+     "yorum": 3683,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mudam%20Museum%20of%20Modern%20Art&query_place_id=ChIJrZbnDjFPlUcRriw1h1HQDr4"
     },
     {
      "id": "adolphe-koprusu",
@@ -801,7 +1120,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Pétrusse vadisi üzerindeki taş kemer köprü; alt katındaki asma bisiklet/yaya geçidinden vadiyi seyredin.",
      "kaynak": "https://www.luxembourg-city.com/",
-     "konum": null
+     "konum": [
+      49.60835,
+      6.12702
+     ],
+     "googleAd": "Pont Adolphe",
+     "puan": 4.7,
+     "yorum": 8115,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pont%20Adolphe&query_place_id=ChIJ2-f5X9RIlUcRznEwz2XUlf0"
     },
     {
      "id": "pfaffenthal-panoramik-asansoru",
@@ -815,7 +1141,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Cam asansör üst şehirden Pfaffenthal'e 60 m iner; üstteki cam balkondan Kirchberg ve kırmızı köprü manzarası.",
      "kaynak": "https://www.luxembourg-city.com/",
-     "konum": null
+     "konum": [
+      49.61537,
+      6.1297
+     ],
+     "googleAd": "Ascenseur Panoramique du Pfaffenthal",
+     "puan": 4.7,
+     "yorum": 7344,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ascenseur%20Panoramique%20du%20Pfaffenthal&query_place_id=ChIJrelcAyxPlUcRVPc_kw2gPGc",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Ascenseur Panoramique du Pfaffenthal\" buldu"
     },
     {
      "id": "place-guillaume-ii-pazar",
@@ -829,7 +1163,14 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "Belediye binası önündeki meydanda haftalık açık hava pazarı (genelde çarşamba ve cumartesi sabahı, teyit edin); Grandük Sarayı'nın cephesi iki adım ötede.",
      "kaynak": "https://www.luxembourg-city.com/",
-     "konum": null
+     "konum": [
+      49.61064,
+      6.13097
+     ],
+     "googleAd": "Place Guillaume II",
+     "puan": 4.4,
+     "yorum": 4689,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Place%20Guillaume%20II&query_place_id=ChIJIbwtNNNIlUcR9p7eIqgFQeQ"
     },
     {
      "id": "winterlights-noel-pazarlar",
@@ -843,7 +1184,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Place d'Armes'ta geleneksel Noel pazarı, Place de la Constitution'da dönme dolaplı kış pazarı. 2025'te 21 Kasım–4 Ocak arası açıktı; 2026 tarihlerini teyit et.",
      "kaynak": "https://chronicle.lu/category/things-to-see-do/57888-city-winterlights-2025-to-feature-markets-ice-rink-royal-tree-kleeschen-tour",
-     "konum": null
+     "konum": [
+      49.61134,
+      6.12948
+     ],
+     "googleAd": "Place d'Armes",
+     "puan": 4.6,
+     "yorum": 446,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Place%20d'Armes&query_place_id=ChIJwxzXIgBPlUcRyYn9XiqY3-c"
     }
    ]
   },
@@ -851,7 +1199,7 @@
    "para": "EUR",
    "ulasim": {
     "tek_bilet": {
-     "fiyat": 4.0,
+     "fiyat": 4,
      "aciklama": "AB bölgesi tek bilet, 2 saat tek yön, aktarmalı",
      "kaynak": "https://www.berlin.de/en/public-transportation/1772016-2913840-tickets-fares-and-route-maps.en.html"
     },
@@ -867,7 +1215,7 @@
      "kaynak": "https://www.bvg.de/de/abos-und-tickets/alle-tickets/touristen/citytourcard-72h"
     },
     "havalimani": {
-     "fiyat": 5.0,
+     "fiyat": 5,
      "sure_dk": 30,
      "aciklama": "BER → Hauptbahnhof FEX/RE/RB treni, ABC tek bilet, tek yön",
      "kaynak": "https://thebettervacation.com/berlin/getting-around-berlin/"
@@ -887,7 +1235,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Berlin'in simgesi, Pariser Platz'ta. Akşam ışıklandırılmış hâli de çok güzel.",
      "kaynak": "https://www.visitberlin.de/en",
-     "konum": null
+     "konum": [
+      52.51627,
+      13.3777
+     ],
+     "googleAd": "Brandenburg Gate",
+     "puan": 4.7,
+     "yorum": 191251,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Brandenburg%20Gate&query_place_id=ChIJiQnyVcZRqEcRY0xnhE77uyY"
     },
     {
      "id": "reichstag-binas-ve-kubbesi",
@@ -901,7 +1256,14 @@
      "fiyat_yazi": "Ücretsiz, önceden online kayıt şart",
      "bilgi": "Cam kubbeden meclis salonu ve şehir manzarası görülür. Kayıt için birkaç gün önceden başvurun, pasaportu yanınızda bulundurun.",
      "kaynak": "https://www.bundestag.de/en/visittheBundestag/dome/registration-245686",
-     "konum": null
+     "konum": [
+      52.51862,
+      13.37619
+     ],
+     "googleAd": "Reichstag Building",
+     "puan": 4.7,
+     "yorum": 11313,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Reichstag%20Building&query_place_id=ChIJbVDuQcdRqEcR5X3xq9NSG2Q"
     },
     {
      "id": "holokost-an-t",
@@ -915,7 +1277,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "2.711 beton bloktan oluşan etkileyici anıt alanı, Brandenburg Kapısı'na yürüme mesafesinde. Altındaki bilgi merkezi de ücretsiz.",
      "kaynak": "https://www.visitberlin.de/en",
-     "konum": null
+     "konum": [
+      52.51395,
+      13.37871
+     ],
+     "googleAd": "Memorial to the Murdered Jews of Europe",
+     "puan": 4.6,
+     "yorum": 49864,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Memorial%20to%20the%20Murdered%20Jews%20of%20Europe&query_place_id=ChIJW2oZB8ZRqEcRyFvuEpCnNBQ"
     },
     {
      "id": "gendarmenmarkt-noel-pazar",
@@ -929,7 +1298,14 @@
      "fiyat_yazi": "Giriş 2 €, hafta içi 11:00–14:00 ücretsiz",
      "bilgi": "23 Kasım–31 Aralık 2026 arası açık; Berlin'in en şık Noel pazarlarından. Cuma–cumartesi 23:00'e kadar açık.",
      "kaynak": "https://www.visitberlin.de/de/weihnachtsmarkt-weihnachtszauber-gendarmenmarkt-berlin",
-     "konum": null
+     "konum": [
+      52.51344,
+      13.39302
+     ],
+     "googleAd": "WeihnachtsZauber Gendarmenmarkt",
+     "puan": 4.6,
+     "yorum": 586,
+     "harita": "https://www.google.com/maps/search/?api=1&query=WeihnachtsZauber%20Gendarmenmarkt&query_place_id=ChIJd8arqxRRqEcRrLzmKfA-9mM"
     },
     {
      "id": "neues-museum-nefertiti",
@@ -943,7 +1319,14 @@
      "fiyat_yazi": "Yetişkin 14 €, online saatli bilet önerilir",
      "bilgi": "Nefertiti büstü ve Mısır koleksiyonu burada. Pazartesi kapalı; Bergama Müzesi yenileme nedeniyle kapalı olduğundan Müze Adası'nın yıldızı bu.",
      "kaynak": "https://thebettervacation.com/berlin/neues-museum-official-website/amp/",
-     "konum": null
+     "konum": [
+      52.52013,
+      13.39765
+     ],
+     "googleAd": "Neues Museum",
+     "puan": 4.5,
+     "yorum": 16078,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Neues%20Museum&query_place_id=ChIJS8OUk91RqEcRNauNAPV5P40"
     },
     {
      "id": "berlin-katedrali",
@@ -957,7 +1340,14 @@
      "fiyat_yazi": "Yetişkin 15 €, sesli rehber ve kubbe dahil",
      "bilgi": "Kubbe galerisinden Müze Adası ve Spree manzarası var. Pazar günleri öğlene kadar ayin nedeniyle kapalı.",
      "kaynak": "https://www.visitberlin.de/de/node/2282647",
-     "konum": null
+     "konum": [
+      52.51906,
+      13.40108
+     ],
+     "googleAd": "Berlin Cathedral",
+     "puan": 4.7,
+     "yorum": 48410,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Berlin%20Cathedral&query_place_id=ChIJS9HC895RqEcR_IovsNVoDng"
     },
     {
      "id": "ddr-muzesi",
@@ -971,7 +1361,14 @@
      "fiyat_yazi": "Yetişkin 13,90 €",
      "bilgi": "Doğu Almanya'da gündelik hayatı dokunarak anlatan interaktif müze. Her gün 9:00–21:00 açık, akşam için iyi seçenek.",
      "kaynak": "https://www.ddr-museum.de/en/visit",
-     "konum": null
+     "konum": [
+      52.51934,
+      13.40231
+     ],
+     "googleAd": "DDR Museum",
+     "puan": 4.3,
+     "yorum": 28686,
+     "harita": "https://www.google.com/maps/search/?api=1&query=DDR%20Museum&query_place_id=ChIJVzpGU95RqEcRZJgnyr-ZDC0"
     },
     {
      "id": "berlin-tv-kulesi",
@@ -985,7 +1382,14 @@
      "fiyat_yazi": "Standart bilet yaklaşık 24,50 €'dan başlıyor, fiyat tarihe/saate göre değişir",
      "bilgi": "203 m'deki gözlem katından şehrin 360° manzarası. Gün batımı saatleri pahalı ve kalabalık; online saatli bilet alın.",
      "kaynak": "https://thebettervacation.com/berlin/berlin-tv-tower-official-website/amp/",
-     "konum": null
+     "konum": [
+      52.52082,
+      13.40942
+     ],
+     "googleAd": "Berlin TV Tower",
+     "puan": 4.4,
+     "yorum": 53736,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Berlin%20TV%20Tower&query_place_id=ChIJ6_8UkB9OqEcRoeRJQ0j8-sg"
     },
     {
      "id": "east-side-gallery",
@@ -999,7 +1403,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Berlin Duvarı'nın en uzun ayakta kalan parçası, 1,3 km açık hava resim galerisi. Sonunda Oberbaum Köprüsü'nden Kreuzberg'e geçin.",
      "kaynak": "https://www.visitberlin.de/en",
-     "konum": null
+     "konum": [
+      52.50502,
+      13.4397
+     ],
+     "googleAd": "East Side Gallery",
+     "puan": 4.6,
+     "yorum": 67436,
+     "harita": "https://www.google.com/maps/search/?api=1&query=East%20Side%20Gallery&query_place_id=ChIJS6_t9aZHqEcRGCiRSnvpm94"
     },
     {
      "id": "markthalle-neun",
@@ -1013,7 +1424,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Kreuzberg'de tarihi kapalı çarşı; yerel üreticiler ve sokak lezzetleri. Perşembe akşamları Street Food Thursday çok popüler.",
      "kaynak": "https://www.visitberlin.de/en",
-     "konum": null
+     "konum": [
+      52.50214,
+      13.4316
+     ],
+     "googleAd": "Markthalle Neun",
+     "puan": 4.4,
+     "yorum": 20545,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Markthalle%20Neun&query_place_id=ChIJvaZWgElOqEcRElWjL2P9AZg"
     }
    ]
   },
@@ -1052,7 +1470,14 @@
      "fiyat_yazi": "Giriş alanı ücretsiz; iç gezi 8 €, Güney Kulesi 8 €, kombine bilet 29 €",
      "bilgi": "Viyana'nın kalbi, renkli kiremit çatısıyla ünlü. 343 basamaklı Güney Kulesi'nden eski şehir manzarası harika.",
      "kaynak": "https://stephanskirche.at/info.php?setLang=en",
-     "konum": null
+     "konum": [
+      48.20841,
+      16.37347
+     ],
+     "googleAd": "St. Stephen's Cathedral",
+     "puan": 4.7,
+     "yorum": 141428,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St.%20Stephen's%20Cathedral&query_place_id=ChIJz-w_Ip8HbUcRWTHc-vNXlxc"
     },
     {
      "id": "graben-ve-kohlmarkt",
@@ -1066,7 +1491,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Veba Sütunu, lüks mağazalar ve tarihi kafelerle şehrin en şık yaya caddeleri. Demel pastanesinde kahve molası verin.",
      "kaynak": "https://www.wien.info/en",
-     "konum": null
+     "konum": [
+      48.20868,
+      16.36974
+     ],
+     "googleAd": "Graben",
+     "puan": 4.8,
+     "yorum": 862,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Graben&query_place_id=ChIJs1Pb7ZgHbUcRfv7j60cs6mM"
     },
     {
      "id": "hofburg-saray-sisi-muzesi-ve-imparatorlu",
@@ -1080,7 +1512,14 @@
      "fiyat_yazi": "Yenilenen müze 19 Kasım 2026'da açılıyor, yeni fiyatı teyit et (önceki günlük bilet 15 €)",
      "bilgi": "Habsburg'ların kış sarayı; Sisi Müzesi ek salonlarla 19 Kasım 2026'da yeniden açılıyor. Kasım sonrası rehberli turlu bilet 33 €.",
      "kaynak": "https://www.sisimuseum-hofburg.at/en/tickets/tickets-prices",
-     "konum": null
+     "konum": [
+      48.2077,
+      16.36594
+     ],
+     "googleAd": "Sisi Museum",
+     "puan": 4.4,
+     "yorum": 20731,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sisi%20Museum&query_place_id=ChIJpYXZnZkHbUcRnACajEL3kTs"
     },
     {
      "id": "kunsthistorisches-museum",
@@ -1094,7 +1533,14 @@
      "fiyat_yazi": "Yetişkin 24 €",
      "bilgi": "Bruegel, Vermeer ve Rafael'in olduğu dünya çapında sanat müzesi. Kubbe altındaki kafesi başlı başına deneyim.",
      "kaynak": "https://orf.at/stories/3417793/",
-     "konum": null
+     "konum": [
+      48.2038,
+      16.36179
+     ],
+     "googleAd": "Kunsthistorisches Museum Wien",
+     "puan": 4.8,
+     "yorum": 36392,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Kunsthistorisches%20Museum%20Wien&query_place_id=ChIJ8XfPY5oHbUcRQbimbLVSYG8"
     },
     {
      "id": "rathausplatz-noel-pazar",
@@ -1108,7 +1554,16 @@
      "fiyat_yazi": "Ücretsiz (bardak depozitosu alınır)",
      "bilgi": "13 Kasım–26 Aralık 2026, her gün 10:00–22:00. Belediye sarayı önünde Viyana'nın en büyük Noel pazarı; hafta sonu çok kalabalık.",
      "kaynak": "https://www.wien.info/de/aktuell/veranstaltungen/wiener-christkindlmarkt-1001446",
-     "konum": null
+     "konum": [
+      48.21057,
+      16.35993
+     ],
+     "googleAd": "Vienna Christmas Market",
+     "puan": 4.4,
+     "yorum": 285,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Vienna%20Christmas%20Market&query_place_id=ChIJRYC7MAAHbUcR6uvDaFbz9rA",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Vienna Christmas Market\" buldu",
+     "kapali": "gecici"
     },
     {
      "id": "schonbrunn-saray",
@@ -1122,7 +1577,14 @@
      "fiyat_yazi": "State Apartments (eski Imperial Tour) 28 €, Palace Ticket 38 €; bahçeler ücretsiz",
      "bilgi": "Habsburg yazlık sarayı; saatli bilet zorunlu, online alın. Gloriette tepesine çıkıp sarayı yukarıdan görün (bahçe ücretsiz).",
      "kaynak": "https://www.city-walks.info/Vienna/Schoenbrunn-hours-prices.html",
-     "konum": null
+     "konum": [
+      48.18581,
+      16.31276
+     ],
+     "googleAd": "Schönbrunn Palace",
+     "puan": 4.7,
+     "yorum": 187138,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sch%C3%B6nbrunn%20Palace&query_place_id=ChIJv3zAHAmobUcRyYvq5F26aU4"
     },
     {
      "id": "belvedere-saray-klimt-in-opucuk-tablosu",
@@ -1136,7 +1598,15 @@
      "fiyat_yazi": "Üst Belvedere yetişkin 23 €",
      "bilgi": "Barok sarayda Klimt'in 'Öpücük' tablosu ve Avusturya sanatı. Her gün 9:00–18:00 açık; önce bahçeden manzarayı görün.",
      "kaynak": "https://www.belvedere.at/en/visit",
-     "konum": null
+     "konum": [
+      48.19148,
+      16.38093
+     ],
+     "googleAd": "Belvedere Palace",
+     "puan": 4.7,
+     "yorum": 91847,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Belvedere%20Palace&query_place_id=ChIJpZ4LAn0HbUcRB3aToFL8ZUo",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Belvedere Palace\" buldu"
     },
     {
      "id": "naschmarkt",
@@ -1150,7 +1620,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "1,5 km'lik açık pazar; baharat, peynir, meze ve restoranlar. Pazar günü kapalı, cumartesi yanında bit pazarı kuruluyor.",
      "kaynak": "https://www.wien.info/en",
-     "konum": null
+     "konum": [
+      48.19862,
+      16.36365
+     ],
+     "googleAd": "Naschmarkt",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Naschmarkt&query_place_id=ChIJUwyiX4QHbUcRvmyFdrjAugU"
     },
     {
      "id": "prater-ve-dev-donme-dolap",
@@ -1164,7 +1641,15 @@
      "fiyat_yazi": "Yetişkin 14,50 €",
      "bilgi": "1897'den kalma tarihi dönme dolaptan şehir manzarası. Her gün 9:00–23:45 açık; akşam ışıklarında binin.",
      "kaynak": "https://www.wien.info/de/riesenrad-124960",
-     "konum": null
+     "konum": [
+      48.2167,
+      16.3959
+     ],
+     "googleAd": "Viennese Giant Ferris Wheel",
+     "puan": 4.5,
+     "yorum": 50353,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Viennese%20Giant%20Ferris%20Wheel&query_place_id=ChIJJYWNjA8HbUcRBlfleWeh1qw",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Viennese Giant Ferris Wheel\" buldu"
     },
     {
      "id": "hundertwasser-evi",
@@ -1178,7 +1663,14 @@
      "fiyat_yazi": "Ücretsiz (dışarıdan görülür)",
      "bilgi": "Renkli, eğri büğrü cephesiyle ünlü sosyal konut binası; içi gezilemiyor. Karşıdaki Hundertwasser Village'da kısa mola verilebilir.",
      "kaynak": "https://www.wien.info/en",
-     "konum": null
+     "konum": [
+      48.20734,
+      16.39429
+     ],
+     "googleAd": "Hundertwasser House",
+     "puan": 4.5,
+     "yorum": 35909,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Hundertwasser%20House&query_place_id=ChIJd7QUtBIHbUcRnIE5N35NVIQ"
     }
    ]
   },
@@ -1202,7 +1694,7 @@
      "kaynak": "https://crtm.es/billete-turistico"
     },
     "havalimani": {
-     "fiyat": 5.0,
+     "fiyat": 5,
      "sure_dk": 40,
      "aciklama": "Barajas → merkez Metro L8 (Nuevos Ministerios aktarmalı Sol'a), tek bilet en fazla 2,00 € + 3,00 € havalimanı eki. Exprés Aeropuerto otobüsü de 5 €.",
      "kaynak": "https://www.redtransporte.com/madrid/precios-abonos.html"
@@ -1222,7 +1714,14 @@
      "fiyat_yazi": "Yetişkin 15 €; Pzt–Cmt 18–20, Paz 17–19 ücretsiz",
      "bilgi": "Velázquez'in Las Meninas'ı, Goya ve El Greco ile dünyanın en önemli resim koleksiyonlarından biri. Ücretsiz saatlerde kuyruk uzun olur; online bilet almak daha rahat.",
      "kaynak": "https://lamaletainquieta.com/?p=4753",
-     "konum": null
+     "konum": [
+      40.41378,
+      -3.69213
+     ],
+     "googleAd": "Museo Nacional del Prado",
+     "puan": 4.7,
+     "yorum": 157977,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Museo%20Nacional%20del%20Prado&query_place_id=ChIJ7aLYZp0oQg0RWoitk33wlBA"
     },
     {
      "id": "reina-sofia-muzesi",
@@ -1236,7 +1735,14 @@
      "fiyat_yazi": "Yetişkin 12 €; Pzt ve Çar–Cmt 19–21, Paz 12:30–14:30 ücretsiz (bilet alınarak)",
      "bilgi": "Picasso'nun Guernica'sı, Dalí ve Miró ile modern sanat müzesi. Salı günleri kapalı, Pazar 14:30'da kapanır.",
      "kaynak": "https://lamaletainquieta.com/?p=4760",
-     "konum": null
+     "konum": [
+      40.40791,
+      -3.69456
+     ],
+     "googleAd": "Museo Nacional Centro de Arte Reina Sofía",
+     "puan": 4.5,
+     "yorum": 72507,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Museo%20Nacional%20Centro%20de%20Arte%20Reina%20Sof%C3%ADa&query_place_id=ChIJvQc62ygmQg0Rcb-6WdEUmDA"
     },
     {
      "id": "madrid-kraliyet-saray",
@@ -1250,7 +1756,14 @@
      "fiyat_yazi": "Yetişkin 18 € (online +0,77 € işlem ücreti)",
      "bilgi": "Batı Avrupa'nın en büyük kraliyet saraylarından; görkemli salonlar ve silah koleksiyonu. Pazar ve tatillerde 16:00'da kapanır, resmî törenlerde habersiz kapanabilir.",
      "kaynak": "https://lamaletainquieta.com/palacio-real-madrid/",
-     "konum": null
+     "konum": [
+      40.41796,
+      -3.71431
+     ],
+     "googleAd": "Royal Palace of Madrid",
+     "puan": 4.7,
+     "yorum": 135103,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Royal%20Palace%20of%20Madrid&query_place_id=ChIJwamkfX4oQg0RUUjO1nnsfy4"
     },
     {
      "id": "almudena-katedrali",
@@ -1264,7 +1777,14 @@
      "fiyat_yazi": "Katedral ücretsiz; müze + kubbe 8 €",
      "bilgi": "Sarayın tam karşısındaki katedral; kubbeden saray ve şehir manzarası görülür. Müze ve kubbe Pzt–Cmt 10–14:30 açık, Pazar kapalı.",
      "kaynak": "https://www.esmadrid.com/en/tourist-information/almudena-cathedral-museum",
-     "konum": null
+     "konum": [
+      40.41565,
+      -3.71455
+     ],
+     "googleAd": "Catedral de Santa María la Real de la Almudena",
+     "puan": 4.6,
+     "yorum": 33552,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Catedral%20de%20Santa%20Mar%C3%ADa%20la%20Real%20de%20la%20Almudena&query_place_id=ChIJI_FYeHcoQg0RcqwG5gDs3H8"
     },
     {
      "id": "debod-tap-nag",
@@ -1278,7 +1798,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Mısır'dan hediye edilen 2.000 yıllık tapınak ve çevresindeki park, Madrid'in en sevilen gün batımı noktası. Gün batımına biraz erken gidip yer kapın.",
      "kaynak": "https://www.esmadrid.com/",
-     "konum": null
+     "konum": [
+      40.42402,
+      -3.71777
+     ],
+     "googleAd": "Temple of Debod",
+     "puan": 4.4,
+     "yorum": 70774,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Temple%20of%20Debod&query_place_id=ChIJWRLqi24oQg0RqwZ3SsbZah0"
     },
     {
      "id": "puerta-del-sol",
@@ -1292,7 +1819,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin kalbi: Kilometre Sıfır plakası, ayı ve kocayemiş heykeli ve yılbaşı saati burada. Kalabalıkta cüzdanınıza dikkat edin.",
      "kaynak": "https://www.esmadrid.com/",
-     "konum": null
+     "konum": [
+      40.41695,
+      -3.70353
+     ],
+     "googleAd": "Puerta del Sol",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Puerta%20del%20Sol&query_place_id=ChIJx319oIAoQg0RecYd2lfuSmk"
     },
     {
      "id": "plaza-mayor",
@@ -1306,7 +1840,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Revaklarla çevrili 17. yüzyıl meydanı. Meydandaki kafeler pahalıdır; yakındaki sokaklarda bocadillo de calamares deneyin.",
      "kaynak": "https://www.esmadrid.com/",
-     "konum": null
+     "konum": [
+      40.41562,
+      -3.70702
+     ],
+     "googleAd": "Plaza Mayor",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Plaza%20Mayor&query_place_id=ChIJ2eBf2H4oQg0R6CV21vDEAtI"
     },
     {
      "id": "san-miguel-pazar",
@@ -1320,7 +1861,14 @@
      "fiyat_yazi": "Giriş ücretsiz; tapaslar ayrıca ödenir",
      "bilgi": "Demir-cam yapılı tarihi pazarda tapas, jamón ve vermut. Akşamüstü çok kalabalık olur; öğlen erken saatler daha rahat.",
      "kaynak": "https://www.esmadrid.com/",
-     "konum": null
+     "konum": [
+      40.41538,
+      -3.70897
+     ],
+     "googleAd": "Mercado de San Miguel",
+     "puan": 4.4,
+     "yorum": 166294,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mercado%20de%20San%20Miguel&query_place_id=ChIJLW4ZIXkoQg0R6JDRTdPmLxY"
     },
     {
      "id": "retiro-park",
@@ -1334,7 +1882,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kayıklı gölü ve Kristal Saray'ı ile Madrid'in büyük parkı. Prado ziyaretinin ardından yürüyerek gelinebilir.",
      "kaynak": "https://www.esmadrid.com/",
-     "konum": null
+     "konum": [
+      40.41526,
+      -3.68347
+     ],
+     "googleAd": "El Retiro Park",
+     "puan": 4.8,
+     "yorum": 217231,
+     "harita": "https://www.google.com/maps/search/?api=1&query=El%20Retiro%20Park&query_place_id=ChIJe4IR9Z8oQg0RrqMktRYnbJ4"
     },
     {
      "id": "plaza-mayor-noel-pazar",
@@ -1348,7 +1903,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Yüzü aşkın tezgâhla Madrid'in klasik Noel pazarı; 2026'da Kasım sonundan 31 Aralık'a kadar sürmesi bekleniyor, tarihleri teyit et. Paz–Per 10–21, Cuma–Cmt 10–22 açık.",
      "kaynak": "https://lamaletainquieta.com/mercadillos-navidad-madrid/",
-     "konum": null
+     "konum": [
+      40.41551,
+      -3.7074
+     ],
+     "googleAd": "Plaza Mayor",
+     "puan": 4.6,
+     "yorum": 205628,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Plaza%20Mayor&query_place_id=ChIJZX56134oQg0RHBgRAVQ8pkk"
     }
    ]
   },
@@ -1387,7 +1949,14 @@
      "fiyat_yazi": "Yetişkin 18 € (avlu); kilise ücretsiz",
      "bilgi": "Manuel üslubunun başyapıtı, Vasco da Gama'nın mezarı da burada. Pazartesi kapalı; kuyruk için açılışta gidin, karşıdaki Pastéis de Belém'i atlamayın.",
      "kaynak": "https://www.noticiasaominuto.com/cultura/2699257/precos-de-entrada-em-museus-e-monumentos-sobem-este-ano-quanto",
-     "konum": null
+     "konum": [
+      38.69789,
+      -9.2067
+     ],
+     "googleAd": "Jerónimos Monastery",
+     "puan": 4.4,
+     "yorum": 63658,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Jer%C3%B3nimos%20Monastery&query_place_id=ChIJS5zCw0LLHg0R7euWjjRddYc"
     },
     {
      "id": "belem-kulesi",
@@ -1401,7 +1970,14 @@
      "fiyat_yazi": "Yetişkin 15 €, saatli giriş",
      "bilgi": "Tejo kıyısındaki 16. yüzyıl kulesi, restorasyon sonrası 27 Mayıs 2026'da yeniden açıldı. Günde en fazla 900 kişi, yarım saatlik gruplarla giriş; 9:30–17:30.",
      "kaynak": "https://www.noticiasaominuto.com/cultura/2699257/precos-de-entrada-em-museus-e-monumentos-sobem-este-ano-quanto",
-     "konum": null
+     "konum": [
+      38.69158,
+      -9.21598
+     ],
+     "googleAd": "Belém Tower",
+     "puan": 4.5,
+     "yorum": 118495,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bel%C3%A9m%20Tower&query_place_id=ChIJS5zCw0LLHg0RP1FSz63cAjA"
     },
     {
      "id": "sao-jorge-kalesi",
@@ -1415,7 +1991,14 @@
      "fiyat_yazi": "Yetişkin 17 €",
      "bilgi": "Şehrin en yüksek tepesindeki Mağribi kalesi; surlardan Tejo ve kırmızı çatılar manzarası. Online bilet kuyruğu kısaltır.",
      "kaynak": "https://castelodesaojorge.pt/en/plan-your-visit/choose-your-ticket/",
-     "konum": null
+     "konum": [
+      38.71391,
+      -9.13348
+     ],
+     "googleAd": "Castelo de São Jorge",
+     "puan": 4.5,
+     "yorum": 104134,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Castelo%20de%20S%C3%A3o%20Jorge&query_place_id=ChIJm8MOtHc0GQ0R1zPkmUFwwLQ"
     },
     {
      "id": "alfama",
@@ -1429,7 +2012,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Dar yokuşlu sokakları ve fado evleriyle Lizbon'un en eski mahallesi. Akşam bir fado restoranında yemek için önceden yer ayırtın.",
      "kaynak": "https://www.visitlisboa.com/",
-     "konum": null
+     "konum": [
+      38.7125,
+      -9.13032
+     ],
+     "googleAd": "Alfama",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Alfama&query_place_id=ChIJtUPuE3Y0GQ0R6INbXk-WNww"
     },
     {
      "id": "senhora-do-monte-seyir-teras",
@@ -1443,7 +2033,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Graça'daki en yüksek seyir terası; kale ve şehir panoraması, gün batımında çok güzel. Yokuş dik, 28 numaralı tramvayla ya da taksiyle çıkılabilir.",
      "kaynak": "https://www.visitlisboa.com/",
-     "konum": null
+     "konum": [
+      38.71921,
+      -9.13278
+     ],
+     "googleAd": "Our Lady of the Mount Viewpoint",
+     "puan": 4.8,
+     "yorum": 29663,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Our%20Lady%20of%20the%20Mount%20Viewpoint&query_place_id=ChIJV32DNI8zGQ0R9GqiWeuNH2E",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Our Lady of the Mount Viewpoint\" buldu"
     },
     {
      "id": "praca-do-comercio",
@@ -1457,7 +2055,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Tejo'ya açılan dev meydan, 1755 depremi sonrası yeniden kurulan Baixa'nın vitrini. Rua Augusta'dan yürüyerek gelinir.",
      "kaynak": "https://www.visitlisboa.com/",
-     "konum": null
+     "konum": [
+      38.70728,
+      -9.13636
+     ],
+     "googleAd": "Praça do Comércio",
+     "puan": 4.7,
+     "yorum": 135255,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pra%C3%A7a%20do%20Com%C3%A9rcio&query_place_id=ChIJY0ulMHo0GQ0RROAoa18vUzA"
     },
     {
      "id": "rua-augusta-kemeri",
@@ -1471,7 +2076,14 @@
      "fiyat_yazi": "Seyir terası 3,50 €",
      "bilgi": "Zafer takının tepesinden Praça do Comércio ve nehir manzarası. Her gün 10–19 açık; asansör + kısa merdiven.",
      "kaynak": "https://thebettervacation.com/pt/Lisboa/arco-da-rua-augusta/",
-     "konum": null
+     "konum": [
+      38.70844,
+      -9.13682
+     ],
+     "googleAd": "Rua Augusta Arch",
+     "puan": 4.7,
+     "yorum": 27270,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Rua%20Augusta%20Arch&query_place_id=ChIJ5fcMh3k0GQ0RsEli_Fck5sQ"
     },
     {
      "id": "chiado-ve-bairro-alto",
@@ -1485,7 +2097,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Gündüz kitapçılar ve kafelerle Chiado, gece barlarıyla Bairro Alto. Café A Brasileira ve São Pedro de Alcântara seyir terası yol üstünde.",
      "kaynak": "https://www.visitlisboa.com/",
-     "konum": null
+     "konum": [
+      38.71283,
+      -9.14506
+     ],
+     "googleAd": "Bairro Alto",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bairro%20Alto&query_place_id=ChIJ-6uzAoA0GQ0R8dBgojsq_ro"
     },
     {
      "id": "time-out-market",
@@ -1499,7 +2118,8 @@
      "fiyat_yazi": "Giriş ücretsiz; yemekler ayrıca",
      "bilgi": "Mercado da Ribeira içindeki yemek salonu; şehrin iyi restoranlarından tek çatı altında tabaklar. Öğle ve akşam yoğun, masa bulmak zorlaşır.",
      "kaynak": "https://www.visitlisboa.com/",
-     "konum": null
+     "konum": null,
+     "konumNotu": "Google 5422 km uzakta bir yer buldu: Time Out Market New York"
     },
     {
      "id": "gulbenkian-muzesi",
@@ -1513,7 +2133,14 @@
      "fiyat_yazi": "Ücretli; yeniden açılış sonrası güncel fiyatı resmî siteden teyit et",
      "bilgi": "Mısır'dan Lalique'e uzanan özel koleksiyon, 18 aylık yenilemeden sonra Temmuz 2026'da yeniden açıldı; bahçesi de çok güzel. Salı kapalı, Cumartesi 21:00'e kadar açık.",
      "kaynak": "https://www.timeout.pt/lisboa/pt/noticias/museu-gulbenkian-reabre-este-sabado-a-entrada-e-gratuita-ate-26-de-julho-071526",
-     "konum": null
+     "konum": [
+      38.73781,
+      -9.15355
+     ],
+     "googleAd": "Calouste Gulbenkian Museum",
+     "puan": 4.7,
+     "yorum": 18300,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Calouste%20Gulbenkian%20Museum&query_place_id=ChIJNTZ10A0zGQ0ROwhyCh2mkwg"
     }
    ]
   },
@@ -1557,7 +2184,14 @@
      "fiyat_yazi": "Yetişkin 18 € (24 saat geçerli, üçü dahil); Full Experience 24 €",
      "bilgi": "Kolezyum saatli girişle, Forum ve Palatino aynı bilet ile 24 saat içinde gezilir. Biletler hızla tükenir; resmî siteden haftalar önce alın.",
      "kaynak": "https://colosseo.it/sito/wp-content/uploads/2025/11/Regolamento-Visitatori-Parco-archeologico-del-Colosseo_rev.pdf",
-     "konum": null
+     "konum": [
+      41.89021,
+      12.49223
+     ],
+     "googleAd": "Colosseum",
+     "puan": 4.8,
+     "yorum": 510315,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Colosseum&query_place_id=ChIJrRMgU7ZhLxMRxAOFkC7I8Sg"
     },
     {
      "id": "vatikan-muzeleri-ve-sistine-sapeli",
@@ -1571,7 +2205,14 @@
      "fiyat_yazi": "20 € + 5 € zorunlu online rezervasyon = 25 €",
      "bilgi": "Raffaello Odaları ve Michelangelo'nun Sistine tavanı. Pzt–Cmt 8–19 açık, Pazar kapalı (ayın son Pazarı ücretsiz ama çok kalabalık); biletler 60 gün önceden satışa çıkar.",
      "kaynak": "https://loudavymkrokem.cz/it/musei-vaticani-biglietti-cosa-vedere/",
-     "konum": null
+     "konum": [
+      41.90649,
+      12.45364
+     ],
+     "googleAd": "Vatican Museums",
+     "puan": 4.6,
+     "yorum": 212932,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Vatican%20Museums&query_place_id=ChIJKcGbg2NgLxMRthZkUqDs4M8"
     },
     {
      "id": "aziz-petrus-bazilikas",
@@ -1585,7 +2226,14 @@
      "fiyat_yazi": "Bazilika ücretsiz; kubbe ayrı ücretli",
      "bilgi": "Michelangelo'nun Pietà'sı ve Bernini'nin baldakeni; kubbeden Roma manzarası. Güvenlik kuyruğu için sabah erken gidin, omuz ve diz kapalı olmalı.",
      "kaynak": "https://www.basilicasanpietro.va/",
-     "konum": null
+     "konum": [
+      41.90217,
+      12.45394
+     ],
+     "googleAd": "Saint Peter’s Basilica",
+     "puan": 4.8,
+     "yorum": 185164,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Saint%20Peter%E2%80%99s%20Basilica&query_place_id=ChIJWZsUt2FgLxMRg1KHzXfwS3I"
     },
     {
      "id": "pantheon",
@@ -1599,7 +2247,14 @@
      "fiyat_yazi": "Yetişkin 7 € (1 Temmuz 2026'dan itibaren)",
      "bilgi": "2.000 yıllık kubbesi ve tepesindeki açıklığıyla antik Roma'nın en sağlam ayakta kalan yapısı. Raffaello'nun mezarı da burada.",
      "kaynak": "https://www.finestresullarte.info/attualita/da-luglio-2026-biglietto-d-accesso-al-pantheon-costera-7-euro",
-     "konum": null
+     "konum": [
+      41.89861,
+      12.47687
+     ],
+     "googleAd": "Pantheon",
+     "puan": 4.8,
+     "yorum": 290725,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pantheon&query_place_id=ChIJqUCGZ09gLxMRLM42IPpl0co"
     },
     {
      "id": "trevi-cesmesi",
@@ -1613,7 +2268,14 @@
      "fiyat_yazi": "Çeşme önü 2 € (09–22, Cuma 11:30–22); 22:00 sonrası ücretsiz",
      "bilgi": "Şubat 2026'dan beri havuz önündeki alana giriş ücretli; girişte yalnızca kartla ödeme. Sabah erken ya da gece 22'den sonra çok daha sakin.",
      "kaynak": "https://www.finestresullarte.info/attualita/da-oggi-entra-in-vigore-biglietto-a-pagamento-fontana-di-trevi",
-     "konum": null
+     "konum": [
+      41.90093,
+      12.48331
+     ],
+     "googleAd": "Trevi Fountain",
+     "puan": 4.7,
+     "yorum": 529179,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain&query_place_id=ChIJ1UCDJ1NgLxMRtrsCzOHxdvY"
     },
     {
      "id": "piazza-navona-noel-pazar",
@@ -1627,7 +2289,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Bernini'nin Dört Nehir Çeşmesi'yle Roma'nın en güzel barok meydanı; Aralık'ta Noel pazarı kurulur (geçen sezon 1 Aralık–6 Ocak), 2026 tarihlerini teyit et.",
      "kaynak": "https://www.romeing.it/it/mercatini-e-villaggi-di-natale-a-roma/",
-     "konum": null
+     "konum": [
+      41.89913,
+      12.47329
+     ],
+     "googleAd": "Piazza Navona",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Piazza%20Navona&query_place_id=ChIJkyhW-09gLxMR-17gjM4lxAU"
     },
     {
      "id": "ispanyol-merdivenleri",
@@ -1641,7 +2310,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Trinità dei Monti kilisesine çıkan ünlü merdivenler ve lüks Via Condotti. Basamaklarda oturmak yasak, ceza kesilebilir.",
      "kaynak": "https://www.turismoroma.it/",
-     "konum": null
+     "konum": [
+      41.90599,
+      12.48278
+     ],
+     "googleAd": "Spanish Steps",
+     "puan": 4.6,
+     "yorum": 114668,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Spanish%20Steps&query_place_id=ChIJda54FlRgLxMRD2muipfUwH8"
     },
     {
      "id": "pincio-teras",
@@ -1655,7 +2331,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Piazza del Popolo'ya ve Aziz Petrus kubbesine bakan terasta gün batımı. Villa Borghese parkının kenarında, Borghese Galerisi ile birleştirilebilir.",
      "kaynak": "https://www.turismoroma.it/",
-     "konum": null
+     "konum": [
+      41.91112,
+      12.47794
+     ],
+     "googleAd": "Terrazza del Pincio",
+     "puan": 4.8,
+     "yorum": 228,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Terrazza%20del%20Pincio&query_place_id=ChIJxTF2FABhLxMRMCggaPaPG6s"
     },
     {
      "id": "borghese-galerisi",
@@ -1669,7 +2352,14 @@
      "fiyat_yazi": "Yaklaşık 13 € + 2 € zorunlu vestiyer (+ rezervasyon ücreti); fiyatı teyit et",
      "bilgi": "Bernini heykelleri ve Caravaggio tabloları; giriş 2 saatlik dilimlerle ve rezervasyon zorunlu. Pazartesi kapalı.",
      "kaynak": "https://thebettervacation.com/it/Roma/Sito-web-ufficiale-della-galleria-Borghese/",
-     "konum": null
+     "konum": [
+      41.91421,
+      12.49214
+     ],
+     "googleAd": "Galleria Borghese",
+     "puan": 4.6,
+     "yorum": 30833,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Galleria%20Borghese&query_place_id=ChIJq-bXVgRhLxMRv3vgOXaktBs"
     },
     {
      "id": "trastevere",
@@ -1683,7 +2373,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Sarmaşıklı sokakları, Santa Maria in Trastevere bazilikası ve trattorialarıyla akşam yemeği için en keyifli mahalle. Cacio e pepe ve supplì deneyin.",
      "kaynak": "https://www.turismoroma.it/",
-     "konum": null
+     "konum": [
+      41.88483,
+      12.4704
+     ],
+     "googleAd": "Trastevere",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Trastevere&query_place_id=ChIJ921caWhgLxMRM_bfeCcgn6M"
     }
    ]
   },
@@ -1691,7 +2388,7 @@
    "para": "EUR",
    "ulasim": {
     "tek_bilet": {
-     "fiyat": 2.0,
+     "fiyat": 2,
      "aciklama": "Tek otobüs bileti (gündüz hatları), 2 saat aktarmalı. Kış tarifesi 18 Ekim 2026–12 Haziran 2027; yazın 2,50 €. Gece hatları 3 €. Şoföre nakit/temassız kartla ödenir.",
      "kaynak": "https://www.publictransport.com.mt/fares-and-tickets/"
     },
@@ -1703,7 +2400,7 @@
      "kaynak": "https://www.publictransport.com.mt/fares-and-tickets/"
     },
     "havalimani": {
-     "fiyat": 2.0,
+     "fiyat": 2,
      "sure_dk": 30,
      "aciklama": "Havalimanı → Valletta otobüs terminali X4, tek yön 2,00 € (kış tarifesi)",
      "kaynak": "https://www.maltauncovered.com/airport-transfers-taxi/malta-airport-to-valletta/"
@@ -1723,7 +2420,14 @@
      "fiyat_yazi": "Yetişkin yaklaşık 15 € (sesli rehber dahil)",
      "bilgi": "Sade dış cephenin ardında altın kaplı barok iç mekân ve Caravaggio'nun Vaftizci Yahya'nın Başının Kesilmesi tablosu. Pzt–Cmt 9–16:45, Pazar ve resmî tatillerde kapalı.",
      "kaynak": "https://www.itimaker.com/blog/valletta-must-see-places",
-     "konum": null
+     "konum": [
+      35.89759,
+      14.5125
+     ],
+     "googleAd": "St. John's Co-Cathedral",
+     "puan": 4.8,
+     "yorum": 27407,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St.%20John's%20Co-Cathedral&query_place_id=ChIJbXBWgCxFDhMRz9geY_Enn2c"
     },
     {
      "id": "buyuk-ustat-saray",
@@ -1737,7 +2441,14 @@
      "fiyat_yazi": "Ücretli; tekil fiyatı teyit et. Saray + Arkeoloji Müzesi + St. Elmo'yu kapsayan Valletta Combo bileti 30 € (30 gün geçerli)",
      "bilgi": "Malta Şövalyeleri'nin sarayı; devlet salonları ve zırh koleksiyonu. Birden fazla Heritage Malta müzesi gezecekseniz Combo bilet avantajlı.",
      "kaynak": "https://heritagemalta.mt/?p=94129",
-     "konum": null
+     "konum": [
+      35.89848,
+      14.51386
+     ],
+     "googleAd": "Grand Master's Palace",
+     "puan": 4.5,
+     "yorum": 3462,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Grand%20Master's%20Palace&query_place_id=ChIJQy2a1ytFDhMRv14qui21blQ"
     },
     {
      "id": "ulusal-arkeoloji-muzesi",
@@ -1751,7 +2462,14 @@
      "fiyat_yazi": "Yetişkin 5 €",
      "bilgi": "Malta'nın tarih öncesi tapınaklarından buluntular, ünlü 'Uyuyan Kadın' heykelciği. Republic Street üzerinde, kısa ve keyifli bir ziyaret.",
      "kaynak": "https://heritagemalta.mt/?p=13522",
-     "konum": null
+     "konum": [
+      35.89744,
+      14.51113
+     ],
+     "googleAd": "National Museum of Archaeology | Valletta",
+     "puan": 4.4,
+     "yorum": 4328,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20Archaeology%20%7C%20Valletta&query_place_id=ChIJzd0W8SxFDhMRbPweoAQyG6Y"
     },
     {
      "id": "st-elmo-kalesi-ve-ulusal-savas-muzesi",
@@ -1765,7 +2483,14 @@
      "fiyat_yazi": "Ücretli; tekil fiyatı teyit et (Valletta Combo 30 € içinde)",
      "bilgi": "Yarımadanın ucundaki yıldız biçimli kale; 1565 Büyük Kuşatma ve 2. Dünya Savaşı sergileri. Bazı Pazar günleri 11:00'de In Guardia gösterisi var.",
      "kaynak": "https://heritagemalta.mt/whats-on/in-guardia-fort-st-elmo-and-the-national-war-museum-2/",
-     "konum": null
+     "konum": [
+      35.90107,
+      14.51885
+     ],
+     "googleAd": "Fort St Elmo and the National War Museum",
+     "puan": 4.6,
+     "yorum": 9731,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Fort%20St%20Elmo%20and%20the%20National%20War%20Museum&query_place_id=ChIJ9eWK1ylFDhMRDLrImWpYQAU"
     },
     {
      "id": "yukar-barrakka-bahceleri",
@@ -1779,7 +2504,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Büyük Liman ve Üç Şehir'e bakan en güzel seyir terası; altındaki Saluting Battery'den her gün 12:00'de top atışı yapılır. Barrakka asansörüyle limana inilir.",
      "kaynak": "https://travelcostcalculator.org/unesco/city-of-valletta",
-     "konum": null
+     "konum": [
+      35.89518,
+      14.51194
+     ],
+     "googleAd": "Upper Barrakka",
+     "puan": 4.7,
+     "yorum": 41805,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Upper%20Barrakka&query_place_id=ChIJ8RPSTdNaDhMRt_pbHE3v2uA"
     },
     {
      "id": "asag-barrakka-bahceleri",
@@ -1793,7 +2525,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Daha sakin, küçük bir bahçe; liman girişi ve Kuşatma Anıtı manzarası. St. Elmo'ya giderken yol üstünde.",
      "kaynak": "https://www.visitmalta.com/",
-     "konum": null
+     "konum": [
+      35.89748,
+      14.51761
+     ],
+     "googleAd": "Lower Barrakka",
+     "puan": 4.7,
+     "yorum": 14781,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Lower%20Barrakka&query_place_id=ChIJEZzvZipFDhMR4AjAdMW3R8I"
     },
     {
      "id": "republic-street",
@@ -1807,7 +2546,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "City Gate'ten St. Elmo'ya uzanan ana cadde; renkli Malta balkonları, meydanlar ve kafeler. Paralel Merchants Street de gezmeye değer.",
      "kaynak": "https://www.visitmalta.com/",
-     "konum": null
+     "konum": [
+      35.89923,
+      14.5141
+     ],
+     "googleAd": "Republic St",
+     "puan": 4.7,
+     "yorum": 275,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Republic%20St&query_place_id=ChIJJwE21itFDhMRDTCw-ypbqCo"
     },
     {
      "id": "is-suq-tal-belt-yemek-pazar",
@@ -1821,7 +2567,14 @@
      "fiyat_yazi": "Giriş ücretsiz; yemekler ayrıca",
      "bilgi": "Restore edilmiş 19. yüzyıl kapalı çarşısında yemek salonu. Pastizzi, ftira ve tavşan yahnisi (fenek) gibi yerel tatlar için iyi bir durak.",
      "kaynak": "https://www.visitmalta.com/",
-     "konum": null
+     "konum": [
+      35.89786,
+      14.51452
+     ],
+     "googleAd": "Is-Suq Tal-Belt - Valletta Food Market",
+     "puan": 4.3,
+     "yorum": 8608,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Is-Suq%20Tal-Belt%20-%20Valletta%20Food%20Market&query_place_id=ChIJ51o0nytFDhMRO9crAIk6f2A"
     },
     {
      "id": "birgu-uc-sehir",
@@ -1835,7 +2588,15 @@
      "fiyat_yazi": "Gezmek ücretsiz; feribot tek yön 3 €",
      "bilgi": "Şövalyelerin ilk başkenti; dar sokaklar, marina ve St. Angelo Kalesi. Valletta'dan feribotla 10–15 dakikada, limandan manzara da bonus.",
      "kaynak": "https://freemalta.com/articles/malta-ferry-prices-2026",
-     "konum": null
+     "konum": [
+      35.88807,
+      14.5221
+     ],
+     "googleAd": "Birgu",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Birgu&query_place_id=ChIJVU6PvNREDhMRi7gR0rluit8",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Birgu\" buldu"
     },
     {
      "id": "mdina",
@@ -1849,7 +2610,14 @@
      "fiyat_yazi": "Surlar içi ücretsiz; katedral ve müzeler ayrıca ücretli",
      "bilgi": "Surlarla çevrili 'Sessiz Şehir'; taş sokaklar ve surlardan adanın manzarası. Valletta'dan otobüsle yarım günlük gezi, hemen yanındaki Rabat ile birleştirin.",
      "kaynak": "https://www.visitmalta.com/",
-     "konum": null
+     "konum": [
+      35.88637,
+      14.40311
+     ],
+     "googleAd": "Mdina",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mdina&query_place_id=ChIJL5rOaJVRDhMRE7y1nRlccJk"
     }
    ]
   },
@@ -1893,7 +2661,14 @@
      "fiyat_yazi": "Ücretli, saatli online bilet; güncel fiyatı resmî siteden teyit et",
      "bilgi": "Parthenon ve Erekhtheion ile antik dünyanın simgesi. Saatli giriş var; açılışta ya da kapanıştan önce gidin, kaygan mermer için düz tabanlı ayakkabı giyin.",
      "kaynak": "https://hhticket.gr/",
-     "konum": null
+     "konum": [
+      37.97153,
+      23.72575
+     ],
+     "googleAd": "Acropolis of Athens",
+     "puan": 4.8,
+     "yorum": 149509,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Acropolis%20of%20Athens&query_place_id=ChIJ86z1Nxi9oRQR9g3r9ULAl1w"
     },
     {
      "id": "akropolis-muzesi",
@@ -1907,7 +2682,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
      "bilgi": "Akropolis'ten çıkan orijinal heykeller ve Parthenon frizleri; cam zeminden antik kazı alanı görülür. Üst kat kafeteryası Akropolis manzaralı.",
      "kaynak": "https://www.theacropolismuseum.gr/en",
-     "konum": null
+     "konum": [
+      37.96845,
+      23.72852
+     ],
+     "googleAd": "Acropolis Museum",
+     "puan": 4.7,
+     "yorum": 86438,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Acropolis%20Museum&query_place_id=ChIJ4eRGPxe9oRQRPAoBLGq0D7A"
     },
     {
      "id": "areopagus-tepesi",
@@ -1921,7 +2703,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Akropolis'in hemen altındaki kayalık tepe; Agora ve şehir üzerinde gün batımı. Kayalar kaygan, dikkatli çıkın.",
      "kaynak": "https://www.thisisathens.org/",
-     "konum": null
+     "konum": [
+      37.97237,
+      23.72323
+     ],
+     "googleAd": "Areopagus Hill",
+     "puan": 4.8,
+     "yorum": 5748,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Areopagus%20Hill&query_place_id=ChIJDzL9chm9oRQRNB4foGCsPWc"
     },
     {
      "id": "antik-agora",
@@ -1935,7 +2724,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
      "bilgi": "Antik Atina'nın çarşısı ve meclis alanı; en iyi korunmuş Yunan tapınağı Hephaistos burada. Monastiraki'den yürüyerek girilir.",
      "kaynak": "https://hhticket.gr/",
-     "konum": null
+     "konum": [
+      37.9749,
+      23.72209
+     ],
+     "googleAd": "Ancient Agora of Athens",
+     "puan": 4.7,
+     "yorum": 41093,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ancient%20Agora%20of%20Athens&query_place_id=ChIJh3kJ9SK9oRQRyF2qMdo0KUI"
     },
     {
      "id": "plaka-ve-anafiotika",
@@ -1949,7 +2745,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Akropolis eteğindeki neoklasik evler, taverna sokakları ve ada köyünü andıran beyaz Anafiotika ara sokakları. Akşam yemeği için ideal.",
      "kaynak": "https://www.thisisathens.org/",
-     "konum": null
+     "konum": [
+      37.97255,
+      23.73034
+     ],
+     "googleAd": "Plaka",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Plaka&query_place_id=ChIJMTraCxe9oRQRsd0QOZ0-o1A"
     },
     {
      "id": "monastiraki-bit-pazar",
@@ -1963,7 +2766,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Meydan çevresinde antika, hediyelik ve sokak lezzetleri; Pazar sabahı en canlı hâli. Yakındaki çatı barlardan Akropolis manzarası.",
      "kaynak": "https://www.thisisathens.org/",
-     "konum": null
+     "konum": [
+      37.97625,
+      23.72561
+     ],
+     "googleAd": "Flea Market",
+     "puan": 4.4,
+     "yorum": 13961,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Flea%20Market&query_place_id=ChIJsQ6HWCK9oRQR7QU0v_vbZho"
     },
     {
      "id": "syntagma-meydan-ve-nobet-degisimi",
@@ -1977,7 +2787,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Parlamento önündeki Meçhul Asker Anıtı'nda evzonların nöbet değişimi saat başı yapılır; Pazar 11:00'deki tören en görkemlisi. Arkadaki Ulusal Bahçe'de mola verin.",
      "kaynak": "https://www.thisisathens.org/",
-     "konum": null
+     "konum": [
+      37.97553,
+      23.7349
+     ],
+     "googleAd": "Plateia Syntagmatos",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Plateia%20Syntagmatos&query_place_id=ChIJNQRIkj69oRQRDlYNy1cQumg",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Plateia Syntagmatos\" buldu"
     },
     {
      "id": "panatinaiko-stadyumu",
@@ -1991,7 +2809,14 @@
      "fiyat_yazi": "Ücretli (sesli rehber dahil); güncel fiyatı teyit et",
      "bilgi": "Tamamen mermerden yapılmış, 1896'daki ilk modern olimpiyatlara ev sahipliği yapan stadyum. Syntagma'dan Zeus Tapınağı önünden yürüyerek 15 dakika.",
      "kaynak": "https://www.panathenaicstadium.gr/",
-     "konum": null
+     "konum": [
+      37.96833,
+      23.74111
+     ],
+     "googleAd": "Panathenaic Stadium",
+     "puan": 4.7,
+     "yorum": 46888,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Panathenaic%20Stadium&query_place_id=ChIJYRK_3mq9oRQRRrCuJb-4Sqc"
     },
     {
      "id": "likavitos-tepesi",
@@ -2005,7 +2830,14 @@
      "fiyat_yazi": "Yürüyerek ücretsiz; füniküler ayrıca ücretli",
      "bilgi": "Şehrin en yüksek noktası; Akropolis'ten denize uzanan 360° manzara, gün batımında harika. Kolonaki'den yürüyüş yolu ya da füniküler.",
      "kaynak": "https://www.thisisathens.org/",
-     "konum": null
+     "konum": [
+      37.98179,
+      23.74306
+     ],
+     "googleAd": "Mount Lycabettus",
+     "puan": 4.8,
+     "yorum": 4831,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mount%20Lycabettus&query_place_id=ChIJkXWXEk69oRQRao7rDwGANWg"
     },
     {
      "id": "ulusal-arkeoloji-muzesi",
@@ -2019,7 +2851,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
      "bilgi": "Agamemnon Maskesi, Artemision'un tunç Zeus/Poseidon heykeli ve Antikythera düzeneği ile dünyanın en zengin antik Yunan koleksiyonu. Omonia/Victoria metrosuna yakın.",
      "kaynak": "https://www.namuseum.gr/en/",
-     "konum": null
+     "konum": [
+      37.98902,
+      23.73276
+     ],
+     "googleAd": "National Archaeological Museum",
+     "puan": 4.6,
+     "yorum": 39800,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Archaeological%20Museum&query_place_id=ChIJi_3FvzO9oRQRtILLqjSdogI"
     }
    ]
   },
@@ -2063,7 +2902,14 @@
      "fiyat_yazi": "Yetişkin 195 kr (Kasım–Aralık), 18 yaş altı ücretsiz",
      "bilgi": "1628'deki ilk seferinde batan ve neredeyse bütünüyle korunmuş savaş gemisi. Çarşamba 20:00'ye kadar açık; kalabalıktan kaçmak için açılışta gidin.",
      "kaynak": "https://www.vasamuseet.se/globalassets/vasamuseet/dokument/bransch/2026-info--priser/vasa-museum_2026_english_2.pdf",
-     "konum": null
+     "konum": [
+      59.32802,
+      18.0914
+     ],
+     "googleAd": "Vasa Museum",
+     "puan": 4.8,
+     "yorum": 72538,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Vasa%20Museum&query_place_id=ChIJrymDbVSdX0YRQTLBtPGa8M8"
     },
     {
      "id": "abba-muzesi",
@@ -2077,7 +2923,14 @@
      "fiyat_yazi": "Dinamik fiyat, yetişkin yaklaşık 249–329 kr; online saatli bilet önerilir",
      "bilgi": "Kostümler, plaklar ve şarkı söyleyip dans edebileceğiniz interaktif bölümler. Nakit kabul edilmiyor, hafta sonu saatleri erken doluyor.",
      "kaynak": "https://www.thetraveler.org/abba-museum-tickets-opening-hours-visitor-guide-2026/",
-     "konum": null
+     "konum": [
+      59.32509,
+      18.09678
+     ],
+     "googleAd": "ABBA The Museum",
+     "puan": 4.5,
+     "yorum": 21848,
+     "harita": "https://www.google.com/maps/search/?api=1&query=ABBA%20The%20Museum&query_place_id=ChIJBf9B06qCX0YRR46XNXjwFUo"
     },
     {
      "id": "gamla-stan-eski-sehir",
@@ -2091,7 +2944,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Arnavut kaldırımlı dar sokaklar, renkli cepheler ve şehrin en dar sokağı Mårten Trotzigs gränd. Västerlånggatan yerine paralel ara sokaklarda dolaşın.",
      "kaynak": "https://www.visitstockholm.com/",
-     "konum": null
+     "konum": [
+      59.3257,
+      18.07187
+     ],
+     "googleAd": "Gamla stan",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gamla%20stan&query_place_id=ChIJK_mfZuJ3X0YREYsWNfT-ACY"
     },
     {
      "id": "kraliyet-saray",
@@ -2105,7 +2965,14 @@
      "fiyat_yazi": "Yetişkin 220 kr (Ekim–Nisan); Kraliyet Daireleri, Hazine ve Tre Kronor Müzesi dahil",
      "bilgi": "Avrupa'nın en büyük saraylarından biri; avluda nöbet değişimi ücretsiz izlenir. Ekim–Nisan 10:00–16:00 açık, resmî etkinlik günlerinde kapanabiliyor.",
      "kaynak": "https://www.stockholm-spirit.com/guides/royal-palace-stockholm-guide/",
-     "konum": null
+     "konum": [
+      59.32682,
+      18.07172
+     ],
+     "googleAd": "The Royal Palace",
+     "puan": 4.5,
+     "yorum": 45780,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Royal%20Palace&query_place_id=ChIJAUpMflidX0YRNj52SJZ6-b0"
     },
     {
      "id": "stortorget-noel-pazar",
@@ -2119,7 +2986,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Gamla Stan'ın ana meydanında kırmızı kulübeler, glögg ve zencefilli kurabiye. 2026 için tahmini 21 Kasım–23 Aralık, Cuma–Cumartesi 19:00'a kadar; tarihleri teyit et.",
      "kaynak": "https://ultimatechristmasmarkets.com/sweden/stockholm-christmas-market/",
-     "konum": null
+     "konum": [
+      59.32491,
+      18.07035
+     ],
+     "googleAd": "Stortorgets Julmarknad",
+     "puan": 4,
+     "yorum": 129,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Stortorgets%20Julmarknad&query_place_id=ChIJIQFXqFp3X0YRA8lxFAorcKE",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Stortorgets Julmarknad\" buldu"
     },
     {
      "id": "fotografiska",
@@ -2133,7 +3008,14 @@
      "fiyat_yazi": "Yetişkin 195 kr",
      "bilgi": "Su kenarında çağdaş fotoğraf müzesi; üst kattaki kafeden Gamla Stan manzarası harika. Her gün 23:00'e kadar açık, akşam gitmek için ideal.",
      "kaynak": "https://stockholm.fotografiska.com/en/visit/-0",
-     "konum": null
+     "konum": [
+      59.31796,
+      18.08483
+     ],
+     "googleAd": "Fotografiska",
+     "puan": 4.4,
+     "yorum": 20248,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Fotografiska&query_place_id=ChIJhaN0M_l3X0YRpOq8uRb_RcA"
     },
     {
      "id": "monteliusvagen",
@@ -2147,7 +3029,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Södermalm sırtında, Gamla Stan ve Belediye Sarayı'na bakan yürüyüş yolu. Kışın erken karardığı için gün batımına (15:00 civarı) göre plan yapın.",
      "kaynak": "https://www.visitstockholm.com/",
-     "konum": null
+     "konum": [
+      59.32072,
+      18.06022
+     ],
+     "googleAd": "Monteliusvägen",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Monteliusv%C3%A4gen&query_place_id=ChIJkaEhA-R3X0YR07E0Bkkiw2w"
     },
     {
      "id": "stockholm-belediye-saray-stadshuset",
@@ -2161,7 +3050,14 @@
      "fiyat_yazi": "Rehberli tur yetişkin 150 kr; içeri yalnızca turla girilir",
      "bilgi": "Nobel ziyafetinin verildiği Mavi Salon ve altın mozaikli Altın Salon. Turlar ~45 dk; biletler bir hafta önceden online açılıyor.",
      "kaynak": "https://stadshuset.stockholm/en/visit-stockholm-city-hall/guided-tours",
-     "konum": null
+     "konum": [
+      59.32779,
+      18.05518
+     ],
+     "googleAd": "Stockholm City Hall",
+     "puan": 4.7,
+     "yorum": 5092,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Stockholm%20City%20Hall&query_place_id=ChIJ6c2SkN93X0YRwJQTkQ3Jr64"
     },
     {
      "id": "ostermalms-saluhall",
@@ -2175,7 +3071,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Tarihi kapalı yemek çarşısı: ringa balığı, karides sandviçi ve İsveç peynirleri. Pazar günleri genelde kapalı, saatleri kontrol edin.",
      "kaynak": "https://www.ostermalmshallen.se/",
-     "konum": null
+     "konum": [
+      59.336,
+      18.078
+     ],
+     "googleAd": "Östermalms Food Hall",
+     "puan": 4.4,
+     "yorum": 7352,
+     "harita": "https://www.google.com/maps/search/?api=1&query=%C3%96stermalms%20Food%20Hall&query_place_id=ChIJOWEJJFudX0YRWjW0uiJOeD0"
     },
     {
      "id": "kungstradgarden",
@@ -2189,7 +3092,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin merkezindeki kraliyet bahçesi; kışın genelde buz pateni pisti kurulur. Saraydan Östermalm'a yürürken uğranır.",
      "kaynak": "https://www.visitstockholm.com/",
-     "konum": null
+     "konum": [
+      59.33109,
+      18.07187
+     ],
+     "googleAd": "King's Garden",
+     "puan": 4.5,
+     "yorum": 30355,
+     "harita": "https://www.google.com/maps/search/?api=1&query=King's%20Garden&query_place_id=ChIJBYJFRVmdX0YR_ACqwqyi8B0",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"King's Garden\" buldu"
     }
    ]
   },
@@ -2233,7 +3144,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Renkli 17. yüzyıl evleri ve tekneleriyle şehrin kartpostal kanalı. Kanal turları buradan kalkar; Aralık'ta kanal boyunca küçük bir Noel pazarı kurulur.",
      "kaynak": "https://www.visitcopenhagen.com/",
-     "konum": null
+     "konum": [
+      55.67978,
+      12.5913
+     ],
+     "googleAd": "Nyhavn",
+     "puan": 4.7,
+     "yorum": 9047,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Nyhavn&query_place_id=ChIJr21nqiJTUkYR6-rlKAmgwpk"
     },
     {
      "id": "amalienborg-saray",
@@ -2247,7 +3165,14 @@
      "fiyat_yazi": "Meydan ücretsiz (saray müzesi ayrıca ücretli)",
      "bilgi": "Kraliyet ailesinin dört sarayla çevrili sekizgen meydanı. Öğle saatindeki nöbet değişimini yakalamaya çalışın; Mermer Kilise hemen karşıda.",
      "kaynak": "https://www.visitcopenhagen.com/",
-     "konum": null
+     "konum": [
+      55.68406,
+      12.59302
+     ],
+     "googleAd": "Amalienborg Palace",
+     "puan": 4.5,
+     "yorum": 33298,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Amalienborg%20Palace&query_place_id=ChIJcwY-NiJTUkYRP1UVnat_8Vw"
     },
     {
      "id": "kucuk-deniz-k-z-heykeli",
@@ -2261,7 +3186,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Andersen masalından ilham alan küçük bronz heykel. Yıldız biçimli Kastellet kalesinin surlarından yürüyerek gidin; sabah erken daha sakin.",
      "kaynak": "https://www.visitcopenhagen.com/copenhagen/little-mermaid-gdk410562",
-     "konum": null
+     "konum": [
+      55.69286,
+      12.59928
+     ],
+     "googleAd": "The Little Mermaid",
+     "puan": 4.1,
+     "yorum": 40611,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Little%20Mermaid&query_place_id=ChIJAyFCjeuQTEYRPB41ogyQqN8"
     },
     {
      "id": "rosenborg-saray",
@@ -2275,7 +3207,14 @@
      "fiyat_yazi": "Online 140 kr, kapıda 150 kr",
      "bilgi": "IV. Christian'ın Rönesans sarayı; bodrum hazinesinde Danimarka taç mücevherleri. Kış aylarında pazartesi kapalı olabiliyor, Kongens Have bahçesi ücretsiz.",
      "kaynak": "https://denkongeligesamling.dk/en/rosenborg-castle/plan-your-visit/",
-     "konum": null
+     "konum": [
+      55.68583,
+      12.57727
+     ],
+     "googleAd": "Rosenborg Castle",
+     "puan": 4.6,
+     "yorum": 27907,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Rosenborg%20Castle&query_place_id=ChIJHVOeQhtTUkYRPBsoRTOcNVI"
     },
     {
      "id": "torvehallerne",
@@ -2289,7 +3228,15 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Nørreport'taki cam yemek hali: smørrebrød, Danimarka hamur işleri ve kahve. Öğle yemeği için ideal, hafta sonu kalabalık.",
      "kaynak": "https://www.visitcopenhagen.com/",
-     "konum": null
+     "konum": [
+      55.68378,
+      12.56893
+     ],
+     "googleAd": "TorvehallerneKBH",
+     "puan": 4.5,
+     "yorum": 16932,
+     "harita": "https://www.google.com/maps/search/?api=1&query=TorvehallerneKBH&query_place_id=ChIJGzGFEgVTUkYRO2LpXOPtdHM",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"TorvehallerneKBH\" buldu"
     },
     {
      "id": "yuvarlak-kule-rundetarn",
@@ -2303,7 +3250,14 @@
      "fiyat_yazi": "Yetişkin 60 kr",
      "bilgi": "Basamaksız spiral rampayla çıkılan 17. yüzyıl gözlemevi; tepeden eski şehrin çatıları. Kışın 10:00–18:00 açık; seyir terası 8–12 Aralık'ta restorasyon nedeniyle kapalı.",
      "kaynak": "https://kbhmuseer.dk/en/museum/the-round-tower/",
-     "konum": null
+     "konum": [
+      55.68135,
+      12.57573
+     ],
+     "googleAd": "The Round Tower",
+     "puan": 4.5,
+     "yorum": 28983,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Round%20Tower&query_place_id=ChIJoZv7gxBTUkYRN6Q-o22fOuc"
     },
     {
      "id": "christiansborg-saray",
@@ -2317,7 +3271,14 @@
      "fiyat_yazi": "Kraliyet Kabul Salonları online 140 kr (kapıda 150 kr); tüm bölümler için Palace Ticket online 215 kr",
      "bilgi": "Parlamento, kabul salonları, saray mutfağı ve ahırlar aynı adada. Saray kulesi ücretsiz ve şehrin en yüksek manzaralarından birini sunar.",
      "kaynak": "https://denkongeligesamling.dk/en/booking-grupper",
-     "konum": null
+     "konum": [
+      55.67632,
+      12.58033
+     ],
+     "googleAd": "Christiansborg Palace",
+     "puan": 4.6,
+     "yorum": 22856,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Christiansborg%20Palace&query_place_id=ChIJCbqRvxZTUkYRGWI2eOd3tiw"
     },
     {
      "id": "ny-carlsberg-glyptotek",
@@ -2331,7 +3292,14 @@
      "fiyat_yazi": "Yetişkin 150 kr; ayın son çarşambası ücretsiz",
      "bilgi": "Antik heykeller, Fransız empresyonistleri ve palmiyeli kış bahçesi. Pazartesi kapalı; online alımda %10 indirim var.",
      "kaynak": "https://www.visitcopenhagen.com/copenhagen/planning/glyptoteket-gdk410562",
-     "konum": null
+     "konum": [
+      55.67298,
+      12.57254
+     ],
+     "googleAd": "Ny Carlsberg Glyptotek",
+     "puan": 4.6,
+     "yorum": 15318,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ny%20Carlsberg%20Glyptotek&query_place_id=ChIJfXQRBBNTUkYRoec4408un1k"
     },
     {
      "id": "tivoli-bahceleri-noel-sezonu",
@@ -2345,7 +3313,14 @@
      "fiyat_yazi": "Giriş 210 kr'dan başlar, tarihe göre değişir; oyuncaklar ayrıca ücretli",
      "bilgi": "Işıklarla donanan 1843 yapımı lunapark ve Noel pazarı; 2026 sezonu 13 Kasım 2026–3 Ocak 2027. 24 Aralık genelde kapalı, tarihleri teyit et; akşam gidin.",
      "kaynak": "https://www.storyhunt.io/articles/tivoli-christmas-market",
-     "konum": null
+     "konum": [
+      55.67366,
+      12.56823
+     ],
+     "googleAd": "Tivoli Gardens",
+     "puan": 4.5,
+     "yorum": 95011,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tivoli%20Gardens&query_place_id=ChIJ8-r2gBJTUkYRsCcLtQ0Ltdk"
     },
     {
      "id": "christiania",
@@ -2359,7 +3334,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "1971'den beri özerk yaşayan, grafitili ve göl kenarı evleriyle alternatif mahalle. Pusher Street'te fotoğraf çekmeyin; Christianshavn kanallarıyla birleştirin.",
      "kaynak": "https://www.visitcopenhagen.com/",
-     "konum": null
+     "konum": [
+      55.67341,
+      12.59641
+     ],
+     "googleAd": "Freetown Christiania",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Freetown%20Christiania&query_place_id=ChIJpz3tBzlTUkYRuSiVCeI9GK4"
     }
    ]
   },
@@ -2403,7 +3385,14 @@
      "fiyat_yazi": "Kasım–Aralık'ta ücretsiz (yaz aylarında turist ücreti uygulanabiliyor)",
      "bilgi": "Senato Meydanı'na hâkim beyaz neoklasik kilise; basamaklar şehrin buluşma noktası. Ayin ve törenlerde ziyarete kapanabilir.",
      "kaynak": "https://www.myhelsinki.fi/",
-     "konum": null
+     "konum": [
+      60.17037,
+      24.95213
+     ],
+     "googleAd": "Helsinki Cathedral",
+     "puan": 4.6,
+     "yorum": 14645,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Helsinki%20Cathedral&query_place_id=ChIJtxnDRs4LkkYRousRCbTXpyg"
     },
     {
      "id": "tuomaan-markkinat-senato-meydan-noel-paz",
@@ -2417,7 +3406,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Senato Meydanı'nda el sanatları, glögi ve Fin Noel lezzetleri; genelde Kasım sonundan 22 Aralık'a kadar açık. 2026 tarihlerini teyit et.",
      "kaynak": "https://www.myhelsinki.fi/",
-     "konum": null
+     "konum": [
+      60.16948,
+      24.95229
+     ],
+     "googleAd": "Senate Square",
+     "puan": 4.6,
+     "yorum": 22279,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Senate%20Square&query_place_id=ChIJtxnDRs4LkkYRygjZtCzjV7w"
     },
     {
      "id": "pazar-meydan-ve-eski-pazar-salonu",
@@ -2431,7 +3427,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Limandaki Kauppatori ve 1889 yapımı kapalı çarşı: somon çorbası, ren geyiği ve Fin hamur işleri. Pazar günleri saatleri kısalır.",
      "kaynak": "https://www.myhelsinki.fi/",
-     "konum": null
+     "konum": [
+      60.16616,
+      24.95282
+     ],
+     "googleAd": "Old Market Hall",
+     "puan": 4.5,
+     "yorum": 5010,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Old%20Market%20Hall&query_place_id=ChIJWS7idIkLkkYRnDd0_KVobL4"
     },
     {
      "id": "esplanadi-park",
@@ -2445,7 +3448,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Pazar Meydanı'ndan Stockmann'a uzanan bulvar parkı; Aralık'ta ışıklarla süslenir. Tarihi Café Kappeli'de kahve molası verin.",
      "kaynak": "https://www.myhelsinki.fi/",
-     "konum": null
+     "konum": [
+      60.16748,
+      24.94761
+     ],
+     "googleAd": "Esplanadi",
+     "puan": 4.5,
+     "yorum": 14280,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Esplanadi&query_place_id=ChIJn65pyM4LkkYRMLoVPFK1AA8"
     },
     {
      "id": "skywheel-helsinki",
@@ -2459,7 +3469,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Liman kıyısındaki dönme dolaptan Uspenski Katedrali ve takımadalar manzarası. Kapalı kabinler kışın da çalışır.",
      "kaynak": "https://www.skywheel.fi/",
-     "konum": null
+     "konum": [
+      60.16679,
+      24.95944
+     ],
+     "googleAd": "SkyWheel Helsinki",
+     "puan": 4.4,
+     "yorum": 5095,
+     "harita": "https://www.google.com/maps/search/?api=1&query=SkyWheel%20Helsinki&query_place_id=ChIJCzz3pcULkkYRQcJ8P4r6sH4"
     },
     {
      "id": "suomenlinna-deniz-kalesi",
@@ -2473,7 +3490,14 @@
      "fiyat_yazi": "Ada ücretsiz; feribot HSL AB bileti ile (3,30 €)",
      "bilgi": "UNESCO listesindeki 18. yüzyıl ada kalesi; surlar, tüneller ve deniz manzarası. Pazar Meydanı'ndan HSL feribotuyla 15 dk; kışın rüzgârlı olur, sıkı giyinin.",
      "kaynak": "https://www.hsl.fi/en/tickets-and-fares/single-tickets/single-ticket-prices-in-the-hsl-area",
-     "konum": null
+     "konum": [
+      60.1454,
+      24.98814
+     ],
+     "googleAd": "Suomenlinna",
+     "puan": 4.6,
+     "yorum": 27885,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Suomenlinna&query_place_id=ChIJhTiFuI0LkkYRFwfoahbvmAw"
     },
     {
      "id": "temppeliaukio-kilisesi-kaya-kilisesi",
@@ -2487,7 +3511,14 @@
      "fiyat_yazi": "Ücretli giriş; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Kayaya oyulmuş, bakır kubbeli 1969 yapımı kilise; akustiği çok iyi. Düğün ve konserlerde ziyarete kapanabilir.",
      "kaynak": "https://www.temppeliaukionkirkko.fi/",
-     "konum": null
+     "konum": [
+      60.17303,
+      24.92524
+     ],
+     "googleAd": "Temppeliaukio Church",
+     "puan": 4.4,
+     "yorum": 17563,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Temppeliaukio%20Church&query_place_id=ChIJsQw2ZzEKkkYRn0OBJ6_9uoA"
     },
     {
      "id": "ateneum-sanat-muzesi",
@@ -2501,7 +3532,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Finlandiya'nın ulusal sanat koleksiyonu; Gallen-Kallela ve Fin altın çağı resimleri. Merkez İstasyonu'nun hemen karşısında, pazartesi kapalı.",
      "kaynak": "https://ateneum.fi/en/",
-     "konum": null
+     "konum": [
+      60.17019,
+      24.94414
+     ],
+     "googleAd": "Ateneum Art Museum",
+     "puan": 4.6,
+     "yorum": 9561,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ateneum%20Art%20Museum&query_place_id=ChIJufsewYYLkkYRNm8GCxTL0sw"
     },
     {
      "id": "amos-rex",
@@ -2515,7 +3553,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Yer altındaki çağdaş sanat müzesi; meydandaki kubbeli tavan pencereleri fotoğraf için çok popüler. Sergiye göre fiyat ve saatler değişir.",
      "kaynak": "https://amosrex.fi/en/",
-     "konum": null
+     "konum": [
+      60.17064,
+      24.9365
+     ],
+     "googleAd": "Amos Rex",
+     "puan": 4.4,
+     "yorum": 4844,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Amos%20Rex&query_place_id=ChIJX4HRpa8LkkYRjsZ5MTttlmg"
     },
     {
      "id": "oodi-merkez-kutuphanesi",
@@ -2529,7 +3574,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Ahşap dalga cepheli modern kütüphane; üst kattaki 'kitap cenneti' ve terastan Parlamento binası manzarası. Soğukta ısınma molası için ideal.",
      "kaynak": "https://oodihelsinki.fi/en/",
-     "konum": null
+     "konum": [
+      60.17368,
+      24.93792
+     ],
+     "googleAd": "Helsinki Central Library Oodi",
+     "puan": 4.8,
+     "yorum": 6919,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Helsinki%20Central%20Library%20Oodi&query_place_id=ChIJ67v8tsoLkkYR3XU-Jmnz2m4"
     }
    ]
   },
@@ -2573,7 +3625,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "UNESCO listesindeki Orta Çağ eski şehrinin kalbi; gotik Belediye Binası, surlar ve dar sokaklar. Viru Kapısı'ndan girip Katariina käik geçidine uğrayın.",
      "kaynak": "https://www.visittallinn.ee/eng",
-     "konum": null
+     "konum": [
+      59.43702,
+      24.74529
+     ],
+     "googleAd": "Tallinn Town Hall",
+     "puan": 4.7,
+     "yorum": 11257,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tallinn%20Town%20Hall&query_place_id=ChIJH3QEFGKTkkYRGYn6E9CeCUc"
     },
     {
      "id": "tallinn-noel-pazar",
@@ -2587,7 +3646,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Raekoja Meydanı'nda dev Noel ağacı, sıcak şarap ve Estonya el işleri; Avrupa'nın en sevilen küçük Noel pazarlarından. Genelde Kasım sonundan Ocak başına kadar sürer, 2026 tarihlerini teyit et.",
      "kaynak": "https://www.visittallinn.ee/eng",
-     "konum": null
+     "konum": [
+      59.43726,
+      24.74513
+     ],
+     "googleAd": "Tallinn Christmas Market",
+     "puan": 4.5,
+     "yorum": 786,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tallinn%20Christmas%20Market&query_place_id=ChIJDQEUFWKTkkYRrruQTwKnNz4",
+     "kapali": "gecici"
     },
     {
      "id": "toompea-seyir-teraslar",
@@ -2601,7 +3668,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kohtuotsa ve Patkuli teraslarından kırmızı çatılar, kiliseler ve liman manzarası. Patkuli'ye merdivenle de çıkılır; gün batımında en güzel.",
      "kaynak": "https://www.visittallinn.ee/eng",
-     "konum": null
+     "konum": [
+      59.43781,
+      24.74188
+     ],
+     "googleAd": "Kohtuotsa viewing platform",
+     "puan": 4.8,
+     "yorum": 7223,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Kohtuotsa%20viewing%20platform&query_place_id=ChIJ3TY4imKTkkYRBKgGxVfVHN8"
     },
     {
      "id": "aleksandr-nevski-katedrali",
@@ -2615,7 +3689,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Soğan kubbeli 19. yüzyıl Ortodoks katedrali. İçeride fotoğraf yasak, omuzları örten kıyafet uygun olur.",
      "kaynak": "https://www.visittallinn.ee/eng",
-     "konum": null
+     "konum": [
+      59.43584,
+      24.73944
+     ],
+     "googleAd": "Alexander Nevsky Cathedral",
+     "puan": 4.6,
+     "yorum": 9640,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Alexander%20Nevsky%20Cathedral&query_place_id=ChIJKRm6cp2UkkYRMhVu4HT9Ey4"
     },
     {
      "id": "kiek-in-de-kok-ve-bastiyon-tunelleri",
@@ -2629,7 +3710,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "15. yüzyıl topçu kulesi ve surların altındaki tüneller; tüneller rehberli turla gezilir. Turları önceden ayırtın, pazartesi kapalı olabilir.",
      "kaynak": "https://linnamuuseum.ee/en/kiek-in-de-kok/",
-     "konum": null
+     "konum": [
+      59.43469,
+      24.74123
+     ],
+     "googleAd": "Kiek in de Kök Fortification Museum",
+     "puan": 4.6,
+     "yorum": 4101,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Kiek%20in%20de%20K%C3%B6k%20Fortification%20Museum&query_place_id=ChIJ8x3Au52UkkYRdu9aJJoRsD4"
     },
     {
      "id": "kadriorg-park-ve-saray",
@@ -2643,7 +3731,14 @@
      "fiyat_yazi": "Park ücretsiz; saray müzesi ayrıca ücretli",
      "bilgi": "Deli Petro'nun eşi için yaptırdığı barok saray ve çevresindeki geniş park. Merkezden tramvay 1 veya 3 ile 10 dk.",
      "kaynak": "https://www.visittallinn.ee/eng",
-     "konum": null
+     "konum": [
+      59.4389,
+      24.79304
+     ],
+     "googleAd": "Kadriorg Park",
+     "puan": 4.8,
+     "yorum": 18116,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Kadriorg%20Park&query_place_id=ChIJyRI_xlGTkkYRASfRHNMc0es"
     },
     {
      "id": "kumu-sanat-muzesi",
@@ -2657,7 +3752,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Estonya sanatının ana müzesi; Sovyet dönemi sanatı bölümü özellikle ilginç. Kadriorg Parkı'nın ucunda, pazartesi kapalı.",
      "kaynak": "https://kumu.ekm.ee/en/",
-     "konum": null
+     "konum": [
+      59.43622,
+      24.7962
+     ],
+     "googleAd": "Art Museum of Estonia (KUMU)",
+     "puan": 4.7,
+     "yorum": 6152,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Art%20Museum%20of%20Estonia%20(KUMU)&query_place_id=ChIJ3ehsiVKTkkYR8wxRU1hFIHc"
     },
     {
      "id": "lennusadam-deniz-ucag-liman",
@@ -2671,7 +3773,15 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Beton hangarlarda denizaltı Lembit, buzkıran ve deniz uçakları; interaktif ve çiftler için de eğlenceli. Kalamaja'dan sahil yürüyüşüyle gidilir.",
      "kaynak": "https://meremuuseum.ee/lennusadam/en/",
-     "konum": null
+     "konum": [
+      59.45171,
+      24.73837
+     ],
+     "googleAd": "Lennusadam – Eesti Meremuuseum",
+     "puan": 4.8,
+     "yorum": 18383,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Lennusadam%20%E2%80%93%20Eesti%20Meremuuseum&query_place_id=ChIJTRNjNneTkkYR4qzPO1zbDuw",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Lennusadam – Eesti Meremuuseum\" buldu"
     },
     {
      "id": "telliskivi-yarat-c-sehir",
@@ -2685,7 +3795,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski fabrika binalarında kafeler, tasarım dükkânları, sokak sanatı ve galeriler. Kalamaja'nın ahşap evleriyle birlikte gezin.",
      "kaynak": "https://www.visittallinn.ee/eng",
-     "konum": null
+     "konum": [
+      59.43984,
+      24.72899
+     ],
+     "googleAd": "Telliskivi Creative City",
+     "puan": 4.6,
+     "yorum": 5528,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Telliskivi%20Creative%20City&query_place_id=ChIJS4pp8H2TkkYRZWMfJVezO3o"
     },
     {
      "id": "balti-jaama-turg",
@@ -2699,7 +3816,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Gar binasının yanındaki modern pazar: üst katta sokak yemekleri, altta yerel ürünler ve antikacılar. Öğle yemeği için iyi bir durak.",
      "kaynak": "https://www.visittallinn.ee/eng",
-     "konum": null
+     "konum": [
+      59.44113,
+      24.73544
+     ],
+     "googleAd": "Balti Jaama Turg",
+     "puan": 4.6,
+     "yorum": 27050,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Balti%20Jaama%20Turg&query_place_id=ChIJeWFVwX2TkkYRJvpHOldosHg"
     }
    ]
   },
@@ -2743,7 +3867,15 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Belediye Meydanı'ndaki gösterişli gotik-Hollanda cepheli lonca binası; dışı ücretsiz izlenir. İç mekânda tören salonları ve bodrum mahzenleri.",
      "kaynak": "https://www.melngalvjunams.lv/en/",
-     "konum": null
+     "konum": [
+      56.94717,
+      24.10677
+     ],
+     "googleAd": "House of the Black Heads",
+     "puan": 4.6,
+     "yorum": 13310,
+     "harita": "https://www.google.com/maps/search/?api=1&query=House%20of%20the%20Black%20Heads&query_place_id=ChIJDWyy-dbP7kYRH6ESKobk6Sk",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"House of the Black Heads\" buldu"
     },
     {
      "id": "riga-katedrali-doma",
@@ -2757,7 +3889,14 @@
      "fiyat_yazi": "Ücretli giriş; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev orgu. Öğle saatlerindeki kısa org konserlerini takip edin.",
      "kaynak": "https://doms.lv/en",
-     "konum": null
+     "konum": [
+      56.94908,
+      24.10476
+     ],
+     "googleAd": "Riga Cathedral",
+     "puan": 4.6,
+     "yorum": 6760,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Riga%20Cathedral&query_place_id=ChIJmzb5QtfP7kYR2x9QSwpW-lY"
     },
     {
      "id": "aziz-petrus-kilisesi-kulesi",
@@ -2771,7 +3910,14 @@
      "fiyat_yazi": "Ücretli (kule asansörü); güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Asansörle çıkılan kuleden eski şehir ve Daugava nehri manzarası. Kule bilgisi ve saatlerini gitmeden kontrol edin.",
      "kaynak": "https://www.peterbaznica.riga.lv/",
-     "konum": null
+     "konum": [
+      56.94744,
+      24.10865
+     ],
+     "googleAd": "St. Peter's Church",
+     "puan": 4.6,
+     "yorum": 8499,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St.%20Peter's%20Church&query_place_id=ChIJs_EtltbP7kYR7J7MVsBfJ9I"
     },
     {
      "id": "riga-noel-pazar-doma-meydan",
@@ -2785,7 +3931,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Doma Meydanı'nda sıcak şarap, el örgüsü yün ürünler ve Letonya lezzetleri; Riga ilk süslü Noel ağacının şehri sayılır. Genelde Kasım sonu–Ocak başı, 2026 tarihlerini teyit et.",
      "kaynak": "https://www.liveriga.com/en",
-     "konum": null
+     "konum": [
+      56.94953,
+      24.10498
+     ],
+     "googleAd": "Dome Square",
+     "puan": 4.7,
+     "yorum": 6383,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Dome%20Square&query_place_id=ChIJM1OQN9fP7kYRq4wS6UDCOq0"
     },
     {
      "id": "riga-merkez-pazar",
@@ -2799,7 +3952,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Eski zeplin hangarlarında kurulu Avrupa'nın en büyük pazarlarından biri; füme balık, ekşi mayalı çavdar ekmeği ve bal. Sabah gidin, cüzdanınıza dikkat edin.",
      "kaynak": "https://www.liveriga.com/en",
-     "konum": null
+     "konum": [
+      56.94386,
+      24.115
+     ],
+     "googleAd": "Riga Central Market",
+     "puan": 4.4,
+     "yorum": 56243,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Riga%20Central%20Market&query_place_id=ChIJ4zbC0dTP7kYR1Atmanhp1zg"
     },
     {
      "id": "hurriyet-an-t",
@@ -2813,7 +3973,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Letonya bağımsızlığının simgesi 'Milda' heykeli; gün boyu iki askerin nöbet tuttuğu tören alanı. Eski şehirle yeni şehrin sınırında.",
      "kaynak": "https://www.liveriga.com/en",
-     "konum": null
+     "konum": [
+      56.95149,
+      24.1133
+     ],
+     "googleAd": "The Freedom Monument",
+     "puan": 4.7,
+     "yorum": 12552,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Freedom%20Monument&query_place_id=ChIJocMsdNHP7kYRgUZD8gCAQCU"
     },
     {
      "id": "bastejkalns-park",
@@ -2827,7 +3994,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski sur hendeği boyunca kanal kenarı park ve köprüler. Hürriyet Anıtı'ndan Ulusal Sanat Müzesi'ne yürürken geçilir.",
      "kaynak": "https://www.liveriga.com/en",
-     "konum": null
+     "konum": [
+      56.95197,
+      24.1105
+     ],
+     "googleAd": "Bastejkalns Park",
+     "puan": 4.7,
+     "yorum": 8891,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bastejkalns%20Park&query_place_id=ChIJxXsY39PP7kYRB4pgetCDFt4"
     },
     {
      "id": "letonya-ulusal-sanat-muzesi",
@@ -2841,7 +4015,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Restore edilmiş 1905 binasında Letonya ve Baltık resim koleksiyonu; çatı terası güzel. Pazartesi kapalı.",
      "kaynak": "https://www.lnmm.gov.lv/en",
-     "konum": null
+     "konum": [
+      56.95583,
+      24.11308
+     ],
+     "googleAd": "Latvian National Museum of Art",
+     "puan": 4.7,
+     "yorum": 5893,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Latvian%20National%20Museum%20of%20Art&query_place_id=ChIJ8z27yM_P7kYRZ1zPDd_BR8Q"
     },
     {
      "id": "alberta-sokag-art-nouveau",
@@ -2855,7 +4036,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eisenstein imzalı yüzlü, heykelli Art Nouveau cepheleriyle Riga'nın en fotojenik sokağı. Yakındaki Elizabetes iela'yı da gezin.",
      "kaynak": "https://www.liveriga.com/en",
-     "konum": null
+     "konum": [
+      56.9595,
+      24.1079
+     ],
+     "googleAd": "Alberta iela",
+     "puan": 4.8,
+     "yorum": 335,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Alberta%20iela&query_place_id=ChIJt1kumMXP7kYRtnrQh34Pzcc"
     },
     {
      "id": "riga-art-nouveau-muzesi",
@@ -2869,7 +4057,14 @@
      "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
      "bilgi": "Dönemine uygun döşenmiş bir Art Nouveau apartman dairesi ve ünlü spiral merdiven. Küçük bir müze, pazartesi kapalı.",
      "kaynak": "https://www.jugendstils.riga.lv/en",
-     "konum": null
+     "konum": [
+      56.95961,
+      24.10883
+     ],
+     "googleAd": "Riga Art Nouveau Center",
+     "puan": 4.6,
+     "yorum": 3883,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Riga%20Art%20Nouveau%20Center&query_place_id=ChIJmx59usXP7kYR-GmhGihukkg"
     }
    ]
   },
@@ -2877,7 +4072,7 @@
    "para": "EUR",
    "ulasim": {
     "tek_bilet": {
-     "fiyat": 1.0,
+     "fiyat": 1,
      "aciklama": "30 dakikalık bilet (Trafi/m.Ticket uygulaması veya JUDU kartı), aktarmalı; 60 dk bilet 1,25 € (otobüste temassız kartla da alınır)",
      "kaynak": "https://www.govilnius.lt/plan-your-trip/getting-around-vilnius-/public-transport"
     },
@@ -2893,7 +4088,7 @@
      "kaynak": "https://www.govilnius.lt/plan-your-trip/getting-around-vilnius-/public-transport"
     },
     "havalimani": {
-     "fiyat": 1.0,
+     "fiyat": 1,
      "sure_dk": 20,
      "aciklama": "Vilnius Havalimanı → merkez 88 veya 3G otobüsü, tek yön (30 dk bilet yeter; otobüste temassız kartla 60 dk bilet 1,25 €)",
      "kaynak": "https://judu.lt/en/for-public-transport-passengers/vilnius-airport-by-public-transport/"
@@ -2913,7 +4108,14 @@
      "fiyat_yazi": "Yetişkin 8 € (müze + seyir terası); tepe ücretsiz",
      "bilgi": "Yukarı Kale tepesindeki kuleden Eski Şehir'in kırmızı çatılarını tepeden görürsünüz. Füniküler bakımda olabilir, yürüyüş yolu her zaman açık.",
      "kaynak": "https://thetripverdict.com/gediminas-tower-vilnius",
-     "konum": null
+     "konum": [
+      54.68675,
+      25.29061
+     ],
+     "googleAd": "Gediminas Castle Tower",
+     "puan": 4.7,
+     "yorum": 13524,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gediminas%20Castle%20Tower&query_place_id=ChIJLfdN3xmU3UYR-_b3gj-rzYQ"
     },
     {
      "id": "vilnius-katedrali-ve-katedral-meydan",
@@ -2927,7 +4129,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Neoklasik katedral ve önündeki geniş meydan şehrin kalbi; serbest duran çan kulesi de burada. Meydandaki 'Stebuklas' (mucize) taşını bulmayı unutmayın.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      54.68593,
+      25.28777
+     ],
+     "googleAd": "Vilnius Cathedral",
+     "puan": 4.8,
+     "yorum": 17940,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Vilnius%20Cathedral&query_place_id=ChIJ2TsiNBeU3UYRYX5fwxPCsbM"
     },
     {
      "id": "litvanya-buyuk-dukleri-saray",
@@ -2941,7 +4150,14 @@
      "fiyat_yazi": "Tüm rotalar yetişkin 17 €, tek rota 4–10 €; ayın son pazarı ücretsiz",
      "bilgi": "Katedralin hemen arkasında yeniden inşa edilmiş Rönesans sarayı; arkeolojik kalıntılar ve dönem salonları. Zamanınız kısıtlıysa sadece Rota I+II'yi seçin.",
      "kaynak": "https://www.valdovurumai.lt/en/tickets/",
-     "konum": null
+     "konum": [
+      54.68618,
+      25.28901
+     ],
+     "googleAd": "Palace of the Grand Dukes of Lithuania",
+     "puan": 4.7,
+     "yorum": 7909,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Palace%20of%20the%20Grand%20Dukes%20of%20Lithuania&query_place_id=ChIJt4vxQxeU3UYRk0iYb-BGWTw"
     },
     {
      "id": "pilies-caddesi-ve-eski-sehir",
@@ -2955,7 +4171,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "UNESCO listesindeki Eski Şehir'in ana yürüyüş aksı; Belediye Meydanı ve Vilnius Üniversitesi avluları da bu güzergâhta. Kafeler ve kehribar dükkânları burada.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      54.68297,
+      25.28919
+     ],
+     "googleAd": "Pilies g.",
+     "puan": 4.8,
+     "yorum": 207,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pilies%20g.&query_place_id=ChIJW-8wWRaU3UYRwNqtL6AwBtU",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Pilies g.\" buldu"
     },
     {
      "id": "safak-kap-s",
@@ -2969,7 +4193,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski şehir surlarından kalan tek kapı; üstündeki şapelde mucizevi sayılan Meryem ikonu var. Sessiz olun, şapel aktif ibadet yeri.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      54.67435,
+      25.28953
+     ],
+     "googleAd": "Gates of Dawn | Vilnius",
+     "puan": 4.7,
+     "yorum": 14957,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gates%20of%20Dawn%20%7C%20Vilnius&query_place_id=ChIJtwndY0CU3UYRGiGAUCEwwgY"
     },
     {
      "id": "aziz-anna-kilisesi",
@@ -2983,7 +4214,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kırmızı tuğladan alevli Gotik cephesiyle Vilnius'un en fotojenik yapısı. Hemen yanındaki Bernardine kilisesiyle birlikte görün, ardından köprüden Užupis'e geçin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      54.68319,
+      25.29312
+     ],
+     "googleAd": "Church of St. Anne",
+     "puan": 4.8,
+     "yorum": 5091,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Church%20of%20St.%20Anne&query_place_id=ChIJ_2MILBaU3UYR22cP2zodLOs"
     },
     {
      "id": "uzupis",
@@ -2997,7 +4235,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kendini 'cumhuriyet' ilan etmiş bohem sanatçı mahallesi; Paupio Caddesi'ndeki çok dilli anayasa panolarında Türkçesini arayın. Nehir kenarında küçük kafeler var.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      54.68073,
+      25.29662
+     ],
+     "googleAd": "Užupis",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=U%C5%BEupis&query_place_id=ChIJR2zBuiSU3UYR0UZFTI3RACY"
     },
     {
      "id": "mo-muzesi",
@@ -3011,7 +4256,14 @@
      "fiyat_yazi": "Yetişkin 11 €",
      "bilgi": "Daniel Libeskind tasarımlı binada modern ve çağdaş Litvanya sanatı. Salı günleri kapalı, diğer günler 10:00–20:00.",
      "kaynak": "https://mo.lt/en/for-your-visit/",
-     "konum": null
+     "konum": [
+      54.67939,
+      25.27768
+     ],
+     "googleAd": "MO muziejus",
+     "puan": 4.5,
+     "yorum": 7434,
+     "harita": "https://www.google.com/maps/search/?api=1&query=MO%20muziejus&query_place_id=ChIJrXUzPxOU3UYRUzzgVCIetfc"
     },
     {
      "id": "hales-pazar",
@@ -3025,7 +4277,14 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "Şafak Kapısı'nın yakınındaki tarihi kapalı pazar; içinde yerel lezzetler sunan küçük yeme-içme tezgâhları var. Cepelinai ve Litvanya peynirlerini deneyin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      54.67365,
+      25.28609
+     ],
+     "googleAd": "Halės Market",
+     "puan": 4.3,
+     "yorum": 10458,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Hal%C4%97s%20Market&query_place_id=ChIJF2EqLkCU3UYR8GmknpjZAVo"
     },
     {
      "id": "vilnius-noel-pazar",
@@ -3039,7 +4298,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Katedral Meydanı'nda dev Noel ağacının altında; 2026'da 28 Kasım–27 Aralık arası. Ağaç yakma töreni 28 Kasım'da.",
      "kaynak": "https://www.govilnius.lt/christmas-2026-starts-early-in-vilnius-festive-dates-announced",
-     "konum": null
+     "konum": [
+      54.68534,
+      25.28727
+     ],
+     "googleAd": "Cathedral Square | Vilnius",
+     "puan": 4.8,
+     "yorum": 4881,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Cathedral%20Square%20%7C%20Vilnius&query_place_id=ChIJablJGeCV3UYRI9QG8KNK0n4"
     }
    ]
   },
@@ -3083,7 +4349,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "İkinci Dünya Savaşı'ndan sonra yeniden inşa edilen UNESCO listesindeki renkli meydan; Deniz Kızı heykeli burada.",
      "kaynak": "https://warsawtour.pl/en/",
-     "konum": null
+     "konum": [
+      52.25281,
+      21.00831
+     ],
+     "googleAd": "New Town Market",
+     "puan": 4.6,
+     "yorum": 2687,
+     "harita": "https://www.google.com/maps/search/?api=1&query=New%20Town%20Market&query_place_id=ChIJaa7e13HMHkcRfWBsOCOjsx0"
     },
     {
      "id": "kraliyet-satosu",
@@ -3097,7 +4370,14 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
      "bilgi": "Polonya krallarının sarayı, Plac Zamkowy'de. Haftada bir gün daimi sergi ücretsiz olabiliyor; resmî sitede kontrol edin.",
      "kaynak": "https://www.zamek-krolewski.pl/",
-     "konum": null
+     "konum": [
+      52.24774,
+      21.01413
+     ],
+     "googleAd": "The Royal Castle in Warsaw",
+     "puan": 4.7,
+     "yorum": 60157,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Royal%20Castle%20in%20Warsaw&query_place_id=ChIJB1RFG2bMHkcRvslJ-0ahGSA"
     },
     {
      "id": "varsova-noel-pazar",
@@ -3111,7 +4391,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Barbakan ve Eski Şehir çevresinde, Kraliyet Yolu ışıklandırmasıyla birlikte kurulur. Tarihleri teyit et.",
      "kaynak": "https://warsawtour.pl/en/",
-     "konum": null
+     "konum": [
+      52.23158,
+      21.00925
+     ],
+     "googleAd": "Jarmark",
+     "puan": 4.4,
+     "yorum": 10,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Jarmark&query_place_id=ChIJv-b8VQDNHkcRlUb4bDNM1wY",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Jarmark\" buldu"
     },
     {
      "id": "krakowskie-przedmiescie-ve-nowy-swiat",
@@ -3125,7 +4413,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kraliyet Yolu'nun en güzel kısmı; saraylar, kiliseler ve kafeler. Nowy Świat'ta pączki ve kahve molası verin.",
      "kaynak": "https://warsawtour.pl/en/",
-     "konum": null
+     "konum": [
+      52.2426,
+      21.01505
+     ],
+     "googleAd": "Krakowskie Przedmieście",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Krakowskie%20Przedmie%C5%9Bcie&query_place_id=ChIJB7hLtGDMHkcRRtv8aFdVQXE"
     },
     {
      "id": "varsova-ayaklanmas-muzesi",
@@ -3139,7 +4434,14 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
      "bilgi": "1944 ayaklanmasını interaktif anlatan, şehrin en etkileyici müzesi. Kapalı günü ve ücretsiz günü resmî sitede kontrol edin.",
      "kaynak": "https://www.1944.pl/",
-     "konum": null
+     "konum": [
+      52.23239,
+      20.98102
+     ],
+     "googleAd": "Warsaw Uprising Museum",
+     "puan": 4.7,
+     "yorum": 39964,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Warsaw%20Uprising%20Museum&query_place_id=ChIJiaL1OYPMHkcRJcZiOrY2hqk"
     },
     {
      "id": "polin-polonya-yahudileri-tarihi-muzesi",
@@ -3153,7 +4455,14 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
      "bilgi": "Bin yıllık Yahudi tarihini anlatan ödüllü müze, eski Gettonun bulunduğu Muranów'da. Binanın mimarisi de görülmeye değer.",
      "kaynak": "https://polin.pl/",
-     "konum": null
+     "konum": [
+      52.2495,
+      20.99348
+     ],
+     "googleAd": "POLIN Museum of the History of Polish Jews",
+     "puan": 4.6,
+     "yorum": 21197,
+     "harita": "https://www.google.com/maps/search/?api=1&query=POLIN%20Museum%20of%20the%20History%20of%20Polish%20Jews&query_place_id=ChIJc7iVqXnMHkcRsDBEUEPaGuI"
     },
     {
      "id": "kultur-ve-bilim-saray-seyir-teras",
@@ -3167,7 +4476,14 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı teyit et",
      "bilgi": "Stalin'in 'hediyesi' gökdelenin 30. katındaki terastan şehrin panoraması. Akşamüstü ışıklar yanarken çıkın.",
      "kaynak": "https://pkin.pl/",
-     "konum": null
+     "konum": [
+      52.23184,
+      21.006
+     ],
+     "googleAd": "Palace of Culture and Science",
+     "puan": 4.6,
+     "yorum": 87372,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Palace%20of%20Culture%20and%20Science&query_place_id=ChIJSS5pkozMHkcRwi0fMeV66cI"
     },
     {
      "id": "hala-koszyki",
@@ -3181,7 +4497,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Restore edilmiş tarihi pazar binasında onlarca restoran ve bar; akşam yemeği için ideal.",
      "kaynak": "https://warsawtour.pl/en/",
-     "konum": null
+     "konum": [
+      52.2223,
+      21.01102
+     ],
+     "googleAd": "Hala Koszyki Warszawa",
+     "puan": 4.6,
+     "yorum": 25142,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Hala%20Koszyki%20Warszawa&query_place_id=ChIJvc79RILNHkcRED5FxexUUbg"
     },
     {
      "id": "azienki-kraliyet-park",
@@ -3195,7 +4518,15 @@
      "fiyat_yazi": "Park ücretsiz; Su Üstündeki Saray ücretli",
      "bilgi": "Su Üstündeki Saray, Chopin anıtı ve tavus kuşlarıyla şehrin en güzel parkı. Kraliyet Yolu'nun güney ucunda.",
      "kaynak": "https://www.lazienki-krolewskie.pl/",
-     "konum": null
+     "konum": [
+      52.21467,
+      21.03289
+     ],
+     "googleAd": "Royal Baths",
+     "puan": 4.8,
+     "yorum": 98327,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Royal%20Baths&query_place_id=ChIJ435ebh7NHkcRcaqhXGG2Vow",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Royal Baths\" buldu"
     },
     {
      "id": "wilanow-saray",
@@ -3209,7 +4540,14 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
      "bilgi": "'Polonya'nın Versay'ı' denen barok saray ve bahçeleri; merkezden 116 veya 180 otobüsüyle ~35 dk. Kış saatlerini kontrol edin.",
      "kaynak": "https://www.wilanow-palac.pl/",
-     "konum": null
+     "konum": [
+      52.16517,
+      21.09051
+     ],
+     "googleAd": "Museum of King Jan III's Palace at Wilanów",
+     "puan": 4.7,
+     "yorum": 31416,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Museum%20of%20King%20Jan%20III's%20Palace%20at%20Wilan%C3%B3w&query_place_id=ChIJ6xic6UAtGUcRIVWoCEyUf1A"
     }
    ]
   },
@@ -3253,7 +4591,14 @@
      "fiyat_yazi": "Ana tur bileti 450 Kč (2 gün geçerli); kale avluları ücretsiz, Güney Kulesi ayrıca 200 Kč",
      "bilgi": "Aziz Vitus Katedrali, Eski Kraliyet Sarayı ve Altın Sokak bilete dahil. Kasım–Mart binalar 16:00'da kapanıyor, sabah erken gidin.",
      "kaynak": "https://www.trvlogue.com/en/prague-castle-tickets-guide",
-     "konum": null
+     "konum": [
+      50.0911,
+      14.40162
+     ],
+     "googleAd": "Prague Castle",
+     "puan": 4.7,
+     "yorum": 204461,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Prague%20Castle&query_place_id=ChIJw7ckbB6VC0cRnyUSr4g8zyo"
     },
     {
      "id": "karl-koprusu",
@@ -3267,7 +4612,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Heykellerle süslü 14. yüzyıl köprüsü. Kalabalıksız fotoğraf için sabah 8'den önce gidin.",
      "kaynak": "https://www.prague.eu/en",
-     "konum": null
+     "konum": [
+      50.08648,
+      14.41144
+     ],
+     "googleAd": "Charles Bridge",
+     "puan": 4.8,
+     "yorum": 202326,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Charles%20Bridge&query_place_id=ChIJn7WO5eWUC0cRJrHT0TiXIHU"
     },
     {
      "id": "mala-strana-ve-lennon-duvar",
@@ -3281,7 +4633,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kale ile köprü arasındaki barok mahalle; grafitili Lennon Duvarı ve Kampa Adası burada. Kaleden inerken yürüyerek gezin.",
      "kaynak": "https://www.prague.eu/en",
-     "konum": null
+     "konum": [
+      50.08625,
+      14.40679
+     ],
+     "googleAd": "Lennon Wall",
+     "puan": 4.1,
+     "yorum": 47247,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Lennon%20Wall&query_place_id=ChIJ3fi1iOOUC0cR__Q9EXbH-kc"
     },
     {
      "id": "eski-sehir-meydan-ve-astronomik-saat",
@@ -3295,7 +4654,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Týn Kilisesi ve 600 yıllık astronomik saatin (Orloj) olduğu meydan. Saat başı figür gösterisi için birkaç dakika önceden yer tutun.",
      "kaynak": "https://www.prague.eu/en",
-     "konum": null
+     "konum": [
+      50.08747,
+      14.42076
+     ],
+     "googleAd": "Staroměstské nám.",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Starom%C4%9Bstsk%C3%A9%20n%C3%A1m.&query_place_id=ChIJF6gfPumUC0cRNxOlactBiAU",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Staroměstské nám.\" buldu"
     },
     {
      "id": "eski-belediye-binas-kulesi",
@@ -3309,7 +4676,15 @@
      "fiyat_yazi": "Yetişkin 350 Kč (asansör +100 Kč)",
      "bilgi": "Meydanın ve kızıl çatıların en iyi manzarası. Nisan–Aralık her gün 9:00–20:00 açık.",
      "kaynak": "https://www.prague.eu/en/object/places/114/old-town-hall-with-astronomical-clock-staromestska-radnice-s-orlojem",
-     "konum": null
+     "konum": [
+      50.08709,
+      14.42066
+     ],
+     "googleAd": "Staroměstská radnice",
+     "puan": 4.8,
+     "yorum": 5093,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Starom%C4%9Bstsk%C3%A1%20radnice&query_place_id=ChIJVTa4MOmUC0cR1WjVAxfAAws",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Staroměstská radnice\" buldu"
     },
     {
      "id": "yahudi-mahallesi-yahudi-muzesi",
@@ -3323,7 +4698,14 @@
      "fiyat_yazi": "Yetişkin 600 Kč",
      "bilgi": "Sinagoglar ve Eski Yahudi Mezarlığı tek biletle gezilir. Cumartesi ve Yahudi bayramlarında kapalı.",
      "kaynak": "https://www.jewishmuseum.cz/en/info/visit/admission/",
-     "konum": null
+     "konum": [
+      50.08959,
+      14.41817
+     ],
+     "googleAd": "Jewish Museum in Prague",
+     "puan": 4.3,
+     "yorum": 1638,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Jewish%20Museum%20in%20Prague&query_place_id=ChIJp3yXy-mUC0cRagMumR3r5hU"
     },
     {
      "id": "havel-pazar",
@@ -3337,7 +4719,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski şehirdeki tarihi açık pazar; meyve, el işi ve hediyelik. Çevresindeki sokaklarda trdelník ve Çek birası deneyin.",
      "kaynak": "https://www.prague.eu/en",
-     "konum": null
+     "konum": [
+      50.08477,
+      14.42096
+     ],
+     "googleAd": "Havel's Market",
+     "puan": 4.2,
+     "yorum": 32117,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Havel's%20Market&query_place_id=ChIJp9JHkO6UC0cRfEdsFamVHGE"
     },
     {
      "id": "eski-sehir-meydan-noel-pazar",
@@ -3351,7 +4740,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "28 Kasım 2026–6 Ocak 2027 arası; dev Noel ağacı ve sıcak şarap. Organizatörden tarihleri teyit et.",
      "kaynak": "https://loudavymkrokem.cz/sk/?p=459700",
-     "konum": null
+     "konum": [
+      50.08757,
+      14.42119
+     ],
+     "googleAd": "Old Town Square",
+     "puan": 4.8,
+     "yorum": 123027,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Old%20Town%20Square&query_place_id=ChIJIfpRNOmUC0cRxHIewgck75c"
     },
     {
      "id": "venceslas-meydan",
@@ -3365,7 +4761,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Kadife Devrim'in sahnesi olan uzun bulvar-meydan; Ulusal Müze'nin önünde biter. 28 Kasım'dan itibaren burada da Noel pazarı kurulur.",
      "kaynak": "https://prague.eu/cs/akce/vanocni-trhy-staromestske-namesti/",
-     "konum": null
+     "konum": [
+      50.08178,
+      14.42712
+     ],
+     "googleAd": "Václavské nám.",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=V%C3%A1clavsk%C3%A9%20n%C3%A1m.&query_place_id=ChIJMb_LNu2UC0cRTBVR5nC64bg",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Václavské nám.\" buldu"
     },
     {
      "id": "ulusal-muze",
@@ -3379,7 +4783,14 @@
      "fiyat_yazi": "Yetişkin 360 Kč",
      "bilgi": "Neo-Rönesans tarihi binada doğa ve tarih koleksiyonları; kubbe altından Venceslas Meydanı manzarası. Her gün 10:00–18:00.",
      "kaynak": "https://prague.eu/cs/objevujte/narodni-muzeum-muzejni-komplex-narodniho-muzea/",
-     "konum": null
+     "konum": [
+      50.07897,
+      14.43094
+     ],
+     "googleAd": "National Museum",
+     "puan": 4.6,
+     "yorum": 50389,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum&query_place_id=ChIJua9Ogo2UC0cRpkk9dANajkI"
     }
    ]
   },
@@ -3423,7 +4834,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski şehrin kalbi; Roland Çeşmesi ve rögardan bakan bronz Čumil heykeli hemen yanında.",
      "kaynak": "https://visitbratislava.sk/",
-     "konum": null
+     "konum": [
+      48.14368,
+      17.10834
+     ],
+     "googleAd": "Hlavné námestie",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Hlavn%C3%A9%20n%C3%A1mestie&query_place_id=ChIJZ-nT2UKJbEcRc0dOcAbcbGU"
     },
     {
      "id": "eski-belediye-binas-sehir-muzesi",
@@ -3437,7 +4855,14 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
      "bilgi": "Şehrin en eski müzesi; kulesinden Ana Meydan manzarası görülür. Pazartesi kapalı olabilir, saatleri kontrol edin.",
      "kaynak": "https://muzeum.bratislava.sk/",
-     "konum": null
+     "konum": [
+      48.14391,
+      17.10919
+     ],
+     "googleAd": "Old Town Hall",
+     "puan": 4.6,
+     "yorum": 1298,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Old%20Town%20Hall&query_place_id=ChIJATpMJkOJbEcR5khnLXOumw0"
     },
     {
      "id": "primas-saray",
@@ -3451,7 +4876,15 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
      "bilgi": "Pembe klasisist saray; Ayna Salonu ve 17. yüzyıl İngiliz duvar halıları görülür.",
      "kaynak": "https://muzeum.bratislava.sk/",
-     "konum": null
+     "konum": [
+      48.14391,
+      17.10966
+     ],
+     "googleAd": "Primacial Palace",
+     "puan": 4.5,
+     "yorum": 4285,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Primacial%20Palace&query_place_id=ChIJyQpcGEOJbEcRj7EoTlF5biM",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Primacial Palace\" buldu"
     },
     {
      "id": "mihail-kap-s-ve-michalska-sokag",
@@ -3465,7 +4898,14 @@
      "fiyat_yazi": "Ücretsiz (kule müzesi ücretli)",
      "bilgi": "Surlardan kalan tek kapı; altından uzanan Michalská ve Ventúrska sokakları kafe, bar ve restoranlarla dolu.",
      "kaynak": "https://visitbratislava.sk/",
-     "konum": null
+     "konum": [
+      48.14518,
+      17.10673
+     ],
+     "googleAd": "Michael's Gate",
+     "puan": 4.7,
+     "yorum": 1578,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Michael's%20Gate&query_place_id=ChIJ376FbgCJbEcRQDQ0vK9PGKA"
     },
     {
      "id": "aziz-martin-katedrali",
@@ -3479,7 +4919,14 @@
      "fiyat_yazi": "Küçük bir ziyaret ücreti alınıyor, güncel fiyatı teyit et",
      "bilgi": "Macar krallarının 300 yıl taç giydiği gotik katedral. Ayin saatlerinde turist ziyareti yapılamaz.",
      "kaynak": "https://visitbratislava.sk/",
-     "konum": null
+     "konum": [
+      48.14203,
+      17.10477
+     ],
+     "googleAd": "St. Martin's Cathedral",
+     "puan": 4.6,
+     "yorum": 9091,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St.%20Martin's%20Cathedral&query_place_id=ChIJn8RHRV2JbEcR3RrbeXde38c"
     },
     {
      "id": "mavi-kilise",
@@ -3493,7 +4940,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Gök mavisi Art Nouveau kilise, eski şehrin 10 dk doğusunda. İçi genellikle ayin saatleri civarında açık.",
      "kaynak": "https://visitbratislava.sk/",
-     "konum": null
+     "konum": [
+      48.1434,
+      17.11693
+     ],
+     "googleAd": "The Blue Church - Church of St. Elizabeth",
+     "puan": 4.6,
+     "yorum": 14196,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Blue%20Church%20-%20Church%20of%20St.%20Elizabeth&query_place_id=ChIJ2Y8aBUGJbEcRNr6_VUhI9k0"
     },
     {
      "id": "bratislava-noel-pazar",
@@ -3507,7 +4961,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Ana Meydan ve Františkánske námestie'de kurulur; lokše ve sıcak şarap deneyin. Genelde Kasım sonu–Aralık sonu, 2026 tarihlerini teyit et.",
      "kaynak": "https://loudavymkrokem.cz/sk/?p=459700",
-     "konum": null
+     "konum": [
+      48.14187,
+      17.10872
+     ],
+     "googleAd": "Christmas Market Hviezdoslav námestie",
+     "puan": 4.3,
+     "yorum": 516,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Christmas%20Market%20Hviezdoslav%20n%C3%A1mestie&query_place_id=ChIJ5esqokKJbEcRzKV647OJweM"
     },
     {
      "id": "bratislava-kalesi",
@@ -3521,7 +4982,14 @@
      "fiyat_yazi": "Avlu ve bahçeler ücretsiz; müze bileti ücretli, fiyatı teyit et",
      "bilgi": "Tepedeki beyaz kaleden Tuna ve Avusturya manzarası. İçinde Slovak Ulusal Müzesi'nin tarih sergisi var.",
      "kaynak": "https://www.snm.sk/",
-     "konum": null
+     "konum": [
+      48.14211,
+      17.10023
+     ],
+     "googleAd": "Bratislava Castle",
+     "puan": 4.5,
+     "yorum": 63541,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bratislava%20Castle&query_place_id=ChIJxVCxk12JbEcROaEGvO8g0y8"
     },
     {
      "id": "ufo-koprusu-gozetleme-teras",
@@ -3535,7 +5003,14 @@
      "fiyat_yazi": "Ücretli, güncel fiyatı teyit et (restoranda yemek yiyenlere ücretsiz olabilir)",
      "bilgi": "SNP Köprüsü'nün 95 m'deki 'UFO'sundan şehir ve kale manzarası; gün batımında gidin.",
      "kaynak": "https://visitbratislava.sk/",
-     "konum": null
+     "konum": [
+      48.13673,
+      17.1046
+     ],
+     "googleAd": "UFO Observation Deck",
+     "puan": 4.5,
+     "yorum": 12024,
+     "harita": "https://www.google.com/maps/search/?api=1&query=UFO%20Observation%20Deck&query_place_id=ChIJ3QHHtWiJbEcRmmRpJH4wbeY"
     },
     {
      "id": "devin-kalesi",
@@ -3549,7 +5024,14 @@
      "fiyat_yazi": "Ücretli, kış fiyat ve saatlerini teyit et",
      "bilgi": "Tuna ve Morava'nın birleştiği kayalıktaki harabe kale; merkezden 29 numaralı otobüsle ~25 dk. Kışın saatleri kısalır.",
      "kaynak": "https://muzeum.bratislava.sk/",
-     "konum": null
+     "konum": [
+      48.17389,
+      16.97812
+     ],
+     "googleAd": "Múzeum mesta Bratislavy – Hrad Devín",
+     "puan": 4.7,
+     "yorum": 21186,
+     "harita": "https://www.google.com/maps/search/?api=1&query=M%C3%BAzeum%20mesta%20Bratislavy%20%E2%80%93%20Hrad%20Dev%C3%ADn&query_place_id=ChIJpZC_oKX0bEcRsjOAG3eWS4A"
     }
    ]
   },
@@ -3617,7 +5099,14 @@
      "fiyat_yazi": "Yetişkin 15 €, füniküler gidiş-dönüş dahil 19 €; avlu ücretsiz",
      "bilgi": "Tepedeki kaleden şehir ve Alpler görülür; bilet seyir kulesi ve sergileri kapsar. Yukarı füniküler ya da 15–20 dakikalık yürüyüşle çıkılır.",
      "kaynak": "https://www.trvlogue.com/en/ljubljana-castle-guide",
-     "konum": null
+     "konum": [
+      46.04889,
+      14.50837
+     ],
+     "googleAd": "Ljubljana Castle",
+     "puan": 4.4,
+     "yorum": 45509,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ljubljana%20Castle&query_place_id=ChIJfyAFWmMtZUcReLLmzQrTZ-Y"
     },
     {
      "id": "preseren-meydan-ve-uclu-kopru",
@@ -3631,7 +5120,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Pembe Fransisken kilisesi, şair Prešeren heykeli ve Plečnik'in üçlü köprüsüyle şehrin buluşma noktası. Akşam ışıklandırmasıyla çok güzel.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.05113,
+      14.50623
+     ],
+     "googleAd": "Triple Bridge",
+     "puan": 4.7,
+     "yorum": 3678,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Triple%20Bridge&query_place_id=ChIJnatLrGMtZUcRKPDm9gSphN4"
     },
     {
      "id": "ejderhal-kopru",
@@ -3645,7 +5141,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin simgesi bakır ejderha heykelleriyle süslü Art Nouveau köprü. Pazar yerinin hemen ucunda, geçerken uğrayın.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.05201,
+      14.51031
+     ],
+     "googleAd": "Dragon Bridge",
+     "puan": 4.6,
+     "yorum": 24338,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Dragon%20Bridge&query_place_id=ChIJ49F7S2ItZUcRSrMN8zPITvE"
     },
     {
      "id": "merkez-pazar-plecnik-pazar",
@@ -3659,7 +5162,14 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "Plečnik'in nehir kenarı revaklarıyla açık hava pazarı; en canlı hali cumartesi sabahı. Pazar günleri tezgâhlar kapalı.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.05114,
+      14.50949
+     ],
+     "googleAd": "Central Market",
+     "puan": 4.5,
+     "yorum": 4375,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Central%20Market&query_place_id=ChIJgW8c0GItZUcRgRec0xgpaHA"
     },
     {
      "id": "neboticnik-teras-kafe",
@@ -3673,7 +5183,14 @@
      "fiyat_yazi": "Giriş ücretsiz, sadece içecek parası",
      "bilgi": "1933 yapımı 'gökdelen'in tepesindeki kafeden şehir ve kale manzarası. Kahve içip manzarayı izlemek kaleye göre daha ucuz bir alternatif.",
      "kaynak": "https://visitljubljana.com/en/poi/skyscraper",
-     "konum": null
+     "konum": [
+      46.05297,
+      14.50301
+     ],
+     "googleAd": "Nebotičnik",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Neboti%C4%8Dnik&query_place_id=ChIJk3owwGEtZUcRTyL07nuVIAg"
     },
     {
      "id": "slovenya-ulusal-galerisi",
@@ -3687,7 +5204,14 @@
      "fiyat_yazi": "Yetişkin 10 €; ayın ilk pazarı ücretsiz",
      "bilgi": "Ortaçağdan 20. yüzyıla Sloven resim sanatı. Pazartesi kapalı; salı–pazar 10:00–18:00, perşembe 20:00'ye kadar.",
      "kaynak": "https://www.ng-slo.si/en/visit-us/opening-hours-and-entrance-fee",
-     "konum": null
+     "konum": [
+      46.05405,
+      14.50027
+     ],
+     "googleAd": "National Gallery of Slovenia",
+     "puan": 4.6,
+     "yorum": 2260,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Gallery%20of%20Slovenia&query_place_id=ChIJnQ8_FmAtZUcRSVXHUQLSiGY"
     },
     {
      "id": "slovenya-ulusal-muzesi",
@@ -3701,7 +5225,15 @@
      "fiyat_yazi": "Yetişkin 8 €; ayın ilk pazarı ücretsiz",
      "bilgi": "Ünlü Vače situlası ve dünyanın en eski müzik aletlerinden sayılan Neandertal flütü burada. Ulusal Galeri'nin hemen yakınında.",
      "kaynak": "https://www.nms.si/en/plan-your-visit/admission",
-     "konum": null
+     "konum": [
+      46.0519,
+      14.49957
+     ],
+     "googleAd": "Narodni muzej Slovenije",
+     "puan": 4.5,
+     "yorum": 1497,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Narodni%20muzej%20Slovenije&query_place_id=ChIJUVnncGctZUcRNP6omC_a9Z0",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Narodni muzej Slovenije\" buldu"
     },
     {
      "id": "tivoli-park",
@@ -3715,7 +5247,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin en büyük parkı; Jakopič Promenadı'nda açık hava fotoğraf sergileri olur. Müzelerden sonra yürüyüş için ideal.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.05375,
+      14.49492
+     ],
+     "googleAd": "Tivoli Park",
+     "puan": 4.7,
+     "yorum": 17516,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tivoli%20Park&query_place_id=ChIJXcLGkaAyZUcRcHEyUR34AA8"
     },
     {
      "id": "metelkova",
@@ -3729,7 +5268,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski askeri kışladan dönüşmüş, grafiti ve heykellerle dolu alternatif kültür merkezi. Gündüz fotoğraf için, akşam bar ve konserler için gidin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.05638,
+      14.51682
+     ],
+     "googleAd": "AKC Metelkova mesto",
+     "puan": 4.2,
+     "yorum": 8112,
+     "harita": "https://www.google.com/maps/search/?api=1&query=AKC%20Metelkova%20mesto&query_place_id=ChIJ0XIzgoQyZUcRBY95zASRuG4"
     },
     {
      "id": "ljubljana-noel-pazar-festive-december",
@@ -3743,7 +5289,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "2026'da pazarlar 27 Kasım–3 Ocak arası nehir kıyısı boyunca (Breg, Cankar rıhtımı, Prešeren ve Kongre meydanları) ve kalede kurulur. Şehir ışıkları 14 Ocak'a kadar yanar.",
      "kaynak": "https://visitljubljana.com/en/visitors/events/events-in-ljubljana/festive-december",
-     "konum": null
+     "konum": [
+      46.05147,
+      14.50607
+     ],
+     "googleAd": "Prešernov trg",
+     "puan": 4.7,
+     "yorum": 13409,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pre%C5%A1ernov%20trg&query_place_id=ChIJo4WJTGItZUcReN-HhOSwHds",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Prešernov trg\" buldu"
     }
    ]
   },
@@ -3787,7 +5341,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin ana meydanı ve buluşma noktası; atlı Ban Jelačić heykeli burada. Tramvayların çoğu buradan geçer.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      45.81312,
+      15.9773
+     ],
+     "googleAd": "Trg bana Josipa Jelačića",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Trg%20bana%20Josipa%20Jela%C4%8Di%C4%87a&query_place_id=ChIJJzRSwv3WZUcRyf0U2EgFujg",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Trg bana Josipa Jelačića\" buldu"
     },
     {
      "id": "zagreb-katedrali",
@@ -3801,7 +5363,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Neo-Gotik ikiz kuleli katedral, deprem sonrası restorasyonun ardından Aralık 2025'te yeniden açıldı; dış cephe çalışmaları sürüyor. Omuz ve dizler kapalı girin.",
      "kaynak": "https://glashrvatske.hrt.hr/en/domestic/zagreb-cathedral-to-reopen-after-nearly-five-years-of-post-earthquake-renovation-12472387",
-     "konum": null
+     "konum": [
+      45.81462,
+      15.97944
+     ],
+     "googleAd": "Cathedral of Zagreb",
+     "puan": 4.6,
+     "yorum": 18026,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Cathedral%20of%20Zagreb&query_place_id=ChIJHR3v-AHXZUcR-W1_Hi9RKzE"
     },
     {
      "id": "dolac-pazar",
@@ -3815,7 +5384,14 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "Kırmızı şemsiyeli açık hava pazarı; meyve, peynir ve yerel ürünler. Sabah erken gidin, öğleden sonra tezgâhlar toplanır.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      45.81398,
+      15.97751
+     ],
+     "googleAd": "Dolac",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Dolac&query_place_id=ChIJM76k9P3WZUcRQCrOxerFPk4"
     },
     {
      "id": "tkalciceva-caddesi",
@@ -3829,7 +5405,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Renkli evleri ve kafe-barlarıyla şehrin yeme-içme sokağı. Akşamüstü kahve ya da akşam yemeği için ideal.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      45.81748,
+      15.97624
+     ],
+     "googleAd": "Ul. Ivana Tkalčića",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ul.%20Ivana%20Tkal%C4%8Di%C4%87a&query_place_id=ChIJrf0_GgPXZUcRFtRE0kOMw4Y",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Ul. Ivana Tkalčića\" buldu"
     },
     {
      "id": "aziz-markos-kilisesi",
@@ -3843,7 +5427,15 @@
      "fiyat_yazi": "Ücretsiz (dışarıdan)",
      "bilgi": "Renkli kiremit çatısında Hırvatistan ve Zagreb armaları olan simge kilise. İçerisi sadece ayin saatlerinde açık; asıl görülecek olan çatı.",
      "kaynak": "https://loudavymkrokem.cz/en/zagreb-croatia-guide/",
-     "konum": null
+     "konum": [
+      45.8164,
+      15.97363
+     ],
+     "googleAd": "St. Mark’s Church",
+     "puan": 4.6,
+     "yorum": 5454,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St.%20Mark%E2%80%99s%20Church&query_place_id=ChIJpe7-NB3XZUcRhluyxHW0U9o",
+     "kapali": "gecici"
     },
     {
      "id": "lotrscak-kulesi",
@@ -3857,7 +5449,14 @@
      "fiyat_yazi": "Küçük bir ücret (güncel tutarı yerinde teyit et)",
      "bilgi": "13. yüzyıl kulesinden Aşağı Şehir manzarası; Grič topu her gün tam 12:00'de ateşlenir. Hemen yanındaki füniküler (0,66 €) ile çıkın.",
      "kaynak": "https://loudavymkrokem.cz/en/zagreb-croatia-guide/",
-     "konum": null
+     "konum": [
+      45.81462,
+      15.97332
+     ],
+     "googleAd": "Lotrščak Tower",
+     "puan": 4.7,
+     "yorum": 4750,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Lotr%C5%A1%C4%8Dak%20Tower&query_place_id=ChIJO9f2UP3WZUcR36vSGxppSsE"
     },
     {
      "id": "k-r-k-iliskiler-muzesi",
@@ -3871,7 +5470,14 @@
      "fiyat_yazi": "Yetişkin 7 €",
      "bilgi": "Ayrılıklardan kalan eşyalar ve hikâyeleriyle dünyaca ünlü sıra dışı müze; çiftler için ilginç bir deneyim. Her gün geç saate kadar açık.",
      "kaynak": "https://whichmuseum.com/museum/museum-of-broken-relationships-zagreb-7729/tickets-prices",
-     "konum": null
+     "konum": [
+      45.81501,
+      15.97361
+     ],
+     "googleAd": "Museum of Broken Relationships",
+     "puan": 4.3,
+     "yorum": 9128,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Museum%20of%20Broken%20Relationships&query_place_id=ChIJb1qoV_3WZUcRqGE4Q3JSbwg"
     },
     {
      "id": "h-rvat-naif-sanat-muzesi",
@@ -3885,7 +5491,14 @@
      "fiyat_yazi": "Fiyatı resmi sitede teyit et",
      "bilgi": "Dünyanın ilk naif sanat müzelerinden; Hlebine okulu ressamlarının cam altı resimleri. Hafta içi 09:00–17:00, cumartesi 10:00–14:00, pazar kapalı.",
      "kaynak": "https://hmnu.hr",
-     "konum": null
+     "konum": [
+      45.81536,
+      15.97329
+     ],
+     "googleAd": "Croatian Museum of Naïve Art",
+     "puan": 4.4,
+     "yorum": 698,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Croatian%20Museum%20of%20Na%C3%AFve%20Art&query_place_id=ChIJC_QorALXZUcRDVBSOVCegn8"
     },
     {
      "id": "mirogoj-mezarl-g",
@@ -3899,7 +5512,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Sarmaşıklı arkadları ve kubbeleriyle Avrupa'nın en güzel mezarlık-parklarından. Katedral önünden 106 numaralı otobüsle ya da 25 dakikalık yürüyüşle gidilir.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      45.83588,
+      15.9869
+     ],
+     "googleAd": "Mirogoj cemetery",
+     "puan": 4.5,
+     "yorum": 803,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mirogoj%20cemetery&query_place_id=ChIJAX_thm3XZUcR6fAI5v3Y14k"
     },
     {
      "id": "zagreb-advent-noel-pazar",
@@ -3913,7 +5533,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Avrupa'nın en iyi Noel pazarlarından; 2026'da 28 Kasım–7 Ocak (tarihleri teyit et). Ban Jelačić Meydanı, Zrinjevac Parkı ve Yukarı Şehir'deki Strossmayer Promenadı en güzel noktalar.",
      "kaynak": "https://bookiscout.com/guides/zagreb-advent",
-     "konum": null
+     "konum": [
+      45.8106,
+      15.97825
+     ],
+     "googleAd": "Advent na Zrinjevcu",
+     "puan": 4.6,
+     "yorum": 73,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Advent%20na%20Zrinjevcu&query_place_id=ChIJv5R_5kDXZUcRp0WJ7mc6fQ8",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Advent na Zrinjevcu\" buldu"
     }
    ]
   },
@@ -3957,7 +5585,14 @@
      "fiyat_yazi": "Sadece rehberli tur, ücretli (güncel fiyatı resmi sitede teyit et)",
      "bilgi": "Dünyanın en büyük idari binalarından biri; Çavuşesku döneminin devasa simgesi. Pasaportla girilir, turu önceden rezerve edin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.4275,
+      26.08735
+     ],
+     "googleAd": "Palace of Parliament",
+     "puan": 4.4,
+     "yorum": 8408,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Palace%20of%20Parliament&query_place_id=ChIJwSjue0L_sUAR3K2rAviJECs"
     },
     {
      "id": "eski-sehir-lipscani",
@@ -3971,7 +5606,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Arnavut kaldırımlı sokaklar, restoranlar ve barlarla şehrin yeme-içme merkezi. Tarihi Caru' cu Bere birahanesinde yemek klasik bir deneyim.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.43204,
+      26.09973
+     ],
+     "googleAd": "Strada Lipscani",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Strada%20Lipscani&query_place_id=ChIJOS2agj__sUARolOhkMNjnNY",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Strada Lipscani\" buldu"
     },
     {
      "id": "stavropoleos-manast-r",
@@ -3985,7 +5628,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski Şehir'in ortasında, oymalı taş avlusuyla Brâncoveanu tarzının küçük bir mücevheri. Aktif manastır; sessiz ve saygılı olun.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.43179,
+      26.09886
+     ],
+     "googleAd": "The Church of the \"Stavropoleos\" Monastery",
+     "puan": 4.8,
+     "yorum": 6556,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Church%20of%20the%20%22Stavropoleos%22%20Monastery&query_place_id=ChIJEZe8dkD_sUARM-n4qdjze5c"
     },
     {
      "id": "carturesti-carusel",
@@ -3999,7 +5649,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Restore edilmiş 19. yüzyıl binasında beyaz katlarıyla ünlü kitabevi. Üst kattaki kafede mola verin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.43198,
+      26.1016
+     ],
+     "googleAd": "Cărturești Carusel",
+     "puan": 4.8,
+     "yorum": 25499,
+     "harita": "https://www.google.com/maps/search/?api=1&query=C%C4%83rture%C8%99ti%20Carusel&query_place_id=ChIJhXfcoD__sUARJfibT-6OyIA"
     },
     {
      "id": "romen-atheneumu",
@@ -4013,7 +5670,14 @@
      "fiyat_yazi": "Dış görünüm ücretsiz; iç ziyaret/konser ücretli (fiyatı teyit et)",
      "bilgi": "Kubbeli neoklasik konser salonu, şehrin en zarif binası. İçini görmenin en iyi yolu bir akşam konserine bilet almak.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.44133,
+      26.09732
+     ],
+     "googleAd": "The Romanian Athenaeum",
+     "puan": 4.8,
+     "yorum": 19783,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Romanian%20Athenaeum&query_place_id=ChIJl3ltbk__sUAR8nZ44F-vc1o"
     },
     {
      "id": "devrim-meydan",
@@ -4027,7 +5691,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "1989 devriminin yaşandığı meydan; Çavuşesku'nun son konuşmasını yaptığı balkon ve Yeniden Doğuş Anıtı burada. Atheneum ve Sanat Müzesi'ne yürüme mesafesinde.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.43917,
+      26.09769
+     ],
+     "googleAd": "Piața Revoluției",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pia%C8%9Ba%20Revolu%C8%9Biei&query_place_id=ChIJ5wGY20X_sUARqeMC2xvdK88",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Piața Revoluției\" buldu"
     },
     {
      "id": "romanya-ulusal-sanat-muzesi",
@@ -4041,7 +5713,14 @@
      "fiyat_yazi": "Ücretli (güncel fiyatı resmi sitede teyit et)",
      "bilgi": "Eski Kraliyet Sarayı'nda Romen ve Avrupa sanatı koleksiyonları. Pazartesi ve salı genelde kapalı; gitmeden günleri kontrol edin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.43937,
+      26.09587
+     ],
+     "googleAd": "National Museum of Art",
+     "puan": 4.6,
+     "yorum": 10647,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20Art&query_place_id=ChIJb0jBokX_sUARMCM_FW_Ip94"
     },
     {
      "id": "koy-muzesi-muzeul-satului",
@@ -4055,7 +5734,14 @@
      "fiyat_yazi": "Ücretli (güncel fiyatı resmi sitede teyit et)",
      "bilgi": "Romanya'nın dört bir yanından taşınmış ahşap evler, kiliseler ve değirmenlerle açık hava müzesi. Herăstrău Parkı'nın kenarında.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.47235,
+      26.07648
+     ],
+     "googleAd": "\"Dimitrie Gusti\" National Village Museum",
+     "puan": 4.6,
+     "yorum": 15218,
+     "harita": "https://www.google.com/maps/search/?api=1&query=%22Dimitrie%20Gusti%22%20National%20Village%20Museum&query_place_id=ChIJczdhfAMCskARo0Gnp5Fw34I"
     },
     {
      "id": "kral-i-mihai-park-herastrau",
@@ -4069,7 +5755,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Göl kenarında şehrin en büyük parkı; yürüyüş ve göl manzarası için ideal. Yakındaki Zafer Takı'nı da görün.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.4702,
+      26.08275
+     ],
+     "googleAd": "King Mihai I Park",
+     "puan": 4.6,
+     "yorum": 66238,
+     "harita": "https://www.google.com/maps/search/?api=1&query=King%20Mihai%20I%20Park&query_place_id=ChIJkZAHuxMCskARJlXBnqgO9lc"
     },
     {
      "id": "bukres-noel-pazar",
@@ -4083,7 +5776,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Genelde Parlamento Sarayı önündeki Constituției Meydanı'nda kurulur; 2026 konumu ve tarihlerini teyit et. Kürtőskalács ve sıcak şarap klasik.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      44.42728,
+      26.09188
+     ],
+     "googleAd": "Bucharest Christmas Market",
+     "puan": 4.3,
+     "yorum": 212,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bucharest%20Christmas%20Market&query_place_id=ChIJgTa5ZAD_sUARna5o-uTYZ74",
+     "kapali": "gecici"
     }
    ]
   },
@@ -4096,7 +5797,7 @@
      "kaynak": "https://www.metropolitan.bg/en/information-for-citizens/trip-cards-sofia-metro"
     },
     "gunluk": {
-     "fiyat": 2.0,
+     "fiyat": 2,
      "aciklama": "Günlük kart, tüm hatlar (gece hatları dahil 24 saatlik kart 3,00 €)",
      "kaynak": "https://www.metropolitan.bg/en/information-for-citizens/trip-cards-sofia-metro"
     },
@@ -4127,7 +5828,14 @@
      "fiyat_yazi": "Kilise ücretsiz; kriptadaki ikon müzesi ücretli",
      "bilgi": "Altın kubbeleriyle Balkanlar'ın en büyük Ortodoks katedrallerinden; şehrin simgesi. Omuz ve dizler kapalı girin.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.69602,
+      23.33253
+     ],
+     "googleAd": "Patriarchal Cathedral St. Alexander Nevsky",
+     "puan": 4.8,
+     "yorum": 27481,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Patriarchal%20Cathedral%20St.%20Alexander%20Nevsky&query_place_id=ChIJmeSHJnGFqkARUFPopvNwkwI"
     },
     {
      "id": "aziz-yorgi-rotunda",
@@ -4141,7 +5849,8 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin en eski binası, 4. yüzyıl Roma rotundası; başkanlık binası avlusunda saklı. Gün batımı öncesi en güzel ışık.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": null,
+     "konumNotu": "Google 10402 km uzakta bir yer buldu: St. Sophia Bulgarian Orthodox Church"
     },
     {
      "id": "antik-serdika",
@@ -4155,7 +5864,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Serdika metro istasyonunun içinde ve çevresinde açığa çıkarılmış Roma sokakları ve kalıntılar. Akşam ışıklandırılıyor.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.69767,
+      23.32331
+     ],
+     "googleAd": "Ancient Serdica Cultural Complex",
+     "puan": 4.6,
+     "yorum": 1163,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ancient%20Serdica%20Cultural%20Complex&query_place_id=ChIJB9ipQW-FqkARh5VbaN4kbhs"
     },
     {
      "id": "banya-bas-camii",
@@ -4169,7 +5885,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "1566'da Mimar Sinan'ın inşa ettiği, Hoşgörü Meydanı'ndaki cami. Yanındaki ücretsiz sıcak maden suyu çeşmelerini ve Merkez Hamam binasını da görün.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.69954,
+      23.32256
+     ],
+     "googleAd": "Sofia mosque - Banya Bashi",
+     "puan": 4.5,
+     "yorum": 3945,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sofia%20mosque%20-%20Banya%20Bashi&query_place_id=ChIJs0HPSm-FqkARTzbhdzo4QI0"
     },
     {
      "id": "ulusal-arkeoloji-muzesi",
@@ -4183,7 +5906,14 @@
      "fiyat_yazi": "Ücretli (yetişkin fiyatını teyit et); ayın son pazarı ücretsiz",
      "bilgi": "Eski Büyük Cami binasında Trakya altınları ve Roma eserleri. Salı–pazar 10:00–18:00, pazartesi kapalı.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.69638,
+      23.32459
+     ],
+     "googleAd": "National Archeological Museum of the Bulgarian Academy of Sciences",
+     "puan": 4.6,
+     "yorum": 3000,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Archeological%20Museum%20of%20the%20Bulgarian%20Academy%20of%20Sciences&query_place_id=ChIJRVriQm6FqkAR5qAftuEcC98"
     },
     {
      "id": "vitosa-bulvar",
@@ -4197,7 +5927,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Vitoşa Dağı manzaralı yaya caddesi; kafe, restoran ve mağazalarla şehrin yeme-içme aksı. NDK'ye kadar yürüyün.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.68585,
+      23.31789
+     ],
+     "googleAd": "bul. \"Vitosha\"",
+     "puan": 4.6,
+     "yorum": 1565,
+     "harita": "https://www.google.com/maps/search/?api=1&query=bul.%20%22Vitosha%22&query_place_id=ChIJPyzmRRCFqkARC7y72WttxnU",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"bul. \"Vitosha\"\" buldu"
     },
     {
      "id": "boyana-kilisesi",
@@ -4211,7 +5949,14 @@
      "fiyat_yazi": "Yetişkin 6,14 € (12 leva); önceden rezervasyon önerilir",
      "bilgi": "UNESCO listesindeki 13. yüzyıl freskleriyle ünlü küçük kilise; aynı anda en fazla 9 kişi, 10 dakikalık ziyaret. Ulusal Tarih Müzesi ile birleştirin.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.64463,
+      23.26618
+     ],
+     "googleAd": "Boyana Church",
+     "puan": 4.5,
+     "yorum": 7890,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Boyana%20Church&query_place_id=ChIJXXCFQl6DqkARY7oZxDiYbRw"
     },
     {
      "id": "ulusal-tarih-muzesi",
@@ -4225,7 +5970,14 @@
      "fiyat_yazi": "Yetişkin 7,67 € (15 leva)",
      "bilgi": "Bulgaristan'ın en büyük müzesi; Trakya hazineleri öne çıkıyor. Her gün açık, gişe kapanıştan 45 dk önce kapanır.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.65516,
+      23.27088
+     ],
+     "googleAd": "National Museum of History",
+     "puan": 4.6,
+     "yorum": 5616,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20History&query_place_id=ChIJMcUQRaOEqkARODkGy1r9ZfU"
     },
     {
      "id": "vitosa-dag-aleko",
@@ -4239,7 +5991,14 @@
      "fiyat_yazi": "Ücretsiz (sadece otobüs bileti)",
      "bilgi": "Şehre tepeden bakan dağ; teleferikler 2027'ye kadar kapalı, Hayvanat Bahçesi durağından 66 numaralı otobüsle Aleko'ya çıkılır. Kışın kar olabilir, sıkı giyinin.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.58259,
+      23.29211
+     ],
+     "googleAd": "Aleko hut",
+     "puan": 4.4,
+     "yorum": 9301,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Aleko%20hut&query_place_id=ChIJY_erShmCqkARMIBTxMX-KaQ"
     },
     {
      "id": "sofya-noel-pazar",
@@ -4253,9 +6012,37 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Aralık'ta merkezde kurulan Noel pazarı; 2026 konumu ve tarihlerini teyit et. Sıcak şarap ve Bulgar tatlıları.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.69569,
+      23.32608
+     ],
+     "googleAd": "German Christmas Market Sofia",
+     "puan": 4.3,
+     "yorum": 270,
+     "harita": "https://www.google.com/maps/search/?api=1&query=German%20Christmas%20Market%20Sofia&query_place_id=ChIJL3fGceyFqkARSfqtnlvs-7w",
+     "kapali": "gecici"
     }
    ]
   }
- }
+ },
+ "harcama": {
+  "donem": "2026-10-28",
+  "usd": 1.13
+ },
+ "apifyKullanim": {
+  "usd": 27.1,
+  "sinir": 45,
+  "donemBasi": "2026-10-28",
+  "donemSonu": "2026-11-27",
+  "kontrol": "2026-10-29T23:06:42.416Z"
+ },
+ "olcumler": [
+  {
+   "robot": "gezi-konum",
+   "t": "2026-10-29T23:06:42.416Z",
+   "sorgu": 250,
+   "usd": 0.76,
+   "sorguBasi": 0.00304
+  }
+ ]
 }
