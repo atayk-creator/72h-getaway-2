@@ -1,0 +1,902 @@
+{
+ "girdi": {
+  "searchStringsArray": [
+   "best restaurants",
+   "cheap eats",
+   "fine dining restaurant"
+  ],
+  "locationQuery": "Budapest, Hungary",
+  "maxCrawledPlacesPerSearch": 20,
+  "language": "en",
+  "skipClosedPlaces": true,
+  "scrapePlaceDetailPage": false,
+  "maxReviews": 0,
+  "maxImages": 0
+ },
+ "hata": null,
+ "satir": 60,
+ "maliyet": 0.24,
+ "alanlar": [
+  "title",
+  "subTitle",
+  "description",
+  "ownerDescription",
+  "price",
+  "categoryName",
+  "address",
+  "neighborhood",
+  "street",
+  "city",
+  "postalCode",
+  "state",
+  "countryCode",
+  "website",
+  "phone",
+  "phoneUnformatted",
+  "claimThisBusiness",
+  "location",
+  "locatedIn",
+  "floor",
+  "plusCode",
+  "menu",
+  "servicesLink",
+  "totalScore",
+  "permanentlyClosed",
+  "temporarilyClosed",
+  "placeId",
+  "categories",
+  "fid",
+  "cid",
+  "reviewsCount",
+  "reviewsDistribution",
+  "imagesCount",
+  "imageCategories",
+  "scrapedAt",
+  "reserveTableUrl",
+  "googleFoodUrl",
+  "hotelStars",
+  "hotelDescription",
+  "checkInDate",
+  "checkOutDate",
+  "hotelAds",
+  "popularTimesLiveText",
+  "popularTimesLivePercent",
+  "popularTimesHistogram",
+  "openingHours",
+  "wasOpenAtScrapeTime",
+  "peopleAlsoSearch",
+  "placesTags",
+  "reviewsTags",
+  "gasPrices",
+  "url",
+  "searchPageUrl",
+  "searchString",
+  "language",
+  "rank",
+  "isAdvertisement",
+  "imageUrl",
+  "kgmid",
+  "businessProfileId"
+ ],
+ "ornek": [
+  {
+   "title": "Pik-Pak Panír",
+   "subTitle": null,
+   "description": null,
+   "ownerDescription": null,
+   "price": null,
+   "categoryName": "Fast food restaurant",
+   "address": "Budapest, Ferihegyi út 62, 1173 Hungary",
+   "neighborhood": "District XVII.",
+   "street": "Ferihegyi út 62",
+   "city": "Budapest",
+   "postalCode": "1173",
+   "state": null,
+   "countryCode": "HU",
+   "website": "https://pikpakpanir.hu/",
+   "phone": "+36 30 724 0678",
+   "phoneUnformatted": "+36307240678",
+   "claimThisBusiness": false,
+   "location": {
+    "lat": 47.4809228,
+    "lng": 19.2575885
+   },
+   "locatedIn": null,
+   "floor": null,
+   "plusCode": null,
+   "menu": null,
+   "servicesLink": null,
+   "totalScore": 4.9,
+   "permanentlyClosed": false,
+   "temporarilyClosed": false,
+   "placeId": "ChIJ10xwTcHBQUcR29PIlqePCPs",
+   "categories": [
+    "Fast food restaurant"
+   ],
+   "fid": "0x4741c1c14d704cd7:0xfb088fa796c8d3db",
+   "cid": "18088865853285651419",
+   "reviewsCount": 98,
+   "reviewsDistribution": {
+    "oneStar": 1,
+    "twoStar": 1,
+    "threeStar": 1,
+    "fourStar": 3,
+    "fiveStar": 92
+   },
+   "imagesCount": 21,
+   "imageCategories": [],
+   "scrapedAt": "2026-10-29T22:12:14.030Z",
+   "reserveTableUrl": null,
+   "googleFoodUrl": null,
+   "hotelStars": null,
+   "hotelDescription": null,
+   "checkInDate": null,
+   "checkOutDate": null,
+   "hotelAds": [],
+   "popularTimesLiveText": null,
+   "popularTimesLivePercent": null,
+   "popularTimesHistogram": {},
+   "openingHours": [
+    {
+     "day": "Monday",
+     "hours": "Closed"
+    },
+    {
+     "day": "Tuesday",
+     "hours": "10:30 AM to 7 PM"
+    },
+    {
+     "day": "Wednesday",
+     "hours": "10:30 AM to 7 PM"
+    },
+    {
+     "day": "Thursday",
+     "hours": "10:30 AM to 7 PM"
+    },
+    {
+     "day": "Friday",
+     "hours": "10:30 AM to 7 PM"
+    },
+    {
+     "day": "Saturday",
+     "hours": "10:30 AM to 4 PM"
+    },
+    {
+     "day": "Sunday",
+     "hours": "Closed"
+    }
+   ],
+   "wasOpenAtScrapeTime": false,
+   "peopleAlsoSearch": [],
+   "placesTags": [],
+   "reviewsTags": [],
+   "gasPrices": [],
+   "url": "https://www.google.com/maps/search/?api=1&query=Pik-Pak%20Pan%C3%ADr&query_place_id=ChIJ10xwTcHBQUcR29PIlqePCPs",
+   "searchPageUrl": "https://www.google.com/maps/search/cheap%20eats/@47.481418350000006,19.266810937580477,13z?hl=en",
+   "searchString": "cheap eats",
+   "language": "en",
+   "rank": 1,
+   "isAdvertisement": false,
+   "imageUrl": "https://lh3.googleusercontent.com/grass-cs/AABkmLe4H18AfdXV42XpnvhXQBQ_4JBjOZBs7nQEb-mD84m1Bh6DwxJ9nay_6sjUwsVyADCvg1Cv6t2WqWMkGopOEsUPMxzVY4G7uzK5LbVVPNx4WEMFWE5EmIkygxpQIx2danit53z17ZnyLVec=w408-h306-k-no",
+   "kgmid": "/g/11z5rmcdl6",
+   "businessProfileId": "851048468558764"
+  },
+  {
+   "title": "Kisharang Étkezde",
+   "subTitle": null,
+   "description": "Chalkboard menus of classic comfort foods & desserts offered with beer in a tiny dining room.",
+   "ownerDescription": null,
+   "price": null,
+   "categoryName": "Restaurant",
+   "address": "Budapest, Október 6. u. 17, 1051 Hungary",
+   "neighborhood": "District V.",
+   "street": "Október 6. u. 17",
+   "city": "Budapest",
+   "postalCode": "1051",
+   "state": null,
+   "countryCode": "HU",
+   "website": "https://www.kisharang.hu/",
+   "phone": "+36 30 732 7874",
+   "phoneUnformatted": "+36307327874",
+   "claimThisBusiness": false,
+   "location": {
+    "lat": 47.5016717,
+    "lng": 19.0508856
+   },
+   "locatedIn": null,
+   "floor": null,
+   "plusCode": null,
+   "menu": null,
+   "servicesLink": null,
+   "totalScore": 4.5,
+   "permanentlyClosed": false,
+   "temporarilyClosed": false,
+   "placeId": "ChIJle293fndQUcRoastw89vdvs",
+   "categories": [
+    "Restaurant"
+   ],
+   "fid": "0x4741ddf9ddbded95:0xfb766fcfc32daba1",
+   "cid": "18119793088895232929",
+   "reviewsCount": 5613,
+   "reviewsDistribution": {
+    "oneStar": 276,
+    "twoStar": 183,
+    "threeStar": 320,
+    "fourStar": 766,
+    "fiveStar": 4068
+   },
+   "imagesCount": 5280,
+   "imageCategories": [],
+   "scrapedAt": "2026-10-29T22:12:14.031Z",
+   "reserveTableUrl": null,
+   "googleFoodUrl": null,
+   "hotelStars": null,
+   "hotelDescription": null,
+   "checkInDate": null,
+   "checkOutDate": null,
+   "hotelAds": [],
+   "popularTimesLiveText": null,
+   "popularTimesLivePercent": null,
+   "popularTimesHistogram": {},
+   "openingHours": [
+    {
+     "day": "Monday",
+     "hours": "11:30 AM to 10 PM"
+    },
+    {
+     "day": "Tuesday",
+     "hours": "11:30 AM to 10 PM"
+    },
+    {
+     "day": "Wednesday",
+     "hours": "11:30 AM to 10 PM"
+    },
+    {
+     "day": "Thursday",
+     "hours": "11:30 AM to 10 PM"
+    },
+    {
+     "day": "Friday",
+     "hours": "11:30 AM to 10 PM"
+    },
+    {
+     "day": "Saturday",
+     "hours": "11:30 AM to 10 PM"
+    },
+    {
+     "day": "Sunday",
+     "hours": "11:30 AM to 10 PM"
+    }
+   ],
+   "wasOpenAtScrapeTime": false,
+   "peopleAlsoSearch": [],
+   "placesTags": [],
+   "reviewsTags": [],
+   "additionalInfo": {
+    "Accessibility": [
+     {
+      "Wheelchair accessible entrance": false
+     },
+     {
+      "Wheelchair accessible parking lot": false
+     },
+     {
+      "Wheelchair accessible seating": false
+     }
+    ]
+   },
+   "gasPrices": [],
+   "url": "https://www.google.com/maps/search/?api=1&query=Kisharang%20%C3%89tkezde&query_place_id=ChIJle293fndQUcRoastw89vdvs",
+   "searchPageUrl": "https://www.google.com/maps/search/cheap%20eats/@47.481418350000006,19.266810937580477,13z?hl=en",
+   "searchString": "cheap eats",
+   "language": "en",
+   "rank": 6,
+   "isAdvertisement": false,
+   "imageUrl": "https://lh3.googleusercontent.com/grass-cs/AABkmLf5ea8eAuA7KHjOlutK8qK6tYh-BmoR2r050x9VtoTim7GOLc9Ih6A34bwPUmDGz4yt43TwLpvqfqRJsd8PuLzGgodcQ7wXcAep1QOl7mu0Nlye_g_mjkgaBm-35PkCOSJ6IgM=w426-h240-k-no",
+   "kgmid": "/g/11f77ymk7k",
+   "businessProfileId": "12953612599870213704"
+  }
+ ],
+ "ozet": [
+  {
+   "ad": "Pik-Pak Panír",
+   "puan": 4.9,
+   "yorum": 98,
+   "fiyat": null,
+   "kat": "Fast food restaurant",
+   "semt": "District XVII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Kisharang Étkezde",
+   "puan": 4.5,
+   "yorum": 5613,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District V.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "McDonald's",
+   "puan": 4,
+   "yorum": 4727,
+   "fiyat": null,
+   "kat": "Fast food restaurant",
+   "semt": "District XVII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Falafel Bar",
+   "puan": 4.4,
+   "yorum": 1725,
+   "fiyat": null,
+   "kat": "Falafel restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "2 Spaghi - Fresh Pasta Bar",
+   "puan": 4.6,
+   "yorum": 4119,
+   "fiyat": null,
+   "kat": "Italian restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Pesti Pipi Deák Tér",
+   "puan": 4.2,
+   "yorum": 1890,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Boutique gourmet Kis Tirol",
+   "puan": 5,
+   "yorum": 3,
+   "fiyat": null,
+   "kat": "Fine dining restaurant",
+   "semt": "District XVI.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Koi Tó és Bisztró",
+   "puan": 4.9,
+   "yorum": 121,
+   "fiyat": null,
+   "kat": "Bistro",
+   "semt": "District XVII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Shrimpy Food Bar",
+   "puan": 4.8,
+   "yorum": 2092,
+   "fiyat": null,
+   "kat": "Seafood restaurant",
+   "semt": "District XVIII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Caviar & Bull Budapest",
+   "puan": 4.7,
+   "yorum": 1397,
+   "fiyat": null,
+   "kat": "Modern European restaurant",
+   "semt": "District VII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "UNCENSORED Restaurant Budapest",
+   "puan": 4.7,
+   "yorum": 198,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District VII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Costes Restaurant",
+   "puan": 4.7,
+   "yorum": 885,
+   "fiyat": null,
+   "kat": "Fine dining restaurant",
+   "semt": "District IX.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Carpathian Street Food",
+   "puan": 4.7,
+   "yorum": 1112,
+   "fiyat": null,
+   "kat": "Fine dining restaurant",
+   "semt": "District XIV.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "小鍾美食 Omakase fine dining restaurant Corvin",
+   "puan": 5,
+   "yorum": 6,
+   "fiyat": null,
+   "kat": "Fusion restaurant",
+   "semt": "District VIII",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Tádé Falatozó kifőzde",
+   "puan": 4.7,
+   "yorum": 16,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District XIX.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Nap-Plázs",
+   "puan": 4.3,
+   "yorum": 808,
+   "fiyat": null,
+   "kat": "Fast food restaurant",
+   "semt": "District XVI.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Sunny's Pancakes&Waffels",
+   "puan": 4.7,
+   "yorum": 307,
+   "fiyat": null,
+   "kat": "Pancake restaurant",
+   "semt": "District X.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Kisfa Söröző",
+   "puan": 4.8,
+   "yorum": 72,
+   "fiyat": null,
+   "kat": "Brasserie",
+   "semt": "District X.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Lángos páros",
+   "puan": 4.8,
+   "yorum": 21,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District XVII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Burger Labor Pesti út",
+   "puan": 4.8,
+   "yorum": 235,
+   "fiyat": null,
+   "kat": "Hamburger restaurant",
+   "semt": "District XVII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Ruby Sushi Rákosi",
+   "puan": 4.7,
+   "yorum": 827,
+   "fiyat": null,
+   "kat": "Sushi restaurant",
+   "semt": "District XVI.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "MAD KERT Beer Garden & Taproom",
+   "puan": 4.6,
+   "yorum": 39,
+   "fiyat": null,
+   "kat": "Beer garden",
+   "semt": "District X.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Jókonyha Restaurant",
+   "puan": 4.5,
+   "yorum": 1320,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District XVII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Bai Le Kínai gyors büfé",
+   "puan": 4.7,
+   "yorum": 94,
+   "fiyat": null,
+   "kat": "Chinese restaurant",
+   "semt": "District XVIII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Katóka Étkezde",
+   "puan": 4.5,
+   "yorum": 267,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District XVI.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Korona Söröző",
+   "puan": 4.7,
+   "yorum": 241,
+   "fiyat": null,
+   "kat": "Brasserie",
+   "semt": "District XVII.",
+   "arama": "fine dining restaurant",
+   "kapali": false
+  },
+  {
+   "ad": "Gyros & Grill Bistro",
+   "puan": 4.8,
+   "yorum": 362,
+   "fiyat": null,
+   "kat": "Gyro restaurant",
+   "semt": "District XXIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Smash R",
+   "puan": 4.6,
+   "yorum": 56,
+   "fiyat": null,
+   "kat": "Hamburger restaurant",
+   "semt": "District XXIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Hétvezér Ételbár",
+   "puan": 4.7,
+   "yorum": 204,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District XVIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "BonZsúr Kávézó",
+   "puan": 4.7,
+   "yorum": 303,
+   "fiyat": null,
+   "kat": "Espresso bar",
+   "semt": "District XVIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Császár Lángos",
+   "puan": 4.8,
+   "yorum": 153,
+   "fiyat": null,
+   "kat": "Fast food restaurant",
+   "semt": "District XVIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Efendi Jardin - Gyros & Gyorsétterem",
+   "puan": 4.6,
+   "yorum": 17,
+   "fiyat": null,
+   "kat": "Doner kebab restaurant",
+   "semt": "District XVIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Lángossütő Büfé",
+   "puan": 4.5,
+   "yorum": 274,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District XVIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Kemencés Pizza - 18",
+   "puan": 4.8,
+   "yorum": 730,
+   "fiyat": null,
+   "kat": "Pizza restaurant",
+   "semt": "District XVIII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Comme Chez Soi",
+   "puan": 4.8,
+   "yorum": 4984,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District V.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Meshuga",
+   "puan": 4.8,
+   "yorum": 3697,
+   "fiyat": null,
+   "kat": "Mediterranean restaurant",
+   "semt": "District VII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Goulash Kitchen and Bar",
+   "puan": 4.8,
+   "yorum": 2802,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District V.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Mazel Tov",
+   "puan": 4.6,
+   "yorum": 42424,
+   "fiyat": null,
+   "kat": "Fusion restaurant",
+   "semt": "District VII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Pilvax Kávéház és Étterem",
+   "puan": 4.9,
+   "yorum": 2192,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District V.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Beerstro14 Steak House Restaurant",
+   "puan": 4.9,
+   "yorum": 13478,
+   "fiyat": null,
+   "kat": "Steak house",
+   "semt": "District V.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Twentysix Budapest Restaurant",
+   "puan": 4.5,
+   "yorum": 24209,
+   "fiyat": null,
+   "kat": "Mediterranean restaurant",
+   "semt": "District VI.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Retek Bisztro",
+   "puan": 4.8,
+   "yorum": 6711,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District V.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Mama Goulash - Schnitzel House",
+   "puan": 4.8,
+   "yorum": 6085,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District VII.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Beef & Bone",
+   "puan": 4.8,
+   "yorum": 914,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District V.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Gravity Brewing",
+   "puan": 4.9,
+   "yorum": 654,
+   "fiyat": null,
+   "kat": "Bar",
+   "semt": "District IX.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Baltazár Grill Restaurant in the Buda Castle",
+   "puan": 4.6,
+   "yorum": 1944,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District I.",
+   "arama": "best restaurants",
+   "kapali": false
+  },
+  {
+   "ad": "Bors Gastro Bar",
+   "puan": 4.8,
+   "yorum": 7043,
+   "fiyat": null,
+   "kat": "Gastropub",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "EAT ME",
+   "puan": 4.7,
+   "yorum": 128,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District V.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Kupak Bar & Bistro",
+   "puan": 4.6,
+   "yorum": 7563,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Csirke Csibész",
+   "puan": 4.7,
+   "yorum": 1290,
+   "fiyat": null,
+   "kat": "Chicken restaurant",
+   "semt": "District VI.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Hoppácska",
+   "puan": 4.8,
+   "yorum": 1111,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District IX.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Pizzica",
+   "puan": 4.7,
+   "yorum": 4184,
+   "fiyat": null,
+   "kat": "Pizza restaurant",
+   "semt": "District VI.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Akácfa Étterem Étkezde",
+   "puan": 4.6,
+   "yorum": 602,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Pozsonyi Kisvendéglő",
+   "puan": 4.2,
+   "yorum": 5935,
+   "fiyat": null,
+   "kat": "Hungarian restaurant",
+   "semt": "District XIII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "LEVES.",
+   "puan": 4.6,
+   "yorum": 778,
+   "fiyat": null,
+   "kat": "Soup restaurant",
+   "semt": "District V.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "HILDA Budapest",
+   "puan": 4.5,
+   "yorum": 1363,
+   "fiyat": null,
+   "kat": "Restaurant",
+   "semt": "District V.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Rim Thanonh Thai Food",
+   "puan": 4.8,
+   "yorum": 1668,
+   "fiyat": null,
+   "kat": "Thai restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "James Joyce Irish Bar and Gastro Budapest",
+   "puan": 4.6,
+   "yorum": 622,
+   "fiyat": null,
+   "kat": "Irish pub",
+   "semt": "District V.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Pho36 Akacfa - Vietnamese Restaurant",
+   "puan": 4.7,
+   "yorum": 1256,
+   "fiyat": null,
+   "kat": "Vietnamese restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  },
+  {
+   "ad": "Little Italy pizzéria & söröző",
+   "puan": 4.8,
+   "yorum": 1653,
+   "fiyat": null,
+   "kat": "Italian restaurant",
+   "semt": "District VII.",
+   "arama": "cheap eats",
+   "kapali": false
+  }
+ ]
+}
