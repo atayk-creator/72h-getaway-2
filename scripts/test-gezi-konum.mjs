@@ -35,7 +35,7 @@ assert.deepEqual(geoInput([{ arama: "Louvre Museum Paris" }]).searchStringsArray
   assert.match(applyRow(p, null, c).konumNotu, /sonuç vermedi/); console.log("ok 2: sonuç kontrolü"); }
 
 // 3) uçtan uca: sadece konumu olmayanlar aranır
-{ const seen = []; const small = { sehirler: { Paris: structuredClone(data.sehirler.Paris) } }; small.sehirler.Paris.yerler[0].konum = [1, 1];
+{ const seen = []; const small = { sehirler: { Paris: structuredClone(data.sehirler.Paris) } }; small.sehirler.Paris.yerler.forEach((y, i) => { y.konum = i === 0 ? [1, 1] : null; });
   const fake = async (url, init = {}) => { seen.push({ url, init }); const u = new URL(url);
     if (u.pathname.endsWith("/users/me/limits")) return res({ data: { current: { monthlyUsageUsd: 1 }, limits: { maxMonthlyUsageUsd: 45 } } });
     if (init.method === "POST") return res({ data: { id: "r1", status: "SUCCEEDED", defaultDatasetId: "d1" } });
