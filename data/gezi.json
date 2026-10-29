@@ -126,7 +126,14 @@
      "fiyat_yazi": "Yetişkin 11,50 € (sesli rehber dahil)",
      "bilgi": "İrlanda'nın en büyük katedrali; Gulliver'in yazarı Jonathan Swift burada gömülü. Pazar günleri ayin nedeniyle turist girişi çok sınırlı.",
      "kaynak": "https://thebettervacation.com/dublin/st-patricks-cathedral/",
-     "konum": null
+     "konum": [
+      53.33952,
+      -6.27148
+     ],
+     "googleAd": "St Patrick's Cathedral",
+     "puan": 4.5,
+     "yorum": 29247,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St%20Patrick's%20Cathedral&query_place_id=ChIJpVg1bAmnREgRVLEltpvmyJI"
     },
     {
      "id": "christ-church-katedrali",
@@ -2117,7 +2124,14 @@
      "fiyat_yazi": "Giriş ücretsiz; yemekler ayrıca",
      "bilgi": "Mercado da Ribeira içindeki yemek salonu; şehrin iyi restoranlarından tek çatı altında tabaklar. Öğle ve akşam yoğun, masa bulmak zorlaşır.",
      "kaynak": "https://www.visitlisboa.com/",
-     "konum": null
+     "konum": [
+      38.70706,
+      -9.14567
+     ],
+     "googleAd": "Time Out Market",
+     "puan": 4.4,
+     "yorum": 76824,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Time%20Out%20Market&query_place_id=ChIJdWBeWYc0GQ0RktxySU7hjxM"
     },
     {
      "id": "gulbenkian-muzesi",
@@ -5847,7 +5861,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin en eski binası, 4. yüzyıl Roma rotundası; başkanlık binası avlusunda saklı. Gün batımı öncesi en güzel ışık.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null
+     "konum": [
+      42.69692,
+      23.32289
+     ],
+     "googleAd": "Sofia Church of St. George",
+     "puan": 4.6,
+     "yorum": 3937,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sofia%20Church%20of%20St.%20George&query_place_id=ChIJSfdijW6FqkARUx-EskTpUiU"
     },
     {
      "id": "antik-serdika",
@@ -6024,14 +6045,14 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 1.13
+  "usd": 1.14
  },
  "apifyKullanim": {
-  "usd": 27.1,
+  "usd": 27.11,
   "sinir": 45,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-10-29T23:06:42.416Z"
+  "kontrol": "2026-10-29T23:26:09.707Z"
  },
  "olcumler": [
   {
@@ -6040,6 +6061,13 @@
    "sorgu": 250,
    "usd": 0.76,
    "sorguBasi": 0.00304
+  },
+  {
+   "robot": "gezi-konum",
+   "t": "2026-10-29T23:26:09.707Z",
+   "sorgu": 3,
+   "usd": 0.01,
+   "sorguBasi": 0.00333
   }
  ]
 }
