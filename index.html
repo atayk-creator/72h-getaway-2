@@ -424,7 +424,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 </div>
 </main>
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -621,7 +621,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       else { chip = "est"; note = file ? "Bu otelin fiyatı henüz kontrol edilmedi, şehir ortalamasından tahmin." : "Fiyat yükleniyor…"; }
       return { t: cat.t, lvl: cat.lvl, name: h.ad, label: h.ad, p: Math.round(p), s: chip, desc: h.not.replace(/[.\s]+$/, "") + ". " + note,
         sc: sp && sp.puan ? String(sp.puan).replace(".", ",") : "", sct: "Google puanı", live: true,
-        lat: k ? k[0] : fb ? fb.lat : undefined, lon: k ? k[1] : fb ? fb.lon : undefined };
+        lat: k ? k[0] : fb ? fb.lat : c.center ? c.center.lat : undefined, lon: k ? k[1] : fb ? fb.lon : c.center ? c.center.lon : undefined };
     });
   }
   // Şehir etiketi: otel ya da uçak fiyatı robottan geliyorsa "Canlı fiyat", yoksa şehrin kendi durumu
@@ -634,6 +634,85 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   function lvlOf(h) { return h.lvl != null ? h.lvl : LVL[h.t] != null ? LVL[h.t] : 1; }
   function defaultIdx(hs) { for (var i = 0; i < hs.length; i++) if (lvlOf(hs[i]) === 1) return i; return Math.min(1, hs.length - 1); }
   function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
+  /* ====================== GEZİ YERLERİ VE ULAŞIM ====================== */
+  // data/gezi.json: 26 başkentte 10'ar gezi yeri (süre, resmî bilet fiyatı, bilgi, Google Maps konumu) ve toplu taşıma fiyatları.
+  // Fiyatlar yerel para biriminde; euroya data.json'daki günlük ECB kuruyla çevrilir.
+  var GEZI = null, FX_FALLBACK = { EUR: 1, CZK: 24.4, PLN: 4.25, SEK: 11, DKK: 7.46, RON: 5.05 };
+  function fxOf(cur) {
+    if (!cur || cur === "EUR") return 1;
+    if (cur === "HUF") return HUF_PER_EUR;
+    var k = DATA.kurlar && DATA.kurlar[cur];
+    return typeof k === "number" && k > 0 ? k : FX_FALLBACK[cur] || null;
+  }
+  var toEur = function (v, cur) { var r = fxOf(cur); return typeof v === "number" && r ? v / r : null; };
+  function geziOf(c) { return GEZI && GEZI.sehirler && GEZI.sehirler[c.n] || null; }
+  // Gezi verisini şehirlerin yer listesine çevirir (Budapeşte kendi araştırılmış listesini korur)
+  function applyGezi() {
+    if (!GEZI) return;
+    D.forEach(function (c) {
+      var g = geziOf(c); if (!g) return;
+      c.gezi = g;
+      if (c.n === "Budapeşte" || !g.yerler || !g.yerler.length) return;
+      var list = g.yerler.filter(function (y) { return y.konum && y.kapali !== "kalici"; });
+      if (list.length < 4) return;
+      var paid = list.map(function (y) { return toEur(y.fiyat, g.para); }).filter(function (v) { return v > 0; }).sort(function (a, b) { return a - b; });
+      var guess = paid.length ? paid[paid.length >> 1] : c.a;
+      c.places = list.map(function (y) {
+        var eur = toEur(y.fiyat, g.para), eurWe = toEur(y.fiyat_hs, g.para), unknown = y.fiyat == null;
+        return { n: escH(y.ad), tag: escH(y.tur), z: y.bolge, lat: y.konum[0], lon: y.konum[1], mins: y.sure_dk,
+          eur: unknown ? guess : eur, eurWe: eurWe, unknown: unknown,
+          price: escH(y.fiyat_yazi) + (unknown ? " · fiyatı teyit et (bütçede ~" + Math.round(guess) + " € varsayıldı)" : ""),
+          info: escH(y.bilgi) + (y.kapali === "gecici" ? " Google'da geçici olarak kapalı görünüyor, gitmeden kontrol et." : ""),
+          src: /^https:\/\//.test(y.kaynak || "") ? escH(y.kaynak) : null, url: /^https:\/\/www\.google\.com\/maps\//.test(y.harita || "") ? escH(y.harita) : null };
+      });
+      var la = 0, lo = 0; c.places.forEach(function (p) { la += p.lat; lo += p.lon; });
+      c.center = { lat: la / c.places.length, lon: lo / c.places.length };
+    });
+  }
+  // Bir yerin kişi başı bilet fiyatı (euro); Budapeşte'nin forint fiyatları da çevrilir
+  function ticketEur(p, wk) {
+    if (p.eur != null) return wk && p.eurWe != null ? p.eurWe : p.eur;
+    if (p.ft != null) return ((wk && p.ftWe) ? p.ftWe : p.ft) / HUF_PER_EUR;
+    return 0;
+  }
+  // Ulaşım: havalimanı gidiş-dönüş + kalınan günler için en ucuz seçenek (günde 2 yolculuk varsayımı)
+  function transportPlan(c, days) {
+    var g = c.gezi; if (!g || !g.ulasim) return null;
+    var u = g.ulasim, cur = g.para, e = function (x) { return x && typeof x.fiyat === "number" ? toEur(x.fiyat, cur) : null; };
+    var single = e(u.tek_bilet), day = e(u.gunluk), multi = e(u.cok_gunluk), mg = u.cok_gunluk && u.cok_gunluk.gun || 3, air = e(u.havalimani);
+    var opts = [];
+    if (single != null) opts.push({ p: single * 2 * days, t: days * 2 + " tek bilet" });
+    if (day != null) opts.push({ p: day * days, t: days + " × günlük kart" });
+    if (multi != null) { var rest = Math.max(0, days - mg), add = rest ? Math.min(day != null ? day * rest : Infinity, single != null ? single * 2 * rest : Infinity) : 0; if (isFinite(add)) opts.push({ p: multi + add, t: mg + " günlük kart" + (rest ? " + " + rest + " gün ek" : "") }); }
+    if (!opts.length) return null;
+    var best = opts.sort(function (a, b) { return a.p - b.p; })[0];
+    var airRt = air != null ? air * 2 : 0;
+    return { perPerson: best.p + airRt, city: best, air: airRt, note: u.not || "" };
+  }
+  function transportText(tp) {
+    if (!tp) return "";
+    if (tp.perPerson === 0) return "Toplu taşıma ücretsiz";
+    return "Kişi başı ~" + Math.round(tp.perPerson) + " €: " + tp.city.t + (tp.air ? " + havalimanı gidiş-dönüş ~" + Math.round(tp.air) + " €" : "");
+  }
+  function ulasimBox(c) {
+    var g = c.gezi; if (!g || !g.ulasim) return "";
+    var u = g.ulasim, cur = g.para, sym = { EUR: "€", HUF: "Ft", CZK: "Kč", PLN: "zł", SEK: "kr", DKK: "kr", RON: "lei" }[cur] || cur;
+    var row = function (lab, x) {
+      if (!x || typeof x.fiyat !== "number") return "";
+      var src = /^https:\/\//.test(x.kaynak || "") ? '<a href="' + escH(x.kaynak) + '" target="_blank" rel="noopener noreferrer">kaynak ↗</a>' : "";
+      return "<li><span>" + lab + ": " + escH(x.aciklama || "") + "</span><b>" + (x.fiyat === 0 ? "Ücretsiz" : nf1.format(x.fiyat).replace(/,0$/, "") + " " + sym) + "</b>" + src + "</li>";
+    };
+    return '<p class="ph">Toplu taşıma (resmî fiyatlar, yetişkin)</p><ul>' + row("Tek bilet", u.tek_bilet) + row("Günlük", u.gunluk) + row((u.cok_gunluk && u.cok_gunluk.gun || 3) + " günlük", u.cok_gunluk) + row("Havalimanı", u.havalimani) + "</ul>" + (u.not ? '<p class="pn">' + escH(u.not) + "</p>" : "");
+  }
+  function geziBox(c) {
+    var P = c.places || [], withSrc = P.filter(function (p) { return p.src; });
+    var rows = withSrc.map(function (p) { return "<li><span>" + p.n + "</span><b>" + p.price.replace(/ · fiyatı teyit et.*$/, "") + '</b><a href="' + p.src + '" target="_blank" rel="noopener noreferrer">kaynak ↗</a></li>'; }).join("");
+    var unk = P.filter(function (p) { return p.unknown; }).length;
+    return '<details class="pricebox"><summary>Bilet, ulaşım fiyatları ve kaynakları</summary>' + ulasimBox(c) +
+      (rows ? '<p class="ph">Gezi yerleri</p><ul>' + rows + "</ul>" : "") +
+      '<p class="pn">Fiyatlar ' + dateTr(GEZI.guncellendi) + " tarihinde resmî sayfalardan araştırıldı" + (unk ? "; " + unk + " yerin fiyatı henüz doğrulanmadı" : "") + ". Gitmeden önce kendin de kontrol et.</p></details>";
+  }
+
   /* ====================== RESTORANLAR ====================== */
   // Restoran robotu (GitHub Actions) her başkentin merkezinde Google Maps'ten 2 uygun, 2 popüler, 2 lüks restoran seçer.
   // Kişi başı fiyat: Google kullanıcılarının bildirdiği aralığın ortası, euroya çevrilmiş.
@@ -750,12 +829,12 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     });
   }
   function dateTr(s) { var d = Date.parse(s + "T00:00:00Z"); return isFinite(d) ? dLongY.format(new Date(d)) : "tarih yok"; }
-  function priceBox() {
+  function priceBox(c) {
     var it = PRICES.items || {}, keys = Object.keys(it), esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;"); };
     var row = function (k) { var i = it[k]; return '<li><span>' + esc(i.label) + '</span><b>' + nf.format(i.value) + ' ' + esc(i.currency || "Ft") + '</b><a href="' + esc(i.source) + '" target="_blank" rel="noopener noreferrer">kaynak ↗</a></li>'; };
     var off = keys.filter(function (k) { return it[k].tier !== "ikincil"; }), sec = keys.filter(function (k) { return it[k].tier === "ikincil"; });
     var last = PRICE_STATUS && PRICE_STATUS.lastRun ? "Robot son kontrol: " + dateTr(PRICE_STATUS.lastRun) : "Son elle kontrol: " + dateTr(PRICES.updated);
-    return '<details class="pricebox"><summary>Bilet fiyatları ve kaynakları (Ft)</summary>' +
+    return '<details class="pricebox"><summary>Bilet, ulaşım fiyatları ve kaynakları (Ft)</summary>' + (c ? ulasimBox(c) : "") +
       '<p class="ph">Resmî sayfalardan okunanlar</p><ul>' + off.map(row).join("") + '</ul>' +
       (sec.length ? '<p class="ph">Güncel rehberlerden (resmî sayfası bulunamadı, otomatik kontrol edilmiyor)</p><ul>' + sec.map(row).join("") + '</ul>' : "") +
       '<p class="pn">' + last + '. Gitmeden önce kendin de kontrol et.</p></details>';
@@ -768,7 +847,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     $("rateHint").textContent = "(" + dataDateText() + " itibarıyla, güncelleyebilirsin)";
     var age = dataAgeDays(), n = $("datanote"), old = age !== null && age > 14;
     n.className = "datanote" + (old ? " old" : "");
-    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). " + (LIVE.doc ? "Otel, uçak ve restoran fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor; günlük yemek ve ulaşım tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
+    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). " + (LIVE.doc ? "Otel, uçak ve restoran fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor; ulaşım ve gezi biletleri resmî fiyatlardan, günlük yemek tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
       (old ? " Bu veri " + age + " gündür güncellenmedi, rakamlar eski olabilir." : "");
   }
   function mapsUrl(q) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); }
@@ -807,9 +886,16 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var hotel = hp * o.nights * o.rooms;
     var food = Math.max(0, c.f * foodMult * o.ppl * days - v * c.f * foodMult * 0.4 * o.ppl);
     var resto = v * rp * o.ppl;
-    var trans = c.t * o.ppl * days;
-    var act = o.act ? c.a * o.ppl * o.nights : 0;
-    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, fly: fly, flight: fp, sum: hotel + food + resto + trans + act + fly };
+    var tp = transportPlan(c, days), trans = tp ? tp.perPerson * o.ppl : c.t * o.ppl * days;
+    var act = 0, ticketNote = null;
+    if (o.act) {
+      if (c.places && c.places.length) {
+        var cur = c === D[+$("city").value], sel = cur && picked.length ? picked : defaultPicks(c, o), unk = 0;
+        sel.forEach(function (pi) { var p = c.places[pi]; if (!p) return; act += ticketEur(p, true); if (p.unknown) unk++; });
+        act *= o.ppl; ticketNote = { n: sel.length, unknown: unk };
+      } else act = c.a * o.ppl * o.nights;
+    }
+    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, fly: fly, flight: fp, tp: tp, tickets: ticketNote, sum: hotel + food + resto + trans + act + fly };
   }
 
   /* ====================== MESAFE VE PLAN ====================== */
@@ -880,7 +966,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   }
   // gün gün saatli program
   function buildSchedule(c, o, hotel, resto, sel) {
-    var P = c.places, days = o.nights + 1, out = [], plan = buildPlan(P, hotel, o, sel), md = mealDays(days, visits), ft = 0;
+    var P = c.places, days = o.nights + 1, out = [], plan = buildPlan(P, hotel, o, sel), md = mealDays(days, visits), eur = 0;
     for (var di = 0; di < days; di++) {
       var first = di === 0, last = di === days - 1, items = [], t;
       var date = o.a ? new Date(o.a.getTime() + di * 86400000) : null;
@@ -892,7 +978,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       var prev = hotel, lunch = false;
       plan[di].forEach(function (pi) {
         var p = P[pi], l = leg(prev, p), walk = l.walk <= 20, tr = walk ? l.walk : l.taxi;
-        var pr = (wk && p.priceWe) ? p.priceWe : p.price; ft += (wk && p.ftWe) ? p.ftWe : p.ft;
+        var pr = (wk && p.priceWe) ? p.priceWe : p.price; eur += ticketEur(p, wk);
         if (!lunch && !last && t < 15 * 60 && t + tr >= 13 * 60) { items.push({ t: fmtT(t), title: "Öğle molası", sub: "Yakında bir yerde hafif bir öğle yemeği.", kind: "meal" }); t += 60; lunch = true; }
         t += tr;
         items.push({ t: fmtT(t), title: p.n, sub: (walk ? "Yürüyüş " : "Taksi ") + tr + " dk (" + nf1.format(l.km) + " km) · " + pr + " · yaklaşık " + fmtMin(p.mins), note: p.info, kind: "place" });
@@ -906,7 +992,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       }
       out.push({ head: head, items: items });
     }
-    return { days: out, ft: ft };
+    return { days: out, eur: eur };
   }
 
   /* ====================== ÖZET MODELİ ====================== */
@@ -921,8 +1007,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       picks: [
         ["Otel", (hotel.name || hotel.label) + " · ~" + hotel.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (hotel.sc ? (hotel.sct ? " · Google " : " · Booking ") + hotel.sc : "")],
         ["Yemek", visits === 0 ? "Viral restoran eklenmedi" : (resto.name || resto.label) + " · ~" + resto.p + " € kişi başı · " + Math.min(visits, o.nights + 1) + " öğün"],
-        ["Kişi ve süre", o.ppl + " kişi · " + o.nights + " gece / " + (o.nights + 1) + " gün"]
-      ],
+        ["Kişi ve süre", o.ppl + " kişi · " + o.nights + " gece / " + (o.nights + 1) + " gün"]].concat(k.tp ? [["Ulaşım", transportText(k.tp)]] : []),
       budget: [["Otel", tl(k.hotel * o.rate), k.hotel * o.rate], ["Yemek (diğer öğünler)", tl(k.food * o.rate), k.food * o.rate], ["Viral restoran", tl(k.resto * o.rate), k.resto * o.rate],
                ["Ulaşım", tl(k.trans * o.rate), k.trans * o.rate], ["Gezi harcamaları", tl(k.act * o.rate), k.act * o.rate]].concat(k.fly ? [["Uçak (gidiş-dönüş, " + o.ppl + " kişi)", tl(k.fly * o.rate), k.fly * o.rate]] : []),
       days: [], tickets: null, notes: [], autoSel: false, hotel: hotel, resto: resto, fly: k.fly
@@ -931,7 +1016,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       var sel = picked.length ? picked : defaultPicks(c, o); m.autoSel = !picked.length;
       var sch = buildSchedule(c, o, hotel, resto, sel);
       m.days = sch.days;
-      if (sch.ft > 0) m.tickets = { ft: sch.ft * o.ppl, tl: sch.ft * o.ppl / HUF_PER_EUR * o.rate };
+      if (sch.eur > 0) m.tickets = { eur: sch.eur * o.ppl, tl: sch.eur * o.ppl * o.rate };
     }
     if (m.autoSel) m.notes.push("Gezi yerlerini kendin seçmediğin için önerilen yerler programa konuldu.");
     if (!c.places) m.notes.push(c.n + " için gezi planı henüz hazır değil, program yalnızca otel, yemek ve bütçeyi içeriyor.");
@@ -1123,8 +1208,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     d.ensure(34); d.rect(M, d.y + 4, CW, 26, SAFF);
     d.text("Toplam", M + 8, d.y + 10, 12, true, NAVY);
     var ts = clean(tl(m.total)); d.text(ts, R - 8 - tw(d.fb, ts, 12), d.y + 10, 12, true, NAVY); d.y += 38;
-    d.text("Kişi başı yaklaşık " + tl(m.perPerson) + " · uçak bileti dahil değildir.", M + 4, d.y, 10, false, MUTED); d.y += 16;
-    if (m.tickets) { d.text("Fiyatı bilinen biletler (" + m.o.ppl + " kişi): " + nf.format(m.tickets.ft) + " Ft ≈ " + tl(m.tickets.tl), M + 4, d.y, 10, false, MUTED); d.y += 16; }
+    d.text("Kişi başı yaklaşık " + tl(m.perPerson) + (m.fly ? " · uçak dahil." : " · uçak bileti dahil değildir."), M + 4, d.y, 10, false, MUTED); d.y += 16;
+    if (m.tickets) { d.text("Programdaki biletler (" + m.o.ppl + " kişi): ~" + nf.format(Math.round(m.tickets.eur)) + " € ≈ " + tl(m.tickets.tl), M + 4, d.y, 10, false, MUTED); d.y += 16; }
     if (m.days.length) {
       d.y += 10; sec("Programın (" + m.o.nights + " gece / " + (m.o.nights + 1) + " gün)");
       m.days.forEach(function (day) {
@@ -1271,7 +1356,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var body = $("tripBody");
     var s1 = trKeep && $("plist") ? $("plist").scrollLeft : 0, s2 = trKeep && $("pscroll") ? $("pscroll").scrollLeft : 0; trKeep = true;
     if (!c.places) {
-      body.innerHTML = '<p class="empty">Gezi planı şimdilik <b>Budapeşte</b> için hazır. ' + c.n + ' için gezilecek yerleri, bilgilerini ve otelden mesafelerini araştırıp sırayla ekleyeceğiz. Şimdilik ' +
+      body.innerHTML = '<p class="empty">Gezi planı şimdilik <b>' + (GEZI ? Object.keys(GEZI.sehirler).length + " AB başkenti" : "Budapeşte") + '</b> için hazır. ' + c.n + ' için gezilecek yerleri henüz eklemedik. Şimdilik ' +
         '<a href="' + mapsUrl("tourist attractions in " + c.n + " " + c.c) + '" target="_blank" rel="noopener noreferrer">haritada gezilecek yerlere bak ↗</a></p>';
       return;
     }
@@ -1279,7 +1364,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var arrows = function (id, what) {
       return '<div class="arrows"><button type="button" data-t="' + id + '" data-d="-1" aria-label="Önceki ' + what + '">‹</button><button type="button" data-t="' + id + '" data-d="1" aria-label="Sonraki ' + what + '">›</button></div>';
     };
-    body.innerHTML = '<p class="lead">Seçtiğin otelden (<b>' + hotel.name + '</b>) uzaklıklar kartlarda. Yana kaydırarak gez, dokunarak seç ya da planı bize bırak.</p>' + priceBox() +
+    body.innerHTML = '<p class="lead">Seçtiğin otelden (<b>' + hotel.name + '</b>) uzaklıklar kartlarda. Yana kaydırarak gez, dokunarak seç ya da planı bize bırak.</p>' + (c.n === "Budapeşte" ? priceBox(c) : geziBox(c)) +
       '<div class="actions"><button type="button" class="btn" id="autoPlan">✨ Bana tur planı çıkar</button><button type="button" class="btn ghost" id="clearPlan">Seçimi temizle</button></div>' +
       '<div class="rowhead"><h3>Gezilecek yerler <span class="hint">(' + P.length + ' yer · ' + picked.length + ' seçili)</span></h3>' + arrows("plist", "yerler") + '</div>' +
       '<div class="hs" id="plist" tabindex="0" role="region" aria-label="Gezilecek yerler, yatay kaydırılır"></div>' +
@@ -1295,7 +1380,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         '<p class="dist">' + legTxt(l).replace(" (uzun, taksi ya da metro mantıklı)", "") + (l.walk > 35 ? ' <span>· uzak</span>' : '') + '</p>' +
         '<p class="meta">' + p.price + ' · yaklaşık ' + fmtMin(p.mins) + '</p>' +
         '<details' + (openInfo[i] ? " open" : "") + '><summary>Bilgi</summary><p>' + p.info + '</p>' +
-        '<a href="' + mapsUrl(p.n + " " + c.n) + '" target="_blank" rel="noopener noreferrer">Haritada aç ↗</a></details></div>';
+        '<a href="' + (p.url || mapsUrl(p.n + " " + c.n)) + '" target="_blank" rel="noopener noreferrer">Haritada aç ↗</a></details></div>';
       lab.querySelector("input").addEventListener("change", function () {
         var k = picked.indexOf(i); if (k >= 0) picked.splice(k, 1); else picked.push(i); render();
       });
@@ -1308,7 +1393,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     $("clearPlan").addEventListener("click", function () { picked = []; trKeep = false; render(); });
     var out = $("planOut");
     if (!picked.length) { out.innerHTML = '<p class="empty">Henüz yer seçmedin. Yukarıdan dokunarak seç ya da <b>Bana tur planı çıkar</b>\'a bas.</p>'; g.scrollLeft = s1; return; }
-    var plan = buildPlan(P, hotel, o, picked), h = '<div class="hs" id="pscroll" tabindex="0" role="region" aria-label="Gün gün plan, yatay kaydırılır">', ft = 0;
+    var plan = buildPlan(P, hotel, o, picked), h = '<div class="hs" id="pscroll" tabindex="0" role="region" aria-label="Gün gün plan, yatay kaydırılır">', ft = 0, unk = 0;
     plan.forEach(function (stops, di) {
       var date = o.a ? new Date(o.a.getTime() + di * 86400000) : null, wk = date && [5, 6, 0].indexOf(date.getUTCDay()) >= 0;
       var head = (di + 1) + ". Gün" + (date ? " · " + DAYS[date.getUTCDay()] + ", " + dShort.format(date) : "");
@@ -1317,7 +1402,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       h += '<ol class="stops">'; var prev = hotel, prevName = "Otelden", dur = 0, taxi = 0;
       stops.forEach(function (pi, si) {
         var p = P[pi], l = leg(prev, p), pr = (wk && p.priceWe) ? p.priceWe : p.price;
-        dur += p.mins; taxi += l.taxi; ft += (wk && p.ftWe) ? p.ftWe : p.ft;
+        dur += p.mins; taxi += l.taxi; ft += ticketEur(p, wk); if (p.unknown) unk++;
         h += '<li><span class="n">' + (si + 1) + '</span><div><b>' + p.n + '</b><div class="leg">' + prevName + ': ' + legTxt(l) + '</div><p class="why">' + pr + ' · yaklaşık ' + fmtMin(p.mins) + '</p></div></li>';
         prev = p; prevName = "Önceki duraktan";
       });
@@ -1326,7 +1411,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     h += '</div>';
     if (ft > 0) {
       var tot = ft * o.ppl;
-      h += '<p class="plansum" style="margin-top:6px">Fiyatı bilinen biletler (' + o.ppl + ' kişi): <b>' + nf.format(tot) + ' Ft</b> ≈ <b>' + tl(tot / HUF_PER_EUR * o.rate) + '</b>. Diğer yerler ücretsiz ya da fiyatı belli değil, bütçedeki "Gezi" kalemiyle birlikte düşün.</p>';
+      h += '<p class="plansum" style="margin-top:6px">Programdaki biletler (' + o.ppl + ' kişi): <b>~' + nf.format(Math.round(tot)) + ' €</b> ≈ <b>' + tl(tot * o.rate) + '</b>' + (unk ? ' (' + unk + ' yerin fiyatı tahmini)' : '') + '. Bütçedeki "Gezi" kalemi bu biletlerden hesaplanır' + ($("act").checked ? '' : ', şu an kapalı') + '.</p>';
     }
     out.innerHTML = h;
     g.scrollLeft = s1; var ps = $("pscroll"); if (ps) ps.scrollLeft = s2;
@@ -1430,6 +1515,11 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       if (r[0] && Array.isArray(r[0].sehirler)) { LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
     }).catch(function () {});
   }
+  if (window.GEZI_URL && window.fetch) {
+    fetch(window.GEZI_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.sehirler) { GEZI = d; applyGezi(); render(); }
+    }).catch(function () {});
+  }
   if (window.RESTOS_URL && window.fetch) {
     fetch(window.RESTOS_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { RESTO = d; render(); }
@@ -1442,7 +1532,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   }
   if (window.DATA_URL && window.fetch) {
     fetch(window.DATA_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && typeof d.eurTry === "number" && typeof d.eurHuf === "number" && d.updated) { DATA = d; applyData(); render(); }
+      if (d && typeof d.eurTry === "number" && typeof d.eurHuf === "number" && d.updated) { DATA = d; applyData(); applyGezi(); render(); }
     }).catch(function () {});
   }
 })();

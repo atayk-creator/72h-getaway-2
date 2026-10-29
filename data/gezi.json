@@ -117,7 +117,7 @@
     {
      "id": "aziz-patrick-katedrali",
      "ad": "Aziz Patrick Katedrali",
-     "arama": "St Patrick's Cathedral Dublin",
+     "arama": "St Patrick's Cathedral St Patrick's Close Dublin Ireland",
      "tur": "Kilise",
      "bolge": "liberties",
      "sure_dk": 60,
@@ -126,8 +126,7 @@
      "fiyat_yazi": "Yetişkin 11,50 € (sesli rehber dahil)",
      "bilgi": "İrlanda'nın en büyük katedrali; Gulliver'in yazarı Jonathan Swift burada gömülü. Pazar günleri ayin nedeniyle turist girişi çok sınırlı.",
      "kaynak": "https://thebettervacation.com/dublin/st-patricks-cathedral/",
-     "konum": null,
-     "konumNotu": "Google 5110 km uzakta bir yer buldu: St. Patrick's Cathedral"
+     "konum": null
     },
     {
      "id": "christ-church-katedrali",
@@ -2109,7 +2108,7 @@
     {
      "id": "time-out-market",
      "ad": "Time Out Market",
-     "arama": "Time Out Market Lisboa",
+     "arama": "Time Out Market Lisboa Mercado da Ribeira Lisbon Portugal",
      "tur": "Pazar",
      "bolge": "baixa",
      "sure_dk": 75,
@@ -2118,8 +2117,7 @@
      "fiyat_yazi": "Giriş ücretsiz; yemekler ayrıca",
      "bilgi": "Mercado da Ribeira içindeki yemek salonu; şehrin iyi restoranlarından tek çatı altında tabaklar. Öğle ve akşam yoğun, masa bulmak zorlaşır.",
      "kaynak": "https://www.visitlisboa.com/",
-     "konum": null,
-     "konumNotu": "Google 5422 km uzakta bir yer buldu: Time Out Market New York"
+     "konum": null
     },
     {
      "id": "gulbenkian-muzesi",
@@ -5840,7 +5838,7 @@
     {
      "id": "aziz-yorgi-rotunda",
      "ad": "Aziz Yorgi Rotunda",
-     "arama": "St George Rotunda Sofia",
+     "arama": "Rotunda of St. George Sofia Bulgaria",
      "tur": "Kilise",
      "bolge": "merkez",
      "sure_dk": 20,
@@ -5849,8 +5847,7 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin en eski binası, 4. yüzyıl Roma rotundası; başkanlık binası avlusunda saklı. Gün batımı öncesi en güzel ışık.",
      "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
-     "konum": null,
-     "konumNotu": "Google 10402 km uzakta bir yer buldu: St. Sophia Bulgarian Orthodox Church"
+     "konum": null
     },
     {
      "id": "antik-serdika",

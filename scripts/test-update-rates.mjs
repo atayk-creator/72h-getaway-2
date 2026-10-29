@@ -9,11 +9,11 @@ const ok = (rates, date = "2026-10-05") => async () => ({ ok: true, status: 200,
 async function tmpFile(obj = base) { const d = await mkdtemp(join(tmpdir(), "kur-")); const f = join(d, "data.json"); await writeFile(f, JSON.stringify(obj)); return f; }
 
 // 1) normal güncelleme
-{ const f = await tmpFile(); const changed = await update({ file: f, fetchImpl: ok({ TRY: 55.8123, HUF: 370.456 }) });
+{ const f = await tmpFile(); const changed = await update({ file: f, fetchImpl: ok({ TRY: 55.8123, HUF: 370.456, CZK: 24.312345, PLN: 4.25, SEK: -1 }) });
   const j = JSON.parse(await readFile(f, "utf8"));
-  assert.equal(changed, true); assert.equal(j.eurTry, 55.81); assert.equal(j.eurHuf, 370.46); assert.equal(j.updated, "2026-10-05"); assert.match(j.source, /ECB/); console.log("ok 1: normal güncelleme"); }
+  assert.equal(changed, true); assert.equal(j.eurTry, 55.81); assert.equal(j.eurHuf, 370.46); assert.equal(j.updated, "2026-10-05"); assert.match(j.source, /ECB/); assert.deepEqual(j.kurlar, { CZK: 24.3123, PLN: 4.25 }); console.log("ok 1: normal güncelleme, diğer kurlar"); }
 // 2) değişiklik yoksa dosya yazılmaz
-{ const f = await tmpFile({ ...base, updated: "2026-10-05", eurTry: 55.81, eurHuf: 370.46, source: "ECB referans kuru (Frankfurter API)" });
+{ const f = await tmpFile({ ...base, updated: "2026-10-05", eurTry: 55.81, eurHuf: 370.46, kurlar: {}, source: "ECB referans kuru (Frankfurter API)" });
   assert.equal(await update({ file: f, fetchImpl: ok({ TRY: 55.81, HUF: 370.46 }) }), false); console.log("ok 2: değişiklik yok"); }
 // 3) birinci adres düşerse ikincisi denenir
 { let n = 0; const f = await tmpFile(); const fetchImpl = async () => (++n === 1 ? { ok: false, status: 503, json: async () => ({}) } : { ok: true, status: 200, json: async () => ({ date: "2026-10-05", rates: { TRY: 56, HUF: 371 } }) });

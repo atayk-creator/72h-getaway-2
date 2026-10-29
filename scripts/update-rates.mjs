@@ -4,8 +4,8 @@ import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 const URLS = [
-  "https://api.frankfurter.dev/v1/latest?base=EUR&symbols=TRY,HUF",
-  "https://api.frankfurter.app/latest?from=EUR&to=TRY,HUF",
+  "https://api.frankfurter.dev/v1/latest?base=EUR&symbols=TRY,HUF,CZK,PLN,SEK,DKK,RON",
+  "https://api.frankfurter.app/latest?from=EUR&to=TRY,HUF,CZK,PLN,SEK,DKK,RON",
 ];
 const MAX_JUMP = { eurTry: 0.15, eurHuf: 0.10 }; // eski değere göre izin verilen en büyük değişim
 
@@ -16,7 +16,10 @@ export function validate(j) {
   if (typeof t !== "number" || !(t >= 1 && t <= 500)) throw new Error("TRY değeri geçersiz: " + t);
   if (typeof h !== "number" || !(h >= 100 && h <= 1000)) throw new Error("HUF değeri geçersiz: " + h);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(j.date || "")) throw new Error("Tarih geçersiz: " + j.date);
-  return { eurTry: round2(t), eurHuf: round2(h), date: j.date };
+  // Diğer şehirlerin para birimleri (gezi ve ulaşım fiyatları için); geçersiz olan atlanır
+  const kurlar = {};
+  for (const k of ["CZK", "PLN", "SEK", "DKK", "RON"]) { const v = j.rates[k]; if (typeof v === "number" && v > 0 && v < 1000) kurlar[k] = Math.round(v * 10000) / 10000; }
+  return { eurTry: round2(t), eurHuf: round2(h), date: j.date, kurlar };
 }
 
 export async function fetchRates(fetchImpl = fetch) {
@@ -38,7 +41,7 @@ export async function update({ file = "data.json", fetchImpl = fetch } = {}) {
     const jump = Math.abs(r[key] / old[key] - 1);
     if (jump > MAX_JUMP[key]) throw new Error(`${key} eskisine göre %${(jump * 100).toFixed(1)} değişti (sınır %${MAX_JUMP[key] * 100}). Elle kontrol et.`);
   }
-  const next = { ...old, updated: r.date, eurTry: r.eurTry, eurHuf: r.eurHuf, source: "ECB referans kuru (Frankfurter API)" };
+  const next = { ...old, updated: r.date, eurTry: r.eurTry, eurHuf: r.eurHuf, kurlar: { ...(old.kurlar || {}), ...r.kurlar }, source: "ECB referans kuru (Frankfurter API)" };
   if (JSON.stringify(next) === JSON.stringify(old)) return false;
   await writeFile(file, JSON.stringify(next, null, 2) + "\n", "utf8");
   return true;
