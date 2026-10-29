@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-28T00:26:54.785Z",
+ "guncellendi": "2026-10-29T03:59:27.790Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -112,7 +112,6 @@
   "cph-sp34": "ChgI1vPg1YW7sadHGgwvZy8xcHYyZ3g5cjAQAQ",
   "cph-wakeup-borgergade": "ChkIp4WI-Kqi7e9wGg0vZy8xMWI1cGxzZGcyEAE",
   "cph-cabinn-city": "ChgI1om14fSj-ti3ARoLL2cvMXRjdjAwdjUQAQ",
-  "hel-sokos-torni": "ChcIscyJsfW0pouoARoKL20vMDI2cm14NBAB",
   "hel-kamp": "ChUI1LuUoYa0gYhxGgkvbS8wZjNwNTkQAQ",
   "hel-st-george": "ChkI77yogpHey_ZOGg0vZy8xMWNwN3czN3c2EAE",
   "hel-lilla-roberts": "ChkIzfraiKiF-5YxGg0vZy8xMWMweHRkNWc5EAE",
@@ -1045,23 +1044,23 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 8.68
+  "usd": 9.92
  },
  "sonCalisma": {
-  "tarih": "2026-10-28T00:26:54.785Z",
-  "mod": "hepsi",
-  "hafta_sonu": 13,
-  "kontrol": 2754,
-  "fiyatli": 2397,
-  "tahminiMaliyetUsd": 8.06,
+  "tarih": "2026-10-29T03:59:27.790Z",
+  "mod": "takvim",
+  "hafta_sonu": 2,
+  "kontrol": 424,
+  "fiyatli": 359,
+  "tahminiMaliyetUsd": 1.24,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 9.47,
+  "usd": 16.44,
   "sinir": 45,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-10-28T00:26:54.785Z"
+  "kontrol": "2026-10-29T03:59:27.790Z"
  },
  "olcumler": [
   {
@@ -1084,6 +1083,13 @@
    "sorgu": 2688,
    "usd": 7.58,
    "sorguBasi": 0.00282
+  },
+  {
+   "robot": "otel",
+   "t": "2026-10-29T03:59:27.790Z",
+   "sorgu": 413,
+   "usd": 1.15,
+   "sorguBasi": 0.00278
   }
  ],
  "sehirler": {
