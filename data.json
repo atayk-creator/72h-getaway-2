@@ -2,5 +2,12 @@
   "updated": "2026-10-29",
   "eurTry": 55.47,
   "eurHuf": 365.95,
-  "source": "ECB referans kuru (Frankfurter API)"
+  "source": "ECB referans kuru (Frankfurter API)",
+  "kurlar": {
+    "CZK": 24.336,
+    "PLN": 4.3938,
+    "SEK": 10.9995,
+    "DKK": 7.4736,
+    "RON": 5.3441
+  }
 }
