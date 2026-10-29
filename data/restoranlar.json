@@ -1,0 +1,161 @@
+{
+ "guncellendi": "2026-10-29T22:21:31.503Z",
+ "kaynak": "Google Maps (Apify: compass/crawler-google-places)",
+ "aciklama": "Kişi başı fiyat: Google'daki kullanıcıların bildirdiği aralığın ortası, euroya çevrilmiş",
+ "kur": {
+  "kaynak": "ECB 2026-10-29",
+  "tarih": "2026-10-29"
+ },
+ "harcama": {
+  "donem": "2026-10-28",
+  "usd": 0.52
+ },
+ "apifyKullanim": {
+  "usd": 17.34,
+  "sinir": 45,
+  "donemBasi": "2026-10-28",
+  "donemSonu": "2026-11-27",
+  "kontrol": "2026-10-29T22:21:31.503Z"
+ },
+ "olcumler": [
+  {
+   "robot": "restoran-kesif",
+   "t": "2026-10-29T22:21:31.503Z",
+   "sorgu": 80,
+   "usd": 0.48,
+   "sorguBasi": 0.006
+  }
+ ],
+ "sehirler": {
+  "Budapeşte": {
+   "guncellendi": "2026-10-29T22:21:31.503Z",
+   "esik": {
+    "uygun": 19.1,
+    "luks": 71
+   },
+   "aday": 64,
+   "restoranlar": [
+    {
+     "id": "ChIJLY7X_0jdQUcRHUHwzHxGezY",
+     "ad": "Mama Goulash",
+     "mutfak": "Restaurant",
+     "puan": 4.8,
+     "yorum": 14188,
+     "fiyatYazi": "Ft 2,000–6,000",
+     "kisiBasiEur": 10.9,
+     "artiFiyat": false,
+     "semt": "District VII.",
+     "konum": [
+      47.49877,
+      19.06199
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Mama%20Goulash&query_place_id=ChIJLY7X_0jdQUcRHUHwzHxGezY",
+     "web": "https://www.mamagoulash.com/",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:21:31.503Z",
+     "seviye": "uygun"
+    },
+    {
+     "id": "ChIJ3XMMbnLdQUcRRclUEHsbVD0",
+     "ad": "Bistrology Budapest",
+     "mutfak": "Breakfast restaurant",
+     "puan": 4.9,
+     "yorum": 1255,
+     "fiyatYazi": "Ft 4,000–10,000",
+     "kisiBasiEur": 19.1,
+     "artiFiyat": false,
+     "semt": "District VII.",
+     "konum": [
+      47.49603,
+      19.06426
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Bistrology%20Budapest&query_place_id=ChIJ3XMMbnLdQUcRRclUEHsbVD0",
+     "web": "https://www.bistrology.hu/",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:21:31.503Z",
+     "seviye": "uygun"
+    },
+    {
+     "id": "ChIJZb83JGjcQUcR1M0xNU7rtsI",
+     "ad": "Gettó Gulyás",
+     "mutfak": "Hungarian restaurant",
+     "puan": 4.6,
+     "yorum": 17334,
+     "fiyatYazi": "Ft 6,000–16,000",
+     "kisiBasiEur": 30.1,
+     "artiFiyat": false,
+     "semt": "District VII.",
+     "konum": [
+      47.49738,
+      19.0624
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Gett%C3%B3%20Guly%C3%A1s&query_place_id=ChIJZb83JGjcQUcR1M0xNU7rtsI",
+     "web": "https://reservours.com/gettogulyas/tablereservation?source=google",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:21:31.503Z",
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJ-_IwO2jcQUcRW8Ad_TPUD5c",
+     "ad": "Fat Mama Restaurant",
+     "mutfak": "Restaurant",
+     "puan": 4.8,
+     "yorum": 40559,
+     "fiyatYazi": "Ft 6,000–18,000",
+     "kisiBasiEur": 32.8,
+     "artiFiyat": false,
+     "semt": "District VII.",
+     "konum": [
+      47.49788,
+      19.06278
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Fat%20Mama%20Restaurant&query_place_id=ChIJ-_IwO2jcQUcRW8Ad_TPUD5c",
+     "web": "http://www.fatmama.hu/",
+     "rezervasyon": null,
+     "kontrol": "2026-10-29T22:21:31.503Z",
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJdw64tKDeQUcRt7dgYkophrc",
+     "ad": "Prime Steak & Wine",
+     "mutfak": "Fine dining restaurant",
+     "puan": 4.8,
+     "yorum": 3629,
+     "fiyatYazi": "Ft 20,000+",
+     "kisiBasiEur": 71,
+     "artiFiyat": true,
+     "semt": "District V.",
+     "konum": [
+      47.5016,
+      19.0516
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Prime%20Steak%20%26%20Wine&query_place_id=ChIJdw64tKDeQUcRt7dgYkophrc",
+     "web": "http://primesteakhouse.hu/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/AK6DrexF8NM?source=pa,gmm&opi=79508299&hl=en-US&gei=EcfjauOQNofDgLQPhon8uAU&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DPrime%2BSteak%2B%2526%2BWine%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "kontrol": "2026-10-29T22:21:31.503Z",
+     "seviye": "luks"
+    },
+    {
+     "id": "ChIJ8errvBXcQUcRO2_oyo5lS8o",
+     "ad": "MÁK by mizseijani",
+     "mutfak": "Restaurant",
+     "puan": 4.7,
+     "yorum": 1330,
+     "fiyatYazi": "Ft 20,000+",
+     "kisiBasiEur": 71,
+     "artiFiyat": true,
+     "semt": "District V.",
+     "konum": [
+      47.50113,
+      19.04794
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=M%C3%81K%20by%20mizseijani&query_place_id=ChIJ8errvBXcQUcRO2_oyo5lS8o",
+     "web": "http://www.mak.hu/",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/fGavT1JHflg?source=pa,gmm&opi=79508299&hl=en-US&gei=EMfjauqpA8rO8L0P4cmuoQ0&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DM%25C3%2581K%2Bby%2Bmizseijani%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "kontrol": "2026-10-29T22:21:31.503Z",
+     "seviye": "luks"
+    }
+   ]
+  }
+ }
+}
