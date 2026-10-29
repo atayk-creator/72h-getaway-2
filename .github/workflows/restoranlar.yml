@@ -1,0 +1,51 @@
+name: Restoran robotu (Google Maps)
+# Her ayın 3'ünde 06:17'de (İstanbul) seçilen restoranları tazeler (yenile).
+# Elle: kesif = şehir merkezlerinde baştan arama ve seçim, sec = Apify'a gitmeden mevcut adaylardan yeniden seçim.
+on:
+  schedule:
+    - cron: "17 3 3 * *"
+  workflow_dispatch:
+    inputs:
+      mod:
+        description: "yenile = seçilenleri tazele, kesif = baştan ara ve seç (~0,35 $/şehir), sec = sadece yeniden seç (ücretsiz)"
+        type: choice
+        options: [yenile, kesif, sec]
+        default: yenile
+      sehir:
+        description: "Sadece bu şehir(ler) (virgülle, örnek: Paris,Roma). Boş = hepsi"
+        type: string
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: apify-robotlari
+  cancel-in-progress: false
+jobs:
+  restoranlar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node scripts/test-restoranlar.mjs
+      - name: Restoranları çek
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          MOD: ${{ github.event.inputs.mod || 'yenile' }}
+          SEHIR: ${{ github.event.inputs.sehir || '' }}
+        run: node scripts/restoranlar.mjs
+      - name: Sonuçları depoya kaydet
+        if: always()
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/
+          if git diff --cached --quiet; then echo "Değişiklik yok."; exit 0; fi
+          git commit -m "Restoranlar güncellendi ($(TZ=Europe/Istanbul date '+%Y-%m-%d %H:%M'))"
+          git pull --rebase --autostash
+          git push

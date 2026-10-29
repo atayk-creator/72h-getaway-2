@@ -1,0 +1,309 @@
+{
+ "aciklama": "Restoran robotunun ayarları. Her şehirde merkez noktası çevresinde Google Maps'te restoran arar, kurallara göre 2 uygun, 2 popüler, 2 lüks restoran seçer.",
+ "aramalar": [
+  {
+   "metin": "restaurant",
+   "sayi": 40
+  },
+  {
+   "metin": "fine dining restaurant",
+   "sayi": 12
+  }
+ ],
+ "secim": {
+  "uygun": 2,
+  "populer": 2,
+  "luks": 2,
+  "min_puan": 4.4,
+  "min_yorum": 300,
+  "luks_min_yorum": 100,
+  "populer_min_puan": 4.5
+ },
+ "haric": [
+  "McDonald",
+  "Burger King",
+  "KFC",
+  "Starbucks",
+  "Subway",
+  "Domino",
+  "Pizza Hut",
+  "Five Guys",
+  "Vapiano",
+  "Hard Rock",
+  "Wagamama",
+  "Costa Coffee",
+  "Pret A Manger",
+  "Nando",
+  "TGI Friday",
+  "Hooters",
+  "Rainforest Cafe",
+  "Taco Bell",
+  "Popeyes",
+  "Wendy",
+  "Leon "
+ ],
+ "haric_kategori": [
+  "Hotel",
+  "Bar",
+  "Night club",
+  "Pub",
+  "Cocktail bar",
+  "Wine bar",
+  "Coffee shop",
+  "Bakery",
+  "Ice cream shop",
+  "Grocery store",
+  "Supermarket",
+  "Food court",
+  "Hostel"
+ ],
+ "sabit_kur": {
+  "BGN": 1.95583
+ },
+ "yedek_kur": {
+  "HUF": 366,
+  "CZK": 24.4,
+  "PLN": 4.25,
+  "SEK": 11.0,
+  "DKK": 7.46,
+  "RON": 5.05,
+  "GBP": 0.86,
+  "USD": 1.08
+ },
+ "sehirler": [
+  {
+   "sehir": "Dublin",
+   "merkez": [
+    53.3438,
+    -6.2595
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Paris",
+   "merkez": [
+    48.8606,
+    2.341
+   ],
+   "yaricap_km": 2.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Brüksel",
+   "merkez": [
+    50.8467,
+    4.3525
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Amsterdam",
+   "merkez": [
+    52.3728,
+    4.8936
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Lüksemburg",
+   "merkez": [
+    49.6106,
+    6.1319
+   ],
+   "yaricap_km": 1.2,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Berlin",
+   "merkez": [
+    52.52,
+    13.405
+   ],
+   "yaricap_km": 2.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Viyana",
+   "merkez": [
+    48.2082,
+    16.3738
+   ],
+   "yaricap_km": 1.8,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Madrid",
+   "merkez": [
+    40.4168,
+    -3.7038
+   ],
+   "yaricap_km": 1.8,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Lizbon",
+   "merkez": [
+    38.711,
+    -9.1395
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Roma",
+   "merkez": [
+    41.8986,
+    12.4769
+   ],
+   "yaricap_km": 1.8,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Valletta",
+   "merkez": [
+    35.8989,
+    14.5146
+   ],
+   "yaricap_km": 1.2,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Atina",
+   "merkez": [
+    37.9755,
+    23.73
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Stokholm",
+   "merkez": [
+    59.3326,
+    18.0649
+   ],
+   "yaricap_km": 1.8,
+   "para": "SEK"
+  },
+  {
+   "sehir": "Kopenhag",
+   "merkez": [
+    55.6786,
+    12.576
+   ],
+   "yaricap_km": 1.5,
+   "para": "DKK"
+  },
+  {
+   "sehir": "Helsinki",
+   "merkez": [
+    60.1686,
+    24.942
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Tallinn",
+   "merkez": [
+    59.437,
+    24.745
+   ],
+   "yaricap_km": 1.2,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Riga",
+   "merkez": [
+    56.9496,
+    24.1052
+   ],
+   "yaricap_km": 1.2,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Vilnius",
+   "merkez": [
+    54.6824,
+    25.2845
+   ],
+   "yaricap_km": 1.2,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Varşova",
+   "merkez": [
+    52.237,
+    21.0175
+   ],
+   "yaricap_km": 2.0,
+   "para": "PLN"
+  },
+  {
+   "sehir": "Prag",
+   "merkez": [
+    50.087,
+    14.421
+   ],
+   "yaricap_km": 1.5,
+   "para": "CZK"
+  },
+  {
+   "sehir": "Bratislava",
+   "merkez": [
+    48.144,
+    17.108
+   ],
+   "yaricap_km": 1.2,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Budapeşte",
+   "merkez": [
+    47.4979,
+    19.053
+   ],
+   "yaricap_km": 1.5,
+   "para": "HUF"
+  },
+  {
+   "sehir": "Ljubljana",
+   "merkez": [
+    46.051,
+    14.506
+   ],
+   "yaricap_km": 1.0,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Zagreb",
+   "merkez": [
+    45.813,
+    15.977
+   ],
+   "yaricap_km": 1.2,
+   "para": "EUR"
+  },
+  {
+   "sehir": "Bükreş",
+   "merkez": [
+    44.433,
+    26.101
+   ],
+   "yaricap_km": 1.8,
+   "para": "RON"
+  },
+  {
+   "sehir": "Sofya",
+   "merkez": [
+    42.696,
+    23.322
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR"
+  }
+ ]
+}
