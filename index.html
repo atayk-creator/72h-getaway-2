@@ -622,6 +622,13 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         lat: k ? k[0] : fb ? fb.lat : undefined, lon: k ? k[1] : fb ? fb.lon : undefined };
     });
   }
+  // Şehir etiketi: otel ya da uçak fiyatı robottan geliyorsa "Canlı fiyat", yoksa şehrin kendi durumu
+  function cityStatus(c, o, k) {
+    var h = hotelsOf(c)[hIdx];
+    if ((h && h.s === "live") || (k && k.flight && k.flight.kind === "live")) return "live";
+    if ((h && h.s === "avg") || (k && k.flight)) return "avg";
+    return c.s;
+  }
   function lvlOf(h) { return h.lvl != null ? h.lvl : LVL[h.t] != null ? LVL[h.t] : 1; }
   function defaultIdx(hs) { for (var i = 0; i < hs.length; i++) if (lvlOf(hs[i]) === 1) return i; return Math.min(1, hs.length - 1); }
   function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
@@ -874,7 +881,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate;
     var range = o.a && o.b ? dLong.format(o.a) + " – " + dLongY.format(o.b) : o.nights + " gece";
     var m = {
-      city: c.n, country: c.c, status: c.s, o: o, total: total, perPerson: total / o.ppl, c: c,
+      city: c.n, country: c.c, status: cityStatus(c, o, k), o: o, total: total, perPerson: total / o.ppl, c: c,
       title: c.n + " · " + range,
       sub: o.ppl + " kişi · " + o.nights + " gece · " + (k.fly ? "uçak dahil" : "uçak hariç"),
       picks: [
@@ -1302,7 +1309,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     ensureLiveCity(c0); fixHotelIdx(hotelsOf(c0));
     var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate;
     renderFlight(c, o, k); $("rAir").textContent = k.fly ? "uçak dahil" : "uçak hariç";
-    $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), c.s);
+    $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), cityStatus(c, o, k));
     $("rTotal").textContent = tl(total);
     $("rSub").textContent = (o.a && o.b ? dShort.format(o.a) + " – " + dShort.format(o.b) + " · " : "") + o.ppl + " kişi · " + o.nights + " gece · kişi başı yaklaşık " + tl(total / o.ppl);
     var h = hs[hIdx], r = rs[rIdx];

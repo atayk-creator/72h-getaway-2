@@ -12,7 +12,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 | `data/otel-fiyatlari.json`, `data/fiyatlar/` | Robotun bulduğu fiyatlar (robot yazar, elle değiştirme) |
 | `data/arsiv/` | Geçmiş hafta sonlarının fiyatları (robot yazar) |
 | `data/ucus-ayarlari.json`, `data/ucuslar.json` | Uçak robotunun ayarları ve bulduğu fiyatlar |
-| `data.json` | Euro/TL ve euro/forint kuru (otomatik güncellenir) |
+| `data.json` | Euro/TL ve euro/forint kuru (her gün 18:23, ECB referans kuru) |
 | `prices.json`, `price-status.json` | Resmî bilet fiyatları ve kontrol durumu |
 | `scripts/` | Kuru güncelleyen, uçuş ve otel fiyatlarını çeken programlar ve testleri |
 | `.github/workflows/` | Otomatik çalışan görevler |

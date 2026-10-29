@@ -1,0 +1,36 @@
+name: Kur güncelle (Euro/TL, Euro/Forint)
+# Her gün 18:23'te (İstanbul) çalışır. ECB referans kurunu iş günlerinde ~17:00 (İstanbul) yayımlar;
+# hafta sonu ve tatillerde yeni kur olmadığı için "değişiklik yok" der ve hiçbir şey yazmaz.
+on:
+  schedule:
+    - cron: "23 15 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kur-guncelle
+  cancel-in-progress: false
+jobs:
+  kur:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node scripts/test-update-rates.mjs
+      - name: Kuru çek
+        run: node scripts/update-rates.mjs
+      - name: Depoya kaydet
+        run: |
+          git config user.name "kur-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          if git diff --cached --quiet; then echo "Değişiklik yok."; exit 0; fi
+          git commit -m "Kur güncellendi ($(node -p "const d=require('./data.json'); d.updated+': 1 EUR = '+d.eurTry+' TL'"))"
+          git pull --rebase --autostash
+          git push
