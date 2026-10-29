@@ -1,0 +1,4261 @@
+{
+ "aciklama": "Şehir turu ve ulaşım verisi. Fiyatlar yerel para biriminde (para), yetişkin. Konumlar Google Maps'ten (scripts/gezi-konum.mjs). Fiyatı null olan yerlerin fiyatı henüz doğrulanmadı.",
+ "guncellendi": "2026-10-30",
+ "sehirler": {
+  "Dublin": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.0,
+     "aciklama": "TFI 90 dakika bileti, Leap kartla 2 € (Dublin Bus'ta nakit 2,60 €, sadece bozuk para; şoför kart/banknot almaz)",
+     "kaynak": "https://transportforireland.ie/fares/bus-fares"
+    },
+    "gunluk": {
+     "fiyat": 8.0,
+     "aciklama": "Leap Visitor Card 1 gün (24 saat): Dublin Bus, Luas, DART sınırsız. Normal Leap kartta günlük tavan 6 €",
+     "kaynak": "https://www.dublinbus.ie/fares-and-tickets/adult"
+    },
+    "cok_gunluk": {
+     "fiyat": 18.0,
+     "gun": 3,
+     "aciklama": "Leap Visitor Card 72 saat, Dublin Bus/Luas/DART sınırsız; havalimanında satılır",
+     "kaynak": "https://www.dublinbus.ie/fares-and-tickets/adult"
+    },
+    "havalimani": {
+     "fiyat": 2.6,
+     "sure_dk": 45,
+     "aciklama": "Dublin Havalimanı → merkez, Dublin Bus 41 (Abbey St, 24 saat) veya 16; nakit/Travel 90 bileti 2,60 €, Leap'le 2 €. Leap Visitor Card da geçerli",
+     "kaynak": "https://www.dublinbus.ie/journey-information/dublin-airport-hub"
+    },
+    "not": "Merkez rahatça yürünür; 3 gün kalacaksanız havalimanında 72 saatlik Leap Visitor Card alın, Howth'a DART'ı da kapsar. Dublin Kalesi AB Dönem Başkanlığı nedeniyle Ocak 2027'ye kadar ziyarete kapalı."
+   },
+   "yerler": [
+    {
+     "id": "trinity-college-ve-kells-kitab",
+     "ad": "Trinity College ve Kells Kitabı",
+     "arama": "Book of Kells Experience Trinity College Dublin",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": 21.5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 21,50 €'dan başlar (dinamik fiyat), online saatli bilet önerilir",
+     "bilgi": "9. yüzyıldan kalma Kells Kitabı ve ünlü Long Room kütüphanesi. Sabah ilk seansı alırsanız kalabalıktan kurtulursunuz.",
+     "kaynak": "https://thebettervacation.com/dublin/book-of-kells-dublin/",
+     "konum": null
+    },
+    {
+     "id": "guinness-storehouse",
+     "ad": "Guinness Storehouse",
+     "arama": "Guinness Storehouse Dublin",
+     "tur": "Müze",
+     "bolge": "liberties",
+     "sure_dk": 120,
+     "fiyat": 26,
+     "fiyat_hs": 30,
+     "fiyat_yazi": "Hafta içi 26 €'dan, hafta sonu yaklaşık 30–36 € (dinamik fiyat, bir bira dahil)",
+     "bilgi": "Guinness'in hikâyesini anlatan yedi katlı müze; bilete dahil birayı en üstteki Gravity Bar'da 360° şehir manzarasıyla için. Hafta içi sabah en ucuz.",
+     "kaynak": "https://thebettervacation.com/dublin/guinness-storehouse/",
+     "konum": null
+    },
+    {
+     "id": "irlanda-ulusal-muzesi-arkeoloji",
+     "ad": "İrlanda Ulusal Müzesi – Arkeoloji",
+     "arama": "National Museum of Ireland Archaeology Kildare Street Dublin",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kelt altın eserleri ve turbalıkta korunmuş 'bog bodies' burada. Pazar ve pazartesi saatleri kısa olabilir, gitmeden kontrol edin.",
+     "kaynak": "https://www.museum.ie/",
+     "konum": null
+    },
+    {
+     "id": "irlanda-ulusal-galerisi",
+     "ad": "İrlanda Ulusal Galerisi",
+     "arama": "National Gallery of Ireland Dublin",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kalıcı koleksiyon ücretsiz, geçici sergiler ücretli",
+     "bilgi": "Caravaggio'dan Jack B. Yeats'e geniş bir koleksiyon; yağmurlu bir öğleden sonra için ideal.",
+     "kaynak": "https://www.nationalgallery.ie/",
+     "konum": null
+    },
+    {
+     "id": "aziz-patrick-katedrali",
+     "ad": "Aziz Patrick Katedrali",
+     "arama": "St Patrick's Cathedral Dublin",
+     "tur": "Kilise",
+     "bolge": "liberties",
+     "sure_dk": 60,
+     "fiyat": 11.5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 11,50 € (sesli rehber dahil)",
+     "bilgi": "İrlanda'nın en büyük katedrali; Gulliver'in yazarı Jonathan Swift burada gömülü. Pazar günleri ayin nedeniyle turist girişi çok sınırlı.",
+     "kaynak": "https://thebettervacation.com/dublin/st-patricks-cathedral/",
+     "konum": null
+    },
+    {
+     "id": "christ-church-katedrali",
+     "ad": "Christ Church Katedrali",
+     "arama": "Christ Church Cathedral Dublin",
+     "tur": "Kilise",
+     "bolge": "templebar",
+     "sure_dk": 45,
+     "fiyat": 12,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 12 €",
+     "bilgi": "Dublin'in en eski katedrali; ortaçağdan kalma mahzeni görülmeye değer. Kışın 17:00'de kapanır, son giriş 45 dk önce.",
+     "kaynak": "https://thebettervacation.com/dublin/christ-church-cathedral/",
+     "konum": null
+    },
+    {
+     "id": "temple-bar-ve-ha-penny-koprusu",
+     "ad": "Temple Bar ve Ha'penny Köprüsü",
+     "arama": "Temple Bar Dublin",
+     "tur": "Mahalle",
+     "bolge": "templebar",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Arnavut kaldırımlı sokaklar, canlı müzikli pub'lar ve hemen yanında Liffey üzerindeki demir Ha'penny Köprüsü. Bira burada pahalı; müzik için gidip içkiyi yakın sokaklarda için.",
+     "kaynak": "https://www.visitdublin.com/",
+     "konum": null
+    },
+    {
+     "id": "st-stephen-s-green-ve-grafton-street",
+     "ad": "St Stephen's Green ve Grafton Street",
+     "arama": "St Stephen's Green Dublin",
+     "tur": "Park",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin Viktorya dönemi parkı ve ona bağlanan, sokak müzisyenleriyle dolu yaya caddesi Grafton Street.",
+     "kaynak": "https://www.visitdublin.com/",
+     "konum": null
+    },
+    {
+     "id": "george-s-street-arcade",
+     "ad": "George's Street Arcade",
+     "arama": "George's Street Arcade Dublin",
+     "tur": "Pazar",
+     "bolge": "templebar",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz giriş",
+     "bilgi": "1881'den kalma kapalı çarşı: plak, vintage dükkânlar ve küçük yemek tezgâhları. Yakınındaki South William Street akşam yemeği için iyi.",
+     "kaynak": "https://www.visitdublin.com/",
+     "konum": null
+    },
+    {
+     "id": "howth-ucurum-yuruyusu",
+     "ad": "Howth Uçurum Yürüyüşü",
+     "arama": "Howth Cliff Walk Howth",
+     "tur": "Manzara",
+     "bolge": "howth",
+     "sure_dk": 240,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (DART ile ulaşım, Leap geçerli)",
+     "bilgi": "Merkezden DART ile ~30 dk; deniz kenarı uçurumlarda yürüyüş, dönüşte limanda balık-patates. Rüzgârlıdır, iyi ayakkabı ve mont alın.",
+     "kaynak": "https://www.visitdublin.com/",
+     "konum": null
+    }
+   ]
+  },
+  "Paris": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.55,
+     "aciklama": "Metro-Train-RER bileti (2026), tüm Île-de-France tek fiyat, havalimanları hariç; çıkışa kadar/2 saat aktarma serbest",
+     "kaynak": "https://www.ratp.fr/en/titres-et-tarifs/ticket-metro-train-rer"
+    },
+    "gunluk": {
+     "fiyat": 12.3,
+     "aciklama": "Navigo Jour: seçilen gün gece yarısına kadar sınırsız metro/RER/otobüs, havalimanı hariç",
+     "kaynak": "https://www.european-traveler.com/france/guide-to-paris-public-transport-tickets-and-prices-for-visitors/"
+    },
+    "cok_gunluk": {
+     "fiyat": 63.8,
+     "gun": 3,
+     "aciklama": "Paris Visite 3 gün, havalimanı bağlantıları dahil; çoğu zaman 3 × Navigo Jour + tek tek bilet daha ucuz",
+     "kaynak": "https://www.european-traveler.com/france/guide-to-paris-public-transport-tickets-and-prices-for-visitors/"
+    },
+    "havalimani": {
+     "fiyat": 14,
+     "sure_dk": 35,
+     "aciklama": "CDG → merkez (Gare du Nord/Châtelet) RER B, Paris Région <> Aéroports bileti tek yön",
+     "kaynak": "https://www.european-traveler.com/france/guide-to-paris-public-transport-tickets-and-prices-for-visitors/"
+    },
+    "not": "Metro çok sık ve gece 1 civarına kadar çalışır (cuma-cumartesi biraz daha geç). Biletleri Bonjour RATP uygulamasına telefonla yüklemek en pratiği."
+   },
+   "yerler": [
+    {
+     "id": "eyfel-kulesi",
+     "ad": "Eyfel Kulesi",
+     "arama": "Eiffel Tower Paris",
+     "tur": "Anıt",
+     "bolge": "eyfel",
+     "sure_dk": 150,
+     "fiyat": 36.7,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Zirve asansörle 36,70 €; 2. kat asansörle 23,50 €, merdivenle 14,80 €",
+     "bilgi": "Resmî siteden saatli bilet alın, özellikle zirve hızla tükenir. Gün batımı seansı en güzeli; akşam saat başı ışık gösterisi var.",
+     "kaynak": "https://www.francophilesanonymes.com/en/paris/eiffel-tower/tickets/",
+     "konum": null
+    },
+    {
+     "id": "louvre-muzesi",
+     "ad": "Louvre Müzesi",
+     "arama": "Louvre Museum Paris",
+     "tur": "Müze",
+     "bolge": "louvre",
+     "sure_dk": 180,
+     "fiyat": 32,
+     "fiyat_hs": null,
+     "fiyat_yazi": "AB/AEA dışı yetişkin 32 € (AB vatandaşları 22 €), online saatli bilet şart",
+     "bilgi": "Mona Lisa, Venüs de Milo ve Semadirek Nike'si. Salı kapalı; çarşamba ve cuma geç saate kadar açık, akşam daha sakin.",
+     "kaynak": "https://www.thelocal.com/20260114/explained-frances-new-museum-prices-for-tourists-and-residents",
+     "konum": null
+    },
+    {
+     "id": "orsay-muzesi",
+     "ad": "Orsay Müzesi",
+     "arama": "Musée d'Orsay Paris",
+     "tur": "Müze",
+     "bolge": "louvre",
+     "sure_dk": 150,
+     "fiyat": 16,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin yaklaşık 16 € (online saatli bilet 17,50 €'ya kadar çıkabiliyor)",
+     "bilgi": "Eski bir tren garında Monet, Van Gogh, Renoir gibi izlenimciler. Pazartesi kapalı; perşembe akşamı 21:45'e kadar açık.",
+     "kaynak": "https://www.tarifs.org/musee-orsay-tarif",
+     "konum": null
+    },
+    {
+     "id": "notre-dame-katedrali",
+     "ad": "Notre-Dame Katedrali",
+     "arama": "Notre-Dame de Paris Cathedral",
+     "tur": "Kilise",
+     "bolge": "cite",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (online ücretsiz saat rezervasyonu kuyruğu kısaltır)",
+     "bilgi": "2024 sonunda restorasyondan sonra yeniden açılan gotik katedral. Kuyruk uzun olabilir, sabah erken gidin.",
+     "kaynak": "https://www.notredamedeparis.fr/",
+     "konum": null
+    },
+    {
+     "id": "sainte-chapelle",
+     "ad": "Sainte-Chapelle",
+     "arama": "Sainte-Chapelle Paris",
+     "tur": "Kilise",
+     "bolge": "cite",
+     "sure_dk": 45,
+     "fiyat": 22,
+     "fiyat_hs": null,
+     "fiyat_yazi": "AB/AEA dışı yetişkin 22 € (AEA 16 €), Conciergerie'li kombine 30 €",
+     "bilgi": "Duvarları neredeyse tamamen vitraydan oluşan 13. yüzyıl şapeli; güneşli öğle saatlerinde en etkileyici hâlinde. Güvenlik kuyruğu için zaman ayırın.",
+     "kaynak": "https://www.monuments-nationaux.fr/en/groups-tourism-professionals/what-is-advance-ticketing/rates-2026",
+     "konum": null
+    },
+    {
+     "id": "montmartre-ve-sacre-c-ur",
+     "ad": "Montmartre ve Sacré-Cœur",
+     "arama": "Sacré-Cœur Basilica Montmartre Paris",
+     "tur": "Mahalle",
+     "bolge": "montmartre",
+     "sure_dk": 150,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Bazilika ücretsiz, kubbe 8 €",
+     "bilgi": "Ressamların Place du Tertre'si, dik merdivenli sokaklar ve basamaklardan ücretsiz Paris manzarası. Merdivenlerdeki 'bileklik' satıcılarına dikkat.",
+     "kaynak": "https://www.sortiraparis.com/en/child-and-family/articles/352228-visiting-the-sacre-coeur-in-montmartre-everything-you-need-to-know-to-discover-it-with-your-family",
+     "konum": null
+    },
+    {
+     "id": "zafer-tak",
+     "ad": "Zafer Takı",
+     "arama": "Arc de Triomphe Paris",
+     "tur": "Manzara",
+     "bolge": "eyfel",
+     "sure_dk": 75,
+     "fiyat": 16,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kasım–Mart 16 € (Nisan–Eylül 22 €)",
+     "bilgi": "284 basamakla çatıya çıkıp Champs-Élysées ve Eyfel'i tepeden görün. Girişe meydanın altındaki yaya tünelinden ulaşılır.",
+     "kaynak": "https://www.monuments-nationaux.fr/en/groups-tourism-professionals/what-is-advance-ticketing/rates-2026",
+     "konum": null
+    },
+    {
+     "id": "le-marais-ve-place-des-vosges",
+     "ad": "Le Marais ve Place des Vosges",
+     "arama": "Place des Vosges Paris",
+     "tur": "Mahalle",
+     "bolge": "marais",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Paris'in en eski meydanı, butikler, falafel sırası olan Rue des Rosiers ve tarihî konaklar. Pazar günü de dükkânların çoğu açık.",
+     "kaynak": "https://parisjetaime.com/",
+     "konum": null
+    },
+    {
+     "id": "marche-des-enfants-rouges",
+     "ad": "Marché des Enfants Rouges",
+     "arama": "Marché des Enfants Rouges Paris",
+     "tur": "Pazar",
+     "bolge": "marais",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz giriş",
+     "bilgi": "1615'ten kalma, Paris'in en eski kapalı pazarı; Fas, Japon, İtalyan tezgâhlarında öğle yemeği yiyin. Pazartesi kapalı.",
+     "kaynak": "https://parisjetaime.com/",
+     "konum": null
+    },
+    {
+     "id": "tuileries-noel-pazar",
+     "ad": "Tuileries Noel Pazarı",
+     "arama": "Jardin des Tuileries Paris",
+     "tur": "Noel pazarı",
+     "bolge": "louvre",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Louvre'un hemen yanında chalet'ler, dönme dolap ve lunapark; 14 Kasım 2026–3 Ocak 2027 açıklandı, tarihleri teyit et. Champs-Élysées'deki büyük pazar da 22 Kasım'da açılıyor.",
+     "kaynak": "https://www.sortiraparis.com/en/news/christmas-and-holidays/guides/34166-the-christmas-markets-to-discover-in-paris-and-ile-de-france-in-2026",
+     "konum": null
+    }
+   ]
+  },
+  "Brüksel": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.4,
+     "aciklama": "STIB tek yolculuk (1 Şubat 2026'dan beri), temassız banka kartıyla; kâğıt bilet 2,90 €",
+     "kaynak": "https://city-rails.com/en/brussels-metro-map/"
+    },
+    "gunluk": {
+     "fiyat": 8.5,
+     "aciklama": "Temassız kartla günlük tavan 8,50 € (4 yolculuktan sonra gerisi ücretsiz); kâğıt günlük bilet 9 €",
+     "kaynak": "https://city-rails.com/en/brussels-metro-map/"
+    },
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 7.9,
+     "sure_dk": 30,
+     "aciklama": "Brussels Airport → Avrupa Mahallesi (Schuman) STIB Airport Line bus 12 (hafta içi) / 21 (akşam ve hafta sonu), temassız 7,90 €; tren 9,30 € ile merkeze ~17 dk",
+     "kaynak": "https://city-rails.com/en/brussels-metro-map/"
+    },
+    "not": "Ayrı 72 saatlik STIB bileti artık yok; temassız kartla dokunun, günlük tavan kendiliğinden işler. Merkez yürünebilir, sadece Atomium ve AB Mahallesi için metro gerekir. Charleroi'ye inerseniz Brussels City Shuttle 14,20 €, ~45 dk."
+   },
+   "yerler": [
+    {
+     "id": "grand-place",
+     "ad": "Grand-Place",
+     "arama": "Grand-Place Brussels",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Gotik belediye sarayı ve lonca binalarıyla Avrupa'nın en güzel meydanlarından. Akşam ışıklandırmasıyla bir kez daha görün.",
+     "kaynak": "https://www.visit.brussels/",
+     "konum": null
+    },
+    {
+     "id": "manneken-pis",
+     "ad": "Manneken Pis",
+     "arama": "Manneken Pis Brussels",
+     "tur": "Anıt",
+     "bolge": "merkez",
+     "sure_dk": 15,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Grand-Place'a 3 dakika yürüme mesafesindeki minik heykel; çoğu gün farklı bir kostüm giyer. Beklentinizi düşük tutun, keyfini çıkarın.",
+     "kaynak": "https://www.visit.brussels/",
+     "konum": null
+    },
+    {
+     "id": "saint-hubert-kraliyet-galerileri",
+     "ad": "Saint-Hubert Kraliyet Galerileri",
+     "arama": "Galeries Royales Saint-Hubert Brussels",
+     "tur": "Çarşı",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "1847'den kalma cam çatılı pasaj; Neuhaus gibi çikolatacılar ve kafeler burada. Pralin tadımı için en şık durak.",
+     "kaynak": "https://www.visit.brussels/",
+     "konum": null
+    },
+    {
+     "id": "atomium",
+     "ad": "Atomium",
+     "arama": "Atomium Brussels",
+     "tur": "Anıt",
+     "bolge": "atomium",
+     "sure_dk": 120,
+     "fiyat": 17,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 17 €",
+     "bilgi": "1958 Dünya Fuarı'ndan kalan dev demir atomu modeli; en üst küreden şehir manzarası. Şu an bilet sadece gişede, hafta sonu 45 dk–2 saat kuyruk olabilir, açılışta gidin.",
+     "kaynak": "https://atomium.be/atomium-price",
+     "konum": null
+    },
+    {
+     "id": "belcika-kraliyet-guzel-sanatlar-muzeleri",
+     "ad": "Belçika Kraliyet Güzel Sanatlar Müzeleri (Magritte dahil)",
+     "arama": "Royal Museums of Fine Arts of Belgium Brussels",
+     "tur": "Müze",
+     "bolge": "montdesarts",
+     "sure_dk": 150,
+     "fiyat": 16,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin yaklaşık 16 € (Magritte + Eski Ustalar tek bilet)",
+     "bilgi": "Bruegel ve Rubens'ten Magritte'e Belçika resmi. Eski Ustalar bölümü pazartesi kapalı; her ayın ilk çarşambası 13:00'ten sonra ücretsiz.",
+     "kaynak": "https://www.365.be/en/attractions/culture-art-brussels-royal-museums-of-fine-arts-of-belgium/",
+     "konum": null
+    },
+    {
+     "id": "mont-des-arts",
+     "ad": "Mont des Arts",
+     "arama": "Mont des Arts Brussels",
+     "tur": "Manzara",
+     "bolge": "montdesarts",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Bahçeli merdivenlerin tepesinden Grand-Place'ın belediye kulesine uzanan şehir manzarası; gün batımında en güzel.",
+     "kaynak": "https://www.visit.brussels/",
+     "konum": null
+    },
+    {
+     "id": "parlamentarium",
+     "ad": "Parlamentarium",
+     "arama": "Parlamentarium Brussels",
+     "tur": "Müze",
+     "bolge": "avrupa",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Avrupa Parlamentosu'nun interaktif ziyaretçi merkezi, Türkçe dahil çok dilli multimedya rehberiyle. Hafta sonu 10:00–18:00 açık.",
+     "kaynak": "https://visiting.europarl.europa.eu/homepage/pagecontent/offer/parlamentarium.html",
+     "konum": null
+    },
+    {
+     "id": "cinquantenaire-park",
+     "ad": "Cinquantenaire Parkı",
+     "arama": "Parc du Cinquantenaire Brussels",
+     "tur": "Park",
+     "bolge": "avrupa",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Belçika'nın 50. yılı için yapılan büyük zafer takı ve geniş park; Parlamentarium'dan yürüyerek 15 dk.",
+     "kaynak": "https://www.visit.brussels/",
+     "konum": null
+    },
+    {
+     "id": "sainte-catherine-ve-bal-k-r-ht-mlar",
+     "ad": "Sainte-Catherine ve Balık Rıhtımları",
+     "arama": "Place Sainte-Catherine Brussels",
+     "tur": "Yeme-içme",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Midye-patates ve deniz ürünü restoranlarıyla dolu meydan; Rue des Bouchers'teki turist tuzaklarından daha iyi bir seçim.",
+     "kaynak": "https://www.visit.brussels/",
+     "konum": null
+    },
+    {
+     "id": "winter-wonders-noel-pazar",
+     "ad": "Winter Wonders Noel Pazarı",
+     "arama": "Winter Wonders Brussels Place Sainte-Catherine",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Grand-Place'tan Sainte-Catherine'e uzanan chalet'ler, dönme dolap ve Grand-Place'ta ışık-ses gösterisi; her gün 12:00–22:00. 2026 tarihleri 27/28 Kasım 2026–1/3 Ocak 2027 olarak geçiyor, tarihleri teyit et.",
+     "kaynak": "https://www.plaisirsdhiver.be/en/practical",
+     "konum": null
+    }
+   ]
+  },
+  "Amsterdam": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3.4,
+     "aciklama": "GVB 1 saatlik bilet (tramvay/metro/otobüs); alternatif olarak temassız kartla OVpay (giriş ücreti ~1,16 € + km başına)",
+     "kaynak": "https://amsterdam-explorer.com/public-transport-tickets/"
+    },
+    "gunluk": {
+     "fiyat": 10,
+     "aciklama": "GVB 24 saatlik bilet; OVpay ile GVB'de günlük tavan da 10 €",
+     "kaynak": "https://amsterdam-explorer.com/public-transport-tickets/"
+    },
+    "cok_gunluk": {
+     "fiyat": 21.5,
+     "gun": 3,
+     "aciklama": "GVB 72 saatlik bilet, Amsterdam içi tramvay/metro/otobüs/feribot sınırsız; havalimanı treni ve 397 hariç",
+     "kaynak": "https://amsterdam-explorer.com/public-transport-tickets/"
+    },
+    "havalimani": {
+     "fiyat": 6.2,
+     "sure_dk": 17,
+     "aciklama": "Schiphol → Amsterdam Centraal NS treni, 2. sınıf tek yön; temassız kartla giriş-çıkış yapın (kaynaklarda 5,50–6,20 € arası, tek kullanımlık kâğıt bilete ek ücret)",
+     "kaynak": "https://holland-explorer.com/schiphol-amsterdam/"
+    },
+    "not": "Merkez yürünür, tramvay hızlı ve sık. Centraal arkasından Noord'a feribotlar ücretsiz. Bisiklet yollarına dikkat: kırmızı asfalt bisiklet şeridi."
+   },
+   "yerler": [
+    {
+     "id": "rijksmuseum",
+     "ad": "Rijksmuseum",
+     "arama": "Rijksmuseum Amsterdam",
+     "tur": "Müze",
+     "bolge": "muze",
+     "sure_dk": 180,
+     "fiyat": 25,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 25 €, sadece online saatli bilet",
+     "bilgi": "Rembrandt'ın Gece Devriyesi ve Vermeer'ler. Sabah ilk saatte veya kapanışa 2 saat kala daha sakin.",
+     "kaynak": "https://www.artvisitguide.com/rijksmuseum-tickets-guide/",
+     "konum": null
+    },
+    {
+     "id": "van-gogh-muzesi",
+     "ad": "Van Gogh Müzesi",
+     "arama": "Van Gogh Museum Amsterdam",
+     "tur": "Müze",
+     "bolge": "muze",
+     "sure_dk": 120,
+     "fiyat": 25,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 25 €, online saatli bilet şart",
+     "bilgi": "Dünyanın en büyük Van Gogh koleksiyonu; Ayçiçekleri ve Patates Yiyenler. Kapıda bilet satılmaz, hafta sonu günler önceden tükenir.",
+     "kaynak": "https://thebettervacation.com/van-gogh-museum",
+     "konum": null
+    },
+    {
+     "id": "anne-frank-evi",
+     "ad": "Anne Frank Evi",
+     "arama": "Anne Frank House Amsterdam",
+     "tur": "Müze",
+     "bolge": "jordaan",
+     "sure_dk": 75,
+     "fiyat": 16.5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 16,50 €, sadece annefrank.org'dan",
+     "bilgi": "Anne Frank'in saklandığı arka ev. Biletler her salı 6 hafta sonrası için satışa çıkar; kalanlar ziyaret günü 09:00'da açılır.",
+     "kaynak": "https://www.artvisitguide.com/anne-frank-house-tickets-guide/",
+     "konum": null
+    },
+    {
+     "id": "dam-meydan",
+     "ad": "Dam Meydanı",
+     "arama": "Dam Square Amsterdam",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (Kraliyet Sarayı içi ayrıca ücretli)",
+     "bilgi": "Kraliyet Sarayı, Nieuwe Kerk ve Ulusal Anıt'la şehrin kalbi. Kalabalıktır, cebinize dikkat edin.",
+     "kaynak": "https://www.iamsterdam.com/",
+     "konum": null
+    },
+    {
+     "id": "begijnhof",
+     "ad": "Begijnhof",
+     "arama": "Begijnhof Amsterdam",
+     "tur": "Avlu",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kalabalığın ortasında sessiz, 14. yüzyıldan kalma avlu; şehrin en eski ahşap evi burada. Sakinler yaşadığı için alçak sesle gezin.",
+     "kaynak": "https://www.iamsterdam.com/",
+     "konum": null
+    },
+    {
+     "id": "jordaan-ve-dokuz-sokak",
+     "ad": "Jordaan ve Dokuz Sokak",
+     "arama": "Jordaan Amsterdam",
+     "tur": "Mahalle",
+     "bolge": "jordaan",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kanal kenarı evler, 'kahverengi kafeler' ve butik dükkânlar (De 9 Straatjes). Anne Frank Evi'nden sonra yürüyerek devam edin.",
+     "kaynak": "https://www.iamsterdam.com/",
+     "konum": null
+    },
+    {
+     "id": "vondelpark",
+     "ad": "Vondelpark",
+     "arama": "Vondelpark Amsterdam",
+     "tur": "Park",
+     "bolge": "muze",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Müze Meydanı'nın hemen yanındaki şehrin en büyük parkı; müze arası nefes molası için ideal.",
+     "kaynak": "https://www.iamsterdam.com/",
+     "konum": null
+    },
+    {
+     "id": "a-dam-lookout",
+     "ad": "A'DAM Lookout",
+     "arama": "A'DAM Lookout Amsterdam",
+     "tur": "Manzara",
+     "bolge": "noord",
+     "sure_dk": 75,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Standart bilet yaklaşık 15 € (gişede/online fiyatı teyit edin)",
+     "bilgi": "Centraal'in arkasından ücretsiz feribotla 5 dk; 100 m'deki terastan şehir manzarası ve uçurum kenarı salıncak.",
+     "kaynak": "https://thebettervacation.com/amsterdam/adam-lookout-swing/",
+     "konum": null
+    },
+    {
+     "id": "albert-cuyp-pazar",
+     "ad": "Albert Cuyp Pazarı",
+     "arama": "Albert Cuyp Market Amsterdam",
+     "tur": "Pazar",
+     "bolge": "depijp",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz giriş",
+     "bilgi": "De Pijp'teki büyük açık pazar; taze stroopwafel, ringa balığı ve Hollanda peynirleri. Pazar günü kapalı.",
+     "kaynak": "https://www.iamsterdam.com/",
+     "konum": null
+    },
+    {
+     "id": "kanal-kusag-grachtengordel",
+     "ad": "Kanal Kuşağı (Grachtengordel)",
+     "arama": "Herengracht Amsterdam",
+     "tur": "Mahalle",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yürüyerek ücretsiz (tekne turu ayrıca ücretli)",
+     "bilgi": "UNESCO listesindeki Herengracht, Keizersgracht ve Prinsengracht kanalları; akşam köprü ışıkları yanınca yürüyün.",
+     "kaynak": "https://www.iamsterdam.com/",
+     "konum": null
+    }
+   ]
+  },
+  "Lüksemburg": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 0,
+     "aciklama": "Tüm ülkede otobüs, tramvay ve tren (2. sınıf) turistler dahil herkese ücretsiz; bilet gerekmez",
+     "kaynak": "https://transports.public.lu/en/se-deplacer/transports-publics/tram.html"
+    },
+    "gunluk": {
+     "fiyat": 0,
+     "aciklama": "Ücretsiz toplu taşıma; günlük bilete gerek yok",
+     "kaynak": "https://transports.public.lu/en/se-deplacer/transports-publics/tram.html"
+    },
+    "cok_gunluk": {
+     "fiyat": 0,
+     "gun": 3,
+     "aciklama": "Ücretsiz toplu taşıma; sadece trende 1. sınıf ücretli",
+     "kaynak": "https://transports.public.lu/en/se-deplacer/transports-publics/tram.html"
+    },
+    "havalimani": {
+     "fiyat": 0,
+     "sure_dk": 22,
+     "aciklama": "Findel Havalimanı → Gare Centrale otobüs 29 (~22 dk, 20 dk'da bir); Kirchberg ve Hamilius (eski şehir) için Mart 2025'ten beri havalimanına giden tramvay T1 (her ~8 dk). Ücretsiz",
+     "kaynak": "https://paperjam.lu/article/le-moyen-le-plus-efficace-daller-a-laeroport"
+    },
+    "not": "Toplu taşıma ülke genelinde ücretsiz (1. sınıf tren hariç). Eski şehir küçük ve yürünür; Grund'a inip çıkmak için ücretsiz asansörleri kullanın."
+   },
+   "yerler": [
+    {
+     "id": "bock-kazamatlar",
+     "ad": "Bock Kazamatları",
+     "arama": "Bock Casemates Luxembourg",
+     "tur": "Kale",
+     "bolge": "corniche",
+     "sure_dk": 60,
+     "fiyat": 11,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 11 €",
+     "bilgi": "Kayalara oyulmuş kilometrelerce savunma tüneli; pencerelerden Alzette vadisi manzarası. Kışın saatler kısalabilir, gitmeden kontrol edin.",
+     "kaynak": "https://visitluxembourg.com/en/place/castle/bock-casemates-luxembourg",
+     "konum": null
+    },
+    {
+     "id": "chemin-de-la-corniche",
+     "ad": "Chemin de la Corniche",
+     "arama": "Chemin de la Corniche Luxembourg",
+     "tur": "Manzara",
+     "bolge": "corniche",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "'Avrupa'nın en güzel balkonu' denen sur üstü yürüyüş yolu; aşağıda Grund mahallesi ve nehir.",
+     "kaynak": "https://www.luxembourg-city.com/",
+     "konum": null
+    },
+    {
+     "id": "grund-mahallesi",
+     "ad": "Grund Mahallesi",
+     "arama": "Grund Luxembourg",
+     "tur": "Mahalle",
+     "bolge": "corniche",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Vadi tabanındaki taş evler, Neumünster Manastırı ve nehir kenarı pub'lar. Dönüşte ücretsiz Plateau du Saint-Esprit asansörüyle yukarı çıkın.",
+     "kaynak": "https://www.luxembourg-city.com/",
+     "konum": null
+    },
+    {
+     "id": "notre-dame-katedrali",
+     "ad": "Notre-Dame Katedrali",
+     "arama": "Notre-Dame Cathedral Luxembourg",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "17. yüzyıl Cizvit kilisesi; kriptinde Grandük ailesinin mezarları var.",
+     "kaynak": "https://www.luxembourg-city.com/",
+     "konum": null
+    },
+    {
+     "id": "ulusal-arkeoloji-tarih-ve-sanat-muzesi-m",
+     "ad": "Ulusal Arkeoloji, Tarih ve Sanat Müzesi (MNAHA)",
+     "arama": "MNAHA National Museum of Archaeology History and Art Luxembourg",
+     "tur": "Müze",
+     "bolge": "corniche",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kalıcı sergiler ücretsiz",
+     "bilgi": "Eski şehrin Fischmarkt meydanında; Roma mozaiklerinden modern sanata ülke tarihi. Pazartesi kapalı, perşembe 20:00'ye kadar açık; pazar saatlerini kontrol edin.",
+     "kaynak": "https://www.visitluxembourg.com/place/mnaha-nationalmusee-um-feschmaart",
+     "konum": null
+    },
+    {
+     "id": "mudam-modern-sanat-muzesi",
+     "ad": "Mudam (Modern Sanat Müzesi)",
+     "arama": "Mudam Luxembourg",
+     "tur": "Müze",
+     "bolge": "kirchberg",
+     "sure_dk": 90,
+     "fiyat": 10,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 10 €",
+     "bilgi": "I. M. Pei'nin cam binasında çağdaş sanat; yanındaki Fort Thüngen ile birlikte gezin. Pazartesi kapalı, tramvayla merkeze 10 dk.",
+     "kaynak": "https://www.visitluxembourg.com/en/place/museum/museum-of-modern-art-mudam-luxembourg",
+     "konum": null
+    },
+    {
+     "id": "adolphe-koprusu",
+     "ad": "Adolphe Köprüsü",
+     "arama": "Adolphe Bridge Luxembourg",
+     "tur": "Köprü",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Pétrusse vadisi üzerindeki taş kemer köprü; alt katındaki asma bisiklet/yaya geçidinden vadiyi seyredin.",
+     "kaynak": "https://www.luxembourg-city.com/",
+     "konum": null
+    },
+    {
+     "id": "pfaffenthal-panoramik-asansoru",
+     "ad": "Pfaffenthal Panoramik Asansörü",
+     "arama": "Pfaffenthal Panoramic Elevator Luxembourg",
+     "tur": "Manzara",
+     "bolge": "pfaffenthal",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Cam asansör üst şehirden Pfaffenthal'e 60 m iner; üstteki cam balkondan Kirchberg ve kırmızı köprü manzarası.",
+     "kaynak": "https://www.luxembourg-city.com/",
+     "konum": null
+    },
+    {
+     "id": "place-guillaume-ii-pazar",
+     "ad": "Place Guillaume II Pazarı",
+     "arama": "Place Guillaume II Luxembourg",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz giriş",
+     "bilgi": "Belediye binası önündeki meydanda haftalık açık hava pazarı (genelde çarşamba ve cumartesi sabahı, teyit edin); Grandük Sarayı'nın cephesi iki adım ötede.",
+     "kaynak": "https://www.luxembourg-city.com/",
+     "konum": null
+    },
+    {
+     "id": "winterlights-noel-pazarlar",
+     "ad": "Winterlights Noel Pazarları",
+     "arama": "Place d'Armes Luxembourg",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Place d'Armes'ta geleneksel Noel pazarı, Place de la Constitution'da dönme dolaplı kış pazarı. 2025'te 21 Kasım–4 Ocak arası açıktı; 2026 tarihlerini teyit et.",
+     "kaynak": "https://chronicle.lu/category/things-to-see-do/57888-city-winterlights-2025-to-feature-markets-ice-rink-royal-tree-kleeschen-tour",
+     "konum": null
+    }
+   ]
+  },
+  "Berlin": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 4.0,
+     "aciklama": "AB bölgesi tek bilet, 2 saat tek yön, aktarmalı",
+     "kaynak": "https://www.berlin.de/en/public-transportation/1772016-2913840-tickets-fares-and-route-maps.en.html"
+    },
+    "gunluk": {
+     "fiyat": 11.2,
+     "aciklama": "24 saatlik bilet AB bölgesi (ABC: 12,90 €)",
+     "kaynak": "https://www.berlin.de/en/public-transportation/1772016-2913840-tickets-fares-and-route-maps.en.html"
+    },
+    "cok_gunluk": {
+     "fiyat": 35.6,
+     "gun": 3,
+     "aciklama": "CityTourCard 72 saat AB (ABC: 41,30 €); WelcomeCard 72s AB 39,50 €",
+     "kaynak": "https://www.bvg.de/de/abos-und-tickets/alle-tickets/touristen/citytourcard-72h"
+    },
+    "havalimani": {
+     "fiyat": 5.0,
+     "sure_dk": 30,
+     "aciklama": "BER → Hauptbahnhof FEX/RE/RB treni, ABC tek bilet, tek yön",
+     "kaynak": "https://thebettervacation.com/berlin/getting-around-berlin/"
+    },
+    "not": "BER havalimanı C bölgesinde: AB biletle binme, 60 € ceza riski var. Havalimanından gelecekseniz ABC'li 72 saatlik kart alın. Tek bilet 1 Ocak 2027'de de 4 € kalıyor."
+   },
+   "yerler": [
+    {
+     "id": "brandenburg-kap-s",
+     "ad": "Brandenburg Kapısı",
+     "arama": "Brandenburg Gate Berlin",
+     "tur": "Anıt",
+     "bolge": "mitte",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Berlin'in simgesi, Pariser Platz'ta. Akşam ışıklandırılmış hâli de çok güzel.",
+     "kaynak": "https://www.visitberlin.de/en",
+     "konum": null
+    },
+    {
+     "id": "reichstag-binas-ve-kubbesi",
+     "ad": "Reichstag Binası ve Kubbesi",
+     "arama": "Reichstag Building Berlin",
+     "tur": "Manzara",
+     "bolge": "mitte",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz, önceden online kayıt şart",
+     "bilgi": "Cam kubbeden meclis salonu ve şehir manzarası görülür. Kayıt için birkaç gün önceden başvurun, pasaportu yanınızda bulundurun.",
+     "kaynak": "https://www.bundestag.de/en/visittheBundestag/dome/registration-245686",
+     "konum": null
+    },
+    {
+     "id": "holokost-an-t",
+     "ad": "Holokost Anıtı",
+     "arama": "Memorial to the Murdered Jews of Europe Berlin",
+     "tur": "Anıt",
+     "bolge": "mitte",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "2.711 beton bloktan oluşan etkileyici anıt alanı, Brandenburg Kapısı'na yürüme mesafesinde. Altındaki bilgi merkezi de ücretsiz.",
+     "kaynak": "https://www.visitberlin.de/en",
+     "konum": null
+    },
+    {
+     "id": "gendarmenmarkt-noel-pazar",
+     "ad": "Gendarmenmarkt Noel Pazarı",
+     "arama": "WeihnachtsZauber Gendarmenmarkt Berlin",
+     "tur": "Noel pazarı",
+     "bolge": "mitte",
+     "sure_dk": 60,
+     "fiyat": 2,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş 2 €, hafta içi 11:00–14:00 ücretsiz",
+     "bilgi": "23 Kasım–31 Aralık 2026 arası açık; Berlin'in en şık Noel pazarlarından. Cuma–cumartesi 23:00'e kadar açık.",
+     "kaynak": "https://www.visitberlin.de/de/weihnachtsmarkt-weihnachtszauber-gendarmenmarkt-berlin",
+     "konum": null
+    },
+    {
+     "id": "neues-museum-nefertiti",
+     "ad": "Neues Museum (Nefertiti)",
+     "arama": "Neues Museum Berlin",
+     "tur": "Müze",
+     "bolge": "muzeadasi",
+     "sure_dk": 120,
+     "fiyat": 14,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 14 €, online saatli bilet önerilir",
+     "bilgi": "Nefertiti büstü ve Mısır koleksiyonu burada. Pazartesi kapalı; Bergama Müzesi yenileme nedeniyle kapalı olduğundan Müze Adası'nın yıldızı bu.",
+     "kaynak": "https://thebettervacation.com/berlin/neues-museum-official-website/amp/",
+     "konum": null
+    },
+    {
+     "id": "berlin-katedrali",
+     "ad": "Berlin Katedrali",
+     "arama": "Berlin Cathedral Berliner Dom",
+     "tur": "Kilise",
+     "bolge": "muzeadasi",
+     "sure_dk": 75,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 15 €, sesli rehber ve kubbe dahil",
+     "bilgi": "Kubbe galerisinden Müze Adası ve Spree manzarası var. Pazar günleri öğlene kadar ayin nedeniyle kapalı.",
+     "kaynak": "https://www.visitberlin.de/de/node/2282647",
+     "konum": null
+    },
+    {
+     "id": "ddr-muzesi",
+     "ad": "DDR Müzesi",
+     "arama": "DDR Museum Berlin",
+     "tur": "Müze",
+     "bolge": "muzeadasi",
+     "sure_dk": 75,
+     "fiyat": 13.9,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 13,90 €",
+     "bilgi": "Doğu Almanya'da gündelik hayatı dokunarak anlatan interaktif müze. Her gün 9:00–21:00 açık, akşam için iyi seçenek.",
+     "kaynak": "https://www.ddr-museum.de/en/visit",
+     "konum": null
+    },
+    {
+     "id": "berlin-tv-kulesi",
+     "ad": "Berlin TV Kulesi",
+     "arama": "Berlin TV Tower Fernsehturm",
+     "tur": "Manzara",
+     "bolge": "alex",
+     "sure_dk": 75,
+     "fiyat": 24.5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Standart bilet yaklaşık 24,50 €'dan başlıyor, fiyat tarihe/saate göre değişir",
+     "bilgi": "203 m'deki gözlem katından şehrin 360° manzarası. Gün batımı saatleri pahalı ve kalabalık; online saatli bilet alın.",
+     "kaynak": "https://thebettervacation.com/berlin/berlin-tv-tower-official-website/amp/",
+     "konum": null
+    },
+    {
+     "id": "east-side-gallery",
+     "ad": "East Side Gallery",
+     "arama": "East Side Gallery Berlin",
+     "tur": "Anıt",
+     "bolge": "kreuzberg",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Berlin Duvarı'nın en uzun ayakta kalan parçası, 1,3 km açık hava resim galerisi. Sonunda Oberbaum Köprüsü'nden Kreuzberg'e geçin.",
+     "kaynak": "https://www.visitberlin.de/en",
+     "konum": null
+    },
+    {
+     "id": "markthalle-neun",
+     "ad": "Markthalle Neun",
+     "arama": "Markthalle Neun Berlin",
+     "tur": "Pazar",
+     "bolge": "kreuzberg",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Kreuzberg'de tarihi kapalı çarşı; yerel üreticiler ve sokak lezzetleri. Perşembe akşamları Street Food Thursday çok popüler.",
+     "kaynak": "https://www.visitberlin.de/en",
+     "konum": null
+    }
+   ]
+  },
+  "Viyana": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3.2,
+     "aciklama": "Tek yolculuk, basılı bilet (uygulamada dijital 3,00 €), aktarmalı",
+     "kaynak": "https://www.wienerlinien.at/web/wl-en/news/new-fare-structure-from-1-january-2026"
+    },
+    "gunluk": {
+     "fiyat": 10.2,
+     "aciklama": "24 saatlik bilet, basılı (dijital 9,70 €)",
+     "kaynak": "https://www.wienerlinien.at/web/wl-en/news/new-fare-structure-from-1-january-2026"
+    },
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 5.5,
+     "sure_dk": 30,
+     "aciklama": "Havalimanı → Wien Hauptbahnhof REX7 treni (~20 dk) + U1 ile merkeze; 2,30 € havalimanı-şehir sınırı + 3,20 € şehir içi, tek yön",
+     "kaynak": "https://www.wien.info/de/reiseinfos/anreise/flughafen-zentrum/schnellbahn-357476"
+    },
+    "not": "48 ve 72 saatlik biletler 1 Ocak 2026'da kaldırıldı; 2–3 gün için 24 saatlik biletler ya da 7 günlük bilet (dijital 25,20 €) alınabilir. S7 hattı Ekim 2027'ye kadar sadece St. Marx'a kadar gidiyor, REX7'yi kullanın. Merkez (1. bölge) yürünebilir."
+   },
+   "yerler": [
+    {
+     "id": "aziz-stefan-katedrali",
+     "ad": "Aziz Stefan Katedrali",
+     "arama": "St. Stephen's Cathedral Vienna",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 8,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş alanı ücretsiz; iç gezi 8 €, Güney Kulesi 8 €, kombine bilet 29 €",
+     "bilgi": "Viyana'nın kalbi, renkli kiremit çatısıyla ünlü. 343 basamaklı Güney Kulesi'nden eski şehir manzarası harika.",
+     "kaynak": "https://stephanskirche.at/info.php?setLang=en",
+     "konum": null
+    },
+    {
+     "id": "graben-ve-kohlmarkt",
+     "ad": "Graben ve Kohlmarkt",
+     "arama": "Graben Vienna",
+     "tur": "Mahalle",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Veba Sütunu, lüks mağazalar ve tarihi kafelerle şehrin en şık yaya caddeleri. Demel pastanesinde kahve molası verin.",
+     "kaynak": "https://www.wien.info/en",
+     "konum": null
+    },
+    {
+     "id": "hofburg-saray-sisi-muzesi-ve-imparatorlu",
+     "ad": "Hofburg Sarayı (Sisi Müzesi ve İmparatorluk Daireleri)",
+     "arama": "Sisi Museum Hofburg Vienna",
+     "tur": "Saray",
+     "bolge": "hofburg",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yenilenen müze 19 Kasım 2026'da açılıyor, yeni fiyatı teyit et (önceki günlük bilet 15 €)",
+     "bilgi": "Habsburg'ların kış sarayı; Sisi Müzesi ek salonlarla 19 Kasım 2026'da yeniden açılıyor. Kasım sonrası rehberli turlu bilet 33 €.",
+     "kaynak": "https://www.sisimuseum-hofburg.at/en/tickets/tickets-prices",
+     "konum": null
+    },
+    {
+     "id": "kunsthistorisches-museum",
+     "ad": "Kunsthistorisches Museum",
+     "arama": "Kunsthistorisches Museum Vienna",
+     "tur": "Müze",
+     "bolge": "hofburg",
+     "sure_dk": 150,
+     "fiyat": 24,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 24 €",
+     "bilgi": "Bruegel, Vermeer ve Rafael'in olduğu dünya çapında sanat müzesi. Kubbe altındaki kafesi başlı başına deneyim.",
+     "kaynak": "https://orf.at/stories/3417793/",
+     "konum": null
+    },
+    {
+     "id": "rathausplatz-noel-pazar",
+     "ad": "Rathausplatz Noel Pazarı",
+     "arama": "Wiener Christkindlmarkt Rathausplatz Vienna",
+     "tur": "Noel pazarı",
+     "bolge": "hofburg",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (bardak depozitosu alınır)",
+     "bilgi": "13 Kasım–26 Aralık 2026, her gün 10:00–22:00. Belediye sarayı önünde Viyana'nın en büyük Noel pazarı; hafta sonu çok kalabalık.",
+     "kaynak": "https://www.wien.info/de/aktuell/veranstaltungen/wiener-christkindlmarkt-1001446",
+     "konum": null
+    },
+    {
+     "id": "schonbrunn-saray",
+     "ad": "Schönbrunn Sarayı",
+     "arama": "Schönbrunn Palace Vienna",
+     "tur": "Saray",
+     "bolge": "schonbrunn",
+     "sure_dk": 150,
+     "fiyat": 28,
+     "fiyat_hs": null,
+     "fiyat_yazi": "State Apartments (eski Imperial Tour) 28 €, Palace Ticket 38 €; bahçeler ücretsiz",
+     "bilgi": "Habsburg yazlık sarayı; saatli bilet zorunlu, online alın. Gloriette tepesine çıkıp sarayı yukarıdan görün (bahçe ücretsiz).",
+     "kaynak": "https://www.city-walks.info/Vienna/Schoenbrunn-hours-prices.html",
+     "konum": null
+    },
+    {
+     "id": "belvedere-saray-klimt-in-opucuk-tablosu",
+     "ad": "Belvedere Sarayı (Klimt'in Öpücük tablosu)",
+     "arama": "Upper Belvedere Vienna",
+     "tur": "Müze",
+     "bolge": "karlsplatz",
+     "sure_dk": 120,
+     "fiyat": 23,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Üst Belvedere yetişkin 23 €",
+     "bilgi": "Barok sarayda Klimt'in 'Öpücük' tablosu ve Avusturya sanatı. Her gün 9:00–18:00 açık; önce bahçeden manzarayı görün.",
+     "kaynak": "https://www.belvedere.at/en/visit",
+     "konum": null
+    },
+    {
+     "id": "naschmarkt",
+     "ad": "Naschmarkt",
+     "arama": "Naschmarkt Vienna",
+     "tur": "Pazar",
+     "bolge": "karlsplatz",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "1,5 km'lik açık pazar; baharat, peynir, meze ve restoranlar. Pazar günü kapalı, cumartesi yanında bit pazarı kuruluyor.",
+     "kaynak": "https://www.wien.info/en",
+     "konum": null
+    },
+    {
+     "id": "prater-ve-dev-donme-dolap",
+     "ad": "Prater ve Dev Dönme Dolap",
+     "arama": "Wiener Riesenrad Prater Vienna",
+     "tur": "Manzara",
+     "bolge": "prater",
+     "sure_dk": 60,
+     "fiyat": 14.5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 14,50 €",
+     "bilgi": "1897'den kalma tarihi dönme dolaptan şehir manzarası. Her gün 9:00–23:45 açık; akşam ışıklarında binin.",
+     "kaynak": "https://www.wien.info/de/riesenrad-124960",
+     "konum": null
+    },
+    {
+     "id": "hundertwasser-evi",
+     "ad": "Hundertwasser Evi",
+     "arama": "Hundertwasserhaus Vienna",
+     "tur": "Anıt",
+     "bolge": "prater",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (dışarıdan görülür)",
+     "bilgi": "Renkli, eğri büğrü cephesiyle ünlü sosyal konut binası; içi gezilemiyor. Karşıdaki Hundertwasser Village'da kısa mola verilebilir.",
+     "kaynak": "https://www.wien.info/en",
+     "konum": null
+    }
+   ]
+  },
+  "Madrid": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.5,
+     "aciklama": "Metro tek bilet (Zona A): 5 istasyona kadar 1,50 €, istasyon sayısı arttıkça 10+ istasyonda en fazla 2,00 €. 10'luk Metrobús 7,30 €.",
+     "kaynak": "https://www.redtransporte.com/madrid/precios-abonos.html"
+    },
+    "gunluk": {
+     "fiyat": 10.3,
+     "aciklama": "Abono Turístico Zona A, 1 gün: metro, EMT otobüsü ve Cercanías sınırsız (Madrid belediye sınırları)",
+     "kaynak": "https://crtm.es/billete-turistico"
+    },
+    "cok_gunluk": {
+     "fiyat": 23.1,
+     "gun": 3,
+     "aciklama": "Abono Turístico Zona A, 3 gün (2 gün 17,50 €)",
+     "kaynak": "https://crtm.es/billete-turistico"
+    },
+    "havalimani": {
+     "fiyat": 5.0,
+     "sure_dk": 40,
+     "aciklama": "Barajas → merkez Metro L8 (Nuevos Ministerios aktarmalı Sol'a), tek bilet en fazla 2,00 € + 3,00 € havalimanı eki. Exprés Aeropuerto otobüsü de 5 €.",
+     "kaynak": "https://www.redtransporte.com/madrid/precios-abonos.html"
+    },
+    "not": "Merkez (Sol, Plaza Mayor, Saray, Prado) büyük ölçüde yürünebilir. Abono Turístico'da metro havalimanı eki ödenmez; Exprés Aeropuerto otobüsü ise Zona A biletine dahil değil."
+   },
+   "yerler": [
+    {
+     "id": "prado-muzesi",
+     "ad": "Prado Müzesi",
+     "arama": "Museo del Prado Madrid",
+     "tur": "Müze",
+     "bolge": "prado",
+     "sure_dk": 180,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 15 €; Pzt–Cmt 18–20, Paz 17–19 ücretsiz",
+     "bilgi": "Velázquez'in Las Meninas'ı, Goya ve El Greco ile dünyanın en önemli resim koleksiyonlarından biri. Ücretsiz saatlerde kuyruk uzun olur; online bilet almak daha rahat.",
+     "kaynak": "https://lamaletainquieta.com/?p=4753",
+     "konum": null
+    },
+    {
+     "id": "reina-sofia-muzesi",
+     "ad": "Reina Sofía Müzesi",
+     "arama": "Museo Reina Sofia Madrid",
+     "tur": "Müze",
+     "bolge": "prado",
+     "sure_dk": 120,
+     "fiyat": 12,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 12 €; Pzt ve Çar–Cmt 19–21, Paz 12:30–14:30 ücretsiz (bilet alınarak)",
+     "bilgi": "Picasso'nun Guernica'sı, Dalí ve Miró ile modern sanat müzesi. Salı günleri kapalı, Pazar 14:30'da kapanır.",
+     "kaynak": "https://lamaletainquieta.com/?p=4760",
+     "konum": null
+    },
+    {
+     "id": "madrid-kraliyet-saray",
+     "ad": "Madrid Kraliyet Sarayı",
+     "arama": "Royal Palace of Madrid",
+     "tur": "Saray",
+     "bolge": "saray",
+     "sure_dk": 120,
+     "fiyat": 18,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 18 € (online +0,77 € işlem ücreti)",
+     "bilgi": "Batı Avrupa'nın en büyük kraliyet saraylarından; görkemli salonlar ve silah koleksiyonu. Pazar ve tatillerde 16:00'da kapanır, resmî törenlerde habersiz kapanabilir.",
+     "kaynak": "https://lamaletainquieta.com/palacio-real-madrid/",
+     "konum": null
+    },
+    {
+     "id": "almudena-katedrali",
+     "ad": "Almudena Katedrali",
+     "arama": "Almudena Cathedral Madrid",
+     "tur": "Kilise",
+     "bolge": "saray",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Katedral ücretsiz; müze + kubbe 8 €",
+     "bilgi": "Sarayın tam karşısındaki katedral; kubbeden saray ve şehir manzarası görülür. Müze ve kubbe Pzt–Cmt 10–14:30 açık, Pazar kapalı.",
+     "kaynak": "https://www.esmadrid.com/en/tourist-information/almudena-cathedral-museum",
+     "konum": null
+    },
+    {
+     "id": "debod-tap-nag",
+     "ad": "Debod Tapınağı",
+     "arama": "Temple of Debod Madrid",
+     "tur": "Manzara",
+     "bolge": "saray",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Mısır'dan hediye edilen 2.000 yıllık tapınak ve çevresindeki park, Madrid'in en sevilen gün batımı noktası. Gün batımına biraz erken gidip yer kapın.",
+     "kaynak": "https://www.esmadrid.com/",
+     "konum": null
+    },
+    {
+     "id": "puerta-del-sol",
+     "ad": "Puerta del Sol",
+     "arama": "Puerta del Sol Madrid",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin kalbi: Kilometre Sıfır plakası, ayı ve kocayemiş heykeli ve yılbaşı saati burada. Kalabalıkta cüzdanınıza dikkat edin.",
+     "kaynak": "https://www.esmadrid.com/",
+     "konum": null
+    },
+    {
+     "id": "plaza-mayor",
+     "ad": "Plaza Mayor",
+     "arama": "Plaza Mayor Madrid",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Revaklarla çevrili 17. yüzyıl meydanı. Meydandaki kafeler pahalıdır; yakındaki sokaklarda bocadillo de calamares deneyin.",
+     "kaynak": "https://www.esmadrid.com/",
+     "konum": null
+    },
+    {
+     "id": "san-miguel-pazar",
+     "ad": "San Miguel Pazarı",
+     "arama": "Mercado de San Miguel Madrid",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz; tapaslar ayrıca ödenir",
+     "bilgi": "Demir-cam yapılı tarihi pazarda tapas, jamón ve vermut. Akşamüstü çok kalabalık olur; öğlen erken saatler daha rahat.",
+     "kaynak": "https://www.esmadrid.com/",
+     "konum": null
+    },
+    {
+     "id": "retiro-park",
+     "ad": "Retiro Parkı",
+     "arama": "Retiro Park Madrid",
+     "tur": "Park",
+     "bolge": "retiro",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kayıklı gölü ve Kristal Saray'ı ile Madrid'in büyük parkı. Prado ziyaretinin ardından yürüyerek gelinebilir.",
+     "kaynak": "https://www.esmadrid.com/",
+     "konum": null
+    },
+    {
+     "id": "plaza-mayor-noel-pazar",
+     "ad": "Plaza Mayor Noel Pazarı",
+     "arama": "Mercado de Navidad Plaza Mayor Madrid",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Yüzü aşkın tezgâhla Madrid'in klasik Noel pazarı; 2026'da Kasım sonundan 31 Aralık'a kadar sürmesi bekleniyor, tarihleri teyit et. Paz–Per 10–21, Cuma–Cmt 10–22 açık.",
+     "kaynak": "https://lamaletainquieta.com/mercadillos-navidad-madrid/",
+     "konum": null
+    }
+   ]
+  },
+  "Lizbon": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.9,
+     "aciklama": "Carris/Metro tek bilet, ilk validasyondan itibaren 1 saat geçerli; ayrıca 0,50 €'luk navegante ocasional kart gerekir. Kartla zapping yüklemede metro yolculuğu 1,92 €.",
+     "kaynak": "https://www.metrolisboa.pt/wp-content/uploads/2025/12/Tarifas_site_2026_PT.pdf"
+    },
+    "gunluk": {
+     "fiyat": 7.25,
+     "aciklama": "24 saat Carris/Metro (otobüs, tramvay, metro). CP banliyö trenleri dahil versiyon 11,40 € (Sintra/Cascais için).",
+     "kaynak": "https://www.metrolisboa.pt/wp-content/uploads/2025/12/Tarifas_site_2026_PT.pdf"
+    },
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 1.9,
+     "sure_dk": 30,
+     "aciklama": "Havalimanı → Baixa-Chiado metro (kırmızı hat, Alameda aktarmalı), tek yön 1,90 € + 0,50 € kart",
+     "kaynak": "https://www.metrolisboa.pt/wp-content/uploads/2025/12/Tarifas_site_2026_PT.pdf"
+    },
+    "not": "Lizbon çok yokuşlu; rahat ayakkabı şart. Çok günlük toplu taşıma bileti yok: 24 saatlik bileti günlük alın ya da kartı zapping ile doldurun."
+   },
+   "yerler": [
+    {
+     "id": "jeronimos-manast-r",
+     "ad": "Jerónimos Manastırı",
+     "arama": "Jeronimos Monastery Lisbon",
+     "tur": "Manastır",
+     "bolge": "belem",
+     "sure_dk": 90,
+     "fiyat": 18,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 18 € (avlu); kilise ücretsiz",
+     "bilgi": "Manuel üslubunun başyapıtı, Vasco da Gama'nın mezarı da burada. Pazartesi kapalı; kuyruk için açılışta gidin, karşıdaki Pastéis de Belém'i atlamayın.",
+     "kaynak": "https://www.noticiasaominuto.com/cultura/2699257/precos-de-entrada-em-museus-e-monumentos-sobem-este-ano-quanto",
+     "konum": null
+    },
+    {
+     "id": "belem-kulesi",
+     "ad": "Belém Kulesi",
+     "arama": "Belem Tower Lisbon",
+     "tur": "Kale",
+     "bolge": "belem",
+     "sure_dk": 60,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 15 €, saatli giriş",
+     "bilgi": "Tejo kıyısındaki 16. yüzyıl kulesi, restorasyon sonrası 27 Mayıs 2026'da yeniden açıldı. Günde en fazla 900 kişi, yarım saatlik gruplarla giriş; 9:30–17:30.",
+     "kaynak": "https://www.noticiasaominuto.com/cultura/2699257/precos-de-entrada-em-museus-e-monumentos-sobem-este-ano-quanto",
+     "konum": null
+    },
+    {
+     "id": "sao-jorge-kalesi",
+     "ad": "São Jorge Kalesi",
+     "arama": "Sao Jorge Castle Lisbon",
+     "tur": "Kale",
+     "bolge": "alfama",
+     "sure_dk": 90,
+     "fiyat": 17,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 17 €",
+     "bilgi": "Şehrin en yüksek tepesindeki Mağribi kalesi; surlardan Tejo ve kırmızı çatılar manzarası. Online bilet kuyruğu kısaltır.",
+     "kaynak": "https://castelodesaojorge.pt/en/plan-your-visit/choose-your-ticket/",
+     "konum": null
+    },
+    {
+     "id": "alfama",
+     "ad": "Alfama",
+     "arama": "Alfama Lisbon",
+     "tur": "Mahalle",
+     "bolge": "alfama",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Dar yokuşlu sokakları ve fado evleriyle Lizbon'un en eski mahallesi. Akşam bir fado restoranında yemek için önceden yer ayırtın.",
+     "kaynak": "https://www.visitlisboa.com/",
+     "konum": null
+    },
+    {
+     "id": "senhora-do-monte-seyir-teras",
+     "ad": "Senhora do Monte Seyir Terası",
+     "arama": "Miradouro da Senhora do Monte Lisbon",
+     "tur": "Manzara",
+     "bolge": "alfama",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Graça'daki en yüksek seyir terası; kale ve şehir panoraması, gün batımında çok güzel. Yokuş dik, 28 numaralı tramvayla ya da taksiyle çıkılabilir.",
+     "kaynak": "https://www.visitlisboa.com/",
+     "konum": null
+    },
+    {
+     "id": "praca-do-comercio",
+     "ad": "Praça do Comércio",
+     "arama": "Praca do Comercio Lisbon",
+     "tur": "Meydan",
+     "bolge": "baixa",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Tejo'ya açılan dev meydan, 1755 depremi sonrası yeniden kurulan Baixa'nın vitrini. Rua Augusta'dan yürüyerek gelinir.",
+     "kaynak": "https://www.visitlisboa.com/",
+     "konum": null
+    },
+    {
+     "id": "rua-augusta-kemeri",
+     "ad": "Rua Augusta Kemeri",
+     "arama": "Arco da Rua Augusta Lisbon",
+     "tur": "Anıt",
+     "bolge": "baixa",
+     "sure_dk": 30,
+     "fiyat": 3.5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Seyir terası 3,50 €",
+     "bilgi": "Zafer takının tepesinden Praça do Comércio ve nehir manzarası. Her gün 10–19 açık; asansör + kısa merdiven.",
+     "kaynak": "https://thebettervacation.com/pt/Lisboa/arco-da-rua-augusta/",
+     "konum": null
+    },
+    {
+     "id": "chiado-ve-bairro-alto",
+     "ad": "Chiado ve Bairro Alto",
+     "arama": "Bairro Alto Lisbon",
+     "tur": "Mahalle",
+     "bolge": "baixa",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Gündüz kitapçılar ve kafelerle Chiado, gece barlarıyla Bairro Alto. Café A Brasileira ve São Pedro de Alcântara seyir terası yol üstünde.",
+     "kaynak": "https://www.visitlisboa.com/",
+     "konum": null
+    },
+    {
+     "id": "time-out-market",
+     "ad": "Time Out Market",
+     "arama": "Time Out Market Lisboa",
+     "tur": "Pazar",
+     "bolge": "baixa",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz; yemekler ayrıca",
+     "bilgi": "Mercado da Ribeira içindeki yemek salonu; şehrin iyi restoranlarından tek çatı altında tabaklar. Öğle ve akşam yoğun, masa bulmak zorlaşır.",
+     "kaynak": "https://www.visitlisboa.com/",
+     "konum": null
+    },
+    {
+     "id": "gulbenkian-muzesi",
+     "ad": "Gulbenkian Müzesi",
+     "arama": "Calouste Gulbenkian Museum Lisbon",
+     "tur": "Müze",
+     "bolge": "gulbenkian",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; yeniden açılış sonrası güncel fiyatı resmî siteden teyit et",
+     "bilgi": "Mısır'dan Lalique'e uzanan özel koleksiyon, 18 aylık yenilemeden sonra Temmuz 2026'da yeniden açıldı; bahçesi de çok güzel. Salı kapalı, Cumartesi 21:00'e kadar açık.",
+     "kaynak": "https://www.timeout.pt/lisboa/pt/noticias/museu-gulbenkian-reabre-este-sabado-a-entrada-e-gratuita-ate-26-de-julho-071526",
+     "konum": null
+    }
+   ]
+  },
+  "Roma": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.5,
+     "aciklama": "BIT: 100 dakika geçerli, metro içinde tek giriş, otobüs/tramvay aktarmalı",
+     "kaynak": "https://www.atac.roma.it/en/tickets-and-passes/bit"
+    },
+    "gunluk": {
+     "fiyat": 8.5,
+     "aciklama": "Roma 24H: ilk validasyondan itibaren 24 saat sınırsız",
+     "kaynak": "https://www.atac.roma.it/en/tickets-and-passes/roma24h"
+    },
+    "cok_gunluk": {
+     "fiyat": 22,
+     "gun": 3,
+     "aciklama": "Roma 72H: 72 saat sınırsız (48H 15 €)",
+     "kaynak": "https://www.atac.roma.it/en/tickets-and-passes/roma72h"
+    },
+    "havalimani": {
+     "fiyat": 8,
+     "sure_dk": 30,
+     "aciklama": "Fiumicino → Trastevere/Ostiense FL1 bölgesel tren, tek yön 8 €. Termini'ye aktarmasız Leonardo Express 14 €, 32 dk.",
+     "kaynak": "https://treniamo.it/en/guide/airport-trains"
+    },
+    "not": "Metro ağı sınırlı; tarihi merkez (Pantheon, Navona, Trevi) yürünerek gezilir. Biletleri tramvay/otobüse binince validatöre okutmayı unutmayın."
+   },
+   "yerler": [
+    {
+     "id": "kolezyum-roma-forumu-ve-palatino",
+     "ad": "Kolezyum, Roma Forumu ve Palatino",
+     "arama": "Colosseum Rome",
+     "tur": "Anıt",
+     "bolge": "kolezyum",
+     "sure_dk": 210,
+     "fiyat": 18,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 18 € (24 saat geçerli, üçü dahil); Full Experience 24 €",
+     "bilgi": "Kolezyum saatli girişle, Forum ve Palatino aynı bilet ile 24 saat içinde gezilir. Biletler hızla tükenir; resmî siteden haftalar önce alın.",
+     "kaynak": "https://colosseo.it/sito/wp-content/uploads/2025/11/Regolamento-Visitatori-Parco-archeologico-del-Colosseo_rev.pdf",
+     "konum": null
+    },
+    {
+     "id": "vatikan-muzeleri-ve-sistine-sapeli",
+     "ad": "Vatikan Müzeleri ve Sistine Şapeli",
+     "arama": "Vatican Museums",
+     "tur": "Müze",
+     "bolge": "vatikan",
+     "sure_dk": 180,
+     "fiyat": 25,
+     "fiyat_hs": null,
+     "fiyat_yazi": "20 € + 5 € zorunlu online rezervasyon = 25 €",
+     "bilgi": "Raffaello Odaları ve Michelangelo'nun Sistine tavanı. Pzt–Cmt 8–19 açık, Pazar kapalı (ayın son Pazarı ücretsiz ama çok kalabalık); biletler 60 gün önceden satışa çıkar.",
+     "kaynak": "https://loudavymkrokem.cz/it/musei-vaticani-biglietti-cosa-vedere/",
+     "konum": null
+    },
+    {
+     "id": "aziz-petrus-bazilikas",
+     "ad": "Aziz Petrus Bazilikası",
+     "arama": "St. Peter's Basilica Vatican",
+     "tur": "Kilise",
+     "bolge": "vatikan",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Bazilika ücretsiz; kubbe ayrı ücretli",
+     "bilgi": "Michelangelo'nun Pietà'sı ve Bernini'nin baldakeni; kubbeden Roma manzarası. Güvenlik kuyruğu için sabah erken gidin, omuz ve diz kapalı olmalı.",
+     "kaynak": "https://www.basilicasanpietro.va/",
+     "konum": null
+    },
+    {
+     "id": "pantheon",
+     "ad": "Pantheon",
+     "arama": "Pantheon Rome",
+     "tur": "Anıt",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 7,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 7 € (1 Temmuz 2026'dan itibaren)",
+     "bilgi": "2.000 yıllık kubbesi ve tepesindeki açıklığıyla antik Roma'nın en sağlam ayakta kalan yapısı. Raffaello'nun mezarı da burada.",
+     "kaynak": "https://www.finestresullarte.info/attualita/da-luglio-2026-biglietto-d-accesso-al-pantheon-costera-7-euro",
+     "konum": null
+    },
+    {
+     "id": "trevi-cesmesi",
+     "ad": "Trevi Çeşmesi",
+     "arama": "Trevi Fountain Rome",
+     "tur": "Anıt",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 2,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Çeşme önü 2 € (09–22, Cuma 11:30–22); 22:00 sonrası ücretsiz",
+     "bilgi": "Şubat 2026'dan beri havuz önündeki alana giriş ücretli; girişte yalnızca kartla ödeme. Sabah erken ya da gece 22'den sonra çok daha sakin.",
+     "kaynak": "https://www.finestresullarte.info/attualita/da-oggi-entra-in-vigore-biglietto-a-pagamento-fontana-di-trevi",
+     "konum": null
+    },
+    {
+     "id": "piazza-navona-noel-pazar",
+     "ad": "Piazza Navona Noel Pazarı",
+     "arama": "Piazza Navona Rome",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Bernini'nin Dört Nehir Çeşmesi'yle Roma'nın en güzel barok meydanı; Aralık'ta Noel pazarı kurulur (geçen sezon 1 Aralık–6 Ocak), 2026 tarihlerini teyit et.",
+     "kaynak": "https://www.romeing.it/it/mercatini-e-villaggi-di-natale-a-roma/",
+     "konum": null
+    },
+    {
+     "id": "ispanyol-merdivenleri",
+     "ad": "İspanyol Merdivenleri",
+     "arama": "Spanish Steps Rome",
+     "tur": "Anıt",
+     "bolge": "ispanya",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Trinità dei Monti kilisesine çıkan ünlü merdivenler ve lüks Via Condotti. Basamaklarda oturmak yasak, ceza kesilebilir.",
+     "kaynak": "https://www.turismoroma.it/",
+     "konum": null
+    },
+    {
+     "id": "pincio-teras",
+     "ad": "Pincio Terası",
+     "arama": "Terrazza del Pincio Rome",
+     "tur": "Manzara",
+     "bolge": "ispanya",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Piazza del Popolo'ya ve Aziz Petrus kubbesine bakan terasta gün batımı. Villa Borghese parkının kenarında, Borghese Galerisi ile birleştirilebilir.",
+     "kaynak": "https://www.turismoroma.it/",
+     "konum": null
+    },
+    {
+     "id": "borghese-galerisi",
+     "ad": "Borghese Galerisi",
+     "arama": "Galleria Borghese Rome",
+     "tur": "Müze",
+     "bolge": "ispanya",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yaklaşık 13 € + 2 € zorunlu vestiyer (+ rezervasyon ücreti); fiyatı teyit et",
+     "bilgi": "Bernini heykelleri ve Caravaggio tabloları; giriş 2 saatlik dilimlerle ve rezervasyon zorunlu. Pazartesi kapalı.",
+     "kaynak": "https://thebettervacation.com/it/Roma/Sito-web-ufficiale-della-galleria-Borghese/",
+     "konum": null
+    },
+    {
+     "id": "trastevere",
+     "ad": "Trastevere",
+     "arama": "Trastevere Rome",
+     "tur": "Mahalle",
+     "bolge": "trastevere",
+     "sure_dk": 150,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Sarmaşıklı sokakları, Santa Maria in Trastevere bazilikası ve trattorialarıyla akşam yemeği için en keyifli mahalle. Cacio e pepe ve supplì deneyin.",
+     "kaynak": "https://www.turismoroma.it/",
+     "konum": null
+    }
+   ]
+  },
+  "Valletta": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.0,
+     "aciklama": "Tek otobüs bileti (gündüz hatları), 2 saat aktarmalı. Kış tarifesi 18 Ekim 2026–12 Haziran 2027; yazın 2,50 €. Gece hatları 3 €. Şoföre nakit/temassız kartla ödenir.",
+     "kaynak": "https://www.publictransport.com.mt/fares-and-tickets/"
+    },
+    "gunluk": null,
+    "cok_gunluk": {
+     "fiyat": 21,
+     "gun": 4,
+     "aciklama": "72 saatlik kart yok; en yakın seçenek tallinja Explore Flex 4 gün sınırsız otobüs, 21 €'dan başlayan fiyatla (havalimanı ve gece hatları dahil). Çift için paylaşılabilen 12 yolculuk kartı 19 €.",
+     "kaynak": "https://www.publictransport.com.mt/fares-and-tickets/"
+    },
+    "havalimani": {
+     "fiyat": 2.0,
+     "sure_dk": 30,
+     "aciklama": "Havalimanı → Valletta otobüs terminali X4, tek yön 2,00 € (kış tarifesi)",
+     "kaynak": "https://www.maltauncovered.com/airport-transfers-taxi/malta-airport-to-valletta/"
+    },
+    "not": "Valletta küçük ve tamamen yürünebilir; otobüs yalnızca Mdina gibi şehir dışı yerler için gerekir. Üç Şehir'e feribot gündüz 3 €, 10–15 dk."
+   },
+   "yerler": [
+    {
+     "id": "st-john-s-ko-katedrali",
+     "ad": "St. John's Ko-Katedrali",
+     "arama": "St John's Co-Cathedral Valletta",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin yaklaşık 15 € (sesli rehber dahil)",
+     "bilgi": "Sade dış cephenin ardında altın kaplı barok iç mekân ve Caravaggio'nun Vaftizci Yahya'nın Başının Kesilmesi tablosu. Pzt–Cmt 9–16:45, Pazar ve resmî tatillerde kapalı.",
+     "kaynak": "https://www.itimaker.com/blog/valletta-must-see-places",
+     "konum": null
+    },
+    {
+     "id": "buyuk-ustat-saray",
+     "ad": "Büyük Üstat Sarayı",
+     "arama": "Grandmaster's Palace Valletta",
+     "tur": "Saray",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; tekil fiyatı teyit et. Saray + Arkeoloji Müzesi + St. Elmo'yu kapsayan Valletta Combo bileti 30 € (30 gün geçerli)",
+     "bilgi": "Malta Şövalyeleri'nin sarayı; devlet salonları ve zırh koleksiyonu. Birden fazla Heritage Malta müzesi gezecekseniz Combo bilet avantajlı.",
+     "kaynak": "https://heritagemalta.mt/?p=94129",
+     "konum": null
+    },
+    {
+     "id": "ulusal-arkeoloji-muzesi",
+     "ad": "Ulusal Arkeoloji Müzesi",
+     "arama": "National Museum of Archaeology Valletta",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 5 €",
+     "bilgi": "Malta'nın tarih öncesi tapınaklarından buluntular, ünlü 'Uyuyan Kadın' heykelciği. Republic Street üzerinde, kısa ve keyifli bir ziyaret.",
+     "kaynak": "https://heritagemalta.mt/?p=13522",
+     "konum": null
+    },
+    {
+     "id": "st-elmo-kalesi-ve-ulusal-savas-muzesi",
+     "ad": "St. Elmo Kalesi ve Ulusal Savaş Müzesi",
+     "arama": "Fort St Elmo National War Museum Valletta",
+     "tur": "Kale",
+     "bolge": "stelmo",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; tekil fiyatı teyit et (Valletta Combo 30 € içinde)",
+     "bilgi": "Yarımadanın ucundaki yıldız biçimli kale; 1565 Büyük Kuşatma ve 2. Dünya Savaşı sergileri. Bazı Pazar günleri 11:00'de In Guardia gösterisi var.",
+     "kaynak": "https://heritagemalta.mt/whats-on/in-guardia-fort-st-elmo-and-the-national-war-museum-2/",
+     "konum": null
+    },
+    {
+     "id": "yukar-barrakka-bahceleri",
+     "ad": "Yukarı Barrakka Bahçeleri",
+     "arama": "Upper Barrakka Gardens Valletta",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Büyük Liman ve Üç Şehir'e bakan en güzel seyir terası; altındaki Saluting Battery'den her gün 12:00'de top atışı yapılır. Barrakka asansörüyle limana inilir.",
+     "kaynak": "https://travelcostcalculator.org/unesco/city-of-valletta",
+     "konum": null
+    },
+    {
+     "id": "asag-barrakka-bahceleri",
+     "ad": "Aşağı Barrakka Bahçeleri",
+     "arama": "Lower Barrakka Gardens Valletta",
+     "tur": "Park",
+     "bolge": "stelmo",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Daha sakin, küçük bir bahçe; liman girişi ve Kuşatma Anıtı manzarası. St. Elmo'ya giderken yol üstünde.",
+     "kaynak": "https://www.visitmalta.com/",
+     "konum": null
+    },
+    {
+     "id": "republic-street",
+     "ad": "Republic Street",
+     "arama": "Republic Street Valletta",
+     "tur": "Cadde",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "City Gate'ten St. Elmo'ya uzanan ana cadde; renkli Malta balkonları, meydanlar ve kafeler. Paralel Merchants Street de gezmeye değer.",
+     "kaynak": "https://www.visitmalta.com/",
+     "konum": null
+    },
+    {
+     "id": "is-suq-tal-belt-yemek-pazar",
+     "ad": "Is-Suq tal-Belt Yemek Pazarı",
+     "arama": "Is-Suq tal-Belt Valletta",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz; yemekler ayrıca",
+     "bilgi": "Restore edilmiş 19. yüzyıl kapalı çarşısında yemek salonu. Pastizzi, ftira ve tavşan yahnisi (fenek) gibi yerel tatlar için iyi bir durak.",
+     "kaynak": "https://www.visitmalta.com/",
+     "konum": null
+    },
+    {
+     "id": "birgu-uc-sehir",
+     "ad": "Birgu (Üç Şehir)",
+     "arama": "Birgu Vittoriosa Malta",
+     "tur": "Mahalle",
+     "bolge": "birgu",
+     "sure_dk": 150,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Gezmek ücretsiz; feribot tek yön 3 €",
+     "bilgi": "Şövalyelerin ilk başkenti; dar sokaklar, marina ve St. Angelo Kalesi. Valletta'dan feribotla 10–15 dakikada, limandan manzara da bonus.",
+     "kaynak": "https://freemalta.com/articles/malta-ferry-prices-2026",
+     "konum": null
+    },
+    {
+     "id": "mdina",
+     "ad": "Mdina",
+     "arama": "Mdina Malta",
+     "tur": "Kale",
+     "bolge": "mdina",
+     "sure_dk": 180,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Surlar içi ücretsiz; katedral ve müzeler ayrıca ücretli",
+     "bilgi": "Surlarla çevrili 'Sessiz Şehir'; taş sokaklar ve surlardan adanın manzarası. Valletta'dan otobüsle yarım günlük gezi, hemen yanındaki Rabat ile birleştirin.",
+     "kaynak": "https://www.visitmalta.com/",
+     "konum": null
+    }
+   ]
+  },
+  "Atina": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.2,
+     "aciklama": "90 dakikalık bilet: metro, otobüs, tramvay ve troleybüste aktarmalı (havalimanı hatları hariç)",
+     "kaynak": "https://www.odigostoupoliti.eu/astikes-sygkoinonies-athinas-times-eisitirion-karton-aperioriston-diadromon-kai-prostima/"
+    },
+    "gunluk": {
+     "fiyat": 4.1,
+     "aciklama": "24 saatlik bilet, sınırsız (havalimanı ekspres otobüsleri ve metro havalimanı bölümü hariç). 5 günlük bilet 8,20 €.",
+     "kaynak": "https://www.odigostoupoliti.eu/astikes-sygkoinonies-athinas-times-eisitirion-karton-aperioriston-diadromon-kai-prostima/"
+    },
+    "cok_gunluk": {
+     "fiyat": 20,
+     "gun": 3,
+     "aciklama": "3 günlük turist bileti: 3×24 saat sınırsız, havalimanı transferi dahil",
+     "kaynak": "https://www.odigostoupoliti.eu/astikes-sygkoinonies-athinas-times-eisitirion-karton-aperioriston-diadromon-kai-prostima/"
+    },
+    "havalimani": {
+     "fiyat": 5.5,
+     "sure_dk": 60,
+     "aciklama": "Havalimanı → Syntagma X95 ekspres otobüs, tek yön 5,50 € (trafiğe göre 60–90 dk). Metro tek yön 9 €, yaklaşık 40 dk.",
+     "kaynak": "https://www.odigostoupoliti.eu/astikes-sygkoinonies-athinas-times-eisitirion-karton-aperioriston-diadromon-kai-prostima/"
+    },
+    "not": "Merkez (Plaka, Monastiraki, Syntagma) yürünebilir. 3 gün kalacaksanız havalimanı dahil 20 €'luk turist bileti en mantıklısı; metro 2 ve 3. hatlar Cuma–Cumartesi gece 2'ye kadar çalışır."
+   },
+   "yerler": [
+    {
+     "id": "akropolis",
+     "ad": "Akropolis",
+     "arama": "Acropolis of Athens",
+     "tur": "Anıt",
+     "bolge": "akropolis",
+     "sure_dk": 150,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, saatli online bilet; güncel fiyatı resmî siteden teyit et",
+     "bilgi": "Parthenon ve Erekhtheion ile antik dünyanın simgesi. Saatli giriş var; açılışta ya da kapanıştan önce gidin, kaygan mermer için düz tabanlı ayakkabı giyin.",
+     "kaynak": "https://hhticket.gr/",
+     "konum": null
+    },
+    {
+     "id": "akropolis-muzesi",
+     "ad": "Akropolis Müzesi",
+     "arama": "Acropolis Museum Athens",
+     "tur": "Müze",
+     "bolge": "akropolis",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
+     "bilgi": "Akropolis'ten çıkan orijinal heykeller ve Parthenon frizleri; cam zeminden antik kazı alanı görülür. Üst kat kafeteryası Akropolis manzaralı.",
+     "kaynak": "https://www.theacropolismuseum.gr/en",
+     "konum": null
+    },
+    {
+     "id": "areopagus-tepesi",
+     "ad": "Areopagus Tepesi",
+     "arama": "Areopagus Hill Athens",
+     "tur": "Manzara",
+     "bolge": "akropolis",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Akropolis'in hemen altındaki kayalık tepe; Agora ve şehir üzerinde gün batımı. Kayalar kaygan, dikkatli çıkın.",
+     "kaynak": "https://www.thisisathens.org/",
+     "konum": null
+    },
+    {
+     "id": "antik-agora",
+     "ad": "Antik Agora",
+     "arama": "Ancient Agora of Athens",
+     "tur": "Antik kent",
+     "bolge": "plaka",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
+     "bilgi": "Antik Atina'nın çarşısı ve meclis alanı; en iyi korunmuş Yunan tapınağı Hephaistos burada. Monastiraki'den yürüyerek girilir.",
+     "kaynak": "https://hhticket.gr/",
+     "konum": null
+    },
+    {
+     "id": "plaka-ve-anafiotika",
+     "ad": "Plaka ve Anafiotika",
+     "arama": "Plaka Athens",
+     "tur": "Mahalle",
+     "bolge": "plaka",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Akropolis eteğindeki neoklasik evler, taverna sokakları ve ada köyünü andıran beyaz Anafiotika ara sokakları. Akşam yemeği için ideal.",
+     "kaynak": "https://www.thisisathens.org/",
+     "konum": null
+    },
+    {
+     "id": "monastiraki-bit-pazar",
+     "ad": "Monastiraki Bit Pazarı",
+     "arama": "Monastiraki Flea Market Athens",
+     "tur": "Pazar",
+     "bolge": "plaka",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Meydan çevresinde antika, hediyelik ve sokak lezzetleri; Pazar sabahı en canlı hâli. Yakındaki çatı barlardan Akropolis manzarası.",
+     "kaynak": "https://www.thisisathens.org/",
+     "konum": null
+    },
+    {
+     "id": "syntagma-meydan-ve-nobet-degisimi",
+     "ad": "Syntagma Meydanı ve Nöbet Değişimi",
+     "arama": "Syntagma Square Athens",
+     "tur": "Meydan",
+     "bolge": "syntagma",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Parlamento önündeki Meçhul Asker Anıtı'nda evzonların nöbet değişimi saat başı yapılır; Pazar 11:00'deki tören en görkemlisi. Arkadaki Ulusal Bahçe'de mola verin.",
+     "kaynak": "https://www.thisisathens.org/",
+     "konum": null
+    },
+    {
+     "id": "panatinaiko-stadyumu",
+     "ad": "Panatinaiko Stadyumu",
+     "arama": "Panathenaic Stadium Athens",
+     "tur": "Anıt",
+     "bolge": "syntagma",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli (sesli rehber dahil); güncel fiyatı teyit et",
+     "bilgi": "Tamamen mermerden yapılmış, 1896'daki ilk modern olimpiyatlara ev sahipliği yapan stadyum. Syntagma'dan Zeus Tapınağı önünden yürüyerek 15 dakika.",
+     "kaynak": "https://www.panathenaicstadium.gr/",
+     "konum": null
+    },
+    {
+     "id": "likavitos-tepesi",
+     "ad": "Likavitos Tepesi",
+     "arama": "Mount Lycabettus Athens",
+     "tur": "Manzara",
+     "bolge": "kolonaki",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yürüyerek ücretsiz; füniküler ayrıca ücretli",
+     "bilgi": "Şehrin en yüksek noktası; Akropolis'ten denize uzanan 360° manzara, gün batımında harika. Kolonaki'den yürüyüş yolu ya da füniküler.",
+     "kaynak": "https://www.thisisathens.org/",
+     "konum": null
+    },
+    {
+     "id": "ulusal-arkeoloji-muzesi",
+     "ad": "Ulusal Arkeoloji Müzesi",
+     "arama": "National Archaeological Museum Athens",
+     "tur": "Müze",
+     "bolge": "arkeoloji",
+     "sure_dk": 150,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
+     "bilgi": "Agamemnon Maskesi, Artemision'un tunç Zeus/Poseidon heykeli ve Antikythera düzeneği ile dünyanın en zengin antik Yunan koleksiyonu. Omonia/Victoria metrosuna yakın.",
+     "kaynak": "https://www.namuseum.gr/en/",
+     "konum": null
+    }
+   ]
+  },
+  "Stokholm": {
+   "para": "SEK",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 43,
+     "aciklama": "SL tek bilet, yetişkin; 75 dk içinde aktarmalı (metro, otobüs, tramvay, pendeltåg). Temassız kartla kapıda dokunarak da alınır.",
+     "kaynak": "https://vilket-sl-kort.se/en/"
+    },
+    "gunluk": {
+     "fiyat": 180,
+     "aciklama": "SL 24 saatlik bilet, yetişkin",
+     "kaynak": "https://vilket-sl-kort.se/en/"
+    },
+    "cok_gunluk": {
+     "fiyat": 360,
+     "gun": 3,
+     "aciklama": "SL 72 saatlik bilet, yetişkin",
+     "kaynak": "https://vilket-sl-kort.se/en/"
+    },
+    "havalimani": {
+     "fiyat": 43,
+     "sure_dk": 60,
+     "aciklama": "Arlanda → merkez: 583 otobüsüyle Märsta, oradan pendeltåg (SL tek bileti yeter, havalimanı istasyon ücreti yok), tek yön. Daha rahat alternatif: Flygbussarna 129 kr, 40–50 dk; Arlanda Express 340 kr, 18 dk.",
+     "kaynak": "https://www.thelocal.se/20241115/the-fastest-and-cheapest-ways-of-getting-from-stockholm-to-arlanda-airport"
+    },
+    "not": "3 günlük gezide 72 saatlik kart hemen kendini çıkarır; Djurgården'e tramvay 7 ve feribot da SL biletine dahil. Arlanda'dan doğrudan pendeltåg'a binerseniz ayrıca ~157 kr istasyon ücreti ödenir."
+   },
+   "yerler": [
+    {
+     "id": "vasa-muzesi",
+     "ad": "Vasa Müzesi",
+     "arama": "Vasa Museum Stockholm",
+     "tur": "Müze",
+     "bolge": "djurgarden",
+     "sure_dk": 90,
+     "fiyat": 195,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 195 kr (Kasım–Aralık), 18 yaş altı ücretsiz",
+     "bilgi": "1628'deki ilk seferinde batan ve neredeyse bütünüyle korunmuş savaş gemisi. Çarşamba 20:00'ye kadar açık; kalabalıktan kaçmak için açılışta gidin.",
+     "kaynak": "https://www.vasamuseet.se/globalassets/vasamuseet/dokument/bransch/2026-info--priser/vasa-museum_2026_english_2.pdf",
+     "konum": null
+    },
+    {
+     "id": "abba-muzesi",
+     "ad": "ABBA Müzesi",
+     "arama": "ABBA The Museum Stockholm",
+     "tur": "Müze",
+     "bolge": "djurgarden",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Dinamik fiyat, yetişkin yaklaşık 249–329 kr; online saatli bilet önerilir",
+     "bilgi": "Kostümler, plaklar ve şarkı söyleyip dans edebileceğiniz interaktif bölümler. Nakit kabul edilmiyor, hafta sonu saatleri erken doluyor.",
+     "kaynak": "https://www.thetraveler.org/abba-museum-tickets-opening-hours-visitor-guide-2026/",
+     "konum": null
+    },
+    {
+     "id": "gamla-stan-eski-sehir",
+     "ad": "Gamla Stan (Eski Şehir)",
+     "arama": "Gamla Stan Stockholm",
+     "tur": "Mahalle",
+     "bolge": "gamlastan",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Arnavut kaldırımlı dar sokaklar, renkli cepheler ve şehrin en dar sokağı Mårten Trotzigs gränd. Västerlånggatan yerine paralel ara sokaklarda dolaşın.",
+     "kaynak": "https://www.visitstockholm.com/",
+     "konum": null
+    },
+    {
+     "id": "kraliyet-saray",
+     "ad": "Kraliyet Sarayı",
+     "arama": "Royal Palace Stockholm",
+     "tur": "Saray",
+     "bolge": "gamlastan",
+     "sure_dk": 120,
+     "fiyat": 220,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 220 kr (Ekim–Nisan); Kraliyet Daireleri, Hazine ve Tre Kronor Müzesi dahil",
+     "bilgi": "Avrupa'nın en büyük saraylarından biri; avluda nöbet değişimi ücretsiz izlenir. Ekim–Nisan 10:00–16:00 açık, resmî etkinlik günlerinde kapanabiliyor.",
+     "kaynak": "https://www.stockholm-spirit.com/guides/royal-palace-stockholm-guide/",
+     "konum": null
+    },
+    {
+     "id": "stortorget-noel-pazar",
+     "ad": "Stortorget Noel Pazarı",
+     "arama": "Stortorget Christmas Market Stockholm",
+     "tur": "Noel pazarı",
+     "bolge": "gamlastan",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Gamla Stan'ın ana meydanında kırmızı kulübeler, glögg ve zencefilli kurabiye. 2026 için tahmini 21 Kasım–23 Aralık, Cuma–Cumartesi 19:00'a kadar; tarihleri teyit et.",
+     "kaynak": "https://ultimatechristmasmarkets.com/sweden/stockholm-christmas-market/",
+     "konum": null
+    },
+    {
+     "id": "fotografiska",
+     "ad": "Fotografiska",
+     "arama": "Fotografiska Stockholm",
+     "tur": "Müze",
+     "bolge": "sodermalm",
+     "sure_dk": 90,
+     "fiyat": 195,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 195 kr",
+     "bilgi": "Su kenarında çağdaş fotoğraf müzesi; üst kattaki kafeden Gamla Stan manzarası harika. Her gün 23:00'e kadar açık, akşam gitmek için ideal.",
+     "kaynak": "https://stockholm.fotografiska.com/en/visit/-0",
+     "konum": null
+    },
+    {
+     "id": "monteliusvagen",
+     "ad": "Monteliusvägen",
+     "arama": "Monteliusvägen Stockholm",
+     "tur": "Manzara",
+     "bolge": "sodermalm",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Södermalm sırtında, Gamla Stan ve Belediye Sarayı'na bakan yürüyüş yolu. Kışın erken karardığı için gün batımına (15:00 civarı) göre plan yapın.",
+     "kaynak": "https://www.visitstockholm.com/",
+     "konum": null
+    },
+    {
+     "id": "stockholm-belediye-saray-stadshuset",
+     "ad": "Stockholm Belediye Sarayı (Stadshuset)",
+     "arama": "Stockholm City Hall",
+     "tur": "Tarihi yapı",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 150,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Rehberli tur yetişkin 150 kr; içeri yalnızca turla girilir",
+     "bilgi": "Nobel ziyafetinin verildiği Mavi Salon ve altın mozaikli Altın Salon. Turlar ~45 dk; biletler bir hafta önceden online açılıyor.",
+     "kaynak": "https://stadshuset.stockholm/en/visit-stockholm-city-hall/guided-tours",
+     "konum": null
+    },
+    {
+     "id": "ostermalms-saluhall",
+     "ad": "Östermalms Saluhall",
+     "arama": "Östermalms Saluhall Stockholm",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Tarihi kapalı yemek çarşısı: ringa balığı, karides sandviçi ve İsveç peynirleri. Pazar günleri genelde kapalı, saatleri kontrol edin.",
+     "kaynak": "https://www.ostermalmshallen.se/",
+     "konum": null
+    },
+    {
+     "id": "kungstradgarden",
+     "ad": "Kungsträdgården",
+     "arama": "Kungsträdgården Stockholm",
+     "tur": "Park",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin merkezindeki kraliyet bahçesi; kışın genelde buz pateni pisti kurulur. Saraydan Östermalm'a yürürken uğranır.",
+     "kaynak": "https://www.visitstockholm.com/",
+     "konum": null
+    }
+   ]
+  },
+  "Kopenhag": {
+   "para": "DKK",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 24,
+     "aciklama": "2 zonluk tek bilet, yetişkin; 75 dk geçerli (metro, otobüs, S-tog)",
+     "kaynak": "https://copenhagenmetro.org/tickets-and-fares/"
+    },
+    "gunluk": {
+     "fiyat": 100,
+     "aciklama": "City Pass Small 24 saat (zon 1–4, havalimanı dahil), Rejsebillet uygulamasından",
+     "kaynak": "https://www.publictransport.dk/tickets/citypass"
+    },
+    "cok_gunluk": {
+     "fiyat": 220,
+     "gun": 3,
+     "aciklama": "City Pass Small 72 saat (zon 1–4, havalimanı dahil)",
+     "kaynak": "https://copenhagenmetro.org/tickets-and-fares/"
+    },
+    "havalimani": {
+     "fiyat": 30,
+     "sure_dk": 15,
+     "aciklama": "Kastrup → merkez M2 metrosu (3 zon bileti), tek yön; Kongens Nytorv/Nørreport'a ~15 dk",
+     "kaynak": "https://copenhagenmetro.org/tickets-and-fares/"
+    },
+    "not": "City Pass Small havalimanı yolculuğunu da kapsadığı için inişte alıp 72 saatlik kullanmak en pratik yol. Metro 7/24 çalışır, merkez büyük ölçüde yürünebilir."
+   },
+   "yerler": [
+    {
+     "id": "nyhavn",
+     "ad": "Nyhavn",
+     "arama": "Nyhavn Copenhagen",
+     "tur": "Mahalle",
+     "bolge": "nyhavn",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Renkli 17. yüzyıl evleri ve tekneleriyle şehrin kartpostal kanalı. Kanal turları buradan kalkar; Aralık'ta kanal boyunca küçük bir Noel pazarı kurulur.",
+     "kaynak": "https://www.visitcopenhagen.com/",
+     "konum": null
+    },
+    {
+     "id": "amalienborg-saray",
+     "ad": "Amalienborg Sarayı",
+     "arama": "Amalienborg Palace Copenhagen",
+     "tur": "Saray",
+     "bolge": "nyhavn",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Meydan ücretsiz (saray müzesi ayrıca ücretli)",
+     "bilgi": "Kraliyet ailesinin dört sarayla çevrili sekizgen meydanı. Öğle saatindeki nöbet değişimini yakalamaya çalışın; Mermer Kilise hemen karşıda.",
+     "kaynak": "https://www.visitcopenhagen.com/",
+     "konum": null
+    },
+    {
+     "id": "kucuk-deniz-k-z-heykeli",
+     "ad": "Küçük Deniz Kızı Heykeli",
+     "arama": "The Little Mermaid Copenhagen",
+     "tur": "Anıt",
+     "bolge": "nyhavn",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Andersen masalından ilham alan küçük bronz heykel. Yıldız biçimli Kastellet kalesinin surlarından yürüyerek gidin; sabah erken daha sakin.",
+     "kaynak": "https://www.visitcopenhagen.com/copenhagen/little-mermaid-gdk410562",
+     "konum": null
+    },
+    {
+     "id": "rosenborg-saray",
+     "ad": "Rosenborg Sarayı",
+     "arama": "Rosenborg Castle Copenhagen",
+     "tur": "Saray",
+     "bolge": "rosenborg",
+     "sure_dk": 75,
+     "fiyat": 140,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Online 140 kr, kapıda 150 kr",
+     "bilgi": "IV. Christian'ın Rönesans sarayı; bodrum hazinesinde Danimarka taç mücevherleri. Kış aylarında pazartesi kapalı olabiliyor, Kongens Have bahçesi ücretsiz.",
+     "kaynak": "https://denkongeligesamling.dk/en/rosenborg-castle/plan-your-visit/",
+     "konum": null
+    },
+    {
+     "id": "torvehallerne",
+     "ad": "Torvehallerne",
+     "arama": "Torvehallerne Copenhagen",
+     "tur": "Pazar",
+     "bolge": "rosenborg",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Nørreport'taki cam yemek hali: smørrebrød, Danimarka hamur işleri ve kahve. Öğle yemeği için ideal, hafta sonu kalabalık.",
+     "kaynak": "https://www.visitcopenhagen.com/",
+     "konum": null
+    },
+    {
+     "id": "yuvarlak-kule-rundetarn",
+     "ad": "Yuvarlak Kule (Rundetårn)",
+     "arama": "Round Tower Copenhagen",
+     "tur": "Manzara",
+     "bolge": "rosenborg",
+     "sure_dk": 45,
+     "fiyat": 60,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 60 kr",
+     "bilgi": "Basamaksız spiral rampayla çıkılan 17. yüzyıl gözlemevi; tepeden eski şehrin çatıları. Kışın 10:00–18:00 açık; seyir terası 8–12 Aralık'ta restorasyon nedeniyle kapalı.",
+     "kaynak": "https://kbhmuseer.dk/en/museum/the-round-tower/",
+     "konum": null
+    },
+    {
+     "id": "christiansborg-saray",
+     "ad": "Christiansborg Sarayı",
+     "arama": "Christiansborg Palace Copenhagen",
+     "tur": "Saray",
+     "bolge": "merkez",
+     "sure_dk": 120,
+     "fiyat": 140,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kraliyet Kabul Salonları online 140 kr (kapıda 150 kr); tüm bölümler için Palace Ticket online 215 kr",
+     "bilgi": "Parlamento, kabul salonları, saray mutfağı ve ahırlar aynı adada. Saray kulesi ücretsiz ve şehrin en yüksek manzaralarından birini sunar.",
+     "kaynak": "https://denkongeligesamling.dk/en/booking-grupper",
+     "konum": null
+    },
+    {
+     "id": "ny-carlsberg-glyptotek",
+     "ad": "Ny Carlsberg Glyptotek",
+     "arama": "Ny Carlsberg Glyptotek Copenhagen",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": 150,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 150 kr; ayın son çarşambası ücretsiz",
+     "bilgi": "Antik heykeller, Fransız empresyonistleri ve palmiyeli kış bahçesi. Pazartesi kapalı; online alımda %10 indirim var.",
+     "kaynak": "https://www.visitcopenhagen.com/copenhagen/planning/glyptoteket-gdk410562",
+     "konum": null
+    },
+    {
+     "id": "tivoli-bahceleri-noel-sezonu",
+     "ad": "Tivoli Bahçeleri Noel Sezonu",
+     "arama": "Tivoli Gardens Copenhagen",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 180,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş 210 kr'dan başlar, tarihe göre değişir; oyuncaklar ayrıca ücretli",
+     "bilgi": "Işıklarla donanan 1843 yapımı lunapark ve Noel pazarı; 2026 sezonu 13 Kasım 2026–3 Ocak 2027. 24 Aralık genelde kapalı, tarihleri teyit et; akşam gidin.",
+     "kaynak": "https://www.storyhunt.io/articles/tivoli-christmas-market",
+     "konum": null
+    },
+    {
+     "id": "christiania",
+     "ad": "Christiania",
+     "arama": "Freetown Christiania Copenhagen",
+     "tur": "Mahalle",
+     "bolge": "christianshavn",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "1971'den beri özerk yaşayan, grafitili ve göl kenarı evleriyle alternatif mahalle. Pusher Street'te fotoğraf çekmeyin; Christianshavn kanallarıyla birleştirin.",
+     "kaynak": "https://www.visitcopenhagen.com/",
+     "konum": null
+    }
+   ]
+  },
+  "Helsinki": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3.3,
+     "aciklama": "AB zonu tek bilet, HSL uygulaması/kart; temassız banka kartıyla 3,50 €. 80 dk aktarmalı.",
+     "kaynak": "https://www.hsl.fi/en/tickets-and-fares/single-tickets/single-ticket-prices-in-the-hsl-area"
+    },
+    "gunluk": {
+     "fiyat": 10.6,
+     "aciklama": "AB zonu 1 günlük (24 saat) bilet, HSL uygulaması",
+     "kaynak": "https://www.sttinfo.fi/files/4396/72180451/430721/fi"
+    },
+    "cok_gunluk": {
+     "fiyat": 21.2,
+     "gun": 3,
+     "aciklama": "AB zonu 3 günlük bilet (1 gün + 2 ek gün), HSL uygulaması",
+     "kaynak": "https://www.sttinfo.fi/files/4396/72180451/430721/fi"
+    },
+    "havalimani": {
+     "fiyat": 4.5,
+     "sure_dk": 30,
+     "aciklama": "Helsinki-Vantaa → Merkez İstasyonu I/P treni, ABC zonu tek bilet (uygulama; temassız 4,80 €), tek yön",
+     "kaynak": "https://www.hsl.fi/en/tickets-and-fares/single-tickets/single-ticket-prices-in-the-hsl-area"
+    },
+    "not": "Havalimanı C zonunda; AB günlük bilet havalimanını kapsamaz (ABC 1 gün 13,80 €). 2 Kasım 2026'dan itibaren temassız ödemede günlük tavan var: bir günde günlük bilet fiyatından fazla ödemezsiniz. Suomenlinna feribotu AB biletine dahil."
+   },
+   "yerler": [
+    {
+     "id": "helsinki-katedrali",
+     "ad": "Helsinki Katedrali",
+     "arama": "Helsinki Cathedral",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kasım–Aralık'ta ücretsiz (yaz aylarında turist ücreti uygulanabiliyor)",
+     "bilgi": "Senato Meydanı'na hâkim beyaz neoklasik kilise; basamaklar şehrin buluşma noktası. Ayin ve törenlerde ziyarete kapanabilir.",
+     "kaynak": "https://www.myhelsinki.fi/",
+     "konum": null
+    },
+    {
+     "id": "tuomaan-markkinat-senato-meydan-noel-paz",
+     "ad": "Tuomaan Markkinat (Senato Meydanı Noel Pazarı)",
+     "arama": "Helsinki Christmas Market Senate Square",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Senato Meydanı'nda el sanatları, glögi ve Fin Noel lezzetleri; genelde Kasım sonundan 22 Aralık'a kadar açık. 2026 tarihlerini teyit et.",
+     "kaynak": "https://www.myhelsinki.fi/",
+     "konum": null
+    },
+    {
+     "id": "pazar-meydan-ve-eski-pazar-salonu",
+     "ad": "Pazar Meydanı ve Eski Pazar Salonu",
+     "arama": "Old Market Hall Helsinki",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Limandaki Kauppatori ve 1889 yapımı kapalı çarşı: somon çorbası, ren geyiği ve Fin hamur işleri. Pazar günleri saatleri kısalır.",
+     "kaynak": "https://www.myhelsinki.fi/",
+     "konum": null
+    },
+    {
+     "id": "esplanadi-park",
+     "ad": "Esplanadi Parkı",
+     "arama": "Esplanadi Park Helsinki",
+     "tur": "Park",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Pazar Meydanı'ndan Stockmann'a uzanan bulvar parkı; Aralık'ta ışıklarla süslenir. Tarihi Café Kappeli'de kahve molası verin.",
+     "kaynak": "https://www.myhelsinki.fi/",
+     "konum": null
+    },
+    {
+     "id": "skywheel-helsinki",
+     "ad": "SkyWheel Helsinki",
+     "arama": "SkyWheel Helsinki",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Liman kıyısındaki dönme dolaptan Uspenski Katedrali ve takımadalar manzarası. Kapalı kabinler kışın da çalışır.",
+     "kaynak": "https://www.skywheel.fi/",
+     "konum": null
+    },
+    {
+     "id": "suomenlinna-deniz-kalesi",
+     "ad": "Suomenlinna Deniz Kalesi",
+     "arama": "Suomenlinna Helsinki",
+     "tur": "Kale",
+     "bolge": "suomenlinna",
+     "sure_dk": 180,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ada ücretsiz; feribot HSL AB bileti ile (3,30 €)",
+     "bilgi": "UNESCO listesindeki 18. yüzyıl ada kalesi; surlar, tüneller ve deniz manzarası. Pazar Meydanı'ndan HSL feribotuyla 15 dk; kışın rüzgârlı olur, sıkı giyinin.",
+     "kaynak": "https://www.hsl.fi/en/tickets-and-fares/single-tickets/single-ticket-prices-in-the-hsl-area",
+     "konum": null
+    },
+    {
+     "id": "temppeliaukio-kilisesi-kaya-kilisesi",
+     "ad": "Temppeliaukio Kilisesi (Kaya Kilisesi)",
+     "arama": "Temppeliaukio Church Helsinki",
+     "tur": "Kilise",
+     "bolge": "kampi",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli giriş; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Kayaya oyulmuş, bakır kubbeli 1969 yapımı kilise; akustiği çok iyi. Düğün ve konserlerde ziyarete kapanabilir.",
+     "kaynak": "https://www.temppeliaukionkirkko.fi/",
+     "konum": null
+    },
+    {
+     "id": "ateneum-sanat-muzesi",
+     "ad": "Ateneum Sanat Müzesi",
+     "arama": "Ateneum Art Museum Helsinki",
+     "tur": "Müze",
+     "bolge": "kampi",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Finlandiya'nın ulusal sanat koleksiyonu; Gallen-Kallela ve Fin altın çağı resimleri. Merkez İstasyonu'nun hemen karşısında, pazartesi kapalı.",
+     "kaynak": "https://ateneum.fi/en/",
+     "konum": null
+    },
+    {
+     "id": "amos-rex",
+     "ad": "Amos Rex",
+     "arama": "Amos Rex Helsinki",
+     "tur": "Müze",
+     "bolge": "kampi",
+     "sure_dk": 75,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Yer altındaki çağdaş sanat müzesi; meydandaki kubbeli tavan pencereleri fotoğraf için çok popüler. Sergiye göre fiyat ve saatler değişir.",
+     "kaynak": "https://amosrex.fi/en/",
+     "konum": null
+    },
+    {
+     "id": "oodi-merkez-kutuphanesi",
+     "ad": "Oodi Merkez Kütüphanesi",
+     "arama": "Oodi Helsinki Central Library",
+     "tur": "Kütüphane",
+     "bolge": "kampi",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Ahşap dalga cepheli modern kütüphane; üst kattaki 'kitap cenneti' ve terastan Parlamento binası manzarası. Soğukta ısınma molası için ideal.",
+     "kaynak": "https://oodihelsinki.fi/en/",
+     "konum": null
+    }
+   ]
+  },
+  "Tallinn": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2,
+     "aciklama": "1 saatlik bilet; araçta temassız banka kartıyla dokunarak veya QR bilet olarak",
+     "kaynak": "https://www.visittallinn.ee/eng/visitor/plan/transport/public-transport"
+    },
+    "gunluk": {
+     "fiyat": 5.5,
+     "aciklama": "1 günlük (24 saat) bilet, Ühiskaart'a yüklenir",
+     "kaynak": "https://www.visittallinn.ee/eng/visitor/plan/transport/public-transport"
+    },
+    "cok_gunluk": {
+     "fiyat": 9,
+     "gun": 3,
+     "aciklama": "3 günlük (72 saat) bilet, Ühiskaart'a yüklenir (kart için 2 € depozito)",
+     "kaynak": "https://www.visittallinn.ee/eng/visitor/plan/transport/public-transport"
+    },
+    "havalimani": {
+     "fiyat": 2,
+     "sure_dk": 20,
+     "aciklama": "Havalimanı → merkez tramvay 4 (veya T2 / otobüs 2), 1 saatlik bilet, tek yön; QR bileti duraktaki makineden veya temassız kartla",
+     "kaynak": "https://airport.ee/en/public-transport/"
+    },
+    "not": "Eski Şehir tamamen yürünebilir; toplu taşımayı daha çok havalimanı, Kadriorg ve liman için kullanırsınız. Kısa gezide temassız kartla tek tek ödemek çoğu zaman yeterli."
+   },
+   "yerler": [
+    {
+     "id": "raekoja-meydan-ve-eski-sehir",
+     "ad": "Raekoja Meydanı ve Eski Şehir",
+     "arama": "Tallinn Town Hall Square",
+     "tur": "Meydan",
+     "bolge": "vanalinn",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "UNESCO listesindeki Orta Çağ eski şehrinin kalbi; gotik Belediye Binası, surlar ve dar sokaklar. Viru Kapısı'ndan girip Katariina käik geçidine uğrayın.",
+     "kaynak": "https://www.visittallinn.ee/eng",
+     "konum": null
+    },
+    {
+     "id": "tallinn-noel-pazar",
+     "ad": "Tallinn Noel Pazarı",
+     "arama": "Tallinn Christmas Market Town Hall Square",
+     "tur": "Noel pazarı",
+     "bolge": "vanalinn",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Raekoja Meydanı'nda dev Noel ağacı, sıcak şarap ve Estonya el işleri; Avrupa'nın en sevilen küçük Noel pazarlarından. Genelde Kasım sonundan Ocak başına kadar sürer, 2026 tarihlerini teyit et.",
+     "kaynak": "https://www.visittallinn.ee/eng",
+     "konum": null
+    },
+    {
+     "id": "toompea-seyir-teraslar",
+     "ad": "Toompea Seyir Terasları",
+     "arama": "Kohtuotsa viewing platform Tallinn",
+     "tur": "Manzara",
+     "bolge": "toompea",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kohtuotsa ve Patkuli teraslarından kırmızı çatılar, kiliseler ve liman manzarası. Patkuli'ye merdivenle de çıkılır; gün batımında en güzel.",
+     "kaynak": "https://www.visittallinn.ee/eng",
+     "konum": null
+    },
+    {
+     "id": "aleksandr-nevski-katedrali",
+     "ad": "Aleksandr Nevski Katedrali",
+     "arama": "Alexander Nevsky Cathedral Tallinn",
+     "tur": "Kilise",
+     "bolge": "toompea",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Soğan kubbeli 19. yüzyıl Ortodoks katedrali. İçeride fotoğraf yasak, omuzları örten kıyafet uygun olur.",
+     "kaynak": "https://www.visittallinn.ee/eng",
+     "konum": null
+    },
+    {
+     "id": "kiek-in-de-kok-ve-bastiyon-tunelleri",
+     "ad": "Kiek in de Kök ve Bastiyon Tünelleri",
+     "arama": "Kiek in de Kök Tallinn",
+     "tur": "Müze",
+     "bolge": "toompea",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "15. yüzyıl topçu kulesi ve surların altındaki tüneller; tüneller rehberli turla gezilir. Turları önceden ayırtın, pazartesi kapalı olabilir.",
+     "kaynak": "https://linnamuuseum.ee/en/kiek-in-de-kok/",
+     "konum": null
+    },
+    {
+     "id": "kadriorg-park-ve-saray",
+     "ad": "Kadriorg Parkı ve Sarayı",
+     "arama": "Kadriorg Park Tallinn",
+     "tur": "Park",
+     "bolge": "kadriorg",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Park ücretsiz; saray müzesi ayrıca ücretli",
+     "bilgi": "Deli Petro'nun eşi için yaptırdığı barok saray ve çevresindeki geniş park. Merkezden tramvay 1 veya 3 ile 10 dk.",
+     "kaynak": "https://www.visittallinn.ee/eng",
+     "konum": null
+    },
+    {
+     "id": "kumu-sanat-muzesi",
+     "ad": "KUMU Sanat Müzesi",
+     "arama": "Kumu Art Museum Tallinn",
+     "tur": "Müze",
+     "bolge": "kadriorg",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Estonya sanatının ana müzesi; Sovyet dönemi sanatı bölümü özellikle ilginç. Kadriorg Parkı'nın ucunda, pazartesi kapalı.",
+     "kaynak": "https://kumu.ekm.ee/en/",
+     "konum": null
+    },
+    {
+     "id": "lennusadam-deniz-ucag-liman",
+     "ad": "Lennusadam (Deniz Uçağı Limanı)",
+     "arama": "Seaplane Harbour Tallinn",
+     "tur": "Müze",
+     "bolge": "kalamaja",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Beton hangarlarda denizaltı Lembit, buzkıran ve deniz uçakları; interaktif ve çiftler için de eğlenceli. Kalamaja'dan sahil yürüyüşüyle gidilir.",
+     "kaynak": "https://meremuuseum.ee/lennusadam/en/",
+     "konum": null
+    },
+    {
+     "id": "telliskivi-yarat-c-sehir",
+     "ad": "Telliskivi Yaratıcı Şehir",
+     "arama": "Telliskivi Creative City Tallinn",
+     "tur": "Mahalle",
+     "bolge": "kalamaja",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski fabrika binalarında kafeler, tasarım dükkânları, sokak sanatı ve galeriler. Kalamaja'nın ahşap evleriyle birlikte gezin.",
+     "kaynak": "https://www.visittallinn.ee/eng",
+     "konum": null
+    },
+    {
+     "id": "balti-jaama-turg",
+     "ad": "Balti Jaama Turg",
+     "arama": "Balti Jaama Turg Tallinn",
+     "tur": "Pazar",
+     "bolge": "kalamaja",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Gar binasının yanındaki modern pazar: üst katta sokak yemekleri, altta yerel ürünler ve antikacılar. Öğle yemeği için iyi bir durak.",
+     "kaynak": "https://www.visittallinn.ee/eng",
+     "konum": null
+    }
+   ]
+  },
+  "Riga": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.5,
+     "aciklama": "90 dakikalık bilet (aktarmalı), önceden alınır: Narvesen, bilet makinesi veya Mobilly/Timey uygulaması. Şoförden alınırsa daha pahalı.",
+     "kaynak": "https://eng.lsm.lv/article/economy/transport/19.03.2026-rigas-bus-tickets-will-not-get-costlier-because-of-fuel-says-mayor.a639491/"
+    },
+    "gunluk": {
+     "fiyat": 5,
+     "aciklama": "24 saatlik bilet, sınırsız",
+     "kaynak": "https://www.liveriga.com/en/17"
+    },
+    "cok_gunluk": {
+     "fiyat": 8,
+     "gun": 3,
+     "aciklama": "3 günlük (72 saat) bilet, sınırsız",
+     "kaynak": "https://www.liveriga.com/en/17"
+    },
+    "havalimani": {
+     "fiyat": 1.5,
+     "sure_dk": 30,
+     "aciklama": "Havalimanı → merkez otobüs 22, önceden alınmış 90 dk bilet, tek yön (araçta banka kartıyla 1,81 €); gece N22 saatte bir",
+     "kaynak": "https://www.liveriga.com/en/17"
+    },
+    "not": "Eski Riga ve Art Nouveau bölgesi yürünerek gezilir; toplu taşımayı esas olarak havalimanı için kullanırsınız. Her binişte bileti okutmayı unutmayın, kontrol cezası 15–30 €."
+   },
+   "yerler": [
+    {
+     "id": "karabaslar-evi",
+     "ad": "Karabaşlar Evi",
+     "arama": "House of the Blackheads Riga",
+     "tur": "Tarihi yapı",
+     "bolge": "vecriga",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Belediye Meydanı'ndaki gösterişli gotik-Hollanda cepheli lonca binası; dışı ücretsiz izlenir. İç mekânda tören salonları ve bodrum mahzenleri.",
+     "kaynak": "https://www.melngalvjunams.lv/en/",
+     "konum": null
+    },
+    {
+     "id": "riga-katedrali-doma",
+     "ad": "Riga Katedrali (Doma)",
+     "arama": "Riga Cathedral",
+     "tur": "Kilise",
+     "bolge": "vecriga",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli giriş; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev orgu. Öğle saatlerindeki kısa org konserlerini takip edin.",
+     "kaynak": "https://doms.lv/en",
+     "konum": null
+    },
+    {
+     "id": "aziz-petrus-kilisesi-kulesi",
+     "ad": "Aziz Petrus Kilisesi Kulesi",
+     "arama": "St. Peter's Church Riga",
+     "tur": "Manzara",
+     "bolge": "vecriga",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli (kule asansörü); güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Asansörle çıkılan kuleden eski şehir ve Daugava nehri manzarası. Kule bilgisi ve saatlerini gitmeden kontrol edin.",
+     "kaynak": "https://www.peterbaznica.riga.lv/",
+     "konum": null
+    },
+    {
+     "id": "riga-noel-pazar-doma-meydan",
+     "ad": "Riga Noel Pazarı (Doma Meydanı)",
+     "arama": "Riga Christmas Market Dome Square",
+     "tur": "Noel pazarı",
+     "bolge": "vecriga",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Doma Meydanı'nda sıcak şarap, el örgüsü yün ürünler ve Letonya lezzetleri; Riga ilk süslü Noel ağacının şehri sayılır. Genelde Kasım sonu–Ocak başı, 2026 tarihlerini teyit et.",
+     "kaynak": "https://www.liveriga.com/en",
+     "konum": null
+    },
+    {
+     "id": "riga-merkez-pazar",
+     "ad": "Riga Merkez Pazarı",
+     "arama": "Riga Central Market",
+     "tur": "Pazar",
+     "bolge": "vecriga",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Eski zeplin hangarlarında kurulu Avrupa'nın en büyük pazarlarından biri; füme balık, ekşi mayalı çavdar ekmeği ve bal. Sabah gidin, cüzdanınıza dikkat edin.",
+     "kaynak": "https://www.liveriga.com/en",
+     "konum": null
+    },
+    {
+     "id": "hurriyet-an-t",
+     "ad": "Hürriyet Anıtı",
+     "arama": "Freedom Monument Riga",
+     "tur": "Anıt",
+     "bolge": "merkez",
+     "sure_dk": 15,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Letonya bağımsızlığının simgesi 'Milda' heykeli; gün boyu iki askerin nöbet tuttuğu tören alanı. Eski şehirle yeni şehrin sınırında.",
+     "kaynak": "https://www.liveriga.com/en",
+     "konum": null
+    },
+    {
+     "id": "bastejkalns-park",
+     "ad": "Bastejkalns Parkı",
+     "arama": "Bastejkalns Park Riga",
+     "tur": "Park",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski sur hendeği boyunca kanal kenarı park ve köprüler. Hürriyet Anıtı'ndan Ulusal Sanat Müzesi'ne yürürken geçilir.",
+     "kaynak": "https://www.liveriga.com/en",
+     "konum": null
+    },
+    {
+     "id": "letonya-ulusal-sanat-muzesi",
+     "ad": "Letonya Ulusal Sanat Müzesi",
+     "arama": "Latvian National Museum of Art Riga",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Restore edilmiş 1905 binasında Letonya ve Baltık resim koleksiyonu; çatı terası güzel. Pazartesi kapalı.",
+     "kaynak": "https://www.lnmm.gov.lv/en",
+     "konum": null
+    },
+    {
+     "id": "alberta-sokag-art-nouveau",
+     "ad": "Alberta Sokağı (Art Nouveau)",
+     "arama": "Alberta iela Riga",
+     "tur": "Mahalle",
+     "bolge": "jugend",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eisenstein imzalı yüzlü, heykelli Art Nouveau cepheleriyle Riga'nın en fotojenik sokağı. Yakındaki Elizabetes iela'yı da gezin.",
+     "kaynak": "https://www.liveriga.com/en",
+     "konum": null
+    },
+    {
+     "id": "riga-art-nouveau-muzesi",
+     "ad": "Riga Art Nouveau Müzesi",
+     "arama": "Riga Art Nouveau Museum",
+     "tur": "Müze",
+     "bolge": "jugend",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "bilgi": "Dönemine uygun döşenmiş bir Art Nouveau apartman dairesi ve ünlü spiral merdiven. Küçük bir müze, pazartesi kapalı.",
+     "kaynak": "https://www.jugendstils.riga.lv/en",
+     "konum": null
+    }
+   ]
+  },
+  "Vilnius": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.0,
+     "aciklama": "30 dakikalık bilet (Trafi/m.Ticket uygulaması veya JUDU kartı), aktarmalı; 60 dk bilet 1,25 € (otobüste temassız kartla da alınır)",
+     "kaynak": "https://www.govilnius.lt/plan-your-trip/getting-around-vilnius-/public-transport"
+    },
+    "gunluk": {
+     "fiyat": 7.5,
+     "aciklama": "24 saatlik bilet, aktivasyondan itibaren geçerli",
+     "kaynak": "https://www.govilnius.lt/plan-your-trip/getting-around-vilnius-/public-transport"
+    },
+    "cok_gunluk": {
+     "fiyat": 13.5,
+     "gun": 3,
+     "aciklama": "72 saatlik bilet",
+     "kaynak": "https://www.govilnius.lt/plan-your-trip/getting-around-vilnius-/public-transport"
+    },
+    "havalimani": {
+     "fiyat": 1.0,
+     "sure_dk": 20,
+     "aciklama": "Vilnius Havalimanı → merkez 88 veya 3G otobüsü, tek yön (30 dk bilet yeter; otobüste temassız kartla 60 dk bilet 1,25 €)",
+     "kaynak": "https://judu.lt/en/for-public-transport-passengers/vilnius-airport-by-public-transport/"
+    },
+    "not": "Fiyatlar 1 Temmuz 2025 zammıyla güncel. Eski Şehir tamamen yürünebilir; toplu taşıma çoğunlukla sadece havalimanı için gerekir."
+   },
+   "yerler": [
+    {
+     "id": "gediminas-kulesi",
+     "ad": "Gediminas Kulesi",
+     "arama": "Gediminas Castle Tower Vilnius",
+     "tur": "Manzara",
+     "bolge": "kale",
+     "sure_dk": 60,
+     "fiyat": 8,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 8 € (müze + seyir terası); tepe ücretsiz",
+     "bilgi": "Yukarı Kale tepesindeki kuleden Eski Şehir'in kırmızı çatılarını tepeden görürsünüz. Füniküler bakımda olabilir, yürüyüş yolu her zaman açık.",
+     "kaynak": "https://thetripverdict.com/gediminas-tower-vilnius",
+     "konum": null
+    },
+    {
+     "id": "vilnius-katedrali-ve-katedral-meydan",
+     "ad": "Vilnius Katedrali ve Katedral Meydanı",
+     "arama": "Vilnius Cathedral Basilica",
+     "tur": "Kilise",
+     "bolge": "kale",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Neoklasik katedral ve önündeki geniş meydan şehrin kalbi; serbest duran çan kulesi de burada. Meydandaki 'Stebuklas' (mucize) taşını bulmayı unutmayın.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "litvanya-buyuk-dukleri-saray",
+     "ad": "Litvanya Büyük Dükleri Sarayı",
+     "arama": "Palace of the Grand Dukes of Lithuania Vilnius",
+     "tur": "Saray",
+     "bolge": "kale",
+     "sure_dk": 120,
+     "fiyat": 17,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Tüm rotalar yetişkin 17 €, tek rota 4–10 €; ayın son pazarı ücretsiz",
+     "bilgi": "Katedralin hemen arkasında yeniden inşa edilmiş Rönesans sarayı; arkeolojik kalıntılar ve dönem salonları. Zamanınız kısıtlıysa sadece Rota I+II'yi seçin.",
+     "kaynak": "https://www.valdovurumai.lt/en/tickets/",
+     "konum": null
+    },
+    {
+     "id": "pilies-caddesi-ve-eski-sehir",
+     "ad": "Pilies Caddesi ve Eski Şehir",
+     "arama": "Pilies Street Vilnius",
+     "tur": "Mahalle",
+     "bolge": "eskisehir",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "UNESCO listesindeki Eski Şehir'in ana yürüyüş aksı; Belediye Meydanı ve Vilnius Üniversitesi avluları da bu güzergâhta. Kafeler ve kehribar dükkânları burada.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "safak-kap-s",
+     "ad": "Şafak Kapısı",
+     "arama": "Gate of Dawn Vilnius",
+     "tur": "Anıt",
+     "bolge": "eskisehir",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski şehir surlarından kalan tek kapı; üstündeki şapelde mucizevi sayılan Meryem ikonu var. Sessiz olun, şapel aktif ibadet yeri.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "aziz-anna-kilisesi",
+     "ad": "Aziz Anna Kilisesi",
+     "arama": "St. Anne's Church Vilnius",
+     "tur": "Kilise",
+     "bolge": "uzupis",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kırmızı tuğladan alevli Gotik cephesiyle Vilnius'un en fotojenik yapısı. Hemen yanındaki Bernardine kilisesiyle birlikte görün, ardından köprüden Užupis'e geçin.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "uzupis",
+     "ad": "Užupis",
+     "arama": "Užupis Vilnius",
+     "tur": "Mahalle",
+     "bolge": "uzupis",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kendini 'cumhuriyet' ilan etmiş bohem sanatçı mahallesi; Paupio Caddesi'ndeki çok dilli anayasa panolarında Türkçesini arayın. Nehir kenarında küçük kafeler var.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "mo-muzesi",
+     "ad": "MO Müzesi",
+     "arama": "MO Museum Vilnius",
+     "tur": "Müze",
+     "bolge": "eskisehir",
+     "sure_dk": 90,
+     "fiyat": 11,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 11 €",
+     "bilgi": "Daniel Libeskind tasarımlı binada modern ve çağdaş Litvanya sanatı. Salı günleri kapalı, diğer günler 10:00–20:00.",
+     "kaynak": "https://mo.lt/en/for-your-visit/",
+     "konum": null
+    },
+    {
+     "id": "hales-pazar",
+     "ad": "Halės Pazarı",
+     "arama": "Hales Market Vilnius",
+     "tur": "Pazar",
+     "bolge": "eskisehir",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz giriş",
+     "bilgi": "Şafak Kapısı'nın yakınındaki tarihi kapalı pazar; içinde yerel lezzetler sunan küçük yeme-içme tezgâhları var. Cepelinai ve Litvanya peynirlerini deneyin.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "vilnius-noel-pazar",
+     "ad": "Vilnius Noel Pazarı",
+     "arama": "Vilnius Christmas Market Cathedral Square",
+     "tur": "Noel pazarı",
+     "bolge": "kale",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Katedral Meydanı'nda dev Noel ağacının altında; 2026'da 28 Kasım–27 Aralık arası. Ağaç yakma töreni 28 Kasım'da.",
+     "kaynak": "https://www.govilnius.lt/christmas-2026-starts-early-in-vilnius-festive-dates-announced",
+     "konum": null
+    }
+   ]
+  },
+  "Varşova": {
+   "para": "PLN",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 4.4,
+     "aciklama": "75 dakikalık bilet, 1. bölge, aktarmalı (20 dk bilet 3,40 zł)",
+     "kaynak": "https://warszawa19115.pl/-/bilety-kr%C3%B3tkookresowe-w-komunikacji-miejskiej"
+    },
+    "gunluk": {
+     "fiyat": 15,
+     "aciklama": "24 saatlik bilet, 1. bölge (1+2: 26 zł)",
+     "kaynak": "https://warszawa19115.pl/-/bilety-kr%C3%B3tkookresowe-w-komunikacji-miejskiej"
+    },
+    "cok_gunluk": {
+     "fiyat": 36,
+     "gun": 3,
+     "aciklama": "72 saatlik bilet, 1. bölge (1+2: 57 zł)",
+     "kaynak": "https://warszawa19115.pl/-/bilety-kr%C3%B3tkookresowe-w-komunikacji-miejskiej"
+    },
+    "havalimani": {
+     "fiyat": 4.4,
+     "sure_dk": 25,
+     "aciklama": "Chopin Havalimanı → Śródmieście SKM S2/S3 treni veya 175 otobüsü, 75 dk ZTM bileti, tek yön",
+     "kaynak": "https://warszawa19115.pl/en/-/dojazd-na-lotnisko"
+    },
+    "not": "Cuma–Pazar kaçamağı için hafta sonu bileti ideal: Cuma 19:00–Pazartesi 08:00 geçerli, 1+2. bölge, 24 zł. Chopin Havalimanı 1. bölgede, ZTM biletleri trende de geçerli."
+   },
+   "yerler": [
+    {
+     "id": "eski-sehir-meydan",
+     "ad": "Eski Şehir Meydanı",
+     "arama": "Old Town Market Place Warsaw",
+     "tur": "Meydan",
+     "bolge": "starowka",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "İkinci Dünya Savaşı'ndan sonra yeniden inşa edilen UNESCO listesindeki renkli meydan; Deniz Kızı heykeli burada.",
+     "kaynak": "https://warsawtour.pl/en/",
+     "konum": null
+    },
+    {
+     "id": "kraliyet-satosu",
+     "ad": "Kraliyet Şatosu",
+     "arama": "Royal Castle Warsaw",
+     "tur": "Saray",
+     "bolge": "starowka",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "bilgi": "Polonya krallarının sarayı, Plac Zamkowy'de. Haftada bir gün daimi sergi ücretsiz olabiliyor; resmî sitede kontrol edin.",
+     "kaynak": "https://www.zamek-krolewski.pl/",
+     "konum": null
+    },
+    {
+     "id": "varsova-noel-pazar",
+     "ad": "Varşova Noel Pazarı",
+     "arama": "Warsaw Christmas Market Old Town",
+     "tur": "Noel pazarı",
+     "bolge": "starowka",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Barbakan ve Eski Şehir çevresinde, Kraliyet Yolu ışıklandırmasıyla birlikte kurulur. Tarihleri teyit et.",
+     "kaynak": "https://warsawtour.pl/en/",
+     "konum": null
+    },
+    {
+     "id": "krakowskie-przedmiescie-ve-nowy-swiat",
+     "ad": "Krakowskie Przedmieście ve Nowy Świat",
+     "arama": "Krakowskie Przedmieście Warsaw",
+     "tur": "Mahalle",
+     "bolge": "starowka",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kraliyet Yolu'nun en güzel kısmı; saraylar, kiliseler ve kafeler. Nowy Świat'ta pączki ve kahve molası verin.",
+     "kaynak": "https://warsawtour.pl/en/",
+     "konum": null
+    },
+    {
+     "id": "varsova-ayaklanmas-muzesi",
+     "ad": "Varşova Ayaklanması Müzesi",
+     "arama": "Warsaw Rising Museum",
+     "tur": "Müze",
+     "bolge": "bati",
+     "sure_dk": 150,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "bilgi": "1944 ayaklanmasını interaktif anlatan, şehrin en etkileyici müzesi. Kapalı günü ve ücretsiz günü resmî sitede kontrol edin.",
+     "kaynak": "https://www.1944.pl/",
+     "konum": null
+    },
+    {
+     "id": "polin-polonya-yahudileri-tarihi-muzesi",
+     "ad": "POLIN Polonya Yahudileri Tarihi Müzesi",
+     "arama": "POLIN Museum of the History of Polish Jews Warsaw",
+     "tur": "Müze",
+     "bolge": "bati",
+     "sure_dk": 150,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "bilgi": "Bin yıllık Yahudi tarihini anlatan ödüllü müze, eski Gettonun bulunduğu Muranów'da. Binanın mimarisi de görülmeye değer.",
+     "kaynak": "https://polin.pl/",
+     "konum": null
+    },
+    {
+     "id": "kultur-ve-bilim-saray-seyir-teras",
+     "ad": "Kültür ve Bilim Sarayı Seyir Terası",
+     "arama": "Palace of Culture and Science Warsaw",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı teyit et",
+     "bilgi": "Stalin'in 'hediyesi' gökdelenin 30. katındaki terastan şehrin panoraması. Akşamüstü ışıklar yanarken çıkın.",
+     "kaynak": "https://pkin.pl/",
+     "konum": null
+    },
+    {
+     "id": "hala-koszyki",
+     "ad": "Hala Koszyki",
+     "arama": "Hala Koszyki Warsaw",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Restore edilmiş tarihi pazar binasında onlarca restoran ve bar; akşam yemeği için ideal.",
+     "kaynak": "https://warsawtour.pl/en/",
+     "konum": null
+    },
+    {
+     "id": "azienki-kraliyet-park",
+     "ad": "Łazienki Kraliyet Parkı",
+     "arama": "Łazienki Park Warsaw",
+     "tur": "Park",
+     "bolge": "lazienki",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Park ücretsiz; Su Üstündeki Saray ücretli",
+     "bilgi": "Su Üstündeki Saray, Chopin anıtı ve tavus kuşlarıyla şehrin en güzel parkı. Kraliyet Yolu'nun güney ucunda.",
+     "kaynak": "https://www.lazienki-krolewskie.pl/",
+     "konum": null
+    },
+    {
+     "id": "wilanow-saray",
+     "ad": "Wilanów Sarayı",
+     "arama": "Wilanów Palace Warsaw",
+     "tur": "Saray",
+     "bolge": "wilanow",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "bilgi": "'Polonya'nın Versay'ı' denen barok saray ve bahçeleri; merkezden 116 veya 180 otobüsüyle ~35 dk. Kış saatlerini kontrol edin.",
+     "kaynak": "https://www.wilanow-palac.pl/",
+     "konum": null
+    }
+   ]
+  },
+  "Prag": {
+   "para": "CZK",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 39,
+     "aciklama": "30 dakikalık bilet, kâğıt (PID Lítačka uygulamasında 36 Kč)",
+     "kaynak": "https://pid.cz/en/new-pid-tariff-from-1-january-2026-dont-pay-more-than-you-have-to/"
+    },
+    "gunluk": {
+     "fiyat": 150,
+     "aciklama": "24 saatlik bilet, kâğıt (uygulamada 140 Kč)",
+     "kaynak": "https://pid.cz/en/new-pid-tariff-from-1-january-2026-dont-pay-more-than-you-have-to/"
+    },
+    "cok_gunluk": {
+     "fiyat": 350,
+     "gun": 3,
+     "aciklama": "72 saatlik bilet, kâğıt (uygulamada 340 Kč)",
+     "kaynak": "https://pid.cz/en/new-pid-tariff-from-1-january-2026-dont-pay-more-than-you-have-to/"
+    },
+    "havalimani": {
+     "fiyat": 50,
+     "sure_dk": 35,
+     "aciklama": "Havalimanı → 59 numaralı otobüs Nádraží Veleslavín + metro A ile merkez, 90 dk bilet (uygulamada 46 Kč), tek yön",
+     "kaynak": "https://pid.cz/en/travel-information/airport-and-stations/"
+    },
+    "not": "Uygulamadan (PID Lítačka) almak her bilette biraz daha ucuz. 200 Kč'lik Airport Express, 59 numaralı otobüsten hızlı değil. Eski şehir ve Malá Strana yürünebilir."
+   },
+   "yerler": [
+    {
+     "id": "prag-kalesi-ve-aziz-vitus-katedrali",
+     "ad": "Prag Kalesi ve Aziz Vitus Katedrali",
+     "arama": "Prague Castle",
+     "tur": "Kale",
+     "bolge": "kale",
+     "sure_dk": 180,
+     "fiyat": 450,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ana tur bileti 450 Kč (2 gün geçerli); kale avluları ücretsiz, Güney Kulesi ayrıca 200 Kč",
+     "bilgi": "Aziz Vitus Katedrali, Eski Kraliyet Sarayı ve Altın Sokak bilete dahil. Kasım–Mart binalar 16:00'da kapanıyor, sabah erken gidin.",
+     "kaynak": "https://www.trvlogue.com/en/prague-castle-tickets-guide",
+     "konum": null
+    },
+    {
+     "id": "karl-koprusu",
+     "ad": "Karl Köprüsü",
+     "arama": "Charles Bridge Prague",
+     "tur": "Köprü",
+     "bolge": "malastrana",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Heykellerle süslü 14. yüzyıl köprüsü. Kalabalıksız fotoğraf için sabah 8'den önce gidin.",
+     "kaynak": "https://www.prague.eu/en",
+     "konum": null
+    },
+    {
+     "id": "mala-strana-ve-lennon-duvar",
+     "ad": "Malá Strana ve Lennon Duvarı",
+     "arama": "Lennon Wall Prague",
+     "tur": "Mahalle",
+     "bolge": "malastrana",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kale ile köprü arasındaki barok mahalle; grafitili Lennon Duvarı ve Kampa Adası burada. Kaleden inerken yürüyerek gezin.",
+     "kaynak": "https://www.prague.eu/en",
+     "konum": null
+    },
+    {
+     "id": "eski-sehir-meydan-ve-astronomik-saat",
+     "ad": "Eski Şehir Meydanı ve Astronomik Saat",
+     "arama": "Old Town Square Prague",
+     "tur": "Meydan",
+     "bolge": "eskisehir",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Týn Kilisesi ve 600 yıllık astronomik saatin (Orloj) olduğu meydan. Saat başı figür gösterisi için birkaç dakika önceden yer tutun.",
+     "kaynak": "https://www.prague.eu/en",
+     "konum": null
+    },
+    {
+     "id": "eski-belediye-binas-kulesi",
+     "ad": "Eski Belediye Binası Kulesi",
+     "arama": "Old Town Hall Tower Prague",
+     "tur": "Manzara",
+     "bolge": "eskisehir",
+     "sure_dk": 45,
+     "fiyat": 350,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 350 Kč (asansör +100 Kč)",
+     "bilgi": "Meydanın ve kızıl çatıların en iyi manzarası. Nisan–Aralık her gün 9:00–20:00 açık.",
+     "kaynak": "https://www.prague.eu/en/object/places/114/old-town-hall-with-astronomical-clock-staromestska-radnice-s-orlojem",
+     "konum": null
+    },
+    {
+     "id": "yahudi-mahallesi-yahudi-muzesi",
+     "ad": "Yahudi Mahallesi (Yahudi Müzesi)",
+     "arama": "Jewish Museum in Prague",
+     "tur": "Müze",
+     "bolge": "eskisehir",
+     "sure_dk": 120,
+     "fiyat": 600,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 600 Kč",
+     "bilgi": "Sinagoglar ve Eski Yahudi Mezarlığı tek biletle gezilir. Cumartesi ve Yahudi bayramlarında kapalı.",
+     "kaynak": "https://www.jewishmuseum.cz/en/info/visit/admission/",
+     "konum": null
+    },
+    {
+     "id": "havel-pazar",
+     "ad": "Havel Pazarı",
+     "arama": "Havelské tržiště Prague",
+     "tur": "Pazar",
+     "bolge": "eskisehir",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski şehirdeki tarihi açık pazar; meyve, el işi ve hediyelik. Çevresindeki sokaklarda trdelník ve Çek birası deneyin.",
+     "kaynak": "https://www.prague.eu/en",
+     "konum": null
+    },
+    {
+     "id": "eski-sehir-meydan-noel-pazar",
+     "ad": "Eski Şehir Meydanı Noel Pazarı",
+     "arama": "Old Town Square Christmas Market Prague",
+     "tur": "Noel pazarı",
+     "bolge": "eskisehir",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "28 Kasım 2026–6 Ocak 2027 arası; dev Noel ağacı ve sıcak şarap. Organizatörden tarihleri teyit et.",
+     "kaynak": "https://loudavymkrokem.cz/sk/?p=459700",
+     "konum": null
+    },
+    {
+     "id": "venceslas-meydan",
+     "ad": "Venceslas Meydanı",
+     "arama": "Wenceslas Square Prague",
+     "tur": "Meydan",
+     "bolge": "yenisehir",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kadife Devrim'in sahnesi olan uzun bulvar-meydan; Ulusal Müze'nin önünde biter. 28 Kasım'dan itibaren burada da Noel pazarı kurulur.",
+     "kaynak": "https://prague.eu/cs/akce/vanocni-trhy-staromestske-namesti/",
+     "konum": null
+    },
+    {
+     "id": "ulusal-muze",
+     "ad": "Ulusal Müze",
+     "arama": "National Museum Prague",
+     "tur": "Müze",
+     "bolge": "yenisehir",
+     "sure_dk": 120,
+     "fiyat": 360,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 360 Kč",
+     "bilgi": "Neo-Rönesans tarihi binada doğa ve tarih koleksiyonları; kubbe altından Venceslas Meydanı manzarası. Her gün 10:00–18:00.",
+     "kaynak": "https://prague.eu/cs/objevujte/narodni-muzeum-muzejni-komplex-narodniho-muzea/",
+     "konum": null
+    }
+   ]
+  },
+  "Bratislava": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.2,
+     "aciklama": "30 dakikalık bilet, 100+101 (şehir merkezi) bölgeleri, kâğıt (temassız kart/uygulama 1,09 €)",
+     "kaynak": "https://imhd.sk/ba/doc/sk/21814/21814"
+    },
+    "gunluk": {
+     "fiyat": 5.4,
+     "aciklama": "24 saatlik bilet, 100+101 bölgeleri, kâğıt (elektronik 4,85 €)",
+     "kaynak": "https://imhd.sk/ba/doc/sk/21814/21814"
+    },
+    "cok_gunluk": {
+     "fiyat": 10.7,
+     "gun": 3,
+     "aciklama": "72 saatlik bilet, 100+101 bölgeleri, kâğıt (elektronik 9,68 €)",
+     "kaynak": "https://imhd.sk/ba/doc/sk/21814/21814"
+    },
+    "havalimani": {
+     "fiyat": 1.8,
+     "sure_dk": 30,
+     "aciklama": "Havalimanı → Hlavná stanica (Gar) 61 numaralı otobüs, 60 dk bilet (elektronik 1,60 €), tek yön",
+     "kaynak": "https://www.bratislavaguide.com/transport/public-transport-bratislava/bus-61"
+    },
+    "not": "12 Ekim–10 Kasım 2026 arası temel biletler yarı fiyat. Araçta banka kartını okutmak en kolayı, günlük tavan 4,85 €. Eski şehir küçük ve yürünebilir; Devín için otobüs gerekir."
+   },
+   "yerler": [
+    {
+     "id": "ana-meydan-ve-cumil-heykeli",
+     "ad": "Ana Meydan ve Čumil Heykeli",
+     "arama": "Hlavné námestie Bratislava",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski şehrin kalbi; Roland Çeşmesi ve rögardan bakan bronz Čumil heykeli hemen yanında.",
+     "kaynak": "https://visitbratislava.sk/",
+     "konum": null
+    },
+    {
+     "id": "eski-belediye-binas-sehir-muzesi",
+     "ad": "Eski Belediye Binası (Şehir Müzesi)",
+     "arama": "Old Town Hall Bratislava",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "bilgi": "Şehrin en eski müzesi; kulesinden Ana Meydan manzarası görülür. Pazartesi kapalı olabilir, saatleri kontrol edin.",
+     "kaynak": "https://muzeum.bratislava.sk/",
+     "konum": null
+    },
+    {
+     "id": "primas-saray",
+     "ad": "Primas Sarayı",
+     "arama": "Primate's Palace Bratislava",
+     "tur": "Saray",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "bilgi": "Pembe klasisist saray; Ayna Salonu ve 17. yüzyıl İngiliz duvar halıları görülür.",
+     "kaynak": "https://muzeum.bratislava.sk/",
+     "konum": null
+    },
+    {
+     "id": "mihail-kap-s-ve-michalska-sokag",
+     "ad": "Mihail Kapısı ve Michalská Sokağı",
+     "arama": "Michael's Gate Bratislava",
+     "tur": "Mahalle",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (kule müzesi ücretli)",
+     "bilgi": "Surlardan kalan tek kapı; altından uzanan Michalská ve Ventúrska sokakları kafe, bar ve restoranlarla dolu.",
+     "kaynak": "https://visitbratislava.sk/",
+     "konum": null
+    },
+    {
+     "id": "aziz-martin-katedrali",
+     "ad": "Aziz Martin Katedrali",
+     "arama": "St. Martin's Cathedral Bratislava",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Küçük bir ziyaret ücreti alınıyor, güncel fiyatı teyit et",
+     "bilgi": "Macar krallarının 300 yıl taç giydiği gotik katedral. Ayin saatlerinde turist ziyareti yapılamaz.",
+     "kaynak": "https://visitbratislava.sk/",
+     "konum": null
+    },
+    {
+     "id": "mavi-kilise",
+     "ad": "Mavi Kilise",
+     "arama": "Blue Church St. Elizabeth Bratislava",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Gök mavisi Art Nouveau kilise, eski şehrin 10 dk doğusunda. İçi genellikle ayin saatleri civarında açık.",
+     "kaynak": "https://visitbratislava.sk/",
+     "konum": null
+    },
+    {
+     "id": "bratislava-noel-pazar",
+     "ad": "Bratislava Noel Pazarı",
+     "arama": "Bratislava Christmas Market Main Square",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Ana Meydan ve Františkánske námestie'de kurulur; lokše ve sıcak şarap deneyin. Genelde Kasım sonu–Aralık sonu, 2026 tarihlerini teyit et.",
+     "kaynak": "https://loudavymkrokem.cz/sk/?p=459700",
+     "konum": null
+    },
+    {
+     "id": "bratislava-kalesi",
+     "ad": "Bratislava Kalesi",
+     "arama": "Bratislava Castle",
+     "tur": "Kale",
+     "bolge": "kale",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Avlu ve bahçeler ücretsiz; müze bileti ücretli, fiyatı teyit et",
+     "bilgi": "Tepedeki beyaz kaleden Tuna ve Avusturya manzarası. İçinde Slovak Ulusal Müzesi'nin tarih sergisi var.",
+     "kaynak": "https://www.snm.sk/",
+     "konum": null
+    },
+    {
+     "id": "ufo-koprusu-gozetleme-teras",
+     "ad": "UFO Köprüsü Gözetleme Terası",
+     "arama": "UFO Observation Deck Bratislava",
+     "tur": "Manzara",
+     "bolge": "nehir",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, güncel fiyatı teyit et (restoranda yemek yiyenlere ücretsiz olabilir)",
+     "bilgi": "SNP Köprüsü'nün 95 m'deki 'UFO'sundan şehir ve kale manzarası; gün batımında gidin.",
+     "kaynak": "https://visitbratislava.sk/",
+     "konum": null
+    },
+    {
+     "id": "devin-kalesi",
+     "ad": "Devín Kalesi",
+     "arama": "Devín Castle Bratislava",
+     "tur": "Kale",
+     "bolge": "devin",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli, kış fiyat ve saatlerini teyit et",
+     "bilgi": "Tuna ve Morava'nın birleştiği kayalıktaki harabe kale; merkezden 29 numaralı otobüsle ~25 dk. Kışın saatleri kısalır.",
+     "kaynak": "https://muzeum.bratislava.sk/",
+     "konum": null
+    }
+   ]
+  },
+  "Budapeşte": {
+   "para": "HUF",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 500,
+     "aciklama": "BKK tek bilet (vonaljegy), tek kesintisiz yolculuk; metro hatları arası aktarma serbest, metro↔tramvay/otobüs aktarmasında yeni bilet gerekir. 30 dk bilet 600 Ft, 90 dk bilet 850 Ft",
+     "kaynak": "https://bkk.hu/jegyek-es-berletek/arak/"
+    },
+    "gunluk": {
+     "fiyat": 2750,
+     "aciklama": "Budapeşte 24 saatlik bilet, şehir içi sınırsız",
+     "kaynak": "https://bkk.hu/jegyek-es-berletek/arak/"
+    },
+    "cok_gunluk": {
+     "fiyat": 5750,
+     "gun": 3,
+     "aciklama": "Budapeşte 72 saatlik bilet, şehir içi sınırsız",
+     "kaynak": "https://bkk.hu/jegyek-es-berletek/arak/"
+    },
+    "havalimani": {
+     "fiyat": 2500,
+     "sure_dk": 40,
+     "aciklama": "Liszt Ferenc Havalimanı → Kálvin tér / Astoria / Deák Ferenc tér 100E ekspres otobüs, tek yön, özel havalimanı bileti (günlük/72 saatlik kart geçmez)",
+     "kaynak": "https://bkk.hu/jegyek-es-berletek/arak/"
+    },
+    "not": "24/72 saatlik kart 100E'de geçerli değil; havalimanı için ayrı bilet alın. Metro gece yarısına kadar, sonrasında gece otobüsleri çalışır."
+   },
+   "yerler": []
+  },
+  "Ljubljana": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.5,
+     "aciklama": "LPP şehir otobüsü, 90 dakika içinde sınırsız aktarma (Urbana kartıyla; kart 2 €, turizm ofisinden alınırsa iade edilir). Banka kartıyla ödemede 90 dk aktarma hakkı yok",
+     "kaynak": "https://www.visitljubljana.com/en/visitors/travel-information/getting-around/city-buses?lang=%2Fen%2F"
+    },
+    "gunluk": {
+     "fiyat": null,
+     "aciklama": "LPP'nin turistler için günlük bileti yok; Ljubljana Card geçerlilik süresince otobüsleri kapsar",
+     "kaynak": "https://www.visitljubljana.com/en/visitors/travel-information/getting-around/city-buses?lang=%2Fen%2F"
+    },
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 4.1,
+     "sure_dk": 50,
+     "aciklama": "Brnik Havalimanı → Ljubljana otogarı (tren garının yanı) Arriva/Alpetour otobüsü, tek yön; bilet otobüste",
+     "kaynak": "https://airmundo.com/de/ljubljana-airport/oeffentliche-verkehrsmittel/"
+    },
+    "not": "Merkez büyük ölçüde yaya bölgesi ve tamamen yürünebilir; otobüse neredeyse hiç ihtiyaç olmaz. Havalimanı otobüsü saatte bir, 05:00–20:00 arası."
+   },
+   "yerler": [
+    {
+     "id": "ljubljana-kalesi",
+     "ad": "Ljubljana Kalesi",
+     "arama": "Ljubljana Castle",
+     "tur": "Kale",
+     "bolge": "kale",
+     "sure_dk": 120,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 15 €, füniküler gidiş-dönüş dahil 19 €; avlu ücretsiz",
+     "bilgi": "Tepedeki kaleden şehir ve Alpler görülür; bilet seyir kulesi ve sergileri kapsar. Yukarı füniküler ya da 15–20 dakikalık yürüyüşle çıkılır.",
+     "kaynak": "https://www.trvlogue.com/en/ljubljana-castle-guide",
+     "konum": null
+    },
+    {
+     "id": "preseren-meydan-ve-uclu-kopru",
+     "ad": "Prešeren Meydanı ve Üçlü Köprü",
+     "arama": "Triple Bridge Ljubljana",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Pembe Fransisken kilisesi, şair Prešeren heykeli ve Plečnik'in üçlü köprüsüyle şehrin buluşma noktası. Akşam ışıklandırmasıyla çok güzel.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "ejderhal-kopru",
+     "ad": "Ejderhalı Köprü",
+     "arama": "Dragon Bridge Ljubljana",
+     "tur": "Köprü",
+     "bolge": "merkez",
+     "sure_dk": 15,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin simgesi bakır ejderha heykelleriyle süslü Art Nouveau köprü. Pazar yerinin hemen ucunda, geçerken uğrayın.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "merkez-pazar-plecnik-pazar",
+     "ad": "Merkez Pazar (Plečnik Pazarı)",
+     "arama": "Ljubljana Central Market",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz giriş",
+     "bilgi": "Plečnik'in nehir kenarı revaklarıyla açık hava pazarı; en canlı hali cumartesi sabahı. Pazar günleri tezgâhlar kapalı.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "neboticnik-teras-kafe",
+     "ad": "Nebotičnik Teras Kafe",
+     "arama": "Nebotičnik Ljubljana",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz, sadece içecek parası",
+     "bilgi": "1933 yapımı 'gökdelen'in tepesindeki kafeden şehir ve kale manzarası. Kahve içip manzarayı izlemek kaleye göre daha ucuz bir alternatif.",
+     "kaynak": "https://visitljubljana.com/en/poi/skyscraper",
+     "konum": null
+    },
+    {
+     "id": "slovenya-ulusal-galerisi",
+     "ad": "Slovenya Ulusal Galerisi",
+     "arama": "National Gallery of Slovenia Ljubljana",
+     "tur": "Müze",
+     "bolge": "tivoli",
+     "sure_dk": 90,
+     "fiyat": 10,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 10 €; ayın ilk pazarı ücretsiz",
+     "bilgi": "Ortaçağdan 20. yüzyıla Sloven resim sanatı. Pazartesi kapalı; salı–pazar 10:00–18:00, perşembe 20:00'ye kadar.",
+     "kaynak": "https://www.ng-slo.si/en/visit-us/opening-hours-and-entrance-fee",
+     "konum": null
+    },
+    {
+     "id": "slovenya-ulusal-muzesi",
+     "ad": "Slovenya Ulusal Müzesi",
+     "arama": "National Museum of Slovenia Muzejska Ljubljana",
+     "tur": "Müze",
+     "bolge": "tivoli",
+     "sure_dk": 75,
+     "fiyat": 8,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 8 €; ayın ilk pazarı ücretsiz",
+     "bilgi": "Ünlü Vače situlası ve dünyanın en eski müzik aletlerinden sayılan Neandertal flütü burada. Ulusal Galeri'nin hemen yakınında.",
+     "kaynak": "https://www.nms.si/en/plan-your-visit/admission",
+     "konum": null
+    },
+    {
+     "id": "tivoli-park",
+     "ad": "Tivoli Parkı",
+     "arama": "Tivoli Park Ljubljana",
+     "tur": "Park",
+     "bolge": "tivoli",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin en büyük parkı; Jakopič Promenadı'nda açık hava fotoğraf sergileri olur. Müzelerden sonra yürüyüş için ideal.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "metelkova",
+     "ad": "Metelkova",
+     "arama": "Metelkova Mesto Ljubljana",
+     "tur": "Mahalle",
+     "bolge": "metelkova",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski askeri kışladan dönüşmüş, grafiti ve heykellerle dolu alternatif kültür merkezi. Gündüz fotoğraf için, akşam bar ve konserler için gidin.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "ljubljana-noel-pazar-festive-december",
+     "ad": "Ljubljana Noel Pazarı (Festive December)",
+     "arama": "Ljubljana Christmas Market Prešeren Square",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "2026'da pazarlar 27 Kasım–3 Ocak arası nehir kıyısı boyunca (Breg, Cankar rıhtımı, Prešeren ve Kongre meydanları) ve kalede kurulur. Şehir ışıkları 14 Ocak'a kadar yanar.",
+     "kaynak": "https://visitljubljana.com/en/visitors/events/events-in-ljubljana/festive-december",
+     "konum": null
+    }
+   ]
+  },
+  "Zagreb": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 0.53,
+     "aciklama": "ZET 30 dakikalık bilet (büfeden; şoförden 0,80 €). 60 dk 0,93 €, 90 dk 1,33 €",
+     "kaynak": "https://www.inyourpocket.com/croatia/zagreb/venues/trams-buses"
+    },
+    "gunluk": {
+     "fiyat": 3.98,
+     "aciklama": "ZET günlük bilet, tramvay ve otobüslerde sınırsız",
+     "kaynak": "https://www.inyourpocket.com/croatia/zagreb/venues/trams-buses"
+    },
+    "cok_gunluk": {
+     "fiyat": 9.3,
+     "gun": 3,
+     "aciklama": "ZET 3 günlük bilet",
+     "kaynak": "https://bookiscout.com/en/guides/zagreb-transport"
+    },
+    "havalimani": {
+     "fiyat": 1.33,
+     "sure_dk": 55,
+     "aciklama": "Zagreb Havalimanı → Kvaternikov trg ZET 290 otobüsü, tek yön, 90 dk bilet; daha hızlı seçenek Pleso shuttle otogara 8 € / 35–40 dk",
+     "kaynak": "https://zagreb-airport.hr/en/passengers/to-from-the-airport/by-bus/89"
+    },
+    "not": "Merkez (Aşağı ve Yukarı Şehir) yürünebilir; Yukarı Şehir'e füniküler 0,66 €. Biletleri büfeden alın, şoförden pahalı; binince damgalatmayı unutmayın."
+   },
+   "yerler": [
+    {
+     "id": "ban-jelacic-meydan",
+     "ad": "Ban Jelačić Meydanı",
+     "arama": "Ban Jelačić Square Zagreb",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin ana meydanı ve buluşma noktası; atlı Ban Jelačić heykeli burada. Tramvayların çoğu buradan geçer.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "zagreb-katedrali",
+     "ad": "Zagreb Katedrali",
+     "arama": "Zagreb Cathedral",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Neo-Gotik ikiz kuleli katedral, deprem sonrası restorasyonun ardından Aralık 2025'te yeniden açıldı; dış cephe çalışmaları sürüyor. Omuz ve dizler kapalı girin.",
+     "kaynak": "https://glashrvatske.hrt.hr/en/domestic/zagreb-cathedral-to-reopen-after-nearly-five-years-of-post-earthquake-renovation-12472387",
+     "konum": null
+    },
+    {
+     "id": "dolac-pazar",
+     "ad": "Dolac Pazarı",
+     "arama": "Dolac Market Zagreb",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz giriş",
+     "bilgi": "Kırmızı şemsiyeli açık hava pazarı; meyve, peynir ve yerel ürünler. Sabah erken gidin, öğleden sonra tezgâhlar toplanır.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "tkalciceva-caddesi",
+     "ad": "Tkalčićeva Caddesi",
+     "arama": "Tkalčićeva Street Zagreb",
+     "tur": "Mahalle",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Renkli evleri ve kafe-barlarıyla şehrin yeme-içme sokağı. Akşamüstü kahve ya da akşam yemeği için ideal.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "aziz-markos-kilisesi",
+     "ad": "Aziz Markos Kilisesi",
+     "arama": "St. Mark's Church Zagreb",
+     "tur": "Kilise",
+     "bolge": "gornjigrad",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (dışarıdan)",
+     "bilgi": "Renkli kiremit çatısında Hırvatistan ve Zagreb armaları olan simge kilise. İçerisi sadece ayin saatlerinde açık; asıl görülecek olan çatı.",
+     "kaynak": "https://loudavymkrokem.cz/en/zagreb-croatia-guide/",
+     "konum": null
+    },
+    {
+     "id": "lotrscak-kulesi",
+     "ad": "Lotrščak Kulesi",
+     "arama": "Lotrščak Tower Zagreb",
+     "tur": "Manzara",
+     "bolge": "gornjigrad",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Küçük bir ücret (güncel tutarı yerinde teyit et)",
+     "bilgi": "13. yüzyıl kulesinden Aşağı Şehir manzarası; Grič topu her gün tam 12:00'de ateşlenir. Hemen yanındaki füniküler (0,66 €) ile çıkın.",
+     "kaynak": "https://loudavymkrokem.cz/en/zagreb-croatia-guide/",
+     "konum": null
+    },
+    {
+     "id": "k-r-k-iliskiler-muzesi",
+     "ad": "Kırık İlişkiler Müzesi",
+     "arama": "Museum of Broken Relationships Zagreb",
+     "tur": "Müze",
+     "bolge": "gornjigrad",
+     "sure_dk": 60,
+     "fiyat": 7,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 7 €",
+     "bilgi": "Ayrılıklardan kalan eşyalar ve hikâyeleriyle dünyaca ünlü sıra dışı müze; çiftler için ilginç bir deneyim. Her gün geç saate kadar açık.",
+     "kaynak": "https://whichmuseum.com/museum/museum-of-broken-relationships-zagreb-7729/tickets-prices",
+     "konum": null
+    },
+    {
+     "id": "h-rvat-naif-sanat-muzesi",
+     "ad": "Hırvat Naif Sanat Müzesi",
+     "arama": "Croatian Museum of Naive Art Zagreb",
+     "tur": "Müze",
+     "bolge": "gornjigrad",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı resmi sitede teyit et",
+     "bilgi": "Dünyanın ilk naif sanat müzelerinden; Hlebine okulu ressamlarının cam altı resimleri. Hafta içi 09:00–17:00, cumartesi 10:00–14:00, pazar kapalı.",
+     "kaynak": "https://hmnu.hr",
+     "konum": null
+    },
+    {
+     "id": "mirogoj-mezarl-g",
+     "ad": "Mirogoj Mezarlığı",
+     "arama": "Mirogoj Cemetery Zagreb",
+     "tur": "Park",
+     "bolge": "mirogoj",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Sarmaşıklı arkadları ve kubbeleriyle Avrupa'nın en güzel mezarlık-parklarından. Katedral önünden 106 numaralı otobüsle ya da 25 dakikalık yürüyüşle gidilir.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "zagreb-advent-noel-pazar",
+     "ad": "Zagreb Advent (Noel Pazarı)",
+     "arama": "Advent Zagreb Zrinjevac",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Avrupa'nın en iyi Noel pazarlarından; 2026'da 28 Kasım–7 Ocak (tarihleri teyit et). Ban Jelačić Meydanı, Zrinjevac Parkı ve Yukarı Şehir'deki Strossmayer Promenadı en güzel noktalar.",
+     "kaynak": "https://bookiscout.com/guides/zagreb-advent",
+     "konum": null
+    }
+   ]
+  },
+  "Bükreş": {
+   "para": "RON",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3,
+     "aciklama": "STB metropoliten yolculuk, 90 dakika tüm yerüstü hatlarda (otobüs/tramvay/troleybüs); temassız kartla da ödenebilir. Metro ayrı: tek yolculuk 7 lei (Mayıs 2026'dan beri), STB+metro 120 dk entegre bilet 7 lei",
+     "kaynak": "https://economedia.ro/cum-s-ar-putea-scumpi-biletele-stb-in-capitala-lista-preturilor-propuse.html"
+    },
+    "gunluk": {
+     "fiyat": 8,
+     "aciklama": "STB 24 saatlik metropoliten abonman (sadece yerüstü); metro dahil entegre 24 saat 18 lei",
+     "kaynak": "https://economedia.ro/cum-s-ar-putea-scumpi-biletele-stb-in-capitala-lista-preturilor-propuse.html"
+    },
+    "cok_gunluk": {
+     "fiyat": 20,
+     "gun": 3,
+     "aciklama": "STB 72 saatlik metropoliten abonman (sadece yerüstü); metro 72 saat ayrıca 50 lei",
+     "kaynak": "https://economedia.ro/cum-s-ar-putea-scumpi-biletele-stb-in-capitala-lista-preturilor-propuse.html"
+    },
+    "havalimani": {
+     "fiyat": 3,
+     "sure_dk": 50,
+     "aciklama": "Otopeni (Henri Coandă) → Piața Unirii STB 100 numaralı ekspres otobüs, tek yön, 90 dk STB bileti; 7/24, gündüz 15 dk arayla",
+     "kaynak": "https://economedia.ro/?p=333873"
+    },
+    "not": "STB biletini 3'ten 5 lei'ye çıkarma teklifi 2026'da gündemde ama Nisan 2026 itibarıyla onaylanmadı; gitmeden kontrol edin. Merkez yürünebilir, uzak noktalar için metro pratik."
+   },
+   "yerler": [
+    {
+     "id": "parlamento-saray",
+     "ad": "Parlamento Sarayı",
+     "arama": "Palace of the Parliament Bucharest",
+     "tur": "Saray",
+     "bolge": "parlamento",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Sadece rehberli tur, ücretli (güncel fiyatı resmi sitede teyit et)",
+     "bilgi": "Dünyanın en büyük idari binalarından biri; Çavuşesku döneminin devasa simgesi. Pasaportla girilir, turu önceden rezerve edin.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "eski-sehir-lipscani",
+     "ad": "Eski Şehir (Lipscani)",
+     "arama": "Lipscani Street Old Town Bucharest",
+     "tur": "Mahalle",
+     "bolge": "eskisehir",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Arnavut kaldırımlı sokaklar, restoranlar ve barlarla şehrin yeme-içme merkezi. Tarihi Caru' cu Bere birahanesinde yemek klasik bir deneyim.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "stavropoleos-manast-r",
+     "ad": "Stavropoleos Manastırı",
+     "arama": "Stavropoleos Monastery Bucharest",
+     "tur": "Kilise",
+     "bolge": "eskisehir",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski Şehir'in ortasında, oymalı taş avlusuyla Brâncoveanu tarzının küçük bir mücevheri. Aktif manastır; sessiz ve saygılı olun.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "carturesti-carusel",
+     "ad": "Cărturești Carusel",
+     "arama": "Carturesti Carusel Bucharest",
+     "tur": "Mimari",
+     "bolge": "eskisehir",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Restore edilmiş 19. yüzyıl binasında beyaz katlarıyla ünlü kitabevi. Üst kattaki kafede mola verin.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "romen-atheneumu",
+     "ad": "Romen Atheneumu",
+     "arama": "Romanian Athenaeum Bucharest",
+     "tur": "Anıt",
+     "bolge": "victoriei",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Dış görünüm ücretsiz; iç ziyaret/konser ücretli (fiyatı teyit et)",
+     "bilgi": "Kubbeli neoklasik konser salonu, şehrin en zarif binası. İçini görmenin en iyi yolu bir akşam konserine bilet almak.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "devrim-meydan",
+     "ad": "Devrim Meydanı",
+     "arama": "Revolution Square Bucharest",
+     "tur": "Meydan",
+     "bolge": "victoriei",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "1989 devriminin yaşandığı meydan; Çavuşesku'nun son konuşmasını yaptığı balkon ve Yeniden Doğuş Anıtı burada. Atheneum ve Sanat Müzesi'ne yürüme mesafesinde.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "romanya-ulusal-sanat-muzesi",
+     "ad": "Romanya Ulusal Sanat Müzesi",
+     "arama": "National Museum of Art of Romania Bucharest",
+     "tur": "Müze",
+     "bolge": "victoriei",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli (güncel fiyatı resmi sitede teyit et)",
+     "bilgi": "Eski Kraliyet Sarayı'nda Romen ve Avrupa sanatı koleksiyonları. Pazartesi ve salı genelde kapalı; gitmeden günleri kontrol edin.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "koy-muzesi-muzeul-satului",
+     "ad": "Köy Müzesi (Muzeul Satului)",
+     "arama": "Dimitrie Gusti National Village Museum Bucharest",
+     "tur": "Müze",
+     "bolge": "herastrau",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli (güncel fiyatı resmi sitede teyit et)",
+     "bilgi": "Romanya'nın dört bir yanından taşınmış ahşap evler, kiliseler ve değirmenlerle açık hava müzesi. Herăstrău Parkı'nın kenarında.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "kral-i-mihai-park-herastrau",
+     "ad": "Kral I. Mihai Parkı (Herăstrău)",
+     "arama": "King Michael I Park Herastrau Bucharest",
+     "tur": "Park",
+     "bolge": "herastrau",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Göl kenarında şehrin en büyük parkı; yürüyüş ve göl manzarası için ideal. Yakındaki Zafer Takı'nı da görün.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "bukres-noel-pazar",
+     "ad": "Bükreş Noel Pazarı",
+     "arama": "Bucharest Christmas Market Constitution Square",
+     "tur": "Noel pazarı",
+     "bolge": "parlamento",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Genelde Parlamento Sarayı önündeki Constituției Meydanı'nda kurulur; 2026 konumu ve tarihlerini teyit et. Kürtőskalács ve sıcak şarap klasik.",
+     "kaynak": null,
+     "konum": null
+    }
+   ]
+  },
+  "Sofya": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 0.8,
+     "aciklama": "Tek yolculuk bileti (metro, otobüs, tramvay); metroda 30 dk aktarmalı '30 plus' da 0,80 €, 60 dk '60 plus' 1,10 €",
+     "kaynak": "https://www.metropolitan.bg/en/information-for-citizens/trip-cards-sofia-metro"
+    },
+    "gunluk": {
+     "fiyat": 2.0,
+     "aciklama": "Günlük kart, tüm hatlar (gece hatları dahil 24 saatlik kart 3,00 €)",
+     "kaynak": "https://www.metropolitan.bg/en/information-for-citizens/trip-cards-sofia-metro"
+    },
+    "cok_gunluk": {
+     "fiyat": 7.6,
+     "gun": 3,
+     "aciklama": "72 saatlik kart, gece hatları dahil",
+     "kaynak": "https://www.metropolitan.bg/en/information-for-citizens/trip-cards-sofia-metro"
+    },
+    "havalimani": {
+     "fiyat": 0.8,
+     "sure_dk": 25,
+     "aciklama": "Sofya Havalimanı Terminal 2 → Serdika M4 metro, tek yön, tek bilet (Terminal 1'den T2'ye ücretsiz servis)",
+     "kaynak": "https://freesofiatour.com/blog/guide-to-the-sofia-metro/"
+    },
+    "not": "Bulgaristan 1 Ocak 2026'dan beri euro kullanıyor; fiyatlar EUR. Bazı müze siteleri hâlâ leva gösterebilir. Merkez yürünebilir, metro ucuz ve pratik."
+   },
+   "yerler": [
+    {
+     "id": "aleksandr-nevski-katedrali",
+     "ad": "Aleksandr Nevski Katedrali",
+     "arama": "Alexander Nevsky Cathedral Sofia",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kilise ücretsiz; kriptadaki ikon müzesi ücretli",
+     "bilgi": "Altın kubbeleriyle Balkanlar'ın en büyük Ortodoks katedrallerinden; şehrin simgesi. Omuz ve dizler kapalı girin.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "aziz-yorgi-rotunda",
+     "ad": "Aziz Yorgi Rotunda",
+     "arama": "St George Rotunda Sofia",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin en eski binası, 4. yüzyıl Roma rotundası; başkanlık binası avlusunda saklı. Gün batımı öncesi en güzel ışık.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "antik-serdika",
+     "ad": "Antik Serdika",
+     "arama": "Ancient Serdica Complex Sofia",
+     "tur": "Arkeolojik alan",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Serdika metro istasyonunun içinde ve çevresinde açığa çıkarılmış Roma sokakları ve kalıntılar. Akşam ışıklandırılıyor.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "banya-bas-camii",
+     "ad": "Banya Başı Camii",
+     "arama": "Banya Bashi Mosque Sofia",
+     "tur": "Cami",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "1566'da Mimar Sinan'ın inşa ettiği, Hoşgörü Meydanı'ndaki cami. Yanındaki ücretsiz sıcak maden suyu çeşmelerini ve Merkez Hamam binasını da görün.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "ulusal-arkeoloji-muzesi",
+     "ad": "Ulusal Arkeoloji Müzesi",
+     "arama": "National Archaeological Museum Sofia",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli (yetişkin fiyatını teyit et); ayın son pazarı ücretsiz",
+     "bilgi": "Eski Büyük Cami binasında Trakya altınları ve Roma eserleri. Salı–pazar 10:00–18:00, pazartesi kapalı.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "vitosa-bulvar",
+     "ad": "Vitoşa Bulvarı",
+     "arama": "Vitosha Boulevard Sofia",
+     "tur": "Mahalle",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Vitoşa Dağı manzaralı yaya caddesi; kafe, restoran ve mağazalarla şehrin yeme-içme aksı. NDK'ye kadar yürüyün.",
+     "kaynak": null,
+     "konum": null
+    },
+    {
+     "id": "boyana-kilisesi",
+     "ad": "Boyana Kilisesi",
+     "arama": "Boyana Church Sofia",
+     "tur": "Kilise",
+     "bolge": "boyana",
+     "sure_dk": 45,
+     "fiyat": 6.14,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 6,14 € (12 leva); önceden rezervasyon önerilir",
+     "bilgi": "UNESCO listesindeki 13. yüzyıl freskleriyle ünlü küçük kilise; aynı anda en fazla 9 kişi, 10 dakikalık ziyaret. Ulusal Tarih Müzesi ile birleştirin.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "ulusal-tarih-muzesi",
+     "ad": "Ulusal Tarih Müzesi",
+     "arama": "National History Museum Sofia Boyana",
+     "tur": "Müze",
+     "bolge": "boyana",
+     "sure_dk": 90,
+     "fiyat": 7.67,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 7,67 € (15 leva)",
+     "bilgi": "Bulgaristan'ın en büyük müzesi; Trakya hazineleri öne çıkıyor. Her gün açık, gişe kapanıştan 45 dk önce kapanır.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "vitosa-dag-aleko",
+     "ad": "Vitoşa Dağı (Aleko)",
+     "arama": "Aleko Hut Vitosha",
+     "tur": "Manzara",
+     "bolge": "boyana",
+     "sure_dk": 180,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (sadece otobüs bileti)",
+     "bilgi": "Şehre tepeden bakan dağ; teleferikler 2027'ye kadar kapalı, Hayvanat Bahçesi durağından 66 numaralı otobüsle Aleko'ya çıkılır. Kışın kar olabilir, sıkı giyinin.",
+     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "konum": null
+    },
+    {
+     "id": "sofya-noel-pazar",
+     "ad": "Sofya Noel Pazarı",
+     "arama": "Sofia Christmas Market",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Aralık'ta merkezde kurulan Noel pazarı; 2026 konumu ve tarihlerini teyit et. Sıcak şarap ve Bulgar tatlıları.",
+     "kaynak": null,
+     "konum": null
+    }
+   ]
+  }
+ }
+}
