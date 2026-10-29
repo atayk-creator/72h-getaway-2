@@ -651,10 +651,19 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         desc: escH(bits + ". Kişi başı " + r.fiyatYazi + " (Google kullanıcılarının bildirdiği aralık, içecek dahil ortalama).") };
     });
   }
+  var RLVL = { Ucuz: 0, Uygun: 0, Orta: 1, "Popüler": 1, "Şık": 2, "Lüks": 2 };
+  function rlvlOf(r) { return r.lvl != null ? r.lvl : RLVL[r.t] != null ? RLVL[r.t] : 1; }
   function fixRestoIdx(rs) {
     if (!rDefault && rIdx < rs.length) return;
-    for (var i = 0; i < rs.length; i++) if ((rs[i].lvl != null ? rs[i].lvl : LVL[rs[i].t] != null ? LVL[rs[i].t] : 1) === 1) { rIdx = i; return; }
+    for (var i = 0; i < rs.length; i++) if (rlvlOf(rs[i]) === 1) { rIdx = i; return; }
     rIdx = Math.min(1, rs.length - 1);
+  }
+  // Şehir karşılaştırmasında diğer şehirlerden aynı seviyedeki restoran seçilir
+  function ridxFor(d) {
+    var cur = restosOf(D[+$("city").value])[rIdx], lvl = cur ? rlvlOf(cur) : 1, rs = restosOf(d);
+    if (rs[rIdx] && rlvlOf(rs[rIdx]) === lvl) return rIdx;
+    for (var i = 0; i < rs.length; i++) if (rlvlOf(rs[i]) === lvl) return i;
+    return Math.min(rIdx, rs.length - 1);
   }
 
   /* ====================== UÇAK FİYATLARI ====================== */
@@ -1161,7 +1170,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 
   /* ====================== EKRANLAR ====================== */
   function renderChips(o) {
-    var totals = D.map(function (d) { return cost(d, o, idxFor(d), rIdx).sum * o.rate; });
+    var totals = D.map(function (d) { return cost(d, o, idxFor(d), ridxFor(d)).sum * o.rate; });
     var sorted = totals.slice().sort(function (a, b) { return a - b; });
     var q = [sorted[Math.floor(sorted.length * 0.25)], sorted[Math.floor(sorted.length * 0.5)], sorted[Math.floor(sorted.length * 0.75)]];
     var tier = function (t) { return t <= q[0] ? 1 : t <= q[1] ? 2 : t <= q[2] ? 3 : 4; };

@@ -12,6 +12,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 | `data/otel-fiyatlari.json`, `data/fiyatlar/` | Robotun bulduğu fiyatlar (robot yazar, elle değiştirme) |
 | `data/arsiv/` | Geçmiş hafta sonlarının fiyatları (robot yazar) |
 | `data/ucus-ayarlari.json`, `data/ucuslar.json` | Uçak robotunun ayarları ve bulduğu fiyatlar |
+| `data/restoran-ayarlari.json`, `data/restoranlar.json`, `data/restoran-adaylari.json` | Restoran robotunun ayarları, seçtiği restoranlar ve adaylar |
 | `data.json` | Euro/TL ve euro/forint kuru (her gün 18:23, ECB referans kuru) |
 | `prices.json`, `price-status.json` | Resmî bilet fiyatları ve kontrol durumu |
 | `scripts/` | Kuru güncelleyen, uçuş ve otel fiyatlarını çeken programlar ve testleri |
@@ -47,7 +48,16 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 - Hesaplayıcı: seçilen tarihe denk gelen hafta sonunun fiyatını gösterir, "Uçağı bütçeye ekle" ile toplama katar.
   Aktarmasız uçuş en ucuzdan en fazla %20 pahalıysa onu öne çıkarır.
 
-## Apify bütçesi (iki robot ortak)
+## Restoran robotu
+
+- Her başkentin merkezinde (`data/restoran-ayarlari.json` > `merkez`, `yaricap_km`) Google Maps'te restoran arar, Apify'daki hazır robot ile (`compass/crawler-google-places`).
+- Seçim: 2 uygun (şehrin en ucuz %35'i), 2 popüler (orta fiyatta en çok yorumlu, puan 4,5+), 2 lüks (şehrin ortanca fiyatının en az 1,8 katı). Hepsinde puan 4,4+ ve yeterli yorum; zincirler, barlar, caz kulüpleri, tekne turları elenir.
+- Kişi başı fiyat: Google kullanıcılarının bildirdiği aralığın ortası, ECB kuruyla euroya çevrilir.
+- Sonuç `data/restoranlar.json`, tüm adaylar `data/restoran-adaylari.json`.
+- Takvim: her ayın 3'ünde `yenile` (seçilenlerin puan/fiyat/açık bilgisini tazeler, kapananı değiştirir, ~1 $).
+  Elle: `kesif` (baştan arama, ~0,36 $/şehir), `sec` (kurallar değişince adaylardan yeniden seçim, ücretsiz).
+
+## Apify bütçesi (tüm robotlar ortak)
 
 - Robotlar çalışmadan önce Apify'ın kendi kullanım sayacını okur (`/users/me/limits`); harcama sınırı geçecekse kalan aramaları atlar.
 - Her çalışmanın gerçek maliyeti, çalışma öncesi ve sonrası sayaç farkıyla ölçülüp `data/otel-fiyatlari.json` > `olcumler` alanına yazılır.
