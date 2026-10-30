@@ -1,0 +1,38 @@
+name: Alan adı kontrolü
+# 72hgetaway.com'un DNS kayıtlarını ve sitenin açılıp açılmadığını kontrol eder, sonucu data/alan-adi-durum.txt'ye yazar.
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/alan-adi-kontrol.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Kontrol et
+        run: |
+          {
+            echo "Kontrol: $(date -u +%FT%TZ)  (deneme 1)"
+            for h in 72hgetaway.com www.72hgetaway.com; do
+              echo; echo "== $h"
+              echo "A:     $(dig +short A $h @8.8.8.8 | tr '\n' ' ')"
+              echo "CNAME: $(dig +short CNAME $h @8.8.8.8 | tr '\n' ' ')"
+              echo "NS:    $(dig +short NS 72hgetaway.com @8.8.8.8 | tr '\n' ' ')"
+              echo "HTTP:  $(curl -s -o /dev/null -w '%{http_code} -> %{redirect_url}' --max-time 20 http://$h/)"
+              echo "HTTPS: $(curl -s -o /tmp/p.html -w '%{http_code}' --max-time 20 https://$h/ 2>&1)  baslik: $(grep -o '<title>[^<]*' /tmp/p.html 2>/dev/null | head -1)"
+            done
+          } > data/alan-adi-durum.txt
+          cat data/alan-adi-durum.txt
+      - name: Kaydet
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/alan-adi-durum.txt
+          git commit -m "Alan adı kontrolü" || exit 0
+          git pull --rebase --autostash
+          git push
