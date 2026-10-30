@@ -6,6 +6,9 @@ name: Tablo aktarımı (Google E-Tablolar)
 on:
   schedule:
     - cron: "41 4 * * *"
+  push:
+    branches: [main]
+    paths: [data/tablo-ayar.json]
   workflow_dispatch:
     inputs:
       mod:

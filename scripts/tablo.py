@@ -638,6 +638,7 @@ def main():
             break
         tried.append(f"{u.split('?')[0]}: xlsx gelmedi (giriş sayfası)")
     if data is None:
+        save("data/tablo-rapor.json", {"tarih": datetime.now(timezone.utc).isoformat(timespec="seconds"), "islenen": [], "hatalar": ["Tablo indirilemedi: dosya 'Bağlantıya sahip olan herkes' ile paylaşılmamış olabilir", *tried], "konum_aranacak": []})
         raise SystemExit("Tablo indirilemedi. Google'da Paylaş > Genel erişim > 'Bağlantıya sahip olan herkes' (Görüntüleyen) seçili olmalı.\n" + "\n".join(tried))
     rep, touched, ok = import_(data)
     md = ["# Tablo aktarımı", "", f"Değişiklik: {len(rep.items)}, hata: {len(rep.errors)}.", ""]
