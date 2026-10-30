@@ -17,7 +17,7 @@ jobs:
       - name: Kontrol et
         run: |
           {
-            echo "Kontrol: $(date -u +%FT%TZ)  (deneme 1)"
+            echo "Kontrol: $(date -u +%FT%TZ)  (deneme 2)"
             for h in 72hgetaway.com www.72hgetaway.com; do
               echo; echo "== $h"
               echo "A:     $(dig +short A $h @8.8.8.8 | tr '\n' ' ')"
