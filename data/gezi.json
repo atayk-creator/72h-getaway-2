@@ -1,6 +1,6 @@
 {
  "aciklama": "Şehir turu ve ulaşım verisi. Fiyatlar yerel para biriminde (para), yetişkin. Konumlar Google Maps'ten (scripts/gezi-konum.mjs). Fiyatı null olan yerlerin fiyatı henüz doğrulanmadı.",
- "guncellendi": "2026-10-30",
+ "guncellendi": "2026-10-31",
  "sehirler": {
   "Dublin": {
    "para": "EUR",
@@ -1515,7 +1515,7 @@
      "sure_dk": 90,
      "fiyat": null,
      "fiyat_hs": null,
-     "fiyat_yazi": "Yenilenen müze 19 Kasım 2026'da açılıyor, yeni fiyatı teyit et (önceki günlük bilet 15 €)",
+     "fiyat_yazi": "Yeni müze 19 Kasım 2026'da açılıyor; yeni günlük bilet fiyatı henüz açıklanmadı (kapanış dönemi indirimli bilet 15 €, rehberli Sisi + İmparatorluk Daireleri 33 €, Sisi Pass 60 €)",
      "bilgi": "Habsburg'ların kış sarayı; Sisi Müzesi ek salonlarla 19 Kasım 2026'da yeniden açılıyor. Kasım sonrası rehberli turlu bilet 33 €.",
      "kaynak": "https://www.sisimuseum-hofburg.at/en/tickets/tickets-prices",
      "konum": [
@@ -2140,11 +2140,11 @@
      "tur": "Müze",
      "bolge": "gulbenkian",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 10,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; yeniden açılış sonrası güncel fiyatı resmî siteden teyit et",
+     "fiyat_yazi": "Yetişkin 10 €; pazar 14:00'ten sonra ücretsiz (Modern Sanat Merkezi kapalı)",
      "bilgi": "Mısır'dan Lalique'e uzanan özel koleksiyon, 18 aylık yenilemeden sonra Temmuz 2026'da yeniden açıldı; bahçesi de çok güzel. Salı kapalı, Cumartesi 21:00'e kadar açık.",
-     "kaynak": "https://www.timeout.pt/lisboa/pt/noticias/museu-gulbenkian-reabre-este-sabado-a-entrada-e-gratuita-ate-26-de-julho-071526",
+     "kaynak": "https://gulbenkian.pt/museu/en/tickets",
      "konum": [
       38.73781,
       -9.15355
@@ -2359,11 +2359,11 @@
      "tur": "Müze",
      "bolge": "ispanya",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 15,
      "fiyat_hs": null,
-     "fiyat_yazi": "Yaklaşık 13 € + 2 € zorunlu vestiyer (+ rezervasyon ücreti); fiyatı teyit et",
+     "fiyat_yazi": "Yetişkin 13 € + 2 € zorunlu rezervasyon = 15 € (günün son seansı 8 € + 2 €)",
      "bilgi": "Bernini heykelleri ve Caravaggio tabloları; giriş 2 saatlik dilimlerle ve rezervasyon zorunlu. Pazartesi kapalı.",
-     "kaynak": "https://thebettervacation.com/it/Roma/Sito-web-ufficiale-della-galleria-Borghese/",
+     "kaynak": "https://galleriaborghese.beniculturali.it/en/visita/info-biglietti/",
      "konum": [
       41.91421,
       12.49214
@@ -2448,11 +2448,11 @@
      "tur": "Saray",
      "bolge": "merkez",
      "sure_dk": 75,
-     "fiyat": null,
+     "fiyat": 12,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; tekil fiyatı teyit et. Saray + Arkeoloji Müzesi + St. Elmo'yu kapsayan Valletta Combo bileti 30 € (30 gün geçerli)",
+     "fiyat_yazi": "Yetişkin 12 €; Valletta Combo (Saray + Arkeoloji Müzesi + St. Elmo + MUŻA) 30 €",
      "bilgi": "Malta Şövalyeleri'nin sarayı; devlet salonları ve zırh koleksiyonu. Birden fazla Heritage Malta müzesi gezecekseniz Combo bilet avantajlı.",
-     "kaynak": "https://heritagemalta.mt/?p=94129",
+     "kaynak": "https://heritagemalta.mt/explore/the-grand-masters-palace/",
      "konum": [
       35.89848,
       14.51386
@@ -2490,11 +2490,11 @@
      "tur": "Kale",
      "bolge": "stelmo",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 10,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; tekil fiyatı teyit et (Valletta Combo 30 € içinde)",
+     "fiyat_yazi": "Yetişkin 10 € (Valletta Combo 30 € içinde)",
      "bilgi": "Yarımadanın ucundaki yıldız biçimli kale; 1565 Büyük Kuşatma ve 2. Dünya Savaşı sergileri. Bazı Pazar günleri 11:00'de In Guardia gösterisi var.",
-     "kaynak": "https://heritagemalta.mt/whats-on/in-guardia-fort-st-elmo-and-the-national-war-museum-2/",
+     "kaynak": "https://www.guidememalta.com/en/attraction/fort-st-elmo-national-war-museum",
      "konum": [
       35.90107,
       14.51885
@@ -2668,11 +2668,11 @@
      "tur": "Anıt",
      "bolge": "akropolis",
      "sure_dk": 150,
-     "fiyat": null,
+     "fiyat": 30,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, saatli online bilet; güncel fiyatı resmî siteden teyit et",
+     "fiyat_yazi": "Yetişkin 30 € (yıl boyu aynı, kış indirimi yok)",
      "bilgi": "Parthenon ve Erekhtheion ile antik dünyanın simgesi. Saatli giriş var; açılışta ya da kapanıştan önce gidin, kaygan mermer için düz tabanlı ayakkabı giyin.",
-     "kaynak": "https://hhticket.gr/",
+     "kaynak": "https://www.kidslovegreece.com/22017-entrance-prices-acropolis-practical-information/",
      "konum": [
       37.97153,
       23.72575
@@ -2689,11 +2689,11 @@
      "tur": "Müze",
      "bolge": "akropolis",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 20,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
+     "fiyat_yazi": "Yetişkin 20 € (yaz ve kış aynı)",
      "bilgi": "Akropolis'ten çıkan orijinal heykeller ve Parthenon frizleri; cam zeminden antik kazı alanı görülür. Üst kat kafeteryası Akropolis manzaralı.",
-     "kaynak": "https://www.theacropolismuseum.gr/en",
+     "kaynak": "https://archaeologicalmuseums.gr/en/museum/5df34af3deca5e2d79e8c1d1",
      "konum": [
       37.96845,
       23.72852
@@ -2731,11 +2731,11 @@
      "tur": "Antik kent",
      "bolge": "plaka",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 20,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
+     "fiyat_yazi": "Yetişkin 20 € (Agora alanı + Attalos Stoası müzesi, yaz ve kış aynı)",
      "bilgi": "Antik Atina'nın çarşısı ve meclis alanı; en iyi korunmuş Yunan tapınağı Hephaistos burada. Monastiraki'den yürüyerek girilir.",
-     "kaynak": "https://hhticket.gr/",
+     "kaynak": "https://archaeologicalmuseums.gr/en/museum/5df34af3deca5e2d79e8c180",
      "konum": [
       37.9749,
       23.72209
@@ -2816,11 +2816,11 @@
      "tur": "Anıt",
      "bolge": "syntagma",
      "sure_dk": 45,
-     "fiyat": null,
+     "fiyat": 12,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli (sesli rehber dahil); güncel fiyatı teyit et",
+     "fiyat_yazi": "Yetişkin 12 € (sesli rehber dahil)",
      "bilgi": "Tamamen mermerden yapılmış, 1896'daki ilk modern olimpiyatlara ev sahipliği yapan stadyum. Syntagma'dan Zeus Tapınağı önünden yürüyerek 15 dakika.",
-     "kaynak": "https://www.panathenaicstadium.gr/",
+     "kaynak": "https://www.panathenaicstadium.gr/?p=632",
      "konum": [
       37.96833,
       23.74111
@@ -2858,11 +2858,11 @@
      "tur": "Müze",
      "bolge": "arkeoloji",
      "sure_dk": 150,
-     "fiyat": null,
+     "fiyat": 20,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî siteden teyit et",
+     "fiyat_yazi": "Yetişkin 20 € (yıl boyu aynı); Kasım–Mart her ayın 1. ve 3. pazarı ücretsiz",
      "bilgi": "Agamemnon Maskesi, Artemision'un tunç Zeus/Poseidon heykeli ve Antikythera düzeneği ile dünyanın en zengin antik Yunan koleksiyonu. Omonia/Victoria metrosuna yakın.",
-     "kaynak": "https://www.namuseum.gr/en/",
+     "kaynak": "https://www.namuseum.gr/en/episkepsi",
      "konum": [
       37.98902,
       23.73276
@@ -2930,11 +2930,11 @@
      "tur": "Müze",
      "bolge": "djurgarden",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 269,
      "fiyat_hs": null,
-     "fiyat_yazi": "Dinamik fiyat, yetişkin yaklaşık 249–329 kr; online saatli bilet önerilir",
+     "fiyat_yazi": "Yetişkin 269–349 kr (döneme göre değişir, online saatli bilet)",
      "bilgi": "Kostümler, plaklar ve şarkı söyleyip dans edebileceğiniz interaktif bölümler. Nakit kabul edilmiyor, hafta sonu saatleri erken doluyor.",
-     "kaynak": "https://www.thetraveler.org/abba-museum-tickets-opening-hours-visitor-guide-2026/",
+     "kaynak": "https://abbathemuseum.com/en/prices-opening-hours",
      "konum": [
       59.32509,
       18.09678
@@ -3322,9 +3322,9 @@
      "sure_dk": 180,
      "fiyat": null,
      "fiyat_hs": null,
-     "fiyat_yazi": "Giriş 210 kr'dan başlar, tarihe göre değişir; oyuncaklar ayrıca ücretli",
+     "fiyat_yazi": "Giriş fiyatı tarihe (ve saate) göre değişir, oyuncaklar ayrı (Ride Pass); güncel fiyat Tivoli takviminden bakılmalı. Noel sezonu 13 Kasım'da açılıyor",
      "bilgi": "Işıklarla donanan 1843 yapımı lunapark ve Noel pazarı; 2026 sezonu 13 Kasım 2026–3 Ocak 2027. 24 Aralık genelde kapalı, tarihleri teyit et; akşam gidin.",
-     "kaynak": "https://www.storyhunt.io/articles/tivoli-christmas-market",
+     "kaynak": "https://www.tivoli.dk/en/practical-information/faq",
      "konum": [
       55.67366,
       12.56823
@@ -3476,11 +3476,11 @@
      "tur": "Manzara",
      "bolge": "merkez",
      "sure_dk": 30,
-     "fiyat": null,
+     "fiyat": 15,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 15 €",
      "bilgi": "Liman kıyısındaki dönme dolaptan Uspenski Katedrali ve takımadalar manzarası. Kapalı kabinler kışın da çalışır.",
-     "kaynak": "https://www.skywheel.fi/",
+     "kaynak": "https://skywheel.fi/en/pricing/",
      "konum": [
       60.16679,
       24.95944
@@ -3518,11 +3518,11 @@
      "tur": "Kilise",
      "bolge": "kampi",
      "sure_dk": 30,
-     "fiyat": null,
+     "fiyat": 8,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli giriş; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 8 €",
      "bilgi": "Kayaya oyulmuş, bakır kubbeli 1969 yapımı kilise; akustiği çok iyi. Düğün ve konserlerde ziyarete kapanabilir.",
-     "kaynak": "https://www.temppeliaukionkirkko.fi/",
+     "kaynak": "https://www.temppeliaukionkirkko.fi/index/suunnittelevierailusi.html",
      "konum": [
       60.17303,
       24.92524
@@ -3539,11 +3539,11 @@
      "tur": "Müze",
      "bolge": "kampi",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 18,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 18 €",
      "bilgi": "Finlandiya'nın ulusal sanat koleksiyonu; Gallen-Kallela ve Fin altın çağı resimleri. Merkez İstasyonu'nun hemen karşısında, pazartesi kapalı.",
-     "kaynak": "https://ateneum.fi/en/",
+     "kaynak": "https://ateneum.fi/en/opening-hours-and-tickets/",
      "konum": [
       60.17019,
       24.94414
@@ -3560,11 +3560,11 @@
      "tur": "Müze",
      "bolge": "kampi",
      "sure_dk": 75,
-     "fiyat": null,
+     "fiyat": 20,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 20 € online, 22 € gişede",
      "bilgi": "Yer altındaki çağdaş sanat müzesi; meydandaki kubbeli tavan pencereleri fotoğraf için çok popüler. Sergiye göre fiyat ve saatler değişir.",
-     "kaynak": "https://amosrex.fi/en/",
+     "kaynak": "https://amosrex.fi/en/tickets/",
      "konum": [
       60.17064,
       24.9365
@@ -3717,11 +3717,11 @@
      "tur": "Müze",
      "bolge": "toompea",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 16,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Tam bilet 16 €; yalnızca Bastiyon Tünelleri + Oyma Taş Müzesi 10 €",
      "bilgi": "15. yüzyıl topçu kulesi ve surların altındaki tüneller; tüneller rehberli turla gezilir. Turları önceden ayırtın, pazartesi kapalı olabilir.",
-     "kaynak": "https://linnamuuseum.ee/en/kiek-in-de-kok/",
+     "kaynak": "https://linnamuuseum.ee/en/kiek-in-de-kok/visitor-info/",
      "konum": [
       59.43469,
       24.74123
@@ -3761,7 +3761,7 @@
      "sure_dk": 120,
      "fiyat": null,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Ücretli; güncel fiyat resmî sitede kontrol edilmeli",
      "bilgi": "Estonya sanatının ana müzesi; Sovyet dönemi sanatı bölümü özellikle ilginç. Kadriorg Parkı'nın ucunda, pazartesi kapalı.",
      "kaynak": "https://kumu.ekm.ee/en/",
      "konum": [
@@ -3780,11 +3780,11 @@
      "tur": "Müze",
      "bolge": "kalamaja",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 22,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 22 € (hangar, geçici sergi, Suur Tõll ve Valvas gemileri)",
      "bilgi": "Beton hangarlarda denizaltı Lembit, buzkıran ve deniz uçakları; interaktif ve çiftler için de eğlenceli. Kalamaja'dan sahil yürüyüşüyle gidilir.",
-     "kaynak": "https://meremuuseum.ee/lennusadam/en/",
+     "kaynak": "https://meremuuseum.ee/lennusadam/en/visitor-information/tickets/",
      "konum": [
       59.45171,
       24.73837
@@ -3874,11 +3874,11 @@
      "tur": "Tarihi yapı",
      "bolge": "vecriga",
      "sure_dk": 60,
-     "fiyat": null,
+     "fiyat": 10,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 10 € (kahveli 12 €)",
      "bilgi": "Belediye Meydanı'ndaki gösterişli gotik-Hollanda cepheli lonca binası; dışı ücretsiz izlenir. İç mekânda tören salonları ve bodrum mahzenleri.",
-     "kaynak": "https://www.melngalvjunams.lv/en/",
+     "kaynak": "https://www.melngalvjunams.lv/en/visit-us/exposition-and-working-hours",
      "konum": [
       56.94717,
       24.10677
@@ -3896,11 +3896,11 @@
      "tur": "Kilise",
      "bolge": "vecriga",
      "sure_dk": 45,
-     "fiyat": null,
+     "fiyat": 5,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli giriş; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 5 € (kule ve org balkonu ayrı, rezervasyonlu)",
      "bilgi": "Baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev orgu. Öğle saatlerindeki kısa org konserlerini takip edin.",
-     "kaynak": "https://doms.lv/en",
+     "kaynak": "https://doms.lv/en/pages/47",
      "konum": [
       56.94908,
       24.10476
@@ -3917,11 +3917,11 @@
      "tur": "Manzara",
      "bolge": "vecriga",
      "sure_dk": 60,
-     "fiyat": null,
+     "fiyat": 9,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli (kule asansörü); güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 9 € (kilise + kule asansörü)",
      "bilgi": "Asansörle çıkılan kuleden eski şehir ve Daugava nehri manzarası. Kule bilgisi ve saatlerini gitmeden kontrol edin.",
-     "kaynak": "https://www.peterbaznica.riga.lv/",
+     "kaynak": "https://www.nomadotravel.app/en/attractions/st-peters-church",
      "konum": [
       56.94744,
       24.10865
@@ -4022,11 +4022,11 @@
      "tur": "Müze",
      "bolge": "merkez",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 7,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Kalıcı sergiler 7 €, Büyük Sergi Salonu 8 €, kombine bilet 12 €",
      "bilgi": "Restore edilmiş 1905 binasında Letonya ve Baltık resim koleksiyonu; çatı terası güzel. Pazartesi kapalı.",
-     "kaynak": "https://www.lnmm.gov.lv/en",
+     "kaynak": "https://lnmm.gov.lv/en/art-museum-riga-bourse/visit/tickets",
      "konum": [
       56.95583,
       24.11308
@@ -4064,11 +4064,11 @@
      "tur": "Müze",
      "bolge": "jugend",
      "sure_dk": 60,
-     "fiyat": null,
+     "fiyat": 5,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli; güncel fiyatı resmî sitede kontrol et",
+     "fiyat_yazi": "Yetişkin 5 € (1 Eki–30 Nis), yaz 9 € (1 May–30 Eyl)",
      "bilgi": "Dönemine uygun döşenmiş bir Art Nouveau apartman dairesi ve ünlü spiral merdiven. Küçük bir müze, pazartesi kapalı.",
-     "kaynak": "https://www.jugendstils.riga.lv/en",
+     "kaynak": "https://jugendstils.riga.lv/eng/bilesu_cenas/",
      "konum": [
       56.95961,
       24.10883
@@ -4377,11 +4377,11 @@
      "tur": "Saray",
      "bolge": "starowka",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 60,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "fiyat_yazi": "Kraliyet Rotası 60 zł; tam Şato Rotası 95 zł; Altın Bilet 110 zł",
      "bilgi": "Polonya krallarının sarayı, Plac Zamkowy'de. Haftada bir gün daimi sergi ücretsiz olabiliyor; resmî sitede kontrol edin.",
-     "kaynak": "https://www.zamek-krolewski.pl/",
+     "kaynak": "https://biuroprasowe.zamek-krolewski.pl/en/releases/new-sightseeing-routes-at-the-royal-castle-in-warsaw",
      "konum": [
       52.24774,
       21.01413
@@ -4441,11 +4441,11 @@
      "tur": "Müze",
      "bolge": "bati",
      "sure_dk": 150,
-     "fiyat": null,
+     "fiyat": 35,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "fiyat_yazi": "Yetişkin 35 zł; perşembe ücretsiz",
      "bilgi": "1944 ayaklanmasını interaktif anlatan, şehrin en etkileyici müzesi. Kapalı günü ve ücretsiz günü resmî sitede kontrol edin.",
-     "kaynak": "https://www.1944.pl/",
+     "kaynak": "https://www.1944.pl/en/article/visit-us,4993.html",
      "konum": [
       52.23239,
       20.98102
@@ -4462,11 +4462,11 @@
      "tur": "Müze",
      "bolge": "bati",
      "sure_dk": 150,
-     "fiyat": null,
+     "fiyat": 45,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "fiyat_yazi": "Yetişkin 45 zł (sesli rehber dahil); perşembe ücretsiz; salı kapalı",
      "bilgi": "Bin yıllık Yahudi tarihini anlatan ödüllü müze, eski Gettonun bulunduğu Muranów'da. Binanın mimarisi de görülmeye değer.",
-     "kaynak": "https://polin.pl/",
+     "kaynak": "https://www.polin.pl/en/planning-your-visit/admission",
      "konum": [
       52.2495,
       20.99348
@@ -4483,11 +4483,11 @@
      "tur": "Manzara",
      "bolge": "merkez",
      "sure_dk": 45,
-     "fiyat": null,
+     "fiyat": 30,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı teyit et",
+     "fiyat_yazi": "Yetişkin 30 zł (30. kat terası)",
      "bilgi": "Stalin'in 'hediyesi' gökdelenin 30. katındaki terastan şehrin panoraması. Akşamüstü ışıklar yanarken çıkın.",
-     "kaynak": "https://pkin.pl/",
+     "kaynak": "https://pkin.pl/en/viewing-terrace/",
      "konum": [
       52.23184,
       21.006
@@ -4547,11 +4547,11 @@
      "tur": "Saray",
      "bolge": "wilanow",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 60,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "fiyat_yazi": "Saray 60 zł (Kas–Mar), 70 zł (Nis–Eki); park 15 zł; perşembe ücretsiz",
      "bilgi": "'Polonya'nın Versay'ı' denen barok saray ve bahçeleri; merkezden 116 veya 180 otobüsüyle ~35 dk. Kış saatlerini kontrol edin.",
-     "kaynak": "https://www.wilanow-palac.pl/",
+     "kaynak": "https://wilanow-palac.pl/en/tickets",
      "konum": [
       52.16517,
       21.09051
@@ -4862,11 +4862,11 @@
      "tur": "Müze",
      "bolge": "merkez",
      "sure_dk": 60,
-     "fiyat": null,
+     "fiyat": 8,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "fiyat_yazi": "Yetişkin 8 € (kule dahil); yalnız kule 4 €",
      "bilgi": "Şehrin en eski müzesi; kulesinden Ana Meydan manzarası görülür. Pazartesi kapalı olabilir, saatleri kontrol edin.",
-     "kaynak": "https://muzeum.bratislava.sk/",
+     "kaynak": "https://www.visitbratislava.com/wp-content/uploads/2026/04/BC-Guide-2026-VIII-web.pdf",
      "konum": [
       48.14391,
       17.10919
@@ -4883,11 +4883,11 @@
      "tur": "Saray",
      "bolge": "merkez",
      "sure_dk": 45,
-     "fiyat": null,
+     "fiyat": 5,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı resmî sitede teyit et",
+     "fiyat_yazi": "Yetişkin 5 €",
      "bilgi": "Pembe klasisist saray; Ayna Salonu ve 17. yüzyıl İngiliz duvar halıları görülür.",
-     "kaynak": "https://muzeum.bratislava.sk/",
+     "kaynak": "https://bratislava.sk/en/city-of-bratislava/transparent-city/city-property/primates-palace/visit-us",
      "konum": [
       48.14391,
       17.10966
@@ -4926,11 +4926,11 @@
      "tur": "Kilise",
      "bolge": "merkez",
      "sure_dk": 30,
-     "fiyat": null,
+     "fiyat": 5,
      "fiyat_hs": null,
-     "fiyat_yazi": "Küçük bir ziyaret ücreti alınıyor, güncel fiyatı teyit et",
+     "fiyat_yazi": "Yetişkin 5 €",
      "bilgi": "Macar krallarının 300 yıl taç giydiği gotik katedral. Ayin saatlerinde turist ziyareti yapılamaz.",
-     "kaynak": "https://visitbratislava.sk/",
+     "kaynak": "https://www.visitbratislava.com/wp-content/uploads/2026/04/BC-Guide-2026-VIII-web.pdf",
      "konum": [
       48.14203,
       17.10477
@@ -4989,11 +4989,11 @@
      "tur": "Kale",
      "bolge": "kale",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 14,
      "fiyat_hs": null,
-     "fiyat_yazi": "Avlu ve bahçeler ücretsiz; müze bileti ücretli, fiyatı teyit et",
+     "fiyat_yazi": "Müze bileti 14 € (iç mekân, hazine, kuzey surları); avlu ve bahçeler ücretsiz",
      "bilgi": "Tepedeki beyaz kaleden Tuna ve Avusturya manzarası. İçinde Slovak Ulusal Müzesi'nin tarih sergisi var.",
-     "kaynak": "https://www.snm.sk/",
+     "kaynak": "https://www.snm.sk/en/museums/museum-of-history/museum-of-history/visit/admission-fees",
      "konum": [
       48.14211,
       17.10023
@@ -5010,11 +5010,11 @@
      "tur": "Manzara",
      "bolge": "nehir",
      "sure_dk": 45,
-     "fiyat": null,
+     "fiyat": 11.9,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, güncel fiyatı teyit et (restoranda yemek yiyenlere ücretsiz olabilir)",
+     "fiyat_yazi": "Yetişkin 11,90 € (hafta içi sabah 9,90 €); restoranda ana yemek alana ücretsiz",
      "bilgi": "SNP Köprüsü'nün 95 m'deki 'UFO'sundan şehir ve kale manzarası; gün batımında gidin.",
-     "kaynak": "https://visitbratislava.sk/",
+     "kaynak": "https://thirdeyetraveller.com/?p=79145",
      "konum": [
       48.13673,
       17.1046
@@ -5031,11 +5031,11 @@
      "tur": "Kale",
      "bolge": "devin",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 6,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli, kış fiyat ve saatlerini teyit et",
+     "fiyat_yazi": "Yetişkin 6 € (Kas–Mar), 8 € (Nis–Eki); kışın kapalı alanlar/sergiler kapalı",
      "bilgi": "Tuna ve Morava'nın birleştiği kayalıktaki harabe kale; merkezden 29 numaralı otobüsle ~25 dk. Kışın saatleri kısalır.",
-     "kaynak": "https://muzeum.bratislava.sk/",
+     "kaynak": "https://www.visitbratislava.com/wp-content/uploads/2026/04/BC-Guide-2026-VIII-web.pdf",
      "konum": [
       48.17389,
       16.97812
@@ -5456,11 +5456,11 @@
      "tur": "Manzara",
      "bolge": "gornjigrad",
      "sure_dk": 30,
-     "fiyat": null,
+     "fiyat": 3,
      "fiyat_hs": null,
-     "fiyat_yazi": "Küçük bir ücret (güncel tutarı yerinde teyit et)",
+     "fiyat_yazi": "Yetişkin 3 €",
      "bilgi": "13. yüzyıl kulesinden Aşağı Şehir manzarası; Grič topu her gün tam 12:00'de ateşlenir. Hemen yanındaki füniküler (0,66 €) ile çıkın.",
-     "kaynak": "https://loudavymkrokem.cz/en/zagreb-croatia-guide/",
+     "kaynak": "https://gkd.hr/en/stronglotrscak-tower-strong/",
      "konum": [
       45.81462,
       15.97332
@@ -5500,7 +5500,7 @@
      "sure_dk": 45,
      "fiyat": null,
      "fiyat_hs": null,
-     "fiyat_yazi": "Fiyatı resmi sitede teyit et",
+     "fiyat_yazi": "Fiyatı resmî sitede teyit et",
      "bilgi": "Dünyanın ilk naif sanat müzelerinden; Hlebine okulu ressamlarının cam altı resimleri. Hafta içi 09:00–17:00, cumartesi 10:00–14:00, pazar kapalı.",
      "kaynak": "https://hmnu.hr",
      "konum": [
@@ -5592,11 +5592,11 @@
      "tur": "Saray",
      "bolge": "parlamento",
      "sure_dk": 120,
-     "fiyat": null,
+     "fiyat": 85,
      "fiyat_hs": null,
-     "fiyat_yazi": "Sadece rehberli tur, ücretli (güncel fiyatı resmi sitede teyit et)",
+     "fiyat_yazi": "Standart rehberli tur yetişkin 85 lei",
      "bilgi": "Dünyanın en büyük idari binalarından biri; Çavuşesku döneminin devasa simgesi. Pasaportla girilir, turu önceden rezerve edin.",
-     "kaynak": null,
+     "kaynak": "https://cic.cdep.ro//programe-si-tarife-de-vizitare.php?l=en",
      "konum": [
       44.4275,
       26.08735
@@ -5681,7 +5681,7 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Dış görünüm ücretsiz; iç ziyaret/konser ücretli (fiyatı teyit et)",
      "bilgi": "Kubbeli neoklasik konser salonu, şehrin en zarif binası. İçini görmenin en iyi yolu bir akşam konserine bilet almak.",
-     "kaynak": null,
+     "kaynak": "http://rezervari.fge.org.ro/ro/ateneul-roman/vizitare-ateneu.html",
      "konum": [
       44.44133,
       26.09732
@@ -5722,9 +5722,9 @@
      "sure_dk": 90,
      "fiyat": null,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli (güncel fiyatı resmi sitede teyit et)",
+     "fiyat_yazi": "Ücretli; ayın ilk çarşambası ücretsiz (fiyatı teyit et)",
      "bilgi": "Eski Kraliyet Sarayı'nda Romen ve Avrupa sanatı koleksiyonları. Pazartesi ve salı genelde kapalı; gitmeden günleri kontrol edin.",
-     "kaynak": null,
+     "kaynak": "https://mnar.arts.ro/329-romana/tarife",
      "konum": [
       44.43937,
       26.09587
@@ -5741,11 +5741,11 @@
      "tur": "Müze",
      "bolge": "herastrau",
      "sure_dk": 90,
-     "fiyat": null,
+     "fiyat": 40,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli (güncel fiyatı resmi sitede teyit et)",
+     "fiyat_yazi": "Yetişkin 40 lei; pazartesi–salı %50 indirimli (20 lei)",
      "bilgi": "Romanya'nın dört bir yanından taşınmış ahşap evler, kiliseler ve değirmenlerle açık hava müzesi. Herăstrău Parkı'nın kenarında.",
-     "kaynak": null,
+     "kaynak": "https://muzeul-satului.ro/en/acces-muzeu/bilete/",
      "konum": [
       44.47235,
       26.07648
@@ -5919,11 +5919,11 @@
      "tur": "Müze",
      "bolge": "merkez",
      "sure_dk": 75,
-     "fiyat": null,
+     "fiyat": 6,
      "fiyat_hs": null,
-     "fiyat_yazi": "Ücretli (yetişkin fiyatını teyit et); ayın son pazarı ücretsiz",
+     "fiyat_yazi": "Yetişkin 6 €; ayın son pazarı ücretsiz",
      "bilgi": "Eski Büyük Cami binasında Trakya altınları ve Roma eserleri. Salı–pazar 10:00–18:00, pazartesi kapalı.",
-     "kaynak": "https://loudavymkrokem.cz/en/sofia-bulgaria-things-to-do/",
+     "kaynak": "https://naim.bg/en/content/category/300/80/",
      "konum": [
       42.69638,
       23.32459

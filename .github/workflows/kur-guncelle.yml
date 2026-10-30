@@ -1,9 +1,10 @@
 name: Kur güncelle (Euro/TL, Euro/Forint)
-# Her gün 18:23'te (İstanbul) çalışır. ECB referans kurunu iş günlerinde ~17:00 (İstanbul) yayımlar;
+# Her gün 18:23 ve yedek olarak 06:47 (İstanbul) çalışır. ECB referans kurunu iş günlerinde ~17:00 (İstanbul) yayımlar;
 # hafta sonu ve tatillerde yeni kur olmadığı için "değişiklik yok" der ve hiçbir şey yazmaz.
 on:
   schedule:
     - cron: "23 15 * * *"
+    - cron: "47 3 * * *"
   workflow_dispatch:
 permissions:
   contents: write
