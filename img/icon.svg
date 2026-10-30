@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#0F2A43"/>
+<rect x="56" y="140" width="400" height="232" rx="28" fill="#F4A62A"/>
+<line x1="56" y1="306" x2="456" y2="306" stroke="#0F2A43" stroke-width="5" stroke-dasharray="3 12" stroke-linecap="round" opacity=".55"/>
+<text x="256" y="272" text-anchor="middle" font-family="Liberation Sans,Arial,sans-serif" font-weight="800" font-size="150" fill="#0F2A43" letter-spacing="-5">72H</text>
+<text x="256" y="350" text-anchor="middle" font-family="DejaVu Sans Mono,monospace" font-weight="700" font-size="30" fill="#0F2A43" letter-spacing="6">GETAWAY</text></svg>

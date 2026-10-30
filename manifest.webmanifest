@@ -1,0 +1,16 @@
+{
+  "name": "72h Getaway · Hafta Sonu Bütçe Hesaplayıcı",
+  "short_name": "72h Getaway",
+  "description": "İstanbul'dan 26 Avrupa başkentine hafta sonu kaçamağı: gerçek otel, uçak, restoran ve gezi fiyatlarıyla bütçe ve tur planı.",
+  "lang": "tr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FBF6EC",
+  "theme_color": "#0F2A43",
+  "icons": [
+    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
