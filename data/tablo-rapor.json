@@ -1,0 +1,10 @@
+{
+ "tarih": "2026-10-30T22:05:11+00:00",
+ "islenen": [],
+ "hatalar": [
+  "Tablo indirilemedi: dosya 'Bağlantıya sahip olan herkes' ile paylaşılmamış olabilir",
+  "https://docs.google.com/spreadsheets/d/1G3aIztpZHaoDdlsxor6TYZPoYelW9IGE/export: HTTP Error 401: Unauthorized",
+  "https://drive.google.com/uc: xlsx gelmedi (giriş sayfası)"
+ ],
+ "konum_aranacak": []
+}
