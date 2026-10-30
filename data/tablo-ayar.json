@@ -1,4 +1,4 @@
 {
- "aciklama": "Google E-Tablolar bağlantısı. Dosya > Paylaş > Web'de yayınla > Tüm doküman + Microsoft Excel (.xlsx) > Yayınla ile çıkan bağlantı buraya yazılır. Boşsa robot bir şey yapmaz.",
- "url": ""
+ "aciklama": "Google E-Tablolar bağlantısı. Tablonun kendi bağlantısı (Paylaş > Genel erişim > Bağlantıya sahip olan herkes, Görüntüleyen) ya da 'Web'de yayınla' .xlsx bağlantısı olabilir. Boşsa robot bir şey yapmaz.",
+ "url": "https://docs.google.com/spreadsheets/d/1G3aIztpZHaoDdlsxor6TYZPoYelW9IGE/edit"
 }

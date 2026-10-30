@@ -600,6 +600,19 @@ def import_(data_bytes):
     return rep, touched, True
 
 
+def download_urls(url):
+    """Kabul edilen bağlantılar: 'Web'de yayınla' (.../d/e/.../pub?output=xlsx) ya da tablonun/dosyanın kendi bağlantısı
+    (docs.google.com/spreadsheets/d/<kimlik>/..., drive.google.com/file/d/<kimlik>/...). Kendi bağlantısında dosya
+    'Bağlantıya sahip olan herkes görüntüleyebilir' olarak paylaşılmış olmalı."""
+    if re.match(r"^https://docs\.google\.com/spreadsheets/d/e/[\w-]+/pub\?output=xlsx$", url):
+        return [url]
+    m = re.match(r"^https://(?:docs\.google\.com/spreadsheets|drive\.google\.com/file)/d/([\w-]{20,})", url)
+    if not m:
+        raise SystemExit("Tablo bağlantısı tanınmadı: Google E-Tablolar ya da Drive bağlantısı olmalı")
+    i = m.group(1)
+    return [f"https://docs.google.com/spreadsheets/d/{i}/export?format=xlsx", f"https://drive.google.com/uc?export=download&id={i}"]
+
+
 def main():
     mode = (sys.argv[1] if len(sys.argv) > 1 else "ice").strip()
     if mode == "disa":
@@ -611,13 +624,21 @@ def main():
     if not url:
         print("Tablo bağlantısı yok (data/tablo-ayar.json > url). Aktarma atlandı.")
         return
-    if not re.match(r"^https://docs\.google\.com/spreadsheets/d/e/[\w-]+/pub\?output=xlsx$", url):
-        raise SystemExit("Tablo bağlantısı beklenen biçimde değil: https://docs.google.com/spreadsheets/d/e/.../pub?output=xlsx")
-    req = urllib.request.Request(url, headers={"User-Agent": "72h-getaway-tablo-robotu"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        data = r.read()
-    if not data.startswith(b"PK"):
-        raise SystemExit("İndirilen dosya .xlsx değil (tablo yayında mı? 'Web'de yayınla' > .xlsx seçili mi?)")
+    data, tried = None, []
+    for u in download_urls(url):
+        try:
+            req = urllib.request.Request(u, headers={"User-Agent": "72h-getaway-tablo-robotu"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                body = r.read()
+        except Exception as e:  # noqa: BLE001
+            tried.append(f"{u.split('?')[0]}: {e}")
+            continue
+        if body.startswith(b"PK"):
+            data = body
+            break
+        tried.append(f"{u.split('?')[0]}: xlsx gelmedi (giriş sayfası)")
+    if data is None:
+        raise SystemExit("Tablo indirilemedi. Google'da Paylaş > Genel erişim > 'Bağlantıya sahip olan herkes' (Görüntüleyen) seçili olmalı.\n" + "\n".join(tried))
     rep, touched, ok = import_(data)
     md = ["# Tablo aktarımı", "", f"Değişiklik: {len(rep.items)}, hata: {len(rep.errors)}.", ""]
     md += ["## İşlenenler", *[f"- {x}" for x in rep.items], ""] if rep.items else ["Tabloda yeni değişiklik yok.", ""]
