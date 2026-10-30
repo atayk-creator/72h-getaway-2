@@ -1,14 +1,14 @@
-Kontrol: 2026-10-30T23:01:41Z  (deneme 1)
+Kontrol: 2026-10-30T23:45:38Z  (deneme 2)
 
 == 72hgetaway.com
-A:     185.199.111.153 185.199.109.153 185.199.110.153 185.199.108.153 
+A:     185.199.109.153 185.199.108.153 185.199.110.153 185.199.111.153 
 CNAME: 
-NS:    ns68.domaincontrol.com. ns67.domaincontrol.com. 
+NS:    ns67.domaincontrol.com. ns68.domaincontrol.com. 
 HTTP:  200 -> 
 HTTPS: 000  baslik: 
 
 == www.72hgetaway.com
-A:     atayk-creator.github.io. 185.199.109.153 185.199.108.153 185.199.111.153 185.199.110.153 
+A:     atayk-creator.github.io. 185.199.109.153 185.199.110.153 185.199.111.153 185.199.108.153 
 CNAME: atayk-creator.github.io. 
 NS:    ns67.domaincontrol.com. ns68.domaincontrol.com. 
 HTTP:  301 -> http://72hgetaway.com/
