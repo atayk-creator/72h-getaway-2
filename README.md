@@ -16,6 +16,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 | `data.json` | Euro/TL, euro/forint ve diğer kurlar (her gün 18:23, ECB referans kuru) |
 | `data/gezi.json` | 26 şehrin gezi yerleri ve toplu taşıma fiyatları |
 | `prices.json`, `price-status.json` | Resmî bilet fiyatları ve kontrol durumu |
+| `tablo/72h-getaway-veri.xlsx`, `data/tablo-*.json` | Google E-Tablolar ile elle düzenleme (aşağıda) |
 | `scripts/` | Kuru güncelleyen, uçuş ve otel fiyatlarını çeken programlar ve testleri |
 | `.github/workflows/` | Otomatik çalışan görevler |
 | `.nojekyll` | GitHub'ın siteyi bozmadan yayınlaması için boş dosya |
@@ -66,6 +67,20 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 - Hesaplayıcı: ulaşım bütçesi = havalimanı gidiş-dönüş + kalınan günler için en ucuz seçenek (günde 2 yolculuk);
   gezi bütçesi = programdaki yerlerin biletleri (fiyatı bilinmeyenler için şehrin ortanca bilet fiyatı).
 - Para birimleri `data.json` > `kurlar` (ECB, her gün) ile euroya çevrilir.
+
+## Google E-Tablolar ile elle düzenleme
+
+- Tablo: `tablo/72h-getaway-veri.xlsx` (sekmeler: Okubeni, Oteller, Restoranlar, Gezi, Ulaşım). Google Drive'a yüklenip Google E-Tablolar olarak açılır.
+- Bağlantı: Dosya > Paylaş > Web'de yayınla > Tüm doküman + Microsoft Excel (.xlsx). Çıkan bağlantı `data/tablo-ayar.json` > `url` alanına yazılır.
+- Robot (`scripts/tablo.py`, Actions > "Tablo aktarımı") her sabah 07:41'de tabloyu okur ve SADECE son okumadan bu yana değişen hücreleri işler.
+  Karşılaştırma için son görülen tablo `data/tablo-son.json`'da tutulur; rapor `data/tablo-rapor.json`'a ve Actions özetine yazılır.
+- Kurallar: satır silmek bir şey silmez, çıkarmak için `Aktif` = HAYIR. Yeni satırda `Kimlik` boş bırakılır.
+  Değiştirilen ya da eklenen restoran kilitlenir (`kilit: true`), restoran robotu ona dokunmaz; HAYIR yapılanlar `haric` listesine girer, bir daha seçilmez.
+  Otelin "Google'da aranacak ad"ı değişirse eski eşleşme silinir, robot yeniden arar. Yeni ya da aranacak adı değişen gezi yerinin konumunu aynı görev bulur.
+  Hatalı hücre (geçersiz kategori, sayı olmayan fiyat) işlenmez, düzeltilene kadar her gün raporlanır.
+- Robotların eklediği yeni restoranları tabloda görmek için: Actions > "Tablo aktarımı" > Run workflow > "yeni tablo"; üretilen dosya
+  Google'da Dosya > İçe aktar > Yükle > "E-tabloyu değiştir" ile aynı tabloya yüklenir (bağlantı değişmez).
+- Testler: `python3 scripts/test_tablo.py`
 
 ## Apify bütçesi (tüm robotlar ortak)
 

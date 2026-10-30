@@ -175,8 +175,17 @@ export async function run({ token, cfg, state = emptyRestaurants(), cands = { se
       list = [...byId.values()];
       cands.sehirler[city.sehir] = { guncellendi: t, adaylar: list };
     }
-    if (!list.length) return;
-    const prev = ((state.sehirler[city.sehir] || {}).restoranlar || []).map((x) => x.id);
+    // Tablodan elle düzenlenen (kilit) restoranlar olduğu gibi kalır; Aktif=HAYIR yapılanlar (haric) bir daha seçilmez.
+    const prevCity = state.sehirler[city.sehir] || {};
+    const haric = new Set(prevCity.haric || []);
+    const locked = (prevCity.restoranlar || []).filter((x) => x.kilit).map((x) => {
+      const c = list.find((c) => c.id === x.id);
+      return c ? { ...x, puan: c.puan ?? x.puan, yorum: c.yorum ?? x.yorum, konum: x.konum || c.konum || null, semt: x.semt || c.semt || null } : x;
+    });
+    const lockedIds = new Set(locked.map((x) => x.id));
+    list = list.filter((c) => !haric.has(c.id) && !lockedIds.has(c.id));
+    if (!list.length && !locked.length) return;
+    const prev = (prevCity.restoranlar || []).map((x) => x.id);
     let sel;
     if (mode === "yenile" && prev.length) {
       // yenilemede seçim korunur; sadece kapanan ya da şartı kaybedenler değiştirilir
@@ -192,11 +201,15 @@ export async function run({ token, cfg, state = emptyRestaurants(), cands = { se
       }
       sel = { ...full, secilen: TIERS.flatMap((tier) => filled.filter((x) => x.seviye === tier).sort((a, b) => a.kisiBasiEur - b.kisiBasiEur)) };
     } else sel = selectRestaurants(list, cfg);
+    sel = { ...sel, secilen: TIERS.flatMap((tier) => {
+      const L = locked.filter((x) => x.seviye === tier);
+      return [...L, ...sel.secilen.filter((x) => x.seviye === tier).slice(0, Math.max(0, cfg.secim[tier] - L.length))].sort((a, b) => a.kisiBasiEur - b.kisiBasiEur);
+    }) };
     const nowIds = sel.secilen.map((x) => x.id);
     if (prev.length) for (const id of prev) if (!nowIds.includes(id)) report.degisen.push(`${city.sehir}: ${(state.sehirler[city.sehir].restoranlar.find((x) => x.id === id) || {}).ad} çıkarıldı`);
     const total = TIERS.reduce((a, k) => a + cfg.secim[k], 0);
     if (sel.secilen.length < total) report.eksik.push(`${city.sehir}: ${sel.secilen.length}/${total}`);
-    state.sehirler[city.sehir] = { guncellendi: t, esik: sel.esik, aday: sel.aday, restoranlar: sel.secilen.map(({ kategoriler, arama, kapali, ...x }) => x) };
+    state.sehirler[city.sehir] = { guncellendi: t, esik: sel.esik, aday: sel.aday, restoranlar: sel.secilen.map(({ kategoriler, arama, kapali, ...x }) => x), ...(haric.size ? { haric: [...haric] } : {}) };
     report.sehir++; report.aday += sel.aday; report.secilen += sel.secilen.length;
   });
   if (mode !== "sec") {

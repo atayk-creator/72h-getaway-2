@@ -108,4 +108,22 @@ const hs = { ...hotels.ayarlar, aylik_butce_usd: 45 };
   const full = async (url, init = {}) => { if (url.includes("/users/me/limits")) return res({ data: { current: { monthlyUsageUsd: 44.99 }, limits: { maxMonthlyUsageUsd: 45 } } }); return fake({ rowsFor: () => raw })(url, init); };
   await assert.rejects(() => run({ token: TOKEN, cfg, hotelSettings: hs, mode: "kesif", only: ["Paris"], fetchImpl: full, sleep: async () => {} }), /bütçe/);
   console.log("ok 9: sec modu, kur yedeği, bütçe"); }
+
+// 10) tablodan kilitlenen restoran korunur, haric olan seçilmez
+{ const cands = { sehirler: { "Budapeşte": { adaylar: sample } } };
+  const first = await run({ token: "", cfg, cands, mode: "sec", only: ["Budapeşte"], fetchImpl: fake({ seen: [], rowsFor: () => [] }) });
+  const st = structuredClone(first.state), b = st.sehirler["Budapeşte"];
+  const lockedOne = { ...b.restoranlar[0], kisiBasiEur: 99, fiyatYazi: "elle", seviye: "luks", kilit: true };
+  const elle = { id: "elle-benim-yerim", ad: "Benim Yerim", kisiBasiEur: 12, seviye: "uygun", kilit: true, puan: null, yorum: 0 };
+  const outId = b.restoranlar[1].id;
+  b.restoranlar = [lockedOne, elle, ...b.restoranlar.slice(2)]; b.haric = [outId];
+  const out = await run({ token: "", cfg, state: st, cands, mode: "sec", only: ["Budapeşte"], fetchImpl: fake({ seen: [], rowsFor: () => [] }) });
+  const r = out.state.sehirler["Budapeşte"];
+  const L = r.restoranlar.find((x) => x.id === lockedOne.id);
+  assert.ok(L && L.kisiBasiEur === 99 && L.seviye === "luks" && L.kilit, "kilitli değerler korunur");
+  assert.ok(r.restoranlar.some((x) => x.id === "elle-benim-yerim"), "elle eklenen kalır");
+  assert.ok(!r.restoranlar.some((x) => x.id === outId), "haric seçilmez");
+  assert.deepEqual(r.haric, [outId]);
+  for (const t of ["uygun", "populer", "luks"]) assert.ok(r.restoranlar.filter((x) => x.seviye === t).length <= Math.max(cfg.secim[t], r.restoranlar.filter((x) => x.seviye === t && x.kilit).length));
+  console.log("ok 10: kilit ve haric"); }
 console.log("TÜM TESTLER GEÇTİ");

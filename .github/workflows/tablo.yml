@@ -1,0 +1,60 @@
+name: Tablo aktarımı (Google E-Tablolar)
+# Her sabah 07:41 (İstanbul): yayınlanmış Google tablosunu okur, SADECE değişen hücreleri verilere işler.
+# Yeni ya da aranacak adı değişen gezi yerlerinin konumunu Google Maps'ten bulur (~0,005 $/yer).
+# "yeni tablo" = önce aktarır, sonra güncel verilerden tablo/72h-getaway-veri.xlsx dosyasını yeniden üretir
+# (Google'da Dosya > İçe aktar > Yükle > "E-tabloyu değiştir" ile aynı tabloya yüklenir, bağlantı değişmez).
+on:
+  schedule:
+    - cron: "41 4 * * *"
+  workflow_dispatch:
+    inputs:
+      mod:
+        description: "aktar = tablodaki değişiklikleri işle, yeni tablo = aktar + güncel tabloyu üret"
+        type: choice
+        options: [aktar, yeni tablo]
+        default: aktar
+permissions:
+  contents: write
+concurrency:
+  group: apify-robotlari
+  cancel-in-progress: false
+jobs:
+  tablo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl==3.1.5
+      - name: Testler
+        run: python scripts/test_tablo.py
+      - name: Tabloyu aktar
+        id: aktar
+        run: python scripts/tablo.py ice
+      - uses: actions/setup-node@v4
+        if: steps.aktar.outputs.konum != ''
+        with:
+          node-version: 22
+      - name: Yeni yerlerin konumunu bul
+        if: steps.aktar.outputs.konum != ''
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          SEHIR: ${{ steps.aktar.outputs.konum }}
+        run: node scripts/gezi-konum.mjs
+      - name: Güncel tabloyu üret
+        if: github.event.inputs.mod == 'yeni tablo'
+        run: python scripts/tablo.py disa
+      - name: Depoya kaydet
+        if: always()
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ tablo/
+          if git diff --cached --quiet; then echo "Değişiklik yok."; exit 0; fi
+          git commit -m "Tablodaki değişiklikler işlendi"
+          git pull --rebase --autostash
+          git push
