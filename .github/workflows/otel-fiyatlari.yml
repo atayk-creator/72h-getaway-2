@@ -15,6 +15,10 @@ on:
         description: "Sadece bu şehir(ler) (virgülle, örnek: Paris,Roma). Boş = hepsi"
         type: string
         default: ""
+      pazar:
+        description: "Pazar denemesi (A/B): örnek nl, de, us. Boş = data/hotels.json'daki pazar. Doluysa sonuç sadece özete yazılır, veriler değişmez"
+        type: string
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -38,6 +42,7 @@ jobs:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           MOD: ${{ github.event.inputs.mod || 'takvim' }}
           SEHIR: ${{ github.event.inputs.sehir || '' }}
+          PAZAR: ${{ github.event.inputs.pazar || '' }}
         run: node scripts/otel-fiyatlari.mjs
       - name: Sonuçları depoya kaydet
         if: always()

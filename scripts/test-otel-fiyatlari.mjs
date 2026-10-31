@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import {
   istanbulToday, upcomingWeekends, planFor, estimateMonthly, billingPeriod, actorInput, matchRows, toRecord, nameScore, isTrusted,
-  mergeWeekend, archivePast, pruneRemoved, nameOk, validateRecords, emptyState, splitState, joinState, citySlug, run, toMarkdown, runActor, PLAN_RATES,
+  mergeWeekend, archivePast, pruneRemoved, linkTax, taxInclusive, taxLike, usable, isSuspicious, historyEntry, nameOk, validateRecords, emptyState, splitState, joinState, citySlug, run, toMarkdown, runActor, PLAN_RATES,
 } from "./otel-fiyatlari.mjs";
 
 const doc = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
@@ -87,18 +87,74 @@ console.log("ok 5: fatura dönemi");
   for (const s of ["Super.com", "Amimir.com", "Clicktrip.com", "trivago DEALS", "KAYAK.com", "Vio.com", "Hotelscombined.com", "Tripening Hotels", "?", ""]) assert.ok(!isTrusted({ site: s }, T), s);
   assert.ok(isTrusted({ site: "Hotel Rum", resmi: true }, T), "otelin kendi sitesi"); console.log("ok 8: tanınmış siteler"); }
 
-// 9) kayıt: tanınmış en ucuz öne, daha ucuz bilinmeyen site ayrı; tanınmış yoksa en ucuz; dolu/bulunamadı; konum
+// 9) kayıt: tanınmış en ucuz öne, daha ucuz bilinmeyen site ayrı; tanınmış yoksa "dogrulanamadi"; dolu/bulunamadı; konum
 { const row = { recordType: "hotel", hotelId: "G1", currency: "EUR", totalPrice: 300, url: "https://g/1", deal: "15% less than usual", rating: 4.6, hotelClass: 4, latitude: 47.49812345, longitude: 19.0512345,
     bookingOptions: [{ provider: "Super.com", totalStayPrice: 251, bookingUrl: "https://s" }, { provider: "Booking.com", totalStayPrice: 280, bookingUrl: "https://b" }, { provider: "Hotel Rum", totalStayPrice: 290, isOfficialSite: true, bookingUrl: "https://r" }, { provider: "Expedia.com", nightlyPrice: 145 }, { provider: "Bozuk", totalStayPrice: "?" }] };
   const r = toRecord(row, 2, "EUR", S.guvenilir_siteler);
-  assert.equal(r.durum, "fiyat"); assert.equal(r.fiyat, 280); assert.equal(r.gecelik, 140); assert.equal(r.site, "Booking.com"); assert.equal(r.link, "https://b"); assert.equal(r.guvenilir, true);
-  assert.deepEqual(r.enUcuz, { fiyat: 251, site: "Super.com", link: "https://s" }); assert.equal(r.resmiSiteFiyat, 290); assert.equal(r.googleFiyat, 300); assert.deepEqual(r.konum, [47.49812, 19.05123]);
+  assert.equal(r.durum, "fiyat"); assert.equal(r.site, "Booking.com"); assert.equal(r.link, "https://b"); assert.equal(r.guvenilir, true);
+  // c) bağlantıda vergi yok, Google'ın vergili toplamı (300) 280'in %3-45 üstünde: 300 kullanılır
+  assert.equal(r.fiyat, 300); assert.equal(r.fiyatVergisiz, 280); assert.equal(r.vergi, "eklendi"); assert.equal(r.gecelik, 150);
+  // en ucuz site ve otelin kendi sitesi aynı oranla vergili hale getirilir
+  assert.equal(r.enUcuz.site, "Super.com"); assert.equal(r.enUcuz.fiyat, 268.93); assert.equal(r.enUcuz.fiyatVergisiz, 251); assert.equal(r.enUcuz.vergi, "eklendi");
+  assert.equal(r.resmiSiteFiyat, 310.71); assert.equal(r.googleFiyat, 300); assert.deepEqual(r.konum, [47.49812, 19.05123]); assert.equal(r.supheli, undefined);
+  const off = toRecord(row, 2, "EUR", S.guvenilir_siteler, { vergi: false });
+  assert.equal(off.fiyat, 280); assert.equal(off.vergi, "bilinmiyor"); assert.equal(off.fiyatVergisiz, undefined, "vergi_kontrolu kapalıysa fiyat olduğu gibi");
   const only = toRecord({ recordType: "hotel", currency: "EUR", bookingOptions: [{ provider: "Super.com", totalStayPrice: 200 }, { provider: "Amimir.com", totalStayPrice: 210 }] }, 2, "EUR", S.guvenilir_siteler);
-  assert.equal(only.fiyat, 200); assert.equal(only.guvenilir, false); assert.equal(only.enUcuz, null);
-  assert.equal(toRecord({ recordType: "hotel", pricePerNight: 99, currency: "EUR" }).fiyat, 198, "sadece gecelik fiyat varsa 2 geceyle çarpılır");
+  assert.equal(only.durum, "dogrulanamadi", "tanınmış site yoksa doğrulanamadı"); assert.equal(only.fiyat, 200); assert.equal(only.site, "Super.com"); assert.equal(only.guvenilir, false); assert.equal(only.enUcuz, null); assert.equal(usable(only), false);
+  const g = toRecord({ recordType: "hotel", pricePerNight: 99, currency: "EUR" });
+  assert.equal(g.fiyat, 198, "sadece gecelik fiyat varsa 2 geceyle çarpılır"); assert.equal(g.durum, "dogrulanamadi"); assert.equal(g.vergi, "bilinmiyor", "gecelik fiyatın vergisi bilinmez");
   assert.equal(toRecord({ recordType: "hotel", hotelId: "G2", bookingOptions: [] }).durum, "dolu");
   assert.equal(toRecord({ recordType: "error", errorCode: "NOT_FOUND" }).durum, "bulunamadi"); assert.equal(toRecord({ recordType: "error", errorCode: "BLOCKED" }).durum, "hata");
   assert.equal(toRecord(null).durum, "sonuc_yok"); assert.equal(toRecord({ recordType: "hotel", currency: "USD", totalPrice: 100 }).durum, "hata"); console.log("ok 9: fiyat kaydı"); }
+
+// 9b) vergi: a) bağlantıdaki vergili toplam, b) Google'ın vergi kırılımı, c) Google'ın vergili toplamı, d) olduğu gibi
+{ const T = S.guvenilir_siteler, opt = (provider, toplam, link) => ({ provider, totalStayPrice: toplam, bookingUrl: link });
+  // a) Priceline: pdt = vergili toplam, pdtax = vergi; kayıtlı fiyat = pdt - pdtax
+  const pl = "https://www.priceline.com/r/?product=hotel&hotelid=1&cur=EUR&POSCountryCode=US&taxDisplayMode=BP&pdtax=199.91&pdf=0.00&pdt=796.50";
+  const a = toRecord({ recordType: "hotel", currency: "EUR", totalPrice: 700, bookingOptions: [opt("Priceline", 596.59, pl)] }, 2, "EUR", T);
+  assert.equal(a.fiyat, 796.5); assert.equal(a.fiyatVergisiz, 596.59); assert.equal(a.vergi, "eklendi"); assert.equal(a.gecelik, 398.25);
+  assert.deepEqual(linkTax(pl), { toplam: 796.5, vergi: 199.91 });
+  // a) diğer siteler: Booking, Expedia/Hotels.com, Agoda, Trip.com, otel zincirleri, Triptease
+  assert.deepEqual(linkTax("https://www.booking.com/x?ext_price_total=1068.00&ext_price_tax=268.00"), { toplam: 1068, vergi: 268 });
+  assert.deepEqual(linkTax("https://www.hotels.com/Hotel-Search?mpf=584.61&mpj=146.70"), { toplam: 584.61, vergi: 146.7 });
+  assert.deepEqual(linkTax("https://www.agoda.com/p?PriceTotal=566.66&PriceTax=79.34&PriceFee=0.02"), { toplam: 566.66, vergi: 79.36 });
+  assert.deepEqual(linkTax("https://us.trip.com/hotels/redirect?br=995.09&tf=263.08"), { toplam: 995.09, vergi: 263.08 });
+  assert.equal(linkTax("https://example.com/?br=995.09&tf=263.08"), null, "br/tf sadece Trip.com'da");
+  assert.deepEqual(linkTax("https://linkcenter.derbysoftca.com/b?priceDisplayedTax=384.14&priceDisplayedTotal=1610.24"), { toplam: 1610.24, vergi: 384.14 });
+  assert.deepEqual(linkTax("https://onboard.triptease.io/redirect?tt_meta_price=494.27_124.02_0.00"), { toplam: 494.27, vergi: 124.02 });
+  assert.equal(linkTax("https://www.booking.com/x?lang=en"), null); assert.equal(linkTax("bozuk"), null);
+  // a) bağlantıdaki vergi 0 ya da fiyat zaten vergili toplam: dahil
+  assert.equal(toRecord({ recordType: "hotel", currency: "EUR", bookingOptions: [opt("Priceline", 500, "https://p.com/?pdt=500&pdtax=0")] }, 2, "EUR", T).vergi, "dahil");
+  const inc = toRecord({ recordType: "hotel", currency: "EUR", bookingOptions: [opt("Booking.com", 1068, "https://b.com/?ext_price_total=1068&ext_price_tax=268")] }, 2, "EUR", T);
+  assert.equal(inc.fiyat, 1068); assert.equal(inc.vergi, "dahil"); assert.equal(inc.fiyatVergisiz, undefined);
+  // a) bağlantı başka odanın fiyatını taşıyorsa oran uygulanır
+  assert.equal(toRecord({ recordType: "hotel", currency: "EUR", bookingOptions: [opt("Booking.com", 400, "https://b.com/?ext_price_total=1200&ext_price_tax=200")] }, 2, "EUR", T).fiyat, 480);
+  // b) Google satırında vergi kırılımı: seçilen fiyat vergisiz toplama ±%3 yakınsa vergi oranı eklenir
+  const b = toRecord({ recordType: "hotel", currency: "EUR", totalPriceBeforeTaxes: 400, taxesAndFees: 60, totalPrice: 460, bookingOptions: [opt("Hotels.com", 405, "https://h.com/x")] }, 2, "EUR", T);
+  assert.equal(b.fiyat, 465.75); assert.equal(b.fiyatVergisiz, 405); assert.equal(b.vergi, "eklendi");
+  const b2 = toRecord({ recordType: "hotel", currency: "EUR", totalPriceBeforeTaxes: 400, taxesAndFees: 60, totalPrice: 460, bookingOptions: [opt("Hotels.com", 462, "https://h.com/x")] }, 2, "EUR", T);
+  assert.equal(b2.fiyat, 462); assert.equal(b2.vergi, "dahil", "fiyat vergili toplama yakınsa dahil");
+  // c) kırılım yok: Google'ın vergili toplamı fiyatın %3-45 üstündeyse o kullanılır, daha fazlaysa kullanılmaz
+  const c = toRecord({ recordType: "hotel", currency: "EUR", totalPrice: 530, bookingOptions: [opt("Agoda", 400, "https://a.com/x")] }, 2, "EUR", T);
+  assert.equal(c.fiyat, 530); assert.equal(c.fiyatVergisiz, 400); assert.equal(c.vergi, "eklendi");
+  const c2 = toRecord({ recordType: "hotel", currency: "EUR", totalPrice: 600, bookingOptions: [opt("Agoda", 400, "https://a.com/x")] }, 2, "EUR", T);
+  assert.equal(c2.fiyat, 400); assert.equal(c2.vergi, "bilinmiyor", "Google 1,45 kattan fazla: başka oda, kullanılmaz");
+  // d) Google toplamı ±%3: dahil; Google daha ucuz ya da yok: bilinmiyor
+  const d = toRecord({ recordType: "hotel", currency: "EUR", totalPrice: 405, bookingOptions: [opt("Agoda", 400, "https://a.com/x")] }, 2, "EUR", T);
+  assert.equal(d.fiyat, 400); assert.equal(d.vergi, "dahil"); assert.equal(d.fiyatVergisiz, undefined);
+  assert.equal(toRecord({ recordType: "hotel", currency: "EUR", totalPrice: 300, bookingOptions: [opt("Agoda", 400, "https://a.com/x")] }, 2, "EUR", T).vergi, "bilinmiyor");
+  assert.equal(toRecord({ recordType: "hotel", currency: "EUR", bookingOptions: [opt("Agoda", 400, "https://a.com/x")] }, 2, "EUR", T).vergi, "bilinmiyor");
+  // vergili hale gelen en ucuz site artık ana fiyattan ucuz değilse gösterilmez
+  const e = toRecord({ recordType: "hotel", currency: "EUR", bookingOptions: [opt("Booking.com", 400, "https://b.com/?ext_price_total=500&ext_price_tax=100"), opt("Super.com", 390, "https://s.com/?priceDisplayedTotal=520&priceDisplayedTax=130")] }, 2, "EUR", T);
+  assert.equal(e.fiyat, 500); assert.equal(e.enUcuz, null);
+  assert.equal(taxInclusive(100, {}).vergi, "bilinmiyor"); assert.equal(taxLike(100, null, { carpan: 1.2, vergi: "eklendi" }).fiyat, 120);
+  console.log("ok 9b: vergi a/b/c/d"); }
+
+// 9c) şüpheli fiyat: gecelik fiyat otelin olağan üst fiyatının 1,5 katından fazla
+{ const T = S.guvenilir_siteler, row = (p) => ({ recordType: "hotel", currency: "EUR", typicalPriceLow: 100, typicalPriceHigh: 150, bookingOptions: [{ provider: "Booking.com", totalStayPrice: p, bookingUrl: "https://b.com/?ext_price_total=" + p + "&ext_price_tax=0" }] });
+  const s1 = toRecord(row(460), 2, "EUR", T); assert.equal(s1.supheli, true); assert.equal(usable(s1), false); assert.deepEqual(s1.tipikGecelik, [100, 150]);
+  const s2 = toRecord(row(450), 2, "EUR", T); assert.equal(s2.supheli, undefined); assert.equal(usable(s2), true);
+  assert.equal(isSuspicious(300, null), false); console.log("ok 9c: şüpheli fiyat"); }
 
 // 10) birleştirme, geçmiş, kimlik/konum, arşiv (sade), listeden çıkarılan otel temizliği
 { const st = emptyState(), w = { giris: "2026-10-30", cikis: "2026-11-01" }, hs = BUD.slice(0, 2);
@@ -110,6 +166,12 @@ console.log("ok 5: fatura dönemi");
   const ar = { haftaSonlari: {} }; mergeWeekend(st, { giris: "2026-11-06", cikis: "2026-11-08" }, hs, { [hs[0].id]: { durum: "dolu" }, [hs[1].id]: { durum: "dolu" } }, "t");
   assert.equal(archivePast(st, ar, "2026-11-02"), 1); assert.ok(!st.haftaSonlari["2026-10-30"]);
   assert.equal(ar.haftaSonlari["2026-10-30"].oteller[hs[0].id].son.link, undefined, "arşivde bağlantı tutulmaz");
+  const ar2 = { haftaSonlari: {} }, st2 = emptyState();
+  mergeWeekend(st2, w, hs, { [hs[0].id]: { durum: "fiyat", fiyat: 120, fiyatVergisiz: 100, vergi: "eklendi", supheli: true, site: "Booking.com", link: "https://x" }, [hs[1].id]: { durum: "dogrulanamadi", fiyat: 90, vergi: "bilinmiyor", site: "Super.com" } }, "t");
+  assert.deepEqual(st2.haftaSonlari["2026-10-30"].oteller[hs[0].id].gecmis[0], { t: "t", durum: "fiyat", fiyat: 120, fiyatVergisiz: 100, vergi: "eklendi", supheli: true });
+  archivePast(st2, ar2, "2026-11-02");
+  assert.deepEqual(ar2.haftaSonlari["2026-10-30"].oteller[hs[0].id].son, { durum: "fiyat", fiyat: 120, fiyatVergisiz: 100, vergi: "eklendi", supheli: true, site: "Booking.com" });
+  assert.equal(ar2.haftaSonlari["2026-10-30"].oteller[hs[1].id].son.durum, "dogrulanamadi");
   st.konum["eski-otel"] = [0, 0]; st.haftaSonlari["2026-11-06"].oteller["eski-otel"] = {}; pruneRemoved(st, ALL.map((h) => h.id));
   assert.ok(!st.konum["eski-otel"]); assert.ok(!st.haftaSonlari["2026-11-06"].oteller["eski-otel"]); console.log("ok 10: geçmiş, kimlik, konum, arşiv, temizlik"); }
 
@@ -155,13 +217,23 @@ const N = ALL.length, perCity = 6 / 8 * N; // her 8 otelden 6'sı fiyatlı
   assert.equal(posts.length, 8, "8 hafta sonu = 8 çalışma"); assert.equal(JSON.parse(posts[0].init.body).hotels.length, N, "tüm oteller tek çalışmada");
   assert.equal(out.report.haftaSonlari.length, 8); assert.equal(out.report.fiyat, 8 * perCity); assert.equal(out.report.ucretliSatir, 8 * 7 / 8 * N);
   const a = out.state.haftaSonlari["2026-11-13"].oteller["bud-aria"].son; assert.equal(a.site, "Booking.com"); assert.ok(a.enUcuz && a.enUcuz.site === "Super.com");
+  assert.equal(a.vergi, "eklendi"); assert.equal(a.fiyat - a.fiyatVergisiz, 20, "Google'ın vergili toplamı kullanıldı");
+  const ag = out.state.haftaSonlari["2026-11-13"].oteller["bud-aria"].gecmis.at(-1); assert.equal(ag.vergi, "eklendi"); assert.equal(ag.fiyat, a.fiyat); assert.equal(ag.fiyatVergisiz, a.fiyatVergisiz);
+  assert.equal(out.report.kullanilabilir, 8 * perCity); assert.equal(out.report.vergi.eklendi, 8 * perCity); assert.equal(out.state.sonCalisma.fiyatli, 8 * perCity); assert.equal(out.state.sonCalisma.dogrulanamadi, 0);
   assert.equal(out.state.harcama.donem, billingPeriod("2026-11-09", S.fatura_gunu)); assert.ok(Math.abs(out.state.harcama.usd - 8 * 7 / 8 * N * PLAN_RATES.starter) < 0.05, "harcama " + out.state.harcama.usd);
   assert.ok(out.state.konum["bud-aria"]); assert.equal(out.state.googleKimlik["bud-aria"], "id" + ALL.findIndex((h) => h.id === "bud-aria"));
   const md = toMarkdown({ ...out, hotelsDoc: doc }); assert.match(md, /Budapeşte/); assert.match(md, /BULUNAMADI/); assert.ok(!md.includes(TOKEN));
+  const mdA = toMarkdown({ ...out, report: { ...out.report, pazar: "nl", deneme: true }, hotelsDoc: doc }); assert.match(mdA, /Pazar denemesi \(pazar: nl/); assert.match(mdA, /\| Budapeşte \| Aria Hotel Budapest \| Booking.com \|/);
   // ikinci çalışma: öğrenilen kimlikler kullanılır, harcama birikir
   const seen2 = []; const out2 = await run({ ...base, state: out.state, now: new Date("2026-11-12T03:17:00Z"), fetchImpl: fakeApify(rowsOk, { seen: seen2 }) });
   assert.ok(JSON.parse(seen2.find((s) => s.init.method === "POST").init.body).hotels.includes("id" + ALL.findIndex((h) => h.id === "bud-aria")));
   assert.ok(out2.state.harcama.usd > out.state.harcama.usd); console.log("ok 13: uçtan uca, tek çalışmada tüm şehirler, bütçe sayacı"); }
+
+// 13b) sadece az bilinen sitelerde fiyat: doğrulanamadı sayılır, ücretli satıra girer, kullanılabilir sayılmaz
+{ const rowsUnk = (input) => input.hotels.map((q, i) => ({ recordType: "hotel", searchQuery: q, name: q.startsWith("id") ? ALL[+q.slice(2)].arama : q, hotelId: "u" + i, currency: "EUR", bookingOptions: [{ provider: "Super.com", totalStayPrice: 150 }] }));
+  const out = await run({ ...base, mode: "test", only: ["Budapeşte"], now: new Date("2026-11-09T03:17:00Z"), fetchImpl: fakeApify(rowsUnk) });
+  assert.equal(out.report.dogrulanamadi, 8); assert.equal(out.report.kullanilabilir, 0); assert.equal(out.report.ucretliSatir, 8); assert.equal(out.state.sonCalisma.fiyatli, 0);
+  assert.match(toMarkdown({ ...out, hotelsDoc: doc }), /150 €\*/); console.log("ok 13b: doğrulanamayan fiyatlar"); }
 
 // 14) bütçe sınırı: sınır dolunca kalan hafta sonları atlanır, önce en yakınlar çekilir
 { const tight = { ...doc, ayarlar: { ...big, aylik_butce_usd: 2 * N * PLAN_RATES.starter + 0.01 } };

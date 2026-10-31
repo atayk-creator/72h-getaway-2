@@ -234,8 +234,80 @@ export function isTrusted(option, trusted = DEFAULT_TRUSTED) {
   return !!k && trusted.some((t) => siteKey(t) === k); // tam eşleşme: "Hotelscombined" ≠ "Hotels.com"
 }
 
-// Tek satırı kayda çevirir. Ana fiyat = tanınmış sitelerin en ucuz toplamı (2 gece). Tanınmış site yoksa en ucuz.
-export function toRecord(row, nights = 2, currency = "EUR", trusted = DEFAULT_TRUSTED) {
+// ---------- vergi ----------
+// Google Hotels ABD pazarında (bağlantılarda POSCountryCode=US, userCountry=US) site fiyatlarını VERGİSİZ gösteriyor.
+// Rezervasyon sitelerinin bağlantısında çoğu zaman vergili toplam ve vergi tutarı yazar; ondan vergili fiyat bulunur.
+// Kanıt (2026-10-29 verisi): Priceline 211/212, Booking 378/379, Agoda 331/331, Expedia/Hotels.com 582/586 kayıtta
+// kayıtlı fiyat = toplam - vergi. Biçim: [vergili toplam, vergi, (ek ücret)], bazıları sadece belirli sitede.
+const LINK_TAX = [
+  { t: "pdt", x: ["pdtax", "pdf"] },                      // Priceline
+  { t: "ext_price_total", x: ["ext_price_tax"] },          // Booking.com
+  { t: "mpf", x: ["mpj"] },                                // Expedia, Hotels.com
+  { t: "PriceTotal", x: ["PriceTax", "PriceFee"] },        // Agoda
+  { t: "priceDisplayedTotal", x: ["priceDisplayedTax"] },  // otel zincirleri (Derbysoft), trivago
+  { t: "br", x: ["tf"], host: /(^|\.)trip\.com$/ },        // Trip.com
+];
+const pnum = (v) => { if (v == null || v === "") return null; const n = Number(v); return Number.isFinite(n) ? n : null; };
+// Bağlantıdan { toplam (vergili), vergi } okur; yoksa null
+export function linkTax(link) {
+  if (!link || typeof link !== "string") return null;
+  let u; try { u = new URL(link); } catch { return null; }
+  const q = u.searchParams;
+  for (const k of LINK_TAX) {
+    if (k.host && !k.host.test(u.hostname)) continue;
+    const T = pnum(q.get(k.t)), X = k.x.reduce((a, n) => (pnum(q.get(n)) == null ? a : (a ?? 0) + pnum(q.get(n))), null);
+    if (T != null && X != null && T > 0 && X >= 0 && X < T) return { toplam: T, vergi: r2(X) };
+  }
+  const tt = q.get("tt_meta_price"); // Triptease: "vergili toplam_vergi_ücret" (kayıtlı fiyat = toplam - vergi)
+  if (tt && /^[\d.]+_[\d.]+(_[\d.]+)?$/.test(tt)) { const [T, x, f = 0] = tt.split("_").map(Number); if (T > 0 && x + f < T) return { toplam: T, vergi: r2(x + f) }; }
+  return null;
+}
+
+// Vergili fiyat. Sıra: a) bağlantıdaki toplam/vergi, b) Google satırının vergi kırılımı, c) Google'ın vergili toplamı,
+// d) olduğu gibi. Dönüş: { fiyat, vergi: "dahil" | "eklendi" | "bilinmiyor", carpan, kanit }
+export const NEAR = 0.03, GOOGLE_MAX = 1.45;
+const near = (a, b, tol = NEAR) => num(a) && num(b) && b > 0 && Math.abs(a - b) <= tol * b;
+export function taxInclusive(price, { link = null, row = null, google = null } = {}) {
+  if (!num(price) || price <= 0) return { fiyat: price, vergi: "bilinmiyor", carpan: 1, kanit: null };
+  const lt = linkTax(link);
+  if (lt) {
+    const pre = lt.toplam - lt.vergi;
+    if (lt.vergi <= lt.toplam * 0.005) return { fiyat: price, vergi: "dahil", carpan: 1, kanit: "baglanti" };
+    if (near(price, lt.toplam, 0.01) && !near(price, pre, 0.01)) return { fiyat: price, vergi: "dahil", carpan: 1, kanit: "baglanti" };
+    const c = lt.toplam / pre;
+    return { fiyat: r2(price * c), vergi: "eklendi", carpan: c, kanit: "baglanti" };
+  }
+  const tf = row && row.taxesAndFees, tb = row && row.totalPriceBeforeTaxes;
+  if (num(tf) && num(tb) && tb > 0 && tf >= 0) {
+    if (near(price, tb)) {
+      const c = 1 + tf / tb;
+      return c > 1.0005 ? { fiyat: r2(price * c), vergi: "eklendi", carpan: c, kanit: "google_kirilim" } : { fiyat: price, vergi: "dahil", carpan: 1, kanit: "google_kirilim" };
+    }
+    if (near(price, tb + tf)) return { fiyat: price, vergi: "dahil", carpan: 1, kanit: "google_kirilim" };
+  }
+  if (num(google)) {
+    if (google > price * (1 + NEAR) && google <= price * GOOGLE_MAX) return { fiyat: r2(google), vergi: "eklendi", carpan: google / price, kanit: "google_toplam" };
+    if (near(google, price)) return { fiyat: price, vergi: "dahil", carpan: 1, kanit: "google_toplam" };
+  }
+  return { fiyat: price, vergi: "bilinmiyor", carpan: 1, kanit: null };
+}
+// Ana fiyatın dışındaki fiyatlar (en ucuz site, otelin kendi sitesi): kendi bağlantısında kanıt varsa o,
+// yoksa ana fiyatın çarpanı (aynı otel, aynı vergiler)
+export function taxLike(price, link, head) {
+  if (!num(price)) return null;
+  const own = taxInclusive(price, { link });
+  if (own.kanit) return own;
+  if (head && head.carpan > 1.0005) return { fiyat: r2(price * head.carpan), vergi: "eklendi", carpan: head.carpan, kanit: "ana_fiyat" };
+  return { fiyat: price, vergi: head ? head.vergi : "bilinmiyor", carpan: 1, kanit: null };
+}
+// Fiyat kaydı sitede kullanılabilir mi: tanınmış sitede doğrulanmış ve şüpheli değil
+export const usable = (s) => !!s && s.durum === "fiyat" && !s.supheli;
+export const SUPHELI_KAT = 1.5;
+export const isSuspicious = (gecelik, tip) => Array.isArray(tip) && num(tip[1]) && tip[1] > 0 && num(gecelik) && gecelik > SUPHELI_KAT * tip[1];
+
+// Tek satırı kayda çevirir. Ana fiyat = tanınmış sitelerin en ucuz toplamı (2 gece), vergili.
+// Tanınmış site yoksa en ucuz fiyat "dogrulanamadi" durumuyla kaydedilir (sitede kullanılmaz, bilgi için).
+export function toRecord(row, nights = 2, currency = "EUR", trusted = DEFAULT_TRUSTED, { vergi = true } = {}) {
   if (!row) return { durum: "sonuc_yok", not: "Robot bu otel için satır döndürmedi" };
   if (row.recordType === "error") return { durum: row.errorCode === "NOT_FOUND" ? "bulunamadi" : "hata", not: row.errorCode || "bilinmeyen hata" };
   if (row.currency && row.currency !== currency) return { durum: "hata", not: `Para birimi ${row.currency}, beklenen ${currency}` };
@@ -244,6 +316,7 @@ export function toRecord(row, nights = 2, currency = "EUR", trusted = DEFAULT_TR
     return toplam == null ? null : { site: o.isOfficialSite ? (o.provider || "Otelin kendi sitesi") : (o.provider || "?"), toplam, resmi: !!o.isOfficialSite, link: o.bookingUrl || null };
   }).filter(Boolean);
   const google = num(row.totalPrice) ? row.totalPrice : num(row.pricePerNight) ? row.pricePerNight * nights : null;
+  const googleVergili = num(row.totalPrice) ? row.totalPrice : null; // gecelik fiyat bazı pazarlarda vergisiz
   const base = {
     googleKimlik: row.hotelId || null, googleAd: row.name || null, puan: num(row.rating) ? row.rating : null, yildiz: row.hotelClass ?? null,
     konum: num(row.latitude) && num(row.longitude) ? [r2(row.latitude * 1000) / 1000, r2(row.longitude * 1000) / 1000] : null,
@@ -254,11 +327,23 @@ export function toRecord(row, nights = 2, currency = "EUR", trusted = DEFAULT_TR
   const good = min(options.filter((o) => isTrusted(o, trusted)));
   const head = good || anyPrice;
   const official = min(options.filter((o) => o.resmi));
+  const tipik = num(row.typicalPriceLow) && num(row.typicalPriceHigh) ? [row.typicalPriceLow, row.typicalPriceHigh] : null;
+  const off = { fiyat: head.toplam, vergi: "bilinmiyor", carpan: 1, kanit: null };
+  const H = vergi ? taxInclusive(head.toplam, { link: head.link, row, google: googleVergili }) : off;
+  let enUcuz = null;
+  if (good && anyPrice !== good) {
+    const E = vergi ? taxLike(anyPrice.toplam, anyPrice.link, H) : { ...off, fiyat: anyPrice.toplam };
+    if (E.fiyat < H.fiyat - 0.5) enUcuz = { fiyat: r2(E.fiyat), site: anyPrice.site, link: anyPrice.link || null, vergi: E.vergi, ...(E.fiyat !== anyPrice.toplam ? { fiyatVergisiz: r2(anyPrice.toplam) } : {}) };
+  }
+  const resmi = official ? (official === head ? H : vergi ? taxLike(official.toplam, official.link, H) : { fiyat: official.toplam }) : null;
+  const fiyat = r2(H.fiyat), gecelik = r2(fiyat / nights);
   return {
-    durum: "fiyat", fiyat: r2(head.toplam), gecelik: r2(head.toplam / nights), site: head.site, link: head.link || row.url || null, guvenilir: !!good,
-    enUcuz: good && anyPrice.toplam < good.toplam - 0.5 ? { fiyat: r2(anyPrice.toplam), site: anyPrice.site, link: anyPrice.link || null } : null,
-    googleFiyat: google == null ? null : r2(google), resmiSiteFiyat: official ? r2(official.toplam) : null,
-    firsat: row.deal || null, tipikGecelik: num(row.typicalPriceLow) && num(row.typicalPriceHigh) ? [row.typicalPriceLow, row.typicalPriceHigh] : null,
+    durum: good ? "fiyat" : "dogrulanamadi", fiyat, gecelik, ...(fiyat !== r2(head.toplam) ? { fiyatVergisiz: r2(head.toplam) } : {}), vergi: H.vergi,
+    ...(isSuspicious(gecelik, tipik) ? { supheli: true } : {}),
+    site: head.site, link: head.link || row.url || null, guvenilir: !!good,
+    ...(good ? {} : { not: "Fiyat sadece az bilinen sitelerde bulundu, tanınmış bir sitede doğrulanamadı" }),
+    enUcuz, googleFiyat: google == null ? null : r2(google), resmiSiteFiyat: resmi ? r2(resmi.fiyat) : null,
+    firsat: row.deal || null, tipikGecelik: tipik,
     ...base,
   };
 }
@@ -270,6 +355,10 @@ export function emptyState() {
 }
 
 const HISTORY_MAX = 60;
+// Geçmiş kaydı: son kaydın fiyat alanlarının sade hali (vergi bilgisi ve şüpheli işareti varsa)
+export function historyEntry(t, rec) {
+  return { t, durum: rec.durum, fiyat: rec.fiyat ?? null, ...(rec.fiyatVergisiz != null ? { fiyatVergisiz: rec.fiyatVergisiz } : {}), ...(rec.vergi ? { vergi: rec.vergi } : {}), ...(rec.supheli ? { supheli: true } : {}) };
+}
 export function mergeWeekend(state, w, hotels, records, checkedAt, usedIds = {}) {
   const slot = (state.haftaSonlari[w.giris] ||= { cikis: w.cikis, oteller: {} });
   for (const h of hotels) {
@@ -278,7 +367,7 @@ export function mergeWeekend(state, w, hotels, records, checkedAt, usedIds = {})
     const { konum, ...keep } = rec;
     const o = (slot.oteller[h.id] ||= { son: null, gecmis: [] });
     o.son = { ...keep, kontrol: checkedAt };
-    o.gecmis.push({ t: checkedAt, durum: rec.durum, fiyat: rec.fiyat ?? null });
+    o.gecmis.push(historyEntry(checkedAt, rec));
     if (o.gecmis.length > HISTORY_MAX) o.gecmis.splice(0, o.gecmis.length - HISTORY_MAX);
     if (konum) state.konum[h.id] = konum;
     if (rec.googleKimlik) state.googleKimlik[h.id] = rec.googleKimlik;
@@ -292,7 +381,7 @@ export function archivePast(state, archive, todayIso) {
   for (const [giris, w] of Object.entries(state.haftaSonlari)) {
     if (w.cikis >= todayIso) continue;
     const oteller = {};
-    for (const [id, o] of Object.entries(w.oteller)) oteller[id] = { son: o.son ? { durum: o.son.durum, fiyat: o.son.fiyat ?? null, site: o.son.site ?? null } : null, gecmis: o.gecmis };
+    for (const [id, o] of Object.entries(w.oteller)) { const { t, ...h } = o.son ? historyEntry(null, o.son) : {}; oteller[id] = { son: o.son ? { ...h, site: o.son.site ?? null } : null, gecmis: o.gecmis }; }
     archive.haftaSonlari[giris] = { cikis: w.cikis, oteller };
     delete state.haftaSonlari[giris]; moved++;
   }
@@ -345,6 +434,7 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
   if (!token) throw new Error("APIFY_TOKEN tanımlı değil (GitHub > Settings > Secrets and variables > Actions bölümüne eklenmeli)");
   const settings = hotelsDoc.ayarlar, nights = 2, today = istanbulToday(now), rate = rateOf(settings);
   const trusted = settings.guvenilir_siteler || DEFAULT_TRUSTED;
+  const vergi = settings.vergi_kontrolu !== false; // false: site fiyatları olduğu gibi (pazar A/B testi için)
   state = { ...emptyState(), ...structuredClone(state) }; // girdiyi değiştirmemek için kopya
   const cities = hotelsDoc.sehirler.filter((c) => !only || only.includes(c.sehir));
   const hotels = cities.flatMap((c) => c.oteller);
@@ -357,7 +447,7 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
   const usage = plan.length ? await apifyUsage({ token, fetchImpl }) : null;
   if (usage) state.apifyKullanim = { ...usage, kontrol: now.toISOString() };
   const B = makeBudget(state, settings.aylik_butce_usd, usage);
-  const report = { tarih: today, gun: DAY_NAME[weekday(today)], mod: mode, plan: settings.apify_plan || "free", haftaSonlari: [], butceAtlanan: [], otelSayisi: hotels.length, fiyat: 0, dolu: 0, bulunamadi: 0, hata: 0, sonuc_yok: 0, guvenilirDisi: 0, ucretliSatir: 0, tahminiMaliyetUsd: 0, hatalar: [], butce: { donem, sinir: B.cap, harcanan: 0, gercek: usage ? usage.usd : null } };
+  const report = { tarih: today, gun: DAY_NAME[weekday(today)], mod: mode, plan: settings.apify_plan || "free", haftaSonlari: [], butceAtlanan: [], otelSayisi: hotels.length, fiyat: 0, dogrulanamadi: 0, supheli: 0, kullanilabilir: 0, dolu: 0, bulunamadi: 0, hata: 0, sonuc_yok: 0, vergi: { dahil: 0, eklendi: 0, bilinmiyor: 0 }, ucretliSatir: 0, tahminiMaliyetUsd: 0, hatalar: [], butce: { donem, sinir: B.cap, harcanan: 0, gercek: usage ? usage.usd : null } };
   const checkedAt = now.toISOString();
   let okRuns = 0, tried = 0, fatal = null;
 
@@ -372,8 +462,8 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
     try {
       const rows = await runActor(actorInput(hotels, w, settings, ids), { token, fetchImpl, sleep });
       const matched = matchRows(hotels, rows, ids);
-      records = Object.fromEntries(hotels.map((h) => [h.id, toRecord(matched[h.id], nights, settings.para_birimi || "EUR", trusted)]));
-      charged = Object.values(records).filter((r) => r.durum === "fiyat" || r.durum === "dolu").length; // Apify bulduğu her otel için ücret alır
+      records = Object.fromEntries(hotels.map((h) => [h.id, toRecord(matched[h.id], nights, settings.para_birimi || "EUR", trusted, { vergi })]));
+      charged = Object.values(records).filter((r) => r.durum === "fiyat" || r.durum === "dogrulanamadi" || r.durum === "dolu").length; // Apify bulduğu her otel için ücret alır
       validateRecords(hotels, records);
       okRuns++; report.haftaSonlari.push(w.giris);
     } catch (e) {
@@ -388,7 +478,9 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
     mergeWeekend(state, w, hotels, records, checkedAt, usedIds);
     for (const rec of Object.values(records)) {
       report[rec.durum] = (report[rec.durum] || 0) + 1;
-      if (rec.durum === "fiyat" && !rec.guvenilir) report.guvenilirDisi++;
+      if (rec.supheli) report.supheli++;
+      if (usable(rec)) report.kullanilabilir++;
+      if (rec.vergi) report.vergi[rec.vergi] = (report.vergi[rec.vergi] || 0) + 1;
     }
   });
 
@@ -399,29 +491,40 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
   state.harcama.usd = r2(state.harcama.usd);
   report.butce.harcanan = usage ? r2(usage.usd + B.added) : state.harcama.usd;
   report.arsivlenen = archivePast(state, archive, today);
-  if (okRuns > 0) { state.guncellendi = checkedAt; state.sonCalisma = { tarih: checkedAt, mod: mode, hafta_sonu: report.haftaSonlari.length, kontrol: report.ucretliSatir + report.bulunamadi + report.hata + report.sonuc_yok, fiyatli: report.fiyat, tahminiMaliyetUsd: report.tahminiMaliyetUsd, butceAtlanan: report.butceAtlanan.length }; }
+  if (okRuns > 0) { state.guncellendi = checkedAt; state.sonCalisma = { tarih: checkedAt, mod: mode, hafta_sonu: report.haftaSonlari.length, kontrol: report.ucretliSatir + report.bulunamadi + report.hata + report.sonuc_yok, fiyatli: report.kullanilabilir, dogrulanamadi: report.dogrulanamadi, supheli: report.supheli, vergi: report.vergi, tahminiMaliyetUsd: report.tahminiMaliyetUsd, butceAtlanan: report.butceAtlanan.length }; }
   return { state, archive, report, plan, fatal: fatal ? redact(fatal.message, token) : null };
 }
 
 export function toMarkdown({ report, plan, state, hotelsDoc }) {
   const eur = (n) => (n == null ? "" : `${Math.round(n)} €`);
-  const p = [`# Otel fiyat robotu`, "", `Tarih: ${report.tarih} (${report.gun}), mod: ${report.mod}, Apify planı: ${report.plan}.`, ""];
+  const p = [`# Otel fiyat robotu`, "", `Tarih: ${report.tarih} (${report.gun}), mod: ${report.mod}, Apify planı: ${report.plan}${report.pazar ? `, pazar: ${report.pazar}` : ""}.`, ""];
   if (!plan.length) { p.push("Bugün takvime göre kontrol günü değil, hiçbir şey çekilmedi."); return p.join("\n"); }
   p.push(`Kontrol edilen hafta sonları: ${report.haftaSonlari.join(", ") || "yok"} (${report.otelSayisi} otel).`);
   if (report.butceAtlanan.length) p.push(`Bütçe sınırı yüzünden atlanan hafta sonları: ${report.butceAtlanan.sort().join(", ")}.`);
-  p.push(`Sonuç: ${report.fiyat} fiyat (${report.guvenilirDisi} tanesi sadece bilinmeyen sitelerde), ${report.dolu} dolu, ${report.bulunamadi} bulunamadı, ${report.hata} hata.`);
+  p.push(`Sonuç: ${report.kullanilabilir} kullanılabilir fiyat (${report.fiyat} tanınmış sitede, ${report.supheli} tanesi şüpheli yüksek), ${report.dogrulanamadi} doğrulanamadı (sadece az bilinen sitelerde), ${report.dolu} dolu, ${report.bulunamadi} bulunamadı, ${report.hata} hata.`);
+  p.push(`Vergi: ${report.vergi.dahil} fiyat zaten vergili, ${report.vergi.eklendi} fiyata vergi eklendi, ${report.vergi.bilinmiyor} fiyatın vergisi bilinmiyor.`);
   p.push(`Bu çalışma: tahmini ~${report.tahminiMaliyetUsd} $${report.gercekMaliyet != null ? `, Apify sayacına göre ${report.gercekMaliyet} $` : ""}. Fatura dönemi (başlangıç ${report.butce.donem}): ~${report.butce.harcanan} $ / sınır ${report.butce.sinir} $${report.butce.gercek != null ? ` (Apify'ın kendi sayacı: ${report.butce.gercek} $)` : " (Apify sayacı okunamadı, tahmin)"}.`, "");
   const shown = report.haftaSonlari.slice(0, 3);
   const label = { fiyat: "", dolu: "dolu", bulunamadi: "BULUNAMADI", hata: "HATA", sonuc_yok: "sonuç yok" };
+  const cell = (s) => (!s ? "" : s.durum === "fiyat" ? eur(s.fiyat) + (s.supheli ? " ?" : "") : s.durum === "dogrulanamadi" ? eur(s.fiyat) + "*" : label[s.durum] || s.durum);
   if (shown.length) for (const city of hotelsDoc.sehirler) {
-    const cells = city.oteller.map((h) => shown.map((g) => { const s = state.haftaSonlari[g]?.oteller[h.id]?.son; return !s ? "" : s.durum === "fiyat" ? eur(s.fiyat) + (s.guvenilir ? "" : "*") : label[s.durum] || s.durum; }));
+    const cells = city.oteller.map((h) => shown.map((g) => cell(state.haftaSonlari[g]?.oteller[h.id]?.son)));
     if (!cells.some((r) => r.some((x) => x))) continue;
     p.push(`## ${city.sehir}`, "", "| Otel | Kategori | " + shown.map((g) => g.slice(5)).join(" | ") + " |", "| --- | --- | " + shown.map(() => "---").join(" | ") + " |");
     city.oteller.forEach((h, i) => p.push(`| ${h.ad} | ${h.kategori} | ${cells[i].join(" | ")} |`));
     p.push("");
   }
+  if (report.deneme && shown.length) {
+    // pazar denemesi: her otelin site fiyatı, vergili fiyatı ve Google'ın vergili toplamı yan yana
+    p.push(`## Pazar denemesi (pazar: ${report.pazar}, veriler kaydedilmedi)`, "", "| Şehir | Otel | Site | Site fiyatı | Vergili | Vergi | Google toplamı |", "| --- | --- | --- | --- | --- | --- | --- |");
+    for (const city of hotelsDoc.sehirler) for (const h of city.oteller) {
+      const s = state.haftaSonlari[shown[0]]?.oteller[h.id]?.son;
+      if (s && s.fiyat != null) p.push(`| ${city.sehir} | ${h.ad} | ${s.site || ""} | ${eur(s.fiyatVergisiz ?? s.fiyat)} | ${eur(s.fiyat)} | ${s.vergi || ""} | ${eur(s.googleFiyat)} |`);
+    }
+    p.push("");
+  }
   if (report.hatalar.length) p.push("Hatalar:", ...report.hatalar.map((x) => "- " + x), "");
-  p.push("Not: Fiyatlar 2 yetişkin, Cuma-Pazar 2 gece içindir. * işaretli fiyat sadece az bilinen sitelerde bulundu.");
+  p.push("Not: Fiyatlar 2 yetişkin, Cuma-Pazar 2 gece, vergiler dahil. * işaretli fiyat sadece az bilinen sitelerde bulundu (doğrulanamadı), ? işaretli fiyat otelin olağan fiyatının 1,5 katından yüksek (şüpheli); ikisi de sitede kullanılmaz.");
   return p.join("\n");
 }
 
@@ -433,6 +536,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   (async () => {
     const hotelsDoc = await readJson(P.hotels);
     const mode = (process.env.MOD || "takvim").trim();
+    // Pazar A/B denemesi: PAZAR verilirse o çalışma başka pazarla yapılır, sonuç sadece özete yazılır, veriler değişmez
+    const pazar = (process.env.PAZAR || "").trim().toLowerCase();
+    const deneme = !!pazar && pazar !== String(hotelsDoc.ayarlar.pazar || "").toLowerCase();
+    if (pazar) hotelsDoc.ayarlar.pazar = pazar;
     const only = (process.env.SEHIR || "").split(",").map((s) => s.trim()).filter(Boolean);
     const meta = await readJson(P.meta, emptyState());
     const files = {};
@@ -442,9 +549,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     const ym = istanbulToday().slice(0, 7);
     const archive = await readJson(P.archive(ym), { haftaSonlari: {} });
     const out = await run({ token: process.env.APIFY_TOKEN, hotelsDoc, state, archive, mode, only: only.length ? only : null });
+    out.report.pazar = hotelsDoc.ayarlar.pazar; out.report.deneme = deneme;
     const md = toMarkdown({ ...out, hotelsDoc }); console.log(md);
     if (process.env.GITHUB_STEP_SUMMARY) await writeFile(process.env.GITHUB_STEP_SUMMARY, md + "\n", { flag: "a" });
-    if (out.plan.length) {
+    if (out.plan.length && !deneme) {
       const sp = splitState(out.state, hotelsDoc);
       await mkdir(dirname(P.city("x")), { recursive: true });
       await writeFile(P.meta, JSON.stringify(sp.meta, null, 1) + "\n");

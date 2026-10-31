@@ -5,6 +5,7 @@
     "kisi": 2,
     "para_birimi": "EUR",
     "pazar": "tr",
+    "vergi_kontrolu": true,
     "kac_hafta_sonu": 13,
     "apify_plan": "starter",
     "aylik_butce_usd": 45,
