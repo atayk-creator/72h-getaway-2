@@ -1051,9 +1051,16 @@
   "mod": "takvim",
   "hafta_sonu": 2,
   "kontrol": 424,
-  "fiyatli": 359,
+  "fiyatli": 338,
   "tahminiMaliyetUsd": 1.24,
-  "butceAtlanan": 0
+  "butceAtlanan": 0,
+  "dogrulanamadi": 9,
+  "supheli": 12,
+  "vergi": {
+   "dahil": 16,
+   "eklendi": 318,
+   "bilinmiyor": 25
+  }
  },
  "apifyKullanim": {
   "usd": 16.44,
