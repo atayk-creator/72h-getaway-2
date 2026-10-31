@@ -6,6 +6,10 @@ const data = JSON.parse(await readFile(new URL("../data/gezi.json", import.meta.
 const hotels = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
 const res = (b, status = 200) => ({ ok: status < 400, status, text: async () => JSON.stringify(b) });
 
+// 0b) kapalı işareti sadece "gecici" ya da "kalici" olabilir; Paris'teki Marché des Enfants Rouges geçici kapalı
+{ for (const [s, c] of Object.entries(data.sehirler)) for (const p of c.yerler) if ("kapali" in p) assert.ok(["gecici", "kalici"].includes(p.kapali), `${s} ${p.ad} kapali=${p.kapali}`);
+  assert.equal(data.sehirler.Paris.yerler.find((p) => p.id === "marche-des-enfants-rouges").kapali, "gecici"); }
+
 // 0) veri: otel listesindeki her şehir var, yerlerin zorunlu alanları dolu, fiyat sayı ya da null
 { for (const c of hotels.sehirler) assert.ok(data.sehirler[c.sehir], c.sehir);
   for (const [s, c] of Object.entries(data.sehirler)) {
@@ -32,6 +36,9 @@ assert.deepEqual(geoInput([{ arama: "Louvre Museum Paris" }]).searchStringsArray
   const far = applyRow(p, { title: "Louvre-Lens", location: { lat: 50.43, lng: 2.8 } }, c); assert.equal(far.konum, null); assert.match(far.konumNotu, /km uzakta/);
   const odd = applyRow(p, { title: "Café Marly", location: { lat: 48.861, lng: 2.335 } }, c); assert.ok(odd.konum); assert.match(odd.konumNotu, /uyuşmuyor/);
   assert.equal(applyRow(p, { title: "Louvre Museum", location: { lat: 48.86, lng: 2.33 }, permanentlyClosed: true }, c).kapali, "kalici");
+  const tmp = applyRow(p, { title: "Louvre Museum", location: { lat: 48.86, lng: 2.33 }, temporarilyClosed: true }, c); assert.equal(tmp.kapali, "gecici"); assert.ok(tmp.konum, "geçici kapalı yerin konumu yine yazılır");
+  assert.equal(applyRow(p, { title: "Louvre Museum", location: { lat: 48.86, lng: 2.33 }, permanentlyClosed: true, temporarilyClosed: true }, c).kapali, "kalici", "kalıcı kapanma öncelikli");
+  assert.equal(applyRow({ ...p, kapali: "gecici" }, { title: "Louvre Museum", location: { lat: 48.86, lng: 2.33 }, temporarilyClosed: false }, c).kapali, undefined, "yeniden açılan yerin işareti kalkar");
   assert.match(applyRow(p, null, c).konumNotu, /sonuç vermedi/); console.log("ok 2: sonuç kontrolü"); }
 
 // 3) uçtan uca: sadece konumu olmayanlar aranır
