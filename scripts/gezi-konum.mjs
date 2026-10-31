@@ -1,6 +1,6 @@
 // Gezi yerlerinin konumunu Google Maps'ten bulur (Apify: compass/crawler-google-places), data/gezi.json'a yazar.
 // Her yerin "arama" metniyle tek sonuç ister. Sonuç şehir merkezinden çok uzaksa ya da adı uyuşmazsa konum yazılmaz,
-// "konumNotu" alanına neden yazılır. Kalıcı kapanmış yerleri işaretler. Bütçe: Apify sayacı (diğer robotlarla ortak).
+// "konumNotu" alanına neden yazılır. Kapalı yerleri işaretler: kapali = "gecici" ya da "kalici" (Google Maps temporarilyClosed/permanentlyClosed). Bütçe: Apify sayacı (diğer robotlarla ortak).
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { runActor, apifyUsage, makeBudget, measureCost, istanbulToday, billingPeriod, nameScore } from "./otel-fiyatlari.mjs";
