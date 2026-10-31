@@ -3,13 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="72h Getaway hakkında: fiyatlar nereden geliyor, ne kadar güncel, gizlilik.">
+<meta name="description" content="72h Getaway hakkında: otel, uçak ve restoran fiyatları nereden geliyor, ne sıklıkla kontrol ediliyor, neler dahil değil ve gizlilik.">
 <meta name="theme-color" content="#0F2A43">
 <link rel="canonical" href="https://72hgetaway.com/hakkinda.html">
 <meta property="og:url" content="https://72hgetaway.com/hakkinda.html">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="img/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="72h Getaway">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="72h Getaway hakkında: fiyatlar nereden geliyor?">
+<meta property="og:description" content="Otel, uçak ve restoran fiyatlarının kaynağı, kontrol sıklığı, bütçeye neyin dahil olmadığı ve gizlilik.">
+<meta property="og:image" content="https://72hgetaway.com/img/paylas.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
 <title>72h Getaway · Hakkında</title>
 <style>
 :root { color-scheme: light dark; --bg: #FBF6EC; --surface: #FFFFFF; --ink: #0F2A43; --muted: #5B6B7C; --line: #E3DCCB; --accent: #F4A62A; --band: #0F2A43; }
@@ -20,7 +29,12 @@ body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Segoe 
 a { color: inherit; }
 .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
 header { background: var(--band); color: #FBF6EC; padding: calc(env(safe-area-inset-top, 0px) + 22px) 0 24px; }
-header a.back { color: #F4A62A; font-weight: 600; text-decoration: none; }
+header a.back { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; margin-left: -4px; color: #F4A62A; font-weight: 600; text-decoration: none; }
+header a.back:hover { text-decoration: underline; }
+:focus-visible { outline: 3px solid #F4A62A; outline-offset: 2px; }
+.contact { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; padding: 0; list-style: none; }
+.contact a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface); font-weight: 600; text-decoration: none; }
+.contact a:hover { border-color: var(--accent); }
 header h1 { font-size: clamp(1.5rem, 4.4vw, 2.1rem); margin: 10px 0 4px; letter-spacing: -0.02em; }
 header p { margin: 0; color: #D5DEE8; }
 main { padding: 26px 16px 48px; }
@@ -36,7 +50,7 @@ th { color: var(--muted); font-weight: 600; }
 <body>
 <header>
   <div class="wrap">
-    <a class="back" href="./">← Turunu kur</a>
+    <a class="back" href="/">← Turunu kur</a>
     <h1>Hakkında</h1>
     <p>Fiyatlar nereden geliyor, ne kadar güncel ve verilerin nasıl kullanılıyor.</p>
   </div>
@@ -50,8 +64,8 @@ th { color: var(--muted); font-weight: 600; }
   <h2>Fiyatlar nereden geliyor?</h2>
   <table>
     <tr><th>Bilgi</th><th>Kaynak</th><th>Ne sıklıkla</th></tr>
-    <tr><td>Otel fiyatları</td><td>Google Hotels'te görünen tanınmış rezervasyon sitelerinin en ucuz teklifi (2 yetişkin, Cuma–Pazar)</td><td>Yakın hafta sonları haftada 2 kez</td></tr>
-    <tr><td>Uçak fiyatları</td><td>Google Flights, İstanbul (IST ve SAW) çıkışlı, kişi başı gidiş-dönüş</td><td>Haftada 1 kez</td></tr>
+    <tr><td>Otel fiyatları</td><td>Google Hotels'te görünen tanınmış rezervasyon sitelerinin en ucuz teklifi (2 yetişkin, Cuma–Pazar)</td><td>En yakın 2 hafta sonu haftada 2 kez (Pazartesi ve Perşembe); 3–8. hafta sonları iki haftada bir, daha uzaklar ayda bir. 13 hafta sonu ileriye kadar.</td></tr>
+    <tr><td>Uçak fiyatları</td><td>Google Flights, İstanbul (IST ve SAW) çıkışlı, kişi başı gidiş-dönüş</td><td>Haftada 1 kez (Salı), önümüzdeki 13 hafta sonuna kadar</td></tr>
     <tr><td>Restoranlar</td><td>Google Maps puanı, yorum sayısı ve kullanıcıların bildirdiği kişi başı fiyat aralığı</td><td>Ayda 1 kez</td></tr>
     <tr><td>Ulaşım ve gezi biletleri</td><td>Şehirlerin resmî ulaşım ve müze siteleri (kaynak bağlantıları sitede)</td><td>Düzenli elle kontrol</td></tr>
     <tr><td>Döviz kurları</td><td>Avrupa Merkez Bankası (ECB) referans kuru</td><td>Her iş günü</td></tr>
@@ -60,7 +74,9 @@ th { color: var(--muted); font-weight: 600; }
     ECB kuru bankaların ve döviz bürolarının satış kurundan biraz düşük olabilir; hesaplayıcıda kuru kendin değiştirebilirsin.</p>
 
   <h2>Neler dahil değil?</h2>
-  <p>Şehir/konaklama vergisi, bagaj ücretleri, vize, seyahat sağlık sigortası, bahşiş ve kişisel alışveriş bütçeye dahil değildir.</p>
+  <p>Otel fiyatlarına vergiler dahil edilmeye çalışılır; kartta "vergiler dahil" ya da "vergiler dahil olmayabilir" diye yazar.
+    Ama otelde girişte ya da çıkışta ayrıca ödenen <b>şehir/konaklama vergisi</b> çoğu zaman bu fiyata dahil değildir. Kesin tutarı rezervasyon sayfasında gör.</p>
+  <p>Bagaj ücretleri, vize, seyahat sağlık sigortası, bahşiş ve kişisel alışveriş de bütçeye dahil değildir.</p>
 
   <h2>Gizlilik</h2>
   <p>Sitede üyelik yoktur ve kişisel bilgi istenmez. Seçtiğin şehir, tarih ve kişi sayısı yalnızca kendi tarayıcında hesaplanır, bize gönderilmez.
@@ -68,9 +84,15 @@ th { color: var(--muted); font-weight: 600; }
     Dış bağlantılara (Booking, Google Maps, Google Flights vb.) tıkladığında o sitelerin kendi gizlilik kuralları geçerlidir.</p>
 
   <h2>İletişim</h2>
-  <p>Hatalı bir fiyat ya da kapanmış bir yer gördüysen bize sosyal medya hesaplarımızdan yazabilirsin: <b>@72hgetaway</b> (YouTube, Instagram, TikTok).</p>
+  <p>Hatalı bir fiyat ya da kapanmış bir yer gördüysen bize yaz, hemen bakalım. Her yerde <b>@72hgetaway</b> adıyla varız:</p>
+  <ul class="contact">
+    <li><a href="https://www.youtube.com/@72hgetaway" target="_blank" rel="noopener">YouTube</a></li>
+    <li><a href="https://www.instagram.com/72hgetaway" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://www.tiktok.com/@72hgetaway" target="_blank" rel="noopener">TikTok</a></li>
+  </ul>
+  <p>E-posta: <a href="mailto:merhaba@72hgetaway.com">merhaba@72hgetaway.com</a></p>
   <p class="muted">Son güncelleme: 31 Ekim 2026</p>
 </main>
-<script>if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });</script>
+<script>if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });</script>
 </body>
 </html>
