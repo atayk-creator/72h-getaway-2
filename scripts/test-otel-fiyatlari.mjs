@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import {
   istanbulToday, upcomingWeekends, planFor, estimateMonthly, billingPeriod, actorInput, matchRows, toRecord, nameScore, isTrusted,
-  mergeWeekend, archivePast, pruneRemoved, linkTax, taxInclusive, taxLike, usable, isSuspicious, historyEntry, nameOk, validateRecords, emptyState, splitState, joinState, citySlug, run, toMarkdown, runActor, PLAN_RATES,
+  mergeWeekend, archivePast, pruneRemoved, linkTax, taxInclusive, taxLike, usable, isSuspicious, historyEntry, categoryMedians, categoryWarnings, nameOk, validateRecords, emptyState, splitState, joinState, citySlug, run, toMarkdown, runActor, PLAN_RATES,
 } from "./otel-fiyatlari.mjs";
 
 const doc = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
@@ -155,6 +155,19 @@ console.log("ok 5: fatura dönemi");
   const s1 = toRecord(row(460), 2, "EUR", T); assert.equal(s1.supheli, true); assert.equal(usable(s1), false); assert.deepEqual(s1.tipikGecelik, [100, 150]);
   const s2 = toRecord(row(450), 2, "EUR", T); assert.equal(s2.supheli, undefined); assert.equal(usable(s2), true);
   assert.equal(isSuspicious(300, null), false); console.log("ok 9c: şüpheli fiyat"); }
+
+// 9d) kategori sırası: ucuz ≤ konforlu ≤ pahalı değilse uyarı
+{ const city = { sehir: "Deneme", oteller: [{ id: "i", kategori: "ikonik" }, { id: "p", kategori: "pahali" }, { id: "k", kategori: "konforlu" }, { id: "u", kategori: "ucuz" }] };
+  const hs = (p, k, u) => ({ "2026-11-06": { oteller: { i: { son: { durum: "fiyat", gecelik: 900 } }, p: { son: { durum: "fiyat", gecelik: p } }, k: { son: { durum: "fiyat", gecelik: k } }, u: { son: { durum: "fiyat", gecelik: u } } } } });
+  assert.deepEqual(categoryMedians(city, hs(300, 200, 100)), { ikonik: 900, pahali: 300, konforlu: 200, ucuz: 100 });
+  assert.deepEqual(categoryWarnings({ sehirler: [city] }, hs(300, 200, 100)), []);
+  const w = categoryWarnings({ sehirler: [city] }, hs(150, 400, 100)); assert.equal(w.length, 1); assert.match(w[0], /Deneme: konforlu .* pahali/);
+  const sup = hs(300, 200, 100); sup["2026-11-06"].oteller.u.son = { durum: "fiyat", gecelik: 999, supheli: true };
+  assert.deepEqual(categoryWarnings({ sehirler: [city] }, sup), [], "şüpheli fiyat hesaba katılmaz");
+  // gerçek veri: kategoriler sırada olmalı (sadece bilgi, test bozulmaz)
+  const files = {}; for (const c of doc.sehirler) { try { files[c.sehir] = JSON.parse(await readFile(new URL(`../data/fiyatlar/${citySlug(c.sehir)}.json`, import.meta.url), "utf8")); } catch {} }
+  const real = doc.sehirler.flatMap((c) => (files[c.sehir] ? categoryWarnings({ sehirler: [c] }, files[c.sehir].haftaSonlari) : []));
+  console.log(`ok 9d: kategori sırası${real.length ? " (UYARI: " + real.join("; ") + ")" : " (gerçek veride sorun yok)"}`); }
 
 // 10) birleştirme, geçmiş, kimlik/konum, arşiv (sade), listeden çıkarılan otel temizliği
 { const st = emptyState(), w = { giris: "2026-10-30", cikis: "2026-11-01" }, hs = BUD.slice(0, 2);

@@ -422,6 +422,31 @@ export function pruneRemoved(state, allIds) {
   for (const m of [state.googleKimlik, state.konum]) for (const id of Object.keys(m)) if (!keep.has(id)) delete m[id];
 }
 
+// ---------- kategori sırası ----------
+const median = (a) => { if (!a.length) return null; const b = [...a].sort((x, y) => x - y), m = b.length >> 1; return b.length % 2 ? b[m] : r2((b[m - 1] + b[m]) / 2); };
+// Her otelin kullanılabilir gecelik fiyatlarının ortancası, sonra kategorinin ortancası.
+// Kategoriler fiyatça sırada olmalı: ucuz ≤ konforlu ≤ pahalı. Değilse uyarı metinleri döner.
+export function categoryMedians(city, haftaSonlari) {
+  const per = {};
+  for (const h of city.oteller) {
+    const v = Object.values(haftaSonlari || {}).map((w) => w.oteller && w.oteller[h.id] && w.oteller[h.id].son).filter(usable).map((s) => s.gecelik ?? s.fiyat / 2);
+    const m = median(v);
+    if (m != null) (per[h.kategori] ||= []).push(m);
+  }
+  return Object.fromEntries(Object.entries(per).map(([k, v]) => [k, median(v)]));
+}
+export function categoryWarnings(hotelsDoc, haftaSonlari) {
+  const out = [], order = ["ucuz", "konforlu", "pahali"];
+  for (const c of hotelsDoc.sehirler) {
+    const m = categoryMedians(c, haftaSonlari);
+    for (let i = 0; i < order.length - 1; i++) {
+      const lo = order[i], hi = order[i + 1];
+      if (m[lo] != null && m[hi] != null && m[lo] > m[hi]) out.push(`${c.sehir}: ${lo} oteller (ortanca ${Math.round(m[lo])} €/gece) ${hi} otellerden (${Math.round(m[hi])} €/gece) pahalı, kategorileri gözden geçir`);
+    }
+  }
+  return out;
+}
+
 // ---------- ana akış ----------
 
 async function pool(items, size, fn) {
@@ -523,6 +548,8 @@ export function toMarkdown({ report, plan, state, hotelsDoc }) {
     }
     p.push("");
   }
+  const kat = categoryWarnings(hotelsDoc, state.haftaSonlari);
+  if (kat.length) p.push("Kategori sırası uyarıları (ucuz ≤ konforlu ≤ pahalı olmalı):", ...kat.map((x) => "- " + x), "");
   if (report.hatalar.length) p.push("Hatalar:", ...report.hatalar.map((x) => "- " + x), "");
   p.push("Not: Fiyatlar 2 yetişkin, Cuma-Pazar 2 gece, vergiler dahil. * işaretli fiyat sadece az bilinen sitelerde bulundu (doğrulanamadı), ? işaretli fiyat otelin olağan fiyatının 1,5 katından yüksek (şüpheli); ikisi de sitede kullanılmaz.");
   return p.join("\n");

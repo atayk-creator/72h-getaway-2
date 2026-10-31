@@ -58,7 +58,7 @@
         {"id":"bru-dixseptieme","ad":"Le Dixseptième","arama":"Hotel Le Dixseptieme Brussels","kategori":"konforlu","not":"17. yy konağında, Grand Place ile Mont des Arts arasında karakterli otel"},
         {"id":"bru-made-in-louise","ad":"Made in Louise","arama":"Hotel Made in Louise Brussels","kategori":"konforlu","not":"Louise semtinde sakin sokakta, sıcak atmosferli ve fiyatı iyi butik otel"},
         {"id":"bru-motel-one","ad":"Motel One Brussels","arama":"Motel One Brussels Rue Royale","kategori":"ucuz","not":"Rue Royale'de, Grand Place ve Merkez Gar'a yürüme mesafesinde şık bütçe otel"},
-        {"id":"bru-ibis-ste-catherine","ad":"ibis Brussels Centre Ste Catherine","arama":"ibis Brussels Centre Sainte Catherine","kategori":"ucuz","not":"Sainte-Catherine meydanında, deniz ürünü lokantalarının yanında, merkeze 5 dk"}
+        {"id":"bru-ibis-off-grand-place","ad":"ibis Brussels off Grand Place","arama":"ibis Brussels off Grand Place","kategori":"ucuz","not":"Grand-Place'a 2 dakika, Saint-Hubert pasajının yanında zincir bütçe oteli"}
       ]
     },
     {
@@ -69,7 +69,7 @@
         {"id":"ams-pulitzer","ad":"Pulitzer Amsterdam","arama":"Pulitzer Amsterdam hotel","kategori":"pahali","not":"Dokuz Sokak'ta 25 kanal evinden oluşan, Prinsengracht kıyısında lüks otel"},
         {"id":"ams-de-leurope","ad":"De L'Europe Amsterdam","arama":"De L'Europe Amsterdam hotel","kategori":"pahali","not":"Amstel kıyısında, Muntplein'de 19. yy saray yapısında 5 yıldızlı otel"},
         {"id":"ams-v-nesplein","ad":"Hotel V Nesplein","arama":"Hotel V Nesplein Amsterdam","kategori":"konforlu","not":"Dam Meydanı'na 3 dk, tiyatrolar sokağında modern tasarım otel"},
-        {"id":"ams-max-brown","ad":"Max Brown Hotel Canal District","arama":"Max Brown Hotel Canal District Amsterdam","kategori":"konforlu","not":"Herengracht kanal evlerinde, Jordaan'a yakın, rahat ve hesaplı butik otel"},
+        {"id":"ams-hoxton","ad":"The Hoxton, Amsterdam","arama":"The Hoxton Amsterdam Herengracht","kategori":"konforlu","not":"Herengracht'ta beş kanal evinde, Dokuz Sokak'a yürüme mesafesinde canlı butik otel"},
         {"id":"ams-estherea","ad":"Hotel Estheréa","arama":"Hotel Estherea Amsterdam","kategori":"konforlu","not":"Singel kanalı üzerinde aile işletmesi, klasik Hollanda dekorlu sevilen otel"},
         {"id":"ams-motel-one","ad":"Motel One Amsterdam-Waterlooplein","arama":"Motel One Amsterdam Waterlooplein","kategori":"ucuz","not":"Waterlooplein'de, bit pazarı ve Rembrandt Evi yanında, metronun dibinde"},
         {"id":"ams-ibis-styles-cs","ad":"ibis Styles Amsterdam Central Station","arama":"ibis Styles Amsterdam Central Station","kategori":"ucuz","not":"Merkez İstasyon'a 3 dk, kanallar ve Dam'a yürüme mesafesinde bütçe otel"}
@@ -80,10 +80,10 @@
       "ulke": "Lüksemburg",
       "oteller": [
         {"id":"lux-place-darmes","ad":"Hotel Le Place d'Armes","arama":"Hotel Le Place d'Armes Luxembourg","kategori":"ikonik","not":"Eski şehrin kalbi Place d'Armes'ta, 18. yy binalarında Relais & Châteaux otel"},
-        {"id":"lux-le-royal","ad":"Le Royal Hotels & Resorts","arama":"Le Royal Hotels Resorts Luxembourg","kategori":"pahali","not":"Boulevard Royal'de, eski şehre 5 dakika, spa ve havuzlu klasik 5 yıldızlı"},
-        {"id":"lux-sofitel-grand-ducal","ad":"Sofitel Le Grand Ducal","arama":"Sofitel Luxembourg Le Grand Ducal","kategori":"pahali","not":"Pétrusse vadisi kenarında, Grund ve eski şehir manzaralı 5 yıldızlı otel"},
-        {"id":"lux-cravat","ad":"Grand Hotel Cravat","arama":"Grand Hotel Cravat Luxembourg","kategori":"konforlu","not":"Place de la Constitution'da, vadiye bakan, 1895'ten beri aile işletmesi"},
-        {"id":"lux-parc-beaux-arts","ad":"Hotel Parc Beaux-Arts","arama":"Hotel Parc Beaux-Arts Luxembourg","kategori":"konforlu","not":"Eski şehirde, Saray'a 2 dk, 18. yy evlerinde sanat dolu suit otel"},
+        {"id":"lux-cravat","ad":"Grand Hotel Cravat","arama":"Grand Hotel Cravat Luxembourg","kategori":"pahali","not":"Place de la Constitution'da, vadiye bakan, 1895'ten beri aile işletmesi"},
+        {"id":"lux-parc-beaux-arts","ad":"Hotel Parc Beaux-Arts","arama":"Hotel Parc Beaux-Arts Luxembourg","kategori":"pahali","not":"Eski şehirde, Saray'a 2 dk, 18. yy evlerinde sanat dolu suit otel"},
+        {"id":"lux-le-royal","ad":"Le Royal Hotels & Resorts","arama":"Le Royal Hotels Resorts Luxembourg","kategori":"konforlu","not":"Boulevard Royal'de, eski şehre 5 dakika, spa ve havuzlu klasik 5 yıldızlı"},
+        {"id":"lux-sofitel-grand-ducal","ad":"Sofitel Le Grand Ducal","arama":"Sofitel Luxembourg Le Grand Ducal","kategori":"konforlu","not":"Pétrusse vadisi kenarında, Grund ve eski şehir manzaralı 5 yıldızlı otel"},
         {"id":"lux-simoncini","ad":"Hotel Simoncini","arama":"Hotel Simoncini Luxembourg","kategori":"konforlu","not":"Eski şehrin göbeğinde, lobisi galeri gibi modern sanatlı butik otel"},
         {"id":"lux-vauban","ad":"Hotel Vauban","arama":"Hotel Vauban Luxembourg","kategori":"ucuz","not":"Place Guillaume II'de, eski şehrin tam ortasında sade ve uygun fiyatlı otel"},
         {"id":"lux-ibis-styles-gare","ad":"ibis Styles Luxembourg Centre Gare","arama":"ibis Styles Luxembourg Centre Gare","kategori":"ucuz","not":"Gar bölgesinde, tramvayla eski şehre 5 dk, kahvaltı dahil bütçe otel"}
@@ -127,7 +127,7 @@
         {"id":"mad-only-you-boutique","ad":"Only YOU Boutique Hotel","arama":"Only YOU Boutique Hotel Madrid Chueca","kategori":"konforlu","not":"Chueca'da 19. yüzyıl sarayında tasarım otel, kahvaltısı çok seviliyor"},
         {"id":"mad-catalonia-las-cortes","ad":"Catalonia Las Cortes","arama":"Catalonia Las Cortes Madrid","kategori":"konforlu","not":"Huertas'ta 18. yüzyıl sarayında; Sol'a ve Prado'ya yürüme mesafesinde"},
         {"id":"mad-hotel-preciados","ad":"Hotel Preciados","arama":"Hotel Preciados Madrid","kategori":"konforlu","not":"Callao ile Sol arasında; alışverişe ve Gran Vía'ya yürüyerek, fiyatına göre iyi"},
-        {"id":"mad-hotel-moderno","ad":"Hotel Moderno Puerta del Sol","arama":"Hotel Moderno Puerta del Sol Madrid","kategori":"ucuz","not":"Tam Puerta del Sol'da 3 yıldızlı aile oteli; konumu bu fiyata çok iyi"},
+        {"id":"mad-ibis-styles-prado","ad":"ibis Styles Madrid Prado","arama":"ibis Styles Madrid Prado","kategori":"ucuz","not":"Barrio de las Letras'ta, Prado Müzesi'ne ve Sol'a yürüme mesafesinde bütçe oteli"},
         {"id":"mad-hotel-europa","ad":"Hotel Europa","arama":"Hotel Europa Calle del Carmen Madrid","kategori":"ucuz","not":"Sol'a birkaç adım, Calle del Carmen'de; uygun fiyatlı, temiz ve klasik"}
       ]
     },
@@ -170,7 +170,7 @@
         {"id":"vlt-the-cumberland","ad":"The Cumberland by NEU Collective","arama":"The Cumberland Hotel Valletta","kategori":"konforlu","not":"St John Street'te tarihi binada; çatıda havuz ve bar, 4 yıldızlı"},
         {"id":"vlt-ursulino","ad":"Ursulino Valletta","arama":"Ursulino Valletta Hotel","kategori":"konforlu","not":"Eski manastır binasında; liman manzaralı çatı havuzu, Upper Barrakka'ya yakın"},
         {"id":"vlt-osborne-hotel","ad":"Osborne Hotel","arama":"Osborne Hotel Valletta","kategori":"ucuz","not":"South Street'te şövalyeler döneminden kalma binada 3 yıldızlı; çatı havuzlu"},
-        {"id":"vlt-british-hotel","ad":"British Hotel","arama":"British Hotel Valletta Malta","kategori":"ucuz","not":"Aile işletmesi; birçok odası Grand Harbour'a bakıyor, Barrakka bahçelerine yakın"}
+        {"id":"vlt-castille","ad":"Hotel Castille","arama":"Hotel Castille Valletta","kategori":"ucuz","not":"Upper Barrakka bahçelerinin karşısında, çatı restoranı limana bakan 3 yıldızlı otel"}
       ]
     },
     {
@@ -225,7 +225,7 @@
         {"id":"hel-lilla-roberts","ad":"Hotel Lilla Roberts","arama":"Hotel Lilla Roberts Helsinki","kategori":"konforlu","not":"Tasarım Bölgesi'nde 1908'den kalma binada; Art Deco iç mekanlar"},
         {"id":"hel-fabian","ad":"Hotel Fabian","arama":"Hotel Fabian Helsinki","kategori":"konforlu","not":"Esplanadi ile Market Meydanı arasında sakin sokakta sıcak bir butik otel"},
         {"id":"hel-f6","ad":"Hotel F6","arama":"Hotel F6 Helsinki Fabianinkatu","kategori":"konforlu","not":"Esplanadi'nin hemen yanında; iç bahçesi ve ferah İskandinav odalarıyla"},
-        {"id":"hel-omena-lonnrotinkatu","ad":"Omena Hotel Lönnrotinkatu","arama":"Omena Hotel Helsinki Lonnrotinkatu","kategori":"ucuz","not":"Kamppi'ye yürüme mesafesi; resepsiyonsuz, kodla girilen pratik ve ucuz odalar"},
+        {"id":"hel-helka","ad":"Hotel Helka","arama":"Hotel Helka Helsinki","kategori":"ucuz","not":"Kamppi'ye 5 dakika, Fin tasarımı odalı ve saunalı hesaplı şehir oteli"},
         {"id":"hel-hotel-arthur","ad":"Hotel Arthur","arama":"Hotel Arthur Helsinki Vuorikatu","kategori":"ucuz","not":"Merkez İstasyon ile Kauppatori arasında; kahvaltısı övülen klasik 3 yıldızlı"}
       ]
     },
@@ -254,7 +254,7 @@
         {"id":"rix-pullman-old-town","ad":"Pullman Riga Old Town","arama":"Pullman Riga Old Town","kategori":"konforlu","not":"Eski Şehir'de restore edilmiş 18. yy ahırlarında; modern tasarım ve spa"},
         {"id":"rix-hotel-justus","ad":"Hotel Justus","arama":"Hotel Justus Riga","kategori":"konforlu","not":"Doma Meydanı'nın arkasında küçük butik; tuğla duvarlı şık odalar"},
         {"id":"rix-hanza-hotel","ad":"Hanza Hotel","arama":"Hanza Hotel Riga","kategori":"ucuz","not":"Merkez Pazar'a ve Eski Şehir'e 10 dk; sade, temiz ve uygun fiyatlı"},
-        {"id":"rix-bruninieks","ad":"City Hotel Bruninieks","arama":"City Hotel Bruninieks Riga","kategori":"ucuz","not":"Art Nouveau bölgesinde merkezi konum; Eski Şehir'e 15 dk, iyi fiyat/performans"}
+        {"id":"rix-wellton-centrum","ad":"Wellton Centrum Hotel & SPA","arama":"Wellton Centrum Hotel & SPA Riga","kategori":"ucuz","not":"Eski Şehir'in içinde, Daugava'ya yakın; havuzlu spa'sı olan uygun fiyatlı otel"}
       ]
     },
     {
@@ -267,7 +267,7 @@
         {"id":"vno-artagonist","ad":"Artagonist Hotel","arama":"Artagonist Hotel Vilnius","kategori":"konforlu","not":"Eski Şehir'de; her odayı ayrı bir Litvanyalı sanatçı tasarlamış"},
         {"id":"vno-shakespeare","ad":"Shakespeare Boutique Hotel","arama":"Shakespeare Boutique Hotel Vilnius","kategori":"konforlu","not":"Eski Şehir'de edebiyat temalı butik otel; Bernardine Parkı'na yakın"},
         {"id":"vno-neringa","ad":"Neringa Hotel","arama":"Neringa Hotel Vilnius Gediminas Avenue","kategori":"konforlu","not":"Gediminas Bulvarı'nda yenilenmiş otel; Eski Şehir'e yürüme mesafesi"},
-        {"id":"vno-ibis-styles","ad":"ibis Styles Vilnius","arama":"ibis Styles Vilnius","kategori":"ucuz","not":"Eski Şehir'in kenarında, Vilniaus caddesinde uygun fiyatlı zincir otel"},
+        {"id":"vno-panorama","ad":"Panorama Hotel","arama":"Panorama Hotel Vilnius","kategori":"ucuz","not":"Şafak Kapısı'na ve tren garına yakın, Eski Şehir manzaralı büyük ve hesaplı otel"},
         {"id":"vno-city-gate","ad":"City Gate Hotel","arama":"City Gate Hotel Vilnius","kategori":"ucuz","not":"Şafak Kapısı'na ve garlara yakın, modern odalı uygun fiyatlı otel"}
       ]
     },
@@ -310,7 +310,7 @@
         {"id":"bts-loft","ad":"Loft Hotel Bratislava","arama":"Loft Hotel Bratislava","kategori":"konforlu","not":"Merkezde endüstriyel tasarım otel; kendi bira fabrikası ve birahanesi var"},
         {"id":"bts-arcadia","ad":"ARCADIA Boutique Hotel","arama":"Arcadia Boutique Hotel Bratislava","kategori":"konforlu","not":"Eski Şehir'de 13. yüzyıldan kalma binada, sakin avlulu butik otel"},
         {"id":"bts-elisabeth","ad":"Elisabeth Old Town","arama":"Elisabeth Old Town Hotel Bratislava","kategori":"ucuz","not":"Klemensova'da, Eski Şehir'e 5 dakika; iyi puanlı 3 yıldızlı otel"},
-        {"id":"bts-ibis-centrum","ad":"ibis Bratislava Centrum","arama":"ibis Bratislava Centrum","kategori":"ucuz","not":"Kalenin eteğinde, Eski Şehir'e yürüme mesafesi; küçük ama pratik odalar"}
+        {"id":"bts-saffron","ad":"Hotel Saffron","arama":"Hotel Saffron Bratislava","kategori":"ucuz","not":"Eski Şehir'e 10 dakika, doğu esintili dekorlu, fiyatına göre geniş odalı otel"}
       ]
     },
     {
@@ -333,10 +333,10 @@
       "oteller": [
         {"id":"lju-grand-union","ad":"Grand Hotel Union","arama":"Grand Hotel Union Eurostars Ljubljana","kategori":"ikonik","not":"1905 Art Nouveau şaheseri; Prešeren Meydanı'na birkaç adım"},
         {"id":"lju-intercontinental","ad":"InterContinental Ljubljana","arama":"InterContinental Ljubljana","kategori":"pahali","not":"Şehrin en yüksek binası; kale ve Alp manzaralı tepe katta bar"},
-        {"id":"lju-vander-urbani","ad":"Vander Urbani Resort","arama":"Vander Urbani Resort Ljubljana","kategori":"pahali","not":"Ljubljanica nehri kıyısında tasarım otel; çatı havuzu ve iyi restoranı var"},
+        {"id":"lju-zlata-ladjica","ad":"Zlata Ladjica Boutique Hotel","arama":"Zlata Ladjica Boutique Hotel Ljubljana","kategori":"pahali","not":"Kasaplar Köprüsü yanında; terası nehre ve Eski Şehir'e bakıyor"},
+        {"id":"lju-vander-urbani","ad":"Vander Urbani Resort","arama":"Vander Urbani Resort Ljubljana","kategori":"konforlu","not":"Ljubljanica nehri kıyısında tasarım otel; çatı havuzu ve iyi restoranı var"},
         {"id":"lju-cubo","ad":"Hotel Cubo","arama":"Hotel Cubo Ljubljana","kategori":"konforlu","not":"Merkezde minimalist tasarım otel; Kongre Meydanı'na yürüme mesafesi"},
-        {"id":"lju-adora","ad":"Adora Hotel","arama":"Adora Hotel Ljubljana","kategori":"konforlu","not":"Eski Şehir'de, kale füniküleri yakınında küçük ve samimi butik otel"},
-        {"id":"lju-zlata-ladjica","ad":"Zlata Ladjica Boutique Hotel","arama":"Zlata Ladjica Boutique Hotel Ljubljana","kategori":"konforlu","not":"Kasaplar Köprüsü yanında; terası nehre ve Eski Şehir'e bakıyor"},
+        {"id":"lju-slon","ad":"Best Western Premier Hotel Slon","arama":"Best Western Premier Hotel Slon Ljubljana","kategori":"konforlu","not":"Eski Şehir'in girişinde, Prešeren Meydanı'na 3 dakika; köklü ve büyük şehir oteli"},
         {"id":"lju-emonec","ad":"Hotel Emonec","arama":"Hotel Emonec Ljubljana","kategori":"ucuz","not":"Kongre Meydanı'nın hemen yanında sade, temiz ve ucuz otel"},
         {"id":"lju-bb-park","ad":"B&B Hotel Ljubljana Park","arama":"B&B Hotel Ljubljana Park","kategori":"ucuz","not":"Merkezde, Eski Şehir'e 10 dk yürüme mesafesinde bütçe dostu zincir otel"}
       ]
@@ -359,7 +359,7 @@
       "sehir": "Bükreş",
       "ulke": "Romanya",
       "oteller": [
-        {"id":"buh-athenee-palace","ad":"InterContinental Athénée Palace","arama":"InterContinental Athenee Palace Bucharest","kategori":"ikonik","not":"1914 Belle Époque efsanesi; Romen Atheneumu'nun hemen yanında"},
+        {"id":"buh-jw-marriott","ad":"JW Marriott Bucharest Grand Hotel","arama":"JW Marriott Bucharest Grand Hotel","kategori":"ikonik","not":"Parlamento Sarayı'nın yanında, şehrin en büyük ve en bilinen 5 yıldızlı oteli"},
         {"id":"buh-corinthia","ad":"Corinthia Grand Hotel du Boulevard","arama":"Corinthia Grand Hotel du Boulevard Bucharest","kategori":"pahali","not":"Yenilenip açılan 1867 sarayı; Calea Victoriei üzerinde"},
         {"id":"buh-epoque","ad":"Hotel Epoque","arama":"Hotel Epoque Bucharest","kategori":"pahali","not":"Romana bölgesinde Relais & Châteaux butik lüks otel; spa ve havuz var"},
         {"id":"buh-hgi-old-town","ad":"Hilton Garden Inn Old Town","arama":"Hilton Garden Inn Bucharest Old Town","kategori":"konforlu","not":"Eski Şehir'in girişinde tarihi binada; restoran ve barlara yürüme mesafesi"},
@@ -378,7 +378,7 @@
         {"id":"sof-hyatt-regency","ad":"Hyatt Regency Sofia","arama":"Hyatt Regency Sofia","kategori":"pahali","not":"Vasil Levski Meydanı'nda modern lüks; havuz, spa ve çatı terası"},
         {"id":"sof-sense","ad":"Sense Hotel Sofia","arama":"Sense Hotel Sofia","kategori":"konforlu","not":"Nevski Katedrali'ne bakan çatı barıyla meşhur tasarım otel"},
         {"id":"sof-les-fleurs","ad":"Les Fleurs Boutique Hotel","arama":"Les Fleurs Boutique Hotel Sofia","kategori":"konforlu","not":"Vitosha Bulvarı'nın üzerinde çiçek temalı butik otel"},
-        {"id":"sof-arena-di-serdica","ad":"Arena di Serdica Hotel","arama":"Arena di Serdica Hotel Sofia","kategori":"konforlu","not":"Roma amfitiyatrosu kalıntılarının üzerine kurulu; spa ve havuz var"},
+        {"id":"sof-radisson-grand","ad":"Radisson Blu Grand Hotel","arama":"Radisson Blu Grand Hotel Sofia","kategori":"konforlu","not":"Meclis meydanında, Aleksandr Nevski Katedrali'ne 5 dakika; manzaralı büyük otel"},
         {"id":"sof-favorit","ad":"Hotel Favorit","arama":"Hotel Favorit Sofia Knyaz Boris I","kategori":"ucuz","not":"Merkezde Knyaz Boris I caddesinde, iyi puanlı 3 yıldızlı otel"},
         {"id":"sof-art-plaza","ad":"Art Plaza Hotel","arama":"Art Plaza Hotel Sofia","kategori":"ucuz","not":"Şehir merkezinde uygun fiyatlı 3 yıldızlı otel; metroya yakın"}
       ]
