@@ -1,0 +1,57 @@
+name: Denetçi (robot ve site sağlık kontrolü)
+# Her gün 09:40'ta (İstanbul) robotların verilerini, iş akışlarını ve siteyi kontrol eder (scripts/denetci.mjs).
+# Sorun varsa "denetci" etiketli tek bir issue açar ya da günceller; her şey yoluna girince yorum yazıp kapatır.
+# Ücretli API kullanmaz.
+on:
+  schedule:
+    - cron: "40 6 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+  actions: read
+concurrency:
+  group: denetci
+  cancel-in-progress: false
+jobs:
+  denetle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node scripts/test-denetci.mjs
+      - name: Denetle
+        id: denetci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DENETCI_RAPOR: ${{ runner.temp }}/denetci-rapor.md
+        run: node scripts/denetci.mjs
+      - name: Issue aç, güncelle ya da kapat
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          SORUN: ${{ steps.denetci.outputs.sorun }}
+          RAPOR: ${{ runner.temp }}/denetci-rapor.md
+        run: |
+          set -euo pipefail
+          num=$(gh issue list --label denetci --state open --limit 1 --json number --jq '.[0].number // empty')
+          if [ "$SORUN" = "1" ]; then
+            if [ -n "$num" ]; then
+              gh issue edit "$num" --body-file "$RAPOR"
+              echo "Issue #$num güncellendi."
+            else
+              gh label create denetci --color B60205 --description "Denetçi'nin bulduğu sorunlar" --force
+              gh issue create --title "Denetçi: sorun var" --label denetci --body-file "$RAPOR"
+            fi
+          elif [ -n "$num" ]; then
+            gh issue comment "$num" --body "Denetçi $(date -u '+%Y-%m-%d %H:%M') UTC kontrolünde sorun bulmadı, kayıt kapatılıyor."
+            gh issue close "$num"
+          else
+            echo "Sorun yok."
+          fi
