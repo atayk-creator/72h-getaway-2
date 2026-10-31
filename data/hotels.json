@@ -11,7 +11,7 @@
     "aylik_butce_usd": 45,
     "fatura_gunu": 28,
     "guvenilir_siteler": ["Booking.com","Expedia","Hotels.com","Agoda","Trip.com","Priceline","Otelin kendi sitesi"],
-    "ozel_tarihler": [],
+    "ozel_tarihler": ["2026-12-25","2027-01-01"],
     "kontrol_takvimi": [
       {"kademe":"sicak","ilk":1,"son":2,"gunler":["Pzt","Per"],"her_n_haftada":1},
       {"kademe":"ilik","ilk":3,"son":8,"gunler":["Pzt"],"her_n_haftada":2},

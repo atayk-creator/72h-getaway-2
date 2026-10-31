@@ -44,7 +44,10 @@ assert.equal(istanbulToday(new Date("2026-11-02T03:17:00Z")), "2026-11-02"); con
   console.log("ok 3: takvim"); }
 
 // 4) bütçe tahmini: Starter planda aylık 25 $ altında
-{ const e = estimateMonthly(S, ALL.length, "2026-11-02", "starter"); assert.ok(e.usd < 25, `aylık ${e.usd} $`); console.log(`ok 4: ${ALL.length} otel, aylık ~${e.sorgu} sorgu, Starter'da ~${e.usd} $`); }
+// (özel tarihler geçicidir: o hafta sonu geçince takvim normale döner, tahmin ayrıca gösterilir)
+{ const e = estimateMonthly({ ...S, ozel_tarihler: [] }, ALL.length, "2026-11-02", "starter"); assert.ok(e.usd < 25, `aylık ${e.usd} $`);
+  const o = estimateMonthly(S, ALL.length, "2026-11-02", "starter");
+  console.log(`ok 4: ${ALL.length} otel, aylık ~${e.sorgu} sorgu, Starter'da ~${e.usd} $ (özel tarihlerle ~${o.usd} $)`); }
 
 // 5) fatura dönemi
 assert.equal(billingPeriod("2026-10-28", 28), "2026-10-28"); assert.equal(billingPeriod("2026-11-05", 28), "2026-10-28");

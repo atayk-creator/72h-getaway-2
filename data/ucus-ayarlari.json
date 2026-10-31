@@ -4,14 +4,16 @@
   "kisi": 1,
   "para_birimi": "EUR",
   "pazar": "TR",
-  "kac_hafta_sonu": 8,
+  "kac_hafta_sonu": 13,
+  "ozel_tarihler": ["2026-12-25", "2027-01-01"],
   "sonuc_sayisi": 6,
   "toplu": false,
   "toplu_sonuc_sayisi": 8,
   "arama_basi_usd": 0.03,
   "kontrol_takvimi": [
     {"kademe":"yakin","ilk":1,"son":4,"gunler":["Sal"],"her_n_haftada":1},
-    {"kademe":"uzak","ilk":5,"son":8,"gunler":["Sal"],"her_n_haftada":2}
+    {"kademe":"orta","ilk":5,"son":8,"gunler":["Sal"],"her_n_haftada":2},
+    {"kademe":"uzak","ilk":9,"son":13,"gunler":["Sal"],"her_n_haftada":4,"kaydir":1}
   ],
   "sehirler": [
     {"sehir":"Dublin","havalimani":["DUB"]},
