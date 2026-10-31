@@ -92,7 +92,6 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 ## Gerekli ayarlar
 1. Settings > Pages > Source: Deploy from a branch, branch: main, klasör: / (root)
 2. Settings > Secrets and variables > Actions > New repository secret:
-   - `APIFY_TOKEN`: otel fiyat robotu için (Apify > Settings > API & Integrations)
-   - `TRAVELPAYOUTS_TOKEN`: uçuş ve Paris otel testleri için
+   - `APIFY_TOKEN`: otel, uçak, restoran ve gezi konum robotları için (Apify > Settings > API & Integrations)
 
 Gizli anahtarı hiçbir yere yazma, yalnızca GitHub'ın kasasına koy.
