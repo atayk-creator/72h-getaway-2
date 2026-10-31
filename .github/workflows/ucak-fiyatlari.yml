@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       mod:
-        description: "test = sadece en yakın hafta sonu, takvim = bugünün planı, hepsi = 8 hafta sonunun hepsi"
+        description: "test = sadece en yakın hafta sonu, takvim = bugünün planı, hepsi = 13 hafta sonunun hepsi"
         type: choice
         options: [test, takvim, hepsi]
         default: test

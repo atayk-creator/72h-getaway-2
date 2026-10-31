@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { flightInput, toFlightRecord, run, toMarkdown, emptyFlights, dropPast, mergeFlight, COST_PER_ROW, COST_PER_RUN } from "./ucak-fiyatlari.mjs";
+import { flightInput, toFlightRecord, trLink, run, toMarkdown, emptyFlights, dropPast, mergeFlight, COST_PER_ROW, COST_PER_RUN } from "./ucak-fiyatlari.mjs";
 import { planFor } from "./otel-fiyatlari.mjs";
 
 const cfg = JSON.parse(await readFile(new URL("../data/ucus-ayarlari.json", import.meta.url), "utf8"));
@@ -25,6 +25,14 @@ const BUD = cfg.sehirler.find((c) => c.sehir === "Budapeşte");
   assert.deepEqual(planFor("2026-11-03", cfg)[0], { no: 1, giris: "2026-11-06", cikis: "2026-11-08", kademe: "yakin" });
   for (const d of ["2026-11-03", "2026-11-10", "2026-11-17", "2026-11-24"]) for (const g of cfg.ozel_tarihler) assert.ok(planFor(d, cfg).some((w) => w.giris === g), `${d}: özel tarih ${g} her hafta`);
   console.log("ok 1: takvim (13 hafta sonu, özel tarihler)"); }
+
+// 1b) Google Flights bağlantısı Türkçe (hl=tr), diğer parametreler korunur
+{ const u = "https://www.google.com/travel/flights/search?tfs=GooBEgo&tfu=EggI&hl=en-US&gl=tr&curr=EUR";
+  assert.equal(trLink(u), "https://www.google.com/travel/flights/search?tfs=GooBEgo&tfu=EggI&hl=tr&gl=tr&curr=EUR");
+  assert.equal(trLink("https://www.google.com/travel/flights?x=1"), "https://www.google.com/travel/flights?x=1&hl=tr");
+  assert.equal(trLink("https://example.com/?hl=en"), "https://example.com/?hl=en"); assert.equal(trLink(null), null); assert.equal(trLink("bozuk"), "bozuk");
+  assert.match(toFlightRecord([{ rowType: "flight", origin: "IST", destination: "BUD", price: 100, currency: "EUR", stops: 0, googleFlightsUrl: u }], cfg, cfg.sehirler.find((c) => c.sehir === "Budapeşte")).link, /hl=tr&/);
+  console.log("ok 1b: Türkçe bağlantı"); }
 
 // 2) robot girdisi: gidiş-dönüş, iki kalkış, şehrin havalimanları, 1 kişi, euro
 { const i = flightInput(cfg, cfg.sehirler.find((c) => c.sehir === "Paris"), { giris: "2026-11-06", cikis: "2026-11-08" });

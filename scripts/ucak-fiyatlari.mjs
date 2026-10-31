@@ -26,12 +26,23 @@ export function flightInput(cfg, city, w, cities = null) {
   };
 }
 
+// Google Flights bağlantısı Türkçe açılsın (robot hl=en-US döndürüyor); diğer parametreler aynen kalır
+export function trLink(url) {
+  if (!url || typeof url !== "string") return url || null;
+  try {
+    const u = new URL(url);
+    if (!/(^|\.)google\.[a-z.]+$/.test(u.hostname)) return url;
+    u.searchParams.set("hl", "tr");
+    return u.toString();
+  } catch { return url; }
+}
+
 const isNonstop = (r) => r.stops === 0 || /nonstop|direct|aktarmas/i.test(String(r.stopsLabel || ""));
 const pick = (r) => ({
   fiyat: r2(r.price), havayolu: Array.isArray(r.airlines) ? r.airlines.join(", ") : r.airlines || null,
   aktarma: num(r.stops) ? r.stops : isNonstop(r) ? 0 : null, aktarmaYazi: r.stopsLabel || null,
   kalkis: r.origin || null, varis: r.destination || null, ucusSaati: r.departureTime || null,
-  sureDk: num(r.durationMinutes) ? r.durationMinutes : null, link: r.googleFlightsUrl || null,
+  sureDk: num(r.durationMinutes) ? r.durationMinutes : null, link: trLink(r.googleFlightsUrl || null),
 });
 
 // Robotun satırlarından en ucuz ve en ucuz aktarmasız uçuşu seçer
