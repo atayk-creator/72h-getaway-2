@@ -62,13 +62,14 @@ header p { margin: 0; color: #D5DEE8; max-width: 54ch; font-size: 1rem; }
 .steps li { background: rgba(251,246,236,0.12); border: 1.5px solid rgba(251,246,236,0.28); border-radius: 999px; padding: 5px 14px 5px 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
 .steps b { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #F4A62A; color: #0F2A43; font-size: 0.82rem; }
 .grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 38px; align-items: start; }
-@media (max-width: 820px) { .grid { grid-template-columns: 1fr; gap: 30px; } }
+@media (max-width: 820px) { .grid { grid-template-columns: minmax(0, 1fr); gap: 30px; } }
+.grid > *, .two > *, .field, .cityrow > * { min-width: 0; }
 .result { border-top: 5px solid #F4A62A; padding-top: 18px; }
 .city-line { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .city-line strong { font-size: 1.3rem; }
 .result .big { font-size: clamp(2.5rem, 8.4vw, 3.8rem); margin: 10px 0 4px; }
 .picked { font-size: 0.92rem; margin: 0 0 14px; }
-.brk li.air { grid-template-columns: 112px 1fr; color: var(--muted); }
+.brk li.air { grid-template-columns: 128px minmax(0, 1fr); color: var(--muted); }
 .hotels { margin-top: 44px; border-top: 1.5px solid var(--line); padding-top: 26px; }
 .hotels + .hotels { margin-top: 36px; }
 .stops .why { font-size: 0.86rem; margin: 2px 0 0; }
@@ -127,21 +128,11 @@ header p { margin: 0; color: #D5DEE8; max-width: 54ch; font-size: 1rem; }
 .bitem .ch.up { color: #FF7A8A; } .bitem .ch.dn { color: #5BD59B; }
 @media (prefers-reduced-motion: reduce) { .btrack { animation: none; } .bview { overflow-x: auto; } }
 
-/* ---------- aşama çubuğu (kullanılmıyor) ---------- */
-.stepbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1.5px solid var(--line); padding: 10px 20px 8px; }
-.stepper { display: flex; gap: 6px; list-style: none; margin: 0 auto; padding: 0; max-width: 1040px; }
-.stepper li { flex: 1 1 0; min-width: 0; }
-.stepper button { width: 100%; font: inherit; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 7px 6px; min-height: 40px; border-radius: 999px; border: 2px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; }
-.stepper b { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--line); color: var(--ink); font-size: 0.78rem; flex: none; }
-.stepper button.done { color: var(--ink); border-color: var(--ink); }
-.stepper button.done b { background: var(--ink); color: var(--bg); }
-.stepper button.cur { background: #F4A62A; border-color: #F4A62A; color: #0F2A43; }
-.stepper button.cur b { background: #0F2A43; color: #FBF6EC; }
-.stepper button:disabled { opacity: 0.55; cursor: default; }
-@media (max-width: 560px) { .stepper button span { display: none; } .stepper button.cur span { display: inline; } .stepper li.cur { flex: 3 1 0; } }
-.topline { max-width: 1040px; margin: 8px auto 0; font-size: 0.88rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 14px; align-items: baseline; }
-.topline b { color: var(--ink); }
-.topline .tot { color: var(--ink); font-weight: 800; font-size: 1rem; margin-left: auto; font-variant-numeric: tabular-nums; }
+/* ---------- erişilebilirlik ---------- */
+.skip { position: absolute; left: 12px; top: -80px; z-index: 50; background: #F4A62A; color: #0F2A43; font-weight: 800; padding: 12px 18px; border-radius: 10px; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 10px); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+#formSec:focus { outline: none; }
 
 main { padding: 26px 20px 52px; }
 h2 { font-size: 1.15rem; margin: 0 0 6px; font-weight: 800; }
@@ -151,8 +142,31 @@ h3 { font-size: 1rem; margin: 0 0 8px; }
 .field { margin-bottom: 16px; }
 label, .lab { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; }
 .hint { font-weight: 400; color: var(--muted); font-size: 0.82rem; }
-select, input[type="number"], input[type="date"] { width: 100%; font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; min-height: 44px; }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+select, input[type="number"], input[type="date"] { width: 100%; min-width: 0; max-width: 100%; font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; min-height: 44px; }
+input[type="date"] { padding: 10px 8px; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.fmsg { margin: 6px 0 0; font-size: 0.84rem; font-weight: 600; color: var(--chip-ink); background: var(--chip-bg); padding: 6px 10px; border-radius: 8px; }
+.rwarn { margin: 0 0 12px; padding: 10px 12px; border-radius: 10px; background: var(--chip-bg); color: var(--chip-ink); font-size: 0.9rem; font-weight: 600; border-left: 4px solid #C4374D; }
+.rwarn p { margin: 0; } .rwarn p + p { margin-top: 6px; }
+.src { display: inline-block; font-style: normal; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.02em; padding: 0 6px; border-radius: 999px; margin-left: 4px; vertical-align: 1px; border: 1.5px solid currentColor; }
+.src.canli { color: #2E7D5B; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .src.canli { color: #5BD59B; } }
+:root[data-theme="dark"] .src.canli { color: #5BD59B; } .src.ortalama { color: var(--chip-ink); } .src.tahmini, .src.resmi { color: var(--muted); }
+.nofly { font-size: 0.86rem; color: var(--muted); margin: 0 0 10px; }
+.badge { display: inline-block; font-size: 0.78rem; font-weight: 800; padding: 2px 9px; border-radius: 6px; background: #C4374D; color: #fff; margin: 6px 0 0; }
+.badge.warn { background: var(--chip-bg); color: var(--chip-ink); }
+.badge.soft { background: transparent; color: var(--muted); border: 1.5px solid var(--line); }
+.hotel.bad .price { color: var(--muted); }
+.tax { display: block; font-size: 0.78rem; color: var(--muted); font-weight: 600; margin-top: 2px; }
+.sharerow { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.social { margin-top: 16px; font-size: 0.9rem; }
+.social p { margin: 0 0 6px; font-weight: 700; }
+.social .links { display: flex; flex-wrap: wrap; gap: 8px; }
+.social a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1.5px solid var(--line); border-radius: 10px; text-decoration: none; font-weight: 700; background: var(--surface); }
+.toast { position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 20px); transform: translateX(-50%); background: var(--ink); color: var(--bg); padding: 10px 18px; border-radius: 10px; font-weight: 700; z-index: 60; max-width: calc(100vw - 32px); }
+.tag.closed { color: #fff; background: #C4374D; padding: 0 6px; border-radius: 6px; }
+.tag.sugg { color: #0F2A43; background: #F4A62A; padding: 0 6px; border-radius: 6px; }
+.pt .tags { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; font-size: 0.72rem; font-weight: 800; }
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: start; }
 @media (max-width: 760px) { .cols { grid-template-columns: 1fr; gap: 6px; } }
 .cityrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; }
@@ -173,7 +187,7 @@ select, input[type="number"], input[type="date"] { width: 100%; font: inherit; c
 .pricebox .ph { margin: 10px 0 0; font-size: 0.8rem; font-weight: 700; color: var(--muted); }
 .pricebox .pn { margin: 8px 0 2px; font-size: 0.8rem; color: var(--muted); }
 .datanote { font-size: 0.86rem; color: var(--muted); background: var(--surface); border-left: 4px solid #2E9E6B; padding: 8px 12px; border-radius: 0 10px 10px 0; margin: 0 0 16px; }
-.datanote.old { border-left-color: #D9455B; background: var(--chip-bg); color: var(--chip-ink); }
+.datanote.old { border-left-color: #C4374D; background: var(--chip-bg); color: var(--chip-ink); }
 .dnote.warn { background: var(--chip-bg); color: var(--chip-ink); padding: 8px 12px; border-radius: 10px; }
 .dnote b { color: var(--ink); }
 details.more { border: 1.5px solid var(--line); border-radius: 12px; padding: 10px 14px; margin-bottom: 16px; }
@@ -183,7 +197,7 @@ details.more .field { margin: 14px 0 4px; }
 /* ---------- şehir kısayolları ---------- */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
 .t1 { --c: #2E9E6B; --on: #FFFFFF; } .t2 { --c: #E9C03A; --on: #0F2A43; }
-.t3 { --c: #EE8A3C; --on: #0F2A43; } .t4 { --c: #D9455B; --on: #FFFFFF; }
+.t3 { --c: #EE8A3C; --on: #0F2A43; } .t4 { --c: #C4374D; --on: #FFFFFF; }
 .cchip { font: inherit; color: var(--ink); background: var(--surface); border: 2px solid var(--c); border-radius: 12px; padding: 6px 11px; min-height: 46px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; text-align: left; }
 .cchip { background: color-mix(in srgb, var(--c) 16%, var(--surface)); }
 .cchip b { font-size: 0.92rem; }
@@ -197,8 +211,12 @@ details.more .field { margin: 14px 0 4px; }
 .ticketbox strong { display: block; margin-bottom: 4px; }
 .ticketbox .fprice { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.01em; }
 .ticketbox .fsub { color: var(--muted); font-size: 0.86rem; }
-.ticketbox label.fadd { display: flex; align-items: center; gap: 8px; margin-top: 8px; font-weight: 600; cursor: pointer; }
-.ticketbox .links { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 8px; font-weight: 600; }
+.ticketbox label.fadd { display: flex; align-items: center; gap: 12px; margin-top: 10px; font-weight: 700; cursor: pointer; min-height: 52px; padding: 8px 12px; border: 2px solid #F4A62A; border-radius: 12px; background: var(--surface); }
+.ticketbox label.fadd:has(input:checked) { background: #F4A62A; color: #0F2A43; }
+.ticketbox label.fadd input { width: 26px; height: 26px; flex: none; accent-color: #0F2A43; margin: 0; }
+.ticketbox .links { display: flex; flex-wrap: wrap; gap: 0 14px; margin-top: 6px; font-weight: 600; }
+.ticketbox .links a, .hfoot a, .pricebox li a, .prow details a { display: inline-flex; align-items: center; min-height: 44px; }
+.ticketbox .fnote { display: block; margin-top: 6px; font-size: 0.84rem; color: var(--chip-ink); background: var(--chip-bg); padding: 6px 10px; border-radius: 8px; }
 
 .chip { display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; white-space: nowrap; }
 .chip.est { background: transparent; color: var(--muted); border: 1.5px solid var(--line); }
@@ -254,7 +272,7 @@ details.more .field { margin: 14px 0 4px; }
 .big { font-size: clamp(2.3rem, 8vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; font-variant-numeric: tabular-nums; margin: 4px 0; }
 .sub { color: var(--muted); font-size: 0.95rem; margin: 0 0 12px; }
 .brk { list-style: none; margin: 0; padding: 0; }
-.brk li { display: grid; grid-template-columns: 112px 1fr auto; gap: 12px; align-items: center; padding: 7px 0; font-size: 0.95rem; }
+.brk li { display: grid; grid-template-columns: 128px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 7px 0; font-size: 0.95rem; }
 .track { height: 10px; background: var(--bar-soft); border-radius: 6px; overflow: hidden; }
 .fill { height: 100%; background: var(--bar); border-radius: 6px; }
 .brk .amt { font-variant-numeric: tabular-nums; font-weight: 600; text-align: right; }
@@ -269,9 +287,24 @@ details.more .field { margin: 14px 0 4px; }
 .legend .chip { flex: none; }
 footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 74ch; }
 
+/* ---------- yazdırma (PDF yedeği) ---------- */
+@media print {
+  :root { color-scheme: light; --bg: #fff; --surface: #fff; --ink: #0F2A43; --muted: #44515E; --line: #CCC; --pick: #FFF7E3; }
+  body { background: #fff; }
+  .board, .skip, #formSec, .chips, .cleg, .cityrow, .two, .dnote, .field, .ticketbox .links, .ticketbox label.fadd, .arrows, .actions, .pdfrow, .sharerow, .social, .toast, .hotels:not(#tripSec), #tripSec .pricebox, #tripSec .rowhead:first-of-type, #plist, .legend, header .deco, header .steps, .datanote, .lead { display: none !important; }
+  header { background: #fff; color: #0F2A43; padding: 8px 0; }
+  header h1, header p { color: #0F2A43; }
+  main { padding: 0; }
+  .grid { display: block; }
+  .result { break-inside: avoid; }
+  .hs { display: block; overflow: visible; }
+  .hs > * { width: auto !important; margin-bottom: 10px; break-inside: avoid; }
+  a { text-decoration: none; }
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#formSec">İçeriğe geç</a>
 
 <header>
   <svg class="deco" viewBox="0 0 1000 300" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
@@ -299,11 +332,11 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         <g fill="#0F2A43"><rect x="840" y="214" width="3" height="46"/><rect x="851" y="214" width="5" height="46"/><rect x="862" y="214" width="7" height="46"/><rect x="873" y="214" width="4" height="46"/><rect x="884" y="214" width="6" height="46"/><rect x="895" y="214" width="3" height="46"/><rect x="906" y="214" width="5" height="46"/><rect x="917" y="214" width="7" height="46"/><rect x="928" y="214" width="4" height="46"/><rect x="939" y="214" width="6" height="46"/><rect x="950" y="214" width="3" height="46"/></g>
       </svg>
     </div>
-    <h1>Biletini al, turunu kendin kur!</h1>
-    <p>Bir başkent seç, otelini ve yemeğini seç, gezini planla, kaça geleceğini gör. İstanbul çıkışlı uçak ve otel fiyatlarını robotumuz düzenli olarak kontrol ediyor.</p>
+    <h1>Hafta sonu kaçamağın kaça patlar?</h1>
+    <p>Gör, planla, yola çık. Bir başkent seç; İstanbul çıkışlı uçak ve otel fiyatlarını robotumuz her gün cuma–pazar (2 gece) için kontrol ediyor, sen otelini, yemeğini ve gezini seç, toplamı gör.</p>
     <ol class="steps" aria-label="Nasıl kullanılır">
-      <li><b>1</b> Biletini al</li>
-      <li><b>2</b> Şehir ve tarih seç</li>
+      <li><b>1</b> Şehir ve tarih seç</li>
+      <li><b>2</b> Uçağı ekle</li>
       <li><b>3</b> Otelini seç</li>
       <li><b>4</b> Yemeğini seç</li>
       <li><b>5</b> Gezini planla</li>
@@ -321,7 +354,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 <div class="wrap">
   <div class="grid">
 
-    <section aria-labelledby="h-form">
+    <section aria-labelledby="h-form" id="formSec" tabindex="-1">
       <h2 id="h-form">Turunu kur</h2>
       <p class="lead">Şehri ve tarihini seç, kaç kişi olduğunu yaz. Otelini, yemeğini ve gezini aşağıdan seçeceksin.</p>
       <p class="datanote" id="datanote"></p>
@@ -329,7 +362,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       <div class="field">
         <span class="lab" id="lc">Başkent</span>
         <div class="chips" id="chips" role="group" aria-labelledby="lc"></div>
-        <p class="cleg" id="cleg"></p>
+        <p class="cleg" id="cleg" title="Kısayollardaki ve kayan banttaki rakamlar uçak hariç toplamdır: aynı tarih, kişi sayısı ve otel seviyesiyle hesaplanır."></p>
         <div class="cityrow">
           <select id="city" aria-label="Tüm başkentler"></select>
           <button type="button" class="btn" id="dice">🎲 Beni şaşırt</button>
@@ -339,18 +372,19 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       <div class="two">
         <div class="field">
           <label for="d1">Gidiş tarihi</label>
-          <input id="d1" type="date" value="2026-12-08" min="2026-10-02">
+          <input id="d1" type="date">
         </div>
         <div class="field">
           <label for="d2">Dönüş tarihi</label>
-          <input id="d2" type="date" value="2026-12-11" min="2026-10-03">
+          <input id="d2" type="date">
         </div>
       </div>
       <p class="dnote" id="dnote"></p>
 
       <div class="field">
         <label for="ppl">Kişi sayısı</label>
-        <input id="ppl" type="number" min="1" max="6" value="2" inputmode="numeric">
+        <input id="ppl" type="number" min="1" max="6" step="1" value="2" inputmode="numeric" aria-describedby="pplMsg">
+        <p class="fmsg" id="pplMsg" role="status" hidden></p>
       </div>
 
       <div class="field">
@@ -378,7 +412,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 
       <div class="field">
         <label for="rate">Euro / TL kuru <span class="hint" id="rateHint">(güncelleyebilirsin)</span></label>
-        <input id="rate" type="number" min="1" step="0.1" value="55.3" inputmode="decimal">
+        <input id="rate" type="number" min="1" step="0.1" value="" inputmode="decimal" aria-describedby="rateMsg">
+        <p class="fmsg" id="rateMsg" role="status" hidden></p>
       </div>
 
       <div class="ticketbox" id="ticketbox">
@@ -392,17 +427,29 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       </div>
     </section>
 
-    <section class="result" aria-live="polite" aria-labelledby="h-res">
-      <h2 id="h-res" style="position:absolute;left:-9999px">Sonuç</h2>
+    <section class="result" aria-labelledby="h-res" id="resultSec">
+      <h2 id="h-res" class="sr">Sonuç</h2>
+      <p class="sr" id="rLive" aria-live="polite" aria-atomic="true"></p>
+      <div class="rwarn" id="rWarn" hidden></div>
       <div class="city-line"><strong id="rCity"></strong><span id="rChip" class="chip"></span><span class="chip no" id="rAir">uçak hariç</span></div>
       <div class="big" id="rTotal"></div>
       <p class="sub" id="rSub"></p>
+      <p class="nofly" id="rNoFly" hidden></p>
       <p class="picked" id="rHotel"></p>
       <p class="note" id="rNote" hidden></p>
       <ul class="brk" id="brk"></ul>
-      <div class="pdfrow">
+      <div class="pdfrow" id="actRow">
         <button type="button" class="btn ghost" id="pdfBtn">📄 Programı PDF olarak kaydet</button>
+        <button type="button" class="btn" id="shareBtn">🔗 Paylaş</button>
         <p class="pdfmsg" id="pdfMsg" role="status"></p>
+      </div>
+      <div class="social">
+        <p>Bu şehrin videoları ve yeni bütçeler için takip et</p>
+        <div class="links">
+          <a href="https://www.youtube.com/@72hgetaway" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/72hgetaway" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@72hgetaway" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
       </div>
     </section>
 
@@ -423,7 +470,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     <div class="hs eq" id="rgrid" role="radiogroup" aria-labelledby="h-rest"></div>
   </section>
 
-  <section class="hotels" aria-labelledby="h-trip">
+  <section class="hotels" aria-labelledby="h-trip" id="tripSec">
     <h2 id="h-trip">Gezini planla: <span id="tcCity"></span></h2>
     <div id="tripBody"></div>
   </section>
@@ -432,10 +479,15 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     <div><span class="chip res">Araştırıldı</span><span>Otel, restoran ve gezi yerlerinin adı, bilgisi ve fiyatları kaynaklarla bulundu. Tarihine ve saatine göre mutlaka kontrol et.</span></div>
     <div><span class="chip est">Tahmini</span><span>Bölge ortalamalarından türetilmiş yaklaşık değer. Örnek otel, restoran ya da gezi yeri yok, arama bağlantısı var.</span></div>
     <div><span class="chip ver">Doğrulandı</span><span>Gidip gerçek harcamayla teyit ettiğimiz şehirler. Her videodan sonra bir şehir daha buraya geçecek.</span></div>
+    <div><span class="src canli">canlı</span><span>Bütçe satırındaki fiyat, seçtiğin cuma–pazar hafta sonu için robotun bulduğu güncel fiyat.</span></div>
+    <div><span class="src ortalama">ortalama</span><span>Seçtiğin hafta sonu için kullanılabilir fiyat yok (dolu, doğrulanamadı ya da veri aralığı dışında); diğer hafta sonlarının ortancası kullanıldı.</span></div>
+    <div><span class="src tahmini">tahmini</span><span>Seçtiğin tarihler için robot verisi birebir yok: en yakın hafta sonundan ya da şehir ortalamasından tahmin edildi.</span></div>
+    <div><span class="src resmi">resmî</span><span>Toplu taşıma ve gezi biletleri resmî fiyat listelerinden.</span></div>
+    <div><span class="chip no">uçak hariç</span><span>Şehir kısayollarındaki ve kayan banttaki rakamlar uçak bileti hariç toplamdır; kendi aralarında aynı tarih, kişi sayısı ve otel seviyesiyle karşılaştırılır.</span></div>
   </section>
 
   <footer>
-    Fiyatlar euro cinsinden, iki kişilik oda başına gecelik hesaplanır. Şehir vergisi, bagaj ücreti, vize ve seyahat sigortası dahil değildir. Şehir kısayollarının renkleri, seçtiğin tura göre 37 başkent arasındaki sıralamadan gelir. Gezi planındaki mesafeler yer koordinatlarından tahmin edilir: yürüyüşe yaklaşık %30 dolambaç payı eklenir, taksi süresi şehir içi ortalama hızla hesaplanır, gerçek süre trafiğe ve rotaya göre değişir. Güvenlik ve seyahat uyarıları nedeniyle Kiev, Moskova ve Minsk listeye eklenmedi. Bu araç bilgi amaçlıdır, rezervasyondan ve gezi saatlerinden önce güncel bilgilere bak.
+    Fiyatlar euro cinsinden, iki kişilik oda başına gecelik hesaplanır. Şehir vergisi, bagaj ücreti, vize ve seyahat sigortası dahil değildir. Şehir kısayollarının renkleri ve rakamları (uçak hariç), seçtiğin tura göre 37 başkent arasındaki sıralamadan gelir. Otel ve uçak fiyatları robotla cuma giriş, pazar çıkış (2 gece) için kontrol edilir. Gezi planındaki mesafeler yer koordinatlarından tahmin edilir: yürüyüşe yaklaşık %30 dolambaç payı eklenir, taksi süresi şehir içi ortalama hızla hesaplanır, gerçek süre trafiğe ve rotaya göre değişir. Güvenlik ve seyahat uyarıları nedeniyle Kiev, Moskova ve Minsk listeye eklenmedi. Bu araç bilgi amaçlıdır, rezervasyondan ve gezi saatlerinden önce güncel bilgilere bak.
     <p style="margin-top:10px"><a href="hakkinda.html">Hakkında, fiyat uyarısı ve gizlilik</a> · <a href="oteller.html">Hafta sonu otel fiyatları</a></p>
   </footer>
 </div>
@@ -450,7 +502,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   // Resmî bilet fiyatları. Kendi sitende prices.json (haftalık robot + senin onayınla) bunların üstüne yazar.
   var PRICES = {"version": 1, "updated": "2026-10-02", "items": {"szechenyi_weekday": {"label": "Széchenyi hamamı, pazartesi-perşembe, dolaplı günlük bilet", "value": 13200, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "szechenyi_weekend": {"label": "Széchenyi hamamı, cuma-pazar, dolaplı günlük bilet", "value": 14800, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "szechenyi_early": {"label": "Széchenyi \"Good morning\" bileti (9:00'a kadar), pazartesi-perşembe", "value": 10500, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "szechenyi_friday_early": {"label": "Széchenyi \"Good morning\" bileti, yalnızca cuma", "value": 11800, "currency": "Ft", "source": "https://www.szechenyibath.hu/prices", "checked": "2026-10-02", "tier": "resmi"}, "parlament_noneea": {"label": "Parlamento turu, AEA dışı yetişkin", "value": 14000, "currency": "Ft", "source": "https://www.parlament.hu/en/web/orszaghaz/jegyarak", "checked": "2026-10-02", "tier": "resmi"}, "bkk_72h": {"label": "BKK 72 saatlik seyahat kartı", "value": 5750, "currency": "Ft", "source": "https://bkk.hu/en/tickets-and-passes/prices/", "checked": "2026-10-02", "tier": "resmi"}, "bkk_100e": {"label": "Havalimanı otobüsü 100E, tek yön", "value": 2500, "currency": "Ft", "source": "https://bkk.hu/en/tickets-and-passes/prices/airport-shuttle-bus-single-ticket/", "checked": "2026-10-02", "tier": "resmi"}, "opera_tour_en": {"label": "Macar Devlet Operası, OperaTour (İngilizce tur)", "value": 12000, "currency": "Ft", "tier": "resmi", "source": "https://www.opera.hu/en/services/operatour/", "checked": "2026-10-02"}, "basilica_church": {"label": "Aziz Stephen Bazilikası, kilise salonu (yetişkin)", "value": 2600, "currency": "Ft", "tier": "ikincil", "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "sources": ["https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "https://budapestfrontier.com/st-stephens-basilica/"], "checked": "2026-10-02"}, "basilica_panorama": {"label": "Bazilika, panorama terası ve hazine", "value": 5000, "currency": "Ft", "tier": "ikincil", "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "sources": ["https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest"], "checked": "2026-10-02"}, "basilica_all": {"label": "Bazilika, hepsi bir arada bilet", "value": 6800, "currency": "Ft", "tier": "ikincil", "source": "https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest", "sources": ["https://eurolandmarks.com/attractions/hungary/budapest/st-stephens-basilica-budapest"], "checked": "2026-10-02"}, "bastion_upper": {"label": "Balıkçı Tabyası, üst kuleler (yetişkin)", "value": 1700, "currency": "Ft", "tier": "ikincil", "source": "https://hungaryunlocked.com/fishermans-bastion-budapest-guide/", "sources": ["https://hungaryunlocked.com/fishermans-bastion-budapest-guide/"], "checked": "2026-10-02"}}};
   var PRICE_STATUS = null;
-  var FONT_R = "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", FONT_B = "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";
+  // PDF fontu (DejaVu Sans alt kümesi) img/pdf-font.json dosyasında; yalnızca PDF butonuna basılınca indirilir.
 
   /* ====================== VERİ ====================== */
   var BUD_HOTELS = [
@@ -532,7 +584,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     ["Prag","Çekya","Orta ve Doğu Avrupa",85,38,5,16],
     ["Bratislava","Slovakya","Orta ve Doğu Avrupa",80,36,5,14],
     ["Budapeşte","Macaristan","Orta ve Doğu Avrupa",95,39,7,24,"res",
-      "Resmi bilet ve hamam fiyatları kaynaklı, üç otel, üç restoran ve on bir gezi yeri araştırıldı. Otel fiyatları Aralık için yaklaşık, Booking'de kendi tarihine bak. Yemek tahmini.", BUD_HOTELS, BUD_RESTOS, BUD_PLACES],
+      "Resmî bilet ve hamam fiyatları kaynaklı, on bir gezi yeri araştırıldı. Sekiz otelin cuma–pazar fiyatı robotla kontrol ediliyor, altı restoran Google puanı ve fiyat aralığıyla seçildi. Günlük yemek tahmini.", BUD_HOTELS, BUD_RESTOS, BUD_PLACES],
     ["Ljubljana","Slovenya","Orta ve Doğu Avrupa",100,42,5,14],
     ["Zagreb","Hırvatistan","Orta ve Doğu Avrupa",85,38,4,14],
     ["Bükreş","Romanya","Orta ve Doğu Avrupa",65,32,3,12],
@@ -550,7 +602,6 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   });
   var QUICK = ["Budapeşte","Prag","Atina","Lizbon","Sofya","Belgrad","Roma","Viyana","Paris","Londra","Berlin","Madrid","Amsterdam","Varşova"];
   var TNAME = ["", "ucuz", "orta", "pahalı", "çok pahalı"];
-  var STEPS = ["Şehir", "Otel", "Yemek", "Gezi", "Özet"];
 
   var r5 = function (x) { return Math.round(x / 5) * 5; };
   var TIER = [
@@ -576,6 +627,35 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     return RTIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: Math.max(3, Math.round(c.f * x.m)), sc: "", s: "est", desc: x.desc }; });
   }
   var CHIP = { est:["Tahmini","est"], res:["Araştırıldı","res"], ver:["Doğrulandı","ver"], live:["Canlı fiyat","ver"], avg:["Hafta sonu ort.","res"] };
+  // Bütçe satırlarındaki kaynak etiketi
+  var SRC = { canli: "canlı", ortalama: "ortalama", tahmini: "tahmini", resmi: "resmî" };
+  var SRC_TIP = { canli: "Seçtiğin cuma–pazar için robotun bulduğu güncel fiyat", ortalama: "Diğer hafta sonlarının ortancası", tahmini: "Seçtiğin tarihler için birebir robot verisi yok, yaklaşık", resmi: "Resmî fiyat listelerinden" };
+  function srcTag(k) { return k && SRC[k] ? ' <i class="src ' + k + '" title="' + SRC_TIP[k] + '">' + SRC[k] + "</i>" : ""; }
+
+  /* ====================== TARİH YARDIMCILARI ====================== */
+  // Bugün, Türkiye saatine göre (YYYY-AA-GG)
+  function todayIst() {
+    try { return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Istanbul", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
+    catch (e) { return isoD(new Date()); }
+  }
+  function addDays(iso, n) { return isoD(new Date(parseD(iso).getTime() + n * 86400000)); }
+  function dayDiff(a, b) { return Math.round((parseD(b) - parseD(a)) / 86400000); }
+  // Bugünden itibaren ilk cuma (bugün cumaysa bugün)
+  function nextFriday(from) { var d = parseD(from), add = (5 - d.getUTCDay() + 7) % 7; return addDays(from, add); }
+  // Seçilen tarihler için hangi robot hafta sonu kullanılacak: birebir cuma–pazar ise o hafta sonu,
+  // değilse en yakın hafta sonu (en fazla 4 gün uzaklıkta); daha uzaktaysa veri aralığı dışında.
+  function pickWeekend(keys, o, cikisOf) {
+    if (!o || !o.a || !o.b || !keys.length) return null;
+    var a = isoD(o.a), b = isoD(o.b);
+    if (o.exact && keys.indexOf(a) >= 0) return { key: a, exact: true };
+    var mid = (o.a.getTime() + o.b.getTime()) / 2, best = null, bd = Infinity;
+    keys.forEach(function (k) {
+      var c = cikisOf(k) || addDays(k, 2), m = (parseD(k).getTime() + parseD(c).getTime()) / 2, d = Math.abs(m - mid) / 86400000;
+      if (d < bd) { bd = d; best = k; }
+    });
+    if (best && bd <= 4 && !(o.exact && best !== a)) return { key: best, exact: false };
+    return { key: null, out: true, last: keys[keys.length - 1], first: keys[0], after: a > keys[keys.length - 1] };
+  }
 
   /* ====================== CANLI OTEL FİYATLARI ====================== */
   // Otel fiyat robotu (GitHub Actions) data/hotels.json'daki otellerin Cuma–Pazar fiyatlarını
@@ -584,7 +664,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   var LCAT = { ikonik: { t: "İkonik", lvl: 2, m: 2.2 }, pahali: { t: "Pahalı", lvl: 2, m: 2.0 }, konforlu: { t: "Konforlu", lvl: 1, m: 1.05 }, ucuz: { t: "Ucuz", lvl: 0, m: 0.65 } };
   var LVL = { Sade: 0, Orta: 1, "Şık": 2 };
   var dRange = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "short", timeZone: "UTC" });
-  function liveSlug(n) { return n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function liveSlug(n) { return String(n).replace(/ı/g, "i").replace(/İ/g, "I").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
   function liveCity(c) {
     if (!LIVE.doc) return null;
     for (var i = 0; i < LIVE.doc.sehirler.length; i++) if (LIVE.doc.sehirler[i].sehir === c.n) return LIVE.doc.sehirler[i];
@@ -596,60 +676,105 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     LIVE.files[c.n] = "yukleniyor";
     fetch(liveFileUrl(c) + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) { LIVE.files[c.n] = d && d.haftaSonlari ? d : "yok"; render(); })
-      .catch(function () { LIVE.files[c.n] = "yok"; });
+      .catch(function () { LIVE.files[c.n] = "yok"; render(); });
   }
+  function liveFile(c) { return typeof LIVE.files[c.n] === "object" ? LIVE.files[c.n] : null; }
   function median(a) { var s = a.slice().sort(function (x, y) { return x - y; }), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; }
   function agoText(t) {
     var h = (Date.now() - new Date(t).getTime()) / 3600000;
+    if (!isFinite(h)) return "yakın zamanda";
     return h < 1 ? "az önce" : h < 24 ? Math.round(h) + " saat önce" : Math.round(h / 24) + " gün önce";
   }
-  function weekendText(g, cikis) { return dRange.format(new Date(g + "T00:00:00Z")) + " – " + dRange.format(new Date(cikis + "T00:00:00Z")); }
-  // Seçilen tarihlere denk gelen hafta sonunun fiyatı; yoksa önümüzdeki hafta sonlarının ortancası
-  function stayPrice(file, id, o) {
-    var hs = (file && file.haftaSonlari) || {}, today = isoD(new Date());
-    var keys = Object.keys(hs).filter(function (k) { return hs[k].cikis >= today; }).sort();
-    var at = null;
-    if (o && o.a && o.b) {
-      var a = isoD(o.a), b = isoD(o.b);
-      for (var i = 0; i < keys.length; i++) if (keys[i] < b && hs[keys[i]].cikis > a) { at = keys[i]; break; }
-    }
-    var vals = [], puan = null;
-    keys.forEach(function (k) { var s = hs[k].oteller[id] && hs[k].oteller[id].son; if (s && s.puan) puan = s.puan; if (s && s.durum === "fiyat") vals.push(s.gecelik); });
-    var avg = vals.length ? median(vals) : null;
-    if (at) {
-      var s = hs[at].oteller[id] && hs[at].oteller[id].son;
-      if (s && s.durum === "fiyat") return { p: s.gecelik, kind: "live", g: at, cikis: hs[at].cikis, s: s, puan: puan };
-      if (s && s.durum === "dolu") return { p: avg, kind: "full", g: at, cikis: hs[at].cikis, s: s, n: vals.length, puan: puan };
-    }
-    if (avg != null) return { p: avg, kind: "avg", n: vals.length, puan: puan };
+  function weekendText(g, cikis) { return dRange.format(new Date(g + "T00:00:00Z")) + " – " + dRange.format(new Date((cikis || addDays(g, 2)) + "T00:00:00Z")); }
+  // Otel kaydının gecelik fiyatı: yeni sözleşmede "fiyat" 2 gecelik vergili toplam; eski kayıtlarda "gecelik" de var
+  function nightlyOf(s, g, cikis) {
+    if (!s) return null;
+    var n = g && cikis ? Math.max(1, dayDiff(g, cikis)) : 2;
+    if (typeof s.fiyat === "number" && s.fiyat > 0) return s.fiyat / n;
+    if (typeof s.gecelik === "number" && s.gecelik > 0) return s.gecelik;
     return null;
   }
+  // Bütçede kullanılabilir fiyat: durum "fiyat" ve şüpheli değil
+  function usableRec(s) { return !!s && s.durum === "fiyat" && !s.supheli; }
+  // Gelecekteki hafta sonları (çıkışı bugünden önce olmayanlar)
+  function futureKeys(file) {
+    var hs = (file && file.haftaSonlari) || {}, today = todayIst();
+    return Object.keys(hs).filter(function (k) { return (hs[k].cikis || addDays(k, 2)) >= today; }).sort();
+  }
+  // Bir otelin seçilen tarihlere göre fiyat durumu
+  function stayPrice(file, id, o) {
+    var hs = (file && file.haftaSonlari) || {}, keys = futureKeys(file);
+    var rec = function (k) { return hs[k] && hs[k].oteller && hs[k].oteller[id] && hs[k].oteller[id].son || null; };
+    var vals = [], puan = null, seen = 0, dolu = 0;
+    keys.forEach(function (k) {
+      var s = rec(k); if (!s) return; seen++;
+      if (s.puan) puan = s.puan;
+      if (s.durum === "dolu") dolu++;
+      if (usableRec(s)) { var v = nightlyOf(s, k, hs[k].cikis); if (v != null) vals.push(v); }
+    });
+    var avg = vals.length ? median(vals) : null;
+    var r = { p: avg, src: avg != null ? "ortalama" : "tahmini", status: "ok", n: vals.length, puan: puan, s: null, g: null, cikis: null, out: false };
+    if (!seen) { r.status = "yok"; r.p = null; r.src = "tahmini"; return r; }
+    if (!vals.length && dolu === seen) { r.status = "tumu-dolu"; r.p = null; return r; }
+    var w = pickWeekend(keys, o, function (k) { return hs[k].cikis; });
+    if (!w) return r;
+    if (w.out) { r.out = true; r.last = w.last; return r; }
+    var s = rec(w.key); r.g = w.key; r.cikis = hs[w.key].cikis; r.s = s; r.exact = w.exact;
+    if (s && s.vergi) r.vergi = s.vergi;
+    if (usableRec(s) && nightlyOf(s, w.key, r.cikis) != null) { r.p = nightlyOf(s, w.key, r.cikis); r.src = w.exact ? "canli" : "tahmini"; r.live = true; return r; }
+    if (!s) { r.status = "kontrolsuz"; return r; }
+    if (s.durum === "dolu") r.status = "dolu";
+    else if (s.durum === "dogrulanamadi") { r.status = "dogrulanamadi"; r.info = nightlyOf(s, w.key, r.cikis); }
+    else if (s.durum === "fiyat" && s.supheli) { r.status = "supheli"; r.info = nightlyOf(s, w.key, r.cikis); }
+    else r.status = "bulunamadi";
+    return r;
+  }
+  // Varsayılan seçim puanı: 3 = seçilen hafta sonu fiyatı var, 2 = ortalama/henüz yok ama sorun yok, 0 = dolu ya da kullanılamaz
+  var BAD = { dolu: 1, "tumu-dolu": 1, dogrulanamadi: 1, supheli: 1 };
   function liveHotels(c) {
     var city = liveCity(c);
     if (!city) return null;
-    var file = typeof LIVE.files[c.n] === "object" ? LIVE.files[c.n] : null, o = lastO, konum = (LIVE.meta && LIVE.meta.konum) || {};
+    var file = liveFile(c), o = lastO, konum = (LIVE.meta && LIVE.meta.konum) || {};
     var fb = c.hotels && c.hotels[1];
     return city.oteller.map(function (h) {
       var cat = LCAT[h.kategori] || LCAT.konforlu, sp = file ? stayPrice(file, h.id, o) : null, k = konum[h.id];
-      var p = sp && sp.p != null ? sp.p : c.h * cat.m, note, chip;
-      if (sp && sp.kind === "live") { chip = "live"; note = weekendText(sp.g, sp.cikis) + " için " + sp.s.site + " fiyatı, " + agoText(sp.s.kontrol) + " kontrol edildi."; }
-      else if (sp && sp.kind === "full") { chip = sp.p != null ? "avg" : "est"; note = weekendText(sp.g, sp.cikis) + " hafta sonu dolu görünüyor. Fiyat " + (sp.p != null ? "diğer hafta sonlarının ortalaması." : "tahmini."); }
-      else if (sp && sp.kind === "avg") { chip = "avg"; note = "Fiyat, önümüzdeki " + sp.n + " hafta sonunun ortalaması."; }
-      else { chip = "est"; note = file ? "Bu otelin fiyatı henüz kontrol edilmedi, şehir ortalamasından tahmin." : "Fiyat yükleniyor…"; }
-      return { t: cat.t, lvl: cat.lvl, name: h.ad, label: h.ad, p: Math.round(p), s: chip, desc: h.not.replace(/[.\s]+$/, "") + ". " + note,
-        sc: sp && sp.puan ? String(sp.puan).replace(".", ",") : "", sct: "Google puanı", live: true,
+      var est = c.h * cat.m, p = sp && sp.p != null ? sp.p : est, note, chip, badge = null, src = sp ? sp.src : "tahmini";
+      var wkTxt = sp && sp.g ? weekendText(sp.g, sp.cikis) : "";
+      var avgTxt = sp && sp.n ? "Bütçede diğer " + sp.n + " hafta sonunun ortalaması (~" + nf.format(Math.round(sp.p)) + " €) kullanılır." : "Bütçede şehir ortalamasından tahmin kullanılır.";
+      if (!file) { chip = "est"; note = LIVE.files[c.n] === "yok" ? "Fiyat dosyası okunamadı, şehir ortalamasından tahmin." : "Fiyat yükleniyor…"; }
+      else if (sp.status === "yok") { chip = "est"; badge = ["soft", "Fiyat henüz çekilmedi"]; note = "Bu otel listeye yeni eklendi, robot fiyatını ilk turda çekecek. Şimdilik şehir ortalamasından tahmin."; }
+      else if (sp.status === "tumu-dolu") { chip = "est"; badge = ["", "Bu tarihlerde satışta görünmüyor"]; note = "Robotun baktığı hiçbir hafta sonunda boş oda görünmüyor. Bütçede şehir ortalamasından tahmin kullanılır."; }
+      else if (sp.status === "dolu") { chip = sp.p != null ? "avg" : "est"; badge = ["", "Dolu"]; note = wkTxt + " hafta sonu dolu görünüyor. " + avgTxt; }
+      else if (sp.status === "dogrulanamadi") { chip = sp.p != null ? "avg" : "est"; badge = ["warn", "Fiyat doğrulanamadı"]; note = wkTxt + " için güvenilir bir rezervasyon sitesinde fiyat doğrulanamadı" + (sp.info ? " (görülen ~" + nf.format(Math.round(sp.info)) + " € / gece, yalnızca bilgi)" : "") + ". " + avgTxt; }
+      else if (sp.status === "supheli") { chip = sp.p != null ? "avg" : "est"; badge = ["warn", "Fiyatı kontrol et"]; note = wkTxt + " için görülen fiyat" + (sp.info ? " (~" + nf.format(Math.round(sp.info)) + " € / gece)" : "") + " bu otelin olağan aralığının çok üstünde, kontrol et. " + avgTxt; }
+      else if (sp.live) { chip = sp.exact ? "live" : "est"; note = wkTxt + " için " + escH(sp.s.site || "rezervasyon sitesi") + " fiyatı, " + agoText(sp.s.kontrol) + " kontrol edildi" + (sp.exact ? "." : ". Senin tarihlerin farklı, bu fiyat yaklaşık."); }
+      else if (sp.out) { chip = sp.p != null ? "avg" : "est"; note = "Seçtiğin tarihler robotun baktığı hafta sonlarının dışında (son: " + weekendText(sp.last) + "). " + avgTxt; }
+      else if (sp.p != null) { chip = "avg"; note = (wkTxt ? wkTxt + " için fiyat bulunamadı. " : "") + "Fiyat, önümüzdeki " + sp.n + " hafta sonunun ortalaması."; }
+      else { chip = "est"; note = "Bu otel için kullanılabilir fiyat yok, şehir ortalamasından tahmin."; }
+      var score = !file ? 2 : BAD[sp.status] ? 0 : sp.live ? 3 : sp.status === "yok" ? 1 : 2;
+      return { t: cat.t, lvl: cat.lvl, name: escH(h.ad), label: escH(h.ad), p: Math.round(p), s: chip, src: src, desc: escH(String(h.not || "").replace(/[.\s]+$/, "")) + ". " + note,
+        sc: sp && sp.puan ? String(sp.puan).replace(".", ",") : "", sct: "Google puanı", live: true, badge: badge, score: score, sp: sp,
+        q: h.arama || h.ad, vergi: sp && sp.vergi, priceKnown: !!(sp && sp.live),
         lat: k ? k[0] : fb ? fb.lat : c.center ? c.center.lat : undefined, lon: k ? k[1] : fb ? fb.lon : c.center ? c.center.lon : undefined };
     });
   }
   // Şehir etiketi: otel ya da uçak fiyatı robottan geliyorsa "Canlı fiyat", yoksa şehrin kendi durumu
   function cityStatus(c, o, k) {
     var h = hotelsOf(c)[hIdx];
-    if ((h && h.s === "live") || (k && k.flight && k.flight.kind === "live")) return "live";
+    if ((h && h.s === "live") || (k && k.flight && k.flight.src === "canli")) return "live";
     if ((h && h.s === "avg") || (k && k.flight)) return "avg";
     return c.s;
   }
   function lvlOf(h) { return h.lvl != null ? h.lvl : LVL[h.t] != null ? LVL[h.t] : 1; }
-  function defaultIdx(hs) { for (var i = 0; i < hs.length; i++) if (lvlOf(hs[i]) === 1) return i; return Math.min(1, hs.length - 1); }
+  // Varsayılan otel: dolu ya da fiyatı kullanılamayan otel asla seçilmez; konforlu (orta) seviye öncelikli
+  function defaultIdx(hs) {
+    var best = -1, bk = null;
+    hs.forEach(function (h, i) {
+      var sc = h.score != null ? h.score : 2, key = [sc >= 2 ? 0 : sc >= 1 ? 1 : 2, Math.abs(lvlOf(h) - 1), -sc, i];
+      if (!bk || key[0] < bk[0] || (key[0] === bk[0] && (key[1] < bk[1] || (key[1] === bk[1] && (key[2] < bk[2] || (key[2] === bk[2] && key[3] < bk[3])))))) { bk = key; best = i; }
+    });
+    return best < 0 ? Math.min(1, hs.length - 1) : best;
+  }
   function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
   /* ====================== GEZİ YERLERİ VE ULAŞIM ====================== */
   // data/gezi.json: 26 başkentte 10'ar gezi yeri (süre, resmî bilet fiyatı, bilgi, Google Maps konumu) ve toplu taşıma fiyatları.
@@ -677,8 +802,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       c.places = list.map(function (y) {
         var eur = toEur(y.fiyat, g.para), eurWe = toEur(y.fiyat_hs, g.para), unknown = y.fiyat == null;
         return { n: escH(y.ad), tag: escH(y.tur), z: y.bolge, lat: y.konum[0], lon: y.konum[1], mins: y.sure_dk,
-          eur: unknown ? guess : eur, eurWe: eurWe, unknown: unknown,
-          price: escH(y.fiyat_yazi) + (unknown ? " · fiyatı teyit et (bütçede ~" + Math.round(guess) + " € varsayıldı)" : ""),
+          eur: unknown ? guess : eur, eurWe: eurWe, unknown: unknown, closed: y.kapali === "gecici",
+          price: escH(y.fiyat_yazi) + (unknown ? " · fiyatı teyit et (bütçede ~" + nf.format(Math.round(guess)) + " € varsayıldı)" : ""),
           info: escH(y.bilgi) + (y.kapali === "gecici" ? " Google'da geçici olarak kapalı görünüyor, gitmeden kontrol et." : ""),
           src: /^https:\/\//.test(y.kaynak || "") ? escH(y.kaynak) : null, url: /^https:\/\/www\.google\.com\/maps\//.test(y.harita || "") ? escH(y.harita) : null };
       });
@@ -709,7 +834,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   function transportText(tp) {
     if (!tp) return "";
     if (tp.perPerson === 0) return "Toplu taşıma ücretsiz";
-    return "Kişi başı ~" + Math.round(tp.perPerson) + " €: " + tp.city.t + (tp.air ? " + havalimanı gidiş-dönüş ~" + Math.round(tp.air) + " €" : "");
+    return "Kişi başı ~" + nf.format(Math.round(tp.perPerson)) + " €: " + tp.city.t + (tp.air ? " + havalimanı gidiş-dönüş ~" + nf.format(Math.round(tp.air)) + " €" : "");
   }
   function ulasimBox(c) {
     var g = c.gezi; if (!g || !g.ulasim) return "";
@@ -736,15 +861,42 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   var RESTO = null, RLV = { uygun: { t: "Uygun", lvl: 0 }, populer: { t: "Popüler", lvl: 1 }, luks: { t: "Lüks", lvl: 2 } };
   // Google'dan gelen metinler sayfaya güvenli eklensin
   function escH(x) { return String(x == null ? "" : x).replace(/[&<>"']/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]; }); }
+  // Google'dan İngilizce gelen mutfak etiketleri için Türkçe karşılıklar (veride mutfakTr varsa o kullanılır)
+  var MUTFAK = {
+    "haute french": "Fransız (üst düzey)", "french": "Fransız", "doner kebab": "Döner", "kebab": "Kebap", "brunch": "Brunch", "fine dining": "Gurme",
+    "breakfast": "Kahvaltı", "hungarian": "Macar mutfağı", "tapas": "Tapas", "modern european": "Modern Avrupa", "european": "Avrupa", "eastern european": "Doğu Avrupa",
+    "sandwich shop": "Sandviç", "steak house": "Steakhouse", "steakhouse": "Steakhouse", "pizza": "Pizza", "bistro": "Bistro", "asian": "Asya", "asian fusion": "Asya füzyon",
+    "lebanese": "Lübnan", "italian": "İtalyan", "hamburger": "Burger", "burger": "Burger", "japanese": "Japon", "chinese": "Çin", "chinese noodle": "Çin eriştesi", "indian": "Hint",
+    "belgian": "Belçika", "barbecue": "Barbekü", "mexican": "Meksika", "vietnamese": "Vietnam", "portuguese": "Portekiz", "scandinavian": "İskandinav", "danish": "Danimarka",
+    "vegan": "Vegan", "vegetarian": "Vejetaryen", "spanish": "İspanyol", "middle eastern": "Orta Doğu", "irish": "İrlanda", "falafel": "Falafel", "peruvian": "Peru",
+    "austrian": "Avusturya", "roman": "Roma mutfağı", "cafe": "Kafe", "fast food": "Fast food", "greek": "Yunan", "seafood": "Deniz ürünleri", "swedish": "İsveç",
+    "nepalese": "Nepal", "finnish": "Fin", "ukrainian": "Ukrayna", "lithuanian": "Litvanya", "polish": "Polonya", "brewpub": "Bira evi", "croatian": "Hırvat",
+    "venezuelan": "Venezuela", "eclectic": "Karma mutfak", "turkish": "Türk", "bulgarian": "Bulgar", "czech": "Çek", "german": "Alman", "thai": "Tayland", "korean": "Kore",
+    "mediterranean": "Akdeniz", "wine bar": "Şarap barı", "bar": "Bar", "pub": "Pub", "gastropub": "Gastropub", "bakery": "Fırın", "coffee shop": "Kahveci", "dessert": "Tatlıcı",
+    "ramen": "Ramen", "sushi": "Suşi", "georgian": "Gürcü", "estonian": "Estonya", "latvian": "Letonya", "romanian": "Romen", "slovenian": "Sloven", "maltese": "Malta", "british": "İngiliz"
+  };
+  function mutfakTr(r) {
+    if (r.mutfakTr) return String(r.mutfakTr);
+    var m = String(r.mutfak || "").trim(); if (!m || /^restaurant$/i.test(m)) return "";
+    var k = m.toLowerCase().replace(/\s+restaurant$/, "").trim();
+    return MUTFAK[k] || MUTFAK[m.toLowerCase()] || m.replace(/\s+restaurant$/i, "");
+  }
+  // "Ft 2,000–6,000" → "2.000–6.000 Ft", "€10–20" → "10–20 €"
+  function priceRangeTr(t) {
+    var x = String(t || "").replace(/\u00a0/g, " ").trim(), m = /^([^\d]*?)\s*(\d[\d,.]*)(?:\s*[–-]\s*(\d[\d,.]*))?\s*(\+?)\s*([^\d]*)$/.exec(x);
+    if (!m) return x;
+    var cur = (m[1] || m[5] || "").trim(), n = function (v) { return nf.format(parseFloat(v.replace(/,/g, ""))); };
+    return n(m[2]) + (m[3] ? "–" + n(m[3]) : "") + m[4] + (cur ? " " + cur : "");
+  }
   function liveRestos(c) {
     var s = RESTO && RESTO.sehirler && RESTO.sehirler[c.n];
     if (!s || !s.restoranlar || !s.restoranlar.length) return null;
     return s.restoranlar.map(function (r) {
       var lv = RLV[r.seviye] || RLV.populer;
-      var bits = [r.mutfak && r.mutfak !== "Restaurant" ? r.mutfak.replace(/ restaurant$/i, "") : null, r.semt, r.yorum ? r.yorum.toLocaleString("tr-TR") + " Google yorumu" : null].filter(Boolean).join(" · ");
+      var bits = [mutfakTr(r) || null, r.semt, r.yorum ? r.yorum.toLocaleString("tr-TR") + " Google yorumu" : null].filter(Boolean).join(" · ");
       return { t: lv.t, lvl: lv.lvl, name: escH(r.ad), label: escH(r.ad), p: Math.max(3, Math.round(r.kisiBasiEur)), s: "res", url: /^https:\/\/www\.google\.com\/maps\//.test(r.url || "") ? escH(r.url) : null,
-        sc: r.puan ? String(r.puan).replace(".", ",") : "", sct: "Google puanı", lat: r.konum ? r.konum[0] : undefined, lon: r.konum ? r.konum[1] : undefined,
-        desc: escH(bits + ". Kişi başı " + r.fiyatYazi + " (Google kullanıcılarının bildirdiği aralık, içecek dahil ortalama).") };
+        sc: r.puan ? String(r.puan).replace(".", ",") : "", sct: "Google puanı", lat: r.konum ? r.konum[0] : undefined, lon: r.konum ? r.konum[1] : undefined, live: true,
+        desc: escH(bits + ". Kişi başı " + priceRangeTr(r.fiyatYazi) + " (Google kullanıcılarının bildirdiği aralık, içecek dahil ortalama).") };
     });
   }
   var RLVL = { Ucuz: 0, Uygun: 0, Orta: 1, "Popüler": 1, "Şık": 2, "Lüks": 2 };
@@ -764,48 +916,64 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 
   /* ====================== UÇAK FİYATLARI ====================== */
   // Uçak robotu (GitHub Actions) İstanbul'dan (IST, SAW) Cuma gidiş Pazar dönüş kişi başı en ucuz gidiş-dönüşü data/ucuslar.json'a yazar.
-  var FLY = null, addFlight = true;
+  // addFlightUser: kullanıcının kutuya dokunarak verdiği karar (null = dokunmadı). Dokunmadıysa uçak yalnızca
+  // tarihler birebir cuma–pazar olduğunda bütçeye eklenir.
+  var FLY = null, addFlightUser = null;
+  function flyHtml(link) { return String(link || "").replace(/([?&])hl=[^&]*/, "$1hl=tr"); }
   function flightFor(c, o) {
     if (!FLY || !FLY.haftaSonlari) return null;
-    var hs = FLY.haftaSonlari, today = isoD(new Date());
-    var keys = Object.keys(hs).filter(function (k) { return hs[k].cikis >= today; }).sort();
+    var hs = FLY.haftaSonlari, today = todayIst();
+    var keys = Object.keys(hs).filter(function (k) { return (hs[k].cikis || addDays(k, 2)) >= today; }).sort();
     // Aktarmasız uçuş en ucuzdan en fazla %20 pahalıysa onu tercih et (karışık havayollu çok aktarmalı uçuşlar yorucu ve riskli)
     var prefer = function (s) {
       if (s.aktarmasiz && s.aktarma !== 0 && s.aktarmasiz.fiyat <= s.fiyat * 1.2) { var d = Object.assign({}, s.aktarmasiz); d.kontrol = s.kontrol; d.ucuzAktarmali = { fiyat: s.fiyat, havayolu: s.havayolu, aktarmaYazi: s.aktarmaYazi }; return d; }
       return s;
     };
-    var get = function (k) { var x = hs[k].sehirler[c.n]; return x && x.son && x.son.durum === "fiyat" ? prefer(x.son) : null; };
-    if (o && o.a && o.b) {
-      var a = isoD(o.a), b = isoD(o.b);
-      for (var i = 0; i < keys.length; i++) if (keys[i] < b && hs[keys[i]].cikis > a) { var s = get(keys[i]); if (s) return { p: s.fiyat, kind: "live", g: keys[i], cikis: hs[keys[i]].cikis, s: s, exact: keys[i] === a && hs[keys[i]].cikis === b }; break; }
-    }
+    var get = function (k) { var x = hs[k] && hs[k].sehirler && hs[k].sehirler[c.n]; return x && x.son && x.son.durum === "fiyat" && typeof x.son.fiyat === "number" ? prefer(x.son) : null; };
     var vals = [], best = null;
     keys.forEach(function (k) { var s = get(k); if (s) { vals.push(s.fiyat); if (!best || s.fiyat < best.s.fiyat) best = { g: k, cikis: hs[k].cikis, s: s }; } });
     if (!vals.length) return null;
-    return { p: median(vals), kind: "avg", n: vals.length, best: best };
+    var avg = { p: median(vals), kind: "avg", src: "ortalama", n: vals.length, best: best, last: keys[keys.length - 1] };
+    var w = pickWeekend(keys, o, function (k) { return hs[k].cikis; });
+    if (!w) return avg;
+    if (w.out) { avg.out = true; return avg; }
+    var s = get(w.key);
+    if (s) return { p: s.fiyat, kind: "live", src: w.exact ? "canli" : "tahmini", g: w.key, cikis: hs[w.key].cikis, s: s, exact: w.exact, last: avg.last };
+    avg.missing = w.key;
+    return avg;
   }
+  function flightIncluded(c, o) {
+    if (o && o.past) return false;
+    if (addFlightUser !== null) return addFlightUser;
+    return !!(o && o.exact);
+  }
+  var LINKS_ALT = '<a href="https://www.skyscanner.com.tr" target="_blank" rel="noopener noreferrer">Skyscanner</a><a href="https://www.enuygun.com/ucak-bileti/" target="_blank" rel="noopener noreferrer">Enuygun</a>';
   function renderFlight(c, o, k) {
     var box = $("ticketbox"), f = flightFor(c, o);
     if (!f) {
       box.innerHTML = '<strong>✈️ Uçak biletin burada hesaplanmıyor</strong>' + (FLY ? c.n + " için İstanbul çıkışlı uçuş verisi henüz yok. " : "") + 'Biletini kendin bul, tarihini sen seç. Toplam bütçene biletinin fiyatını ayrıca ekle.' +
-        '<div class="links"><a href="https://www.google.com/travel/flights" target="_blank" rel="noopener noreferrer">Google Flights</a><a href="https://www.skyscanner.com.tr" target="_blank" rel="noopener noreferrer">Skyscanner</a><a href="https://www.enuygun.com/ucak-bileti/" target="_blank" rel="noopener noreferrer">Enuygun</a></div>';
+        '<div class="links"><a href="https://www.google.com/travel/flights?hl=tr" target="_blank" rel="noopener noreferrer">Google Flights</a>' + LINKS_ALT + '</div>';
       return;
     }
     var stopsTr = function (x) { var m = /^(\d+)\s*stop/i.exec(String(x || "")); return m ? m[1] + " aktarma" : /nonstop/i.test(String(x || "")) ? "aktarmasız" : (x || "aktarmalı"); };
-    var s = f.kind === "live" ? f.s : f.best.s, esc2 = function (x) { return String(x == null ? "" : x).replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); };
+    var s = f.kind === "live" ? f.s : f.best.s, esc2 = escH, eur = function (v) { return nf.format(Math.round(v)) + " €"; };
     var head = f.kind === "live"
       ? "İstanbul ↔ " + c.n + ", " + weekendText(f.g, f.cikis) + (f.exact ? "" : " hafta sonu")
-      : "İstanbul ↔ " + c.n + ", Cuma–Pazar ortalaması";
+      : "İstanbul ↔ " + c.n + ", cuma–pazar ortalaması";
     var detail = f.kind === "live"
-      ? esc2(s.havayolu) + " · " + (s.aktarma === 0 ? "aktarmasız" : esc2(stopsTr(s.aktarmaYazi))) + " · " + esc2(s.kalkis) + " çıkışlı" + (s.aktarmasiz && s.aktarmasiz.fiyat > s.fiyat ? "<br>Aktarmasız en ucuz: " + Math.round(s.aktarmasiz.fiyat) + " € (" + esc2(s.aktarmasiz.havayolu) + ", " + esc2(s.aktarmasiz.kalkis) + ")" : "") + (s.ucuzAktarmali ? "<br>Aktarmalı daha ucuzu: " + Math.round(s.ucuzAktarmali.fiyat) + " € (" + esc2(stopsTr(s.ucuzAktarmali.aktarmaYazi)) + ")" : "") + "<br>" + agoText(s.kontrol) + " Google Flights'ta kontrol edildi."
-      : "Önümüzdeki " + f.n + " hafta sonunun ortalaması. En ucuzu " + weekendText(f.best.g, f.best.cikis) + ": " + Math.round(f.best.s.fiyat) + " € (" + esc2(f.best.s.havayolu) + ").";
-    var link = /^https:\/\//.test(s.link || "") ? s.link : "https://www.google.com/travel/flights";
+      ? esc2(s.havayolu) + " · " + (s.aktarma === 0 ? "aktarmasız" : esc2(stopsTr(s.aktarmaYazi))) + " · " + esc2(s.kalkis) + " çıkışlı" + (s.aktarmasiz && s.aktarmasiz.fiyat > s.fiyat ? "<br>Aktarmasız en ucuz: " + eur(s.aktarmasiz.fiyat) + " (" + esc2(s.aktarmasiz.havayolu) + ", " + esc2(s.aktarmasiz.kalkis) + ")" : "") + (s.ucuzAktarmali ? "<br>Aktarmalı daha ucuzu: " + eur(s.ucuzAktarmali.fiyat) + " (" + esc2(stopsTr(s.ucuzAktarmali.aktarmaYazi)) + ")" : "") + "<br>" + agoText(s.kontrol) + " Google Flights'ta kontrol edildi."
+      : "Önümüzdeki " + f.n + " hafta sonunun ortalaması. En ucuzu " + weekendText(f.best.g, f.best.cikis) + ": " + eur(f.best.s.fiyat) + " (" + esc2(f.best.s.havayolu) + ").";
+    var fnote = "";
+    if (!o.exact && o.a) fnote = "Seçtiğin tarihler cuma–pazar değil. Uçak fiyatı " + (f.kind === "live" ? "en yakın hafta sonundan (" + weekendText(f.g, f.cikis) + ")" : "hafta sonu ortalamasından") + " tahmin, bu yüzden bütçeye kendiliğinden eklenmedi.";
+    else if (f.out) fnote = "Uçak fiyatları " + weekendText(f.last) + " hafta sonuna kadar kontrol ediliyor. Seçtiğin tarih bu aralığın dışında, fiyat ortalamadır.";
+    else if (f.missing) fnote = weekendText(f.missing) + " hafta sonu için uçuş fiyatı bulunamadı, ortalama kullanıldı.";
+    var link = /^https:\/\//.test(s.link || "") ? flyHtml(s.link) : "https://www.google.com/travel/flights?hl=tr", on = flightIncluded(c, o);
     box.innerHTML = "<strong>" + esc2(head) + "</strong>" +
-      '<div><span class="fprice">' + (f.kind === "live" ? "" : "~") + Math.round(f.p) + ' €</span> <span class="fsub">kişi başı gidiş-dönüş</span></div>' +
-      '<div class="fsub">' + detail + "</div>" +
-      '<label class="fadd"><input type="checkbox" id="addFlight"' + (addFlight ? " checked" : "") + "> Uçağı bütçeye ekle (" + o.ppl + " kişi" + (k.fly ? ": " + tl(k.fly * o.rate) : "") + ")</label>" +
-      '<div class="links"><a href="' + esc2(link) + '" target="_blank" rel="noopener noreferrer">Google Flights\'ta aç</a><a href="https://www.skyscanner.com.tr" target="_blank" rel="noopener noreferrer">Skyscanner</a><a href="https://www.enuygun.com/ucak-bileti/" target="_blank" rel="noopener noreferrer">Enuygun</a></div>';
-    $("addFlight").addEventListener("change", function () { addFlight = this.checked; render(); });
+      '<div><span class="fprice">' + (f.kind === "live" && f.exact ? "" : "~") + eur(f.p) + '</span> <span class="fsub">kişi başı gidiş-dönüş</span>' + srcTag(f.src) + '</div>' +
+      '<div class="fsub">' + detail + "</div>" + (fnote ? '<span class="fnote">' + fnote + "</span>" : "") +
+      '<label class="fadd"><input type="checkbox" id="addFlight"' + (on ? " checked" : "") + "> Uçağı bütçeye ekle (" + o.ppl + " kişi: " + tl(f.p * o.ppl * o.rate) + ")</label>" +
+      '<div class="links"><a href="' + esc2(link) + '" target="_blank" rel="noopener noreferrer">Google Flights\'ta aç</a>' + LINKS_ALT + '</div>';
+    $("addFlight").addEventListener("change", function () { addFlightUser = this.checked; render(); });
   }
 
   // Şehir karşılaştırmasında diğer şehirlerden aynı seviyedeki otel seçilir
@@ -818,7 +986,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 
   /* ====================== DURUM VE YARDIMCILAR ====================== */
   var $ = function (id) { return document.getElementById(id); };
-  var step = 1, maxStep = 1, foodMult = 1, hIdx = 1, hDefault = true, rIdx = 1, rDefault = true, visits = 1, picked = [], lastO = null;
+  var foodMult = 1, hIdx = 1, hDefault = true, rIdx = 1, rDefault = true, visits = 1, picked = [], lastO = null;
   var nf = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 0 });
   var nf1 = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
   var tl = function (n) { return nf.format(Math.round(n)) + " TL"; };
@@ -860,11 +1028,11 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   function dataAgeDays() { var d = Date.parse(DATA.updated + "T00:00:00Z"); return isFinite(d) ? Math.floor((Date.now() - d) / 86400000) : null; }
   function applyData() {
     HUF_PER_EUR = DATA.eurHuf;
-    if (!rateTouched) $("rate").value = DATA.eurTry;
+    if (!rateTouched || !validRate($("rate").value)) $("rate").value = DATA.eurTry;
     $("rateHint").textContent = "(" + dataDateText() + " itibarıyla, güncelleyebilirsin)";
     var age = dataAgeDays(), n = $("datanote"), old = age !== null && age > 14;
     n.className = "datanote" + (old ? " old" : "");
-    n.textContent = "Kurlar " + dataDateText() + " itibarıyla (" + DATA.source + "). " + (LIVE.doc ? "Otel, uçak ve restoran fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor; ulaşım ve gezi biletleri resmî fiyatlardan, günlük yemek tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
+    n.textContent = "Kurlar " + dataDateText() + " itibarıyla, kaynak: " + String(DATA.source || "").replace(/[()]/g, "") + ". " + (LIVE.doc ? "Otel, uçak ve restoran fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor; ulaşım ve gezi biletleri resmî fiyatlardan, günlük yemek tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
       (old ? " Bu veri " + age + " gündür güncellenmedi, rakamlar eski olabilir." : "");
   }
   function mapsUrl(q) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); }
@@ -883,22 +1051,67 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     }
     return yule ? "Yılbaşı dönemi: otel ve uçak fiyatları genelde yükselir." : summer ? "Yaz sezonu: popüler şehirlerde otel fiyatları genelde yükselir." : "";
   }
+  function validRate(v) { var x = parseFloat(v); return isFinite(x) && x >= 1 && x <= 1000; }
+  function fieldMsg(id, text) { var el = $(id); el.hidden = !text; el.textContent = text || ""; }
+  // Kişi sayısı: 1–6 arası tam sayı. Geçersizse alanın yanında uyarı ve değer görünür biçimde düzeltilir.
+  function checkPpl(commit) {
+    var el = $("ppl"), raw = String(el.value).trim(), v = parseFloat(raw), fixed = null, msg = "";
+    if (raw === "") { if (commit) { fixed = 2; msg = "Kişi sayısını boş bıraktın, 2 kişi olarak düzelttim."; } }
+    else if (!isFinite(v)) { fixed = 2; msg = "Kişi sayısı sayı olmalı, 2 kişi olarak düzelttim."; }
+    else if (v < 1) { fixed = 1; msg = "En az 1 kişi olmalı, 1 olarak düzelttim."; }
+    else if (v > 6) { fixed = 6; msg = "En fazla 6 kişi hesaplanır, 6 olarak düzelttim."; }
+    else if (Math.round(v) !== v) { fixed = Math.round(v); msg = "Kişi sayısı tam sayı olmalı, " + fixed + " olarak düzelttim."; }
+    if (fixed != null) el.value = fixed;
+    // Mesaj, kullanıcı yeni ve geçerli bir değer yazana kadar görünür kalır
+    if (msg || !commit) fieldMsg("pplMsg", msg);
+  }
+  // Kur: boş, sıfır ya da eksi olamaz; o durumda data.json'daki güncel kur kullanılır
+  function checkRate(commit) {
+    var el = $("rate"), raw = String(el.value).trim();
+    if (validRate(raw)) { if (!commit) fieldMsg("rateMsg", ""); return; }
+    if (!commit) { fieldMsg("rateMsg", (raw === "" ? "Kur boş" : "Kur 1 ile 1.000 TL arasında olmalı") + ", hesapta güncel kur (" + nf1.format(DATA.eurTry) + " TL) kullanılıyor."); return; }
+    fieldMsg("rateMsg", (raw === "" ? "Kur boş kalamaz" : "Kur 1 ile 1.000 TL arasında olmalı") + ", güncel kura (" + nf1.format(DATA.eurTry) + " TL) döndüm.");
+    el.value = DATA.eurTry; rateTouched = false;
+  }
   function inputs() {
-    var ppl = Math.round(num($("ppl"), 2, 1, 6));
-    var a = parseD($("d1").value), b = parseD($("d2").value), nights = 3, msg = "", warn = false;
+    var pv = parseFloat($("ppl").value), ppl = isFinite(pv) ? Math.round(Math.min(6, Math.max(1, pv))) : 2;
+    var today = todayIst(), a = parseD($("d1").value), b = parseD($("d2").value), nights = 2, msg = "", warn = false, exact = false, past = false, capped = false;
     if (a && b) {
       var n = Math.round((b - a) / 86400000);
-      if (n < 1) { warn = true; msg = "Dönüş tarihi gidişten sonra olmalı. Şimdilik 3 gece hesaplıyorum."; a = b = null; }
-      else if (n > 14) { warn = true; msg = "En fazla 14 gece hesaplanır."; nights = 14; }
-      else { nights = n; msg = "<b>" + n + " gece</b> · " + DAYS[a.getUTCDay()] + " → " + DAYS[b.getUTCDay()]; var s = seasonNote(a, b); if (s) msg += "<br>" + s + " Hesap ortalama fiyatla yapıldı, Booking'de tarihine bak."; }
-    } else { warn = true; msg = "Tarihleri seçince gece sayısı kendiliğinden hesaplanır. Şimdilik 3 gece."; a = b = null; }
+      if (n < 1) { warn = true; msg = "Dönüş tarihi gidişten sonra olmalı. Şimdilik 2 gece hesaplıyorum."; a = b = null; }
+      else {
+        if (n > 14) { capped = true; nights = 14; b = new Date(a.getTime() + 14 * 86400000); } else nights = n;
+        past = isoD(a) < today;
+        exact = a.getUTCDay() === 5 && nights === 2;
+        if (past) { warn = true; msg = "<b>Gidiş tarihi geçmişte kaldı.</b> Bugünden (" + dLong.format(parseD(today)) + ") sonraki bir tarih seç."; }
+        else if (capped) { warn = true; msg = "En fazla 14 gece hesaplanır: hesap <b>" + dShort.format(a) + " – " + dShort.format(b) + " (14 gece)</b> için yapıldı."; }
+        else {
+          msg = "<b>" + nights + " gece</b> · " + DAYS[a.getUTCDay()] + " → " + DAYS[b.getUTCDay()];
+          if (!exact) msg += "<br>Robot otel ve uçak fiyatlarını cuma–pazar (2 gece) için kontrol ediyor; seçtiğin tarihlerin fiyatları en yakın hafta sonundan tahmin edilir.";
+        }
+        var sn = past ? "" : seasonNote(a, b); if (sn) msg += "<br>" + sn;
+      }
+    } else { warn = true; msg = "Tarihleri seçince gece sayısı kendiliğinden hesaplanır. Şimdilik 2 gece."; a = b = null; }
     var el = $("dnote"); el.innerHTML = msg; el.className = "dnote" + (warn ? " warn" : "");
-    lastO = { nights: nights, ppl: ppl, rooms: Math.ceil(ppl / 2), rate: num($("rate"), 55.3, 1, 1000), act: $("act").checked, a: a, b: b };
+    var rv = $("rate").value, rate = validRate(rv) ? parseFloat(rv) : DATA.eurTry;
+    lastO = { nights: nights, ppl: ppl, rooms: Math.ceil(ppl / 2), rate: rate, act: $("act").checked, a: a, b: b, exact: exact, past: past, capped: capped };
     return lastO;
   }
+  // Seçilen yerlerin kişi başı bilet toplamı; hafta sonu fiyatı gün gün plana göre uygulanır (plan ile bütçe aynı rakamı verir)
+  function ticketsSum(c, o, sel, hotel) {
+    var P = c.places, eur = 0, unk = 0;
+    if (!o.a) { sel.forEach(function (pi) { var p = P[pi]; if (!p) return; eur += ticketEur(p, true); if (p.unknown) unk++; }); return { eur: eur, unknown: unk }; }
+    var plan = buildPlan(P, hotel && hotel.lat != null ? hotel : (c.center || P[0]), o, sel);
+    plan.forEach(function (stops, di) {
+      var date = new Date(o.a.getTime() + di * 86400000), wk = [5, 6, 0].indexOf(date.getUTCDay()) >= 0;
+      stops.forEach(function (pi) { var p = P[pi]; eur += ticketEur(p, wk); if (p.unknown) unk++; });
+    });
+    return { eur: eur, unknown: unk };
+  }
+  function selFor(c, o) { var cur = c === D[+$("city").value]; return cur && picked.length ? picked : defaultPicks(c, o); }
   function cost(c, o, idx, ridx, withFlight) {
-    var days = o.nights + 1, hp = hotelsOf(c)[idx].p, rp = restosOf(c)[ridx].p;
-    var fp = withFlight && addFlight ? flightFor(c, o) : null, fly = fp ? fp.p * o.ppl : 0;
+    var days = o.nights + 1, H = hotelsOf(c)[idx], hp = H.p, rp = restosOf(c)[ridx].p;
+    var fp = withFlight && flightIncluded(c, o) ? flightFor(c, o) : null, fly = fp ? fp.p * o.ppl : 0;
     var v = Math.min(visits, days);
     var hotel = hp * o.nights * o.rooms;
     var food = Math.max(0, c.f * foodMult * o.ppl * days - v * c.f * foodMult * 0.4 * o.ppl);
@@ -907,12 +1120,14 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var act = 0, ticketNote = null;
     if (o.act) {
       if (c.places && c.places.length) {
-        var cur = c === D[+$("city").value], sel = cur && picked.length ? picked : defaultPicks(c, o), unk = 0;
-        sel.forEach(function (pi) { var p = c.places[pi]; if (!p) return; act += ticketEur(p, true); if (p.unknown) unk++; });
-        act *= o.ppl; ticketNote = { n: sel.length, unknown: unk };
+        var sel = selFor(c, o), ts = ticketsSum(c, o, sel, H);
+        act = ts.eur * o.ppl; ticketNote = { n: sel.length, unknown: ts.unknown };
       } else act = c.a * o.ppl * o.nights;
     }
-    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, fly: fly, flight: fp, tp: tp, tickets: ticketNote, sum: hotel + food + resto + trans + act + fly };
+    var R = restosOf(c)[ridx];
+    var src = { hotel: H.src || (H.s === "res" ? "tahmini" : "tahmini"), food: "tahmini", resto: R && R.live ? "ortalama" : "tahmini",
+      trans: tp ? "resmi" : "tahmini", act: c.places && c.places.length && c.gezi ? "resmi" : c.n === "Budapeşte" && c.places ? "resmi" : "tahmini", fly: fp ? fp.src : null };
+    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, fly: fly, flight: fp, tp: tp, tickets: ticketNote, src: src, sum: hotel + food + resto + trans + act + fly };
   }
 
   /* ====================== MESAFE VE PLAN ====================== */
@@ -934,9 +1149,10 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     raw.map(function (x, i) { return [x - Math.floor(x), i]; }).sort(function (a, b) { return b[0] - a[0]; }).slice(0, rem).forEach(function (p) { cnt[p[1]]++; });
     return cnt;
   }
+  // Otomatik seçim: geçici ya da kalıcı kapalı yerler hiçbir zaman otomatik eklenmez
   function defaultPicks(c, o) {
-    var n = Math.min(c.places.length, Math.round(2.5 * (o.nights + 1))), r = [];
-    for (var i = 0; i < n; i++) r.push(i);
+    var n = Math.round(2.5 * (o.nights + 1)), r = [];
+    for (var i = 0; i < c.places.length && r.length < n; i++) if (!c.places[i].closed) r.push(i);
     return r;
   }
   function buildPlan(places, hotel, o, sel) {
@@ -1004,7 +1220,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       if (last) items.push({ t: fmtT(Math.max(t, 12 * 60)), title: "Havalimanına git", sub: "Uçuş saatine göre bu günü kısalt, havalimanına erken ulaşacak şekilde planla.", kind: "fly" });
       else {
         var dt = Math.max(19 * 60 + 30, t + 15);
-        if (md.indexOf(di) >= 0) items.push({ t: fmtT(dt), title: "Akşam yemeği: " + (resto.name || resto.label), sub: "~" + resto.p + " € kişi başı · rezervasyon yapmanı öneririz.", kind: "meal", viral: true });
+        if (md.indexOf(di) >= 0) items.push({ t: fmtT(dt), title: "Akşam yemeği: " + (resto.name || resto.label), sub: "~" + nf.format(resto.p) + " € kişi başı · rezervasyon yapmanı öneririz.", kind: "meal", viral: true });
         else items.push({ t: fmtT(dt), title: "Akşam yemeği (serbest)", sub: "Otel çevresinde bir restoran seç.", kind: "meal" });
       }
       out.push({ head: head, items: items });
@@ -1013,42 +1229,91 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   }
 
   /* ====================== ÖZET MODELİ ====================== */
+  var CUR_SYM = { EUR: "€", HUF: "Ft", CZK: "Kč", PLN: "zł", SEK: "kr", DKK: "kr", RON: "lei" };
+  // Şehrin para birimi (Budapeşte forint, diğerleri gezi verisinden)
+  function cityCur(c) { return c.n === "Budapeşte" ? "HUF" : (c.gezi && c.gezi.para) || "EUR"; }
   function makeModel() {
     var o = inputs(), c = D[+$("city").value], hs = hotelsOf(c), rs = restosOf(c), hotel = hs[hIdx], resto = rs[rIdx];
     var k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate;
     var range = o.a && o.b ? dLong.format(o.a) + " – " + dLongY.format(o.b) : o.nights + " gece";
+    var hname = hotel.name || hotel.label;
     var m = {
       city: c.n, country: c.c, status: cityStatus(c, o, k), o: o, total: total, perPerson: total / o.ppl, c: c,
       title: c.n + " · " + range,
       sub: o.ppl + " kişi · " + o.nights + " gece · " + (k.fly ? "uçak dahil" : "uçak hariç"),
       picks: [
-        ["Otel", (hotel.name || hotel.label) + " · ~" + hotel.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (hotel.sc ? (hotel.sct ? " · Google " : " · Booking ") + hotel.sc : "")],
-        ["Yemek", visits === 0 ? "Viral restoran eklenmedi" : (resto.name || resto.label) + " · ~" + resto.p + " € kişi başı · " + Math.min(visits, o.nights + 1) + " öğün"],
+        ["Otel", hname + " · ~" + nf.format(hotel.p) + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (hotel.sc ? (hotel.sct ? " · Google " : " · Booking ") + hotel.sc : "") + (hotel.badge ? " · " + hotel.badge[1] : "")],
+        ["Yemek", visits === 0 ? "Viral restoran eklenmedi" : (resto.name || resto.label) + " · ~" + nf.format(resto.p) + " € kişi başı · " + Math.min(visits, o.nights + 1) + " öğün"],
         ["Kişi ve süre", o.ppl + " kişi · " + o.nights + " gece / " + (o.nights + 1) + " gün"]].concat(k.tp ? [["Ulaşım", transportText(k.tp)]] : []),
-      budget: [["Otel", tl(k.hotel * o.rate), k.hotel * o.rate], ["Yemek (diğer öğünler)", tl(k.food * o.rate), k.food * o.rate], ["Viral restoran", tl(k.resto * o.rate), k.resto * o.rate],
-               ["Ulaşım", tl(k.trans * o.rate), k.trans * o.rate], ["Gezi harcamaları", tl(k.act * o.rate), k.act * o.rate]].concat(k.fly ? [["Uçak (gidiş-dönüş, " + o.ppl + " kişi)", tl(k.fly * o.rate), k.fly * o.rate]] : []),
-      days: [], tickets: null, notes: [], autoSel: false, hotel: hotel, resto: resto, fly: k.fly
+      budget: [["Otel (" + SRC[k.src.hotel] + ")", tl(k.hotel * o.rate), k.hotel * o.rate], ["Yemek (diğer öğünler, tahmini)", tl(k.food * o.rate), k.food * o.rate], ["Viral restoran", tl(k.resto * o.rate), k.resto * o.rate],
+               ["Ulaşım", tl(k.trans * o.rate), k.trans * o.rate], ["Gezi harcamaları", tl(k.act * o.rate), k.act * o.rate]].concat(k.fly ? [["Uçak (gidiş-dönüş, " + o.ppl + " kişi, " + SRC[k.src.fly] + ")", tl(k.fly * o.rate), k.fly * o.rate]] : []),
+      days: [], tickets: null, notes: [], autoSel: false, hotel: hotel, resto: resto, fly: k.fly, k: k
     };
     if (c.places) {
-      var sel = picked.length ? picked : defaultPicks(c, o); m.autoSel = !picked.length;
+      var sel = selFor(c, o); m.autoSel = !picked.length;
       var sch = buildSchedule(c, o, hotel, resto, sel);
       m.days = sch.days;
       if (sch.eur > 0) m.tickets = { eur: sch.eur * o.ppl, tl: sch.eur * o.ppl * o.rate };
     }
-    if (m.autoSel) m.notes.push("Gezi yerlerini kendin seçmediğin için önerilen yerler programa konuldu.");
+    resultNotes(c, o, k, hotel).forEach(function (t) { m.notes.push(t); });
+    if (m.autoSel && c.places) m.notes.push("Gezi yerlerini kendin seçmediğin için önerilen yerler programa konuldu.");
     if (!c.places) m.notes.push(c.n + " için gezi planı henüz hazır değil, program yalnızca otel, yemek ve bütçeyi içeriyor.");
     if (c.note) m.notes.push(c.note);
-    m.notes.push("Kur: 1 € = " + nf1.format(o.rate) + " TL, 1 € = " + nf1.format(HUF_PER_EUR) + " Ft (" + dataDateText() + "). Fiyatlar ve saatler yaklaşık, rezervasyondan önce güncel bilgilere bak.");
+    var cur = cityCur(c), rates = "1 € = " + nf1.format(o.rate) + " TL";
+    if (cur !== "EUR" && fxOf(cur)) rates += ", 1 € = " + nf1.format(fxOf(cur)) + " " + (CUR_SYM[cur] || cur);
+    m.notes.push("Kur: " + rates + " (" + dataDateText() + "). Fiyatlar ve saatler yaklaşık, rezervasyondan önce güncel bilgilere bak.");
     m.notes.push("Mesafeler yer koordinatlarından tahmin edilir: yürüyüşe yaklaşık %30 dolambaç payı eklenir, taksi süresi şehir içi ortalama hızla hesaplanır.");
     return m;
+  }
+  // Sonucun üstünde gösterilen açık uyarılar (PDF'e de girer)
+  function resultNotes(c, o, k, hotel) {
+    var out = [], sp = hotel && hotel.sp, f = k.flight || flightFor(c, o);
+    if (o.past) { out.push("Gidiş tarihi geçmişte kaldı, geçmiş tarihler için bütçe hesaplanmaz. İleri bir tarih seç."); return out; }
+    if (o.a && !o.exact) out.push("Seçtiğin tarihler cuma–pazar değil; otel ve uçak fiyatları en yakın hafta sonunun verisinden tahmin edildi.");
+    if (o.capped) out.push("En fazla 14 gece hesaplanır; bütçe " + dShort.format(o.a) + " – " + dShort.format(o.b) + " (14 gece) için.");
+    if (sp) {
+      var hn = hotel.name || hotel.label;
+      if (sp.out) out.push("Otel fiyatları robotla " + weekendText(sp.last) + " hafta sonuna kadar kontrol ediliyor. Seçtiğin tarihler bu aralığın dışında, otel fiyatı diğer hafta sonlarının ortalaması.");
+      else if (sp.status === "dolu") out.push(hn + " " + weekendText(sp.g, sp.cikis) + " hafta sonu dolu görünüyor. Bütçede " + (sp.p != null ? "diğer hafta sonlarının ortalaması" : "şehir ortalaması") + " kullanıldı, başka bir otel seçmeni öneririz.");
+      else if (sp.status === "tumu-dolu") out.push(hn + " bu tarihlerde satışta görünmüyor. Bütçede şehir ortalaması kullanıldı, başka bir otel seç.");
+      else if (sp.status === "dogrulanamadi") out.push(hn + " için fiyat güvenilir bir sitede doğrulanamadı; bütçede " + (sp.p != null ? "diğer hafta sonlarının ortalaması" : "şehir ortalaması") + " kullanıldı.");
+      else if (sp.status === "supheli") out.push(hn + " için görülen fiyat olağan aralığın çok üstünde, kontrol et. Bütçede " + (sp.p != null ? "diğer hafta sonlarının ortalaması" : "şehir ortalaması") + " kullanıldı.");
+      else if (sp.status === "yok") out.push(hn + " listeye yeni eklendi, fiyatı henüz çekilmedi; bütçede şehir ortalamasından tahmin kullanıldı.");
+    }
+    if (f && f.out && k.fly) out.push("Uçak fiyatları " + weekendText(f.last) + " hafta sonuna kadar kontrol ediliyor. Seçtiğin tarih bu aralığın dışında, uçak fiyatı ortalamadır.");
+    return out;
   }
 
   /* ====================== MİNİ PDF YAZICI (gömülü Türkçe font) ====================== */
   var NAVY = "#0F2A43", SAFF = "#F4A62A", CREAM = "#FBF6EC", MUTED = "#5B6B7C", LINE = "#D9D2C1";
   function b64(s) { var bin = atob(s), u = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return u; }
   var enc = function (s) { return new TextEncoder().encode(s); };
+  // HTML varlıklarını (&#39; &amp; …) çöz: PDF metnine düz karakter yazılır
+  function decodeEnt(s) {
+    return String(s).replace(/&(#x[0-9a-f]+|#\d+|amp|lt|gt|quot|apos|nbsp);/gi, function (m, e) {
+      var l = e.toLowerCase();
+      if (l[0] === "#") { var cp = l[1] === "x" ? parseInt(l.slice(2), 16) : parseInt(l.slice(1), 10); return isFinite(cp) ? String.fromCodePoint(cp) : m; }
+      return { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " }[l];
+    });
+  }
+  // Gömülü fontta olmayan harfler için ASCII karşılıkları (Sacré-Cœur → Sacré-Coeur)
+  var GLYPH_FB = { "œ": "oe", "Œ": "OE", "æ": "ae", "Æ": "AE", "ß": "ss", "ø": "o", "Ø": "O", "ł": "l", "Ł": "L", "đ": "d", "Đ": "D", "ħ": "h", "þ": "th", "Þ": "Th", "ð": "d", "Ð": "D",
+    "‘": "'", "’": "'", "‚": ",", "“": '"', "”": '"', "„": '"', "«": '"', "»": '"', "…": "...", "—": "-", "‑": "-", "−": "-", "×": "x", "€": "EUR", "≈": "~", "–": "-", "→": "->", "↔": "<->", "↗": "", "✓": "", "●": "-" };
+  var PDF_MAP = null;
+  function glyphSafe(s) {
+    if (!PDF_MAP) return s;
+    var out = "";
+    for (var ch of s) {
+      if (PDF_MAP[ch.codePointAt(0)]) { out += ch; continue; }
+      if (GLYPH_FB[ch] != null) { var fb = GLYPH_FB[ch], ok = true; for (var c2 of fb) if (!PDF_MAP[c2.codePointAt(0)]) ok = false; if (ok) { out += fb; continue; } }
+      var base = ch.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      if (base && base !== ch && [].every.call(base, function (b) { return PDF_MAP[b.codePointAt(0)]; })) { out += base; continue; }
+      out += /\s/.test(ch) ? " " : "?";
+    }
+    return out;
+  }
   function clean(s) {
-    return String(s == null ? "" : s).replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\uFE0F\u200D]/gu, "").replace(/\s+/g, " ").trim();
+    return glyphSafe(decodeEnt(String(s == null ? "" : s).replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "")).replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\uFE0F\u200D]/gu, "").replace(/\s+/g, " ").trim());
   }
   function loadFont(bytes) {
     var dv = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength), n = dv.getUint16(4), tabs = {};
@@ -1088,9 +1353,19 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var n = parseInt(hex.slice(1), 16);
     return ((n >> 16) / 255).toFixed(3) + " " + (((n >> 8) & 255) / 255).toFixed(3) + " " + ((n & 255) / 255).toFixed(3) + (stroke ? " RG" : " rg");
   }
-  function PdfDoc() {
+  function PdfDoc(fonts) {
     this.W = 595.28; this.H = 841.89; this.M = 42; this.pages = [];
-    this.fr = loadFont(b64(FONT_R)); this.fb = loadFont(b64(FONT_B)); this.newPage();
+    this.fr = loadFont(b64(fonts.r)); this.fb = loadFont(b64(fonts.b));
+    var mr = this.fr.map, mb = this.fb.map; PDF_MAP = {};
+    Object.keys(mr).forEach(function (k) { if (mb[k]) PDF_MAP[k] = 1; });
+    this.newPage();
+  }
+  // PDF fontu (~46 KB) yalnızca PDF istenince indirilir
+  var FONTS = null;
+  function loadPdfFonts() {
+    if (FONTS) return Promise.resolve(FONTS);
+    return fetch("img/pdf-font.json", { cache: "force-cache" }).then(function (r) { if (!r.ok) throw new Error("font indirilemedi"); return r.json(); })
+      .then(function (d) { if (!d || !d.r || !d.b) throw new Error("font dosyası bozuk"); FONTS = d; return d; });
   }
   PdfDoc.prototype.newPage = function () { this.ops = []; this.pages.push(this.ops); this.y = this.M; };
   PdfDoc.prototype.ensure = function (h) { if (this.y + h > this.H - 52) this.newPage(); };
@@ -1201,8 +1476,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     pieces.forEach(function (u) { all.set(u, at); at += u.length; });
     return all;
   };
-  function buildPdf(m) {
-    var d = new PdfDoc(), M = d.M, R = d.W - M, CW = R - M;
+  function buildPdf(m, fonts) {
+    var d = new PdfDoc(fonts), M = d.M, R = d.W - M, CW = R - M;
     d.rect(0, 0, d.W, 150, NAVY);
     d.ticket(M, 16, 0.26, NAVY);
     d.text(m.title, M, 120, 15, true, CREAM);
@@ -1254,39 +1529,99 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     });
     return d.build("72h Getaway · " + m.title);
   }
-  window.__makePdf = function () { return buildPdf(makeModel()); };
-  var slug = function (s) { return s.toLowerCase().replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ç/g, "c").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); };
-  async function savePdf() {
-    var msg = $("pdfMsg"); msg.textContent = "";
-    var m = makeModel(), bytes;
-    try { bytes = buildPdf(m); } catch (e) { msg.textContent = "PDF hazırlanamadı: " + (e && e.message); return; }
-    var name = "72h-getaway-" + slug(m.city) + (m.o.a ? "-" + isoD(m.o.a) : "") + ".pdf", dl = null;
-    try { dl = (window.claude && window.claude.use) ? await window.claude.use("downloads") : null; } catch (e) { dl = null; }
-    if (dl) {
-      try { await dl.save({ filename: name, data: bytes }); msg.textContent = "PDF kaydedildi."; }
-      catch (e) { msg.textContent = (e && e.code === "declined") ? "Kaydetmekten vazgeçtin." : "PDF kaydedilemedi, tekrar dene."; }
-    } else {
-      try { window.print(); msg.textContent = "Yazdır penceresinde 'PDF olarak kaydet'i seç."; } catch (e) { msg.textContent = "Bu görünümde indirme kullanılamıyor."; }
+  window.__makePdf = function () { return loadPdfFonts().then(function (f) { return buildPdf(makeModel(), f); }); };
+  var slug = function (s) { return String(s).toLocaleLowerCase("tr").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ü/g, "u").replace(/ç/g, "c").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); };
+  var dMonth = new Intl.DateTimeFormat("tr-TR", { month: "long", timeZone: "UTC" });
+  // 72h-getaway-paris-6-8-kasim.pdf
+  function pdfName(m) {
+    var o = m.o, part = "";
+    if (o.a && o.b) {
+      var ma = dMonth.format(o.a), mb = dMonth.format(o.b);
+      part = "-" + o.a.getUTCDate() + (ma === mb ? "" : "-" + ma) + "-" + o.b.getUTCDate() + "-" + mb;
     }
+    return "72h-getaway-" + slug(m.city + part) + ".pdf";
+  }
+  function blobDownload(bytes, name) {
+    var url = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" })), a = document.createElement("a");
+    a.href = url; a.download = name; a.rel = "noopener"; a.style.display = "none";
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(url); a.remove(); }, 4000);
+  }
+  async function savePdf() {
+    var msg = $("pdfMsg"), btn = $("pdfBtn"); msg.textContent = "PDF hazırlanıyor…"; btn.disabled = true;
+    try {
+      var m = makeModel(), bytes, fonts;
+      if (m.o.past) { msg.textContent = "Geçmiş bir tarih seçili, önce ileri bir tarih seç."; return; }
+      try { fonts = await loadPdfFonts(); bytes = buildPdf(m, fonts); }
+      catch (e) {
+        msg.textContent = "PDF hazırlanamadı, yazdırma penceresinden 'PDF olarak kaydet'i seçebilirsin.";
+        try { window.print(); } catch (e2) {}
+        return;
+      }
+      var name = pdfName(m), dl = null;
+      try { dl = (window.claude && window.claude.use) ? await window.claude.use("downloads") : null; } catch (e) { dl = null; }
+      if (dl) {
+        try { await dl.save({ filename: name, data: bytes }); msg.textContent = "PDF kaydedildi."; return; }
+        catch (e) { if (e && e.code === "declined") { msg.textContent = "Kaydetmekten vazgeçtin."; return; } }
+      }
+      try { blobDownload(bytes, name); msg.textContent = "PDF indirildi: " + name; }
+      catch (e) { msg.textContent = "İndirme başlatılamadı, yazdırma penceresinden 'PDF olarak kaydet'i seç."; try { window.print(); } catch (e2) {} }
+    } finally { btn.disabled = false; }
+  }
+
+  /* ====================== PAYLAŞ ====================== */
+  function toast(t) {
+    var el = document.createElement("div"); el.className = "toast"; el.setAttribute("role", "status"); el.textContent = t;
+    document.body.appendChild(el); setTimeout(function () { el.remove(); }, 2600);
+  }
+  function shareText() {
+    var o = lastO || inputs(), c = D[+$("city").value], k = cost(c, o, hIdx, rIdx, true), t = k.sum * o.rate;
+    var r = t >= 10000 ? Math.round(t / 1000) * 1000 : Math.round(t / 100) * 100;
+    var span = o.exact ? "hafta sonu" : o.nights + " gece";
+    return c.n + "'" + apos(c.n) + " " + o.ppl + " kişi " + span + " ~" + nf.format(r) + " TL" + (k.fly ? " (uçak dahil)" : "") + " (72h Getaway)";
+  }
+  // Türkçe yönelme eki: Paris'e, Roma'ya, Budapeşte'ye, Prag'a, Londra'ya
+  function apos(n) {
+    var v = (String(n).toLocaleLowerCase("tr").match(/[aeıioöuü]/g) || ["e"]).pop(), back = "aıou".indexOf(v) >= 0, endsV = /[aeıioöuü]$/.test(String(n).toLocaleLowerCase("tr"));
+    return (endsV ? "y" : "") + (back ? "a" : "e");
+  }
+  async function share() {
+    var url = location.href.split("#")[0], text = shareText(), data = { title: "72h Getaway · " + D[+$("city").value].n, text: text, url: url };
+    if (navigator.share) {
+      try { await navigator.share(data); return; } catch (e) { if (e && e.name === "AbortError") return; }
+    }
+    var full = text + " " + url;
+    try { await navigator.clipboard.writeText(full); toast("Bağlantı kopyalandı"); return; } catch (e) {}
+    try {
+      var ta = document.createElement("textarea"); ta.value = full; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); var ok = document.execCommand("copy"); ta.remove();
+      toast(ok ? "Bağlantı kopyalandı" : "Kopyalanamadı, adres çubuğundaki bağlantıyı paylaş");
+    } catch (e) { toast("Kopyalanamadı, adres çubuğundaki bağlantıyı paylaş"); }
   }
 
   /* ====================== EKRANLAR ====================== */
+  // Kısayollar, kayan bant ve sonuçtaki "uçak hariç" rakamı aynı fonksiyondan gelir: cost(..., uçaksız)
+  function compareTotals(o) {
+    var cur = +$("city").value;
+    return D.map(function (d, i) { return cost(d, o, i === cur ? hIdx : idxFor(d), i === cur ? rIdx : ridxFor(d), false).sum * o.rate; });
+  }
   function renderChips(o) {
-    var totals = D.map(function (d) { return cost(d, o, idxFor(d), ridxFor(d)).sum * o.rate; });
+    var totals = compareTotals(o);
     var sorted = totals.slice().sort(function (a, b) { return a - b; });
     var q = [sorted[Math.floor(sorted.length * 0.25)], sorted[Math.floor(sorted.length * 0.5)], sorted[Math.floor(sorted.length * 0.75)]];
     var tier = function (t) { return t <= q[0] ? 1 : t <= q[1] ? 2 : t <= q[2] ? 3 : 4; };
     var box = $("chips"); box.innerHTML = "";
     QUICK.forEach(function (name) {
       var i = idxOf(name), t = totals[i], tr = tier(t), b = document.createElement("button");
-      b.type = "button"; b.className = "cchip t" + tr;
+      b.type = "button"; b.className = "cchip t" + tr; b.dataset.key = "chip-" + i;
       b.setAttribute("aria-pressed", i === +$("city").value ? "true" : "false");
-      b.setAttribute("aria-label", name + ", yaklaşık " + nf.format(Math.round(t / 1000)) + " bin lira, " + TNAME[tr]);
+      b.setAttribute("aria-label", name + ", uçak hariç yaklaşık " + nf.format(Math.round(t / 1000)) + " bin lira, " + TNAME[tr]);
+      b.title = "Uçak hariç, seçtiğin tarih, kişi sayısı ve otel seviyesiyle";
       b.innerHTML = "<b>" + name + "</b><small>~" + nf.format(Math.round(t / 1000)) + " bin TL</small>";
       b.addEventListener("click", function () { $("city").value = i; resetCity(); render(); });
       box.appendChild(b);
     });
-    $("cleg").innerHTML = '<span class="t1">ucuz</span><span class="t2">orta</span><span class="t3">pahalı</span><span class="t4">çok pahalı</span>';
+    $("cleg").innerHTML = '<span class="t1">ucuz</span><span class="t2">orta</span><span class="t3">pahalı</span><span class="t4">çok pahalı</span><b style="font-weight:700">Rakamlar uçak hariç</b>';
     return { totals: totals, tier: tier };
   }
   // borsa bandı: bir kez kurulur, her değişiklikte yalnızca rakamlar güncellenir (animasyon kesilmez)
@@ -1303,35 +1638,46 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       });
       track.appendChild(b);
     });
+    $("bpause").parentNode.setAttribute("aria-label", "Başkent fiyat bandı (uçak hariç toplam, seçili şehre göre fark)");
   }
   function updateBoard(res) {
     var cur = +$("city").value, selT = res.totals[cur];
     document.querySelectorAll(".bitem").forEach(function (b) {
-      var i = +b.dataset.c, t = res.totals[i], d = (t - selT) / selT * 100, ch = b.querySelector(".ch");
+      var i = +b.dataset.c, t = res.totals[i], d = selT ? (t - selT) / selT * 100 : 0, ch = b.querySelector(".ch");
       b.className = "bitem t" + res.tier(t) + (i === cur ? " sel" : "");
       b.querySelector(".pr").textContent = nf.format(Math.round(t)) + " TL";
+      b.title = D[i].n + ": uçak hariç " + nf.format(Math.round(t)) + " TL";
       if (i === cur) { ch.textContent = "SEÇİLİ"; ch.className = "ch"; }
-      else { ch.textContent = (d >= 0 ? "▲ +" : "▼ ") + Math.abs(Math.round(d)) + "%"; ch.className = "ch " + (d >= 0 ? "up" : "dn"); }
+      else { var r = Math.round(d); ch.textContent = (r > 0 ? "▲ +" : r < 0 ? "▼ −" : "= ") + nf.format(Math.abs(r)) + "%"; ch.className = "ch " + (r > 0 ? "up" : r < 0 ? "dn" : ""); }
     });
     if (!$("btrack").dataset.set) {
       $("btrack").dataset.set = "1";
       $("btrack").style.setProperty("--dur", Math.max(30, $("btrack").scrollWidth / 2 / 70).toFixed(1) + "s");
     }
   }
+  function taxNote(h) {
+    if (!h.live) return "";
+    return '<span class="tax">' + (h.vergi === "dahil" || h.vergi === "eklendi" ? "vergiler dahil" : "vergiler dahil olmayabilir") + "</span>";
+  }
   function renderHotels(c, o) {
     var hs = hotelsOf(c), g = $("hgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("hCity").textContent = c.n; $("hCount").textContent = hs.length;
     var lc = liveCity(c), hl = $("hLive");
-    $("hLead").textContent = lc ? "Seçtiğimiz " + hs.length + " otel: ikonik, pahalı, konforlu ve ucuz. Fiyatlar robotun Cuma–Pazar kontrollerinden gelir, birine dokun, bütçe güncellensin." : "Sade, orta ve şık. Birine dokun, bütçe o otele göre güncellensin.";
+    $("hLead").textContent = lc ? "Seçtiğimiz " + hs.length + " otel: ikonik, pahalı, konforlu ve ucuz. Fiyatlar robotun cuma–pazar (2 gece) kontrollerinden gelir; birine dokun, bütçe güncellensin." : "Sade, orta ve şık. Birine dokun, bütçe o otele göre güncellensin.";
     hl.hidden = !lc;
     if (lc) hl.innerHTML = '<a href="oteller.html?sehir=' + encodeURIComponent(c.n) + '"><b>' + c.n + '</b> için hafta sonu fiyat takvimini ve en ucuz hafta sonlarını gör →</a>';
     hs.forEach(function (h, i) {
-      var q = (h.name ? h.name + ", " : "") + c.n + ", " + c.c, lab = document.createElement("label");
-      lab.className = "hotel" + (i === hIdx ? " on" : "");
+      var q = h.q ? h.q : (h.name ? decodeEnt(h.name) + ", " : "") + c.n + ", " + c.c, lab = document.createElement("label");
+      var bad = h.badge && h.badge[0] !== "soft";
+      lab.className = "hotel" + (i === hIdx ? " on" : "") + (bad ? " bad" : "");
+      var priceHtml = h.badge && (h.badge[1] === "Dolu" || h.badge[1] === "Bu tarihlerde satışta görünmüyor")
+        ? '<div class="price"><small>bütçede ~' + nf.format(h.p) + ' € / gece</small></div>'
+        : '<div class="price">~' + nf.format(h.p) + ' € <small>/ gece' + (h.priceKnown ? "" : h.s === "avg" ? " · ortalama" : h.live ? " · tahmini" : "") + '</small>' + taxNote(h) + '</div>';
       lab.innerHTML =
-        '<input type="radio" name="hotel" value="' + i + '"' + (i === hIdx ? " checked" : "") + '>' +
+        '<input type="radio" name="hotel" value="' + i + '" data-key="hotel-' + i + '"' + (i === hIdx ? " checked" : "") + '>' +
         '<div class="top"><span class="tier">' + h.t + '</span>' + (h.sc ? '<span class="score" title="' + (h.sct || "Booking puanı") + '">' + h.sc + '</span>' : '') + '</div>' +
         '<p class="hname">' + (h.name || h.label) + '</p>' +
-        '<div class="price">~' + h.p + ' € <small>/ gece</small></div>' +
+        (h.badge ? '<span class="badge ' + h.badge[0] + '">' + h.badge[1] + '</span>' : '') +
+        priceHtml +
         '<p class="hdesc">' + h.desc + '</p>' +
         '<div class="hfoot"><span class="chip"></span><a href="' + bookingUrl(q, o) + '" target="_blank" rel="noopener noreferrer">' + (h.name ? "Booking'de bak" : "Booking'de ara") + ' ↗</a></div>';
       chipEl(lab.querySelector(".chip"), h.s);
@@ -1352,10 +1698,10 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       var q = r.q || ("popular viral restaurants in " + c.n + " " + c.c), lab = document.createElement("label");
       lab.className = "hotel" + (i === rIdx ? " on" : "");
       lab.innerHTML =
-        '<input type="radio" name="resto" value="' + i + '"' + (i === rIdx ? " checked" : "") + '>' +
+        '<input type="radio" name="resto" value="' + i + '" data-key="resto-' + i + '"' + (i === rIdx ? " checked" : "") + '>' +
         '<div class="top"><span class="tier">' + r.t + '</span>' + (r.sc ? '<span class="score" title="' + (r.sct || "Puan") + '">' + r.sc + '</span>' : '') + '</div>' +
         '<p class="hname">' + (r.name || r.label) + '</p>' +
-        '<div class="price">~' + r.p + ' € <small>/ kişi</small></div>' +
+        '<div class="price">~' + nf.format(r.p) + ' € <small>/ kişi</small></div>' +
         '<p class="hdesc">' + r.desc + '</p>' +
         '<div class="hfoot"><span class="chip"></span><a href="' + (r.url || mapsUrl(q)) + '" target="_blank" rel="noopener noreferrer">' + (r.name ? "Haritada aç" : "Haritada ara") + ' ↗</a></div>';
       chipEl(lab.querySelector(".chip"), r.s);
@@ -1377,29 +1723,33 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         '<a href="' + mapsUrl("tourist attractions in " + c.n + " " + c.c) + '" target="_blank" rel="noopener noreferrer">haritada gezilecek yerlere bak ↗</a></p>';
       return;
     }
-    var hotel = hotelsOf(c)[hIdx], P = c.places;
+    var hotel = hotelsOf(c)[hIdx], P = c.places, auto = !picked.length, sel = auto ? defaultPicks(c, o) : picked;
     var arrows = function (id, what) {
       return '<div class="arrows"><button type="button" data-t="' + id + '" data-d="-1" aria-label="Önceki ' + what + '">‹</button><button type="button" data-t="' + id + '" data-d="1" aria-label="Sonraki ' + what + '">›</button></div>';
     };
-    body.innerHTML = '<p class="lead">Seçtiğin otelden (<b>' + hotel.name + '</b>) uzaklıklar kartlarda. Yana kaydırarak gez, dokunarak seç ya da planı bize bırak.</p>' + (c.n === "Budapeşte" ? priceBox(c) : geziBox(c)) +
+    body.innerHTML = '<p class="lead">Seçtiğin otelden (<b>' + (hotel.name || hotel.label) + '</b>) uzaklıklar kartlarda. Yana kaydırarak gez, dokunarak seç ya da planı bize bırak.</p>' + (c.n === "Budapeşte" ? priceBox(c) : geziBox(c)) +
       '<div class="actions"><button type="button" class="btn" id="autoPlan">✨ Bana tur planı çıkar</button><button type="button" class="btn ghost" id="clearPlan">Seçimi temizle</button></div>' +
-      '<div class="rowhead"><h3>Gezilecek yerler <span class="hint">(' + P.length + ' yer · ' + picked.length + ' seçili)</span></h3>' + arrows("plist", "yerler") + '</div>' +
+      '<div class="rowhead"><h3>Gezilecek yerler <span class="hint">(' + P.length + ' yer · ' + (auto ? sel.length + " önerilen" : picked.length + " seçili") + ')</span></h3>' + arrows("plist", "yerler") + '</div>' +
       '<div class="hs" id="plist" tabindex="0" role="region" aria-label="Gezilecek yerler, yatay kaydırılır"></div>' +
-      '<div class="rowhead" style="margin-top:14px"><h3>Öneri tur planın</h3>' + arrows("pscroll", "günler") + '</div>' +
+      '<div class="rowhead" style="margin-top:14px"><h3>' + (auto ? "Önerilen tur planın" : "Tur planın") + '</h3>' + arrows("pscroll", "günler") + '</div>' +
       '<div id="planOut"></div>';
     var g = $("plist");
     P.forEach(function (p, i) {
-      var l = leg(hotel, p), lab = document.createElement("label"), on = picked.indexOf(i) >= 0;
-      lab.className = "prow" + (on ? " on" : "");
+      var l = leg(hotel, p), lab = document.createElement("label"), on = picked.indexOf(i) >= 0, sug = auto && sel.indexOf(i) >= 0;
+      lab.className = "prow" + (on || sug ? " on" : "");
       lab.innerHTML =
-        '<input type="checkbox"' + (on ? " checked" : "") + '><span class="ck" aria-hidden="true"></span>' +
-        '<div><div class="pt"><b>' + p.n + '</b></div><span class="tg">' + p.tag + '</span>' +
+        '<input type="checkbox" data-key="place-' + i + '"' + (on || sug ? " checked" : "") + ' aria-label="' + p.n + (sug ? ", önerilen" : "") + (p.closed ? ", geçici kapalı" : "") + '"><span class="ck" aria-hidden="true"></span>' +
+        '<div><div class="pt"><b>' + p.n + '</b><span class="tags">' + (sug ? '<span class="tag sugg">Önerilen</span>' : "") + (p.closed ? '<span class="tag closed">geçici kapalı</span>' : "") + '</span></div><span class="tg">' + p.tag + '</span>' +
         '<p class="dist">' + legTxt(l).replace(" (uzun, taksi ya da metro mantıklı)", "") + (l.walk > 35 ? ' <span>· uzak</span>' : '') + '</p>' +
         '<p class="meta">' + p.price + ' · yaklaşık ' + fmtMin(p.mins) + '</p>' +
         '<details' + (openInfo[i] ? " open" : "") + '><summary>Bilgi</summary><p>' + p.info + '</p>' +
-        '<a href="' + (p.url || mapsUrl(p.n + " " + c.n)) + '" target="_blank" rel="noopener noreferrer">Haritada aç ↗</a></details></div>';
+        '<a href="' + (p.url || mapsUrl(decodeEnt(p.n) + " " + c.n)) + '" target="_blank" rel="noopener noreferrer">Haritada aç ↗</a></details></div>';
       lab.querySelector("input").addEventListener("change", function () {
-        var k = picked.indexOf(i); if (k >= 0) picked.splice(k, 1); else picked.push(i); render();
+        // Önerilen listeden ilk dokunuşta: öneriler seçime dönüşür, dokunulan yer eklenir/çıkarılır
+        if (!picked.length) picked = sel.slice();
+        var k = picked.indexOf(i); if (k >= 0) picked.splice(k, 1); else picked.push(i);
+        if (!picked.length) picked = [];
+        render();
       });
       var dt = lab.querySelector("details");
       dt.addEventListener("toggle", function () { openInfo[i] = dt.open; });
@@ -1409,8 +1759,9 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     $("autoPlan").addEventListener("click", function () { picked = defaultPicks(c, o); trKeep = false; render(); });
     $("clearPlan").addEventListener("click", function () { picked = []; trKeep = false; render(); });
     var out = $("planOut");
-    if (!picked.length) { out.innerHTML = '<p class="empty">Henüz yer seçmedin. Yukarıdan dokunarak seç ya da <b>Bana tur planı çıkar</b>\'a bas.</p>'; g.scrollLeft = s1; return; }
-    var plan = buildPlan(P, hotel, o, picked), h = '<div class="hs" id="pscroll" tabindex="0" role="region" aria-label="Gün gün plan, yatay kaydırılır">', ft = 0, unk = 0;
+    if (!sel.length) { out.innerHTML = '<p class="empty">Henüz yer seçmedin. Yukarıdan dokunarak seç ya da <b>Bana tur planı çıkar</b>\'a bas.</p>'; g.scrollLeft = s1; return; }
+    var plan = buildPlan(P, hotel, o, sel), h = (auto ? '<p class="plansum" style="margin:0 0 8px">Henüz kendin yer seçmedin, bu yüzden <b>önerilen</b> ' + sel.length + ' yerle bir plan hazırladık. Bütçedeki gezi harcaması bu plandan hesaplanıyor. Değiştirmek için kartlara dokun.</p>' : '') +
+      '<div class="hs" id="pscroll" tabindex="0" role="region" aria-label="Gün gün plan, yatay kaydırılır">', ft = 0, unk = 0;
     plan.forEach(function (stops, di) {
       var date = o.a ? new Date(o.a.getTime() + di * 86400000) : null, wk = date && [5, 6, 0].indexOf(date.getUTCDay()) >= 0;
       var head = (di + 1) + ". Gün" + (date ? " · " + DAYS[date.getUTCDay()] + ", " + dShort.format(date) : "");
@@ -1419,8 +1770,8 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       h += '<ol class="stops">'; var prev = hotel, prevName = "Otelden", dur = 0, taxi = 0;
       stops.forEach(function (pi, si) {
         var p = P[pi], l = leg(prev, p), pr = (wk && p.priceWe) ? p.priceWe : p.price;
-        dur += p.mins; taxi += l.taxi; ft += ticketEur(p, wk); if (p.unknown) unk++;
-        h += '<li><span class="n">' + (si + 1) + '</span><div><b>' + p.n + '</b><div class="leg">' + prevName + ': ' + legTxt(l) + '</div><p class="why">' + pr + ' · yaklaşık ' + fmtMin(p.mins) + '</p></div></li>';
+        dur += p.mins; taxi += l.taxi; ft += ticketEur(p, !!wk); if (p.unknown) unk++;
+        h += '<li><span class="n">' + (si + 1) + '</span><div><b>' + p.n + '</b>' + (auto ? ' <span class="tag sugg" style="font-size:.7rem;font-weight:800">Önerilen</span>' : '') + (p.closed ? ' <span class="tag closed" style="font-size:.7rem;font-weight:800">geçici kapalı</span>' : '') + '<div class="leg">' + prevName + ': ' + legTxt(l) + '</div><p class="why">' + pr + ' · yaklaşık ' + fmtMin(p.mins) + '</p></div></li>';
         prev = p; prevName = "Önceki duraktan";
       });
       h += '</ol><div class="foot">Gezi: ' + fmtMin(dur) + ' · taksi yol: ~' + fmtMin(taxi) + '. Çalışma saatlerini kontrol et.</div></div>';
@@ -1441,27 +1792,101 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   }
   function resetCity() { hIdx = 1; hDefault = true; rIdx = 1; rDefault = true; picked = []; openInfo = {}; trKeep = false; hFocus = true; rFocus = true; }
 
+  /* ====================== URL DURUMU ====================== */
+  // ?sehir=paris&giris=2026-11-06&cikis=2026-11-08&kisi=2 (k= gibi diğer parametreler olduğu gibi kalır)
+  var ALIAS = { budapest: "Budapeşte", prague: "Prag", praha: "Prag", vienna: "Viyana", wien: "Viyana", rome: "Roma", lisbon: "Lizbon", lisboa: "Lizbon", athens: "Atina",
+    warsaw: "Varşova", brussels: "Brüksel", bruxelles: "Brüksel", copenhagen: "Kopenhag", stockholm: "Stokholm", london: "Londra", luxembourg: "Lüksemburg", bucharest: "Bükreş",
+    sofia: "Sofya", belgrade: "Belgrad", sarajevo: "Saraybosna", skopje: "Üsküp", tirana: "Tiran", pristina: "Priştine", chisinau: "Kişinev", oslo: "Oslo", bern: "Bern" };
+  function cityFromParam(v) {
+    if (!v) return -1;
+    var sl = liveSlug(v);
+    for (var i = 0; i < D.length; i++) if (liveSlug(D[i].n) === sl) return i;
+    if (ALIAS[sl]) return idxOf(ALIAS[sl]);
+    return -1;
+  }
+  var datesAuto = true, lastUrl = "";
+  function writeUrl() {
+    if (!window.history || !history.replaceState) return;
+    try {
+      var u = new URL(location.href), q = u.searchParams, o = lastO || {};
+      q.set("sehir", liveSlug(D[+$("city").value].n));
+      if (!datesAuto && o.a && $("d1").value && $("d2").value) { q.set("giris", $("d1").value); q.set("cikis", $("d2").value); }
+      else { q.delete("giris"); q.delete("cikis"); }
+      if (o.ppl && o.ppl !== 2) q.set("kisi", String(o.ppl)); else q.delete("kisi");
+      var s = u.toString();
+      if (s !== lastUrl && s !== location.href) history.replaceState(history.state, "", s);
+      lastUrl = s;
+    } catch (e) {}
+  }
+  // Varsayılan tarih: seçili şehirde otel verisi olan, girişi bugün ya da sonra olan ilk cuma–pazar
+  function autoWeekend(c) {
+    var today = todayIst(), file = liveFile(c);
+    if (file) {
+      var hs = file.haftaSonlari, keys = Object.keys(hs).filter(function (k) { return k >= today; }).sort();
+      for (var i = 0; i < keys.length; i++) {
+        var ot = hs[keys[i]].oteller || {};
+        if (Object.keys(ot).some(function (id) { return usableRec(ot[id] && ot[id].son); })) return [keys[i], hs[keys[i]].cikis || addDays(keys[i], 2)];
+      }
+    }
+    var f = nextFriday(today); return [f, addDays(f, 2)];
+  }
+  function setDateMins() {
+    var today = todayIst(), a = $("d1").value;
+    $("d1").min = today;
+    $("d2").min = a && a >= today ? addDays(a, 1) : addDays(today, 1);
+  }
+
+  /* ====================== ANA ÇİZİM ====================== */
+  // Yeniden çizimde klavye odağı kaybolmasın: odaktaki öğe id ya da data-key ile geri bulunur
+  function focusKey() {
+    var el = document.activeElement;
+    if (!el || el === document.body) return null;
+    if (el.dataset && el.dataset.key) return { k: el.dataset.key };
+    if (el.id) return { id: el.id };
+    return null;
+  }
+  function restoreFocus(f) {
+    if (!f) return;
+    var el = f.k ? document.querySelector('[data-key="' + f.k + '"]') : $(f.id);
+    if (el && el !== document.activeElement) { try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); } }
+  }
   function render() {
-    var o = inputs(), c0 = D[+$("city").value];
-    ensureLiveCity(c0); fixHotelIdx(hotelsOf(c0)); fixRestoIdx(restosOf(c0));
-    var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate;
+    var fk = focusKey();
+    try { draw(); } finally { restoreFocus(fk); }
+  }
+  function draw() {
+    var c0 = D[+$("city").value];
+    ensureLiveCity(c0);
+    if (datesAuto) { var w = autoWeekend(c0); $("d1").value = w[0]; $("d2").value = w[1]; }
+    setDateMins();
+    var o = inputs();
+    fixHotelIdx(hotelsOf(c0)); fixRestoIdx(restosOf(c0));
+    var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate, noFly = k.sum - k.fly;
     renderFlight(c, o, k); $("rAir").textContent = k.fly ? "uçak dahil" : "uçak hariç";
     $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), cityStatus(c, o, k));
-    $("rTotal").textContent = tl(total);
-    $("rSub").textContent = (o.a && o.b ? dShort.format(o.a) + " – " + dShort.format(o.b) + " · " : "") + o.ppl + " kişi · " + o.nights + " gece · kişi başı yaklaşık " + tl(total / o.ppl);
-    var h = hs[hIdx], r = rs[rIdx];
-    $("rHotel").innerHTML = "Otel: " + (h.name || h.label) + " · ~" + h.p + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") +
-      "<br>Restoran: " + (visits === 0 ? "eklenmedi" : (r.name || r.label) + " · ~" + r.p + " € / kişi × " + Math.min(visits, o.nights + 1) + " öğün");
-    var note = $("rNote"); note.hidden = !c.note; note.textContent = c.note;
-    var parts = [["Otel", k.hotel * o.rate], ["Yemek", k.food * o.rate], ["Restoran", k.resto * o.rate], ["Ulaşım", k.trans * o.rate], ["Gezi", k.act * o.rate]];
-    if (k.fly) parts.unshift(["Uçak", k.fly * o.rate]);
-    var max = Math.max.apply(null, parts.map(function (p) { return p[1]; })) || 1;
-    $("brk").innerHTML = (k.fly ? "" : '<li class="air"><span>Uçak</span><span>' + (flightFor(c, o) ? "Bütçeye eklenmedi ✈️" : "Biletini sen alıyorsun ✈️") + '</span></li>') + parts.map(function (p) {
-      return '<li><span>' + p[0] + '</span><div class="track"><div class="fill" style="width:' + (p[1] / max * 100).toFixed(1) + '%"></div></div><span class="amt">' + tl(p[1]) + '</span></li>';
+    var h = hs[hIdx], r = rs[rIdx], notes = resultNotes(c, o, k, h), warn = $("rWarn");
+    warn.hidden = !notes.length;
+    warn.innerHTML = notes.map(function (t) { return "<p>" + escH(t) + "</p>"; }).join("");
+    $("rTotal").textContent = o.past ? "—" : tl(total);
+    $("rSub").textContent = o.past ? "Geçmiş tarih için bütçe hesaplanmadı." : (o.a && o.b ? dShort.format(o.a) + " – " + dShort.format(o.b) + " · " : "") + o.ppl + " kişi · " + o.nights + " gece · kişi başı yaklaşık " + tl(total / o.ppl);
+    var nf2 = $("rNoFly"); nf2.hidden = o.past || !k.fly; nf2.textContent = k.fly ? "Uçak hariç: " + tl(noFly * o.rate) + " (şehir kısayollarındaki rakam)" : "";
+    $("rHotel").innerHTML = o.past ? "" : "Otel: " + (h.name || h.label) + " · ~" + nf.format(h.p) + " € / gece" + (o.rooms > 1 ? " × " + o.rooms + " oda" : "") + (h.badge ? " · <b>" + h.badge[1] + "</b>" : "") +
+      "<br>Restoran: " + (visits === 0 ? "eklenmedi" : (r.name || r.label) + " · ~" + nf.format(r.p) + " € / kişi × " + Math.min(visits, o.nights + 1) + " öğün");
+    var note = $("rNote"); note.hidden = !c.note || o.past; note.textContent = c.note;
+    var parts = [["Otel", k.hotel * o.rate, k.src.hotel], ["Yemek", k.food * o.rate, k.src.food], ["Restoran", k.resto * o.rate, k.src.resto], ["Ulaşım", k.trans * o.rate, k.src.trans], ["Gezi", k.act * o.rate, o.act ? k.src.act : null]];
+    if (k.fly) parts.unshift(["Uçak", k.fly * o.rate, k.src.fly]);
+    var max = Math.max.apply(null, parts.map(function (p) { return p[1]; })) || 1, ff = flightFor(c, o);
+    $("brk").hidden = o.past;
+    $("brk").innerHTML = (k.fly ? "" : '<li class="air"><span>Uçak</span><span>' + (ff ? "Bütçeye eklenmedi ✈️ (" + (o.exact ? "kutudan ekleyebilirsin" : "tarihler cuma–pazar değil, istersen kutudan ekle") + ")" : "Biletini sen alıyorsun ✈️") + '</span></li>') + parts.map(function (p) {
+      return '<li><span>' + p[0] + srcTag(p[2]) + '</span><div class="track"><div class="fill" style="width:' + (p[1] / max * 100).toFixed(1) + '%"></div></div><span class="amt">' + tl(p[1]) + '</span></li>';
     }).join("");
+    $("actRow").hidden = false; $("pdfBtn").disabled = o.past; $("shareBtn").disabled = false;
+    var live = o.past ? c.n + ": geçmiş tarih, bütçe hesaplanmadı." : c.n + ", " + o.ppl + " kişi, " + o.nights + " gece: toplam " + tl(total) + (k.fly ? ", uçak dahil." : ", uçak hariç.");
+    if ($("rLive").textContent !== live) $("rLive").textContent = live;
     var res = renderChips(o); updateBoard(res);
     renderHotels(c, o); renderRestos(c); renderTrip(c, o);
     syncArrows();
+    writeUrl();
   }
 
   /* ====================== BAŞLANGIÇ ====================== */
@@ -1472,7 +1897,18 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     D.forEach(function (c, i) { if (c.r !== r) return; var o = document.createElement("option"); o.value = i; o.textContent = c.n + " · " + c.c; g.appendChild(o); });
     sel.appendChild(g);
   });
-  sel.value = idxOf("Budapeşte");
+  // Paylaşılan bağlantıdan durumu geri yükle: ?sehir=Paris&giris=2026-11-06&cikis=2026-11-08&kisi=2
+  var QS = (function () { try { return new URLSearchParams(location.search); } catch (e) { return null; } })();
+  var qCity = QS ? cityFromParam(QS.get("sehir")) : -1;
+  sel.value = qCity >= 0 ? qCity : idxOf("Budapeşte");
+  if (QS) {
+    var qa = QS.get("giris"), qb = QS.get("cikis"), qk = QS.get("kisi");
+    if (parseD(qa)) {
+      $("d1").value = qa; $("d2").value = parseD(qb) && qb > qa ? qb : addDays(qa, 2);
+      datesAuto = false;
+    }
+    if (qk != null && qk !== "") { $("ppl").value = qk; checkPpl(true); }
+  }
   buildBoard();
 
   $("foodSeg").addEventListener("click", function (e) {
@@ -1486,19 +1922,26 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     visits = parseInt(b.dataset.v, 10); render();
   });
   sel.addEventListener("change", function () { resetCity(); render(); });
-  ["d1", "d2", "ppl", "rate", "act"].forEach(function (id) { $(id).addEventListener("input", render); $(id).addEventListener("change", render); });
-  $("rate").addEventListener("input", function () { rateTouched = true; });
+  // Tarihe dokunulunca otomatik hafta sonu seçimi biter; uçak kutusu yeni tarihlere göre varsayılana döner
+  ["d1", "d2"].forEach(function (id) {
+    var touch = function () { datesAuto = false; addFlightUser = null; };
+    $(id).addEventListener("input", touch); $(id).addEventListener("change", touch);
+  });
+  $("ppl").addEventListener("input", function () { checkPpl(false); });
+  $("ppl").addEventListener("change", function () { checkPpl(true); });
+  $("rate").addEventListener("input", function () { rateTouched = true; checkRate(false); });
+  $("rate").addEventListener("change", function () { checkRate(true); });
   $("d1").addEventListener("change", function () {
     var a = parseD($("d1").value), b = parseD($("d2").value);
-    if (a && (!b || b <= a)) $("d2").value = isoD(new Date(a.getTime() + 3 * 86400000));
-    if (a) $("d2").min = isoD(new Date(a.getTime() + 86400000));
-    render();
+    if (a && (!b || b <= a)) $("d2").value = isoD(new Date(a.getTime() + 2 * 86400000));
   });
+  ["d1", "d2", "ppl", "rate", "act"].forEach(function (id) { $(id).addEventListener("input", render); $(id).addEventListener("change", render); });
   $("dice").addEventListener("click", function () {
     var i; do { i = Math.floor(Math.random() * D.length); } while (i === +sel.value);
     sel.value = i; resetCity(); render();
   });
   $("pdfBtn").addEventListener("click", savePdf);
+  $("shareBtn").addEventListener("click", share);
   document.addEventListener("click", function (e) {
     var b = e.target.closest(".arrows button[data-t]"); if (!b) return;
     var tg = $(b.dataset.t); if (!tg) return;
