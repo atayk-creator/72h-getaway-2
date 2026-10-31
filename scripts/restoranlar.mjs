@@ -56,12 +56,57 @@ export function perPersonEur(p, fx) {
   return Math.round((v / rate) * 10) / 10;
 }
 
+// ---------- mutfak adı (Türkçe) ----------
+// Google Maps'in İngilizce kategori adı -> sitede gösterilen Türkçe ad. Listede yoksa milliyet sözlüğü,
+// o da yoksa sondaki " restaurant" atılır.
+export const MUTFAK_TR = {
+  "Restaurant": "Restoran", "Fine dining restaurant": "Gurme", "Haute French restaurant": "Fransız (üst düzey)",
+  "Modern European restaurant": "Modern Avrupa", "Modern French restaurant": "Modern Fransız", "European restaurant": "Avrupa mutfağı",
+  "Hungarian restaurant": "Macar mutfağı", "Breakfast restaurant": "Kahvaltı", "Brunch restaurant": "Brunch",
+  "Doner kebab restaurant": "Döner", "Kebab shop": "Kebap", "Tapas restaurant": "Tapas", "Tapas bar": "Tapas",
+  "Sandwich shop": "Sandviç", "Steak house": "Steakhouse", "Hamburger restaurant": "Hamburger", "Pizza restaurant": "Pizza",
+  "Seafood restaurant": "Deniz ürünleri", "Fish restaurant": "Balık", "Vegan restaurant": "Vegan", "Vegetarian restaurant": "Vejetaryen",
+  "Barbecue restaurant": "Mangal / barbekü", "Fast food restaurant": "Fast food", "Cafe": "Kafe", "Coffee shop": "Kahve dükkânı",
+  "Bistro": "Bistro", "Brasserie": "Brasserie", "Brewpub": "Bira evi", "Gastropub": "Gastropub", "Pub": "Pub", "Wine bar": "Şarap barı",
+  "Bakery": "Fırın", "Patisserie": "Pastane", "Dessert shop": "Tatlıcı", "Ice cream shop": "Dondurmacı", "Deli": "Şarküteri",
+  "Asian fusion restaurant": "Asya füzyon", "Fusion restaurant": "Füzyon", "Eclectic restaurant": "Karma mutfak",
+  "Chinese noodle restaurant": "Çin eriştesi", "Ramen restaurant": "Ramen", "Sushi restaurant": "Suşi", "Noodle shop": "Erişte",
+  "Dumpling restaurant": "Mantı (dumpling)", "Falafel restaurant": "Falafel", "Middle Eastern restaurant": "Orta Doğu",
+  "Eastern European restaurant": "Doğu Avrupa", "Mediterranean restaurant": "Akdeniz", "Roman restaurant": "Roma mutfağı",
+  "Tuscan restaurant": "Toskana mutfağı", "Neapolitan restaurant": "Napoli mutfağı", "Basque restaurant": "Bask mutfağı",
+  "Bavarian restaurant": "Bavyera mutfağı", "Organic restaurant": "Organik", "Family restaurant": "Aile restoranı",
+  "Buffet restaurant": "Açık büfe", "Grill": "Izgara", "Chicken restaurant": "Tavuk", "Meat dish restaurant": "Et yemekleri",
+  "Soup restaurant": "Çorba", "Salad shop": "Salata", "Food court": "Yemek alanı", "Market": "Pazar",
+};
+const MILLIYET = {
+  Italian: "İtalyan", French: "Fransız", Spanish: "İspanyol", Portuguese: "Portekiz", Greek: "Yunan", Turkish: "Türk",
+  German: "Alman", Austrian: "Avusturya", Belgian: "Belçika", Dutch: "Hollanda", Irish: "İrlanda", British: "İngiliz", English: "İngiliz",
+  Scandinavian: "İskandinav", Danish: "Danimarka", Swedish: "İsveç", Finnish: "Fin", Norwegian: "Norveç", Nordic: "Kuzey",
+  Polish: "Polonya", Czech: "Çek", Slovak: "Slovak", Hungarian: "Macar", Romanian: "Romen", Bulgarian: "Bulgar", Croatian: "Hırvat",
+  Slovenian: "Sloven", Serbian: "Sırp", Balkan: "Balkan", Lithuanian: "Litvanya", Latvian: "Letonya", Estonian: "Estonya", Ukrainian: "Ukrayna",
+  Russian: "Rus", Georgian: "Gürcü", Armenian: "Ermeni", Maltese: "Malta", Luxembourgish: "Lüksemburg",
+  Asian: "Asya", Chinese: "Çin", Japanese: "Japon", Korean: "Kore", Thai: "Tay", Vietnamese: "Vietnam", Indian: "Hint",
+  Nepalese: "Nepal", Pakistani: "Pakistan", Indonesian: "Endonezya", Malaysian: "Malezya", Filipino: "Filipin",
+  Lebanese: "Lübnan", Israeli: "İsrail", Persian: "İran", Moroccan: "Fas", Ethiopian: "Etiyopya", African: "Afrika",
+  American: "Amerikan", Mexican: "Meksika", Peruvian: "Peru", Venezuelan: "Venezuela", Argentinian: "Arjantin", Brazilian: "Brezilya", Cuban: "Küba",
+};
+// Kilitli (tablodan düzenlenmiş) restoranda kullanıcının yazdığı Türkçe ad korunur
+export const withMutfakTr = (x) => ({ ...x, mutfakTr: x.kilit && x.mutfakTr ? x.mutfakTr : mutfakTr(x.mutfak) });
+export function mutfakTr(en) {
+  if (!en || typeof en !== "string") return null;
+  const s = en.trim();
+  if (MUTFAK_TR[s]) return MUTFAK_TR[s];
+  const m = s.match(/^(.+?) (restaurant|cuisine|food)$/i);
+  if (m && MILLIYET[m[1]]) return MILLIYET[m[1]];
+  return s.replace(/ restaurant$/i, "");
+}
+
 // ---------- aday ----------
 export function toCandidate(r, city, fx) {
   if (!r || !r.title || !r.placeId) return null;
   const fp = parsePrice(r.price, city.para);
   return {
-    id: r.placeId, ad: r.title, mutfak: r.categoryName || null, kategoriler: r.categories || [],
+    id: r.placeId, ad: r.title, mutfak: r.categoryName || null, mutfakTr: mutfakTr(r.categoryName), kategoriler: r.categories || [],
     puan: num(r.totalScore) ? r.totalScore : null, yorum: num(r.reviewsCount) ? r.reviewsCount : 0,
     fiyatYazi: r.price || null, kisiBasiEur: perPersonEur(fp, fx), artiFiyat: !!(fp && fp.arti),
     semt: r.neighborhood || null, konum: r.location && num(r.location.lat) ? [Math.round(r.location.lat * 1e5) / 1e5, Math.round(r.location.lng * 1e5) / 1e5] : null,
@@ -209,7 +254,7 @@ export async function run({ token, cfg, state = emptyRestaurants(), cands = { se
     if (prev.length) for (const id of prev) if (!nowIds.includes(id)) report.degisen.push(`${city.sehir}: ${(state.sehirler[city.sehir].restoranlar.find((x) => x.id === id) || {}).ad} çıkarıldı`);
     const total = TIERS.reduce((a, k) => a + cfg.secim[k], 0);
     if (sel.secilen.length < total) report.eksik.push(`${city.sehir}: ${sel.secilen.length}/${total}`);
-    state.sehirler[city.sehir] = { guncellendi: t, esik: sel.esik, aday: sel.aday, restoranlar: sel.secilen.map(({ kategoriler, arama, kapali, ...x }) => x), ...(haric.size ? { haric: [...haric] } : {}) };
+    state.sehirler[city.sehir] = { guncellendi: t, esik: sel.esik, aday: sel.aday, restoranlar: sel.secilen.map(({ kategoriler, arama, kapali, ...x }) => withMutfakTr(x)), ...(haric.size ? { haric: [...haric] } : {}) };
     report.sehir++; report.aday += sel.aday; report.secilen += sel.secilen.length;
   });
   if (mode !== "sec") {
@@ -229,7 +274,7 @@ export function toMarkdown({ report, state, cfg }) {
   for (const c of cfg.sehirler) {
     const s = state.sehirler[c.sehir]; if (!s) continue;
     p.push(`## ${c.sehir} (eşik: uygun ≤ ${s.esik.uygun} €, lüks ≥ ${s.esik.luks} €)`, "", "| Seviye | Restoran | Mutfak | Puan | Yorum | Fiyat | Kişi başı |", "| --- | --- | --- | --- | --- | --- | --- |");
-    for (const r of s.restoranlar) p.push(`| ${L[r.seviye]}${r.yedek ? "*" : ""} | ${r.ad} | ${r.mutfak || ""} | ${r.puan} | ${r.yorum} | ${r.fiyatYazi} | ${r.kisiBasiEur} € |`);
+    for (const r of s.restoranlar) p.push(`| ${L[r.seviye]}${r.yedek ? "*" : ""} | ${r.ad} | ${r.mutfakTr || r.mutfak || ""} | ${r.puan} | ${r.yorum} | ${r.fiyatYazi} | ${r.kisiBasiEur} € |`);
     p.push("");
   }
   if (report.hatalar.length) p.push("Hatalar:", ...report.hatalar.map((x) => "- " + x));

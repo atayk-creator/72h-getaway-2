@@ -76,6 +76,7 @@ r = wb["Restoranlar"]
 rr = find(r, **{"Şehir": "Paris"})
 r_id = rr["Kimlik"].value
 rr["Kişi başı €"].value = 33
+rr["Mutfak"].value = "Bask mutfağı"
 rr2 = None
 for row in r.iter_rows(min_row=2):
     if row[0].value == "Paris" and row[1].value != r_id:
@@ -104,6 +105,7 @@ check("4e ulaşım", gz["sehirler"]["Prag"]["ulasim"]["tek_bilet"]["fiyat"] == 3
 rs = json.loads(read("restoranlar.json"))["sehirler"]["Paris"]
 x = next(x for x in rs["restoranlar"] if x["id"] == r_id)
 check("4f restoran kilitli ve güncel", x["kisiBasiEur"] == 33 and x["kilit"] is True)
+check("4f2 elle yazılan mutfak Türkçe ad olur", x["mutfak"] == "Bask mutfağı" and x["mutfakTr"] == "Bask mutfağı", x)
 check("4g çıkarılan restoran hariç listesinde", r_off in rs["haric"] and not any(x["id"] == r_off for x in rs["restoranlar"]))
 ho = json.loads(read("hotels.json"))
 h = next(h for c in ho["sehirler"] for h in c["oteller"] if h["id"] == o_id)

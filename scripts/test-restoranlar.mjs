@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { parsePrice, perPersonEur, toCandidate, eligible, selectRestaurants, searchInput, refreshInput, run, toMarkdown, emptyRestaurants, fetchFx } from "./restoranlar.mjs";
+import { parsePrice, perPersonEur, toCandidate, eligible, selectRestaurants, searchInput, refreshInput, run, toMarkdown, emptyRestaurants, fetchFx, mutfakTr, withMutfakTr } from "./restoranlar.mjs";
 
 const cfg = JSON.parse(await readFile(new URL("../data/restoran-ayarlari.json", import.meta.url), "utf8"));
 const hotels = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
@@ -14,6 +14,18 @@ const FX = { EUR: 1, HUF: 400, CZK: 25, PLN: 4, SEK: 10, DKK: 7.5, RON: 5, BGN: 
   for (const c of hotels.sehirler) assert.ok(names.has(c.sehir), c.sehir);
   for (const c of cfg.sehirler) { assert.ok(c.merkez[0] > 34 && c.merkez[0] < 61 && c.merkez[1] > -10 && c.merkez[1] < 27, c.sehir); assert.ok(c.yaricap_km >= 0.8 && c.yaricap_km <= 3); }
   console.log(`ok 0: ${cfg.sehirler.length} şehir`); }
+
+// 0b) Türkçe mutfak adı: sözlük, milliyet, bilinmeyende " restaurant" atılır; veri dosyasında her restoranda var
+{ const cases = { "Haute French restaurant": "Fransız (üst düzey)", "Doner kebab restaurant": "Döner", "Fine dining restaurant": "Gurme", "Breakfast restaurant": "Kahvaltı",
+    "Brunch restaurant": "Brunch", "Hungarian restaurant": "Macar mutfağı", "Tapas restaurant": "Tapas", "Modern European restaurant": "Modern Avrupa", "Sandwich shop": "Sandviç",
+    "Steak house": "Steakhouse", "Italian restaurant": "İtalyan", "Restaurant": "Restoran", "Lithuanian restaurant": "Litvanya", "Klingon restaurant": "Klingon", "Poke bar": "Poke bar" };
+  for (const [en, tr] of Object.entries(cases)) assert.equal(mutfakTr(en), tr, en);
+  assert.equal(mutfakTr(null), null);
+  assert.equal(withMutfakTr({ mutfak: "Italian restaurant", mutfakTr: "eski" }).mutfakTr, "İtalyan", "robot seçiminde yeniden hesaplanır");
+  assert.equal(withMutfakTr({ mutfak: "Italian restaurant", mutfakTr: "Napoliten pizza", kilit: true }).mutfakTr, "Napoliten pizza", "tablodan elle yazılan korunur");
+  const data = JSON.parse(await readFile(new URL("../data/restoranlar.json", import.meta.url), "utf8"));
+  for (const [s, c] of Object.entries(data.sehirler)) for (const r of c.restoranlar) assert.ok(!r.mutfak || r.mutfakTr, `${s} ${r.ad} mutfakTr`);
+  console.log("ok 0b: Türkçe mutfak adı"); }
 
 // 1) fiyat yazısı (Google'ın gerçek biçimleri)
 assert.deepEqual(parsePrice("Ft 2,000–4,000", "HUF"), { alt: 2000, ust: 4000, arti: false, para: "HUF" });

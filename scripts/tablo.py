@@ -117,6 +117,12 @@ def to_num(v):
     return int(f) if f.is_integer() else f
 
 
+def mutfak_tr(v):
+    """Tabloya yazılan mutfak adı sitede Türkçe ad olarak gösterilir (İngilizce yazıldıysa sondaki ' restaurant' atılır)."""
+    v = norm(v)
+    return re.sub(r"\s+restaurant$", "", v, flags=re.I) or None
+
+
 def aktif(v):
     s = norm(v).upper()
     return s != HAYIR
@@ -413,7 +419,7 @@ def apply_import(sheet, base, rep):
                 rep.err(f"Restoranlar: {s}: yeni satırda ad ve kişi başı € zorunlu")
                 continue
             nid = rid
-            lst.append({"id": nid, "ad": ad, "mutfak": norm(row["Mutfak"]) or None, "puan": None, "yorum": 0, "fiyatYazi": norm(row["Fiyat yazısı"]) or f"~{eur} €",
+            lst.append({"id": nid, "ad": ad, "mutfak": norm(row["Mutfak"]) or None, "mutfakTr": mutfak_tr(row["Mutfak"]), "puan": None, "yorum": 0, "fiyatYazi": norm(row["Fiyat yazısı"]) or f"~{eur} €",
                         "kisiBasiEur": eur, "artiFiyat": False, "semt": None, "konum": None, "url": url or None, "web": None, "rezervasyon": None, "seviye": lvl, "kilit": True})
             rep.ok(f"Restoran eklendi (kilitli): {s} / {ad}")
             touched.add("rest")
@@ -434,6 +440,8 @@ def apply_import(sheet, base, rep):
         r.update({"ad": norm(row["Restoran adı"]) or r.get("ad"), "mutfak": norm(row["Mutfak"]) or r.get("mutfak"), "seviye": lvl,
                   "kisiBasiEur": eur if eur is not None else r.get("kisiBasiEur"), "fiyatYazi": norm(row["Fiyat yazısı"]) or r.get("fiyatYazi"),
                   "url": url or r.get("url"), "kilit": True})
+        if "Mutfak" in (ch or []) or not r.get("mutfakTr"):
+            r["mutfakTr"] = mutfak_tr(row["Mutfak"]) or r.get("mutfakTr")
         r.pop("yedek", None)
         rep.ok(f"Restoran güncellendi (kilitli): {s} / {r['ad']} ({', '.join(ch or [])})")
         touched.add("rest")
