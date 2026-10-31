@@ -1,0 +1,58 @@
+name: Şehir sayfaları (sehir/ ve sitemap.xml)
+# Robot verisi değişince /sehir/<şehir>/ sayfalarını ve sitemap.xml'i yeniden üretir.
+# Not: robotların GITHUB_TOKEN ile yaptığı push'lar "push" olayını tetiklemez; bu yüzden robot görevleri
+# bittiğinde (workflow_run) ve her gece (en yakın hafta sonu değiştiği için) de çalışır.
+# Bu görevin kendi commit'i sadece sehir/** ve sitemap.xml'e dokunur, döngü oluşmaz.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/fiyatlar/**"
+      - "data/ucuslar.json"
+      - "data/restoranlar.json"
+      - "data/gezi.json"
+      - "data.json"
+      - "data/hotels.json"
+      - "scripts/sehir-sayfalari.mjs"
+  workflow_run:
+    workflows:
+      - "Otel fiyat robotu (Cuma-Pazar fiyatları)"
+      - "Uçak fiyat robotu (İstanbul çıkışlı, Cuma-Pazar)"
+      - "Restoran robotu (Google Maps)"
+      - "Kur güncelle (Euro/TL, Euro/Forint)"
+      - "Tablo aktarımı (Google E-Tablolar)"
+      - "Gezi yerleri konum robotu (Google Maps)"
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: "23 21 * * *" # her gece 00:23 (İstanbul)
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sehir-sayfalari
+  cancel-in-progress: false
+jobs:
+  sehir-sayfalari:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node scripts/test-sehir-sayfalari.mjs
+      - name: Sayfaları üret
+        run: node scripts/sehir-sayfalari.mjs
+      - name: Değişiklikleri depoya kaydet
+        run: |
+          git config user.name "72h-robot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A sehir/ sitemap.xml
+          if git diff --cached --quiet; then echo "Değişiklik yok."; exit 0; fi
+          git commit -m "Şehir sayfaları güncellendi ($(TZ=Europe/Istanbul date '+%Y-%m-%d %H:%M'))"
+          git pull --rebase origin main
+          git push origin HEAD:main
