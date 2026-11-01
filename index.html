@@ -443,6 +443,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         <button type="button" class="btn ghost" id="pdfBtn">📄 Programı PDF olarak kaydet</button>
         <button type="button" class="btn" id="shareBtn">🔗 Paylaş</button>
         <p class="pdfmsg" id="pdfMsg" role="status"></p>
+      <p class="note" data-ortaklik-bildirim hidden>Bu sayfadaki bazı Booking bağlantıları ortaklık bağlantısıdır: rezervasyon yaparsan küçük bir komisyon alabiliriz, senin ödediğin fiyat değişmez.</p>
       </div>
       <div class="social">
         <p>Bu şehrin videoları ve yeni bütçeler için takip et</p>
@@ -1998,6 +1999,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   }
 })();
 </script>
+<script src="/js/olcum.js" defer></script>
 <script>if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });</script>
 </body>
 </html>

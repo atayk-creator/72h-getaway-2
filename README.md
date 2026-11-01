@@ -125,6 +125,17 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
   Kategori sırası uyarıları ve henüz kontrol edilmemiş yeni oteller raporda bilgi olarak geçer, issue açtırmaz.
 - Testler: `node scripts/test-denetci.mjs`.
 
+## Ziyaretçi ölçümü ve ortaklık bağlantıları (js/olcum.js)
+
+- Tek ayar dosyası: `js/olcum.js` > `AYAR`. Tüm sayfalar (hesaplayıcı, oteller, hakkında, 404, şehir sayfaları) bu dosyayı yükler.
+- **Ölçüm (GoatCounter, çerezsiz):** `goatcounter` alanına goatcounter.com'daki site kodunu yaz (ör. `72hgetaway`). Boşken hiçbir istek gitmez.
+  Sayılanlar: sayfa görüntüleme (yalnız `?sehir=`; tarih ve kişi sayısı gönderilmez), şehir seçimi, PDF, Paylaş, Booking/uçak/harita ve kanal tıklamaları.
+  Videolardan gelen trafiği ayırmak için bağlantılara `&k=yt-paris` (ya da `utm_source=youtube`) ekle; GoatCounter'da kaynak olarak görünür.
+- **Ortaklık (Awin üzerinden Booking.com):** `awinaffid` (yayıncı kimliği) ve `awinmid` (Booking'in Awin reklamveren kimliği) dolunca,
+  tıklanan Booking bağlantıları `awin1.com/cread.php` ortaklık bağlantısına çevrilir (`rel="sponsored"`), `clickref` = kaynak etiketi ya da sayfa.
+  Aynı anda `data-ortaklik-bildirim` öğeleri (hesaplayıcı, oteller, hakkında) görünür hale gelir. İkisinden biri boşsa hiçbir şey değişmez.
+- Testler: `node scripts/test-olcum.mjs`. Ayar biçimi testle denetlenir.
+
 ## Apify bütçesi (tüm robotlar ortak)
 
 - Robotlar çalışmadan önce Apify'ın kendi kullanım sayacını okur (`/users/me/limits`); harcama sınırı geçecekse kalan aramaları atlar.

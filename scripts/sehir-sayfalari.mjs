@@ -311,6 +311,7 @@ function foot() {
   <a href="/">Bütçe hesaplayıcı</a><a href="/sehir/">Tüm şehirler</a><a href="/oteller.html">Otel fiyatları</a><a href="/hakkinda.html">Hakkında</a>
   <div>72h Getaway bir seyahat acentesi değildir; fiyatlar bilgi amaçlıdır, rezervasyondan önce ilgili sitede kontrol et.</div>
 </div></footer>
+<script src="/js/olcum.js" defer></script>
 <script>if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });</script>
 </body>
 </html>
