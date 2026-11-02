@@ -13,7 +13,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 | `data/arsiv/` | Geçmiş hafta sonlarının fiyatları (robot yazar) |
 | `data/ucus-ayarlari.json`, `data/ucuslar.json` | Uçak robotunun ayarları ve bulduğu fiyatlar |
 | `data/restoran-ayarlari.json`, `data/restoranlar.json`, `data/restoran-adaylari.json` | Restoran robotunun ayarları, seçtiği restoranlar ve adaylar |
-| `data.json` | Euro/TL, euro/forint ve diğer kurlar (her gün 18:23, ECB referans kuru) |
+| `data.json` | Euro/TL, euro/forint ve diğer kurlar (her gün; iş günlerinde ECB referans kuru, hafta sonu ve tatillerde günlük piyasa orta kuru) |
 | `data/gezi.json` | 26 şehrin gezi yerleri ve toplu taşıma fiyatları |
 | `prices.json`, `price-status.json` | Resmî bilet fiyatları ve kontrol durumu |
 | `tablo/72h-getaway-veri.xlsx`, `data/tablo-*.json` | Google E-Tablolar ile elle düzenleme (aşağıda) |
@@ -96,7 +96,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
   sezon dışındaki Noel pazarları). Haftalık kapalı gün ya da "geçici sergi" kapanma sayılmaz.
 - Hesaplayıcı: ulaşım bütçesi = havalimanı gidiş-dönüş + kalınan günler için en ucuz seçenek (günde 2 yolculuk);
   gezi bütçesi = programdaki yerlerin biletleri (fiyatı bilinmeyenler için şehrin ortanca bilet fiyatı).
-- Para birimleri `data.json` > `kurlar` (ECB, her gün) ile euroya çevrilir.
+- Para birimleri `data.json` > `kurlar` (her gün) ile euroya çevrilir.
 
 ## Google E-Tablolar ile elle düzenleme
 

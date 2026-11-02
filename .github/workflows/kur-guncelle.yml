@@ -1,10 +1,15 @@
 name: Kur güncelle (Euro/TL, Euro/Forint)
-# Her gün 18:23 ve yedek olarak 06:47 (İstanbul) çalışır. ECB referans kurunu iş günlerinde ~17:00 (İstanbul) yayımlar;
-# hafta sonu ve tatillerde yeni kur olmadığı için "değişiklik yok" der ve hiçbir şey yazmaz.
+# Her gün 4 kez (İstanbul): 06:47, 12:23, 18:23, 20:53. İş günlerinde ECB referans kuru (~18:00 yayımlanır);
+# ECB'nin kur yayımlamadığı hafta sonu ve tatillerde günlük piyasa orta kuru kullanılır, böylece kur her gün yenilenir.
 on:
   schedule:
-    - cron: "23 15 * * *"
     - cron: "47 3 * * *"
+    - cron: "23 9 * * *"
+    - cron: "23 15 * * *"
+    - cron: "53 17 * * *"
+  push:
+    branches: [main]
+    paths: [scripts/update-rates.mjs]
   workflow_dispatch:
 permissions:
   contents: write
