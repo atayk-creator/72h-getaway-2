@@ -3,7 +3,8 @@
 //  - kur (data.json) son 4 iş gününde güncellenmiş mi
 //  - otel robotu (data/otel-fiyatlari.json > sonCalisma.tarih) son 5 günde çalışmış mı
 //  - uçak robotu (data/ucuslar.json > guncellendi) son 9 günde, restoran robotu (data/restoranlar.json) son 40 günde
-//  - her şehirde önümüzdeki 2 hafta sonu için kullanılabilir otel fiyatı oranı en az %60 mı
+//  - her şehirde önümüzdeki 2 hafta sonu için otellerin en az %60'ında sonuç (kullanılabilir fiyat ya da "dolu") var mı;
+//    çoğu dolu ama sonuç alınmışsa yalnız uyarı yazılır (issue açılmaz)
 //  - gelecek hafta sonlarının hiçbirinde kullanılabilir fiyatı olmayan oteller
 //  - her iş akışının son tamamlanan çalışması "failure" mı (GitHub REST API, GITHUB_TOKEN, actions: read)
 //  - https://72hgetaway.com/ açılıyor mu (HTTPS sorunları ayrıca yazılır)
@@ -73,7 +74,12 @@ export function checkData({ now, rates, hotelMeta, hotelsDoc, cityFiles, flights
       const f = cityFiles[citySlug(c.sehir)] || { haftaSonlari: {} }, hs = f.haftaSonlari || {};
       const per = next.map((g) => c.oteller.filter((h) => usable(hs[g] && hs[g].oteller && hs[g].oteller[h.id] && hs[g].oteller[h.id].son)).length);
       const ok = per.reduce((a, b) => a + b, 0), all = c.oteller.length * next.length;
-      if (all && ok / all < LIMITS.kapsama) low.push(`${c.sehir}: %${Math.round((100 * ok) / all)} (${next.map((g, i) => `${g.slice(5)}: ${per[i]}/${c.oteller.length}`).join(", ")})`);
+      // "dolu" gerçek bir sonuçtur (robot oteli buldu, o tarihte satışta oda yok); veri sorunu sayılmaz
+      const doluN = next.reduce((a, g) => a + c.oteller.filter((h) => { const s = hs[g] && hs[g].oteller && hs[g].oteller[h.id] && hs[g].oteller[h.id].son; return s && s.durum === "dolu"; }).length, 0);
+      if (all && (ok + doluN) / all >= LIMITS.kapsama && ok / all < LIMITS.kapsama) {
+        uyarilar.push(`${c.sehir}: önümüzdeki ${next.length} hafta sonu otellerin çoğu dolu görünüyor (fiyatlı ${ok}/${all}, dolu ${doluN}); bu bir robot hatası değil, gerçek doluluk.`);
+      }
+      if (all && (ok + doluN) / all < LIMITS.kapsama) low.push(`${c.sehir}: %${Math.round((100 * ok) / all)} (${next.map((g, i) => `${g.slice(5)}: ${per[i]}/${c.oteller.length}`).join(", ")})`);
       const future = Object.entries(hs).filter(([g, w]) => (w.cikis || g) >= today);
       for (const h of c.oteller) {
         const recs = future.map(([, w]) => w.oteller && w.oteller[h.id] && w.oteller[h.id].son).filter(Boolean);

@@ -8,7 +8,7 @@
     "vergi_kontrolu": true,
     "kac_hafta_sonu": 13,
     "apify_plan": "starter",
-    "aylik_butce_usd": 45,
+    "aylik_butce_usd": 75,
     "fatura_gunu": 28,
     "guvenilir_siteler": ["Booking.com","Expedia","Hotels.com","Agoda","Trip.com","Priceline","Otelin kendi sitesi"],
     "ozel_tarihler": ["2026-12-25","2027-01-01"],

@@ -140,11 +140,13 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 
 - Robotlar çalışmadan önce Apify'ın kendi kullanım sayacını okur (`/users/me/limits`); harcama sınırı geçecekse kalan aramaları atlar.
 - Her çalışmanın gerçek maliyeti, çalışma öncesi ve sonrası sayaç farkıyla ölçülüp `data/otel-fiyatlari.json` > `olcumler` alanına yazılır.
-- Sınır: `data/hotels.json` > `aylik_butce_usd` (45 $) ve Apify hesabının kendi aylık sınırı (hangisi düşükse).
+- Sınır: `data/hotels.json` > `aylik_butce_usd` (75 $; 2 Kasım 2026'da 45 $'dan artırıldı) ve Apify hesabının kendi aylık sınırı (hangisi düşükse).
+  İkisi birlikte değiştirilmeli: Apify'ın sınırı dolarsa yakın hafta sonları dahil hiçbir robot çalışamaz.
 - Fatura: Apify Starter planı ayda 19 $ ve bu 19 $'lık kullanımı içerir; aşan kullanım ayrıca ödenir. Yani normal bir ayın faturası
   19 $ + kullanım değil, yaklaşık toplam kullanım kadardır: otel ~21 $ + uçak ~19 $ + restoran ~1 $ ≈ 41 $; uçak robotu
-  13 hafta sonuna genişleyince ≈ 45 $. Kasım–Aralık'ta özel tarihlerle (yılbaşı) kullanım ~54 $'a çıkabilir; o zaman sınır (45 $)
-  dönem sonunda uzak hafta sonlarını atlatır. Daha fazlası isteniyorsa `aylik_butce_usd` artırılır.
+  13 hafta sonuna genişleyince ≈ 45 $. Kasım–Aralık'ta özel tarihlerle (yılbaşı) kullanım ~54 $'a çıkabilir;
+  ilk dönemdeki (28 Ekim–27 Kasım) bir kerelik kurulum harcamaları (~23 $) da eklenince sınır 75 $'a çıkarıldı.
+  Ocak'tan sonra normal aylar için 50 $ yeterli.
 - Uçak robotunun ölçümleri `data/ucuslar.json` > `olcumler` alanındadır.
 
 ## Gerekli ayarlar

@@ -56,6 +56,12 @@ console.log("ok 1: iş günleri");
   const d2 = good(); delete d2.cityFiles.roma.haftaSonlari["2026-11-20"].oteller["rom-3"]; delete d2.cityFiles.roma.haftaSonlari["2026-11-13"].oteller["rom-3"];
   const r2 = checkData({ now: NOW, ...d2 });
   assert.match(r2.bilgi.find((x) => /Henüz/.test(x)), /Roma \/ Roma Otel 3/, "verisi olmayan yeni otel sadece bilgi"); assert.ok(r2.sorunlar.every((x) => !/hiçbirinde/.test(x)));
+  // çoğu dolu ama sonuç alınmış şehir: sorun değil, uyarı
+  const d3 = good(); const dl = { son: { durum: "dolu" } };
+  d3.cityFiles.roma = cityFile("rom", { "2026-11-13": [fiyat(400), dl, dl, dl], "2026-11-20": [fiyat(400), fiyat(150), dl, fiyat(200)] });
+  const r3 = checkData({ now: NOW, ...d3 });
+  assert.ok(r3.sorunlar.every((x) => !/Roma:/.test(x)), "dolu ağırlıklı şehir sorun sayılmaz: " + r3.sorunlar.join("|"));
+  assert.ok(r3.uyarilar.some((x) => /Roma: .*çoğu dolu/.test(x)), "uyarı yazılır");
   console.log("ok 4: kapsama ve ölü oteller"); }
 
 // 5) kategori sırası uyarısı ve tablo hataları
