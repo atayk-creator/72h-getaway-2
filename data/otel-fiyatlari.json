@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-10-29T03:59:27.790Z",
+ "guncellendi": "2026-11-02T11:15:14.738Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -199,7 +199,19 @@
   "zag-dubrovnik": "ChkIgJrVnOjqo8LfARoML2cvMWhjMGdjMTRzEAE",
   "prg-emblem": "ChgI7Iy23qHh1ep1GgwvZy8xMm05Y2Qyc3cQAQ",
   "ams-v-nesplein": "ChkI3OCIrrP29_LEARoML2cvMTJoa2Y1NXdzEAE",
-  "vlt-the-cumberland": "ChoI6dj47onhrMmBARoNL2cvMTFmMzJkYjRkcBAB"
+  "vlt-the-cumberland": "ChoI6dj47onhrMmBARoNL2cvMTFmMzJkYjRkcBAB",
+  "bru-ibis-off-grand-place": "ChcI8pWWiaqDsshSGgsvZy8xdGx2bnBsNxAB",
+  "ams-hoxton": "ChoIrfnmwuvMk8u6ARoNL2cvMTFidjE5ZGh2ORAB",
+  "mad-ibis-styles-prado": "ChgIjPPv_Zebi5n1ARoLL2cvMXRnNnJmM2MQAQ",
+  "vlt-castille": "ChgImdnqs8TnmsnYARoLL2cvMXRnXzE2OWoQAQ",
+  "hel-sokos-torni": "ChcIscyJsfW0pouoARoKL20vMDI2cm14NBAB",
+  "hel-helka": "ChkI6pa8lKubg9wwGg0vZy8xMWI2amg2Nnh6EAE",
+  "rix-wellton-centrum": "ChkImvD1vqi-nIuvARoML2cvMXlmaF9qeXB3EAE",
+  "vno-panorama": "ChgIzMiXk9j21JvKARoLL2cvMXRwbG5fZ2cQAQ",
+  "bts-saffron": "ChkInJ-S77X9vJPCARoML2cvMWhjNnkwM19rEAE",
+  "lju-slon": "ChcIzv3mrMSN_L5-GgsvZy8xdGN2c240MRAB",
+  "buh-jw-marriott": "ChgIoNbD5e-po8EPGgwvZy8xMV95bDNwbjUQAQ",
+  "sof-radisson-grand": "ChoIq4Do35qzydb5ARoNL2cvMTF0NTNieG00eBAB"
  },
  "konum": {
   "dub-shelbourne": [
@@ -519,8 +531,8 @@
    23.73215
   ],
   "ath-athenswas": [
-   37.96951,
-   23.73086
+   37.969699999999996,
+   23.73084
   ],
   "ath-ava-hotel": [
    37.9706,
@@ -989,34 +1001,78 @@
   "prg-emblem": [
    50.08755,
    14.4184
+  ],
+  "bru-ibis-off-grand-place": [
+   50.84683999999999,
+   4.35544
+  ],
+  "ams-hoxton": [
+   52.37187,
+   4.88743
+  ],
+  "mad-ibis-styles-prado": [
+   40.41488,
+   -3.699
+  ],
+  "vlt-castille": [
+   35.89559,
+   14.511709999999999
+  ],
+  "hel-helka": [
+   60.16981,
+   24.92712
+  ],
+  "rix-wellton-centrum": [
+   56.94706,
+   24.11261
+  ],
+  "vno-panorama": [
+   54.671949999999995,
+   25.28473
+  ],
+  "bts-saffron": [
+   48.15277,
+   17.1175
+  ],
+  "lju-slon": [
+   46.05254,
+   14.503770000000001
+  ],
+  "buh-jw-marriott": [
+   44.425599999999996,
+   26.07689
+  ],
+  "sof-radisson-grand": [
+   36.19026,
+   29.59756
   ]
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 9.92
+  "usd": 12.42
  },
  "sonCalisma": {
-  "tarih": "2026-10-29T03:59:27.790Z",
+  "tarih": "2026-11-02T11:15:14.738Z",
   "mod": "takvim",
-  "hafta_sonu": 2,
-  "kontrol": 424,
-  "fiyatli": 338,
-  "tahminiMaliyetUsd": 1.24,
-  "butceAtlanan": 0,
-  "dogrulanamadi": 9,
-  "supheli": 12,
+  "hafta_sonu": 4,
+  "kontrol": 832,
+  "fiyatli": 712,
+  "dogrulanamadi": 23,
+  "supheli": 24,
   "vergi": {
-   "dahil": 16,
-   "eklendi": 318,
-   "bilinmiyor": 25
-  }
+   "dahil": 32,
+   "eklendi": 697,
+   "bilinmiyor": 30
+  },
+  "tahminiMaliyetUsd": 2.5,
+  "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 16.44,
+  "usd": 29.46,
   "sinir": 45,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-10-29T03:59:27.790Z"
+  "kontrol": "2026-11-02T11:15:14.738Z"
  },
  "olcumler": [
   {
@@ -1046,6 +1102,13 @@
    "sorgu": 413,
    "usd": 1.15,
    "sorguBasi": 0.00278
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-02T11:15:14.738Z",
+   "sorgu": 832,
+   "usd": 2.35,
+   "sorguBasi": 0.00282
   }
  ],
  "sehirler": {
