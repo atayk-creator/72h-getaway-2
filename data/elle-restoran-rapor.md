@@ -21,7 +21,7 @@
 | Amsterdam | Van Stapele | uygun | 4 € | ~4 € | tahmini | 4.8 | 16354 |
 | Amsterdam | Lanskroon | uygun | 5 € | ~5 € | tahmini | 4.6 | 1418 |
 | Amsterdam | Little Collins | populer | 25 € | €20–30 | google | 4.5 | 2027 |
-| Amsterdam | Saint-Jean | uygun | 10 € | ~10 € | tahmini |  |  |
+| Amsterdam | Saint-Jean | uygun | 10 € | ~10 € | tahmini | 4.4 | 3314 |
 | Amsterdam | De Tros | populer | 45 € | €30–60 | google | 4.6 | 670 |
 
 Kontrol et:
@@ -29,4 +29,4 @@ Kontrol et:
 - Fikissimo: Google fiyat aralığı yok, yedek fiyat (35 €) kullanıldı
 - Van Stapele: Google fiyat aralığı yok, yedek fiyat (4 €) kullanıldı
 - Lanskroon: Google fiyat aralığı yok, yedek fiyat (5 €) kullanıldı
-- Saint-Jean: Google Maps'te güvenle eşleşmedi (bulunan: "Cathedral of St. John the Divine"), konum/puan boş, fiyat tahmini
+- Saint-Jean: Google fiyat aralığı yok, yedek fiyat (10 €) kullanıldı
