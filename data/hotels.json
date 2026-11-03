@@ -65,14 +65,14 @@
       "sehir": "Amsterdam",
       "ulke": "Hollanda",
       "oteller": [
-        {"id":"ams-krasnapolsky","ad":"Anantara Grand Hotel Krasnapolsky","arama":"Anantara Grand Hotel Krasnapolsky Amsterdam","kategori":"ikonik","not":"Dam Meydanı'nda, Kraliyet Sarayı karşısında 1866'dan beri simge otel"},
-        {"id":"ams-pulitzer","ad":"Pulitzer Amsterdam","arama":"Pulitzer Amsterdam hotel","kategori":"pahali","not":"Dokuz Sokak'ta 25 kanal evinden oluşan, Prinsengracht kıyısında lüks otel"},
-        {"id":"ams-de-leurope","ad":"De L'Europe Amsterdam","arama":"De L'Europe Amsterdam hotel","kategori":"pahali","not":"Amstel kıyısında, Muntplein'de 19. yy saray yapısında 5 yıldızlı otel"},
-        {"id":"ams-v-nesplein","ad":"Hotel V Nesplein","arama":"Hotel V Nesplein Amsterdam","kategori":"konforlu","not":"Dam Meydanı'na 3 dk, tiyatrolar sokağında modern tasarım otel"},
-        {"id":"ams-hoxton","ad":"The Hoxton, Amsterdam","arama":"The Hoxton Amsterdam Herengracht","kategori":"konforlu","not":"Herengracht'ta beş kanal evinde, Dokuz Sokak'a yürüme mesafesinde canlı butik otel"},
-        {"id":"ams-estherea","ad":"Hotel Estheréa","arama":"Hotel Estherea Amsterdam","kategori":"konforlu","not":"Singel kanalı üzerinde aile işletmesi, klasik Hollanda dekorlu sevilen otel"},
-        {"id":"ams-motel-one","ad":"Motel One Amsterdam-Waterlooplein","arama":"Motel One Amsterdam Waterlooplein","kategori":"ucuz","not":"Waterlooplein'de, bit pazarı ve Rembrandt Evi yanında, metronun dibinde"},
-        {"id":"ams-ibis-styles-cs","ad":"ibis Styles Amsterdam Central Station","arama":"ibis Styles Amsterdam Central Station","kategori":"ucuz","not":"Merkez İstasyon'a 3 dk, kanallar ve Dam'a yürüme mesafesinde bütçe otel"}
+        {"id":"ams-sofitel-the-grand","ad":"Sofitel Legend The Grand Amsterdam","arama":"Sofitel Legend The Grand Amsterdam","kategori":"ikonik","not":"Eski belediye binası olan tarihî yapıda 5 yıldızlı otel; Oudezijds Voorburgwal kanalında"},
+        {"id":"ams-pulitzer","ad":"Pulitzer Amsterdam","arama":"Pulitzer Amsterdam hotel","kategori":"pahali","not":"Dokuz Sokak'ta 17. yüzyıldan kalma 25 kanal evinden oluşan, Prinsengracht kıyısında lüks otel"},
+        {"id":"ams-zetter-717","ad":"Hotel Zetter 717","arama":"Hotel Zetter 717 Amsterdam Prinsengracht","kategori":"pahali","not":"Prinsengracht 717'de kanal evinde şık butik lüks otel"},
+        {"id":"ams-canal-house","ad":"Canal House","arama":"Canal House hotel Keizersgracht Amsterdam","kategori":"konforlu","not":"Tam merkezde, Keizersgracht'ta gerçek bir kanal evi; favorimiz"},
+        {"id":"ams-estherea","ad":"Hotel Estheréa","arama":"Hotel Estherea Amsterdam","kategori":"konforlu","not":"Singel kanalı üzerinde aile işletmesi, klasik Hollanda dekorlu; misafir puanı 9,1"},
+        {"id":"ams-college-hotel","ad":"The College Hotel","arama":"The College Hotel Amsterdam","kategori":"konforlu","not":"Eski bir okul binasında 5 yıldızlı otel, Müzeler bölgesine yakın Oud Zuid'de"},
+        {"id":"ams-sir-albert","ad":"Sir Albert Hotel","arama":"Sir Albert Hotel Amsterdam","kategori":"ucuz","not":"De Pijp'te, Albert Cuyp pazarının yanında 4 yıldızlı otel; merkeze tramvayla 10 dk"},
+        {"id":"ams-park-centraal","ad":"Park Centraal Amsterdam","arama":"Park Centraal Amsterdam Stadhouderskade","kategori":"ucuz","not":"Müzeler bölgesine ve Vondelpark'a yürüme mesafesinde, Oud Zuid'de"}
       ]
     },
     {
