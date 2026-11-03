@@ -1,0 +1,135 @@
+{
+ "aciklama": "72h önerileri. Her şehrin takvim ekranının altında görünür (72hgetaway.com/#takvim/<şehir>). Doldurmak için şehrin 'oneriler' listesine öğe ekle; boş bırakılan şehirde 'önerilerimizi yazıyoruz' kutusu çıkar. Alanlar: kategori (aşağıdaki id'lerden biri), baslik (zorunlu), metin (1-3 cümle), fiyat, sure, yer (isteğe bağlı, kısa). 'giris' şehrin üstündeki tek cümlelik açılış yazısıdır.",
+ "ornek": {
+  "kategori": "yeic",
+  "baslik": "Gettó Gulyás",
+  "metin": "Gulaşın en iyisi burada; akşam için önceden yer ayırt.",
+  "fiyat": "kişi başı ~20 €",
+  "sure": "1 saat",
+  "yer": "VII. bölge"
+ },
+ "kategoriler": [
+  {
+   "id": "mutlaka",
+   "ad": "Mutlaka gör"
+  },
+  {
+   "id": "yeic",
+   "ad": "Ye, iç"
+  },
+  {
+   "id": "butce",
+   "ad": "Bütçe dostu"
+  },
+  {
+   "id": "ipucu",
+   "ad": "72 saat ipuçları"
+  }
+ ],
+ "sehirler": {
+  "Amsterdam": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Atina": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Berlin": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Bratislava": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Brüksel": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Budapeşte": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Bükreş": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Dublin": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Helsinki": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Kopenhag": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Lizbon": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Ljubljana": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Lüksemburg": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Madrid": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Paris": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Prag": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Riga": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Roma": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Sofya": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Stokholm": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Tallinn": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Valletta": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Varşova": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Vilnius": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Viyana": {
+   "giris": "",
+   "oneriler": []
+  },
+  "Zagreb": {
+   "giris": "",
+   "oneriler": []
+  }
+ }
+}
