@@ -1,6 +1,6 @@
 # Elle seçilen restoranlar
 
-Şehir: 1, restoran: 19, Google fiyatlı: 15.
+Şehir: 1, restoran: 19, Google fiyatlı: 14.
 
 | Şehir | Restoran | Seviye | Kişi başı | Fiyat yazısı | Kaynak | Puan | Yorum |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -17,15 +17,16 @@
 | Amsterdam | The Seafood Bar | populer | 55 € | €30–80 | google | 4.7 | 5984 |
 | Amsterdam | Fikissimo | populer | 35 € | ~35 € | tahmini | 4.6 | 1251 |
 | Amsterdam | The Siren | luks | 130 € | €100+ | google | 4.6 | 1304 |
-| Amsterdam | Maoz Falafel | uygun | 6 € | ~6 € | tahmini |  |  |
-| Amsterdam | Bagels Village | uygun | 15 € | €10–20 | google | 4.8 | 3589 |
-| Amsterdam | El Pimpi Tapas | populer | 40 € | €20–60 | google | 4.7 | 2232 |
-| Amsterdam | Restaurant De Belhamel | populer | 65 € | ~65 € | tahmini | 4.5 | 2036 |
-| Amsterdam | Restaurant Watergang | luks | 130 € | €100+ | google | 4.9 | 508 |
-| Amsterdam | Restaurant 21 (R21) | luks | 130 € | €100+ | google | 4.8 | 360 |
+| Amsterdam | Fabel Friet | uygun | 5.5 € | €1–10 | google | 4.5 | 9936 |
+| Amsterdam | Van Stapele | uygun | 4 € | ~4 € | tahmini | 4.8 | 16354 |
+| Amsterdam | Lanskroon | uygun | 5 € | ~5 € | tahmini | 4.6 | 1418 |
+| Amsterdam | Little Collins | populer | 25 € | €20–30 | google | 4.5 | 2027 |
+| Amsterdam | Saint-Jean | uygun | 10 € | ~10 € | tahmini |  |  |
+| Amsterdam | De Tros | populer | 45 € | €30–60 | google | 4.6 | 670 |
 
 Kontrol et:
 - Bar Bellini: Google fiyat aralığı yok, yedek fiyat (25 €) kullanıldı
 - Fikissimo: Google fiyat aralığı yok, yedek fiyat (35 €) kullanıldı
-- Maoz Falafel: Google Maps'te güvenle eşleşmedi (bulunan: "MaozFalafel"), konum/puan boş, fiyat tahmini
-- Restaurant De Belhamel: Google fiyat aralığı yok, yedek fiyat (65 €) kullanıldı
+- Van Stapele: Google fiyat aralığı yok, yedek fiyat (4 €) kullanıldı
+- Lanskroon: Google fiyat aralığı yok, yedek fiyat (5 €) kullanıldı
+- Saint-Jean: Google Maps'te güvenle eşleşmedi (bulunan: "Cathedral of St. John the Divine"), konum/puan boş, fiyat tahmini

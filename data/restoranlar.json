@@ -586,13 +586,63 @@
    ]
   },
   "Amsterdam": {
-   "guncellendi": "2026-11-03T16:35:23.790Z",
+   "guncellendi": "2026-11-03T16:37:17.749Z",
    "esik": {
     "uygun": 15,
     "luks": 130
    },
    "aday": 54,
    "restoranlar": [
+    {
+     "id": "ChIJbWVeiMEJxkcRM0UW81iB8dI",
+     "ad": "Van Stapele",
+     "googleAd": "Van Stapele Koekmakerij",
+     "mutfak": "Cookie shop",
+     "mutfakTr": "Kurabiye",
+     "puan": 4.8,
+     "yorum": 16354,
+     "fiyatYazi": "~4 €",
+     "kisiBasiEur": 4,
+     "fiyatKaynagi": "tahmini",
+     "artiFiyat": false,
+     "semt": "Amsterdam-Centrum",
+     "konum": [
+      52.37197,
+      4.89335
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Van%20Stapele%20Koekmakerij&query_place_id=ChIJbWVeiMEJxkcRM0UW81iB8dI",
+     "web": null,
+     "rezervasyon": null,
+     "seviye": "uygun",
+     "kilit": true,
+     "elle": true,
+     "not": "Tek çeşit viral çikolatalı kurabiye; kuyruk hızlı ilerler, bitince dükkân kapanır"
+    },
+    {
+     "id": "ChIJ7eqVJ8IJxkcRKiWPk7NtrLg",
+     "ad": "Lanskroon",
+     "googleAd": "Lanskroon Bakery",
+     "mutfak": "Pastry shop",
+     "mutfakTr": "Stroopwafel / pastane",
+     "puan": 4.6,
+     "yorum": 1418,
+     "fiyatYazi": "~5 €",
+     "kisiBasiEur": 5,
+     "fiyatKaynagi": "tahmini",
+     "artiFiyat": false,
+     "semt": "Amsterdam-Centrum",
+     "konum": [
+      52.3688,
+      4.88818
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Lanskroon%20Bakery&query_place_id=ChIJ7eqVJ8IJxkcRKiWPk7NtrLg",
+     "web": "http://www.lanskroon.nl/",
+     "rezervasyon": null,
+     "seviye": "uygun",
+     "kilit": true,
+     "elle": true,
+     "not": "110 yılı aşkın stroopwafel dükkânı, ailenin dördüncü kuşağı işletiyor"
+    },
     {
      "id": "ChIJvZcQ7YUJxkcRPivLFwWt5M8",
      "ad": "Lera",
@@ -669,15 +719,40 @@
      "not": "Ringa balığını denemek için en iyi adreslerden; Hollandalılar kuyruğundan tutup yiyor (~4 €)"
     },
     {
-     "id": "elle-maoz-falafel",
-     "ad": "Maoz Falafel",
+     "id": "ChIJrftMriIJxkcRmsYdm9XycFA",
+     "ad": "Fabel Friet",
+     "googleAd": "Fabel Friet Runstraat",
+     "mutfak": "Frituur",
+     "mutfakTr": "Patates kızartması / sokak lezzeti",
+     "puan": 4.5,
+     "yorum": 9936,
+     "fiyatYazi": "€1–10",
+     "kisiBasiEur": 5.5,
+     "fiyatKaynagi": "google",
+     "artiFiyat": false,
+     "semt": "Amsterdam-Centrum",
+     "konum": [
+      52.36883,
+      4.88406
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Fabel%20Friet%20Runstraat&query_place_id=ChIJrftMriIJxkcRmsYdm9XycFA",
+     "web": "https://fabelfriet.nl/",
+     "rezervasyon": null,
+     "seviye": "uygun",
+     "kilit": true,
+     "elle": true,
+     "not": "İki blogun da önerisi: iki aşamada pişen patates, trüflü mayonez ve parmesanla; oturacak yer yok"
+    },
+    {
+     "id": "elle-saint-jean",
+     "ad": "Saint-Jean",
      "googleAd": null,
      "mutfak": null,
-     "mutfakTr": "Falafel / sokak lezzeti",
+     "mutfakTr": "Fırın / kafe",
      "puan": null,
      "yorum": 0,
-     "fiyatYazi": "~6 €",
-     "kisiBasiEur": 6,
+     "fiyatYazi": "~10 €",
+     "kisiBasiEur": 10,
      "fiyatKaynagi": "tahmini",
      "artiFiyat": false,
      "semt": null,
@@ -688,7 +763,7 @@
      "seviye": "uygun",
      "kilit": true,
      "elle": true,
-     "not": "Hızlı ve ucuz falafel, salata barından sınırsız ekleme"
+     "not": "Fırın-kafe favorisi; Antep fıstıklı cruffin'i mutlaka dene"
     },
     {
      "id": "ChIJd_yDtNAJxkcRko3UnBeygWA",
@@ -764,31 +839,6 @@
      "kilit": true,
      "elle": true,
      "not": "Amsterdam'ın en ünlü elmalı turtası (dilimi 5–7 €); kuyruğa girme, içeri gir"
-    },
-    {
-     "id": "ChIJkW-4aMgJxkcRsjS8suE8Q8I",
-     "ad": "Bagels Village",
-     "googleAd": "Bagels Village",
-     "mutfak": "Breakfast restaurant",
-     "mutfakTr": "Kahvaltı / bagel",
-     "puan": 4.8,
-     "yorum": 3589,
-     "fiyatYazi": "€10–20",
-     "kisiBasiEur": 15,
-     "fiyatKaynagi": "google",
-     "artiFiyat": false,
-     "semt": "Amsterdam-Centrum",
-     "konum": [
-      52.37838,
-      4.894
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Bagels%20Village&query_place_id=ChIJkW-4aMgJxkcRsjS8suE8Q8I",
-     "web": "http://www.bagelsvillage.nl/",
-     "rezervasyon": null,
-     "seviye": "uygun",
-     "kilit": true,
-     "elle": true,
-     "not": "Google puanı 4,8; kahvaltı ve brunch için sevilen bagel dükkânı"
     },
     {
      "id": "ChIJMzljdaEJxkcRYdL4KJKZR0A",
@@ -891,6 +941,31 @@
      "not": "Ünlü cacio e pepe, büyük tavada paylaşmalık; mutlaka rezervasyon (gelmezsen ücret alınır)"
     },
     {
+     "id": "ChIJNxPl9Y0JxkcRiXF6kIukt5o",
+     "ad": "Little Collins",
+     "googleAd": "Little Collins De Pijp",
+     "mutfak": "Restaurant",
+     "mutfakTr": "Kahvaltı / brunch",
+     "puan": 4.5,
+     "yorum": 2027,
+     "fiyatYazi": "€20–30",
+     "kisiBasiEur": 25,
+     "fiyatKaynagi": "google",
+     "artiFiyat": false,
+     "semt": "Amsterdam-Zuid",
+     "konum": [
+      52.35583,
+      4.89808
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Little%20Collins%20De%20Pijp&query_place_id=ChIJNxPl9Y0JxkcRiXF6kIukt5o",
+     "web": "http://www.littlecollins.nl/",
+     "rezervasyon": null,
+     "seviye": "populer",
+     "kilit": true,
+     "elle": true,
+     "not": "OitheBlog'un kahvaltı favorisi, De Pijp'te"
+    },
+    {
      "id": "ChIJR0r8GUAJxkcR4VtqoK1-y34",
      "ad": "Fikissimo",
      "googleAd": "Fikissimo",
@@ -909,36 +984,36 @@
      ],
      "url": "https://www.google.com/maps/search/?api=1&query=Fikissimo&query_place_id=ChIJR0r8GUAJxkcR4VtqoK1-y34",
      "web": "https://www.fikissimoamsterdam.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4XK_z8bM0zQ?source=pa,gmm&opi=79508299&hl=en-US&gei=mQ3qatXJL5mRruEP8qOjgQU&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DFikissimo%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4XK_z8bM0zQ?source=pa,gmm&opi=79508299&hl=en-US&gei=3A3qatauOuOsqtsPq5eGoAQ&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DFikissimo%26hl%3Den-US&oiwv=1&allowGuest=1",
      "seviye": "populer",
      "kilit": true,
      "elle": true,
      "not": "Oud-West'te çatı terası, helal menü seçeneği"
     },
     {
-     "id": "ChIJm31jpYkJxkcRmaWzTDHyjBo",
-     "ad": "El Pimpi Tapas",
-     "googleAd": "El Pimpi Tapas",
-     "mutfak": "Tapas restaurant",
-     "mutfakTr": "Tapas",
-     "puan": 4.7,
-     "yorum": 2232,
-     "fiyatYazi": "€20–60",
-     "kisiBasiEur": 40,
+     "id": "ChIJX1HjG3QJxkcR0YJkbDyYzZY",
+     "ad": "De Tros",
+     "googleAd": "Buurtcafé De Tros",
+     "mutfak": "Restaurant",
+     "mutfakTr": "Mahalle kafesi / akşam yemeği",
+     "puan": 4.6,
+     "yorum": 670,
+     "fiyatYazi": "€30–60",
+     "kisiBasiEur": 45,
      "fiyatKaynagi": "google",
      "artiFiyat": false,
-     "semt": "Amsterdam-Centrum",
+     "semt": "Amsterdam-Oost",
      "konum": [
-      52.37836,
-      4.89407
+      52.36046,
+      4.92542
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=El%20Pimpi%20Tapas&query_place_id=ChIJm31jpYkJxkcRmaWzTDHyjBo",
-     "web": "http://www.elpimpitapas.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/FtXWbZv-xWA?source=pa,gmm&opi=79508299&hl=en-US&gei=eQ3qapXtF4Sn0PEPu7b42AQ&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DEl%2BPimpi%2BTapas%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "url": "https://www.google.com/maps/search/?api=1&query=Buurtcaf%C3%A9%20De%20Tros&query_place_id=ChIJX1HjG3QJxkcR0YJkbDyYzZY",
+     "web": "http://detrosamsterdam.nl/",
+     "rezervasyon": null,
      "seviye": "populer",
      "kilit": true,
      "elle": true,
-     "not": "Paylaşmalık İspanyol tapasları, akşam yemeği için"
+     "not": "İki blogun ortak önerisi; OitheBlog'un en sevdiği akşam yemeği"
     },
     {
      "id": "ChIJw6roY-0JxkcR4kx59nXldmY",
@@ -959,36 +1034,11 @@
      ],
      "url": "https://www.google.com/maps/search/?api=1&query=The%20Seafood%20Bar&query_place_id=ChIJw6roY-0JxkcR4kx59nXldmY",
      "web": "https://www.theseafoodbar.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/CnsvPXKgsuk?source=pa,gmm&opi=79508299&hl=en-US&gei=cQ3qaoKdFv3KkPIPjO-vKQ&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSeafood%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/CnsvPXKgsuk?source=pa,gmm&opi=79508299&hl=en-US&gei=4Q3qarqZFtiPxc8P0JqfiQw&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSeafood%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
      "seviye": "populer",
      "kilit": true,
      "elle": true,
      "not": "De Visscher ailesinin restoranı; iki kişilik karışık ızgara tabağı"
-    },
-    {
-     "id": "ChIJkXOJ6MgJxkcRIwjfUYItF44",
-     "ad": "Restaurant De Belhamel",
-     "googleAd": "Restaurant De Belhamel",
-     "mutfak": "French restaurant",
-     "mutfakTr": "Fransız / romantik",
-     "puan": 4.5,
-     "yorum": 2036,
-     "fiyatYazi": "~65 €",
-     "kisiBasiEur": 65,
-     "fiyatKaynagi": "tahmini",
-     "artiFiyat": false,
-     "semt": "Amsterdam-Centrum",
-     "konum": [
-      52.37942,
-      4.89205
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Restaurant%20De%20Belhamel&query_place_id=ChIJkXOJ6MgJxkcRIwjfUYItF44",
-     "web": "https://www.belhamel.nl/",
-     "rezervasyon": null,
-     "seviye": "populer",
-     "kilit": true,
-     "elle": true,
-     "not": "Art nouveau dekor, iki kanala bakan manzara; Amsterdam'ın en romantik restoranlarından"
     },
     {
      "id": "ChIJGZtKPJwJxkcRBY8QI6tYSO4",
@@ -1009,61 +1059,11 @@
      ],
      "url": "https://www.google.com/maps/search/?api=1&query=The%20SIREN%20Restaurant%20%26%20Bar&query_place_id=ChIJGZtKPJwJxkcRBY8QI6tYSO4",
      "web": "https://www.thesirenamsterdam.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4IP7bpi0n5U?source=pa,gmm&opi=79508299&hl=en-US&gei=cg3qaqLnC9TBkPIP3t358Ak&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSIREN%2BRestaurant%2B%2526%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4IP7bpi0n5U?source=pa,gmm&opi=79508299&hl=en-US&gei=3w3qavfZGNbQkPIPpKap4Ac&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSIREN%2BRestaurant%2B%2526%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
      "seviye": "luks",
      "kilit": true,
      "elle": true,
      "not": "Rokin'de barok dekor, dev deniz kızı heykeli; menü fiyatını teyit et"
-    },
-    {
-     "id": "ChIJ-y5x-fEJxkcRCHWqzQtNM9s",
-     "ad": "Restaurant Watergang",
-     "googleAd": "Restaurant Watergang",
-     "mutfak": "Fine dining restaurant",
-     "mutfakTr": "Gurme",
-     "puan": 4.9,
-     "yorum": 508,
-     "fiyatYazi": "€100+",
-     "kisiBasiEur": 130,
-     "fiyatKaynagi": "google",
-     "artiFiyat": true,
-     "semt": "Amsterdam-Centrum",
-     "konum": [
-      52.36105,
-      4.88875
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Watergang&query_place_id=ChIJ-y5x-fEJxkcRCHWqzQtNM9s",
-     "web": "https://www.restaurantwatergang.nl/",
-     "rezervasyon": null,
-     "seviye": "luks",
-     "kilit": true,
-     "elle": true,
-     "not": "Gurme tadım menüsü, Google puanı 4,9"
-    },
-    {
-     "id": "ChIJ-VEiq2kJxkcRd81WgAwPjM0",
-     "ad": "Restaurant 21 (R21)",
-     "googleAd": "Restaurant 21 (R21)",
-     "mutfak": "Modern European restaurant",
-     "mutfakTr": "Modern Avrupa / gurme",
-     "puan": 4.8,
-     "yorum": 360,
-     "fiyatYazi": "€100+",
-     "kisiBasiEur": 130,
-     "fiyatKaynagi": "google",
-     "artiFiyat": true,
-     "semt": "Amsterdam-Centrum",
-     "konum": [
-      52.3716,
-      4.90775
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Restaurant%2021%20(R21)&query_place_id=ChIJ-VEiq2kJxkcRd81WgAwPjM0",
-     "web": "http://www.r21.amsterdam/",
-     "rezervasyon": null,
-     "seviye": "luks",
-     "kilit": true,
-     "elle": true,
-     "not": "Modern Avrupa mutfağı, lüks akşam yemeği"
     }
    ],
    "sadeceElle": true,
