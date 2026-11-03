@@ -329,7 +329,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         <text x="366" y="200" font-family="'Liberation Sans',Arial,Helvetica,sans-serif" font-weight="800" font-size="118" fill="#0F2A43" letter-spacing="3">GETAWAY</text>
         <path d="M 372 266 C 520 230 640 300 780 250" fill="none" stroke="#0F2A43" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 13"/>
         <g transform="translate(792,246) rotate(-20) scale(1.1)"><path d="M -18,-8 L 20,0 L -18,8 L -10,0 Z" fill="#F4A62A"/></g>
-        <text x="370" y="328" font-family="'DejaVu Sans Mono',Consolas,'Courier New',monospace" font-size="22" fill="#0F2A43" opacity=".85" letter-spacing="3">ŞEHİR KAÇAMAĞI · 3 GECE</text>
+        <text x="370" y="328" font-family="'DejaVu Sans Mono',Consolas,'Courier New',monospace" font-size="22" fill="#0F2A43" opacity=".85" letter-spacing="3">ŞEHİR KAÇAMAĞI · 2 GECE</text>
         <g fill="#0F2A43"><rect x="840" y="214" width="3" height="46"/><rect x="851" y="214" width="5" height="46"/><rect x="862" y="214" width="7" height="46"/><rect x="873" y="214" width="4" height="46"/><rect x="884" y="214" width="6" height="46"/><rect x="895" y="214" width="3" height="46"/><rect x="906" y="214" width="5" height="46"/><rect x="917" y="214" width="7" height="46"/><rect x="928" y="214" width="4" height="46"/><rect x="939" y="214" width="6" height="46"/><rect x="950" y="214" width="3" height="46"/></g>
       </svg>
     </div>
@@ -1427,7 +1427,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       var qx = q[0] * 1.1, qy = q[1] * 1.1; return P(792 + qx * Math.cos(th) - qy * Math.sin(th), 246 + qx * Math.sin(th) + qy * Math.cos(th));
     });
     this.ops.push(rgbOp(SAFF, false) + " " + pts[0] + " m " + pts[1] + " l " + pts[2] + " l " + pts[3] + " l h f");
-    this.text("ŞEHİR KAÇAMAĞI · 3 GECE", x + 370 * s, ty(328, 5.5), 5.5, false, NAVY);
+    this.text("ŞEHİR KAÇAMAĞI · 2 GECE", x + 370 * s, ty(328, 5.5), 5.5, false, NAVY);
     for (var i = 0; i < 11; i++) this.rect(x + (840 + i * 11) * s, top + 214 * s, (3 + (i * 7) % 5) * s, 46 * s, NAVY);
   };
   PdfDoc.prototype.build = function (title) {

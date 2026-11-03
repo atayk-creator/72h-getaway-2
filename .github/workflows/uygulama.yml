@@ -1,0 +1,125 @@
+name: Telefon uygulaması (Android + iOS)
+# app/ ya da uygulama paketleyicisi değişince (veya elle) çalışır:
+#  - Android: test APK'sı derlenir, "Sürümler" sayfasındaki "android-test" sürümüne konur; sanal telefonda açılıp ekran görüntüsü alınır
+#  - iOS: simülatör için derlenir, sanal iPhone'da açılıp ekran görüntüsü alınır (imzasız; mağaza için imza ayrıca eklenecek)
+# Ekran görüntüleri "uygulama-ekran" dalına yazılır.
+on:
+  push:
+    branches: [main]
+    paths: ["app/**", "scripts/build-app.mjs", ".github/workflows/uygulama.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: uygulama
+  cancel-in-progress: true
+env:
+  APP_ID: com.getaway72h.app
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Bağımlılıklar ve web içeriği
+        working-directory: app
+        run: |
+          npm install --no-audit --no-fund
+          npm run www
+          npx cap add android
+          npx capacitor-assets generate --android --iconBackgroundColor "#0F2A43" --iconBackgroundColorDark "#0F2A43" --splashBackgroundColor "#0F2A43" --splashBackgroundColorDark "#0F2A43"
+          npx cap sync android
+          npx cap --version
+      - name: APK derle
+        working-directory: app/android
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+      - name: APK'yı Sürümler sayfasına koy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cp app/android/app/build/outputs/apk/debug/app-debug.apk 72h-getaway-test.apk
+          gh release delete android-test -y --cleanup-tag || true
+          gh release create android-test 72h-getaway-test.apk --prerelease --title "72h Getaway Android test sürümü" \
+            --notes "Telefona kurmak için 72h-getaway-test.apk dosyasını telefondan indir ve aç. Test sürümüdür, mağaza sürümü değildir. Kaynak: ${GITHUB_SHA::7}"
+      - name: KVM aç
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Sanal Android telefonda aç ve ekran görüntüsü al
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          script: bash .github/scripts/android-ekran.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ekran-android
+          path: ekran/
+          if-no-files-found: ignore
+
+  ios:
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Bağımlılıklar ve web içeriği
+        working-directory: app
+        run: |
+          npm install --no-audit --no-fund
+          npm run www
+          npx cap add ios
+          npx capacitor-assets generate --ios --iconBackgroundColor "#0F2A43" --splashBackgroundColor "#0F2A43" --splashBackgroundColorDark "#0F2A43"
+          npx cap sync ios
+          xcodebuild -version
+      - name: Simülatör için derle
+        working-directory: app/ios/App
+        run: |
+          if [ -d App.xcworkspace ]; then P="-workspace App.xcworkspace"; else P="-project App.xcodeproj"; fi
+          xcodebuild $P -scheme App -configuration Debug -sdk iphonesimulator -destination "generic/platform=iOS Simulator" \
+            -derivedDataPath build CODE_SIGNING_ALLOWED=NO build | tail -n 40
+          test -d build/Build/Products/Debug-iphonesimulator/App.app
+      - name: Sanal iPhone'da aç ve ekran görüntüsü al
+        run: bash .github/scripts/ios-ekran.sh app/ios/App/build/Build/Products/Debug-iphonesimulator/App.app
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ekran-ios
+          path: ekran/
+          if-no-files-found: ignore
+
+  ekran:
+    needs: [android, ios]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: indirilen
+      - name: Ekran görüntülerini "uygulama-ekran" dalına yaz
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ANDROID: ${{ needs.android.result }}
+          IOS: ${{ needs.ios.result }}
+        run: |
+          mkdir dal && cd dal && git init -q -b uygulama-ekran
+          git config user.name "uygulama-robotu"; git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          find ../indirilen -name '*.png' -exec cp {} . \; || true
+          find ../indirilen -name '*.txt' -exec cp {} . \; || true
+          printf "Kaynak: %s\nTarih: %s\nAndroid: %s\niOS: %s\n" "$GITHUB_SHA" "$(date -u +%FT%TZ)" "$ANDROID" "$IOS" > DURUM.txt
+          git add -A && git commit -qm "Uygulama ekran görüntüleri (${GITHUB_SHA::7})"
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" uygulama-ekran

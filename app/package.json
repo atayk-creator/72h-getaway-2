@@ -1,0 +1,27 @@
+{
+  "name": "72h-getaway-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "72h Getaway telefon uygulaması (Android ve iOS). Web içeriği ../scripts/build-app.mjs ile siteden üretilir.",
+  "scripts": {
+    "www": "node ../scripts/build-app.mjs",
+    "sync": "npm run www && npx cap sync"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/app": "^8.0.0",
+    "@capacitor/browser": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/filesystem": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
+    "@capacitor/network": "^8.0.0",
+    "@capacitor/preferences": "^8.0.0",
+    "@capacitor/share": "^8.0.0",
+    "@capacitor/splash-screen": "^8.0.0",
+    "@capacitor/status-bar": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.0.0"
+  }
+}
