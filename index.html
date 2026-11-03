@@ -347,6 +347,81 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 .etk { display: inline-block; font-size: 0.72rem; font-weight: 700; border-radius: 999px; padding: 3px 8px; white-space: nowrap; }
 .etk.ucuz { background: #D7F0E2; color: #1F5E43; } .etk.normal { background: #EEE8DC; color: #44515E; } .etk.pahali { background: #FBE1CF; color: #8A3A12; } .etk.dolu { background: #C4374D; color: #FFFFFF; }
 .vnote { margin: 0; font-size: 0.78rem; color: #C9D3DE; }
+.vact { display: flex; gap: 8px; flex-wrap: wrap; }
+.vbtn { font: inherit; font-weight: 700; font-size: 0.9rem; min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1.5px solid rgba(251,246,236,0.35); background: rgba(251,246,236,0.08); color: #FBF6EC; cursor: pointer; }
+.vbtn span { color: #F4A62A; }
+.vbtn:hover { background: rgba(251,246,236,0.16); }
+.vbtn:focus-visible { outline: 3px solid #F4A62A; outline-offset: 2px; }
+/* ---------- tam ekran katmanlar: hikâye ve kaydırma ---------- */
+.ov { position: fixed; inset: 0; z-index: 60; background: #0A1F33; color: #FBF6EC; overscroll-behavior: contain; }
+.ov-x { width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(15,42,67,0.7); color: #FBF6EC; font: 700 1rem/1 inherit; cursor: pointer; display: grid; place-items: center; }
+.ov-x:focus-visible, .ov button:focus-visible, .ov a:focus-visible { outline: 3px solid #F4A62A; outline-offset: 2px; }
+.st { max-width: 520px; margin: 0 auto; overflow: hidden; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+@media (min-width: 560px) { .st { inset: 16px auto; left: 50%; transform: translateX(-50%); width: min(480px, calc(100vw - 32px)); border-radius: 22px; box-shadow: 0 0 0 100vmax rgba(5,15,26,0.88); } }
+.st-ph, .st-ph img, .st-ph .fb { position: absolute; inset: 0; width: 100%; height: 100%; }
+.st-ph img { object-fit: cover; display: block; }
+.st-ph .fb { background: radial-gradient(circle, rgba(244,166,42,0.35) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
+.st-ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(10,31,51,0.55), transparent 22%, transparent 45%, rgba(10,31,51,0.92) 78%); }
+.st-bars { position: absolute; left: 10px; right: 10px; top: calc(env(safe-area-inset-top, 0px) + 10px); display: flex; gap: 4px; z-index: 2; }
+.st-bars i { flex: 1; height: 3px; border-radius: 2px; background: rgba(251,246,236,0.35); overflow: hidden; }
+.st-bars i b { display: block; height: 100%; width: 0; background: #FBF6EC; }
+.st-bars i.done b { width: 100%; }
+.st-bars i.cur b { animation: stFill var(--st-dur, 6s) linear forwards; }
+.st.paused .st-bars i.cur b { animation-play-state: paused; }
+@keyframes stFill { from { width: 0; } to { width: 100%; } }
+.st-top { position: absolute; left: 12px; right: 12px; top: calc(env(safe-area-inset-top, 0px) + 22px); display: flex; justify-content: space-between; align-items: center; z-index: 3; }
+.st-who { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.9rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+.st-who b { background: #F4A62A; color: #0F2A43; border-radius: 6px; padding: 3px 6px; font-size: 0.75rem; text-shadow: none; }
+.st-tools { display: flex; gap: 8px; }
+.st-nav { position: absolute; top: 90px; bottom: 260px; z-index: 1; border: 0; background: transparent; cursor: pointer; }
+.st-nav.prev { left: 0; width: 34%; } .st-nav.next { right: 0; width: 66%; }
+.st-bot { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 18px calc(env(safe-area-inset-bottom, 0px) + 20px); z-index: 3; display: grid; gap: 10px; }
+.st-eb { font: 700 0.72rem/1.3 "DejaVu Sans Mono", Consolas, monospace; letter-spacing: 0.16em; color: #F4A62A; }
+.st-h { margin: 0; font-size: clamp(1.9rem, 8vw, 2.5rem); line-height: 1.02; letter-spacing: -0.02em; font-weight: 800; }
+.st-pr { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.st-pr b { font-size: 1.9rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.st-pr span { font-size: 0.85rem; color: #D5DEE8; }
+.st-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.st-chips span { background: rgba(251,246,236,0.16); border: 1px solid rgba(251,246,236,0.28); border-radius: 999px; padding: 5px 10px; font-size: 0.8rem; font-weight: 600; }
+.st-cta { display: block; text-align: center; min-height: 52px; line-height: 52px; border-radius: 14px; background: #F4A62A; color: #0F2A43; font-weight: 800; text-decoration: none; border: 0; font-size: 1rem; cursor: pointer; width: 100%; font-family: inherit; }
+.st-cr { font-size: 0.68rem; color: rgba(251,246,236,0.65); text-align: right; margin-top: -4px; }
+.sw { overflow-y: auto; }
+.sw-in { max-width: 460px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; gap: 12px; padding: calc(env(safe-area-inset-top, 0px) + 14px) 16px calc(env(safe-area-inset-bottom, 0px) + 16px); }
+.sw-head { display: flex; align-items: center; gap: 10px; }
+.sw-head h2 { margin: 0; font-size: 1.4rem; flex: 1; }
+.sw-head span { color: #C9D3DE; font: 500 0.85rem/1 "DejaVu Sans Mono", Consolas, monospace; }
+.sw-deck { position: relative; flex: 1; min-height: 360px; max-height: 560px; }
+.sw-card { position: absolute; inset: 0; border-radius: 22px; overflow: hidden; background: #153552; box-shadow: 0 14px 34px rgba(0,0,0,0.45); touch-action: pan-y; user-select: none; -webkit-user-select: none; cursor: grab; will-change: transform; }
+.sw-card.back { transform: scale(0.94) translateY(14px); opacity: 0.7; pointer-events: none; }
+.sw-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.sw-card .fb { position: absolute; inset: 0; background: radial-gradient(circle, rgba(244,166,42,0.35) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
+.sw-card .info { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(10,31,51,0.9); padding: 12px 14px 14px; display: grid; gap: 6px; }
+.sw-card .row1 { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.sw-card .row1 b { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; }
+.sw-card .row1 span { font-size: 1.15rem; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sw-card .sub { font-size: 0.82rem; color: #C9D3DE; }
+.sw-card .et { position: absolute; left: 12px; top: 12px; }
+.sw-card .yes, .sw-card .no { position: absolute; top: 22px; padding: 6px 12px; border: 3px solid; border-radius: 10px; font: 800 1.2rem/1 inherit; letter-spacing: 0.08em; opacity: 0; background: rgba(10,31,51,0.6); }
+.sw-card .yes { right: 18px; color: #7FD3A3; transform: rotate(10deg); } .sw-card .no { left: 18px; color: #F28B9B; transform: rotate(-10deg); }
+.sw-btns { display: flex; justify-content: center; gap: 28px; }
+.sw-btns button { width: 64px; height: 64px; border-radius: 50%; border: 0; font-size: 1.6rem; cursor: pointer; box-shadow: 0 6px 16px rgba(0,0,0,0.35); }
+.sw-no { background: #FBF6EC; color: #C4374D; } .sw-yes { background: #F4A62A; color: #0F2A43; }
+.sw-hint { margin: 0; text-align: center; font-size: 0.78rem; color: #A9B8C7; }
+.sw-liked { background: #0F2A43; border: 1.5px solid #2F506D; border-radius: 16px; padding: 8px 8px 8px 12px; display: flex; align-items: center; gap: 10px; min-height: 60px; }
+.sw-liked .av { display: flex; } .sw-liked .av img, .sw-liked .av i { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid #0F2A43; margin-left: -10px; background: #284866; display: block; }
+.sw-liked .av :first-child { margin-left: 0; }
+.sw-liked .tx { flex: 1; font-size: 0.88rem; font-weight: 600; min-width: 0; }
+.sw-liked .btn { min-height: 44px; }
+.sw-res { display: grid; gap: 8px; }
+.sw-res button { display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 12px; align-items: center; text-align: left; background: #153552; color: #FBF6EC; border: 1.5px solid #2F506D; border-radius: 14px; padding: 8px 12px 8px 8px; font: inherit; cursor: pointer; min-height: 72px; }
+.sw-res img, .sw-res i { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: #284866; display: block; }
+.sw-res b { display: block; font-size: 1.02rem; } .sw-res small { color: #C9D3DE; font-size: 0.78rem; }
+.sw-res .pr { font-weight: 800; font-variant-numeric: tabular-nums; text-align: right; }
+.sw-res .pr small { display: block; font-weight: 400; }
+.sw-empty { text-align: center; color: #C9D3DE; padding: 30px 10px; display: grid; gap: 12px; justify-items: center; }
+body.ov-open { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .st-bars i.cur b { animation: none; width: 100%; } }
+@media print { .ov { display: none !important; } }
 @media (max-width: 700px) { header .steps { display: none; } header { padding-bottom: 18px; } }
 
 /* ---------- yazdırma (PDF yedeği) ---------- */
@@ -413,11 +488,41 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   <div class="wrap">
     <a class="vhero" id="vhero" href="#formSec"></a>
     <div class="vhead"><h2 id="h-vitrin">Bu hafta sonu nereye?</h2><span id="vweek"></span></div>
+    <div class="vact">
+      <button type="button" class="vbtn" id="openStory"><span aria-hidden="true">▶</span> En ucuz 8 şehir, hikâye gibi</button>
+      <button type="button" class="vbtn" id="openSwipe"><span aria-hidden="true">♥</span> Gider miydin? Kaydırarak seç</button>
+    </div>
     <div class="vrow" id="vrow" role="group" aria-label="Şehirler, ucuzdan pahalıya"></div>
     <p class="vnote">Etiket, şehrin önümüzdeki hafta sonlarındaki ortanca fiyatına göre: %10 ucuzsa ucuz, %10 pahalıysa pahalı. Bir şehre dokun, bütçesi aşağıda hesaplansın. Fotoğraflar: Pexels.</p>
   </div>
 </section>
 
+<div class="ov st" id="ovStory" role="dialog" aria-modal="true" aria-label="Şehir hikâyeleri" hidden>
+  <div class="st-ph" id="stPh"></div>
+  <div class="st-bars" id="stBars" aria-hidden="true"></div>
+  <div class="st-top">
+    <span class="st-who"><b>72H</b><span id="stWho"></span></span>
+    <span class="st-tools">
+      <button type="button" class="ov-x" id="stPause" aria-label="Durdur">❚❚</button>
+      <button type="button" class="ov-x" id="stClose" aria-label="Kapat">✕</button>
+    </span>
+  </div>
+  <button type="button" class="st-nav prev" id="stPrev" aria-label="Önceki şehir"></button>
+  <button type="button" class="st-nav next" id="stNext" aria-label="Sonraki şehir"></button>
+  <div class="st-bot" id="stBot" aria-live="polite"></div>
+</div>
+<div class="ov sw" id="ovSwipe" role="dialog" aria-modal="true" aria-labelledby="swTitle" hidden>
+  <div class="sw-in">
+    <div class="sw-head"><h2 id="swTitle">Gider miydin?</h2><span id="swCount"></span><button type="button" class="ov-x" id="swClose" aria-label="Kapat">✕</button></div>
+    <div class="sw-deck" id="swDeck"></div>
+    <div class="sw-btns" id="swBtns">
+      <button type="button" class="sw-no" id="swNo" aria-label="Geç">✕</button>
+      <button type="button" class="sw-yes" id="swYes" aria-label="Beğen">♥</button>
+    </div>
+    <p class="sw-hint" id="swHint">Sağa kaydır: giderim · sola kaydır: geç · klavyede ← →</p>
+    <div class="sw-liked" id="swLiked"></div>
+  </div>
+</div>
 <div class="board" role="region" aria-label="Başkent fiyat bandı">
   <button type="button" class="bpause" id="bpause" aria-pressed="false" aria-label="Bandı durdur">⏸</button>
   <div class="bview"><div class="btrack" id="btrack"></div></div>
@@ -1747,6 +1852,204 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     });
     row.scrollLeft = sl;
   }
+
+  /* ====================== HİKÂYELER VE KAYDIRMA ====================== */
+  // Vitrin verisinden: seçili hafta sonunda şehirler, uçak + konforlu otel kişi başı fiyatına göre ucuzdan pahalıya
+  function vList(o) {
+    if (!VITRIN || !VITRIN.sehirler) return null;
+    var g = vWeek(VITRIN, o); if (!g) return null;
+    var list = [];
+    Object.keys(VITRIN.sehirler).forEach(function (n) {
+      var i = idxOf(n); if (i < 0) return;
+      var c = VITRIN.sehirler[n], h = (c.haftalar || []).filter(function (x) { return x.g === g; })[0] || null;
+      list.push({ n: n, i: i, c: c, h: h, t: h && typeof h.toplam === "number" ? h.toplam / 2 * o.rate : null });
+    });
+    list.sort(function (a, b) { return (a.t == null) - (b.t == null) || (a.t || 0) - (b.t || 0) || a.n.localeCompare(b.n, "tr"); });
+    return { g: g, list: list };
+  }
+  function flySon(g, n) {
+    var w = FLY && FLY.haftaSonlari && FLY.haftaSonlari[g], x = w && w.sehirler && w.sehirler[n];
+    return x && x.son && x.son.durum === "fiyat" ? x.son : null;
+  }
+  function flyChip(s) {
+    if (!s) return "";
+    return s.havayolu + (s.ucusSaati ? " " + String(s.ucusSaati).slice(11, 16) : "") + (s.aktarma === 0 ? ", aktarmasız" : "");
+  }
+  function goWeekend(i, g, cikis) {
+    $("d1").value = g; $("d2").value = cikis || addDays(g, 2); datesAuto = false; addFlightUser = null;
+    $("city").value = i; resetCity(); render();
+  }
+  var ovLast = null, ovOpen = null;
+  function ovShow(el, focusEl) {
+    ovLast = document.activeElement; ovOpen = el; el.hidden = false; document.body.classList.add("ov-open");
+    setTimeout(function () { (focusEl || el).focus(); }, 0);
+  }
+  function ovHide(el) {
+    el.hidden = true; ovOpen = null; document.body.classList.remove("ov-open");
+    if (ovLast && ovLast.focus) try { ovLast.focus(); } catch (e) {}
+  }
+  // Basit odak tuzağı: Tab katmanın içinde döner
+  document.addEventListener("keydown", function (e) {
+    if (!ovOpen) return;
+    if (e.key === "Escape") { e.preventDefault(); ovOpen === $("ovStory") ? stClose() : swClose(); return; }
+    if (e.key === "Tab") {
+      var f = Array.prototype.filter.call(ovOpen.querySelectorAll("button, a[href]"), function (x) { return !x.disabled && x.offsetParent !== null; });
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+      return;
+    }
+    if (ovOpen === $("ovStory")) {
+      if (e.key === "ArrowRight") { e.preventDefault(); stGo(ST.k + 1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); stGo(ST.k - 1); }
+    } else if (ovOpen === $("ovSwipe") && SW.list && SW.k < SW.list.length && !SW.res) {
+      if (e.key === "ArrowRight") { e.preventDefault(); swDecide(true); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); swDecide(false); }
+    }
+  });
+
+  // ---- Hikâyeler: en ucuz 8 şehir, 6 saniyede bir ilerler; dokununca ileri/geri, basılı tutunca durur
+  var ST = { list: null, k: 0, g: null, paused: false };
+  function stOpen() {
+    var o = inputs(), v = vList(o); if (!v) return;
+    ST.list = v.list.filter(function (x) { return x.t != null; }).slice(0, 8); ST.g = v.g; ST.k = 0; ST.paused = false;
+    if (!ST.list.length) return;
+    $("stWho").textContent = weekendText(v.g, ST.list[0].h.cikis) + " · en ucuz " + ST.list.length + " şehir";
+    $("stBars").innerHTML = ST.list.map(function () { return "<i><b></b></i>"; }).join("");
+    $("ovStory").classList.remove("paused"); $("stPause").textContent = "❚❚"; $("stPause").setAttribute("aria-label", "Durdur");
+    if (reduce) { ST.paused = true; $("stPause").hidden = true; } else $("stPause").hidden = false;
+    ovShow($("ovStory"), $("stClose"));
+    stGo(0);
+  }
+  function stClose() { ovHide($("ovStory")); }
+  function stGo(k) {
+    if (!ST.list) return;
+    if (k >= ST.list.length) { stClose(); return; }
+    if (k < 0) k = 0;
+    ST.k = k;
+    var x = ST.list[k], f = (x.c.fotolar || [])[1] || (x.c.fotolar || [])[0], s = flySon(ST.g, x.n);
+    $("stPh").innerHTML = f ? vImg(f, true).replace('sizes="(max-width: 700px) 100vw, 1040px"', 'sizes="(max-width: 560px) 100vw, 480px"') : '<span class="fb"></span>';
+    var bars = $("stBars").children;
+    for (var j = 0; j < bars.length; j++) { bars[j].className = j < k ? "done" : ""; }
+    void $("stBars").offsetWidth; bars[k].className = "cur";
+    var e = x.h.etiket, title = e === "ucuz" ? "Bu hafta sonu ucuz" : e === "pahali" ? "Bu hafta sonu pahalı" : e === "normal" ? "Tam fiyatında" : "Hafta sonu kaçamağı";
+    if (k === 0) title = "Bu hafta sonunun en ucuzu";
+    var chips = [];
+    if (s) chips.push(flyChip(s));
+    if (e && e !== "normal" && typeof x.h.fark === "number") chips.push((x.h.fark > 0 ? "ortalamadan %" + x.h.fark + " pahalı" : "ortalamadan %" + Math.abs(x.h.fark) + " ucuz"));
+    var eu = x.c.enUcuz;
+    if (eu && eu.g && eu.g !== ST.g) chips.push("en ucuzu " + weekendText(eu.g, addDays(eu.g, 2)) + ": ~" + tl(eu.toplam / 2 * inputs().rate));
+    $("stBot").innerHTML = '<span class="st-eb">' + escH(upTr(x.n) + " · 72 SAAT · " + upTr(weekendText(ST.g, x.h.cikis))) + "</span>" +
+      '<h2 class="st-h">' + escH(title) + "</h2>" +
+      '<div class="st-pr"><b>~' + tl(x.t) + "</b><span>kişi başı · uçak + konforlu otel</span></div>" +
+      (chips.length ? '<div class="st-chips">' + chips.map(function (c) { return "<span>" + escH(c) + "</span>"; }).join("") + "</div>" : "") +
+      '<button type="button" class="st-cta" id="stCta">' + escH(x.n) + " bütçesini hesapla</button>" +
+      (f && f.kaynak ? '<span class="st-cr">Fotoğraf: ' + escH(f.kaynak) + "</span>" : "");
+    $("stCta").addEventListener("click", function () { stClose(); goWeekend(x.i, ST.g, x.h.cikis); $("resultSec").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); });
+  }
+  function stPause(p) {
+    ST.paused = p; $("ovStory").classList.toggle("paused", p);
+    $("stPause").textContent = p ? "▶" : "❚❚"; $("stPause").setAttribute("aria-label", p ? "Devam et" : "Durdur");
+  }
+  $("stBars").addEventListener("animationend", function () { if (!ST.paused) stGo(ST.k + 1); });
+  $("stNext").addEventListener("click", function () { stGo(ST.k + 1); });
+  $("stPrev").addEventListener("click", function () { stGo(ST.k - 1); });
+  $("stClose").addEventListener("click", stClose);
+  $("stPause").addEventListener("click", function () { stPause(!ST.paused); });
+  (function () {
+    var hold = null, held = false, ov = $("ovStory");
+    ov.addEventListener("pointerdown", function (e) {
+      if (e.target.closest(".st-bot, .st-top")) return;
+      held = false; hold = setTimeout(function () { held = true; if (!ST.paused) { ov.classList.add("paused"); } }, 220);
+    });
+    var up = function () { clearTimeout(hold); if (held && !ST.paused) ov.classList.remove("paused"); };
+    ov.addEventListener("pointerup", up); ov.addEventListener("pointercancel", up);
+    ov.addEventListener("click", function (e) { if (held && e.target.closest(".st-nav")) { e.stopPropagation(); e.preventDefault(); held = false; } }, true);
+  })();
+  $("openStory").addEventListener("click", stOpen);
+
+  // ---- Kaydırma: "Gider miydin?" Beğenilenler tarayıcıda saklanır (yalnızca bu cihazda)
+  var SW = { list: null, k: 0, liked: [], g: null, res: false };
+  var SWKEY = "72h-begenilen";
+  function swLoad() { try { var a = JSON.parse(localStorage.getItem(SWKEY) || "[]"); return Array.isArray(a) ? a.filter(function (n) { return typeof n === "string"; }) : []; } catch (e) { return []; } }
+  function swSave() { try { localStorage.setItem(SWKEY, JSON.stringify(SW.liked)); } catch (e) {} }
+  function swOpen() {
+    var o = inputs(), v = vList(o); if (!v) return;
+    SW.list = v.list.filter(function (x) { return x.t != null; }); SW.g = v.g; SW.res = false;
+    SW.liked = swLoad().filter(function (n) { return SW.list.some(function (x) { return x.n === n; }); });
+    SW.k = 0;
+    ovShow($("ovSwipe"), $("swYes"));
+    swDraw();
+  }
+  function swClose() { ovHide($("ovSwipe")); }
+  function swCard(x, back) {
+    var f = (x.c.fotolar || [])[0], s = flySon(SW.g, x.n);
+    var img = f ? vImg(f, true).replace('sizes="(max-width: 700px) 100vw, 1040px"', 'sizes="(max-width: 500px) 100vw, 460px"').replace(/ alt="[^"]*"/, ' alt=""') : '<span class="fb"></span>';
+    return '<article class="sw-card' + (back ? " back" : "") + '"' + (back ? ' aria-hidden="true"' : ' aria-label="' + escH(x.n + ", kişi başı yaklaşık " + tl(x.t)) + '"') + ">" + img +
+      '<span class="et">' + etkHtml(x.h) + '</span><span class="yes" aria-hidden="true">GİDERİM</span><span class="no" aria-hidden="true">GEÇ</span>' +
+      '<div class="info"><div class="row1"><b>' + escH(x.n) + "</b><span>~" + tl(x.t) + "</span></div>" +
+      '<span class="sub">kişi başı · uçak + konforlu otel · ' + escH(weekendText(SW.g, x.h.cikis)) + (s ? " · " + escH(flyChip(s)) : "") + "</span></div></article>";
+  }
+  function swDraw() {
+    var deck = $("swDeck"), n = SW.list.length, done = SW.k >= n || SW.res;
+    $("swCount").textContent = done ? "" : (SW.k + 1) + " / " + n;
+    $("swBtns").hidden = done; $("swHint").hidden = done;
+    if (done) {
+      var L = SW.list.filter(function (x) { return SW.liked.indexOf(x.n) >= 0; });
+      deck.innerHTML = L.length
+        ? '<div class="sw-res"><p class="sw-hint" style="text-align:left">Beğendiklerin, ' + escH(weekendText(SW.g, L[0].h.cikis)) + " için ucuzdan pahalıya. Birine dokun, tam bütçesi hesaplansın.</p>" +
+          L.map(function (x) { var f = (x.c.fotolar || [])[0]; return '<button type="button" data-n="' + escH(x.n) + '">' + (f ? '<img src="' + escH(f.kucuk || f.dosya) + '" alt="">' : "<i></i>") + "<span><b>" + escH(x.n) + "</b><small>" + escH(x.h.etiket ? ETK_AD[x.h.etiket] : "") + "</small></span>" + '<span class="pr">~' + tl(x.t) + "<small>kişi başı</small></span></button>"; }).join("") + "</div>"
+        : '<div class="sw-empty"><p>Hiçbir şehri beğenmedin. Baştan bakmak ister misin?</p><button type="button" class="btn" id="swAgain">Baştan başla</button></div>';
+      deck.querySelectorAll(".sw-res button").forEach(function (b) {
+        b.addEventListener("click", function () { var x = SW.list.filter(function (y) { return y.n === b.dataset.n; })[0]; swClose(); goWeekend(x.i, SW.g, x.h.cikis); $("resultSec").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" }); });
+      });
+      var ag = $("swAgain"); if (ag) ag.addEventListener("click", function () { SW.k = 0; SW.res = false; swDraw(); $("swYes").focus(); });
+    } else {
+      deck.innerHTML = (SW.k + 1 < n ? swCard(SW.list[SW.k + 1], true) : "") + swCard(SW.list[SW.k], false);
+      swDrag(deck.lastElementChild);
+    }
+    var L2 = SW.list.filter(function (x) { return SW.liked.indexOf(x.n) >= 0; }), bar = $("swLiked");
+    bar.innerHTML = L2.length
+      ? '<span class="av">' + L2.slice(0, 4).map(function (x) { var f = (x.c.fotolar || [])[0]; return f ? '<img src="' + escH(f.kucuk || f.dosya) + '" alt="">' : "<i></i>"; }).join("") + "</span>" +
+        '<span class="tx">Beğendiklerin: ' + escH(L2.map(function (x) { return x.n; }).join(", ")) + "</span>" +
+        (done ? '<button type="button" class="btn ghost" id="swReset" style="color:#FBF6EC;border-color:#2F506D">Temizle</button>' : '<button type="button" class="btn" id="swCmp">Karşılaştır</button>')
+      : '<span class="tx" style="color:#A9B8C7">Beğendiğin şehirler burada toplanır, sonra fiyatlarını yan yana görürsün.</span>';
+    var cmp = $("swCmp"); if (cmp) cmp.addEventListener("click", function () { SW.res = true; swDraw(); var b = $("swDeck").querySelector("button"); if (b) b.focus(); });
+    var rs = $("swReset"); if (rs) rs.addEventListener("click", function () { SW.liked = []; swSave(); SW.k = 0; SW.res = false; swDraw(); $("swYes").focus(); });
+  }
+  function swDecide(yes, card) {
+    var x = SW.list[SW.k]; if (!x) return;
+    card = card || $("swDeck").lastElementChild;
+    var i = SW.liked.indexOf(x.n);
+    if (yes && i < 0) SW.liked.push(x.n); else if (!yes && i >= 0) SW.liked.splice(i, 1);
+    swSave();
+    var next = function () { SW.k++; swDraw(); };
+    if (reduce || !card) return next();
+    card.style.transition = "transform .28s ease-out, opacity .28s";
+    card.style.transform = "translateX(" + (yes ? 130 : -130) + "%) rotate(" + (yes ? 18 : -18) + "deg)"; card.style.opacity = "0";
+    setTimeout(next, 260);
+  }
+  function swDrag(card) {
+    if (!card) return;
+    var sx = 0, sy = 0, dx = 0, on = false, id = null, yes = card.querySelector(".yes"), no = card.querySelector(".no");
+    card.addEventListener("pointerdown", function (e) { on = true; id = e.pointerId; sx = e.clientX; sy = e.clientY; dx = 0; card.style.transition = "none"; try { card.setPointerCapture(id); } catch (er) {} card.style.cursor = "grabbing"; });
+    card.addEventListener("pointermove", function (e) {
+      if (!on || e.pointerId !== id) return;
+      dx = e.clientX - sx; var dy = e.clientY - sy;
+      card.style.transform = "translate(" + dx + "px," + dy * 0.2 + "px) rotate(" + dx / 18 + "deg)";
+      var a = Math.min(1, Math.abs(dx) / 90); yes.style.opacity = dx > 0 ? a : 0; no.style.opacity = dx < 0 ? a : 0;
+    });
+    var end = function () {
+      if (!on) return; on = false; card.style.cursor = "";
+      if (Math.abs(dx) > 100) swDecide(dx > 0, card);
+      else { card.style.transition = "transform .2s"; card.style.transform = ""; yes.style.opacity = 0; no.style.opacity = 0; }
+    };
+    card.addEventListener("pointerup", end); card.addEventListener("pointercancel", end);
+  }
+  $("swYes").addEventListener("click", function () { swDecide(true); });
+  $("swNo").addEventListener("click", function () { swDecide(false); });
+  $("swClose").addEventListener("click", swClose);
+  $("openSwipe").addEventListener("click", swOpen);
 
   /* ====================== BİNİŞ KARTI ====================== */
   // Sonuç bölümünün üstü: şehir fotoğrafı, HESAPLANDI damgası, nereden–nereye; altında 2×2 kalem kutusu.
