@@ -8,8 +8,8 @@ const rcfg = JSON.parse(await readFile(new URL("../data/restoran-ayarlari.json",
 const AMS = rcfg.sehirler.find((c) => c.sehir === "Amsterdam"), FX = { EUR: 1 };
 const row = (title, o = {}) => ({ title, placeId: "p-" + title, totalScore: 4.6, reviewsCount: 1200, price: "€10–20", categoryName: "Cafe", neighborhood: "De Pijp", location: { lat: 52.35, lng: 4.89 }, url: "https://www.google.com/maps/search/?api=1&query=x", ...o });
 
-// 0) ayar: 13 mekân, hepsinde arama ve yedek fiyat
-{ const a = cfg.sehirler.Amsterdam.restoranlar; assert.equal(a.length, 13); for (const x of a) { assert.ok(x.arama && x.ad); assert.ok(x.yedek_fiyat > 0); } console.log("ok 0: ayar"); }
+// 0) ayar: en az 13 mekân, hepsinde arama ve yedek fiyat, adlar tekrarsız
+{ const a = cfg.sehirler.Amsterdam.restoranlar; assert.ok(a.length >= 13); assert.equal(new Set(a.map((x) => x.ad)).size, a.length); for (const x of a) { assert.ok(x.arama && x.ad); assert.ok(x.yedek_fiyat > 0); } console.log("ok 0: ayar"); }
 // 1) seviye kuralı
 assert.equal(levelOf(9), "uygun"); assert.equal(levelOf(15), "uygun"); assert.equal(levelOf(40), "populer"); assert.equal(levelOf(75), "luks"); console.log("ok 1: seviye");
 // 2) Google fiyatı varsa o, yoksa yedek; ad uyuşmazsa konum/puan yok
@@ -29,13 +29,14 @@ const fake = async (url, init = {}) => {
   if (url.includes("/datasets/")) return res(lookupInput(cfg.sehirler.Amsterdam.restoranlar).searchStringsArray.map((s, i) => ({ ...row(cfg.sehirler.Amsterdam.restoranlar[i].ad, { price: i % 3 ? "€20–30" : null }), searchString: s })));
   return res({ data: { status: "SUCCEEDED" } });
 };
-{ const state = JSON.parse(await readFile(new URL("../data/restoranlar.json", import.meta.url), "utf8"));
+{ const N = cfg.sehirler.Amsterdam.restoranlar.length;
+  const state = JSON.parse(await readFile(new URL("../data/restoranlar.json", import.meta.url), "utf8"));
   const before = state.sehirler.Paris;
   const { state: out, report } = await run({ token: "apify_api_TEST", cfg, rcfg, state, fetchImpl: fake, sleep: async () => {} });
-  const a = out.sehirler.Amsterdam; assert.equal(a.restoranlar.length, 13); assert.equal(a.sadeceElle, true); assert.ok(a.restoranlar.every((r) => r.kilit && r.elle));
-  assert.deepEqual(out.sehirler.Paris, before, "diğer şehirler değişmez"); assert.equal(report.yer, 13);
+  const a = out.sehirler.Amsterdam; assert.equal(a.restoranlar.length, N); assert.equal(a.sadeceElle, true); assert.ok(a.restoranlar.every((r) => r.kilit && r.elle));
+  assert.deepEqual(out.sehirler.Paris, before, "diğer şehirler değişmez"); assert.equal(report.yer, N);
   const cands = { sehirler: { Amsterdam: { adaylar: [{ id: "x1", ad: "Robot Yeri", mutfak: "Restaurant", puan: 4.8, yorum: 900, kisiBasiEur: 10, kategoriler: [] }, { id: "x2", ad: "Robot Lüks", mutfak: "Fine dining restaurant", puan: 4.8, yorum: 900, kisiBasiEur: 150, kategoriler: [] }] } } };
   const again = await robot({ token: "", cfg: rcfg, state: out, cands, mode: "sec", only: ["Amsterdam"], fetchImpl: fake });
-  const r = again.state.sehirler.Amsterdam; assert.equal(r.restoranlar.length, 13); assert.ok(!r.restoranlar.some((x) => x.id.startsWith("x"))); assert.equal(r.sadeceElle, true);
+  const r = again.state.sehirler.Amsterdam; assert.equal(r.restoranlar.length, N); assert.ok(!r.restoranlar.some((x) => x.id.startsWith("x"))); assert.equal(r.sadeceElle, true);
   console.log("ok 3: uçtan uca, robot elle listeye dokunmuyor"); }
 console.log("TÜM TESTLER GEÇTİ");
