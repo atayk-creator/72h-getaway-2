@@ -969,7 +969,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Işık eserleri ücretsiz; resmî tekne turu 23,75 €'dan (sınırsız içecekli 75 dk tur 39,75 €)",
      "bilgi": "26 Kasım 2026–17 Ocak 2027 arası; ışıklar her gün 16:30'dan 22:00–23:00'e kadar yanık. Yürüyerek ücretsiz gezilir, en güzeli tekneden. Tarih dışında gidiyorsan bu durağı çıkar.",
-     "kaynak": "https://blog.wego.com/amsterdam-light-festival/"
+     "kaynak": "https://blog.wego.com/amsterdam-light-festival/",
+     "konum": [
+      52.3712,
+      4.91124
+     ],
+     "googleAd": "Amsterdam Light Festival Foundation",
+     "puan": 3.1,
+     "yorum": 186,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Amsterdam%20Light%20Festival%20Foundation&query_place_id=ChIJgWwiUlUJxkcRtKLZPO92VRI"
     },
     {
      "id": "museumplein-noel-koyu",
@@ -982,7 +990,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Rijksmuseum ile Van Gogh Müzesi arasında 3–27 Aralık 2026; 25–26 Aralık 11:00–19:00. Sıcak şarap ve poffertjes. Buz pistinin bu yıl kurulup kurulmadığını teyit et.",
-     "kaynak": "https://fullsuitcase.com/amsterdam-christmas/"
+     "kaynak": "https://fullsuitcase.com/amsterdam-christmas/",
+     "konum": [
+      52.35743,
+      4.88304
+     ],
+     "googleAd": "Museumplein",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Museumplein&query_place_id=ChIJ5wrcx-8JxkcRv_MjXLT7pFY"
     },
     {
      "id": "noordermarkt",
@@ -995,7 +1011,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Cumartesi organik çiftçi pazarı, pazartesi sabahı bit pazarı. Hemen köşede Winkel 43'ün ünlü elmalı turtası.",
-     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/"
+     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/",
+     "konum": [
+      52.37989,
+      4.88651
+     ],
+     "googleAd": "Noordermarkt",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Noordermarkt&query_place_id=ChIJ2dkyCM8JxkcRS2Molb9FBEA"
     },
     {
      "id": "bloemenmarkt",
@@ -1008,7 +1032,16 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Singel kanalı üzerinde yüzen çiçek pazarı; aralıkta yılbaşı ağaçları ve süslerle donanır.",
-     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/"
+     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/",
+     "konum": [
+      52.36676,
+      4.89295
+     ],
+     "googleAd": "Flower Market",
+     "puan": 4.2,
+     "yorum": 2774,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Flower%20Market&query_place_id=ChIJ_RcIoOoJxkcRu8vfdsqujjA",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Flower Market\" buldu"
     },
     {
      "id": "reguliersgracht-dans-eden-evler",
@@ -1021,7 +1054,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Reguliersgracht'ta yedi köprüyü birden gören açı; Amstel kıyısındaki eğri 'dans eden evler' ve tam karşısındaki manzaralı bank.",
-     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/"
+     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/",
+     "konum": [
+      52.36237,
+      4.89591
+     ],
+     "googleAd": "Reguliersgracht",
+     "puan": 4.5,
+     "yorum": 81,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Reguliersgracht&query_place_id=ChIJ2Rd1kZQJxkcR0ojhwZ_gJNM"
     },
     {
      "id": "ndsm-noord",
@@ -1034,7 +1075,16 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Feribot ücretsiz (STRAAT sokak sanatı müzesi ayrıca ücretli)",
      "bilgi": "Centraal arkasından ücretsiz feribotla eski NDSM tersanesi: sokak sanatı, STRAAT müzesi ve kafeler.",
-     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/"
+     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/",
+     "konum": [
+      52.40052,
+      4.89583
+     ],
+     "googleAd": "NDSM",
+     "puan": 4.5,
+     "yorum": 9707,
+     "harita": "https://www.google.com/maps/search/?api=1&query=NDSM&query_place_id=ChIJg7YwoTkIxkcRdRzJp-FRIIg",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"NDSM\" buldu"
     },
     {
      "id": "nemo-cati-terasi",
@@ -1047,7 +1097,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Çatı terası ücretsiz (müze ayrıca ücretli)",
      "bilgi": "Gemi biçimli NEMO binasının çatısı müzeye girmeden herkese açık; liman ve şehir manzarası.",
-     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/"
+     "kaynak": "https://www.bizevdeyokuz.com/amsterdam-gezilecek-yerler/",
+     "konum": [
+      52.37417,
+      4.91233
+     ],
+     "googleAd": "NEMO Science Museum",
+     "puan": 4.5,
+     "yorum": 38226,
+     "harita": "https://www.google.com/maps/search/?api=1&query=NEMO%20Science%20Museum&query_place_id=ChIJm7tV_qQJxkcRvM4CYqK9SMc"
     }
    ]
   },
@@ -6136,14 +6194,14 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 1.14
+  "usd": 1.17
  },
  "apifyKullanim": {
-  "usd": 27.11,
-  "sinir": 45,
+  "usd": 41.15,
+  "sinir": 75,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-10-29T23:26:09.707Z"
+  "kontrol": "2026-11-03T16:40:38.782Z"
  },
  "olcumler": [
   {
@@ -6159,6 +6217,13 @@
    "sorgu": 3,
    "usd": 0.01,
    "sorguBasi": 0.00333
+  },
+  {
+   "robot": "gezi-konum",
+   "t": "2026-11-03T16:40:38.782Z",
+   "sorgu": 7,
+   "usd": 0.02,
+   "sorguBasi": 0.00286
   }
  ]
 }
