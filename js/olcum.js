@@ -13,7 +13,7 @@
 (function (root) {
   "use strict";
   var AYAR = {
-    goatcounter: "",          // ör. "72hgetaway"  →  https://72hgetaway.goatcounter.com
+    goatcounter: "72hgetaway", //   →  https://72hgetaway.goatcounter.com
     awinaffid: "",            // Awin yayıncı kimliği (sayı)
     awinmid: ""               // Booking.com'un Awin reklamveren kimliği (sayı)
   };
