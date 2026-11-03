@@ -4,7 +4,7 @@
 // - Diğer dosyalar (ikon, manifest...): önce önbellek, arkada tazele (stale-while-revalidate).
 // Önbellek anahtarı adresin sorgu kısmı (?t=..., ?sehir=...) atılmış hâlidir: her yol için tek kayıt,
 // böylece ?t= zaman damgalı veri istekleri önbelleği sınırsız büyütmez.
-const CACHE = "72h-v6";
+const CACHE = "72h-v7";
 const SHELL = ["/", "/oteller.html", "/hakkinda.html", "/404.html", "/manifest.webmanifest", "/favicon.ico", "/js/olcum.js", "/img/icon-192.png", "/img/icon-512.png"];
 
 function key(input) {

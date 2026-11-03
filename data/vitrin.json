@@ -8,6 +8,12 @@
    "ulke": "İrlanda",
    "fotolar": [
     {
+     "dosya": "/img/sehir/dublin-1.jpg",
+     "kucuk": "/img/sehir/dublin-1-640.jpg",
+     "alt": "Dublin, Liffey nehri ve rıhtımlar",
+     "kaynak": "Pexels"
+    },
+    {
      "dosya": "/img/sehir/dublin-2.jpg",
      "kucuk": "/img/sehir/dublin-2-640.jpg",
      "alt": "Dublin, akşam ışığında Liffey nehri rıhtımları",
@@ -391,6 +397,12 @@
     {
      "dosya": "/img/sehir/amsterdam-1.jpg",
      "kucuk": "/img/sehir/amsterdam-1-640.jpg",
+     "alt": "Amsterdam, kanal kıyısında tarihi dar evler",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/amsterdam-2.jpg",
+     "kucuk": "/img/sehir/amsterdam-2-640.jpg",
      "alt": "Amsterdam kanalı ve kanal evleri, gece",
      "kaynak": "Pexels"
     }

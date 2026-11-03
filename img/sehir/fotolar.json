@@ -5,6 +5,14 @@
    {
     "dosya": "/img/sehir/amsterdam-1.jpg",
     "kucuk": "/img/sehir/amsterdam-1-640.jpg",
+    "alt": "Amsterdam, kanal kıyısında tarihi dar evler",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/3817790/"
+   },
+   {
+    "dosya": "/img/sehir/amsterdam-2.jpg",
+    "kucuk": "/img/sehir/amsterdam-2-640.jpg",
     "alt": "Amsterdam kanalı ve kanal evleri, gece",
     "kaynak": "Pexels",
     "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
@@ -84,6 +92,14 @@
    }
   ],
   "dublin": [
+   {
+    "dosya": "/img/sehir/dublin-1.jpg",
+    "kucuk": "/img/sehir/dublin-1-640.jpg",
+    "alt": "Dublin, Liffey nehri ve rıhtımlar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/33999754/"
+   },
    {
     "dosya": "/img/sehir/dublin-2.jpg",
     "kucuk": "/img/sehir/dublin-2-640.jpg",

@@ -342,7 +342,7 @@ function head({ title, description, canonical, ogTitle, ogDescription, ld }) {
 <meta property="og:url" content="${esc(canonical)}">
 <meta property="og:title" content="${esc(ogTitle || title)}">
 <meta property="og:description" content="${esc(ogDescription || description)}">
-<meta property="og:image" content="${SITE}/img/paylas.png">
+<meta property="og:image" content="${SITE}/img/paylas.png?v=2">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">${jsonLd(ld)}</script>
