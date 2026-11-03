@@ -1,16 +1,16 @@
 /* 72h Getaway uygulama kabuğu: sadece telefon uygulamasında (body.in-app) geçerli */
-:root { --tabbar-h: 62px; --appbar-h: 52px; }
-body.in-app { padding-top: calc(var(--appbar-h) + env(safe-area-inset-top, 0px)); padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 8px); -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
+:root { --tabbar-h: 62px; --appbar-h: 52px; --sat: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px)); --sab: max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px)); }
+body.in-app { padding-top: calc(var(--appbar-h) + var(--sat)); padding-bottom: calc(var(--tabbar-h) + var(--sab) + 8px); -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
 /* Sitenin tanıtım başlığı, alt bilgi ve "geri" bağlantısı uygulamada yok: yerlerini üst çubuk ve alt menü alır */
 body.in-app > header, body.in-app > .skip, body.in-app footer, body.in-app header a.back, body.in-app .social { display: none !important; }
 body.in-app.page-sub > header { display: block !important; padding-top: 14px !important; }
 
-.app-bar { position: fixed; z-index: 60; top: 0; left: 0; right: 0; height: calc(var(--appbar-h) + env(safe-area-inset-top, 0px)); padding: env(safe-area-inset-top, 0px) 16px 0; display: flex; align-items: center; gap: 10px; background: #0F2A43; color: #FBF6EC; box-shadow: 0 1px 0 rgba(0,0,0,.25); }
+.app-bar { position: fixed; z-index: 60; top: 0; left: 0; right: 0; height: calc(var(--appbar-h) + var(--sat)); padding: var(--sat) 16px 0; display: flex; align-items: center; gap: 10px; background: #0F2A43; color: #FBF6EC; box-shadow: 0 1px 0 rgba(0,0,0,.25); }
 .app-bar .logo { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #F4A62A; color: #0F2A43; font: 800 12px/1 "Liberation Sans", Arial, sans-serif; letter-spacing: -.5px; }
 .app-bar .title { font: 700 17px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .app-bar .sub { font: 500 12px/1 system-ui, sans-serif; color: #A9B8C7; }
 
-.tab-bar { position: fixed; z-index: 60; left: 0; right: 0; bottom: 0; height: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px); display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface, #fff); border-top: 1px solid var(--line, #E3DCCB); }
+.tab-bar { position: fixed; z-index: 60; left: 0; right: 0; bottom: 0; height: calc(var(--tabbar-h) + var(--sab)); padding-bottom: var(--sab); display: grid; grid-template-columns: repeat(4, 1fr); background: var(--surface, #fff); border-top: 1px solid var(--line, #E3DCCB); }
 .tab-bar button { appearance: none; border: 0; background: none; color: var(--muted, #5B6B7C); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font: 600 11px/1 system-ui, -apple-system, sans-serif; min-height: 48px; cursor: pointer; }
 .tab-bar button svg { width: 24px; height: 24px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .tab-bar button[aria-current="page"] { color: var(--ink, #0F2A43); }
@@ -23,7 +23,7 @@ body.in-app.page-sub > header { display: block !important; padding-top: 14px !im
 
 .app-sheet { position: fixed; z-index: 70; inset: 0; background: rgba(10,20,30,.45); display: flex; align-items: flex-end; }
 .app-sheet[hidden] { display: none; }
-.app-sheet .panel { width: 100%; max-height: 82vh; overflow: auto; background: var(--bg, #FBF6EC); color: var(--ink, #0F2A43); border-radius: 18px 18px 0 0; padding: 18px 16px calc(18px + env(safe-area-inset-bottom, 0px)); }
+.app-sheet .panel { width: 100%; max-height: 82vh; overflow: auto; background: var(--bg, #FBF6EC); color: var(--ink, #0F2A43); border-radius: 18px 18px 0 0; padding: 18px 16px calc(18px + var(--sab)); }
 .app-sheet h2 { margin: 0 0 4px; font-size: 20px; }
 .app-sheet .lead { margin: 0 0 14px; color: var(--muted, #5B6B7C); font-size: 14px; }
 .app-sheet .close { float: right; border: 0; background: none; font-size: 26px; line-height: 1; color: var(--muted, #5B6B7C); padding: 0 4px; }
@@ -37,9 +37,9 @@ body.in-app.page-sub > header { display: block !important; padding-top: 14px !im
 .empty b { display: block; color: var(--ink, #0F2A43); font-size: 16px; margin-bottom: 6px; }
 
 .app-save { margin-top: 8px; }
-.app-toast { position: fixed; z-index: 80; left: 50%; transform: translateX(-50%); bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px) + 14px); background: #0F2A43; color: #FBF6EC; padding: 10px 16px; border-radius: 22px; font: 600 14px/1.2 system-ui, sans-serif; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+.app-toast { position: fixed; z-index: 80; left: 50%; transform: translateX(-50%); bottom: calc(var(--tabbar-h) + var(--sab) + 14px); background: #0F2A43; color: #FBF6EC; padding: 10px 16px; border-radius: 22px; font: 600 14px/1.2 system-ui, sans-serif; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
 
-.app-intro { position: fixed; z-index: 90; inset: 0; background: #0F2A43; color: #FBF6EC; display: flex; flex-direction: column; padding: calc(env(safe-area-inset-top, 0px) + 40px) 26px calc(env(safe-area-inset-bottom, 0px) + 26px); }
+.app-intro { position: fixed; z-index: 90; inset: 0; background: #0F2A43; color: #FBF6EC; display: flex; flex-direction: column; padding: calc(var(--sat) + 40px) 26px calc(var(--sab) + 26px); }
 .app-intro[hidden] { display: none; }
 .app-intro .slide { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .app-intro .num { width: 64px; height: 64px; border-radius: 18px; background: #F4A62A; color: #0F2A43; display: flex; align-items: center; justify-content: center; font: 800 28px/1 system-ui, sans-serif; margin-bottom: 26px; }

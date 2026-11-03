@@ -2,11 +2,27 @@
   "appId": "com.getaway72h.app",
   "appName": "72h Getaway",
   "webDir": "www",
-  "server": { "androidScheme": "https" },
-  "ios": { "contentInset": "never", "backgroundColor": "#0F2A43" },
-  "android": { "backgroundColor": "#0F2A43" },
+  "server": {
+    "androidScheme": "https"
+  },
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#0F2A43"
+  },
+  "android": {
+    "backgroundColor": "#0F2A43"
+  },
   "plugins": {
-    "SplashScreen": { "launchShowDuration": 1500, "launchAutoHide": false, "backgroundColor": "#0F2A43", "showSpinner": false },
-    "StatusBar": { "style": "DARK", "backgroundColor": "#0F2A43", "overlaysWebView": false }
+    "SplashScreen": {
+      "launchShowDuration": 1500,
+      "launchAutoHide": false,
+      "backgroundColor": "#0F2A43",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#0F2A43",
+      "overlaysWebView": true
+    }
   }
 }
