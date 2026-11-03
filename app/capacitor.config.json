@@ -22,12 +22,7 @@
     "StatusBar": {
       "style": "DARK",
       "backgroundColor": "#0F2A43",
-      "overlaysWebView": true
-    },
-    "SystemBars": {
-      "insetsHandling": "css",
-      "style": "DARK",
-      "hidden": false
+      "overlaysWebView": false
     }
   }
 }
