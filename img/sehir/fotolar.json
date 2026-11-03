@@ -1,0 +1,87 @@
+{
+ "aciklama": "Şehir fotoğrafları. Kareler 72h_stok klasöründeki Pexels kliplerinden alındı (Pexels lisansı: ücretsiz, ticari kullanım serbest, kaynak göstermek şart değil). Şehir anahtarı = sehir sayfası slug'ı. İlk fotoğraf kapak olur.",
+ "sehirler": {
+  "amsterdam": [
+   {
+    "dosya": "/img/sehir/amsterdam-1.jpg",
+    "kucuk": "/img/sehir/amsterdam-1-640.jpg",
+    "alt": "Amsterdam kanalı ve kanal evleri, gece",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72ham_01_kanal_isik.mp4"
+   }
+  ],
+  "budapeste": [
+   {
+    "dosya": "/img/sehir/budapeste-1.jpg",
+    "kucuk": "/img/sehir/budapeste-1-640.jpg",
+    "alt": "Budapeşte Parlamento binası",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hx_bu_02.mp4"
+   },
+   {
+    "dosya": "/img/sehir/budapeste-2.jpg",
+    "kucuk": "/img/sehir/budapeste-2-640.jpg",
+    "alt": "Tuna kıyısında sarı tramvay, Budapeşte",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hbu_s7_tramvay_tuna.mp4"
+   }
+  ],
+  "paris": [
+   {
+    "dosya": "/img/sehir/paris-1.jpg",
+    "kucuk": "/img/sehir/paris-1-640.jpg",
+    "alt": "Paris, Sen nehri üzerinde gün batımı",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hx_pa_02.mp4"
+   },
+   {
+    "dosya": "/img/sehir/paris-2.jpg",
+    "kucuk": "/img/sehir/paris-2-640.jpg",
+    "alt": "Paris, Haussmann binaları ve geniş cadde",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hx_pa_03.mp4"
+   }
+  ],
+  "prag": [
+   {
+    "dosya": "/img/sehir/prag-1.jpg",
+    "kucuk": "/img/sehir/prag-1-640.jpg",
+    "alt": "Prag, Karl Köprüsü ve Vltava nehri",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hx_pr_04.mp4"
+   },
+   {
+    "dosya": "/img/sehir/prag-2.jpg",
+    "kucuk": "/img/sehir/prag-2-640.jpg",
+    "alt": "Prag çatıları ve Eski Şehir",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hx_pr_01.mp4"
+   }
+  ],
+  "viyana": [
+   {
+    "dosya": "/img/sehir/viyana-1.jpg",
+    "kucuk": "/img/sehir/viyana-1-640.jpg",
+    "alt": "Viyana Belediye Binası önünde Noel pazarı",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hvi_s4_christkindlmarkt.mp4"
+   },
+   {
+    "dosya": "/img/sehir/viyana-2.jpg",
+    "kucuk": "/img/sehir/viyana-2-640.jpg",
+    "alt": "Viyana Devlet Operası",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hvi_s8_opera.mp4"
+   }
+  ]
+ }
+}

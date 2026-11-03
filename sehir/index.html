@@ -74,6 +74,16 @@ h2 { font-size: 1.25rem; margin: 0 0 4px; letter-spacing: -0.01em; }
 .cities a { display: block; height: 100%; text-decoration: none; background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px; padding: 14px 16px; }
 .cities a:hover { border-color: var(--accent); }
 .cities b { font-size: 1.08rem; }
+.cover { position: relative; margin: 16px 0 0; border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 9; max-height: 420px; background: #0A1F33; }
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover figcaption { position: absolute; right: 8px; bottom: 8px; font-size: 0.72rem; color: #FBF6EC; background: rgba(10,31,51,0.7); padding: 2px 8px; border-radius: 999px; }
+.etk { display: inline-block; font-size: 0.74rem; font-weight: 700; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.etk.ucuz { background: #D7F0E2; color: #1F5E43; } .etk.normal { background: #EEE8DC; color: #44515E; } .etk.pahali { background: #FBE1CF; color: #8A3A12; } .etk.dolu { background: #C4374D; color: #FFFFFF; }
+.zaman .tri { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px; margin-bottom: 12px; }
+.zaman .tri div { background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 14px; }
+.zaman .tri b { display: block; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.zaman .tri .iyi { border-color: var(--good); } .zaman .tri .iyi b { color: var(--good); }
+.zaman .rows .r { font-variant-numeric: tabular-nums; }
 footer { border-top: 1.5px solid var(--line); color: var(--muted); font-size: 0.88rem; padding: 18px 0 32px; }
 footer a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 14px; }
 </style>

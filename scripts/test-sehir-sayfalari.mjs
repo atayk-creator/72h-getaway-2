@@ -4,6 +4,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   slugify, esc, jsonLd, yonelme, mutfakTr, toEur, usableHotel, buildCity, renderCityPage, renderIndexPage, renderSitemap, generate, calcLink, fmtTl,
+  etiketle, renderVitrin,
 } from "./sehir-sayfalari.mjs";
 
 let n = 0;
@@ -157,9 +158,31 @@ test("hiç verisi olmayan şehir (dosyalar eksik) çökmez", () => {
   assert.ok(!html.includes("undefined") && !html.includes("NaN"));
 });
 
+test("etiketle: ortancaya göre ucuz / normal / pahalı, en az 4 fiyat şartı", () => {
+  const h = (toplam, g) => ({ g, toplam });
+  const r = etiketle([h(100, "a"), h(80, "b"), h(120, "c"), h(105, "d"), h(null, "e")]);
+  assert.equal(r.normal, 102.5);
+  assert.deepEqual(r.haftalar.map((x) => x.etiket), ["normal", "ucuz", "pahali", "normal", null]);
+  assert.equal(r.enUcuz.g, "b"); assert.equal(r.enPahali.g, "c");
+  assert.equal(r.haftalar[1].fark, -22);
+  const az = etiketle([h(100, "a"), h(90, "b"), h(null, "c")]);
+  assert.equal(az.normal, null); assert.ok(az.haftalar.every((x) => x.etiket === null));
+  // tam sınır: %10 ucuz sayılır
+  assert.equal(etiketle([h(90, "a"), h(100, "b"), h(100, "c"), h(110, "d"), h(100, "e")]).haftalar[0].etiket, "ucuz");
+});
+
+test("renderVitrin: fotoğraf yolu süzülür, sayılar yuvarlanır", () => {
+  const m = { sehir: "X", slug: "x", ulke: "Y", fotolar: [{ dosya: "/img/sehir/x-1.jpg", kucuk: "/img/sehir/x-1-640.jpg", alt: "a", kaynak: "Pexels" }],
+    zaman: { normal: 100.4, enUcuz: { g: "2026-12-11", toplam: 80.6 }, haftalar: [{ g: "2026-12-11", cikis: "2026-12-13", toplam: 80.6, etiket: "ucuz", fark: -20, otelDolu: false }] } };
+  const v = JSON.parse(renderVitrin([m], "2026-11-04"));
+  assert.equal(v.sehirler.X.normal, 100); assert.equal(v.sehirler.X.enUcuz.toplam, 81); assert.equal(v.sehirler.X.fotolar[0].kucuk, "/img/sehir/x-1-640.jpg");
+});
+
 test("generate: tüm sayfalar, dizin ve sitemap", () => {
   const { files } = generate({ data: fixture(), today: TODAY, write: false });
-  assert.deepEqual(Object.keys(files).sort(), ["sehir/budapeste/index.html", "sehir/index.html", "sehir/paris/index.html", "sitemap.xml"]);
+  assert.deepEqual(Object.keys(files).sort(), ["data/vitrin.json", "sehir/budapeste/index.html", "sehir/index.html", "sehir/paris/index.html", "sitemap.xml"]);
+  const v = JSON.parse(files["data/vitrin.json"]);
+  assert.ok(v.sehirler.Paris && Array.isArray(v.sehirler.Paris.haftalar));
   assert.ok(files["sehir/index.html"].includes('href="/sehir/paris/"'));
   assert.ok(files["sehir/index.html"].includes('href="/sehir/budapeste/"'));
   assert.ok(files["sitemap.xml"].includes("<loc>https://72hgetaway.com/sehir/budapeste/</loc><lastmod>2026-10-31</lastmod>"));

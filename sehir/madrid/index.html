@@ -74,6 +74,16 @@ h2 { font-size: 1.25rem; margin: 0 0 4px; letter-spacing: -0.01em; }
 .cities a { display: block; height: 100%; text-decoration: none; background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px; padding: 14px 16px; }
 .cities a:hover { border-color: var(--accent); }
 .cities b { font-size: 1.08rem; }
+.cover { position: relative; margin: 16px 0 0; border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 9; max-height: 420px; background: #0A1F33; }
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover figcaption { position: absolute; right: 8px; bottom: 8px; font-size: 0.72rem; color: #FBF6EC; background: rgba(10,31,51,0.7); padding: 2px 8px; border-radius: 999px; }
+.etk { display: inline-block; font-size: 0.74rem; font-weight: 700; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.etk.ucuz { background: #D7F0E2; color: #1F5E43; } .etk.normal { background: #EEE8DC; color: #44515E; } .etk.pahali { background: #FBE1CF; color: #8A3A12; } .etk.dolu { background: #C4374D; color: #FFFFFF; }
+.zaman .tri { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px; margin-bottom: 12px; }
+.zaman .tri div { background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 14px; }
+.zaman .tri b { display: block; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.zaman .tri .iyi { border-color: var(--good); } .zaman .tri .iyi b { color: var(--good); }
+.zaman .rows .r { font-variant-numeric: tabular-nums; }
 footer { border-top: 1.5px solid var(--line); color: var(--muted); font-size: 0.88rem; padding: 18px 0 32px; }
 footer a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 14px; }
 </style>
@@ -85,6 +95,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
     <h1>Madrid hafta sonu bütçesi</h1>
     <p>İstanbul'dan Madrid&#39;e Cuma–Pazar kaçamağı: robotun bulduğu gerçek otel ve uçak fiyatları, restoranlar, müze biletleri ve ulaşım. 2 kişi için.</p>
     <div class="hero"><a class="big" href="/?sehir=Madrid&amp;giris=2026-11-06&amp;cikis=2026-11-08&amp;kisi=2">Kendi bütçeni hesapla</a><a class="ghost" href="/oteller.html?sehir=Madrid">Otel fiyat takvimi →</a></div>
+    
   </div>
 </header>
 <main class="wrap">
@@ -95,6 +106,11 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
       <div class="tot">~61.700 TL <span class="eur">(1.105 €)</span></div>
       <div class="muted">otel + uçak toplamı; yemek, gezi ve ulaşım hariç</div>
       <ul><li>Otel, 2 gece: 39.700 TL <span class="eur">(711 €)</span> <span class="muted">· Hotel Europa</span></li><li>Uçak, 2 kişi gidiş-dönüş: 22.000 TL <span class="eur">(394 €)</span> <span class="muted">· AJet, 1 aktarma</span></li></ul></div>
+  </section>
+  <section aria-labelledby="h-zaman" class="zaman">
+    <h2 id="h-zaman">Ne zaman gitmeli?</h2>
+    <p class="lead">Önümüzdeki hafta sonlarında 2 kişi uçak + konforlu otel (2 gece). Etiket, şehrin kendi ortanca fiyatına göre: %10 ucuzsa ucuz, %10 pahalıysa pahalı.</p>
+    <div class="tri"><div><span class="muted">Normal fiyat</span><b>49.700 TL <span class="eur">(890 €)</span></b></div><div class="iyi"><span class="muted">En ucuz · 15–17 Oca</span><b>37.800 TL <span class="eur">(677 €)</span></b></div><div><span class="muted">En pahalı · 6–8 Kas</span><b>83.200 TL <span class="eur">(1.488 €)</span></b></div></div><ul class="rows"><li><span>6–8 Kasım <span class="etk pahali">Pahalı · +%67</span></span><span class="r">83.200 TL <span class="eur">(1.488 €)</span></span></li><li><span>13–15 Kasım <span class="etk pahali">Pahalı · +%17</span></span><span class="r">58.000 TL <span class="eur">(1.038 €)</span></span></li><li><span>20–22 Kasım <span class="etk pahali">Pahalı · +%38</span></span><span class="r">68.800 TL <span class="eur">(1.231 €)</span></span></li><li><span>27–29 Kasım <span class="etk pahali">Pahalı · +%22</span></span><span class="r">60.500 TL <span class="eur">(1.082 €)</span></span></li><li><span>4–6 Aralık <span class="etk normal">Normal fiyat</span></span><span class="r">48.800 TL <span class="eur">(874 €)</span></span></li><li><span>11–13 Aralık <span class="etk normal">Normal fiyat</span></span><span class="r">45.500 TL <span class="eur">(813 €)</span></span></li><li><span>18–20 Aralık <span class="etk ucuz">Ucuz · −%16</span></span><span class="r">41.600 TL <span class="eur">(745 €)</span></span></li><li><span>25–27 Aralık <span class="etk normal">Normal fiyat</span></span><span class="r">49.500 TL <span class="eur">(885 €)</span></span></li><li><span>1–3 Ocak <span class="etk pahali">Pahalı · +%22</span></span><span class="r">60.700 TL <span class="eur">(1.086 €)</span></span></li><li><span>8–10 Ocak <span class="etk ucuz">Ucuz · −%16</span></span><span class="r">41.800 TL <span class="eur">(749 €)</span></span></li><li><span>15–17 Ocak <span class="etk ucuz">Ucuz · −%24</span></span><span class="r best">37.800 TL <span class="eur">(677 €)</span></span></li><li><span>22–24 Ocak <span class="etk normal">Normal fiyat</span></span><span class="r">50.000 TL <span class="eur">(895 €)</span></span></li><li><span>29–31 Ocak <span class="etk dolu">Otel dolu</span></span><span class="r">—</span></li></ul>
   </section>
   <section aria-labelledby="h-otel">
     <h2 id="h-otel">Otel, gecelik</h2>

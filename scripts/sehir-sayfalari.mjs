@@ -98,6 +98,7 @@ export function loadData(root) {
     restoranlar: readJson(join(root, "data/restoranlar.json"), {}),
     gezi: readJson(join(root, "data/gezi.json"), {}),
     kur: readJson(join(root, "data.json"), {}),
+    fotolar: readJson(join(root, "img/sehir/fotolar.json"), { sehirler: {} }),
   };
 }
 
@@ -137,6 +138,27 @@ export function mutfakTr(r) {
 }
 
 /** Bir şehrin sayfa modeli. Eksik veride ilgili bölüm boş kalır, sayfa yine üretilir. */
+// ---------- Fiyat etiketi (ucuz / normal / pahalı) ----------
+export const ETIKET_ESIK = 0.10; // ortancadan %10 ve fazla sapma
+/** Hafta sonu toplamlarını (null olabilir) şehrin ortancasına göre etiketler. En az 4 fiyatlı hafta sonu yoksa etiket verilmez. */
+export function etiketle(haftalar) {
+  const vals = haftalar.map((h) => h.toplam).filter((v) => typeof v === "number" && v > 0).sort((a, b) => a - b);
+  if (vals.length < 4) return { normal: null, enUcuz: null, enPahali: null, haftalar: haftalar.map((h) => ({ ...h, etiket: null, fark: null })) };
+  const m = vals.length >> 1, normal = vals.length % 2 ? vals[m] : (vals[m - 1] + vals[m]) / 2;
+  let enUcuz = null, enPahali = null;
+  const out = haftalar.map((h) => {
+    if (!(typeof h.toplam === "number" && h.toplam > 0)) return { ...h, etiket: null, fark: null };
+    const fark = h.toplam / normal - 1;
+    const eps = 1e-9, etiket = fark <= -ETIKET_ESIK + eps ? "ucuz" : fark >= ETIKET_ESIK - eps ? "pahali" : "normal";
+    const r = { ...h, etiket, fark: Math.round(fark * 100) };
+    if (!enUcuz || h.toplam < enUcuz.toplam) enUcuz = r;
+    if (!enPahali || h.toplam > enPahali.toplam) enPahali = r;
+    return r;
+  });
+  return { normal, enUcuz, enPahali, haftalar: out };
+}
+export const ETIKET_AD = { ucuz: "Ucuz", normal: "Normal fiyat", pahali: "Pahalı" };
+
 export function buildCity(data, cityName, today) {
   const city = (data.hotels.sehirler || []).find((c) => c.sehir === cityName) || { sehir: cityName, oteller: [] };
   const kur = data.kur || {};
@@ -176,6 +198,15 @@ export function buildCity(data, cityName, today) {
   });
 
   const chosen = perWeek.find((w) => w.cheapest) || perWeek.find((w) => w.flight) || null;
+
+  // Ne zaman gitmeli: tüm hafta sonları, 2 kişi uçak + konforlu otel (yoksa o hafta etiketsiz).
+  // Konforlu seviye hesaplayıcının varsayılan oteliyle aynı seviyededir; her hafta aynı seviye karşılaştırılır.
+  const zamanRaw = fridays.map((g) => {
+    const cats = hotelAt(g), fl = flightAt(g), otel = cats.konforlu || null;
+    const toplam = otel && fl ? otel.toplam + 2 * fl.fiyat : null;
+    return { g, cikis: cikis(g), toplam, otel: otel ? otel.ad : null, otelDolu: !otel, ucus: fl ? fl.fiyat : null };
+  });
+  const zaman = etiketle(zamanRaw);
   const kategoriler = KAT_SIRA.filter((k) => (city.oteller || []).some((h) => h.kategori === k)).map((k) => {
     let best = null;
     for (const w of perWeek) { const c = w.cats[k]; if (c && (!best || c.gecelik < best.gecelik)) best = { ...c, cikis: w.cikis }; }
@@ -213,8 +244,10 @@ export function buildCity(data, cityName, today) {
     return { ad: ad || `${u.gun || 3} günlük kart`, eur };
   }).filter(Boolean);
 
+  const fotolar = ((data.fotolar && data.fotolar.sehirler) || {})[slugify(cityName)] || [];
   return {
-    sehir: cityName, slug: slugify(cityName), ulke: city.ulke || "", eurTry,
+    sehir: cityName, slug: slugify(cityName), ulke: city.ulke || "", eurTry, zaman,
+    fotolar: fotolar.filter((f) => f && /^\/img\/sehir\/[a-z0-9-]+\.jpg$/.test(f.dosya || "")),
     otelGuncel: tarihYazi(fy.guncellendi), ucusGuncel: tarihYazi(data.ucuslar && data.ucuslar.guncellendi),
     secili: chosen ? { g: chosen.g, cikis: chosen.cikis, otel: chosen.cheapest, ucus: chosen.flight } : null,
     kategoriler, ucuslar, enUcuzUcus, enUcuzKombi, restoranlar, yerler, ulasim, today,
@@ -275,6 +308,16 @@ h2 { font-size: 1.25rem; margin: 0 0 4px; letter-spacing: -0.01em; }
 .cities a { display: block; height: 100%; text-decoration: none; background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px; padding: 14px 16px; }
 .cities a:hover { border-color: var(--accent); }
 .cities b { font-size: 1.08rem; }
+.cover { position: relative; margin: 16px 0 0; border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 9; max-height: 420px; background: #0A1F33; }
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cover figcaption { position: absolute; right: 8px; bottom: 8px; font-size: 0.72rem; color: #FBF6EC; background: rgba(10,31,51,0.7); padding: 2px 8px; border-radius: 999px; }
+.etk { display: inline-block; font-size: 0.74rem; font-weight: 700; border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+.etk.ucuz { background: #D7F0E2; color: #1F5E43; } .etk.normal { background: #EEE8DC; color: #44515E; } .etk.pahali { background: #FBE1CF; color: #8A3A12; } .etk.dolu { background: #C4374D; color: #FFFFFF; }
+.zaman .tri { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px; margin-bottom: 12px; }
+.zaman .tri div { background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 14px; }
+.zaman .tri b { display: block; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.zaman .tri .iyi { border-color: var(--good); } .zaman .tri .iyi b { color: var(--good); }
+.zaman .rows .r { font-variant-numeric: tabular-nums; }
 footer { border-top: 1.5px solid var(--line); color: var(--muted); font-size: 0.88rem; padding: 18px 0 32px; }
 footer a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 14px; }
 `;
@@ -391,6 +434,27 @@ export function renderCityPage(m) {
     ? `<ul class="rows">${m.ulasim.map((u) => `<li><span>${esc(u.ad)}</span><span class="r">${para(u.eur, kur, true)}</span></li>`).join("")}</ul>`
     : `<p class="empty">Ulaşım fiyatları henüz eklenmedi.</p>`;
 
+  // Kapak fotoğrafı (varsa)
+  const f0 = m.fotolar && m.fotolar[0];
+  const kapak = f0 ? `<figure class="cover"><img src="${esc(f0.dosya)}" srcset="${esc(f0.kucuk || f0.dosya)} 640w, ${esc(f0.dosya)} 1080w" sizes="(max-width: 700px) 100vw, 1040px" alt="${esc(f0.alt || m.sehir)}" width="1080" height="608" fetchpriority="high"><figcaption>Fotoğraf: ${esc(f0.kaynak || "")}</figcaption></figure>` : "";
+
+  // Ne zaman gitmeli?
+  const z = m.zaman;
+  let zamanHtml;
+  if (z && z.normal) {
+    const tri = `<div class="tri"><div><span class="muted">Normal fiyat</span><b>${para(z.normal, kur)}</b></div>` +
+      `<div class="iyi"><span class="muted">En ucuz · ${esc(aralikKisa(z.enUcuz.g, z.enUcuz.cikis))}</span><b>${para(z.enUcuz.toplam, kur)}</b></div>` +
+      `<div><span class="muted">En pahalı · ${esc(aralikKisa(z.enPahali.g, z.enPahali.cikis))}</span><b>${para(z.enPahali.toplam, kur)}</b></div></div>`;
+    const rows = z.haftalar.map((h) => {
+      const etk = h.etiket ? `<span class="etk ${h.etiket}">${esc(ETIKET_AD[h.etiket])}${h.etiket !== "normal" ? ` · ${h.fark > 0 ? "+" : "−"}%${Math.abs(h.fark)}` : ""}</span>` : h.otelDolu ? `<span class="etk dolu">Otel dolu</span>` : `<span class="muted">fiyat yok</span>`;
+      const best = z.enUcuz && h.g === z.enUcuz.g;
+      return `<li><span>${esc(aralik(h.g, h.cikis))} ${etk}</span><span class="r${best ? " best" : ""}">${h.toplam ? para(h.toplam, kur) : "—"}</span></li>`;
+    }).join("");
+    zamanHtml = tri + `<ul class="rows">${rows}</ul>`;
+  } else {
+    zamanHtml = `<p class="empty">Etiket için yeterli hafta sonu fiyatı yok (en az 4 hafta sonu gerekiyor). Robot kontrol ettikçe dolacak.</p>`;
+  }
+
   const kaynak = [m.otelGuncel && `otel fiyatları ${m.otelGuncel}`, m.ucusGuncel && `uçak fiyatları ${m.ucusGuncel}`].filter(Boolean).join(", ");
   const kaynakSatiri = `Fiyatlar ${kaynak ? kaynak + " tarihli" : "son"} robot kontrolüne göre; cuma–pazar 2 gece, 2 kişi; tahminidir.` +
     (kur ? ` TL tutarları 1 € = ${nf2.format(kur)} TL kuruyla 100 TL'ye yuvarlandı.` : "");
@@ -403,6 +467,7 @@ export function renderCityPage(m) {
     <h1>${esc(m.sehir)} hafta sonu bütçesi</h1>
     <p>İstanbul'dan ${esc(yonelme(m.sehir))} Cuma–Pazar kaçamağı: robotun bulduğu gerçek otel ve uçak fiyatları, restoranlar, müze biletleri ve ulaşım. 2 kişi için.</p>
     <div class="hero"><a class="big" href="${esc(calc)}">Kendi bütçeni hesapla</a><a class="ghost" href="${esc(otelLink)}">Otel fiyat takvimi →</a></div>
+    ${kapak}
   </div>
 </header>
 <main class="wrap">
@@ -410,6 +475,11 @@ export function renderCityPage(m) {
     <h2 id="h-ozet">${s ? "En yakın hafta sonu: " + esc(aralik(s.g, s.cikis)) : "En yakın hafta sonu"}</h2>
     <p class="lead">${esc(kaynakSatiri)}</p>
     ${ozet}
+  </section>
+  <section aria-labelledby="h-zaman" class="zaman">
+    <h2 id="h-zaman">Ne zaman gitmeli?</h2>
+    <p class="lead">Önümüzdeki hafta sonlarında 2 kişi uçak + konforlu otel (2 gece). Etiket, şehrin kendi ortanca fiyatına göre: %10 ucuzsa ucuz, %10 pahalıysa pahalı.</p>
+    ${zamanHtml}
   </section>
   <section aria-labelledby="h-otel">
     <h2 id="h-otel">Otel, gecelik</h2>
@@ -481,6 +551,21 @@ export function renderIndexPage(models, today) {
 ` + foot();
 }
 
+/** Ana sayfa vitrini için şehir başına fotoğraf ve hafta sonu etiketleri (EUR, 2 kişi uçak + konforlu otel). */
+export function renderVitrin(models, today) {
+  const sehirler = {};
+  for (const m of models) {
+    sehirler[m.sehir] = {
+      slug: m.slug, ulke: m.ulke,
+      fotolar: (m.fotolar || []).map((f) => ({ dosya: f.dosya, kucuk: f.kucuk || f.dosya, alt: f.alt || m.sehir, kaynak: f.kaynak || "" })),
+      normal: m.zaman.normal != null ? Math.round(m.zaman.normal) : null,
+      enUcuz: m.zaman.enUcuz ? { g: m.zaman.enUcuz.g, toplam: Math.round(m.zaman.enUcuz.toplam) } : null,
+      haftalar: m.zaman.haftalar.map((h) => ({ g: h.g, cikis: h.cikis, toplam: h.toplam != null ? Math.round(h.toplam) : null, etiket: h.etiket, fark: h.fark, otelDolu: h.otelDolu })),
+    };
+  }
+  return JSON.stringify({ aciklama: "Ana sayfa vitrini: scripts/sehir-sayfalari.mjs üretir. toplam = 2 kişi gidiş-dönüş uçak + konforlu otel 2 gece (EUR). Etiket şehrin ortancasına göre ±%10.", guncellendi: today, esik: ETIKET_ESIK, sehirler }, null, 1) + "\n";
+}
+
 export function renderSitemap(paths, today) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -499,6 +584,7 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   out["sehir/index.html"] = renderIndexPage(models, today);
   const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", ...models.map((m) => `/sehir/${m.slug}/`)];
   out["sitemap.xml"] = renderSitemap(paths, today);
+  out["data/vitrin.json"] = renderVitrin(models, today);
   if (write) {
     for (const [rel, html] of Object.entries(out)) {
       const p = join(root, rel);

@@ -1,0 +1,3082 @@
+{
+ "aciklama": "Ana sayfa vitrini: scripts/sehir-sayfalari.mjs üretir. toplam = 2 kişi gidiş-dönüş uçak + konforlu otel 2 gece (EUR). Etiket şehrin ortancasına göre ±%10.",
+ "guncellendi": "2026-11-04",
+ "esik": 0.1,
+ "sehirler": {
+  "Dublin": {
+   "slug": "dublin",
+   "ulke": "İrlanda",
+   "fotolar": [],
+   "normal": 930,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 597
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1404,
+     "etiket": "pahali",
+     "fark": 51,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1409,
+     "etiket": "pahali",
+     "fark": 51,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1162,
+     "etiket": "pahali",
+     "fark": 25,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 993,
+     "etiket": "normal",
+     "fark": 7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 879,
+     "etiket": "normal",
+     "fark": -5,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 747,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 812,
+     "etiket": "ucuz",
+     "fark": -13,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 1355,
+     "etiket": "pahali",
+     "fark": 46,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 981,
+     "etiket": "normal",
+     "fark": 5,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 688,
+     "etiket": "ucuz",
+     "fark": -26,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 597,
+     "etiket": "ucuz",
+     "fark": -36,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 646,
+     "etiket": "ucuz",
+     "fark": -31,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Paris": {
+   "slug": "paris",
+   "ulke": "Fransa",
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/paris-1.jpg",
+     "kucuk": "/img/sehir/paris-1-640.jpg",
+     "alt": "Paris, Sen nehri üzerinde gün batımı",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/paris-2.jpg",
+     "kucuk": "/img/sehir/paris-2-640.jpg",
+     "alt": "Paris, Haussmann binaları ve geniş cadde",
+     "kaynak": "Pexels"
+    }
+   ],
+   "normal": 964,
+   "enUcuz": {
+    "g": "2027-01-08",
+    "toplam": 759
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1216,
+     "etiket": "pahali",
+     "fark": 26,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1198,
+     "etiket": "pahali",
+     "fark": 24,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1036,
+     "etiket": "normal",
+     "fark": 7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 974,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 950,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 903,
+     "etiket": "normal",
+     "fark": -6,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 954,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 1115,
+     "etiket": "pahali",
+     "fark": 16,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 1308,
+     "etiket": "pahali",
+     "fark": 36,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 759,
+     "etiket": "ucuz",
+     "fark": -21,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 918,
+     "etiket": "normal",
+     "fark": -5,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 882,
+     "etiket": "normal",
+     "fark": -9,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Brüksel": {
+   "slug": "bruksel",
+   "ulke": "Belçika",
+   "fotolar": [],
+   "normal": 633,
+   "enUcuz": {
+    "g": "2027-01-22",
+    "toplam": 478
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 766,
+     "etiket": "pahali",
+     "fark": 21,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 631,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 829,
+     "etiket": "pahali",
+     "fark": 31,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 848,
+     "etiket": "pahali",
+     "fark": 34,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 774,
+     "etiket": "pahali",
+     "fark": 22,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 609,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 633,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 769,
+     "etiket": "pahali",
+     "fark": 21,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 536,
+     "etiket": "ucuz",
+     "fark": -15,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 482,
+     "etiket": "ucuz",
+     "fark": -24,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 478,
+     "etiket": "ucuz",
+     "fark": -24,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Amsterdam": {
+   "slug": "amsterdam",
+   "ulke": "Hollanda",
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/amsterdam-1.jpg",
+     "kucuk": "/img/sehir/amsterdam-1-640.jpg",
+     "alt": "Amsterdam kanalı ve kanal evleri, gece",
+     "kaynak": "Pexels"
+    }
+   ],
+   "normal": 971,
+   "enUcuz": {
+    "g": "2027-01-29",
+    "toplam": 772
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1216,
+     "etiket": "pahali",
+     "fark": 25,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1221,
+     "etiket": "pahali",
+     "fark": 26,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1209,
+     "etiket": "pahali",
+     "fark": 24,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 1124,
+     "etiket": "pahali",
+     "fark": 16,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 971,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 954,
+     "etiket": "normal",
+     "fark": -2,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 1168,
+     "etiket": "pahali",
+     "fark": 20,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 962,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 1268,
+     "etiket": "pahali",
+     "fark": 30,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 879,
+     "etiket": "normal",
+     "fark": -10,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 775,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 807,
+     "etiket": "ucuz",
+     "fark": -17,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": 772,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    }
+   ]
+  },
+  "Lüksemburg": {
+   "slug": "luksemburg",
+   "ulke": "Lüksemburg",
+   "fotolar": [],
+   "normal": 878,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 775
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 994,
+     "etiket": "pahali",
+     "fark": 13,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1112,
+     "etiket": "pahali",
+     "fark": 27,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1017,
+     "etiket": "pahali",
+     "fark": 16,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 854,
+     "etiket": "normal",
+     "fark": -3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 856,
+     "etiket": "normal",
+     "fark": -2,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 807,
+     "etiket": "normal",
+     "fark": -8,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 966,
+     "etiket": "pahali",
+     "fark": 10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 840,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 1153,
+     "etiket": "pahali",
+     "fark": 31,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 899,
+     "etiket": "normal",
+     "fark": 2,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 775,
+     "etiket": "ucuz",
+     "fark": -12,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 775,
+     "etiket": "ucuz",
+     "fark": -12,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Berlin": {
+   "slug": "berlin",
+   "ulke": "Almanya",
+   "fotolar": [],
+   "normal": 583,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 404
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 888,
+     "etiket": "pahali",
+     "fark": 52,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 636,
+     "etiket": "normal",
+     "fark": 9,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 537,
+     "etiket": "normal",
+     "fark": -8,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 614,
+     "etiket": "normal",
+     "fark": 5,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 603,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 577,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 601,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 491,
+     "etiket": "ucuz",
+     "fark": -16,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 589,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 413,
+     "etiket": "ucuz",
+     "fark": -29,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 404,
+     "etiket": "ucuz",
+     "fark": -31,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 406,
+     "etiket": "ucuz",
+     "fark": -30,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Viyana": {
+   "slug": "viyana",
+   "ulke": "Avusturya",
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/viyana-1.jpg",
+     "kucuk": "/img/sehir/viyana-1-640.jpg",
+     "alt": "Viyana Belediye Binası önünde Noel pazarı",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/viyana-2.jpg",
+     "kucuk": "/img/sehir/viyana-2-640.jpg",
+     "alt": "Viyana Devlet Operası",
+     "kaynak": "Pexels"
+    }
+   ],
+   "normal": 1107,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 588
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1001,
+     "etiket": "normal",
+     "fark": -10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 882,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1472,
+     "etiket": "pahali",
+     "fark": 33,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 1068,
+     "etiket": "normal",
+     "fark": -3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 1423,
+     "etiket": "pahali",
+     "fark": 29,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 1293,
+     "etiket": "pahali",
+     "fark": 17,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 1222,
+     "etiket": "pahali",
+     "fark": 10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 1145,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 1162,
+     "etiket": "normal",
+     "fark": 5,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 702,
+     "etiket": "ucuz",
+     "fark": -37,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 588,
+     "etiket": "ucuz",
+     "fark": -47,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 592,
+     "etiket": "ucuz",
+     "fark": -46,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Madrid": {
+   "slug": "madrid",
+   "ulke": "İspanya",
+   "fotolar": [],
+   "normal": 890,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 677
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1488,
+     "etiket": "pahali",
+     "fark": 67,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1038,
+     "etiket": "pahali",
+     "fark": 17,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1231,
+     "etiket": "pahali",
+     "fark": 38,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 1082,
+     "etiket": "pahali",
+     "fark": 22,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 874,
+     "etiket": "normal",
+     "fark": -2,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 813,
+     "etiket": "normal",
+     "fark": -9,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 745,
+     "etiket": "ucuz",
+     "fark": -16,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 885,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 1086,
+     "etiket": "pahali",
+     "fark": 22,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 749,
+     "etiket": "ucuz",
+     "fark": -16,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 677,
+     "etiket": "ucuz",
+     "fark": -24,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 895,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Lizbon": {
+   "slug": "lizbon",
+   "ulke": "Portekiz",
+   "fotolar": [],
+   "normal": 865,
+   "enUcuz": {
+    "g": "2027-01-22",
+    "toplam": 663
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1051,
+     "etiket": "pahali",
+     "fark": 22,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1029,
+     "etiket": "pahali",
+     "fark": 19,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 867,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 941,
+     "etiket": "normal",
+     "fark": 9,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 854,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 757,
+     "etiket": "ucuz",
+     "fark": -12,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 863,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 1008,
+     "etiket": "pahali",
+     "fark": 17,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 957,
+     "etiket": "pahali",
+     "fark": 11,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 721,
+     "etiket": "ucuz",
+     "fark": -17,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 701,
+     "etiket": "ucuz",
+     "fark": -19,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 663,
+     "etiket": "ucuz",
+     "fark": -23,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Roma": {
+   "slug": "roma",
+   "ulke": "İtalya",
+   "fotolar": [],
+   "normal": 923,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 697
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 986,
+     "etiket": "normal",
+     "fark": 7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1109,
+     "etiket": "pahali",
+     "fark": 20,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1109,
+     "etiket": "pahali",
+     "fark": 20,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 967,
+     "etiket": "normal",
+     "fark": 5,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 879,
+     "etiket": "normal",
+     "fark": -5,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 781,
+     "etiket": "ucuz",
+     "fark": -15,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 828,
+     "etiket": "ucuz",
+     "fark": -10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 994,
+     "etiket": "normal",
+     "fark": 8,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 1001,
+     "etiket": "normal",
+     "fark": 8,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 775,
+     "etiket": "ucuz",
+     "fark": -16,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 697,
+     "etiket": "ucuz",
+     "fark": -25,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 735,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Valletta": {
+   "slug": "valletta",
+   "ulke": "Malta",
+   "fotolar": [],
+   "normal": 691,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 558
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 952,
+     "etiket": "pahali",
+     "fark": 38,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 940,
+     "etiket": "pahali",
+     "fark": 36,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 847,
+     "etiket": "pahali",
+     "fark": 23,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 680,
+     "etiket": "normal",
+     "fark": -2,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 691,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 690,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 863,
+     "etiket": "pahali",
+     "fark": 25,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 913,
+     "etiket": "pahali",
+     "fark": 32,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 612,
+     "etiket": "ucuz",
+     "fark": -11,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 558,
+     "etiket": "ucuz",
+     "fark": -19,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 560,
+     "etiket": "ucuz",
+     "fark": -19,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Atina": {
+   "slug": "atina",
+   "ulke": "Yunanistan",
+   "fotolar": [],
+   "normal": 523,
+   "enUcuz": {
+    "g": "2027-01-22",
+    "toplam": 368
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1033,
+     "etiket": "pahali",
+     "fark": 98,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 678,
+     "etiket": "pahali",
+     "fark": 30,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 673,
+     "etiket": "pahali",
+     "fark": 29,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 546,
+     "etiket": "normal",
+     "fark": 5,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 544,
+     "etiket": "normal",
+     "fark": 4,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 451,
+     "etiket": "ucuz",
+     "fark": -14,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 472,
+     "etiket": "normal",
+     "fark": -10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 501,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 751,
+     "etiket": "pahali",
+     "fark": 44,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 394,
+     "etiket": "ucuz",
+     "fark": -25,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 374,
+     "etiket": "ucuz",
+     "fark": -28,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 368,
+     "etiket": "ucuz",
+     "fark": -29,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Stokholm": {
+   "slug": "stokholm",
+   "ulke": "İsveç",
+   "fotolar": [],
+   "normal": 713,
+   "enUcuz": {
+    "g": "2027-01-22",
+    "toplam": 589
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 995,
+     "etiket": "pahali",
+     "fark": 40,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1043,
+     "etiket": "pahali",
+     "fark": 46,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 720,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 761,
+     "etiket": "normal",
+     "fark": 7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 795,
+     "etiket": "pahali",
+     "fark": 12,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 706,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 644,
+     "etiket": "normal",
+     "fark": -10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 697,
+     "etiket": "normal",
+     "fark": -2,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 797,
+     "etiket": "pahali",
+     "fark": 12,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 665,
+     "etiket": "normal",
+     "fark": -7,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 607,
+     "etiket": "ucuz",
+     "fark": -15,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 589,
+     "etiket": "ucuz",
+     "fark": -17,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Kopenhag": {
+   "slug": "kopenhag",
+   "ulke": "Danimarka",
+   "fotolar": [],
+   "normal": 715,
+   "enUcuz": {
+    "g": "2027-01-08",
+    "toplam": 526
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 712,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 838,
+     "etiket": "pahali",
+     "fark": 17,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 1047,
+     "etiket": "pahali",
+     "fark": 46,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 951,
+     "etiket": "pahali",
+     "fark": 33,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 931,
+     "etiket": "pahali",
+     "fark": 30,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 716,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 714,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 637,
+     "etiket": "ucuz",
+     "fark": -11,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 841,
+     "etiket": "pahali",
+     "fark": 18,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 526,
+     "etiket": "ucuz",
+     "fark": -26,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 566,
+     "etiket": "ucuz",
+     "fark": -21,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 574,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Helsinki": {
+   "slug": "helsinki",
+   "ulke": "Finlandiya",
+   "fotolar": [],
+   "normal": 780,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 581
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 879,
+     "etiket": "pahali",
+     "fark": 13,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 941,
+     "etiket": "pahali",
+     "fark": 21,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 839,
+     "etiket": "normal",
+     "fark": 8,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 1173,
+     "etiket": "pahali",
+     "fark": 50,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 705,
+     "etiket": "normal",
+     "fark": -10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 727,
+     "etiket": "normal",
+     "fark": -7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 783,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 777,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 811,
+     "etiket": "normal",
+     "fark": 4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 751,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 581,
+     "etiket": "ucuz",
+     "fark": -25,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 611,
+     "etiket": "ucuz",
+     "fark": -22,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Tallinn": {
+   "slug": "tallinn",
+   "ulke": "Estonya",
+   "fotolar": [],
+   "normal": 712,
+   "enUcuz": {
+    "g": "2027-01-22",
+    "toplam": 464
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 705,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 716,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 730,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 752,
+     "etiket": "normal",
+     "fark": 6,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 708,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 746,
+     "etiket": "normal",
+     "fark": 5,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 721,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 584,
+     "etiket": "ucuz",
+     "fark": -18,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 488,
+     "etiket": "ucuz",
+     "fark": -31,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 464,
+     "etiket": "ucuz",
+     "fark": -35,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Riga": {
+   "slug": "riga",
+   "ulke": "Letonya",
+   "fotolar": [],
+   "normal": 656,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 437
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1037,
+     "etiket": "pahali",
+     "fark": 58,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 768,
+     "etiket": "pahali",
+     "fark": 17,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 763,
+     "etiket": "pahali",
+     "fark": 16,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 781,
+     "etiket": "pahali",
+     "fark": 19,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 658,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 654,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 622,
+     "etiket": "normal",
+     "fark": -5,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 604,
+     "etiket": "normal",
+     "fark": -8,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 748,
+     "etiket": "pahali",
+     "fark": 14,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 628,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 437,
+     "etiket": "ucuz",
+     "fark": -33,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 469,
+     "etiket": "ucuz",
+     "fark": -29,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Vilnius": {
+   "slug": "vilnius",
+   "ulke": "Litvanya",
+   "fotolar": [],
+   "normal": 611,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 463
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1039,
+     "etiket": "pahali",
+     "fark": 70,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 897,
+     "etiket": "pahali",
+     "fark": 47,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 757,
+     "etiket": "pahali",
+     "fark": 24,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 675,
+     "etiket": "pahali",
+     "fark": 10,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 608,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 526,
+     "etiket": "ucuz",
+     "fark": -14,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 614,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 576,
+     "etiket": "normal",
+     "fark": -6,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 642,
+     "etiket": "normal",
+     "fark": 5,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 499,
+     "etiket": "ucuz",
+     "fark": -18,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 463,
+     "etiket": "ucuz",
+     "fark": -24,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 472,
+     "etiket": "ucuz",
+     "fark": -23,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Varşova": {
+   "slug": "varsova",
+   "ulke": "Polonya",
+   "fotolar": [],
+   "normal": 698,
+   "enUcuz": {
+    "g": "2027-01-22",
+    "toplam": 439
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 1037,
+     "etiket": "pahali",
+     "fark": 49,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 989,
+     "etiket": "pahali",
+     "fark": 42,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 809,
+     "etiket": "pahali",
+     "fark": 16,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 804,
+     "etiket": "pahali",
+     "fark": 15,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 721,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 685,
+     "etiket": "normal",
+     "fark": -2,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 587,
+     "etiket": "ucuz",
+     "fark": -16,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 578,
+     "etiket": "ucuz",
+     "fark": -17,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 710,
+     "etiket": "normal",
+     "fark": 2,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 520,
+     "etiket": "ucuz",
+     "fark": -25,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 475,
+     "etiket": "ucuz",
+     "fark": -32,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 439,
+     "etiket": "ucuz",
+     "fark": -37,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Prag": {
+   "slug": "prag",
+   "ulke": "Çekya",
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/prag-1.jpg",
+     "kucuk": "/img/sehir/prag-1-640.jpg",
+     "alt": "Prag, Karl Köprüsü ve Vltava nehri",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/prag-2.jpg",
+     "kucuk": "/img/sehir/prag-2-640.jpg",
+     "alt": "Prag çatıları ve Eski Şehir",
+     "kaynak": "Pexels"
+    }
+   ],
+   "normal": 870,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 437
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 738,
+     "etiket": "ucuz",
+     "fark": -15,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 860,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 874,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 1158,
+     "etiket": "pahali",
+     "fark": 33,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 1354,
+     "etiket": "pahali",
+     "fark": 56,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 1079,
+     "etiket": "pahali",
+     "fark": 24,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 866,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 1202,
+     "etiket": "pahali",
+     "fark": 38,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 1201,
+     "etiket": "pahali",
+     "fark": 38,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 442,
+     "etiket": "ucuz",
+     "fark": -49,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 437,
+     "etiket": "ucuz",
+     "fark": -50,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 440,
+     "etiket": "ucuz",
+     "fark": -49,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Bratislava": {
+   "slug": "bratislava",
+   "ulke": "Slovakya",
+   "fotolar": [],
+   "normal": 605,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 456
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 627,
+     "etiket": "normal",
+     "fark": 4,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 658,
+     "etiket": "normal",
+     "fark": 9,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 569,
+     "etiket": "normal",
+     "fark": -6,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 1004,
+     "etiket": "pahali",
+     "fark": 66,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 1195,
+     "etiket": "pahali",
+     "fark": 97,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 648,
+     "etiket": "normal",
+     "fark": 7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 561,
+     "etiket": "normal",
+     "fark": -7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 584,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 682,
+     "etiket": "pahali",
+     "fark": 13,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 572,
+     "etiket": "normal",
+     "fark": -6,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 456,
+     "etiket": "ucuz",
+     "fark": -25,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 464,
+     "etiket": "ucuz",
+     "fark": -23,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Budapeşte": {
+   "slug": "budapeste",
+   "ulke": "Macaristan",
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/budapeste-1.jpg",
+     "kucuk": "/img/sehir/budapeste-1-640.jpg",
+     "alt": "Budapeşte Parlamento binası",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/budapeste-2.jpg",
+     "kucuk": "/img/sehir/budapeste-2-640.jpg",
+     "alt": "Tuna kıyısında sarı tramvay, Budapeşte",
+     "kaynak": "Pexels"
+    }
+   ],
+   "normal": 839,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 334
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 929,
+     "etiket": "pahali",
+     "fark": 11,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 1064,
+     "etiket": "pahali",
+     "fark": 27,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 807,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 1073,
+     "etiket": "pahali",
+     "fark": 28,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 988,
+     "etiket": "pahali",
+     "fark": 18,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 848,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 834,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 843,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 781,
+     "etiket": "normal",
+     "fark": -7,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 377,
+     "etiket": "ucuz",
+     "fark": -55,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 334,
+     "etiket": "ucuz",
+     "fark": -60,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 335,
+     "etiket": "ucuz",
+     "fark": -60,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Ljubljana": {
+   "slug": "ljubljana",
+   "ulke": "Slovenya",
+   "fotolar": [],
+   "normal": 669,
+   "enUcuz": {
+    "g": "2026-11-06",
+    "toplam": 508
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 508,
+     "etiket": "ucuz",
+     "fark": -24,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 534,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 669,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 795,
+     "etiket": "pahali",
+     "fark": 19,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 764,
+     "etiket": "pahali",
+     "fark": 14,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 672,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 688,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 653,
+     "etiket": "normal",
+     "fark": -2,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 739,
+     "etiket": "pahali",
+     "fark": 10,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 669,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 543,
+     "etiket": "ucuz",
+     "fark": -19,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 516,
+     "etiket": "ucuz",
+     "fark": -23,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Zagreb": {
+   "slug": "zagreb",
+   "ulke": "Hırvatistan",
+   "fotolar": [],
+   "normal": 694,
+   "enUcuz": {
+    "g": "2027-01-15",
+    "toplam": 532
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 737,
+     "etiket": "normal",
+     "fark": 6,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 712,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 607,
+     "etiket": "ucuz",
+     "fark": -13,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 703,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 756,
+     "etiket": "normal",
+     "fark": 9,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 685,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 751,
+     "etiket": "normal",
+     "fark": 8,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 708,
+     "etiket": "normal",
+     "fark": 2,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 653,
+     "etiket": "normal",
+     "fark": -6,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 602,
+     "etiket": "ucuz",
+     "fark": -13,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 532,
+     "etiket": "ucuz",
+     "fark": -23,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 532,
+     "etiket": "ucuz",
+     "fark": -23,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Bükreş": {
+   "slug": "bukres",
+   "ulke": "Romanya",
+   "fotolar": [],
+   "normal": 513,
+   "enUcuz": {
+    "g": "2027-01-22",
+    "toplam": 374
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 618,
+     "etiket": "pahali",
+     "fark": 20,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 633,
+     "etiket": "pahali",
+     "fark": 23,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 620,
+     "etiket": "pahali",
+     "fark": 21,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 526,
+     "etiket": "normal",
+     "fark": 3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 500,
+     "etiket": "normal",
+     "fark": -3,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 481,
+     "etiket": "normal",
+     "fark": -6,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 477,
+     "etiket": "normal",
+     "fark": -7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 536,
+     "etiket": "normal",
+     "fark": 4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 582,
+     "etiket": "pahali",
+     "fark": 13,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 413,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 413,
+     "etiket": "ucuz",
+     "fark": -20,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 374,
+     "etiket": "ucuz",
+     "fark": -27,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  },
+  "Sofya": {
+   "slug": "sofya",
+   "ulke": "Bulgaristan",
+   "fotolar": [],
+   "normal": 449,
+   "enUcuz": {
+    "g": "2026-12-11",
+    "toplam": 367
+   },
+   "haftalar": [
+    {
+     "g": "2026-11-06",
+     "cikis": "2026-11-08",
+     "toplam": 608,
+     "etiket": "pahali",
+     "fark": 35,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-13",
+     "cikis": "2026-11-15",
+     "toplam": 444,
+     "etiket": "normal",
+     "fark": -1,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": 518,
+     "etiket": "pahali",
+     "fark": 15,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": 545,
+     "etiket": "pahali",
+     "fark": 21,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": 399,
+     "etiket": "ucuz",
+     "fark": -11,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": 367,
+     "etiket": "ucuz",
+     "fark": -18,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": 481,
+     "etiket": "normal",
+     "fark": 7,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": 529,
+     "etiket": "pahali",
+     "fark": 18,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": 433,
+     "etiket": "normal",
+     "fark": -4,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": 455,
+     "etiket": "normal",
+     "fark": 1,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": 377,
+     "etiket": "ucuz",
+     "fark": -16,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": 377,
+     "etiket": "ucuz",
+     "fark": -16,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": true
+    }
+   ]
+  }
+ }
+}

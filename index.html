@@ -288,11 +288,40 @@ details.more .field { margin: 14px 0 4px; }
 .legend .chip { flex: none; }
 footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 74ch; }
 
+/* ---------- vitrin (fotoğraflı ana sayfa) ---------- */
+.vitrin { background: var(--band); color: #FBF6EC; padding: 0 16px 22px; }
+.vitrin .wrap { display: grid; gap: 14px; }
+.vhero { position: relative; display: block; border-radius: 18px; overflow: hidden; aspect-ratio: 16 / 9; min-height: 240px; max-height: 440px; width: 100%; color: #FBF6EC; text-decoration: none; background: #0A1F33; }
+.vhero img, .vcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.vhero .fb, .vcard .fb { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 0 10px 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #FBF6EC; background: #153552 radial-gradient(rgba(244,166,42,0.28) 1.3px, transparent 1.5px) 0 0 / 16px 16px; }
+.vhero .fb { font-size: clamp(2.6rem, 11vw, 6rem); }
+.vcard .fb { font-size: 1.9rem; padding-bottom: 50px; }
+.vstrip { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(10,31,51,0.9); padding: 12px 16px; display: flex; justify-content: space-between; align-items: flex-end; gap: 6px 14px; flex-wrap: wrap; }
+.vstrip .eb { display: block; font-family: "DejaVu Sans Mono", Consolas, monospace; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.18em; color: #F4A62A; text-transform: uppercase; }
+.vstrip .nm { display: block; font-weight: 800; font-size: clamp(1.6rem, 5vw, 2.4rem); line-height: 1.05; letter-spacing: -0.02em; margin-top: 4px; }
+.vstrip .pr { font-weight: 800; font-size: clamp(1.2rem, 3.6vw, 1.6rem); font-variant-numeric: tabular-nums; text-align: right; }
+.vstrip small { display: block; font-weight: 400; font-size: 0.78rem; color: #C9D3DE; }
+.vcredit { position: absolute; right: 8px; top: 8px; font-size: 0.68rem; background: rgba(10,31,51,0.7); color: #FBF6EC; padding: 2px 8px; border-radius: 999px; }
+.vhead { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 12px; flex-wrap: wrap; }
+.vhead h2 { margin: 0; font-size: 1.15rem; color: #FBF6EC; }
+.vhead span { color: #C9D3DE; font-size: 0.85rem; }
+.vrow { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px; padding: 2px 16px 8px; scrollbar-width: thin; }
+.vcard { flex: 0 0 148px; scroll-snap-align: start; position: relative; height: 196px; border-radius: 14px; overflow: hidden; border: 0; padding: 0; background: #153552; color: #FBF6EC; text-align: left; font: inherit; cursor: pointer; }
+.vcard .et { position: absolute; left: 8px; top: 8px; right: 8px; }
+.vcard .bt { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(10,31,51,0.88); padding: 8px 10px; display: grid; gap: 2px; }
+.vcard .bt b { font-size: 0.95rem; } .vcard .bt span { font-size: 0.8rem; font-variant-numeric: tabular-nums; color: #D5DEE8; }
+.vcard[aria-pressed="true"] { box-shadow: inset 0 0 0 3px #F4A62A; }
+.vcard:focus-visible, .vhero:focus-visible { outline: 3px solid #F4A62A; outline-offset: 2px; }
+.etk { display: inline-block; font-size: 0.72rem; font-weight: 700; border-radius: 999px; padding: 3px 8px; white-space: nowrap; }
+.etk.ucuz { background: #D7F0E2; color: #1F5E43; } .etk.normal { background: #EEE8DC; color: #44515E; } .etk.pahali { background: #FBE1CF; color: #8A3A12; } .etk.dolu { background: #C4374D; color: #FFFFFF; }
+.vnote { margin: 0; font-size: 0.78rem; color: #C9D3DE; }
+@media (max-width: 700px) { header .steps { display: none; } header { padding-bottom: 18px; } }
+
 /* ---------- yazdırma (PDF yedeği) ---------- */
 @media print {
   :root { color-scheme: light; --bg: #fff; --surface: #fff; --ink: #0F2A43; --muted: #44515E; --line: #CCC; --pick: #FFF7E3; }
   body { background: #fff; }
-  .board, .skip, #formSec, .chips, .cleg, .cityrow, .two, .dnote, .field, .ticketbox .links, .ticketbox label.fadd, .arrows, .actions, .pdfrow, .sharerow, .social, .toast, .hotels:not(#tripSec), #tripSec .pricebox, #tripSec .rowhead:first-of-type, #plist, .legend, header .deco, header .steps, .datanote, .lead { display: none !important; }
+  .vitrin, .board, .skip, #formSec, .chips, .cleg, .cityrow, .two, .dnote, .field, .ticketbox .links, .ticketbox label.fadd, .arrows, .actions, .pdfrow, .sharerow, .social, .toast, .hotels:not(#tripSec), #tripSec .pricebox, #tripSec .rowhead:first-of-type, #plist, .legend, header .deco, header .steps, .datanote, .lead { display: none !important; }
   header { background: #fff; color: #0F2A43; padding: 8px 0; }
   header h1, header p { color: #0F2A43; }
   main { padding: 0; }
@@ -329,7 +358,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
         <text x="366" y="200" font-family="'Liberation Sans',Arial,Helvetica,sans-serif" font-weight="800" font-size="118" fill="#0F2A43" letter-spacing="3">GETAWAY</text>
         <path d="M 372 266 C 520 230 640 300 780 250" fill="none" stroke="#0F2A43" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 13"/>
         <g transform="translate(792,246) rotate(-20) scale(1.1)"><path d="M -18,-8 L 20,0 L -18,8 L -10,0 Z" fill="#F4A62A"/></g>
-        <text x="370" y="328" font-family="'DejaVu Sans Mono',Consolas,'Courier New',monospace" font-size="22" fill="#0F2A43" opacity=".85" letter-spacing="3">ŞEHİR KAÇAMAĞI · 2 GECE</text>
+        <text x="370" y="328" font-family="'DejaVu Sans Mono',Consolas,'Courier New',monospace" font-size="22" fill="#0F2A43" opacity=".85" letter-spacing="3">ŞEHİR KAÇAMAĞI · 72 SAAT</text>
         <g fill="#0F2A43"><rect x="840" y="214" width="3" height="46"/><rect x="851" y="214" width="5" height="46"/><rect x="862" y="214" width="7" height="46"/><rect x="873" y="214" width="4" height="46"/><rect x="884" y="214" width="6" height="46"/><rect x="895" y="214" width="3" height="46"/><rect x="906" y="214" width="5" height="46"/><rect x="917" y="214" width="7" height="46"/><rect x="928" y="214" width="4" height="46"/><rect x="939" y="214" width="6" height="46"/><rect x="950" y="214" width="3" height="46"/></g>
       </svg>
     </div>
@@ -345,6 +374,15 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     </ol>
   </div>
 </header>
+
+<section class="vitrin" id="vitrin" aria-labelledby="h-vitrin" hidden>
+  <div class="wrap">
+    <a class="vhero" id="vhero" href="#formSec"></a>
+    <div class="vhead"><h2 id="h-vitrin">Bu hafta sonu nereye?</h2><span id="vweek"></span></div>
+    <div class="vrow" id="vrow" role="group" aria-label="Şehirler, ucuzdan pahalıya"></div>
+    <p class="vnote">Etiket, şehrin önümüzdeki hafta sonlarındaki ortanca fiyatına göre: %10 ucuzsa ucuz, %10 pahalıysa pahalı. Bir şehre dokun, bütçesi aşağıda hesaplansın. Fotoğraflar: Pexels.</p>
+  </div>
+</section>
 
 <div class="board" role="region" aria-label="Başkent fiyat bandı">
   <button type="button" class="bpause" id="bpause" aria-pressed="false" aria-label="Bandı durdur">⏸</button>
@@ -495,7 +533,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
 </div>
 </main>
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json"; window.VITRIN_URL = "data/vitrin.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -1427,7 +1465,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       var qx = q[0] * 1.1, qy = q[1] * 1.1; return P(792 + qx * Math.cos(th) - qy * Math.sin(th), 246 + qx * Math.sin(th) + qy * Math.cos(th));
     });
     this.ops.push(rgbOp(SAFF, false) + " " + pts[0] + " m " + pts[1] + " l " + pts[2] + " l " + pts[3] + " l h f");
-    this.text("ŞEHİR KAÇAMAĞI · 2 GECE", x + 370 * s, ty(328, 5.5), 5.5, false, NAVY);
+    this.text("ŞEHİR KAÇAMAĞI · 72 SAAT", x + 370 * s, ty(328, 5.5), 5.5, false, NAVY);
     for (var i = 0; i < 11; i++) this.rect(x + (840 + i * 11) * s, top + 214 * s, (3 + (i * 7) % 5) * s, 46 * s, NAVY);
   };
   PdfDoc.prototype.build = function (title) {
@@ -1601,6 +1639,66 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
       document.body.appendChild(ta); ta.select(); var ok = document.execCommand("copy"); ta.remove();
       toast(ok ? "Bağlantı kopyalandı" : "Kopyalanamadı, adres çubuğundaki bağlantıyı paylaş");
     } catch (e) { toast("Kopyalanamadı, adres çubuğundaki bağlantıyı paylaş"); }
+  }
+
+  /* ====================== VİTRİN ====================== */
+  // data/vitrin.json (scripts/sehir-sayfalari.mjs): şehir başına fotoğraf ve hafta sonu etiketleri (2 kişi uçak + konforlu otel, EUR)
+  var VITRIN = null, ETK_AD = { ucuz: "Ucuz", normal: "Normal fiyat", pahali: "Pahalı" };
+  function vWeek(v, o) {
+    var seen = {}, today = todayIst();
+    Object.keys(v.sehirler).forEach(function (n) { (v.sehirler[n].haftalar || []).forEach(function (h) { if ((h.cikis || addDays(h.g, 2)) >= today) seen[h.g] = 1; }); });
+    var ks = Object.keys(seen).sort(); if (!ks.length) return null;
+    var a = o.a && !o.past ? isoD(o.a) : today, best = ks[0];
+    ks.forEach(function (k) { if (Math.abs(dayDiff(a, k)) < Math.abs(dayDiff(a, best))) best = k; });
+    return best;
+  }
+  function etkHtml(h) {
+    if (!h) return "";
+    if (h.etiket) return '<span class="etk ' + h.etiket + '">' + ETK_AD[h.etiket] + (h.etiket !== "normal" && typeof h.fark === "number" ? " · " + (h.fark > 0 ? "+" : "−") + "%" + Math.abs(h.fark) : "") + "</span>";
+    return h.otelDolu ? '<span class="etk dolu">Otel dolu</span>' : "";
+  }
+  function vImg(f, big) {
+    if (!f || !/^\/img\/sehir\/[a-z0-9-]+\.jpg$/.test(f.dosya || "")) return "";
+    var small = /^\/img\/sehir\/[a-z0-9-]+\.jpg$/.test(f.kucuk || "") ? f.kucuk : f.dosya;
+    return big ? '<img src="' + escH(f.dosya) + '" srcset="' + escH(small) + ' 640w, ' + escH(f.dosya) + ' 1080w" sizes="(max-width: 700px) 100vw, 1040px" alt="' + escH(f.alt) + '" decoding="async">'
+      : '<img src="' + escH(small) + '" alt="' + escH(f.alt) + '" loading="lazy" decoding="async">';
+  }
+  function pickCity(i) {
+    $("city").value = i; resetCity(); render();
+    $("h-form").scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  }
+  function renderVitrin(o) {
+    var sec = $("vitrin"); if (!sec || !VITRIN || !VITRIN.sehirler) return;
+    var g = vWeek(VITRIN, o); if (!g) { sec.hidden = true; return; }
+    var cur = +$("city").value, list = [];
+    Object.keys(VITRIN.sehirler).forEach(function (n) {
+      var i = idxOf(n); if (i < 0) return;
+      var c = VITRIN.sehirler[n], h = (c.haftalar || []).filter(function (x) { return x.g === g; })[0] || null;
+      list.push({ n: n, i: i, c: c, h: h, t: h && typeof h.toplam === "number" ? h.toplam / 2 * o.rate : null });
+    });
+    list.sort(function (a, b) { return (a.t == null) - (b.t == null) || (a.t || 0) - (b.t || 0) || a.n.localeCompare(b.n, "tr"); });
+    if (!list.length || list[0].t == null) { sec.hidden = true; return; }
+    sec.hidden = false;
+    var top = list[0], f0 = (top.c.fotolar || [])[0], wk = weekendText(g, top.h.cikis), hero = $("vhero");
+    hero.dataset.c = top.i;
+    hero.setAttribute("aria-label", wk + " hafta sonunun en ucuzu " + top.n + ": uçak ve otel kişi başı yaklaşık " + tl(top.t) + ". Bütçesini hesapla");
+    hero.innerHTML = (vImg(f0, true) || '<span class="fb" aria-hidden="true"></span>') +
+      '<span class="vstrip"><span><span class="eb">' + escH(wk) + " · en ucuzu</span>" + '<span class="nm">' + escH(top.n) + "</span></span>" +
+      '<span class="pr">~' + tl(top.t) + "<small>kişi başı · uçak + otel</small></span></span>" +
+      (f0 && f0.kaynak ? '<span class="vcredit">Fotoğraf: ' + escH(f0.kaynak) + "</span>" : "");
+    $("vweek").textContent = wk + " · kişi başı, uçak + konforlu otel";
+    var row = $("vrow"), sl = row.scrollLeft; row.innerHTML = "";
+    list.forEach(function (x) {
+      var f = (x.c.fotolar || [])[0], b = document.createElement("button");
+      b.type = "button"; b.className = "vcard"; b.dataset.key = "v-" + x.i;
+      b.setAttribute("aria-pressed", x.i === cur ? "true" : "false");
+      b.setAttribute("aria-label", x.n + (x.t != null ? ", kişi başı yaklaşık " + tl(x.t) : ", fiyat yok") + (x.h && x.h.etiket ? ", " + ETK_AD[x.h.etiket] : ""));
+      b.innerHTML = (vImg(f, false) || '<span class="fb" aria-hidden="true"></span>') +
+        '<span class="et">' + etkHtml(x.h) + '</span><span class="bt"><b>' + escH(x.n) + "</b><span>" + (x.t != null ? "~" + tl(x.t) : "fiyat yok") + "</span></span>";
+      b.addEventListener("click", function () { pickCity(x.i); });
+      row.appendChild(b);
+    });
+    row.scrollLeft = sl;
   }
 
   /* ====================== EKRANLAR ====================== */
@@ -1887,7 +1985,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     $("actRow").hidden = false; $("pdfBtn").disabled = o.past; $("shareBtn").disabled = false;
     var live = o.past ? c.n + ": geçmiş tarih, bütçe hesaplanmadı." : c.n + ", " + o.ppl + " kişi, " + o.nights + " gece: toplam " + tl(total) + (k.fly ? ", uçak dahil." : ", uçak hariç.");
     if ($("rLive").textContent !== live) $("rLive").textContent = live;
-    var res = renderChips(o); updateBoard(res);
+    var res = renderChips(o); updateBoard(res); renderVitrin(o);
     renderHotels(c, o); renderRestos(c); renderTrip(c, o);
     syncArrows();
     writeUrl();
@@ -1977,6 +2075,12 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
     var getJ = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }); };
     Promise.all([getJ(window.HOTELS_URL), getJ(window.HOTEL_META_URL).catch(function () { return null; })]).then(function (r) {
       if (r[0] && Array.isArray(r[0].sehirler)) { LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
+    }).catch(function () {});
+  }
+  $("vhero").addEventListener("click", function (e) { if (this.dataset.c != null) { e.preventDefault(); pickCity(+this.dataset.c); } });
+  if (window.VITRIN_URL && window.fetch) {
+    fetch(window.VITRIN_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.sehirler) { VITRIN = d; render(); }
     }).catch(function () {});
   }
   if (window.GEZI_URL && window.fetch) {
