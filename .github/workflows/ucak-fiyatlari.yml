@@ -1,14 +1,18 @@
-name: Uçak fiyat robotu (İstanbul çıkışlı, Cuma-Pazar)
+name: Uçak fiyat robotu (İstanbul çıkışlı, Cuma sabah - Pazar akşam)
 # Salı sabahı 06:17'de (İstanbul) çalışır. Ayarlar: data/ucus-ayarlari.json, sonuç: data/ucuslar.json.
+# Ayar dosyası değişince en yakın 4 hafta sonunu hemen yeniden çeker (mod: yakin).
 on:
   schedule:
     - cron: "17 3 * * 2"
+  push:
+    branches: [main]
+    paths: [data/ucus-ayarlari.json]
   workflow_dispatch:
     inputs:
       mod:
-        description: "test = sadece en yakın hafta sonu, takvim = bugünün planı, hepsi = 13 hafta sonunun hepsi"
+        description: "test = sadece en yakın hafta sonu, yakin = en yakın 4 hafta sonu, takvim = bugünün planı, hepsi = 13 hafta sonunun hepsi"
         type: choice
-        options: [test, takvim, hepsi]
+        options: [test, yakin, takvim, hepsi]
         default: test
       sehir:
         description: "Sadece bu şehir(ler) (virgülle, örnek: Paris,Roma). Boş = hepsi"
@@ -39,7 +43,7 @@ jobs:
       - name: Uçak fiyatlarını çek
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-          MOD: ${{ github.event.inputs.mod || 'takvim' }}
+          MOD: ${{ github.event.inputs.mod || (github.event_name == 'push' && 'yakin') || 'takvim' }}
           SEHIR: ${{ github.event.inputs.sehir || '' }}
           TOPLU: ${{ github.event.inputs.toplu || '' }}
         run: node scripts/ucak-fiyatlari.mjs

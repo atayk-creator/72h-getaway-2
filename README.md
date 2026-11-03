@@ -66,13 +66,14 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 
 ## Uçak fiyat robotu
 
-- İstanbul (IST ve SAW) çıkışlı, Cuma gidiş Pazar dönüş, 1 kişi gidiş-dönüş en ucuz ve en ucuz aktarmasız uçuş, 26 başkent.
+- İstanbul (IST ve SAW) çıkışlı, Cuma sabah gidiş (kalkış 05:00–12:00) Pazar akşam dönüş (kalkış 16:00–24:00), 1 kişi gidiş-dönüş en ucuz ve en ucuz aktarmasız uçuş, 26 başkent.
 - Kaynak: Google Flights, Apify'daki hazır robot ile (`dz_omar/google-flights-scraper`). Ayarlar `data/ucus-ayarlari.json`, sonuç `data/ucuslar.json`.
 - Takvim: her Salı 06:17; 13 hafta sonu: 1–4. hafta sonu her hafta, 5–8. iki haftada bir, 9–13. dört haftada bir.
   `ozel_tarihler` (2026-12-25, 2027-01-01) her hafta aranır.
 - Ölçülen maliyet: şehir-hafta sonu başına ~0,028 $ (26 şehir ~0,73 $); bu takvimle ayda ~23 $ (8 hafta sonuyla ~19 $ idi,
   9–13. hafta sonları ~4 $ ekledi; özel tarihler geçene kadar +~2 $). Toplu arama ucuzlatmıyor.
 - Bağlantılar Google Flights'ı Türkçe açar (`hl=tr`); eski kayıtlar `node scripts/gecis-ucus-baglanti.mjs` ile çevrildi.
+- Saatler `data/ucus-ayarlari.json` > `gidis_saat`, `donus_saat`. O saatlerde uçuş yoksa (tek seferli hatlar) saat şartsız ikinci arama yapılır, kayda `saatDisi` yazılır ve sitede uyarı çıkar.
 - Hesaplayıcı: seçilen tarihe denk gelen hafta sonunun fiyatını gösterir, "Uçağı bütçeye ekle" ile toplama katar.
   Aktarmasız uçuş en ucuzdan en fazla %20 pahalıysa onu öne çıkarır.
 
@@ -86,6 +87,14 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
   "Hungarian restaurant" → "Macar mutfağı"; sözlükte yoksa sondaki " restaurant" atılır). Tablodan elle yazılan mutfak adı aynen kullanılır.
 - Takvim: her ayın 3'ünde `yenile` (seçilenlerin puan/fiyat/açık bilgisini tazeler, kapananı değiştirir, ~1 $).
   Elle: `kesif` (baştan arama, ~0,36 $/şehir), `sec` (kurallar değişince adaylardan yeniden seçim, ücretsiz).
+
+## Elle seçilen restoranlar
+
+- `data/elle-restoranlar.json`: şehir şehir kendi seçtiğimiz restoranlar (ilk şehir Amsterdam, 13 mekân).
+- Dosya değişince Actions > "Elle seçilen restoranlar" çalışır: her mekânı Google Maps'te bulur (puan, yorum, konum, kişi başı fiyat aralığı) ve `data/restoranlar.json`'a kilitli yazar.
+  Google fiyat vermezse `yedek_fiyat` (menü/yorum araştırması) "tahmini" olarak kullanılır. Rapor: `data/elle-restoran-rapor.md`.
+- `sadece_elle: true` olan şehirde aylık restoran robotu kendi seçimini eklemez, sadece puanları tazeler.
+- Seviye: kişi başı 15 € ve altı uygun, 60 € ve üstü lüks, arası popüler (`seviye` yazılırsa o geçerli).
 
 ## Şehir turu ve ulaşım (data/gezi.json)
 

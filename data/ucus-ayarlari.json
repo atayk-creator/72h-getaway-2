@@ -1,7 +1,9 @@
 {
-  "aciklama": "Uçak fiyat robotunun ayarları. İstanbul'dan (IST ve SAW) her başkente Cuma gidiş, Pazar dönüş, 1 kişi, gidiş-dönüş en ucuz fiyat.",
+  "aciklama": "Uçak fiyat robotunun ayarları. İstanbul'dan (IST ve SAW) her başkente Cuma sabah gidiş (gidis_saat: kalkış 05:00–12:00), Pazar akşam dönüş (donus_saat: kalkış 16:00–24:00), 1 kişi, gidiş-dönüş en ucuz fiyat.",
   "kalkis": ["IST", "SAW"],
   "kisi": 1,
+  "gidis_saat": "5-12",
+  "donus_saat": "16-24",
   "para_birimi": "EUR",
   "pazar": "TR",
   "kac_hafta_sonu": 13,

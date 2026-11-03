@@ -248,13 +248,13 @@ export async function run({ token, cfg, state = emptyRestaurants(), cands = { se
     } else sel = selectRestaurants(list, cfg);
     sel = { ...sel, secilen: TIERS.flatMap((tier) => {
       const L = locked.filter((x) => x.seviye === tier);
-      return [...L, ...sel.secilen.filter((x) => x.seviye === tier).slice(0, Math.max(0, cfg.secim[tier] - L.length))].sort((a, b) => a.kisiBasiEur - b.kisiBasiEur);
+      return [...L, ...sel.secilen.filter((x) => x.seviye === tier).slice(0, prevCity.sadeceElle ? 0 : Math.max(0, cfg.secim[tier] - L.length))].sort((a, b) => a.kisiBasiEur - b.kisiBasiEur);
     }) };
     const nowIds = sel.secilen.map((x) => x.id);
     if (prev.length) for (const id of prev) if (!nowIds.includes(id)) report.degisen.push(`${city.sehir}: ${(state.sehirler[city.sehir].restoranlar.find((x) => x.id === id) || {}).ad} çıkarıldı`);
     const total = TIERS.reduce((a, k) => a + cfg.secim[k], 0);
     if (sel.secilen.length < total) report.eksik.push(`${city.sehir}: ${sel.secilen.length}/${total}`);
-    state.sehirler[city.sehir] = { guncellendi: t, esik: sel.esik, aday: sel.aday, restoranlar: sel.secilen.map(({ kategoriler, arama, kapali, ...x }) => withMutfakTr(x)), ...(haric.size ? { haric: [...haric] } : {}) };
+    state.sehirler[city.sehir] = { guncellendi: t, esik: sel.esik, aday: sel.aday, restoranlar: sel.secilen.map(({ kategoriler, arama, kapali, ...x }) => withMutfakTr(x)), ...(haric.size ? { haric: [...haric] } : {}), ...(prevCity.sadeceElle ? { sadeceElle: true, elleKaynak: prevCity.elleKaynak || null } : {}) };
     report.sehir++; report.aday += sel.aday; report.secilen += sel.secilen.length;
   });
   if (mode !== "sec") {

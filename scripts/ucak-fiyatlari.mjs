@@ -1,4 +1,5 @@
-// Uçak fiyat robotu: İstanbul'dan (IST + SAW) her başkente Cuma gidiş, Pazar dönüş, 1 kişi
+// Uçak fiyat robotu: İstanbul'dan (IST + SAW) her başkente Cuma sabah gidiş, Pazar akşam dönüş, 1 kişi
+// (saat aralıkları ayarda: gidis_saat, donus_saat; o saatlerde uçuş yoksa saat dışı en ucuz uçuş "saatDisi" işaretiyle yazılır)
 // gidiş-dönüş en ucuz uçuşu ve en ucuz aktarmasız uçuşu Google Flights'tan çeker.
 // Google Flights'ı Apify'daki hazır robot okur: https://apify.com/dz_omar/google-flights-scraper
 // Ayarlar: data/ucus-ayarlari.json. Sonuç: data/ucuslar.json.
@@ -16,9 +17,10 @@ const r2 = (x) => Math.round(x * 100) / 100;
 const num = (x) => typeof x === "number" && Number.isFinite(x);
 const HISTORY_MAX = 30;
 
-export function flightInput(cfg, city, w, cities = null) {
+export function flightInput(cfg, city, w, cities = null, { saatsiz = false } = {}) {
   const dest = cities ? [...new Set(cities.flatMap((c) => c.havalimani))] : city.havalimani;
-  return {
+  const saat = saatsiz ? {} : { ...(cfg.gidis_saat ? { outboundDepartureTime: cfg.gidis_saat } : {}), ...(cfg.donus_saat ? { returnDepartureTime: cfg.donus_saat } : {}) };
+  return { ...saat,
     tripType: "round_trip", origin: cfg.kalkis, destination: dest,
     departureDate: w.giris, returnDate: w.cikis, adults: cfg.kisi || 1,
     currency: cfg.para_birimi || "EUR", market: cfg.pazar || "TR", language: "en-US",
@@ -45,9 +47,21 @@ const pick = (r) => ({
   sureDk: num(r.durationMinutes) ? r.durationMinutes : null, link: trLink(r.googleFlightsUrl || null),
 });
 
-// Robotun satırlarından en ucuz ve en ucuz aktarmasız uçuşu seçer
-export function toFlightRecord(rows, cfg, city) {
+// "5-12" -> [5, 12]; kalkış saati (ISO "2026-11-06T08:15") bu aralıkta mı
+export function inWindow(iso, win) {
+  if (!win || !iso) return true;
+  const m = /^(\d{1,2})-(\d{1,2})$/.exec(String(win)), h = /T(\d{2}):(\d{2})/.exec(String(iso));
+  if (!m || !h) return true;
+  const x = +h[1] + +h[2] / 60;
+  return x >= +m[1] && x <= +m[2];
+}
+const winText = (w) => { const m = /^(\d{1,2})-(\d{1,2})$/.exec(String(w || "")); return m ? `${m[1].padStart(2, "0")}:00–${m[2].padStart(2, "0")}:00` : null; };
+export const saatAraligi = (cfg) => (cfg.gidis_saat || cfg.donus_saat ? { gidis: winText(cfg.gidis_saat), donus: winText(cfg.donus_saat) } : null);
+
+// Robotun satırlarından en ucuz ve en ucuz aktarmasız uçuşu seçer (saatli aramada gidiş saati aralık dışındaysa elenir)
+export function toFlightRecord(rows, cfg, city, { saatli = false } = {}) {
   const ok = (rows || []).filter((r) => r && (r.rowType || r.type || "flight") === "flight" && num(r.price) && r.price > 0
+    && (!saatli || inWindow(r.departureTime, cfg.gidis_saat))
     && (!r.currency || r.currency === (cfg.para_birimi || "EUR"))
     && (!r.origin || cfg.kalkis.includes(r.origin)) && (!r.destination || city.havalimani.includes(r.destination)));
   const fails = (rows || []).filter((r) => r && /input_error|search_failed/.test(String(r.rowType || r.type || r.status || "")));
@@ -63,7 +77,7 @@ export function toFlightRecord(rows, cfg, city) {
 }
 
 export function emptyFlights() {
-  return { harcama: { donem: null, usd: 0 }, apifyKullanim: null, olcumler: [], guncellendi: null, kaynak: "Google Flights (Apify: dz_omar/google-flights-scraper)", paraBirimi: "EUR", kisi: 1, aciklama: "Kişi başı gidiş-dönüş, Cuma gidiş Pazar dönüş, İstanbul (IST veya SAW) çıkışlı", haftaSonlari: {} };
+  return { harcama: { donem: null, usd: 0 }, apifyKullanim: null, olcumler: [], guncellendi: null, kaynak: "Google Flights (Apify: dz_omar/google-flights-scraper)", paraBirimi: "EUR", kisi: 1, aciklama: "Kişi başı gidiş-dönüş, Cuma sabah gidiş Pazar akşam dönüş, İstanbul (IST veya SAW) çıkışlı", haftaSonlari: {} };
 }
 
 export function mergeFlight(state, w, sehir, rec, t) {
@@ -109,8 +123,18 @@ export async function run({ token, cfg, state = emptyFlights(), hotelSettings = 
     report.arama += group.length; report.calisma = (report.calisma || 0) + 1;
     let recs;
     try {
+      const saatli = !!(cfg.gidis_saat || cfg.donus_saat);
       const rows = await runActor(group.length > 1 ? flightInput(cfg, null, w, group) : flightInput(cfg, group[0], w), { token, fetchImpl, sleep, actor: FLIGHT_ACTOR, maxPolls: 60 });
-      recs = group.map((c) => [c, toFlightRecord(rows, cfg, c)]); ok++;
+      recs = group.map((c) => [c, toFlightRecord(rows, cfg, c, { saatli })]); ok++;
+      // Cuma sabah / Pazar akşam uçuşu yoksa (tek seferli hatlar) saat şartı olmadan bir kez daha ara
+      if (saatli && group.length === 1 && recs[0][1].durum === "yok" && B.reserve(perSearch)) {
+        report.arama++; report.saatDisiArama = (report.saatDisiArama || 0) + 1;
+        const rows2 = await runActor(flightInput(cfg, group[0], w, null, { saatsiz: true }), { token, fetchImpl, sleep, actor: FLIGHT_ACTOR, maxPolls: 60 });
+        B.release(perSearch); B.spend(perSearch); report.tahminiMaliyetUsd += perSearch;
+        const r2rec = toFlightRecord(rows2, cfg, group[0]);
+        if (r2rec.durum === "fiyat") recs = [[group[0], { ...r2rec, saatDisi: true, not: "Cuma sabah gidiş / Pazar akşam dönüş saatlerinde uçuş yok; saat dışı en ucuz uçuş" }]];
+      }
+      for (const [, rec] of recs) if (rec.durum === "fiyat" && saatli && !rec.saatDisi) rec.saat = saatAraligi(cfg);
     } catch (e) {
       const msg = String(e.message).split(token).join("***");
       if (e.fatal) { fatal = msg; B.release(est); return; }
@@ -124,7 +148,7 @@ export async function run({ token, cfg, state = emptyFlights(), hotelSettings = 
   state.harcama.usd = r2(state.harcama.usd); report.tahminiMaliyetUsd = r2(report.tahminiMaliyetUsd);
   report.gercekMaliyet = await measureCost({ token, fetchImpl, sleep, before: usage, holder: state, robot: cfg.toplu ? "ucak-toplu" : "ucak", queries: report.arama, t });
   report.silinen = dropPast(state, today);
-  if (ok > 0) state.guncellendi = t;
+  if (ok > 0) { state.guncellendi = t; state.saatAraligi = saatAraligi(cfg); state.aciklama = emptyFlights().aciklama; }
   return { state, report, plan, fatal };
 }
 

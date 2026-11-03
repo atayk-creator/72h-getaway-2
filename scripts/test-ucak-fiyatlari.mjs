@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { flightInput, toFlightRecord, trLink, run, toMarkdown, emptyFlights, dropPast, mergeFlight, COST_PER_ROW, COST_PER_RUN } from "./ucak-fiyatlari.mjs";
+import { flightInput, toFlightRecord, inWindow, saatAraligi, trLink, run, toMarkdown, emptyFlights, dropPast, mergeFlight, COST_PER_ROW, COST_PER_RUN } from "./ucak-fiyatlari.mjs";
 import { planFor } from "./otel-fiyatlari.mjs";
 
 const cfg = JSON.parse(await readFile(new URL("../data/ucus-ayarlari.json", import.meta.url), "utf8"));
@@ -50,6 +50,16 @@ const fl = (price, o = {}) => ({ rowType: "flight", origin: "IST", destination: 
   const ins = toFlightRecord([fl(120, { priceInsights: { priceLevel: "low", typicalPrice: 160 } })], cfg, BUD); assert.equal(ins.tipikFiyat, 160); assert.equal(ins.fiyatSeviyesi, "low");
   console.log("ok 3: uçuş kaydı"); }
 
+// 3b) saat aralığı: Cuma sabah gidiş; aralık dışı kalkış saatli aramada elenir
+{ assert.ok(inWindow("2026-11-06T05:00", "5-12") && inWindow("2026-11-06T12:00", "5-12") && !inWindow("2026-11-06T12:30", "5-12") && !inWindow("2026-11-06T04:55", "5-12"));
+  assert.ok(inWindow(null, "5-12") && inWindow("2026-11-06T22:00", null));
+  const r = toFlightRecord([fl(90, { departureTime: "2026-11-06T17:55" }), fl(140, { departureTime: "2026-11-06T08:10" })], cfg, BUD, { saatli: true }); assert.equal(r.fiyat, 140);
+  assert.equal(toFlightRecord([fl(90, { departureTime: "2026-11-06T17:55" })], cfg, BUD).fiyat, 90);
+  const i = flightInput(cfg, BUD, { giris: "2026-11-06", cikis: "2026-11-08" }), j = flightInput(cfg, BUD, { giris: "2026-11-06", cikis: "2026-11-08" }, null, { saatsiz: true });
+  assert.equal(i.outboundDepartureTime, "5-12"); assert.equal(i.returnDepartureTime, "16-24"); assert.ok(!("outboundDepartureTime" in j));
+  assert.deepEqual(saatAraligi(cfg), { gidis: "05:00–12:00", donus: "16:00–24:00" });
+  console.log("ok 3b: saat aralığı"); }
+
 // 4) geçmiş ve eski hafta sonlarını silme
 { const st = emptyFlights(); const w = { giris: "2026-11-06", cikis: "2026-11-08" };
   for (let i = 0; i < 35; i++) mergeFlight(st, w, "Budapeşte", { durum: "fiyat", fiyat: 100 + i }, "t" + i);
@@ -65,7 +75,8 @@ function fake({ seen = [], status = 200, body = null } = {}) {
     if (init.method === "POST") { const id = "r" + ++n; runs[id] = JSON.parse(init.body); return res({ data: { id, status: "SUCCEEDED", defaultDatasetId: "ds" + id } }); }
     const inp = runs[u.pathname.split("/")[3].slice(2)];
     const d = inp.destination[0];
-    return res(d === "MLA" ? [{ rowType: "no_results" }] : [fl(150, { destination: d, origin: "SAW", stopsLabel: "1 stop" }), fl(190, { destination: d })]);
+    if (d === "MLA") return res(inp.outboundDepartureTime ? [{ rowType: "no_results" }] : [fl(240, { destination: d, departureTime: "2026-11-06T14:30" })]);
+    return res([fl(150, { destination: d, origin: "SAW", stopsLabel: "1 stop" }), fl(190, { destination: d })]);
   };
 }
 const hs = { ...hotels.ayarlar, apify_plan: "starter", aylik_butce_usd: 100, fatura_gunu: 28 };
@@ -74,9 +85,11 @@ const hs = { ...hotels.ayarlar, apify_plan: "starter", aylik_butce_usd: 100, fat
 { const seen = [], st = { ...emptyFlights(), harcama: { donem: "2026-10-28", usd: 1.5 } };
   const out = await run({ token: TOKEN, cfg, state: st, hotelSettings: hs, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen }), sleep: async () => {} });
   const posts = seen.filter((s) => s.init.method === "POST").length, n = out.plan.length * cfg.sehirler.length;
-  assert.equal(posts, n); assert.equal(out.report.fiyat, n - out.plan.length); assert.equal(out.report.yok, out.plan.length, "Valletta: uçuş yok");
-  const s = out.state.haftaSonlari["2026-11-06"].sehirler["Budapeşte"].son; assert.equal(s.fiyat, 150); assert.equal(s.aktarmasiz.fiyat, 190);
-  assert.ok(Math.abs(out.state.harcama.usd - (1.5 + n * cfg.arama_basi_usd)) < 0.02); assert.equal(st.harcama.usd, 1.5, "girdi değiştirilmez");
+  assert.equal(posts, n + out.plan.length, "Valletta için saat şartsız ikinci arama"); assert.equal(out.report.fiyat, n); assert.equal(out.report.yok || 0, 0);
+  const v = out.state.haftaSonlari["2026-11-06"].sehirler["Valletta"].son; assert.equal(v.saatDisi, true); assert.equal(v.fiyat, 240); assert.ok(!v.saat);
+  const s = out.state.haftaSonlari["2026-11-06"].sehirler["Budapeşte"].son; assert.equal(s.fiyat, 150); assert.equal(s.aktarmasiz.fiyat, 190); assert.deepEqual(s.saat, { gidis: "05:00–12:00", donus: "16:00–24:00" });
+  const first = JSON.parse(seen.find((x) => x.init.method === "POST").init.body); assert.equal(first.outboundDepartureTime, "5-12"); assert.equal(first.returnDepartureTime, "16-24");
+  assert.ok(Math.abs(out.state.harcama.usd - (1.5 + (n + out.plan.length) * cfg.arama_basi_usd)) < 0.02); assert.equal(st.harcama.usd, 1.5, "girdi değiştirilmez");
   assert.ok(seen.every((x) => !x.url.includes(TOKEN))); assert.match(toMarkdown({ ...out, cfg }), /Budapeşte \| 150 €/); console.log("ok 5: uçtan uca, tek tek arama"); }
 
 // 5b) toplu arama: hafta sonu başına tek çalışma, satırlar şehirlere havalimanına göre dağıtılır

@@ -1,0 +1,46 @@
+name: Elle seçilen restoranlar (Google Maps)
+# data/elle-restoranlar.json değişince çalışır: listedeki restoranları Google Maps'te bulur, puan/konum/kişi başı fiyatı çeker
+# ve data/restoranlar.json'a kilitli yazar (~0,0065 $/restoran).
+on:
+  push:
+    branches: [main]
+    paths: [data/elle-restoranlar.json]
+  workflow_dispatch:
+    inputs:
+      sehir:
+        description: "Sadece bu şehir(ler) (virgülle). Boş = hepsi"
+        type: string
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: apify-robotlari
+  cancel-in-progress: false
+jobs:
+  elle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node scripts/test-elle-restoranlar.mjs && node scripts/test-restoranlar.mjs
+      - name: Restoranları Google Maps'ten çek
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          SEHIR: ${{ github.event.inputs.sehir || '' }}
+        run: node scripts/elle-restoranlar.mjs
+      - name: Depoya kaydet
+        if: always()
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then echo "Değişiklik yok."; exit 0; fi
+          git commit -m "Elle seçilen restoranlar güncellendi"
+          git pull --rebase --autostash
+          git push

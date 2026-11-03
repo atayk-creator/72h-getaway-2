@@ -57,7 +57,8 @@ export function planFor(todayIso, settings, mode = "takvim") {
   const all = upcomingWeekends(todayIso, settings.kac_hafta_sonu || 13).map((w) => ({ ...w, kademe: (tierOf(w.no, w.giris, settings) || {}).kademe || null }));
   if (mode === "test") return all.slice(0, 1);
   if (mode === "hepsi") return all;
-  if (mode !== "takvim") throw new Error(`Bilinmeyen mod: ${mode} (takvim, test ya da hepsi olmalı)`);
+  if (mode === "yakin") return all.slice(0, 4);
+  if (mode !== "takvim") throw new Error(`Bilinmeyen mod: ${mode} (takvim, test, yakin ya da hepsi olmalı)`);
   const wd = weekday(todayIso), wk = weekIndex(todayIso);
   return all.filter((w) => {
     const t = tierOf(w.no, w.giris, settings);

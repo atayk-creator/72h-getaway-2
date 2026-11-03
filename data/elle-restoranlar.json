@@ -1,0 +1,24 @@
+{
+ "aciklama": "Kullanıcının kendi seçtiği restoranlar. Robot (scripts/elle-restoranlar.mjs) her birini Google Maps'te bulur; puan, yorum, konum ve kişi başı fiyatı (Google kullanıcılarının bildirdiği aralığın ortası) çeker ve data/restoranlar.json'a KİLİTLİ yazar. Google fiyat vermezse 'yedek_fiyat' (menü ve yorum araştırmasından tahmin) kullanılır. 'sadece_elle': true olan şehirde restoran robotu kendi seçimini eklemez. Seviye: kişi başı 15 € ve altı uygun, 60 € ve üstü lüks, arası popüler ('seviye' yazılırsa o geçerli).",
+ "sehirler": {
+  "Amsterdam": {
+   "sadece_elle": true,
+   "kaynak": "Amsterdam görüşmesi, 3 Kasım 2026",
+   "restoranlar": [
+    {"ad": "Chun", "arama": "Chun Berenstraat Amsterdam", "tur": "Kahvaltı / sandviç", "yedek_fiyat": 15, "not": "TikTok'ta viral tost sandviçleri, Dokuz Sokaklar; erken git, kuyruk olur"},
+    {"ad": "Oeuf", "arama": "Oeuf Amsterdam De Pijp brunch", "tur": "Brunch", "yedek_fiyat": 20, "not": "De Pijp'te yumurta temalı brunch, rezervasyonsuz"},
+    {"ad": "BagelBoy", "arama": "BagelBoy Albert Cuypstraat Amsterdam", "tur": "Bagel / kahvaltı", "yedek_fiyat": 12, "not": "Ekşi mayalı bagel, Albert Cuyp pazarının yanında"},
+    {"ad": "Greenwoods", "arama": "Greenwoods Singel Amsterdam", "tur": "Brunch", "yedek_fiyat": 18, "not": "1988'den beri, Amsterdam'ın ilk brunch mekânı; Singel'de kanala bakan teras"},
+    {"ad": "Winkel 43", "arama": "Winkel 43 Noordermarkt Amsterdam", "tur": "Elmalı turta / kafe", "yedek_fiyat": 9, "not": "Amsterdam'ın en ünlü elmalı turtası (dilimi 5–7 €); kuyruğa girme, içeri gir"},
+    {"ad": "Lera", "arama": "Lera matcha coffee Ferdinand Bolstraat Amsterdam", "tur": "Matcha kafe", "yedek_fiyat": 8, "not": "De Pijp'te minimalist matcha kafesi"},
+    {"ad": "Skina", "arama": "Skina Amsterdam West coffee gallery", "tur": "Kahve / galeri", "yedek_fiyat": 8, "not": "Ube köpüklü mangolu matcha; hafta içi 08:00–17:00 açık"},
+    {"ad": "Harry's Pasta Bar", "arama": "Harry's Pasta Bar Oude Hoogstraat Amsterdam", "tur": "Makarna", "yedek_fiyat": 20, "not": "Merkezde alkolsüz makarna barı, rezervasyonsuz"},
+    {"ad": "Bar Bellini", "arama": "Bar Bellini Ferdinand Bolstraat Amsterdam", "tur": "Kokteyl / atıştırmalık", "yedek_fiyat": 25, "not": "Akşam yemeği öncesi Bellini ve paylaşmalık atıştırmalıklar"},
+    {"ad": "Linguini", "arama": "Linguini Herenstraat Amsterdam", "tur": "Makarna", "yedek_fiyat": 40, "not": "Ünlü cacio e pepe, büyük tavada paylaşmalık; mutlaka rezervasyon (gelmezsen ücret alınır)"},
+    {"ad": "The Seafood Bar", "arama": "The Seafood Bar Ferdinand Bolstraat Amsterdam", "tur": "Deniz ürünleri", "yedek_fiyat": 40, "not": "De Visscher ailesinin restoranı; iki kişilik karışık ızgara tabağı"},
+    {"ad": "Fikissimo", "arama": "Fikissimo Amsterdam", "tur": "Akdeniz / İtalyan", "yedek_fiyat": 35, "not": "Oud-West'te çatı terası, helal menü seçeneği"},
+    {"ad": "The Siren", "arama": "The SIREN Restaurant & Bar Rokin Amsterdam", "tur": "Lüks / gösteri", "yedek_fiyat": 80, "not": "Rokin'de barok dekor, dev deniz kızı heykeli; menü fiyatını teyit et"}
+   ]
+  }
+ }
+}
