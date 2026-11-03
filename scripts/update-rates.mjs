@@ -59,6 +59,7 @@ export async function bestRates(fetchImpl = fetch, now = new Date()) {
   if (!ecb || ecb.date < istanbulDate(now)) {
     try { daily = await fetchDaily(fetchImpl); } catch (e) { dailyErr = e; }
   }
+  console.log(`ECB: ${ecb ? ecb.date + " " + ecb.eurTry : "alınamadı (" + (ecbErr && ecbErr.message) + ")"} · günlük: ${daily ? daily.date + " " + daily.eurTry : dailyErr ? "alınamadı (" + dailyErr.message + ")" : "sorulmadı"}`);
   if (daily && (!ecb || daily.date > ecb.date)) return { ...daily, source: SRC_DAILY };
   if (ecb) return { ...ecb, source: SRC_ECB };
   throw new Error([ecbErr && ecbErr.message, dailyErr && dailyErr.message].filter(Boolean).join("\n"));
