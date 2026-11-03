@@ -1,5 +1,5 @@
 {
- "aciklama": "Şehir fotoğrafları. Kareler 72h_stok klasöründeki Pexels kliplerinden alındı (Pexels lisansı: ücretsiz, ticari kullanım serbest, kaynak göstermek şart değil). Şehir anahtarı = sehir sayfası slug'ı. İlk fotoğraf kapak olur.",
+ "aciklama": "Şehir fotoğrafları. Kaynak: Pexels (ücretsiz, ticari kullanım serbest, kaynak göstermek şart değil; sitede yine de belirtiliyor). 5 şehir 72h_stok kliplerinden kare, 21 şehir Pexels fotoğrafı (url alanı). Şehir anahtarı = sehir sayfası slug'ı; ilk fotoğraf kapak olur.",
  "sehirler": {
   "amsterdam": [
    {
@@ -81,6 +81,376 @@
     "kaynak": "Pexels",
     "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
     "klip": "72hvi_s8_opera.mp4"
+   }
+  ],
+  "dublin": [
+   {
+    "dosya": "/img/sehir/dublin-2.jpg",
+    "kucuk": "/img/sehir/dublin-2-640.jpg",
+    "alt": "Dublin, akşam ışığında Liffey nehri rıhtımları",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/40472864/"
+   }
+  ],
+  "bruksel": [
+   {
+    "dosya": "/img/sehir/bruksel-1.jpg",
+    "kucuk": "/img/sehir/bruksel-1-640.jpg",
+    "alt": "Brüksel, Grand Place'taki tarihi binalar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/36184049/"
+   },
+   {
+    "dosya": "/img/sehir/bruksel-2.jpg",
+    "kucuk": "/img/sehir/bruksel-2-640.jpg",
+    "alt": "Brüksel Belediye Binası ve Noel ağacı, Grand Place",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/35506640/"
+   }
+  ],
+  "luksemburg": [
+   {
+    "dosya": "/img/sehir/luksemburg-1.jpg",
+    "kucuk": "/img/sehir/luksemburg-1-640.jpg",
+    "alt": "Lüksemburg şehri, tarihi surlar ve siluet",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/13138016/"
+   },
+   {
+    "dosya": "/img/sehir/luksemburg-2.jpg",
+    "kucuk": "/img/sehir/luksemburg-2-640.jpg",
+    "alt": "Lüksemburg şehir merkezinde tarihi binalar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/29255313/"
+   }
+  ],
+  "berlin": [
+   {
+    "dosya": "/img/sehir/berlin-1.jpg",
+    "kucuk": "/img/sehir/berlin-1-640.jpg",
+    "alt": "Berlin, Spree nehrine yansıyan TV Kulesi, gece",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/13009490/"
+   },
+   {
+    "dosya": "/img/sehir/berlin-2.jpg",
+    "kucuk": "/img/sehir/berlin-2-640.jpg",
+    "alt": "Berlin Katedrali ve şehir ışıkları, gece",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/7555434/"
+   }
+  ],
+  "madrid": [
+   {
+    "dosya": "/img/sehir/madrid-1.jpg",
+    "kucuk": "/img/sehir/madrid-1-640.jpg",
+    "alt": "Madrid silueti, gün batımı",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/4927541/"
+   },
+   {
+    "dosya": "/img/sehir/madrid-2.jpg",
+    "kucuk": "/img/sehir/madrid-2-640.jpg",
+    "alt": "Madrid'de tarihi binalarla dolu bir cadde",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/14897462/"
+   }
+  ],
+  "lizbon": [
+   {
+    "dosya": "/img/sehir/lizbon-1.jpg",
+    "kucuk": "/img/sehir/lizbon-1-640.jpg",
+    "alt": "Lizbon'un renkli sokaklarında sarı tramvay",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/16338751/"
+   },
+   {
+    "dosya": "/img/sehir/lizbon-2.jpg",
+    "kucuk": "/img/sehir/lizbon-2-640.jpg",
+    "alt": "Lizbon'da tramvaylı klasik bir sokak",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/12304129/"
+   }
+  ],
+  "roma": [
+   {
+    "dosya": "/img/sehir/roma-1.jpg",
+    "kucuk": "/img/sehir/roma-1-640.jpg",
+    "alt": "Roma, Forum Romanum kalıntıları",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/14683036/"
+   },
+   {
+    "dosya": "/img/sehir/roma-2.jpg",
+    "kucuk": "/img/sehir/roma-2-640.jpg",
+    "alt": "Roma'nın tarihi merkezinde bir sokak",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/19855229/"
+   }
+  ],
+  "valletta": [
+   {
+    "dosya": "/img/sehir/valletta-1.jpg",
+    "kucuk": "/img/sehir/valletta-1-640.jpg",
+    "alt": "Valletta, tekneler ve kubbeli silüet",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/37807535/"
+   },
+   {
+    "dosya": "/img/sehir/valletta-2.jpg",
+    "kucuk": "/img/sehir/valletta-2-640.jpg",
+    "alt": "Valletta kıyısı ve tarihi surlar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/17594841/"
+   }
+  ],
+  "atina": [
+   {
+    "dosya": "/img/sehir/atina-2.jpg",
+    "kucuk": "/img/sehir/atina-2-640.jpg",
+    "alt": "Atina, Akropolis'teki Parthenon",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/38439017/"
+   },
+   {
+    "dosya": "/img/sehir/atina-1.jpg",
+    "kucuk": "/img/sehir/atina-1-640.jpg",
+    "alt": "Atina, Akropolis ve şehir",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/15670565/"
+   }
+  ],
+  "stokholm": [
+   {
+    "dosya": "/img/sehir/stokholm-1.jpg",
+    "kucuk": "/img/sehir/stokholm-1-640.jpg",
+    "alt": "Stokholm, Gamla Stan silueti",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/29327554/"
+   },
+   {
+    "dosya": "/img/sehir/stokholm-2.jpg",
+    "kucuk": "/img/sehir/stokholm-2-640.jpg",
+    "alt": "Stokholm, suya yansıyan tarihi binalar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/30158443/"
+   }
+  ],
+  "kopenhag": [
+   {
+    "dosya": "/img/sehir/kopenhag-1.jpg",
+    "kucuk": "/img/sehir/kopenhag-1-640.jpg",
+    "alt": "Kopenhag, Nyhavn kanalı ve renkli evler",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/14625752/"
+   },
+   {
+    "dosya": "/img/sehir/kopenhag-2.jpg",
+    "kucuk": "/img/sehir/kopenhag-2-640.jpg",
+    "alt": "Kopenhag, akşam Nyhavn",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/16716379/"
+   }
+  ],
+  "helsinki": [
+   {
+    "dosya": "/img/sehir/helsinki-1.jpg",
+    "kucuk": "/img/sehir/helsinki-1-640.jpg",
+    "alt": "Helsinki, dönme dolap ve Katedral, liman",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/19337103/"
+   },
+   {
+    "dosya": "/img/sehir/helsinki-2.jpg",
+    "kucuk": "/img/sehir/helsinki-2-640.jpg",
+    "alt": "Helsinki sokağı ve uzakta Katedral",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/6407025/"
+   }
+  ],
+  "tallinn": [
+   {
+    "dosya": "/img/sehir/tallinn-1.jpg",
+    "kucuk": "/img/sehir/tallinn-1-640.jpg",
+    "alt": "Tallinn, ortaçağ kuleleri",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/36177625/"
+   },
+   {
+    "dosya": "/img/sehir/tallinn-2.jpg",
+    "kucuk": "/img/sehir/tallinn-2-640.jpg",
+    "alt": "Tallinn Eski Şehir çatıları",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/35838020/"
+   }
+  ],
+  "riga": [
+   {
+    "dosya": "/img/sehir/riga-1.jpg",
+    "kucuk": "/img/sehir/riga-1-640.jpg",
+    "alt": "Riga Eski Şehir'de tarihi mimari",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/37526831/"
+   },
+   {
+    "dosya": "/img/sehir/riga-2.jpg",
+    "kucuk": "/img/sehir/riga-2-640.jpg",
+    "alt": "Riga Eski Şehir'de bir sokak",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/20589962/"
+   }
+  ],
+  "vilnius": [
+   {
+    "dosya": "/img/sehir/vilnius-1.jpg",
+    "kucuk": "/img/sehir/vilnius-1-640.jpg",
+    "alt": "Vilnius Eski Şehir'de bir sokak ve kilise kulesi",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/37527043/"
+   },
+   {
+    "dosya": "/img/sehir/vilnius-2.jpg",
+    "kucuk": "/img/sehir/vilnius-2-640.jpg",
+    "alt": "Vilnius Eski Şehir, kış",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/15788174/"
+   }
+  ],
+  "varsova": [
+   {
+    "dosya": "/img/sehir/varsova-1.jpg",
+    "kucuk": "/img/sehir/varsova-1-640.jpg",
+    "alt": "Varşova Eski Şehir Meydanı",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/39633034/"
+   },
+   {
+    "dosya": "/img/sehir/varsova-2.jpg",
+    "kucuk": "/img/sehir/varsova-2-640.jpg",
+    "alt": "Varşova Eski Şehir, gece",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/59601/"
+   }
+  ],
+  "bratislava": [
+   {
+    "dosya": "/img/sehir/bratislava-1.jpg",
+    "kucuk": "/img/sehir/bratislava-1-640.jpg",
+    "alt": "Bratislava, Aziz Martin Katedrali ve şehir",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/38713618/"
+   },
+   {
+    "dosya": "/img/sehir/bratislava-2.jpg",
+    "kucuk": "/img/sehir/bratislava-2-640.jpg",
+    "alt": "Bratislava tarihi merkezde bir sokak",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/38719619/"
+   }
+  ],
+  "ljubljana": [
+   {
+    "dosya": "/img/sehir/ljubljana-1.jpg",
+    "kucuk": "/img/sehir/ljubljana-1-640.jpg",
+    "alt": "Ljubljana, Üçlü Köprü ve Fransisken Kilisesi",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/25053927/"
+   },
+   {
+    "dosya": "/img/sehir/ljubljana-2.jpg",
+    "kucuk": "/img/sehir/ljubljana-2-640.jpg",
+    "alt": "Ljubljana şehir manzarası",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/33275578/"
+   }
+  ],
+  "zagreb": [
+   {
+    "dosya": "/img/sehir/zagreb-1.jpg",
+    "kucuk": "/img/sehir/zagreb-1-640.jpg",
+    "alt": "Zagreb, mavi tramvay ve yayalar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/30590747/"
+   },
+   {
+    "dosya": "/img/sehir/zagreb-2.jpg",
+    "kucuk": "/img/sehir/zagreb-2-640.jpg",
+    "alt": "Zagreb şehir manzarası",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/27401067/"
+   }
+  ],
+  "bukres": [
+   {
+    "dosya": "/img/sehir/bukres-1.jpg",
+    "kucuk": "/img/sehir/bukres-1-640.jpg",
+    "alt": "Bükreş, Dâmbovița nehri kıyısında tarihi binalar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/27362959/"
+   },
+   {
+    "dosya": "/img/sehir/bukres-2.jpg",
+    "kucuk": "/img/sehir/bukres-2-640.jpg",
+    "alt": "Bükreş, gün batımında şehir",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/36872800/"
+   }
+  ],
+  "sofya": [
+   {
+    "dosya": "/img/sehir/sofya-1.jpg",
+    "kucuk": "/img/sehir/sofya-1-640.jpg",
+    "alt": "Sofya, Aleksandr Nevski Katedrali",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/19097309/"
+   },
+   {
+    "dosya": "/img/sehir/sofya-2.jpg",
+    "kucuk": "/img/sehir/sofya-2-640.jpg",
+    "alt": "Sofya'da bir sokak ve çiçekçi",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://www.pexels.com/photo/36902671/"
    }
   ]
  }

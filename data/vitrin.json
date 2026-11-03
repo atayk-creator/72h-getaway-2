@@ -6,7 +6,14 @@
   "Dublin": {
    "slug": "dublin",
    "ulke": "İrlanda",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/dublin-2.jpg",
+     "kucuk": "/img/sehir/dublin-2-640.jpg",
+     "alt": "Dublin, akşam ışığında Liffey nehri rıhtımları",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 930,
    "enUcuz": {
     "g": "2027-01-15",
@@ -251,7 +258,20 @@
   "Brüksel": {
    "slug": "bruksel",
    "ulke": "Belçika",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/bruksel-1.jpg",
+     "kucuk": "/img/sehir/bruksel-1-640.jpg",
+     "alt": "Brüksel, Grand Place'taki tarihi binalar",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/bruksel-2.jpg",
+     "kucuk": "/img/sehir/bruksel-2-640.jpg",
+     "alt": "Brüksel Belediye Binası ve Noel ağacı, Grand Place",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 633,
    "enUcuz": {
     "g": "2027-01-22",
@@ -490,7 +510,20 @@
   "Lüksemburg": {
    "slug": "luksemburg",
    "ulke": "Lüksemburg",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/luksemburg-1.jpg",
+     "kucuk": "/img/sehir/luksemburg-1-640.jpg",
+     "alt": "Lüksemburg şehri, tarihi surlar ve siluet",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/luksemburg-2.jpg",
+     "kucuk": "/img/sehir/luksemburg-2-640.jpg",
+     "alt": "Lüksemburg şehir merkezinde tarihi binalar",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 878,
    "enUcuz": {
     "g": "2027-01-15",
@@ -606,7 +639,20 @@
   "Berlin": {
    "slug": "berlin",
    "ulke": "Almanya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/berlin-1.jpg",
+     "kucuk": "/img/sehir/berlin-1-640.jpg",
+     "alt": "Berlin, Spree nehrine yansıyan TV Kulesi, gece",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/berlin-2.jpg",
+     "kucuk": "/img/sehir/berlin-2-640.jpg",
+     "alt": "Berlin Katedrali ve şehir ışıkları, gece",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 583,
    "enUcuz": {
     "g": "2027-01-15",
@@ -851,7 +897,20 @@
   "Madrid": {
    "slug": "madrid",
    "ulke": "İspanya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/madrid-1.jpg",
+     "kucuk": "/img/sehir/madrid-1-640.jpg",
+     "alt": "Madrid silueti, gün batımı",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/madrid-2.jpg",
+     "kucuk": "/img/sehir/madrid-2-640.jpg",
+     "alt": "Madrid'de tarihi binalarla dolu bir cadde",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 890,
    "enUcuz": {
     "g": "2027-01-15",
@@ -967,7 +1026,20 @@
   "Lizbon": {
    "slug": "lizbon",
    "ulke": "Portekiz",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/lizbon-1.jpg",
+     "kucuk": "/img/sehir/lizbon-1-640.jpg",
+     "alt": "Lizbon'un renkli sokaklarında sarı tramvay",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/lizbon-2.jpg",
+     "kucuk": "/img/sehir/lizbon-2-640.jpg",
+     "alt": "Lizbon'da tramvaylı klasik bir sokak",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 865,
    "enUcuz": {
     "g": "2027-01-22",
@@ -1083,7 +1155,20 @@
   "Roma": {
    "slug": "roma",
    "ulke": "İtalya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/roma-1.jpg",
+     "kucuk": "/img/sehir/roma-1-640.jpg",
+     "alt": "Roma, Forum Romanum kalıntıları",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/roma-2.jpg",
+     "kucuk": "/img/sehir/roma-2-640.jpg",
+     "alt": "Roma'nın tarihi merkezinde bir sokak",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 923,
    "enUcuz": {
     "g": "2027-01-15",
@@ -1199,7 +1284,20 @@
   "Valletta": {
    "slug": "valletta",
    "ulke": "Malta",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/valletta-1.jpg",
+     "kucuk": "/img/sehir/valletta-1-640.jpg",
+     "alt": "Valletta, tekneler ve kubbeli silüet",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/valletta-2.jpg",
+     "kucuk": "/img/sehir/valletta-2-640.jpg",
+     "alt": "Valletta kıyısı ve tarihi surlar",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 691,
    "enUcuz": {
     "g": "2027-01-15",
@@ -1315,7 +1413,20 @@
   "Atina": {
    "slug": "atina",
    "ulke": "Yunanistan",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/atina-2.jpg",
+     "kucuk": "/img/sehir/atina-2-640.jpg",
+     "alt": "Atina, Akropolis'teki Parthenon",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/atina-1.jpg",
+     "kucuk": "/img/sehir/atina-1-640.jpg",
+     "alt": "Atina, Akropolis ve şehir",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 523,
    "enUcuz": {
     "g": "2027-01-22",
@@ -1431,7 +1542,20 @@
   "Stokholm": {
    "slug": "stokholm",
    "ulke": "İsveç",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/stokholm-1.jpg",
+     "kucuk": "/img/sehir/stokholm-1-640.jpg",
+     "alt": "Stokholm, Gamla Stan silueti",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/stokholm-2.jpg",
+     "kucuk": "/img/sehir/stokholm-2-640.jpg",
+     "alt": "Stokholm, suya yansıyan tarihi binalar",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 713,
    "enUcuz": {
     "g": "2027-01-22",
@@ -1547,7 +1671,20 @@
   "Kopenhag": {
    "slug": "kopenhag",
    "ulke": "Danimarka",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/kopenhag-1.jpg",
+     "kucuk": "/img/sehir/kopenhag-1-640.jpg",
+     "alt": "Kopenhag, Nyhavn kanalı ve renkli evler",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/kopenhag-2.jpg",
+     "kucuk": "/img/sehir/kopenhag-2-640.jpg",
+     "alt": "Kopenhag, akşam Nyhavn",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 715,
    "enUcuz": {
     "g": "2027-01-08",
@@ -1663,7 +1800,20 @@
   "Helsinki": {
    "slug": "helsinki",
    "ulke": "Finlandiya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/helsinki-1.jpg",
+     "kucuk": "/img/sehir/helsinki-1-640.jpg",
+     "alt": "Helsinki, dönme dolap ve Katedral, liman",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/helsinki-2.jpg",
+     "kucuk": "/img/sehir/helsinki-2-640.jpg",
+     "alt": "Helsinki sokağı ve uzakta Katedral",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 780,
    "enUcuz": {
     "g": "2027-01-15",
@@ -1779,7 +1929,20 @@
   "Tallinn": {
    "slug": "tallinn",
    "ulke": "Estonya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/tallinn-1.jpg",
+     "kucuk": "/img/sehir/tallinn-1-640.jpg",
+     "alt": "Tallinn, ortaçağ kuleleri",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/tallinn-2.jpg",
+     "kucuk": "/img/sehir/tallinn-2-640.jpg",
+     "alt": "Tallinn Eski Şehir çatıları",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 712,
    "enUcuz": {
     "g": "2027-01-22",
@@ -1895,7 +2058,20 @@
   "Riga": {
    "slug": "riga",
    "ulke": "Letonya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/riga-1.jpg",
+     "kucuk": "/img/sehir/riga-1-640.jpg",
+     "alt": "Riga Eski Şehir'de tarihi mimari",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/riga-2.jpg",
+     "kucuk": "/img/sehir/riga-2-640.jpg",
+     "alt": "Riga Eski Şehir'de bir sokak",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 656,
    "enUcuz": {
     "g": "2027-01-15",
@@ -2011,7 +2187,20 @@
   "Vilnius": {
    "slug": "vilnius",
    "ulke": "Litvanya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/vilnius-1.jpg",
+     "kucuk": "/img/sehir/vilnius-1-640.jpg",
+     "alt": "Vilnius Eski Şehir'de bir sokak ve kilise kulesi",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/vilnius-2.jpg",
+     "kucuk": "/img/sehir/vilnius-2-640.jpg",
+     "alt": "Vilnius Eski Şehir, kış",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 611,
    "enUcuz": {
     "g": "2027-01-15",
@@ -2127,7 +2316,20 @@
   "Varşova": {
    "slug": "varsova",
    "ulke": "Polonya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/varsova-1.jpg",
+     "kucuk": "/img/sehir/varsova-1-640.jpg",
+     "alt": "Varşova Eski Şehir Meydanı",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/varsova-2.jpg",
+     "kucuk": "/img/sehir/varsova-2-640.jpg",
+     "alt": "Varşova Eski Şehir, gece",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 698,
    "enUcuz": {
     "g": "2027-01-22",
@@ -2372,7 +2574,20 @@
   "Bratislava": {
    "slug": "bratislava",
    "ulke": "Slovakya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/bratislava-1.jpg",
+     "kucuk": "/img/sehir/bratislava-1-640.jpg",
+     "alt": "Bratislava, Aziz Martin Katedrali ve şehir",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/bratislava-2.jpg",
+     "kucuk": "/img/sehir/bratislava-2-640.jpg",
+     "alt": "Bratislava tarihi merkezde bir sokak",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 605,
    "enUcuz": {
     "g": "2027-01-15",
@@ -2617,7 +2832,20 @@
   "Ljubljana": {
    "slug": "ljubljana",
    "ulke": "Slovenya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/ljubljana-1.jpg",
+     "kucuk": "/img/sehir/ljubljana-1-640.jpg",
+     "alt": "Ljubljana, Üçlü Köprü ve Fransisken Kilisesi",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/ljubljana-2.jpg",
+     "kucuk": "/img/sehir/ljubljana-2-640.jpg",
+     "alt": "Ljubljana şehir manzarası",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 669,
    "enUcuz": {
     "g": "2026-11-06",
@@ -2733,7 +2961,20 @@
   "Zagreb": {
    "slug": "zagreb",
    "ulke": "Hırvatistan",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/zagreb-1.jpg",
+     "kucuk": "/img/sehir/zagreb-1-640.jpg",
+     "alt": "Zagreb, mavi tramvay ve yayalar",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/zagreb-2.jpg",
+     "kucuk": "/img/sehir/zagreb-2-640.jpg",
+     "alt": "Zagreb şehir manzarası",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 694,
    "enUcuz": {
     "g": "2027-01-15",
@@ -2849,7 +3090,20 @@
   "Bükreş": {
    "slug": "bukres",
    "ulke": "Romanya",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/bukres-1.jpg",
+     "kucuk": "/img/sehir/bukres-1-640.jpg",
+     "alt": "Bükreş, Dâmbovița nehri kıyısında tarihi binalar",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/bukres-2.jpg",
+     "kucuk": "/img/sehir/bukres-2-640.jpg",
+     "alt": "Bükreş, gün batımında şehir",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 513,
    "enUcuz": {
     "g": "2027-01-22",
@@ -2965,7 +3219,20 @@
   "Sofya": {
    "slug": "sofya",
    "ulke": "Bulgaristan",
-   "fotolar": [],
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/sofya-1.jpg",
+     "kucuk": "/img/sehir/sofya-1-640.jpg",
+     "alt": "Sofya, Aleksandr Nevski Katedrali",
+     "kaynak": "Pexels"
+    },
+    {
+     "dosya": "/img/sehir/sofya-2.jpg",
+     "kucuk": "/img/sehir/sofya-2-640.jpg",
+     "alt": "Sofya'da bir sokak ve çiçekçi",
+     "kaynak": "Pexels"
+    }
+   ],
    "normal": 449,
    "enUcuz": {
     "g": "2026-12-11",
