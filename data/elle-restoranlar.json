@@ -18,12 +18,12 @@
     {"ad": "The Seafood Bar", "arama": "The Seafood Bar Ferdinand Bolstraat Amsterdam", "tur": "Deniz ürünleri", "yedek_fiyat": 40, "not": "De Visscher ailesinin restoranı; iki kişilik karışık ızgara tabağı"},
     {"ad": "Fikissimo", "arama": "Fikissimo Amsterdam", "tur": "Akdeniz / İtalyan", "yedek_fiyat": 35, "not": "Oud-West'te çatı terası, helal menü seçeneği"},
     {"ad": "The Siren", "arama": "The SIREN Restaurant & Bar Rokin Amsterdam", "tur": "Lüks / gösteri", "yedek_fiyat": 80, "not": "Rokin'de barok dekor, dev deniz kızı heykeli; menü fiyatını teyit et"},
-    {"ad": "Maoz Falafel", "arama": "Maoz Falafel Amsterdam", "tur": "Falafel / sokak lezzeti", "yedek_fiyat": 6, "not": "Hızlı ve ucuz falafel, salata barından sınırsız ekleme"},
-    {"ad": "Bagels Village", "arama": "Bagels Village Amsterdam", "tur": "Kahvaltı / bagel", "yedek_fiyat": 15, "not": "Google puanı 4,8; kahvaltı ve brunch için sevilen bagel dükkânı"},
-    {"ad": "El Pimpi Tapas", "arama": "El Pimpi Tapas Amsterdam", "tur": "Tapas", "yedek_fiyat": 40, "not": "Paylaşmalık İspanyol tapasları, akşam yemeği için"},
-    {"ad": "Restaurant De Belhamel", "arama": "Restaurant De Belhamel Amsterdam", "tur": "Fransız / romantik", "yedek_fiyat": 65, "seviye": "populer", "not": "Art nouveau dekor, iki kanala bakan manzara; Amsterdam'ın en romantik restoranlarından"},
-    {"ad": "Restaurant Watergang", "arama": "Restaurant Watergang Amsterdam", "tur": "Gurme", "yedek_fiyat": 130, "not": "Gurme tadım menüsü, Google puanı 4,9"},
-    {"ad": "Restaurant 21 (R21)", "arama": "Restaurant 21 R21 Amsterdam", "tur": "Modern Avrupa / gurme", "yedek_fiyat": 130, "not": "Modern Avrupa mutfağı, lüks akşam yemeği"}
+    {"ad": "Fabel Friet", "arama": "Fabel Friet Amsterdam", "tur": "Patates kızartması / sokak lezzeti", "yedek_fiyat": 6, "not": "İki blogun da önerisi: iki aşamada pişen patates, trüflü mayonez ve parmesanla; oturacak yer yok"},
+    {"ad": "Van Stapele", "arama": "Van Stapele Koekmakerij Amsterdam", "tur": "Kurabiye", "yedek_fiyat": 4, "not": "Tek çeşit viral çikolatalı kurabiye; kuyruk hızlı ilerler, bitince dükkân kapanır"},
+    {"ad": "Lanskroon", "arama": "Lanskroon Singel Amsterdam", "tur": "Stroopwafel / pastane", "yedek_fiyat": 5, "not": "110 yılı aşkın stroopwafel dükkânı, ailenin dördüncü kuşağı işletiyor"},
+    {"ad": "Little Collins", "arama": "Little Collins Amsterdam De Pijp", "tur": "Kahvaltı / brunch", "yedek_fiyat": 20, "not": "OitheBlog'un kahvaltı favorisi, De Pijp'te"},
+    {"ad": "Saint-Jean", "arama": "Saint-Jean bakery Amsterdam", "tur": "Fırın / kafe", "yedek_fiyat": 10, "not": "Fırın-kafe favorisi; Antep fıstıklı cruffin'i mutlaka dene"},
+    {"ad": "De Tros", "arama": "Buurtcafé De Tros Amsterdam", "tur": "Mahalle kafesi / akşam yemeği", "yedek_fiyat": 30, "not": "İki blogun ortak önerisi; OitheBlog'un en sevdiği akşam yemeği"}
    ]
   }
  }
