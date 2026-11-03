@@ -1696,7 +1696,7 @@ footer { margin-top: 26px; font-size: 0.82rem; color: var(--muted); max-width: 7
   function renderRestos(c) {
     var rs = restosOf(c), g = $("rgrid"), sl = g.scrollLeft; g.innerHTML = ""; $("rcCity").textContent = c.n; $("rCount").textContent = rs.length;
     var live = !!liveRestos(c);
-    $("rLead").innerHTML = (visits === 0 ? "Şu an <b>Hiç</b> seçili, bu yüzden restoran bütçeye eklenmiyor. Yukarıdan öğün sayısını artır." : live ? "Merkezde, Google'da yüksek puanlı 2 uygun, 2 popüler ve 2 lüks restoran. Birine dokun, bütçe güncellensin." : "Ucuz, orta ve şık. Birine dokun, bütçe o restorana göre güncellensin.") +
+    $("rLead").innerHTML = (visits === 0 ? "Şu an <b>Hiç</b> seçili, bu yüzden restoran bütçeye eklenmiyor. Yukarıdan öğün sayısını artır." : live ? (RESTO && RESTO.sehirler && RESTO.sehirler[c.n] && RESTO.sehirler[c.n].sadeceElle ? "Bizim seçtiğimiz " + rs.length + " mekân: kahve ve tatlıdan brunch'a, makarnadan lükse. Fiyatlar Google kullanıcılarının bildirdiği kişi başı aralıktan. Birine dokun, bütçe güncellensin." : "Merkezde, Google'da yüksek puanlı 2 uygun, 2 popüler ve 2 lüks restoran. Birine dokun, bütçe güncellensin.") : "Ucuz, orta ve şık. Birine dokun, bütçe o restorana göre güncellensin.") +
       ' <a href="https://www.tiktok.com/search?q=' + encodeURIComponent(c.n + " restaurants") + '" target="_blank" rel="noopener noreferrer">TikTok\'ta ' + c.n + ' yemek önerilerine bak ↗</a>';
     rs.forEach(function (r, i) {
       var q = r.q || ("popular viral restaurants in " + c.n + " " + c.c), lab = document.createElement("label");
