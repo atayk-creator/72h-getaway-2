@@ -586,13 +586,38 @@
    ]
   },
   "Amsterdam": {
-   "guncellendi": "2026-11-03T11:53:01.846Z",
+   "guncellendi": "2026-11-03T16:30:30.809Z",
    "esik": {
     "uygun": 15,
     "luks": 130
    },
    "aday": 54,
    "restoranlar": [
+    {
+     "id": "ChIJvZcQ7YUJxkcRPivLFwWt5M8",
+     "ad": "Lera",
+     "googleAd": "LERA — Matcha",
+     "mutfak": "Coffee store",
+     "mutfakTr": "Matcha kafe",
+     "puan": 4.2,
+     "yorum": 433,
+     "fiyatYazi": "€1–10",
+     "kisiBasiEur": 5.5,
+     "fiyatKaynagi": "google",
+     "artiFiyat": false,
+     "semt": "Amsterdam-Zuid",
+     "konum": [
+      52.35243,
+      4.89105
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=LERA%20%E2%80%94%20Matcha&query_place_id=ChIJvZcQ7YUJxkcRPivLFwWt5M8",
+     "web": "https://www.leramatcha.com/",
+     "rezervasyon": null,
+     "seviye": "uygun",
+     "kilit": true,
+     "elle": true,
+     "not": "De Pijp'te minimalist matcha kafesi"
+    },
     {
      "id": "ChIJi73HWLkJxkcRHeSlxUs0aXs",
      "ad": "Skina",
@@ -619,29 +644,29 @@
      "not": "Ube köpüklü mangolu matcha; hafta içi 08:00–17:00 açık"
     },
     {
-     "id": "ChIJvZcQ7YUJxkcRPivLFwWt5M8",
-     "ad": "Lera",
-     "googleAd": "LERA — Matcha",
-     "mutfak": "Coffee store",
-     "mutfakTr": "Matcha kafe",
-     "puan": 4.2,
-     "yorum": 433,
-     "fiyatYazi": "~8 €",
-     "kisiBasiEur": 8,
-     "fiyatKaynagi": "tahmini",
+     "id": "ChIJ5ZGwJsYJxkcR02JefqKfEyM",
+     "ad": "Stubbe's Haring",
+     "googleAd": "Stubbe's Haring",
+     "mutfak": "Fish restaurant",
+     "mutfakTr": "Ringa balığı / sokak lezzeti",
+     "puan": 4.5,
+     "yorum": 1290,
+     "fiyatYazi": "€1–10",
+     "kisiBasiEur": 5.5,
+     "fiyatKaynagi": "google",
      "artiFiyat": false,
-     "semt": "Amsterdam-Zuid",
+     "semt": "Amsterdam-Centrum",
      "konum": [
-      52.35243,
-      4.89105
+      52.37909,
+      4.89422
      ],
-     "url": "https://www.google.com/maps/search/?api=1&query=LERA%20%E2%80%94%20Matcha&query_place_id=ChIJvZcQ7YUJxkcRPivLFwWt5M8",
-     "web": "https://www.leramatcha.com/",
+     "url": "https://www.google.com/maps/search/?api=1&query=Stubbe's%20Haring&query_place_id=ChIJ5ZGwJsYJxkcR02JefqKfEyM",
+     "web": "https://m.facebook.com/pages/Stubbes-Haring/480492398652703",
      "rezervasyon": null,
      "seviye": "uygun",
      "kilit": true,
      "elle": true,
-     "not": "De Pijp'te minimalist matcha kafesi"
+     "not": "Ringa balığını denemek için en iyi adreslerden; Hollandalılar kuyruğundan tutup yiyor (~4 €)"
     },
     {
      "id": "ChIJd_yDtNAJxkcRko3UnBeygWA",
@@ -700,7 +725,7 @@
      "mutfak": "Cafe",
      "mutfakTr": "Elmalı turta / kafe",
      "puan": 4.5,
-     "yorum": 16884,
+     "yorum": 16887,
      "fiyatYazi": "€10–20",
      "kisiBasiEur": 15,
      "fiyatKaynagi": "google",
@@ -717,31 +742,6 @@
      "kilit": true,
      "elle": true,
      "not": "Amsterdam'ın en ünlü elmalı turtası (dilimi 5–7 €); kuyruğa girme, içeri gir"
-    },
-    {
-     "id": "ChIJQ348HcYJxkcRqF6SSJpupnM",
-     "ad": "Harry's Pasta Bar",
-     "googleAd": "Harry's Pasta Bar",
-     "mutfak": "Italian restaurant",
-     "mutfakTr": "Makarna",
-     "puan": 4.1,
-     "yorum": 797,
-     "fiyatYazi": "€10–20",
-     "kisiBasiEur": 15,
-     "fiyatKaynagi": "google",
-     "artiFiyat": false,
-     "semt": "Amsterdam-Centrum",
-     "konum": [
-      52.37137,
-      4.89758
-     ],
-     "url": "https://www.google.com/maps/search/?api=1&query=Harry's%20Pasta%20Bar&query_place_id=ChIJQ348HcYJxkcRqF6SSJpupnM",
-     "web": "http://harrysamsterdam.nl/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/7lBp4tZoSKo?source=pa,gmm&opi=79508299&hl=en-US&gei=PMvpap7FK5KmruEPjLPAwAY&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DHarry's%2BPasta%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
-     "seviye": "uygun",
-     "kilit": true,
-     "elle": true,
-     "not": "Merkezde alkolsüz makarna barı, rezervasyonsuz"
     },
     {
      "id": "ChIJMzljdaEJxkcRYdL4KJKZR0A",
@@ -862,7 +862,7 @@
      ],
      "url": "https://www.google.com/maps/search/?api=1&query=Fikissimo&query_place_id=ChIJR0r8GUAJxkcR4VtqoK1-y34",
      "web": "https://www.fikissimoamsterdam.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4XK_z8bM0zQ?source=pa,gmm&opi=79508299&hl=en-US&gei=S8vpat05rubJyQ_kyKNg&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DFikissimo%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4XK_z8bM0zQ?source=pa,gmm&opi=79508299&hl=en-US&gei=VAzqataRIbbxkPIPjs6hoA4&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DFikissimo%26hl%3Den-US&oiwv=1&allowGuest=1",
      "seviye": "populer",
      "kilit": true,
      "elle": true,
@@ -887,7 +887,7 @@
      ],
      "url": "https://www.google.com/maps/search/?api=1&query=The%20Seafood%20Bar&query_place_id=ChIJw6roY-0JxkcR4kx59nXldmY",
      "web": "https://www.theseafoodbar.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/CnsvPXKgsuk?source=pa,gmm&opi=79508299&hl=en-US&gei=ScvpapX2O8zlyckPp6PDyQc&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSeafood%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/CnsvPXKgsuk?source=pa,gmm&opi=79508299&hl=en-US&gei=ZAzqavilNsWBgLQPktKp0Q4&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSeafood%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
      "seviye": "populer",
      "kilit": true,
      "elle": true,
@@ -900,7 +900,7 @@
      "mutfak": "Restaurant",
      "mutfakTr": "Lüks / gösteri",
      "puan": 4.6,
-     "yorum": 1305,
+     "yorum": 1304,
      "fiyatYazi": "€100+",
      "kisiBasiEur": 130,
      "fiyatKaynagi": "google",
@@ -912,7 +912,7 @@
      ],
      "url": "https://www.google.com/maps/search/?api=1&query=The%20SIREN%20Restaurant%20%26%20Bar&query_place_id=ChIJGZtKPJwJxkcRBY8QI6tYSO4",
      "web": "https://www.thesirenamsterdam.com/",
-     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4IP7bpi0n5U?source=pa,gmm&opi=79508299&hl=en-US&gei=T8vpasTgH4zrmLQPl9CksQY&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSIREN%2BRestaurant%2B%2526%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
+     "rezervasyon": "https://www.google.com/maps/reserve/v/dine/c/4IP7bpi0n5U?source=pa,gmm&opi=79508299&hl=en-US&gei=WAzqau_ILLKLruEPwoL6iAs&sourceurl=https://www.google.com/service/MapsPlaceService/GetPlace?q%3DThe%2BSIREN%2BRestaurant%2B%2526%2BBar%26hl%3Den-US&oiwv=1&allowGuest=1",
      "seviye": "luks",
      "kilit": true,
      "elle": true,
