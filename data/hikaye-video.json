@@ -1,0 +1,10 @@
+{
+ "aciklama": "Ana sayfadaki şehir hikâyesinde, telefonda fotoğraf yerine oynayan sessiz 6 saniyelik döngüler. Kaynak: Alper'in (viral videocu) videolarında kullandığı Pexels stok çekimleri, ücretsiz ve ticari kullanıma açık. Dosyalar video/hikaye/<slug>.mp4 (720x1280, sessiz, ~0,5-0,8 MB). Yeni şehir eklemek için dosyayı koyup buraya bir satır ekle.",
+ "sehirler": {
+  "Amsterdam": {"dosya": "/video/hikaye/amsterdam.mp4", "kaynak": "Pexels", "url": "https://www.pexels.com/video/40261965/", "alt": "Amsterdam kanalında gün batımında tekne"},
+  "Budapeşte": {"dosya": "/video/hikaye/budapeste.mp4", "kaynak": "Pexels", "alt": "Budapeşte Parlamentosu gece Tuna'ya yansıyor"},
+  "Viyana": {"dosya": "/video/hikaye/viyana.mp4", "kaynak": "Pexels", "alt": "Viyana belediye binası önünde Noel pazarı"},
+  "Paris": {"dosya": "/video/hikaye/paris.mp4", "kaynak": "Pexels", "url": "https://www.pexels.com/video/40692425/", "alt": "Paris, Eyfel Kulesi ve Sen nehrinde tekne"},
+  "Prag": {"dosya": "/video/hikaye/prag.mp4", "kaynak": "Pexels", "url": "https://www.pexels.com/video/34914799/", "alt": "Prag, Vltava nehri ve kale manzarası"}
+ }
+}

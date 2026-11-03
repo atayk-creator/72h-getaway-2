@@ -4,7 +4,7 @@
 // - Diğer dosyalar (ikon, manifest...): önce önbellek, arkada tazele (stale-while-revalidate).
 // Önbellek anahtarı adresin sorgu kısmı (?t=..., ?sehir=...) atılmış hâlidir: her yol için tek kayıt,
 // böylece ?t= zaman damgalı veri istekleri önbelleği sınırsız büyütmez.
-const CACHE = "72h-v8";
+const CACHE = "72h-v9";
 const SHELL = ["/", "/oteller.html", "/hakkinda.html", "/404.html", "/manifest.webmanifest", "/favicon.ico", "/js/olcum.js", "/img/icon-192.png", "/img/icon-512.png"];
 
 function key(input) {
@@ -58,6 +58,8 @@ self.addEventListener("fetch", (e) => {
   if (req.method !== "GET") return;
   const u = new URL(req.url);
   if (u.origin !== location.origin) return;
+  // Videolar önbelleğe alınmaz: parça parça (Range) istenir, Safari 206 yanıtı bekler
+  if (req.headers.has("range") || /\.(mp4|webm|m4v)$/i.test(u.pathname)) return;
   if (isData(u)) e.respondWith(networkFirst(req, false));
   else if (isPage(req, u)) e.respondWith(networkFirst(req, true));
   else e.respondWith(staleWhileRevalidate(req, e));

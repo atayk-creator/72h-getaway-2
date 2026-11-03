@@ -387,7 +387,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 .ov-x { width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(15,42,67,0.7); color: #FBF6EC; font: 700 0.95rem/1 inherit; cursor: pointer; display: grid; place-items: center; }
 .story button:focus-visible { outline: 3px solid #F4A62A; outline-offset: 2px; }
 .st-ph, .st-ph img, .st-ph .fb { position: absolute; inset: 0; width: 100%; height: 100%; }
-.st-ph img { object-fit: cover; display: block; }
+.st-ph img, .st-ph video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .st-ph .fb { background: radial-gradient(circle, rgba(244,166,42,0.35) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
 .st-ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(10,31,51,0.55), transparent 22%, transparent 42%, rgba(10,31,51,0.93) 80%); }
 .st-bars { position: absolute; left: 12px; right: 12px; top: 10px; display: flex; gap: 4px; z-index: 2; }
@@ -807,7 +807,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 </main>
 
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json"; window.VITRIN_URL = "data/vitrin.json"; window.ONERI_URL = "data/oneriler.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json"; window.VITRIN_URL = "data/vitrin.json"; window.ONERI_URL = "data/oneriler.json"; window.STVIDEO_URL = "data/hikaye-video.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -2053,10 +2053,11 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   function stPick() {
     var o = lastO || inputs(), v = vList(o); if (!v) return null;
-    var pool = v.list.filter(function (x) { return x.t != null; }).sort(function (a, b) { return a.n.localeCompare(b.n, "tr"); });
-    if (!pool.length) return null;
-    var per = stPeriod(), n = pool.length, k = Math.min(6, n), start = (per.p * 6) % n, out = [];
-    for (var j = 0; j < k; j++) out.push(pool[(start + j) % n]);
+    // Sıra fiyattan bağımsız: 26 şehir alfabetik, her dönem 6 adım ilerler; fiyatı olmayan şehir atlanır
+    var pool = v.list.slice().sort(function (a, b) { return a.n.localeCompare(b.n, "tr"); });
+    if (!pool.some(function (x) { return x.t != null; })) return null;
+    var per = stPeriod(), n = pool.length, start = (per.p * 6) % n, out = [];
+    for (var j = 0; j < n && out.length < 6; j++) { var x = pool[(start + j) % n]; if (x.t != null) out.push(x); }
     out.sort(function (a, b) { return a.t - b.t; });
     return { g: v.g, list: out, next: per.next };
   }
@@ -2078,7 +2079,9 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     if (!ST.list || !ST.list.length) return;
     var n = ST.list.length; ST.k = ((k % n) + n) % n;
     var x = ST.list[ST.k], f = (x.c.fotolar || [])[0], s = flySon(ST.g, x.n);
-    $("stPh").innerHTML = f ? sizeFix(vImg(f, true), "(max-width: 1040px) 100vw, 1040px") : '<span class="fb"></span>';
+    $("stPh").innerHTML = (f ? sizeFix(vImg(f, true), "(max-width: 1040px) 100vw, 1040px") : '<span class="fb"></span>') + stVideoHtml(x.n);
+    var vid = $("stPh").querySelector("video");
+    if (vid) { vid.addEventListener("playing", function () { vid.style.opacity = "1"; }); stVideoSync(); }
     var bars = $("stBars").children;
     for (var j = 0; j < bars.length; j++) bars[j].className = j < ST.k ? "done" : "";
     void $("stBars").offsetWidth; bars[ST.k].className = "cur";
@@ -2094,11 +2097,26 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       '<div class="st-pr"><b>~' + tl(x.t) + "</b><span>kişi başı · uçak + konforlu otel</span></div>" +
       (chips.length ? '<div class="st-chips">' + chips.map(function (c) { return "<span>" + escH(c) + "</span>"; }).join("") + "</div>" : "") +
       '<button type="button" class="st-cta" id="stCta">' + escH(x.n) + " takvimi ve önerileri</button>" +
-      (f && f.kaynak ? '<span class="st-cr">Fotoğraf: ' + escH(f.kaynak) + "</span>" : "");
+      (f && f.kaynak ? '<span class="st-cr">Görüntü: ' + escH(f.kaynak) + "</span>" : "");
     $("stCta").addEventListener("click", stOpenCity);
   }
+  // Telefonda (dar ekran) hikâyede sessiz video döngüsü; geniş ekranda, hareket azaltmada ve veri tasarrufunda fotoğraf
+  var STV = null;
+  function stVideoOk() {
+    var nc = navigator.connection;
+    return !reduce && !(nc && (nc.saveData || /2g/.test(nc.effectiveType || ""))) && window.matchMedia && window.matchMedia("(max-width: 699px)").matches;
+  }
+  function stVideoHtml(n) {
+    var v = STV && STV.sehirler && STV.sehirler[n];
+    if (!v || !/^\/video\/hikaye\/[a-z0-9-]+\.mp4$/.test(v.dosya || "") || !stVideoOk()) return "";
+    return '<video src="' + escH(v.dosya) + '" muted playsinline loop autoplay preload="auto" aria-hidden="true" style="opacity:0;transition:opacity .4s"></video>';
+  }
+  function stVideoSync() {
+    var vid = $("stPh") && $("stPh").querySelector("video"); if (!vid) return;
+    if (ST.paused || ST.hold) vid.pause(); else { var p = vid.play(); if (p && p.catch) p.catch(function () {}); }
+  }
   function stOpenCity() { var x = ST.list && ST.list[ST.k]; if (x) { selectCity(x.i); go("#takvim/" + liveSlug(x.n)); } }
-  function stApply() { $("story").classList.toggle("paused", ST.paused || ST.hold); }
+  function stApply() { $("story").classList.toggle("paused", ST.paused || ST.hold); stVideoSync(); }
   function stHold(h) { ST.hold = h; stApply(); }
   function stResume() { ST.hold = document.hidden; stApply(); }
   function stPause(p) {
@@ -2813,6 +2831,11 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   applyPrices();
   render();
   route(true);
+  if (window.STVIDEO_URL && window.fetch) {
+    fetch(window.STVIDEO_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && d.sehirler) { STV = d; if (ST.list) stGo(ST.k); }
+    }).catch(function () {});
+  }
   if (window.ONERI_URL && window.fetch) {
     fetch(window.ONERI_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { ONERI = d; refreshViews(); }
