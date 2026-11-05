@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-03T16:43:39.880Z",
+ "guncellendi": "2026-11-05T10:59:38.204Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -1049,30 +1049,30 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 13
+  "usd": 17.99
  },
  "sonCalisma": {
-  "tarih": "2026-11-03T16:43:39.880Z",
-  "mod": "hepsi",
-  "hafta_sonu": 13,
-  "kontrol": 104,
-  "fiyatli": 92,
-  "dogrulanamadi": 3,
-  "supheli": 1,
+  "tarih": "2026-11-05T10:59:38.204Z",
+  "mod": "takvim",
+  "hafta_sonu": 8,
+  "kontrol": 1664,
+  "fiyatli": 1507,
+  "dogrulanamadi": 33,
+  "supheli": 37,
   "vergi": {
-   "dahil": 5,
-   "eklendi": 87,
-   "bilinmiyor": 4
+   "dahil": 64,
+   "eklendi": 1448,
+   "bilinmiyor": 65
   },
-  "tahminiMaliyetUsd": 0.31,
+  "tahminiMaliyetUsd": 4.99,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 41.45,
+  "usd": 46.27,
   "sinir": 75,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-03T16:43:39.880Z"
+  "kontrol": "2026-11-05T10:59:38.204Z"
  },
  "olcumler": [
   {
@@ -1123,6 +1123,13 @@
    "sorgu": 104,
    "usd": 0.3,
    "sorguBasi": 0.00288
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-05T10:59:38.204Z",
+   "sorgu": 1664,
+   "usd": 4.82,
+   "sorguBasi": 0.0029
   }
  ],
  "sehirler": {
