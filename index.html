@@ -2186,10 +2186,10 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var selG = $("d1").value;
     $("cvList").innerHTML = hs.length ? hs.map(function (h) {
       var has = typeof h.toplam === "number", isLo = lo && h.g === lo.g, sel = h.g === selG;
-      var chip = !has ? (h.otelDolu ? '<span class="etk dolu">Otel dolu</span>' : '<span class="etk normal">Fiyat yok</span>')
+      var chip = !has ? (h.otelDolu ? '<span class="etk dolu">Otel dolu</span>' : h.dogrulaniyor ? '<span class="etk normal">Fiyat doğrulanıyor</span>' : '<span class="etk normal">Fiyat yok</span>')
         : isLo && priced.length > 1 ? '<span class="etk ucuz">En ucuz' + (typeof h.fark === "number" && h.fark < 0 ? " · −%" + Math.abs(h.fark) : "") + "</span>" : etkHtml(h);
       return '<button type="button" role="listitem" class="cv-row' + (sel ? " sel" : "") + (has ? "" : " dolu") + '" data-g="' + h.g + '" data-c="' + escH(h.cikis || "") + '"' +
-        ' aria-label="' + escH(weekendText(h.g, h.cikis) + ", " + (has ? "2 kişi " + r(h.toplam) : h.otelDolu ? "otel dolu" : "fiyat yok") + ". Bu hafta sonunun bütçesini hesapla") + '">' +
+        ' aria-label="' + escH(weekendText(h.g, h.cikis) + ", " + (has ? "2 kişi " + r(h.toplam) : h.otelDolu ? "otel dolu" : h.dogrulaniyor ? "fiyat doğrulanıyor" : "fiyat yok") + ". Bu hafta sonunun bütçesini hesapla") + '">' +
         '<span class="d">' + escH(wkShort(h.g, h.cikis)) + "</span><span>" + chip + '</span><span class="pr">' + (has ? r(h.toplam) : "—") + "</span></button>";
     }).join("") : '<p class="cv-note">Bu şehir için hafta sonu fiyatı henüz yok. Robot her gece yeni fiyatları kontrol ediyor.</p>';
     $("cvList").querySelectorAll(".cv-row").forEach(function (b) {

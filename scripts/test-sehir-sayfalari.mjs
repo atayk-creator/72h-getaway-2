@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import {
   slugify, esc, jsonLd, yonelme, mutfakTr, toEur, usableHotel, buildCity, renderCityPage, renderIndexPage, renderSitemap, generate, calcLink, fmtTl,
   etiketle, renderVitrin,
+  saatUygun,
 } from "./sehir-sayfalari.mjs";
 
 let n = 0;
@@ -196,6 +197,14 @@ test("gerçek veriyle 26 şehir üretilir", () => {
   assert.equal(new Set(models.map((m) => m.slug)).size, 26);
   for (const m of models) assert.match(m.slug, /^[a-z0-9-]+$/);
   for (const [k, v] of Object.entries(files)) if (k.endsWith(".html")) assert.ok(!v.includes("undefined") && !v.includes("NaN"), k);
+});
+
+test("kalkış saati penceresi: dışarıdaki uçuş etikete girmez", () => {
+  assert.equal(saatUygun("2026-11-13T10:50", "05:00–12:00"), true);
+  assert.equal(saatUygun("2026-12-11T13:40", "05:00–12:00"), false);
+  assert.equal(saatUygun("2026-12-11T05:00", "05:00-12:00"), true);
+  assert.equal(saatUygun(null, "05:00–12:00"), true);
+  assert.equal(saatUygun("2026-12-11T13:40", null), true);
 });
 
 console.log(`\n${n} test. TÜM TESTLER GEÇTİ`);

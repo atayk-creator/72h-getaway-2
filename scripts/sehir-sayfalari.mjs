@@ -76,6 +76,14 @@ function tarihYazi(iso) {
 
 // ---------- veri ----------
 export function usableHotel(s) { return !!s && s.durum === "fiyat" && !s.supheli && typeof s.fiyat === "number" && s.fiyat > 0; }
+// Uçuş kalkış saati, ucuslar.json saatAraligi.gidis penceresinde mi? (pencere yoksa ya da saat bilinmiyorsa geçerli say)
+export function saatUygun(ucusSaati, aralik) {
+  const m = /^(\d{2}):(\d{2})\s*[–-]\s*(\d{2}):(\d{2})$/.exec(String(aralik || "").trim());
+  const t = /T(\d{2}):(\d{2})/.exec(String(ucusSaati || ""));
+  if (!m || !t) return true;
+  const dk = (+t[1]) * 60 + (+t[2]), bas = (+m[1]) * 60 + (+m[2]), son = (+m[3]) * 60 + (+m[4]);
+  return dk >= bas && dk <= son;
+}
 export function usableFlight(s) { return !!s && s.durum === "fiyat" && !s.supheli && typeof s.fiyat === "number" && s.fiyat > 0; }
 function nightly(s) { return typeof s.gecelik === "number" && s.gecelik > 0 ? s.gecelik : s.fiyat / 2; }
 
@@ -166,6 +174,7 @@ export function buildCity(data, cityName, today) {
   const fy = data.fiyatlar[cityName] || {};
   const hs = fy.haftaSonlari || {};
   const uhs = (data.ucuslar && data.ucuslar.haftaSonlari) || {};
+  const gidisAralik = data.ucuslar && data.ucuslar.saatAraligi ? data.ucuslar.saatAraligi.gidis : null;
   const cikis = (g) => (hs[g] && hs[g].cikis) || (uhs[g] && uhs[g].cikis) || plus2(g);
 
   const fridays = [...new Set([...Object.keys(hs), ...Object.keys(uhs)])].filter((g) => /^\d{4}-\d{2}-\d{2}$/.test(g) && g >= today).sort();
@@ -188,7 +197,8 @@ export function buildCity(data, cityName, today) {
     const w = uhs[g];
     const s = w && w.sehirler && w.sehirler[cityName] && w.sehirler[cityName].son;
     if (!usableFlight(s)) return null;
-    return { g, fiyat: s.fiyat, havayolu: s.havayolu || null, aktarma: typeof s.aktarma === "number" ? s.aktarma : null };
+    return { g, fiyat: s.fiyat, havayolu: s.havayolu || null, aktarma: typeof s.aktarma === "number" ? s.aktarma : null,
+      saat: s.ucusSaati || null, saatUygun: saatUygun(s.ucusSaati, gidisAralik) };
   };
   const perWeek = next.map((g) => {
     const cats = hotelAt(g);
@@ -203,8 +213,10 @@ export function buildCity(data, cityName, today) {
   // Konforlu seviye hesaplayıcının varsayılan oteliyle aynı seviyededir; her hafta aynı seviye karşılaştırılır.
   const zamanRaw = fridays.map((g) => {
     const cats = hotelAt(g), fl = flightAt(g), otel = cats.konforlu || null;
-    const toplam = otel && fl ? otel.toplam + 2 * fl.fiyat : null;
-    return { g, cikis: cikis(g), toplam, otel: otel ? otel.ad : null, otelDolu: !otel, ucus: fl ? fl.fiyat : null };
+    // Kalkış saati pencerenin dışındaysa (filtresiz, ucuz ama elverişsiz uçuş) fiyat etikete girmez: "doğrulanıyor".
+    const dogrulaniyor = !!(fl && !fl.saatUygun);
+    const toplam = otel && fl && !dogrulaniyor ? otel.toplam + 2 * fl.fiyat : null;
+    return { g, cikis: cikis(g), toplam, otel: otel ? otel.ad : null, otelDolu: !otel, dogrulaniyor, ucus: fl && !dogrulaniyor ? fl.fiyat : null };
   });
   const zaman = etiketle(zamanRaw);
   const kategoriler = KAT_SIRA.filter((k) => (city.oteller || []).some((h) => h.kategori === k)).map((k) => {
@@ -446,7 +458,7 @@ export function renderCityPage(m) {
       `<div class="iyi"><span class="muted">En ucuz · ${esc(aralikKisa(z.enUcuz.g, z.enUcuz.cikis))}</span><b>${para(z.enUcuz.toplam, kur)}</b></div>` +
       `<div><span class="muted">En pahalı · ${esc(aralikKisa(z.enPahali.g, z.enPahali.cikis))}</span><b>${para(z.enPahali.toplam, kur)}</b></div></div>`;
     const rows = z.haftalar.map((h) => {
-      const etk = h.etiket ? `<span class="etk ${h.etiket}">${esc(ETIKET_AD[h.etiket])}${h.etiket !== "normal" ? ` · ${h.fark > 0 ? "+" : "−"}%${Math.abs(h.fark)}` : ""}</span>` : h.otelDolu ? `<span class="etk dolu">Otel dolu</span>` : `<span class="muted">fiyat yok</span>`;
+      const etk = h.etiket ? `<span class="etk ${h.etiket}">${esc(ETIKET_AD[h.etiket])}${h.etiket !== "normal" ? ` · ${h.fark > 0 ? "+" : "−"}%${Math.abs(h.fark)}` : ""}</span>` : h.otelDolu ? `<span class="etk dolu">Otel dolu</span>` : h.dogrulaniyor ? `<span class="muted">fiyat doğrulanıyor</span>` : `<span class="muted">fiyat yok</span>`;
       const best = z.enUcuz && h.g === z.enUcuz.g;
       return `<li><span>${esc(aralik(h.g, h.cikis))} ${etk}</span><span class="r${best ? " best" : ""}">${h.toplam ? para(h.toplam, kur) : "—"}</span></li>`;
     }).join("");
@@ -560,7 +572,7 @@ export function renderVitrin(models, today) {
       fotolar: (m.fotolar || []).map((f) => ({ dosya: f.dosya, kucuk: f.kucuk || f.dosya, alt: f.alt || m.sehir, kaynak: f.kaynak || "" })),
       normal: m.zaman.normal != null ? Math.round(m.zaman.normal) : null,
       enUcuz: m.zaman.enUcuz ? { g: m.zaman.enUcuz.g, toplam: Math.round(m.zaman.enUcuz.toplam) } : null,
-      haftalar: m.zaman.haftalar.map((h) => ({ g: h.g, cikis: h.cikis, toplam: h.toplam != null ? Math.round(h.toplam) : null, etiket: h.etiket, fark: h.fark, otelDolu: h.otelDolu })),
+      haftalar: m.zaman.haftalar.map((h) => ({ g: h.g, cikis: h.cikis, toplam: h.toplam != null ? Math.round(h.toplam) : null, etiket: h.etiket, fark: h.fark, otelDolu: h.otelDolu, dogrulaniyor: h.dogrulaniyor || undefined })),
     };
   }
   return JSON.stringify({ aciklama: "Ana sayfa vitrini: scripts/sehir-sayfalari.mjs üretir. toplam = 2 kişi gidiş-dönüş uçak + konforlu otel 2 gece (EUR). Etiket şehrin ortancasına göre ±%10.", guncellendi: today, esik: ETIKET_ESIK, sehirler }, null, 1) + "\n";
