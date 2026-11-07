@@ -10,8 +10,8 @@ import { execSync } from "node:child_process";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const out = join(root, "app", "www");
 export const PAGES = ["index.html", "oteller.html", "hakkinda.html"];
-const COPY = ["img", "js", "favicon.ico", "data.json", "prices.json", "price-status.json"];
-const DATA = ["hotels.json", "otel-fiyatlari.json", "ucuslar.json", "restoranlar.json", "gezi.json", "fiyatlar"];
+const COPY = ["img", "js", "video", "favicon.ico", "data.json", "prices.json", "price-status.json"];
+const DATA = ["hotels.json", "otel-fiyatlari.json", "ucuslar.json", "restoranlar.json", "gezi.json", "fiyatlar", "vitrin.json", "oneriler.json", "hikaye-video.json"];
 
 export function transform(html, build) {
   if (!/<head>/i.test(html)) throw new Error("head yok");

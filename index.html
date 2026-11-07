@@ -603,7 +603,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 
 <div class="tab" id="tab-sehirler" data-tab="sehirler" hidden>
   <div class="wrap pad">
-    <div class="tabhead"><h2>Şehirler</h2><span>26 başkent · takvim ve 72h önerileri</span></div>
+    <div class="tabhead"><h2>Şehirler</h2><span>26 başkent · hafta sonu takvimi</span></div>
     <div class="cgrid" id="cgrid"></div>
     <section class="cother" id="cother" aria-labelledby="h-cother" hidden>
       <h3 id="h-cother">Diğer başkentler</h3>
@@ -627,7 +627,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       <div class="cv-list" id="cvList" role="list" aria-label="Hafta sonları"></div>
       <p class="cv-note" id="cvNote"></p>
       <button type="button" class="btn cv-go" id="cvGo">Bu şehrin tam bütçesini hesapla</button>
-      <section class="oneri" aria-labelledby="onH">
+      <section class="oneri" id="oneriSec" aria-labelledby="onH">
         <h3 id="onH"></h3>
         <div id="onBody"></div>
       </section>
@@ -2203,6 +2203,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var d = ONERI && ONERI.sehirler && ONERI.sehirler[c.n], kats = (ONERI && ONERI.kategoriler) || [];
     $("onH").textContent = "72h önerileri: " + c.n;
     var items = d && Array.isArray(d.oneriler) ? d.oneriler.filter(function (x) { return x && x.baslik; }) : [];
+    // Uygulamada boş öneri kutusu gösterilmez (mağaza: "yakında" türü yer tutucu içerik olmamalı)
+    $("oneriSec").hidden = !items.length && !!window.APP_BUILD;
     if (!items.length) {
       $("onBody").innerHTML = '<div class="on-bos"><p>' + escH(c.n) + " için önerilerimizi yazıyoruz. Gittiğimiz ve araştırdığımız yerleri burada paylaşacağız:</p><ul>" +
         (kats.length ? kats : [{ ad: "Mutlaka gör" }, { ad: "Ye, iç" }, { ad: "Bütçe dostu" }, { ad: "72 saat ipuçları" }]).map(function (k) { return "<li>" + escH(k.ad) + "</li>"; }).join("") + "</ul></div>";
@@ -2451,6 +2453,12 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     try {
       var blob = await drawStory(BP); if (!blob) throw new Error("blob");
       var name = "72h-getaway-" + slug(BP.city) + "-hikaye.png", file = null;
+      // Telefon uygulamasında: dosyayı telefona yazıp yerel paylaşma menüsünü aç (indirme bağlantısı orada çalışmaz)
+      if (window.APP && window.APP.shareFile) {
+        var ok = await window.APP.shareFile(blob, name, "72h Getaway · " + BP.city);
+        msg.textContent = ok ? "Paylaşım menüsü açıldı. Instagram'ı seçip hikâyene ekleyebilirsin." : "";
+        return;
+      }
       try { file = new File([blob], name, { type: "image/png" }); } catch (e) { file = null; }
       if (file && navigator.canShare && navigator.canShare({ files: [file] })) {
         try { await navigator.share({ files: [file], title: "72h Getaway · " + BP.city }); msg.textContent = "Paylaşım penceresi açıldı. Instagram'ı seçip hikâyene ekleyebilirsin."; return; }

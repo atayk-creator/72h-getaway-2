@@ -1,10 +1,12 @@
 /* 72h Getaway telefon uygulaması kabuğu (Capacitor). Sitenin sayfaları olduğu gibi kullanılır; bu dosya üstüne
  * uygulamaya özgü katmanı ekler:
  *  - Fiyat verisi: önce canlı (72hgetaway.com, yedek GitHub), internet yoksa uygulamayla gelen son veri
- *  - Üst çubuk + alt menü (Hesapla, Oteller, Turlarım, Hakkında), Android geri tuşu
+ *  - Gezinme: sitenin kendi 5 sekmesi (Keşfet, Şehirler, Takvim, Karşılaştır, Biletim) tek alt menüdür;
+ *    üst çubukta Turlarım ve Hakkında, alt sayfalarda (Oteller, Hakkında) Geri düğmesi; Android geri tuşu
  *  - Turlarım: kaydedilen turlar (telefonda saklanır), açınca güncel fiyatlarla yeniden hesaplanır
- *  - Telefonun kendi paylaşma menüsü (bağlantı 72hgetaway.com adresiyle paylaşılır), PDF'i kaydet/paylaş
- *  - Dış bağlantılar uygulama içi tarayıcıda, ilk açılış tanıtımı, çevrimdışı uyarısı
+ *  - Telefonun kendi paylaşma menüsü: bağlantı (72hgetaway.com adresiyle), PDF ve hikâye görseli (dosya olarak)
+ *  - Dış bağlantılar uygulama içi tarayıcıda; /sehir/ sayfaları uygulamanın kendi Takvim ekranında açılır
+ *  - İlk açılış tanıtımı, çevrimdışı uyarısı
  * Head içinde, sayfanın kendi kodundan ÖNCE yüklenir (veri isteklerini yakalayabilmek için). */
 (function () {
   "use strict";
@@ -105,12 +107,24 @@
     });
   };
 
+  /* ---------------- Dosya paylaşma (hikâye görseli vb.): telefona yaz, paylaş menüsünü aç ---------------- */
+  function shareFile(blob, filename, title) {
+    var F = plugin("Filesystem"), S = plugin("Share");
+    if (!F || !S || !blob) return Promise.reject(new Error("paylaşma yok"));
+    return blob.arrayBuffer().then(function (buf) {
+      return F.writeFile({ path: filename, data: toBase64(new Uint8Array(buf)), directory: "CACHE" });
+    }).then(function (w) {
+      return S.share({ title: title || filename, files: [w.uri], dialogTitle: "Paylaş" }).then(function () { return true; }, function (e) {
+        if (/cancel|iptal/i.test(String(e && e.message))) return false; throw e;
+      });
+    });
+  }
+
   /* ---------------- Arayüz ---------------- */
   var ICON = {
-    hesapla: '<svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2M16 15v3"/></svg>',
-    oteller: '<svg viewBox="0 0 24 24"><path d="M3 20V8l9-5 9 5v12"/><path d="M9 20v-5h6v5M8 10h.01M12 10h.01M16 10h.01"/></svg>',
-    turlar: '<svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',
-    hakkinda: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></svg>'
+    turlar: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>',
+    hakkinda: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></svg>',
+    geri: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>'
   };
   var TITLES = { hesapla: "72h Getaway", oteller: "Otel fiyatları", hakkinda: "Hakkında", diger: "72h Getaway" };
   var $ = function (id) { return document.getElementById(id); };
@@ -129,7 +143,7 @@
 
   function cityName() { var s = $("city"); return s && s.options && s.selectedIndex >= 0 ? s.options[s.selectedIndex].text.split(" · ")[0].replace(/^[^\wÇĞİÖŞÜçğıöşü]+/, "").trim() : ""; }
   function saveTrips() { return store.set("72h-turlar", JSON.stringify(trips)); }
-  function badge() { var b = document.querySelector('.tab-bar [data-tab="turlar"] .badge'); if (b) { b.textContent = trips.length; b.hidden = !trips.length; } }
+  function badge() { var b = document.querySelector(".app-bar .badge"); if (b) { b.textContent = trips.length; b.hidden = !trips.length; } }
 
   function saveCurrent() {
     var q = location.search || "", total = ($("rTotal") || {}).textContent || "", ozet = ($("rSub") || {}).textContent || "", sehir = cityName();
@@ -137,49 +151,70 @@
     trips = trips.filter(function (x) { return x.q !== q; });
     trips.unshift({ id: Date.now(), sehir: sehir, q: q, toplam: total.trim(), ozet: ozet.trim(), t: new Date().toISOString() });
     trips = trips.slice(0, 50); saveTrips(); badge();
-    toast("Tur kaydedildi · Turlarım'da");
+    toast("Tur kaydedildi · ⭐ Turlarım'da");
   }
   function renderTrips() {
     var list = $("tripList");
-    if (!trips.length) { list.innerHTML = '<div class="empty"><b>Henüz kayıtlı turun yok</b>Hesapla sekmesinde bir tur kur, sonra ⭐ Turu kaydet\'e dokun.</div>'; return; }
+    if (!trips.length) { list.innerHTML = '<div class="empty"><b>Henüz kayıtlı turun yok</b>Biletim sekmesinde bir tur hesapla, sonra ⭐ Turu kaydet\'e dokun.</div>'; return; }
     list.innerHTML = trips.map(function (x) {
       return '<div class="trip"><button type="button" class="t" data-q="' + esc(x.q) + '"><b>' + esc(x.sehir) + "</b><span>" + esc(x.ozet) + "</span><em>Kaydederken: " + esc(x.toplam) + '</em></button><button type="button" class="del" data-id="' + x.id + '" aria-label="' + esc(x.sehir) + ' turunu sil">✕</button></div>';
     }).join("");
   }
-  function openSheet() { renderTrips(); $("appSheet").hidden = false; setTab("turlar"); }
-  function closeSheet() { $("appSheet").hidden = true; setTab(page); }
-  function setTab(t) { var bs = document.querySelectorAll(".tab-bar button"); for (var i = 0; i < bs.length; i++) bs[i].setAttribute("aria-current", bs[i].getAttribute("data-tab") === t ? "page" : "false"); }
-  function go(t) {
-    if (t === "turlar") return openSheet();
-    if (!$("appSheet").hidden) $("appSheet").hidden = true;
-    if (t === page) { window.scrollTo({ top: 0, behavior: "smooth" }); setTab(page); return; }
-    if (t === "hesapla") { var last = null; try { last = sessionStorage.getItem("72h-son-tur"); } catch (e) {} location.href = "/index.html" + (last || ""); }
-    if (t === "oteller") { var c = page === "hesapla" ? cityName() : ""; location.href = "/oteller.html" + (c ? "?sehir=" + encodeURIComponent(c) : ""); }
-    if (t === "hakkinda") location.href = "/hakkinda.html";
+  var lastFocus = null;
+  function openSheet() { lastFocus = document.activeElement; renderTrips(); $("appSheet").hidden = false; var c = $("appSheet").querySelector(".close"); if (c) c.focus(); }
+  function closeSheet() { $("appSheet").hidden = true; if (lastFocus && lastFocus.focus) try { lastFocus.focus(); } catch (e) {} }
+  function goBack() {
+    if (history.length > 1) history.back(); else location.href = "/index.html#kesfet";
+  }
+  // Ana sayfada üst çubuk başlığı açık sekmeyi gösterir (sitenin kendi başlığından)
+  function syncTitle() {
+    if (page !== "hesapla") return;
+    var t = String(document.title || "").split(" · ")[0];
+    var el = document.querySelector(".app-bar .title");
+    if (el) el.textContent = !t || /^Keşfet$/.test(t) ? "72h Getaway" : t;
   }
 
   function intro() {
     var S = [
-      ["1", "Hafta sonu kaçamağın kaça patlar?", "26 Avrupa başkentinde uçak, otel, yemek, ulaşım ve gezi bütçeni birkaç dokunuşla gör."],
-      ["2", "Fiyatlar gerçek", "Robotlarımız İstanbul çıkışlı Cuma sabah gidiş, Pazar akşam dönüş uçuşlarını ve otel fiyatlarını düzenli kontrol ediyor."],
-      ["3", "Turunu kaydet, paylaş", "Beğendiğin planı ⭐ ile kaydet, PDF olarak al ya da arkadaşına gönder. İnternet yokken de son fiyatlarla çalışır."]
+      ["1", "Bu hafta sonu nereye?", "Keşfet'te her hafta değişen 6 şehir, gerçek uçak ve otel fiyatlarıyla hikâye gibi akar. Beğendiğine dokun, takvimini gör."],
+      ["2", "Fiyatlar gerçek", "Robotlarımız İstanbul çıkışlı Cuma sabah gidiş, Pazar akşam dönüş uçuşlarını ve otel fiyatlarını düzenli kontrol ediyor. Takvim hangi hafta sonunun ucuz, hangisinin pahalı olduğunu gösterir."],
+      ["3", "Biletin hazır", "Biletim'de yemek ve gezi dahil tam bütçeni gör, ⭐ ile kaydet, hikâyende paylaş ya da PDF olarak al. İnternet yokken de son fiyatlarla çalışır."]
     ], i = 0, el = document.createElement("div");
-    el.className = "app-intro"; el.setAttribute("role", "dialog"); el.setAttribute("aria-label", "Tanıtım");
+    el.className = "app-intro"; el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Tanıtım");
     var draw = function () {
       el.innerHTML = '<div class="slide"><div class="num">' + S[i][0] + "</div><h2>" + S[i][1] + "</h2><p>" + S[i][2] + '</p></div><div class="dots">' + S.map(function (_, k) { return '<i class="' + (k === i ? "on" : "") + '"></i>'; }).join("") +
         '</div><button type="button" class="go">' + (i < S.length - 1 ? "Devam" : "Başla") + '</button>' + (i < S.length - 1 ? '<button type="button" class="skipi">Geç</button>' : "");
       el.querySelector(".go").onclick = function () { if (i < S.length - 1) { i++; draw(); } else done(); };
       var sk = el.querySelector(".skipi"); if (sk) sk.onclick = done;
+      el.querySelector(".go").focus();
     };
     var done = function () { el.remove(); store.set("72h-tanitim", "1"); };
     draw(); document.body.appendChild(el);
   }
 
+  // Uygulamada olmayan sayfalara giden iç bağlantılar uygulamanın kendi ekranlarına çevrilir
+  function mapInternal(u) {
+    var p = u.pathname, m = /^\/sehir\/([a-z0-9-]+)\/?(index\.html)?$/.exec(p);
+    if (m) return "/index.html#takvim/" + m[1];
+    if (/^\/sehir\/?$/.test(p)) return "/index.html#sehirler";
+    if (p === "/" || p === "") return "/index.html" + (u.search || "") + (u.hash || "#kesfet");
+    return null;
+  }
+
   function build() {
     document.body.classList.add("in-app");
-    if (page !== "hesapla") document.body.classList.add("page-sub");
+    document.body.classList.add(page === "hesapla" ? "page-main" : "page-sub");
     var bar = document.createElement("div"); bar.className = "app-bar";
-    bar.innerHTML = '<span class="logo" aria-hidden="true">72H</span><span class="title">' + TITLES[page] + "</span>";
+    var left = page === "hesapla" ? '<span class="logo" aria-hidden="true">72H</span>' : '<button type="button" class="ab back" aria-label="Geri">' + ICON.geri + "</button>";
+    bar.innerHTML = left + '<span class="title">' + TITLES[page] + "</span>" +
+      '<button type="button" class="ab trips" aria-label="Turlarım">' + ICON.turlar + '<span class="badge" hidden></span></button>' +
+      (page === "hesapla" ? '<button type="button" class="ab info" aria-label="Hakkında ve gizlilik">' + ICON.hakkinda + "</button>" : "");
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      if (b.classList.contains("back")) goBack();
+      else if (b.classList.contains("trips")) openSheet();
+      else if (b.classList.contains("info")) location.href = "/hakkinda.html";
+    });
     document.body.insertBefore(bar, document.body.firstChild);
 
     var ban = document.createElement("div"); ban.className = "app-banner"; ban.id = "appBanner"; ban.hidden = true; ban.setAttribute("role", "status");
@@ -187,43 +222,42 @@
     ban.querySelector("button").onclick = function () { location.reload(); };
     bar.insertAdjacentElement("afterend", ban);
 
-    var tabs = document.createElement("nav"); tabs.className = "tab-bar"; tabs.setAttribute("aria-label", "Uygulama menüsü");
-    tabs.innerHTML = [["hesapla", "Hesapla"], ["oteller", "Oteller"], ["turlar", "Turlarım"], ["hakkinda", "Hakkında"]].map(function (t) {
-      return '<button type="button" data-tab="' + t[0] + '">' + ICON[t[0]] + (t[0] === "turlar" ? '<span class="badge" hidden></span>' : "") + "<span>" + t[1] + "</span></button>";
-    }).join("");
-    tabs.addEventListener("click", function (e) { var b = e.target.closest("button[data-tab]"); if (b) go(b.getAttribute("data-tab")); });
-    document.body.appendChild(tabs);
-
     var sh = document.createElement("div"); sh.className = "app-sheet"; sh.id = "appSheet"; sh.hidden = true;
-    sh.innerHTML = '<div class="panel" role="dialog" aria-labelledby="tripH"><button type="button" class="close" aria-label="Kapat">×</button><h2 id="tripH">Turlarım</h2><p class="lead">Kaydettiğin turlar. Açınca güncel fiyatlarla yeniden hesaplanır.</p><div id="tripList"></div></div>';
+    sh.innerHTML = '<div class="panel" role="dialog" aria-modal="true" aria-labelledby="tripH"><button type="button" class="close" aria-label="Kapat">×</button><h2 id="tripH">Turlarım</h2><p class="lead">Kaydettiğin turlar. Açınca güncel fiyatlarla yeniden hesaplanır.</p><div id="tripList"></div></div>';
     sh.addEventListener("click", function (e) {
       if (e.target === sh || e.target.closest(".close")) return closeSheet();
       var d = e.target.closest(".del");
       if (d) { var id = +d.getAttribute("data-id"); trips = trips.filter(function (x) { return x.id !== id; }); saveTrips(); badge(); renderTrips(); return; }
-      var t = e.target.closest(".t"); if (t) location.href = "/index.html" + t.getAttribute("data-q");
+      var t = e.target.closest(".t"); if (t) { $("appSheet").hidden = true; location.href = "/index.html" + t.getAttribute("data-q") + "#biletim"; }
     });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("appSheet").hidden) closeSheet(); });
     document.body.appendChild(sh);
-    setTab(page);
 
-    // Turu kaydet düğmesi (hesaplama sayfası)
+    // Turu kaydet düğmesi (Biletim)
     var share = $("shareBtn");
     if (share) {
       var sv = document.createElement("button"); sv.type = "button"; sv.className = "btn ghost app-save"; sv.id = "saveTrip"; sv.textContent = "⭐ Turu kaydet";
       sv.addEventListener("click", saveCurrent); share.insertAdjacentElement("afterend", sv);
       $("pdfBtn") && ($("pdfBtn").textContent = "📄 Programı PDF olarak al");
     }
-    // Son kurulan tur: Hesapla sekmesine dönünce kaldığın yerden devam
     if (page === "hesapla") {
-      var keep = function () { try { sessionStorage.setItem("72h-son-tur", location.search); } catch (e) {} };
-      setInterval(keep, 1500); window.addEventListener("pagehide", keep);
-      if (location.hash === "#turlarim") openSheet();
+      window.addEventListener("hashchange", function () { setTimeout(syncTitle, 0); });
+      setTimeout(syncTitle, 400);
+      if (location.hash === "#turlarim") { history.replaceState(null, "", location.pathname + location.search + "#biletim"); openSheet(); }
     }
 
-    // Dış bağlantılar uygulama içi tarayıcıda
+    // Bağlantılar: dış siteler uygulama içi tarayıcıda; uygulamada olmayan iç sayfalar kendi ekranlarımıza
     document.addEventListener("click", function (e) {
       var a = e.target.closest && e.target.closest("a[href]"); if (!a) return;
-      var u; try { u = new URL(a.getAttribute("href"), location.href); } catch (x) { return; }
-      if (u.origin === location.origin) { if (a.target === "_blank") { e.preventDefault(); location.href = u.href; } return; }
+      var href = a.getAttribute("href"); if (!href || href.charAt(0) === "#") return;
+      var u; try { u = new URL(href, location.href); } catch (x) { return; }
+      if (u.origin === location.origin || u.hostname === "72hgetaway.com" || u.hostname === "www.72hgetaway.com") {
+        var to = mapInternal(u);
+        if (to) { e.preventDefault(); location.href = to; return; }
+        if (u.origin !== location.origin) { e.preventDefault(); location.href = u.pathname + u.search + u.hash; return; }
+        if (a.target === "_blank") { e.preventDefault(); location.href = u.href; }
+        return;
+      }
       if (!/^https?:$/.test(u.protocol)) return;
       e.preventDefault();
       var B = plugin("Browser");
@@ -235,11 +269,14 @@
     if (N) { N.getStatus().then(function (s) { if (s && s.connected === false) { state.offline = true; offlineData(); } }).catch(function () {});
       N.addListener("networkStatusChange", function (s) { if (s.connected && state.shownOffline) { var b = $("appBanner"); if (b) $("appBannerText").textContent = "İnternet geri geldi. Güncel fiyatlar için yenile."; } }); }
 
-    // Android geri tuşu
+    // Android geri tuşu: açık pencere → kapat; alt sayfa → geri; sekmeler arasında geçmişte geri; Keşfet'te uygulamadan çık
     var A = plugin("App");
     if (A) A.addListener("backButton", function (ev) {
       if (!$("appSheet").hidden) return closeSheet();
-      if (ev && ev.canGoBack) history.back(); else if (page !== "hesapla") location.href = "/index.html"; else A.exitApp();
+      if (page !== "hesapla") return goBack();
+      var h = location.hash || "#kesfet";
+      if (h === "#kesfet") return A.exitApp();
+      if (ev && ev.canGoBack) history.back(); else location.hash = "#kesfet";
     });
     var SB = plugin("StatusBar");
     if (SB) { SB.setStyle({ style: "DARK" }).catch(function () {}); if (SB.setBackgroundColor) SB.setBackgroundColor({ color: "#0F2A43" }).catch(function () {}); }
@@ -249,5 +286,5 @@
     store.get("72h-tanitim").then(function (v) { if (!v && page === "hesapla") intro(); });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build); else build();
-  window.APP = { native: native, webUrl: webUrl, state: state };
+  window.APP = { native: native, webUrl: webUrl, state: state, shareFile: native ? shareFile : null };
 })();

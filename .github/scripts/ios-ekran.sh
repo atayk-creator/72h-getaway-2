@@ -17,6 +17,6 @@ xcrun simctl io "$UDID" screenshot ekran/ios-1-tanitim.png
 xcrun simctl terminate "$UDID" "$APP_ID" || true
 xcrun simctl spawn "$UDID" defaults write "$APP_ID" "CapacitorStorage.72h-tanitim" -string 1
 xcrun simctl launch "$UDID" "$APP_ID"; sleep 20
-xcrun simctl io "$UDID" screenshot ekran/ios-2-hesapla.png
+xcrun simctl io "$UDID" screenshot ekran/ios-2-kesfet.png
 xcrun simctl spawn "$UDID" log show --last 2m --predicate 'process == "App"' --style compact 2>/dev/null | grep -iE "error|⚡️|capacitor|js" | tail -n 80 > ekran/ios-log.txt || true
 ls -la ekran

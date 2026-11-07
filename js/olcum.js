@@ -73,7 +73,8 @@
     try { if (root.goatcounter && root.goatcounter.count) root.goatcounter.count({ path: path, title: title || path, event: !!olay }); } catch (e) {}
   }
 
-  if (AYAR.goatcounter && /^[a-z0-9-]+$/.test(AYAR.goatcounter)) {
+  // Telefon uygulamasında (window.APP_BUILD) ölçüm yapılmaz: mağaza gizlilik formunda "veri toplanmıyor" beyan edildi
+  if (AYAR.goatcounter && !root.APP_BUILD && /^[a-z0-9-]+$/.test(AYAR.goatcounter)) {
     root.goatcounter = root.goatcounter || {};
     root.goatcounter.path = function () { return sayfaYolu(root.location); };
     if (kaynak) root.goatcounter.referrer = function () { return kaynak; };
