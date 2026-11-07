@@ -84,4 +84,11 @@ function fakeApify(log) {
   const f = fakeApify(log); const fi = async (u, i) => (u.includes("/users/me/limits") ? res({ data: { current: { monthlyUsageUsd: 74.99 }, limits: { maxMonthlyUsageUsd: 75 } } }) : f(u, i));
   const out = await run({ token: TOKEN, cfg, hotelSettings: { aylik_butce_usd: 75, fatura_gunu: 28 }, now: new Date("2026-11-10T06:00:00Z"), fetchImpl: fi, sleep: async () => {} });
   assert.equal(log.filter((x) => x.init.method === "POST").length, 0); assert.ok(out.report.butceAtlanan > 0); console.log("ok 4: bütçe"); }
+// 5) hata son geçerli fiyatı silmez
+{ const { mergeFlight, emptyFlights } = await import("./ucak-fiyatlari.mjs");
+  const st = emptyFlights(); mergeFlight(st, W, "Berlin", { durum: "fiyat", fiyat: 160 }, "2026-11-03T10:00:00Z");
+  mergeFlight(st, W, "Berlin", { durum: "hata", kod: "GOOGLE_ERROR", not: "x" }, "2026-11-07T10:00:00Z");
+  const o = st.haftaSonlari[W.giris].sehirler.Berlin; assert.equal(o.son.fiyat, 160); assert.equal(o.son.kontrol, "2026-11-03T10:00:00Z"); assert.equal(o.sonHata.kod, "GOOGLE_ERROR"); assert.equal(o.gecmis.length, 2);
+  mergeFlight(st, W, "Berlin", { durum: "fiyat", fiyat: 170 }, "2026-11-10T10:00:00Z"); assert.equal(o.son.fiyat, 170); assert.ok(!o.sonHata);
+  console.log("ok 5: hata eski fiyatı silmez"); }
 console.log("TÜM TESTLER GEÇTİ");

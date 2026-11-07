@@ -131,7 +131,9 @@ export function emptyFlights() {
 export function mergeFlight(state, w, sehir, rec, t) {
   const slot = (state.haftaSonlari[w.giris] ||= { cikis: w.cikis, sehirler: {} });
   const o = (slot.sehirler[sehir] ||= { son: null, gecmis: [] });
-  o.son = { ...rec, kontrol: t };
+  // Google/robot hatasında son geçerli fiyat silinmez (bilgi kaybı olmasın); hata ayrıca not edilir
+  if (rec.durum === "hata" && o.son && o.son.durum === "fiyat") o.sonHata = { t, not: rec.not || null, kod: rec.kod || null };
+  else { o.son = { ...rec, kontrol: t }; delete o.sonHata; }
   o.gecmis.push({ t, durum: rec.durum, fiyat: rec.fiyat ?? null });
   if (o.gecmis.length > HISTORY_MAX) o.gecmis.splice(0, o.gecmis.length - HISTORY_MAX);
 }
