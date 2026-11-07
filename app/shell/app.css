@@ -1,6 +1,6 @@
 /* 72h Getaway uygulama kabuğu: sadece telefon uygulamasında (body.in-app) geçerli */
 :root { --tabbar-h: 62px; --appbar-h: 52px; --sat: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px)); --sab: max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px)); }
-body.in-app { padding-top: calc(var(--appbar-h) + var(--sat)); padding-bottom: calc(var(--sab) + 20px); -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
+body.in-app { padding-top: 0; padding-bottom: calc(var(--sab) + 20px); -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
 /* Ana sayfada alt menü sitenin kendi sekme çubuğudur (.tabbar): uygulamada her genişlikte altta sabit */
 body.in-app.page-main { padding-bottom: calc(var(--tabbar-h) + var(--sab) + 10px); }
 body.in-app .tabbar { position: fixed !important; top: auto !important; bottom: 0 !important; border-top: 1.5px solid var(--line, #E3DCCB) !important; border-bottom: 0 !important; grid-template-columns: repeat(5, minmax(0, 1fr)) !important; padding: 4px 6px calc(var(--sab) + 6px) !important; }
@@ -10,7 +10,8 @@ body.in-app .story { cursor: default; }
 body.in-app > header, body.in-app > .skip, body.in-app footer, body.in-app header a.back, body.in-app .social { display: none !important; }
 body.in-app.page-sub > header { display: block !important; padding-top: 14px !important; }
 
-.app-bar { position: fixed; z-index: 60; top: 0; left: 0; right: 0; height: calc(var(--appbar-h) + var(--sat)); padding: var(--sat) 16px 0; display: flex; align-items: center; gap: 10px; background: #0F2A43; color: #FBF6EC; box-shadow: 0 1px 0 rgba(0,0,0,.25); }
+/* Üst çubuk sayfanın akışında ve yapışkan: içeriği ayrıca aşağı itmeye gerek yok, iPhone'da çentik payı farkı boşluk bırakmaz */
+.app-bar { position: sticky; z-index: 60; top: 0; height: calc(var(--appbar-h) + var(--sat)); padding: var(--sat) 16px 0; display: flex; align-items: center; gap: 10px; background: #0F2A43; color: #FBF6EC; box-shadow: 0 1px 0 rgba(0,0,0,.25); }
 .app-bar .logo { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; background: #F4A62A; color: #0F2A43; font: 800 12px/1 "Liberation Sans", Arial, sans-serif; letter-spacing: -.5px; }
 .app-bar .title { font: 700 17px/1.2 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .app-bar .ab { flex: none; width: 44px; height: 44px; margin: 0 -6px; border: 0; background: none; color: #FBF6EC; display: grid; place-items: center; position: relative; border-radius: 12px; }
