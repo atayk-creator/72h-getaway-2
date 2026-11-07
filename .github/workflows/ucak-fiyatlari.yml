@@ -39,7 +39,7 @@ jobs:
         with:
           node-version: 22
       - name: Testler
-        run: node scripts/test-ucak-fiyatlari.mjs
+        run: node scripts/test-ucak-fiyatlari.mjs && node scripts/test-ucak-eiv.mjs
       - name: Uçak fiyatlarını çek
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}

@@ -3,7 +3,8 @@ import { readFile } from "node:fs/promises";
 import { flightInput, toFlightRecord, inWindow, saatAraligi, trLink, run, toMarkdown, emptyFlights, dropPast, mergeFlight, COST_PER_ROW, COST_PER_RUN } from "./ucak-fiyatlari.mjs";
 import { planFor } from "./otel-fiyatlari.mjs";
 
-const cfg = JSON.parse(await readFile(new URL("../data/ucus-ayarlari.json", import.meta.url), "utf8"));
+// Bu dosya eski kaynağı (dz_omar, arama başına ücret) sınar; yeni kaynak (eiv): test-ucak-eiv.mjs
+const cfg = { ...JSON.parse(await readFile(new URL("../data/ucus-ayarlari.json", import.meta.url), "utf8")), aktor: "dz_omar~google-flights-scraper", sonuc_sayisi: 6, arama_basi_usd: 0.03 };
 const hotels = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
 const TOKEN = "apify_api_TESTJETON1234567890abcdef";
 const res = (b, status = 200) => ({ ok: status < 400, status, text: async () => (typeof b === "string" ? b : JSON.stringify(b)) });

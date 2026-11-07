@@ -67,7 +67,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 ## Uçak fiyat robotu
 
 - İstanbul (IST ve SAW) çıkışlı, Cuma sabah gidiş (kalkış 05:00–12:00) Pazar akşam dönüş (kalkış 16:00–24:00), 1 kişi gidiş-dönüş en ucuz ve en ucuz aktarmasız uçuş, 26 başkent.
-- Kaynak: Google Flights, Apify'daki hazır robot ile (`dz_omar/google-flights-scraper`). Ayarlar `data/ucus-ayarlari.json`, sonuç `data/ucuslar.json`.
+- Kaynak: Google Flights, Apify'daki hazır robot ile (`eiv/google-flights-scraper`, uçuş başına ücret; ayarda `aktor`). Hafta sonu başına tek çalışma, gidiş ve dönüş saat aralığı Google'da uygulanır, Google hata verirse bir kez tekrar, saat aralığında uçuş yoksa saat şartsız ikinci arama. Ücretsiz özet satırından Google'ın fiyat seviyesi (düşük/normal/yüksek) ve normal fiyat aralığı da gelir. Eski kaynağa dönmek için `aktor: "dz_omar~google-flights-scraper"`. Ayarlar `data/ucus-ayarlari.json`, sonuç `data/ucuslar.json`.
 - Takvim: her Salı 06:17; 13 hafta sonu: 1–4. hafta sonu her hafta, 5–8. iki haftada bir, 9–13. dört haftada bir.
   `ozel_tarihler` (2026-12-25, 2027-01-01) her hafta aranır.
 - Ölçülen maliyet: şehir-hafta sonu başına ~0,028 $ (26 şehir ~0,73 $); bu takvimle ayda ~23 $ (8 hafta sonuyla ~19 $ idi,

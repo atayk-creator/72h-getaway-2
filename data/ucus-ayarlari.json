@@ -8,10 +8,11 @@
   "pazar": "TR",
   "kac_hafta_sonu": 13,
   "ozel_tarihler": ["2026-12-25", "2027-01-01"],
-  "sonuc_sayisi": 6,
+  "aktor": "eiv~google-flights-scraper",
+  "sonuc_sayisi": 5,
   "toplu": false,
   "toplu_sonuc_sayisi": 8,
-  "arama_basi_usd": 0.03,
+  "arama_basi_usd": 0.005,
   "kontrol_takvimi": [
     {"kademe":"yakin","ilk":1,"son":4,"gunler":["Sal"],"her_n_haftada":1},
     {"kademe":"orta","ilk":5,"son":8,"gunler":["Sal"],"her_n_haftada":2},
