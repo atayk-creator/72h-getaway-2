@@ -1,1 +1,1022 @@
-{}
+{
+ "dub-shelbourne": {
+  "key": "g186605-d187627",
+  "ad": "The Shelbourne, Autograph Collection",
+  "nasil": "liste"
+ },
+ "dub-merrion": {
+  "key": "g186605-d208232",
+  "ad": "The Merrion Hotel Dublin",
+  "nasil": "liste"
+ },
+ "dub-westbury": {
+  "key": "g186605-d209084",
+  "ad": "The Westbury",
+  "nasil": "liste"
+ },
+ "dub-iveagh-garden": {
+  "key": "g186605-d13009005",
+  "ad": "Iveagh Garden Hotel",
+  "nasil": "liste"
+ },
+ "dub-the-dean": {
+  "key": "g186605-d7274480",
+  "ad": "The Dean Dublin",
+  "nasil": "liste"
+ },
+ "dub-wren": {
+  "key": "g186605-d23616631",
+  "ad": "Wren Urban Nest",
+  "nasil": "liste"
+ },
+ "dub-hendrick": {
+  "key": "g186605-d16875038",
+  "ad": "The Hendrick Dublin Smithfield",
+  "nasil": "liste"
+ },
+ "dub-point-a-parnell": {
+  "key": "g186605-d23147854",
+  "ad": "Point A Dublin Parnell Street",
+  "nasil": "liste"
+ },
+ "par-lutetia": {
+  "key": "g187147-d197427",
+  "ad": "Mandarin Oriental Lutetia, Paris",
+  "nasil": "liste"
+ },
+ "par-le-meurice": {
+  "key": "g187147-d188732",
+  "ad": "Le Meurice",
+  "nasil": "liste"
+ },
+ "par-regina-louvre": {
+  "key": "g187147-d207792",
+  "ad": "Hôtel Regina Louvre",
+  "nasil": "liste"
+ },
+ "par-le-walt": {
+  "key": "g187147-d290385",
+  "ad": "Hotel Le Walt By Inwood Hotels",
+  "nasil": "liste"
+ },
+ "par-bachaumont": {
+  "key": "g187147-d7776432",
+  "ad": "Hotel Bachaumont",
+  "nasil": "liste"
+ },
+ "par-fabric": {
+  "key": "g187147-d4340356",
+  "ad": "Hôtel Fabric Paris Oberkampf",
+  "nasil": "liste"
+ },
+ "par-chopin": {
+  "key": "g187147-d196829",
+  "ad": "Hotel Chopin",
+  "nasil": "liste"
+ },
+ "bru-amigo": {
+  "key": "g188644-d196130",
+  "ad": "Hotel Amigo",
+  "nasil": "liste"
+ },
+ "bru-corinthia": {
+  "key": "g188644-d206700",
+  "ad": "Corinthia Grand Hotel Astoria",
+  "nasil": "liste"
+ },
+ "bru-wiltchers": {
+  "key": "g188644-d228089",
+  "ad": "Steigenberger Icon Wiltcher's",
+  "nasil": "liste"
+ },
+ "bru-des-galeries": {
+  "key": "g188644-d6717426",
+  "ad": "Hotel des Galeries",
+  "nasil": "liste"
+ },
+ "bru-dixseptieme": {
+  "key": "g188644-d235830",
+  "ad": "Le Dixseptieme",
+  "nasil": "liste"
+ },
+ "bru-made-in-louise": {
+  "key": "g188644-d1597888",
+  "ad": "Made In Louise",
+  "nasil": "liste"
+ },
+ "bru-motel-one": {
+  "key": "g188644-d6401593",
+  "ad": "Hotel Motel One Brüssel",
+  "nasil": "liste"
+ },
+ "bru-ibis-off-grand-place": {
+  "key": "g188644-d206704",
+  "ad": "ibis Brussels off Grand Place",
+  "nasil": "liste"
+ },
+ "ams-sofitel-the-grand": {
+  "key": "g188590-d15294178",
+  "ad": "Canal House Suites at Sofitel Legend The Grand Amsterdam",
+  "nasil": "liste"
+ },
+ "ams-pulitzer": {
+  "key": "g188590-d189387",
+  "ad": "Pulitzer Amsterdam",
+  "nasil": "liste"
+ },
+ "ams-morgan-mees": {
+  "key": "g188590-d7724407",
+  "ad": "Morgan & Mees",
+  "nasil": "liste"
+ },
+ "ams-canal-house": {
+  "key": "g188590-d190556",
+  "ad": "Canal House",
+  "nasil": "liste"
+ },
+ "ams-estherea": {
+  "key": "g188590-d229151",
+  "ad": "Hotel Estherea",
+  "nasil": "liste"
+ },
+ "ams-college-hotel": {
+  "key": "g188590-d483134",
+  "ad": "The College Hotel Amsterdam, Autograph Collection",
+  "nasil": "liste"
+ },
+ "ams-sir-albert": {
+  "key": "g188590-d3528996",
+  "ad": "Sir Albert Hotel, Part of Sircle Collection",
+  "nasil": "liste"
+ },
+ "ams-park-centraal": {
+  "key": "g188590-d230118",
+  "ad": "Park Centraal Amsterdam, part of Sircle Collection",
+  "nasil": "liste"
+ },
+ "lux-place-darmes": {
+  "key": "g190356-d1935916",
+  "ad": "Hotel Le Place d'Armes",
+  "nasil": "liste"
+ },
+ "lux-cravat": {
+  "key": "g190356-d206548",
+  "ad": "Grand Hotel Cravat",
+  "nasil": "liste"
+ },
+ "lux-parc-beaux-arts": {
+  "key": "g190356-d586705",
+  "ad": "Hotel Parc Beaux-Arts Luxembourg",
+  "nasil": "liste"
+ },
+ "lux-le-royal": {
+  "key": "g190356-d229110",
+  "ad": "Le Royal Hotels & Resorts - Luxembourg",
+  "nasil": "liste"
+ },
+ "lux-sofitel-grand-ducal": {
+  "key": "g190356-d637669",
+  "ad": "Sofitel Luxembourg Le Grand Ducal",
+  "nasil": "liste"
+ },
+ "lux-simoncini": {
+  "key": "g190356-d249261",
+  "ad": "Hotel Simoncini",
+  "nasil": "liste"
+ },
+ "lux-vauban": {
+  "key": "g190356-d285067",
+  "ad": "Hotel Vauban",
+  "nasil": "liste"
+ },
+ "lux-ibis-styles-gare": {
+  "key": "g190356-d505265",
+  "ad": "Ibis Styles Luxembourg Centre Gare",
+  "nasil": "liste"
+ },
+ "ber-adlon": {
+  "key": "g187323-d190694",
+  "ad": "Hotel Adlon Kempinski Berlin",
+  "nasil": "liste"
+ },
+ "ber-ritz-carlton": {
+  "key": "g187323-d289019",
+  "ad": "The Ritz-Carlton, Berlin",
+  "nasil": "liste"
+ },
+ "ber-waldorf-astoria": {
+  "key": "g187323-d2481544",
+  "ad": "Waldorf Astoria Berlin",
+  "nasil": "liste"
+ },
+ "ber-oderberger": {
+  "key": "g187323-d7389231",
+  "ad": "Hotel Oderberger",
+  "nasil": "liste"
+ },
+ "ber-zoe-amano": {
+  "key": "g187323-d8858471",
+  "ad": "Hotel ZOE by AMANO",
+  "nasil": "liste"
+ },
+ "ber-provocateur": {
+  "key": "g187323-d11890006",
+  "ad": "PROVOCATEUR HOTEL BERLIN",
+  "nasil": "liste"
+ },
+ "ber-motel-one-hackescher": {
+  "key": "g187323-d662530",
+  "ad": "Hotel Motel One Berlin-Hackescher Markt",
+  "nasil": "liste"
+ },
+ "ber-premier-inn-alex": {
+  "key": "g187323-d3175711",
+  "ad": "Premier Inn Berlin Alexanderplatz hotel",
+  "nasil": "liste"
+ },
+ "vie-sacher": {
+  "key": "g190454-d206598",
+  "ad": "Hotel Sacher Wien",
+  "nasil": "liste"
+ },
+ "vie-park-hyatt": {
+  "key": "g190454-d6603500",
+  "ad": "Park Hyatt Vienna",
+  "nasil": "liste"
+ },
+ "vie-ritz-carlton": {
+  "key": "g190454-d3385403",
+  "ad": "The Ritz-Carlton, Vienna",
+  "nasil": "liste"
+ },
+ "vie-kaiserhof": {
+  "key": "g190454-d227176",
+  "ad": "Hotel Kaiserhof Wien",
+  "nasil": "liste"
+ },
+ "vie-motto": {
+  "key": "g190454-d23585844",
+  "ad": "Hotel Motto",
+  "nasil": "liste"
+ },
+ "vie-altstadt": {
+  "key": "g190454-d263905",
+  "ad": "Hotel Altstadt Vienna",
+  "nasil": "liste"
+ },
+ "vie-motel-one-westbahnhof": {
+  "key": "g190454-d2302949",
+  "ad": "Motel One Wien Westbahnhof",
+  "nasil": "liste"
+ },
+ "vie-zipser": {
+  "key": "g190454-d237828",
+  "ad": "Hotel Zipser",
+  "nasil": "liste"
+ },
+ "mad-the-palace": {
+  "key": "g187514-d190569",
+  "ad": "The Palace, a Luxury Collection Hotel, Madrid",
+  "nasil": "liste"
+ },
+ "mad-rosewood-villa-magna": {
+  "key": "g187514-d190161",
+  "ad": "Rosewood Villa Magna",
+  "nasil": "liste"
+ },
+ "mad-gran-hotel-ingles": {
+  "key": "g187514-d10190864",
+  "ad": "Gran Hotel Inglés",
+  "nasil": "liste"
+ },
+ "mad-only-you-boutique": {
+  "key": "g187514-d4719800",
+  "ad": "Only YOU Boutique Hotel Madrid",
+  "nasil": "liste"
+ },
+ "mad-catalonia-las-cortes": {
+  "key": "g187514-d599363",
+  "ad": "Catalonia Las Cortes",
+  "nasil": "liste"
+ },
+ "mad-hotel-preciados": {
+  "key": "g187514-d232819",
+  "ad": "Hotel Preciados",
+  "nasil": "liste"
+ },
+ "mad-ibis-styles-prado": {
+  "key": "g187514-d234301",
+  "ad": "Ibis Styles Madrid Prado",
+  "nasil": "liste"
+ },
+ "mad-hotel-europa": {
+  "key": "g187514-d266529",
+  "ad": "Hotel Europa",
+  "nasil": "liste"
+ },
+ "lis-avenida-palace": {
+  "key": "g189158-d195643",
+  "ad": "Hotel Avenida Palace",
+  "nasil": "liste"
+ },
+ "lis-tivoli-avenida": {
+  "key": "g189158-d207174",
+  "ad": "Tivoli Avenida Liberdade Lisboa",
+  "nasil": "liste"
+ },
+ "lis-bairro-alto-hotel": {
+  "key": "g189158-d548451",
+  "ad": "Bairro Alto Hotel",
+  "nasil": "liste"
+ },
+ "lis-almalusa-baixa-chiado": {
+  "key": "g189158-d9596331",
+  "ad": "AlmaLusa Baixa/Chiado",
+  "nasil": "liste"
+ },
+ "lis-memmo-alfama": {
+  "key": "g189158-d4509998",
+  "ad": "Memmo Alfama Hotel",
+  "nasil": "liste"
+ },
+ "lis-inspira-liberdade": {
+  "key": "g189158-d1580631",
+  "ad": "Inspira Liberdade Boutique Hotel",
+  "nasil": "liste"
+ },
+ "lis-hotel-florescente": {
+  "key": "g189158-d235614",
+  "ad": "Hotel Florescente",
+  "nasil": "liste"
+ },
+ "lis-my-story-rossio": {
+  "key": "g189158-d7733797",
+  "ad": "My Story Hotel Rossio",
+  "nasil": "liste"
+ },
+ "rom-hotel-raphael": {
+  "key": "g187791-d203083",
+  "ad": "Bio Hotel Raphael - Relais Chateaux",
+  "nasil": "liste"
+ },
+ "rom-hotel-de-russie": {
+  "key": "g187791-d232851",
+  "ad": "Hotel de Russie",
+  "nasil": "liste"
+ },
+ "rom-hotel-eden": {
+  "key": "g187791-d191331",
+  "ad": "Hotel Eden",
+  "nasil": "liste"
+ },
+ "rom-hotel-artemide": {
+  "key": "g187791-d205044",
+  "ad": "Hotel Artemide",
+  "nasil": "liste"
+ },
+ "rom-hotel-locarno": {
+  "key": "g187791-d198734",
+  "ad": "Hotel Locarno",
+  "nasil": "liste"
+ },
+ "rom-hotel-campo-de-fiori": {
+  "key": "g187791-d208552",
+  "ad": "Boutique Hotel Campo de Fiori",
+  "nasil": "liste"
+ },
+ "rom-hotel-panda": {
+  "key": "g187791-d298628",
+  "ad": "Hotel Panda",
+  "nasil": "liste"
+ },
+ "rom-hotel-smeraldo": {
+  "key": "g187791-d236151",
+  "ad": "Hotel Smeraldo",
+  "nasil": "liste"
+ },
+ "vlt-rosselli": {
+  "key": "g190328-d17519905",
+  "ad": "Rosselli - AX Privilege",
+  "nasil": "liste"
+ },
+ "vlt-iniala-harbour-house": {
+  "key": "g190328-d21347208",
+  "ad": "Iniala Valletta",
+  "nasil": "liste"
+ },
+ "vlt-casa-ellul": {
+  "key": "g190328-d6892974",
+  "ad": "Casa Ellul",
+  "nasil": "liste"
+ },
+ "vlt-the-cumberland": {
+  "key": "g190328-d1628241",
+  "ad": "The Cumberland By Neu Collective",
+  "nasil": "liste"
+ },
+ "vlt-ursulino": {
+  "key": "g190328-d8323901",
+  "ad": "Ursulino Valletta",
+  "nasil": "liste"
+ },
+ "vlt-osborne-hotel": {
+  "key": "g190328-d265558",
+  "ad": "Osborne Hotel",
+  "nasil": "liste"
+ },
+ "vlt-castille": {
+  "key": "g190328-d257372",
+  "ad": "Hotel Castille",
+  "nasil": "liste"
+ },
+ "ath-grande-bretagne": {
+  "key": "g189400-d198715",
+  "ad": "Hotel Grande Bretagne, a Luxury Collection Hotel, Athens",
+  "nasil": "liste"
+ },
+ "ath-electra-metropolis": {
+  "key": "g189400-d10798588",
+  "ad": "Electra Metropolis Athens",
+  "nasil": "liste"
+ },
+ "ath-athenswas": {
+  "key": "g189400-d7622128",
+  "ad": "AthensWas Design Hotel",
+  "nasil": "liste"
+ },
+ "ath-ava-hotel": {
+  "key": "g189400-d529729",
+  "ad": "AVA Hotel Athens",
+  "nasil": "liste"
+ },
+ "ath-the-modernist": {
+  "key": "g189400-d21233464",
+  "ad": "The Modernist Athens",
+  "nasil": "liste"
+ },
+ "ath-herodion": {
+  "key": "g189400-d228864",
+  "ad": "Herodion Hotel",
+  "nasil": "liste"
+ },
+ "ath-phaedra": {
+  "key": "g189400-d658523",
+  "ad": "Hotel Phaedra",
+  "nasil": "liste"
+ },
+ "ath-attalos": {
+  "key": "g189400-d235705",
+  "ad": "Attalos Hotel",
+  "nasil": "liste"
+ },
+ "sto-grand-hotel": {
+  "key": "g189852-d207781",
+  "ad": "Grand Hôtel Stockholm",
+  "nasil": "liste"
+ },
+ "sto-hotel-diplomat": {
+  "key": "g189852-d207025",
+  "ad": "Hotel Diplomat",
+  "nasil": "liste"
+ },
+ "sto-lydmar": {
+  "key": "g189852-d1163847",
+  "ad": "Lydmar Hotel",
+  "nasil": "liste"
+ },
+ "sto-miss-clara": {
+  "key": "g189852-d6355782",
+  "ad": "Miss Clara by Nobis",
+  "nasil": "liste"
+ },
+ "sto-hotel-rival": {
+  "key": "g189852-d282301",
+  "ad": "Hotel Rival",
+  "nasil": "liste"
+ },
+ "sto-skeppsholmen": {
+  "key": "g189852-d1484183",
+  "ad": "Hotel Skeppsholmen",
+  "nasil": "liste"
+ },
+ "sto-scandic-go-upplandsgatan": {
+  "key": "g189852-d8570552",
+  "ad": "Scandic Go, Upplandsgatan 4",
+  "nasil": "liste"
+ },
+ "sto-scandic-go-sankt-eriksgatan": {
+  "key": "g189852-d28317545",
+  "ad": "Scandic Go, Sankt Eriksgatan 20",
+  "nasil": "liste"
+ },
+ "cph-radisson-royal": {
+  "key": "g189541-d206741",
+  "ad": "Radisson Collection Royal Hotel, Copenhagen",
+  "nasil": "liste"
+ },
+ "cph-d-angleterre": {
+  "key": "g189541-d232092",
+  "ad": "Hotel D'Angleterre",
+  "nasil": "liste"
+ },
+ "cph-nimb": {
+  "key": "g189541-d1218107",
+  "ad": "Nimb",
+  "nasil": "liste"
+ },
+ "cph-nyhavn-71": {
+  "key": "g189541-d207305",
+  "ad": "71 Nyhavn Hotel",
+  "nasil": "liste"
+ },
+ "cph-ottilia": {
+  "key": "g189541-d15656160",
+  "ad": "Hotel Ottilia by Brøchner Hotels",
+  "nasil": "liste"
+ },
+ "cph-sp34": {
+  "key": "g189541-d5888190",
+  "ad": "Hotel SP34",
+  "nasil": "liste"
+ },
+ "cph-wakeup-borgergade": {
+  "key": "g189541-d5602333",
+  "ad": "Wakeup Copenhagen, Borgergade",
+  "nasil": "liste"
+ },
+ "cph-cabinn-city": {
+  "key": "g189541-d338239",
+  "ad": "CABINN City Hotel",
+  "nasil": "liste"
+ },
+ "hel-sokos-torni": {
+  "key": "g189934-d232148",
+  "ad": "Solo Sokos Hotel Torni",
+  "nasil": "liste"
+ },
+ "hel-kamp": {
+  "key": "g189934-d199923",
+  "ad": "Hotel Kamp",
+  "nasil": "liste"
+ },
+ "hel-st-george": {
+  "key": "g189934-d12995950",
+  "ad": "Hotel St. George Helsinki",
+  "nasil": "liste"
+ },
+ "hel-lilla-roberts": {
+  "key": "g189934-d7940665",
+  "ad": "Hotel Lilla Roberts",
+  "nasil": "liste"
+ },
+ "hel-fabian": {
+  "key": "g189934-d1782788",
+  "ad": "Hotel Fabian",
+  "nasil": "liste"
+ },
+ "hel-f6": {
+  "key": "g189934-d10263887",
+  "ad": "Hotel F6",
+  "nasil": "liste"
+ },
+ "hel-helka": {
+  "key": "g189934-d237691",
+  "ad": "Hotel Helka",
+  "nasil": "liste"
+ },
+ "hel-hotel-arthur": {
+  "key": "g189934-d228674",
+  "ad": "Arthur Hotel",
+  "nasil": "liste"
+ },
+ "tll-sokos-viru": {
+  "key": "g274958-d277107",
+  "ad": "Original Sokos Hotel Viru",
+  "nasil": "liste"
+ },
+ "tll-telegraaf": {
+  "key": "g274958-d620162",
+  "ad": "Hotel Telegraaf, Autograph Collection",
+  "nasil": "liste"
+ },
+ "tll-schlossle": {
+  "key": "g274958-d276621",
+  "ad": "Hotel Schlossle",
+  "nasil": "liste"
+ },
+ "tll-hotel-cru": {
+  "key": "g274958-d612248",
+  "ad": "Hotel CRU",
+  "nasil": "liste"
+ },
+ "tll-nordic-forum": {
+  "key": "g274958-d817717",
+  "ad": "Nordic Hotel Forum",
+  "nasil": "liste"
+ },
+ "tll-kreutzwald": {
+  "key": "g274958-d277098",
+  "ad": "Kreutzwald Hotel Tallinn",
+  "nasil": "liste"
+ },
+ "tll-go-hotel-shnelli": {
+  "key": "g274958-d585370",
+  "ad": "Go Hotel Shnelli",
+  "nasil": "liste"
+ },
+ "tll-tallink-express": {
+  "key": "g274958-d277096",
+  "ad": "Tallink Express Hotel",
+  "nasil": "liste"
+ },
+ "rix-grand-palace": {
+  "key": "g274967-d277641",
+  "ad": "Grand Palace Hotel",
+  "nasil": "liste"
+ },
+ "rix-kempinski": {
+  "key": "g274967-d277639",
+  "ad": "Grand Hotel Kempinski Riga",
+  "nasil": "liste"
+ },
+ "rix-hotel-bergs": {
+  "key": "g274967-d290561",
+  "ad": "Hotel Bergs Suites",
+  "nasil": "liste"
+ },
+ "rix-neiburgs": {
+  "key": "g274967-d1737599",
+  "ad": "Neiburgs Hotel",
+  "nasil": "liste"
+ },
+ "rix-pullman-old-town": {
+  "key": "g274967-d10112855",
+  "ad": "Pullman Riga Old Town",
+  "nasil": "liste"
+ },
+ "rix-hotel-justus": {
+  "key": "g274967-d1452382",
+  "ad": "Hotel Justus",
+  "nasil": "liste"
+ },
+ "rix-hanza-hotel": {
+  "key": "g274967-d652760",
+  "ad": "Hanza Hotel",
+  "nasil": "liste"
+ },
+ "rix-wellton-centrum": {
+  "key": "g274967-d4828375",
+  "ad": "Wellton Centrum Hotel & Spa",
+  "nasil": "liste"
+ },
+ "vno-astorija": {
+  "key": "g274951-d277654",
+  "ad": "Radisson Collection Astorija Hotel, Vilnius",
+  "nasil": "liste"
+ },
+ "vno-pacai": {
+  "key": "g274951-d13928074",
+  "ad": "Hotel Pacai",
+  "nasil": "liste"
+ },
+ "vno-stikliai": {
+  "key": "g274951-d284271",
+  "ad": "Stikliai Hotel",
+  "nasil": "liste"
+ },
+ "vno-artagonist": {
+  "key": "g274951-d10793019",
+  "ad": "Artagonist Art Hotel",
+  "nasil": "liste"
+ },
+ "vno-shakespeare": {
+  "key": "g274951-d284917",
+  "ad": "Shakespeare Hotel",
+  "nasil": "liste"
+ },
+ "vno-neringa": {
+  "key": "g274951-d284934",
+  "ad": "Neringa Hotel",
+  "nasil": "liste"
+ },
+ "vno-panorama": {
+  "key": "g274951-d290874",
+  "ad": "Panorama Hotel",
+  "nasil": "liste"
+ },
+ "vno-city-gate": {
+  "key": "g274951-d284907",
+  "ad": "Best Eastern City Gate",
+  "nasil": "liste"
+ },
+ "waw-bristol": {
+  "key": "g274856-d275056",
+  "ad": "Hotel Bristol, a Luxury Collection Hotel, Warsaw",
+  "nasil": "liste"
+ },
+ "waw-raffles": {
+  "key": "g274856-d276990",
+  "ad": "Raffles Europejski Warsaw",
+  "nasil": "liste"
+ },
+ "waw-verte": {
+  "key": "g274856-d24867136",
+  "ad": "Hotel Verte, Warsaw, Autograph Collection",
+  "nasil": "liste"
+ },
+ "waw-puro": {
+  "key": "g274856-d15751681",
+  "ad": "PURO Warszawa Centrum",
+  "nasil": "liste"
+ },
+ "waw-indigo": {
+  "key": "g274856-d12498287",
+  "ad": "Hotel Indigo Warsaw - Nowy Swiat by IHG",
+  "nasil": "liste"
+ },
+ "waw-polonia-palace": {
+  "key": "g274856-d276699",
+  "ad": "Polonia Palace Hotel",
+  "nasil": "liste"
+ },
+ "waw-motel-one-chopin": {
+  "key": "g274856-d18967939",
+  "ad": "Hotel Motel One Warschau-Chopin",
+  "nasil": "liste"
+ },
+ "waw-ibis-stare-miasto": {
+  "key": "g274856-d285447",
+  "ad": "ibis Warszawa Stare Miasto - Old Town",
+  "nasil": "liste"
+ },
+ "prg-hotel-paris": {
+  "key": "g274707-d7746962",
+  "ad": "Paris",
+  "nasil": "liste"
+ },
+ "prg-four-seasons": {
+  "key": "g274707-d275507",
+  "ad": "Four Seasons Hotel Prague",
+  "nasil": "liste"
+ },
+ "prg-mandarin-oriental": {
+  "key": "g274707-d616395",
+  "ad": "Mandarin Oriental, Prague",
+  "nasil": "liste"
+ },
+ "prg-josef": {
+  "key": "g274707-d275505",
+  "ad": "Hotel Josef",
+  "nasil": "liste"
+ },
+ "prg-pod-vezi": {
+  "key": "g274707-d276676",
+  "ad": "Hotel Pod Veží",
+  "nasil": "liste"
+ },
+ "prg-emblem": {
+  "key": "g274707-d4367787",
+  "ad": "The Emblem Prague Hotel",
+  "nasil": "liste"
+ },
+ "prg-ibis-old-town": {
+  "key": "g274707-d597798",
+  "ad": "Ibis Praha Old Town",
+  "nasil": "liste"
+ },
+ "prg-clement": {
+  "key": "g274707-d1723214",
+  "ad": "Hotel Clement Prague",
+  "nasil": "liste"
+ },
+ "bts-carlton": {
+  "key": "g274924-d276309",
+  "ad": "Radisson Blu Carlton Hotel, Bratislava",
+  "nasil": "liste"
+ },
+ "bts-river-park": {
+  "key": "g274924-d1142517",
+  "ad": "Grand Hotel River Park, a Luxury Collection Hotel, Bratislava",
+  "nasil": "liste"
+ },
+ "bts-sheraton": {
+  "key": "g274924-d1592032",
+  "ad": "Sheraton Bratislava Hotel",
+  "nasil": "liste"
+ },
+ "bts-marrols": {
+  "key": "g274924-d276296",
+  "ad": "Hotel Marrol's",
+  "nasil": "liste"
+ },
+ "bts-loft": {
+  "key": "g274924-d2333104",
+  "ad": "Loft Hotel & Wilson Palace",
+  "nasil": "liste"
+ },
+ "bts-arcadia": {
+  "key": "g274924-d669692",
+  "ad": "Arcadia Boutique Hotel",
+  "nasil": "liste"
+ },
+ "bts-elisabeth": {
+  "key": "g274924-d12140336",
+  "ad": "Elisabeth Old Town",
+  "nasil": "liste"
+ },
+ "bts-saffron": {
+  "key": "g274924-d2549510",
+  "ad": "Hotel Saffron",
+  "nasil": "liste"
+ },
+ "bud-parisi-udvar": {
+  "key": "g274887-d17783358",
+  "ad": "Párisi Udvar Hotel Budapest",
+  "nasil": "liste"
+ },
+ "bud-kempinski": {
+  "key": "g274887-d276384",
+  "ad": "Kempinski Hotel Corvinus Budapest",
+  "nasil": "liste"
+ },
+ "bud-aria": {
+  "key": "g274887-d7306673",
+  "ad": "Aria Hotel Budapest by Library Hotel Collection",
+  "nasil": "liste"
+ },
+ "bud-clark": {
+  "key": "g274887-d13392862",
+  "ad": "Hotel Clark Budapest",
+  "nasil": "liste"
+ },
+ "bud-moments": {
+  "key": "g274887-d9250207",
+  "ad": "Hotel Moments Budapest",
+  "nasil": "liste"
+ },
+ "bud-rum": {
+  "key": "g274887-d10128563",
+  "ad": "Rum Hotel",
+  "nasil": "liste"
+ },
+ "bud-d8": {
+  "key": "g274887-d15277005",
+  "ad": "voco Budapest D8 by IHG",
+  "nasil": "liste"
+ },
+ "bud-roombach": {
+  "key": "g274887-d5784643",
+  "ad": "ROOMbach Hotel Budapest Center",
+  "nasil": "liste"
+ },
+ "lju-grand-union": {
+  "key": "g274873-d456147",
+  "ad": "Grand Hotel Union",
+  "nasil": "liste"
+ },
+ "lju-intercontinental": {
+  "key": "g274873-d12394722",
+  "ad": "Intercontinental Ljubljana By IHG",
+  "nasil": "liste"
+ },
+ "lju-zlata-ladjica": {
+  "key": "g274873-d23465272",
+  "ad": "Zlata Ladjica Boutique Hotel",
+  "nasil": "liste"
+ },
+ "lju-vander-urbani": {
+  "key": "g274873-d3240519",
+  "ad": "Vander Urbani Resort - A Member Of Design Hotels",
+  "nasil": "liste"
+ },
+ "lju-cubo": {
+  "key": "g274873-d2235422",
+  "ad": "Hotel Cubo",
+  "nasil": "liste"
+ },
+ "lju-slon": {
+  "key": "g274873-d276338",
+  "ad": "Best Western Premier Hotel Slon",
+  "nasil": "liste"
+ },
+ "lju-emonec": {
+  "key": "g274873-d559550",
+  "ad": "Hotel Emonec",
+  "nasil": "liste"
+ },
+ "lju-bb-park": {
+  "key": "g274873-d290446",
+  "ad": "B&B Hotel Ljubljana Park",
+  "nasil": "liste"
+ },
+ "zag-esplanade": {
+  "key": "g294454-d301428",
+  "ad": "Esplanade Zagreb Hotel",
+  "nasil": "liste"
+ },
+ "zag-artotel": {
+  "key": "g294454-d26517477",
+  "ad": "art'otel Zagreb",
+  "nasil": "liste"
+ },
+ "zag-sheraton": {
+  "key": "g294454-d301822",
+  "ad": "Sheraton Zagreb Hotel",
+  "nasil": "liste"
+ },
+ "zag-dubrovnik": {
+  "key": "g294454-d302946",
+  "ad": "Hotel Dubrovnik",
+  "nasil": "liste"
+ },
+ "zag-academia": {
+  "key": "g294454-d7761903",
+  "ad": "Hotel Academia",
+  "nasil": "liste"
+ },
+ "zag-canopy": {
+  "key": "g294454-d15120354",
+  "ad": "Canopy by Hilton Zagreb City Centre",
+  "nasil": "liste"
+ },
+ "zag-central": {
+  "key": "g294454-d307786",
+  "ad": "Hotel Central",
+  "nasil": "liste"
+ },
+ "zag-slisko": {
+  "key": "g294454-d601897",
+  "ad": "Hotel Slisko",
+  "nasil": "liste"
+ },
+ "buh-jw-marriott": {
+  "key": "g294458-d299811",
+  "ad": "JW Marriott Bucharest Grand Hotel",
+  "nasil": "liste"
+ },
+ "buh-epoque": {
+  "key": "g294458-d1952911",
+  "ad": "Epoque Hotel Relais & Chateaux",
+  "nasil": "liste"
+ },
+ "buh-hgi-old-town": {
+  "key": "g294458-d12786273",
+  "ad": "Hilton Garden Inn Bucharest Old Town",
+  "nasil": "liste"
+ },
+ "buh-novotel": {
+  "key": "g294458-d608215",
+  "ad": "Novotel Bucharest City Centre",
+  "nasil": "liste"
+ },
+ "buh-cismigiu": {
+  "key": "g294458-d3505206",
+  "ad": "Hotel Cismigiu",
+  "nasil": "liste"
+ },
+ "buh-ibis-styles": {
+  "key": "g294458-d19827822",
+  "ad": "ibis Styles Bucharest City Center",
+  "nasil": "liste"
+ },
+ "buh-rembrandt": {
+  "key": "g294458-d535187",
+  "ad": "Rembrandt Hotel",
+  "nasil": "liste"
+ },
+ "sof-balkan-palace": {
+  "key": "g294452-d301821",
+  "ad": "Sofia Balkan Palace",
+  "nasil": "liste"
+ },
+ "sof-intercontinental": {
+  "key": "g294452-d305129",
+  "ad": "InterContinental Sofia by IHG",
+  "nasil": "liste"
+ },
+ "sof-hyatt-regency": {
+  "key": "g294452-d20373886",
+  "ad": "Hyatt Regency Sofia",
+  "nasil": "liste"
+ },
+ "sof-sense": {
+  "key": "g294452-d3748335",
+  "ad": "Sense Hotel Sofia",
+  "nasil": "liste"
+ },
+ "sof-les-fleurs": {
+  "key": "g294452-d647417",
+  "ad": "Les Fleurs Boutique Hotel",
+  "nasil": "liste"
+ },
+ "sof-favorit": {
+  "key": "g294452-d2485685",
+  "ad": "Hotel Favorit",
+  "nasil": "liste"
+ },
+ "sof-art-plaza": {
+  "key": "g294452-d34587384",
+  "ad": "Art Plaza Hotel",
+  "nasil": "liste"
+ }
+}
