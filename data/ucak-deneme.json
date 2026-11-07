@@ -1,0 +1,1184 @@
+{
+ "tarih": "2026-11-07T15:50:25.660Z",
+ "aktor": "eiv~google-flights-scraper",
+ "arama": 52,
+ "satir": 280,
+ "turler": {
+  "flight": 280
+ },
+ "sureSn": 340,
+ "olculenUsd": 0.18,
+ "aramaBasiUsd": 0.00346,
+ "eskiAramaBasiUsd": 0.028,
+ "alanlar": [
+  "recordType",
+  "input",
+  "route",
+  "tripType",
+  "searchDepartureDate",
+  "searchReturnDate",
+  "flightsFound",
+  "lowestPrice",
+  "cheapestNonstopPrice",
+  "currency",
+  "priceLevel",
+  "typicalPrice",
+  "typicalPriceLow",
+  "typicalPriceHigh",
+  "priceHistory",
+  "googleFlightsUrl",
+  "scrapedAt",
+  "section",
+  "rank",
+  "isBestFlight",
+  "isCheapest",
+  "price",
+  "airline",
+  "airlineCode",
+  "airlines",
+  "airlineCodes",
+  "flightNumbers",
+  "origin",
+  "originName",
+  "destination",
+  "destinationName",
+  "departAt",
+  "arriveAt",
+  "departureDate",
+  "departureTime",
+  "arrivalDate",
+  "arrivalTime",
+  "durationMinutes",
+  "stops",
+  "layovers",
+  "legs",
+  "emissionsKg",
+  "typicalEmissionsKg",
+  "emissionsVsTypicalPercent",
+  "cabinClass",
+  "adults",
+  "children",
+  "infants",
+  "outboundFlightNumbers",
+  "bookingOptions",
+  "bookingToken",
+  "errorCode",
+  "errorMessage"
+ ],
+ "ornek": [
+  {
+   "recordType": "search-summary",
+   "input": "IST,SAW-AMS 2026-11-13 2026-11-15",
+   "route": "IST,SAW-AMS-IST,SAW",
+   "tripType": "round-trip",
+   "searchDepartureDate": "2026-11-13",
+   "searchReturnDate": "2026-11-15",
+   "flightsFound": 7,
+   "lowestPrice": 248,
+   "cheapestNonstopPrice": 305,
+   "currency": "EUR",
+   "priceLevel": "high",
+   "typicalPrice": 192,
+   "typicalPriceLow": 170,
+   "typicalPriceHigh": 225,
+   "priceHistory": [
+    {
+     "date": "2026-09-07",
+     "price": 173
+    },
+    {
+     "date": "2026-09-08",
+     "price": 173
+    },
+    {
+     "date": "2026-09-09",
+     "price": 175
+    },
+    {
+     "date": "2026-09-10",
+     "price": 175
+    },
+    {
+     "date": "2026-09-11",
+     "price": 174
+    },
+    {
+     "date": "2026-09-12",
+     "price": 175
+    },
+    {
+     "date": "2026-09-13",
+     "price": 176
+    },
+    {
+     "date": "2026-09-14",
+     "price": 175
+    },
+    {
+     "date": "2026-09-15",
+     "price": 144
+    },
+    {
+     "date": "2026-09-16",
+     "price": 144
+    },
+    {
+     "date": "2026-09-17",
+     "price": 174
+    },
+    {
+     "date": "2026-09-18",
+     "price": 174
+    },
+    {
+     "date": "2026-09-19",
+     "price": 177
+    },
+    {
+     "date": "2026-09-20",
+     "price": 177
+    },
+    {
+     "date": "2026-09-21",
+     "price": 177
+    },
+    {
+     "date": "2026-09-22",
+     "price": 173
+    },
+    {
+     "date": "2026-09-23",
+     "price": 177
+    },
+    {
+     "date": "2026-09-24",
+     "price": 174
+    },
+    {
+     "date": "2026-09-25",
+     "price": 177
+    },
+    {
+     "date": "2026-09-26",
+     "price": 177
+    },
+    {
+     "date": "2026-09-27",
+     "price": 177
+    },
+    {
+     "date": "2026-09-28",
+     "price": 181
+    },
+    {
+     "date": "2026-09-29",
+     "price": 181
+    },
+    {
+     "date": "2026-09-30",
+     "price": 178
+    },
+    {
+     "date": "2026-10-01",
+     "price": 180
+    },
+    {
+     "date": "2026-10-02",
+     "price": 181
+    },
+    {
+     "date": "2026-10-03",
+     "price": 181
+    },
+    {
+     "date": "2026-10-04",
+     "price": 180
+    },
+    {
+     "date": "2026-10-05",
+     "price": 200
+    },
+    {
+     "date": "2026-10-06",
+     "price": 200
+    },
+    {
+     "date": "2026-10-07",
+     "price": 212
+    },
+    {
+     "date": "2026-10-08",
+     "price": 212
+    },
+    {
+     "date": "2026-10-09",
+     "price": 211
+    },
+    {
+     "date": "2026-10-10",
+     "price": 216
+    },
+    {
+     "date": "2026-10-11",
+     "price": 217
+    },
+    {
+     "date": "2026-10-12",
+     "price": 216
+    },
+    {
+     "date": "2026-10-13",
+     "price": 217
+    },
+    {
+     "date": "2026-10-14",
+     "price": 216
+    },
+    {
+     "date": "2026-10-15",
+     "price": 212
+    },
+    {
+     "date": "2026-10-16",
+     "price": 211
+    },
+    {
+     "date": "2026-10-17",
+     "price": 217
+    },
+    {
+     "date": "2026-10-18",
+     "price": 206
+    },
+    {
+     "date": "2026-10-19",
+     "price": 206
+    },
+    {
+     "date": "2026-10-20",
+     "price": 223
+    },
+    {
+     "date": "2026-10-21",
+     "price": 206
+    },
+    {
+     "date": "2026-10-22",
+     "price": 206
+    },
+    {
+     "date": "2026-10-23",
+     "price": 206
+    },
+    {
+     "date": "2026-10-24",
+     "price": 206
+    },
+    {
+     "date": "2026-10-25",
+     "price": 206
+    },
+    {
+     "date": "2026-10-26",
+     "price": 225
+    },
+    {
+     "date": "2026-10-27",
+     "price": 225
+    },
+    {
+     "date": "2026-10-28",
+     "price": 225
+    },
+    {
+     "date": "2026-10-29",
+     "price": 239
+    },
+    {
+     "date": "2026-10-30",
+     "price": 239
+    },
+    {
+     "date": "2026-10-31",
+     "price": 248
+    },
+    {
+     "date": "2026-11-01",
+     "price": 238
+    },
+    {
+     "date": "2026-11-02",
+     "price": 238
+    },
+    {
+     "date": "2026-11-03",
+     "price": 251
+    },
+    {
+     "date": "2026-11-04",
+     "price": 237
+    },
+    {
+     "date": "2026-11-05",
+     "price": 246
+    },
+    {
+     "date": "2026-11-06",
+     "price": 248
+    }
+   ],
+   "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI2LTExLTEzagcIARIDSVNUagcIARIDU0FXcgcIARIDQU1TGicSCjIwMjYtMTEtMTVqBwgBEgNBTVNyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+   "scrapedAt": "2026-11-07T15:43:18.233Z"
+  },
+  {
+   "recordType": "flight",
+   "input": "IST,SAW-AMS 2026-11-13 2026-11-15",
+   "route": "IST,SAW-AMS-IST,SAW",
+   "tripType": "round-trip",
+   "section": "departing",
+   "rank": 1,
+   "isBestFlight": false,
+   "isCheapest": true,
+   "price": 248,
+   "currency": "EUR",
+   "priceLevel": "high",
+   "typicalPriceLow": 170,
+   "typicalPriceHigh": 225,
+   "airline": "Air Serbia",
+   "airlineCode": "JU",
+   "airlines": [
+    "Air Serbia"
+   ],
+   "airlineCodes": [
+    "JU"
+   ],
+   "flightNumbers": [
+    "JU427",
+    "JU260"
+   ],
+   "origin": "IST",
+   "originName": "Istanbul Airport",
+   "destination": "AMS",
+   "destinationName": "Amsterdam Airport Schiphol",
+   "departAt": "2026-11-13T05:25",
+   "arriveAt": "2026-11-13T09:10",
+   "departureDate": "2026-11-13",
+   "departureTime": "05:25",
+   "arrivalDate": "2026-11-13",
+   "arrivalTime": "09:10",
+   "durationMinutes": 345,
+   "stops": 1,
+   "layovers": [
+    {
+     "airport": "BEG",
+     "airportName": "Belgrade Nikola Tesla Airport",
+     "city": "Belgrade",
+     "durationMinutes": 85,
+     "changesAirport": false
+    }
+   ],
+   "legs": [
+    {
+     "flightNumber": "JU427",
+     "airlineCode": "JU",
+     "airline": "Air Serbia",
+     "operatedBy": "Bulgaria Air for Air Serbia",
+     "aircraft": "Embraer 190",
+     "from": "IST",
+     "fromName": "Istanbul Airport",
+     "to": "BEG",
+     "toName": "Belgrade Nikola Tesla Airport",
+     "departAt": "2026-11-13T05:25",
+     "arriveAt": "2026-11-13T05:10",
+     "durationMinutes": 105,
+     "legroom": "31 in",
+     "emissionsKg": 102
+    },
+    {
+     "flightNumber": "JU260",
+     "airlineCode": "JU",
+     "airline": "Air Serbia",
+     "operatedBy": null,
+     "aircraft": "Airbus A319",
+     "from": "BEG",
+     "fromName": "Belgrade Nikola Tesla Airport",
+     "to": "AMS",
+     "toName": "Amsterdam Airport Schiphol",
+     "departAt": "2026-11-13T06:35",
+     "arriveAt": "2026-11-13T09:10",
+     "durationMinutes": 155,
+     "legroom": "30 in",
+     "emissionsKg": 144
+    }
+   ],
+   "emissionsKg": 246,
+   "typicalEmissionsKg": 209,
+   "emissionsVsTypicalPercent": 18,
+   "cabinClass": "economy",
+   "adults": 1,
+   "children": 0,
+   "infants": 0,
+   "searchDepartureDate": "2026-11-13",
+   "searchReturnDate": "2026-11-15",
+   "outboundFlightNumbers": null,
+   "bookingOptions": null,
+   "bookingToken": "CjRISXBPY21KcWFibDhBQlBLclFCRy0tLS0tLS0tLXlpYmR4NUFBQUFBR3J2UnhZRnZFRU1BEg1KVTQyN3xKVTI2MCMxGgsInMEBEAIaA0VVUjgccLTXAQ==",
+   "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhppEgoyMDI2LTExLTEzIh8KA0lTVBIKMjAyNi0xMS0xMxoDQkVHKgJKVTIDNDI3Ih8KA0JFRxIKMjAyNi0xMS0xMxoDQU1TKgJKVTIDMjYwagcIARIDSVNUagcIARIDU0FXcgcIARIDQU1TGicSCjIwMjYtMTEtMTVqBwgBEgNBTVNyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+   "scrapedAt": "2026-11-07T15:43:18.233Z"
+  },
+  {
+   "recordType": "flight",
+   "input": "IST,SAW-AMS 2026-11-13 2026-11-15",
+   "route": "IST,SAW-AMS-IST,SAW",
+   "tripType": "round-trip",
+   "section": "departing",
+   "rank": 2,
+   "isBestFlight": false,
+   "isCheapest": false,
+   "price": 305,
+   "currency": "EUR",
+   "priceLevel": "high",
+   "typicalPriceLow": 170,
+   "typicalPriceHigh": 225,
+   "airline": "Pegasus",
+   "airlineCode": "PC",
+   "airlines": [
+    "Pegasus"
+   ],
+   "airlineCodes": [
+    "PC"
+   ],
+   "flightNumbers": [
+    "PC1251"
+   ],
+   "origin": "SAW",
+   "originName": "Sabiha Gökçen International Airport",
+   "destination": "AMS",
+   "destinationName": "Amsterdam Airport Schiphol",
+   "departAt": "2026-11-13T09:00",
+   "arriveAt": "2026-11-13T10:45",
+   "departureDate": "2026-11-13",
+   "departureTime": "09:00",
+   "arrivalDate": "2026-11-13",
+   "arrivalTime": "10:45",
+   "durationMinutes": 225,
+   "stops": 0,
+   "layovers": [],
+   "legs": [
+    {
+     "flightNumber": "PC1251",
+     "airlineCode": "PC",
+     "airline": "Pegasus",
+     "operatedBy": null,
+     "aircraft": "Airbus A321",
+     "from": "SAW",
+     "fromName": "Sabiha Gökçen International Airport",
+     "to": "AMS",
+     "toName": "Amsterdam Airport Schiphol",
+     "departAt": "2026-11-13T09:00",
+     "arriveAt": "2026-11-13T10:45",
+     "durationMinutes": 225,
+     "legroom": "28 in",
+     "emissionsKg": 171
+    }
+   ],
+   "emissionsKg": 171,
+   "typicalEmissionsKg": 209,
+   "emissionsVsTypicalPercent": -18,
+   "cabinClass": "economy",
+   "adults": 1,
+   "children": 0,
+   "infants": 0,
+   "searchDepartureDate": "2026-11-13",
+   "searchReturnDate": "2026-11-15",
+   "outboundFlightNumbers": null,
+   "bookingOptions": null,
+   "bookingToken": "CjRISXBPY21KcWFibDhBQlBLclFCRy0tLS0tLS0tLXlpYmR4NUFBQUFBR3J2UnhZRnZFRU1BEgZQQzEyNTEaCwiH7gEQAhoDRVVSOBxws4kC",
+   "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTExLTEzIiAKA1NBVxIKMjAyNi0xMS0xMxoDQU1TKgJQQzIEMTI1MWoHCAESA0lTVGoHCAESA1NBV3IHCAESA0FNUxonEgoyMDI2LTExLTE1agcIARIDQU1TcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+   "scrapedAt": "2026-11-07T15:43:18.233Z"
+  },
+  {
+   "recordType": "flight",
+   "input": "IST,SAW-AMS 2026-11-13 2026-11-15",
+   "route": "IST,SAW-AMS-IST,SAW",
+   "tripType": "round-trip",
+   "section": "departing",
+   "rank": 3,
+   "isBestFlight": false,
+   "isCheapest": false,
+   "price": 305,
+   "currency": "EUR",
+   "priceLevel": "high",
+   "typicalPriceLow": 170,
+   "typicalPriceHigh": 225,
+   "airline": "Pegasus",
+   "airlineCode": "PC",
+   "airlines": [
+    "Pegasus"
+   ],
+   "airlineCodes": [
+    "PC"
+   ],
+   "flightNumbers": [
+    "PC1253"
+   ],
+   "origin": "SAW",
+   "originName": "Sabiha Gökçen International Airport",
+   "destination": "AMS",
+   "destinationName": "Amsterdam Airport Schiphol",
+   "departAt": "2026-11-13T12:55",
+   "arriveAt": "2026-11-13T14:40",
+   "departureDate": "2026-11-13",
+   "departureTime": "12:55",
+   "arrivalDate": "2026-11-13",
+   "arrivalTime": "14:40",
+   "durationMinutes": 225,
+   "stops": 0,
+   "layovers": [],
+   "legs": [
+    {
+     "flightNumber": "PC1253",
+     "airlineCode": "PC",
+     "airline": "Pegasus",
+     "operatedBy": null,
+     "aircraft": "Airbus A321",
+     "from": "SAW",
+     "fromName": "Sabiha Gökçen International Airport",
+     "to": "AMS",
+     "toName": "Amsterdam Airport Schiphol",
+     "departAt": "2026-11-13T12:55",
+     "arriveAt": "2026-11-13T14:40",
+     "durationMinutes": 225,
+     "legroom": "28 in",
+     "emissionsKg": 171
+    }
+   ],
+   "emissionsKg": 171,
+   "typicalEmissionsKg": 209,
+   "emissionsVsTypicalPercent": -18,
+   "cabinClass": "economy",
+   "adults": 1,
+   "children": 0,
+   "infants": 0,
+   "searchDepartureDate": "2026-11-13",
+   "searchReturnDate": "2026-11-15",
+   "outboundFlightNumbers": null,
+   "bookingOptions": null,
+   "bookingToken": "CjRISXBPY21KcWFibDhBQlBLclFCRy0tLS0tLS0tLXlpYmR4NUFBQUFBR3J2UnhZRnZFRU1BEgZQQzEyNTMaCwiH7gEQAhoDRVVSOBxws4kC",
+   "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTExLTEzIiAKA1NBVxIKMjAyNi0xMS0xMxoDQU1TKgJQQzIEMTI1M2oHCAESA0lTVGoHCAESA1NBV3IHCAESA0FNUxonEgoyMDI2LTExLTE1agcIARIDQU1TcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+   "scrapedAt": "2026-11-07T15:43:18.233Z"
+  },
+  {
+   "recordType": "flight",
+   "input": "IST,SAW-AMS 2026-11-13 2026-11-15",
+   "route": "IST,SAW-AMS-IST,SAW",
+   "tripType": "round-trip",
+   "section": "departing",
+   "rank": 4,
+   "isBestFlight": false,
+   "isCheapest": false,
+   "price": 306,
+   "currency": "EUR",
+   "priceLevel": "high",
+   "typicalPriceLow": 170,
+   "typicalPriceHigh": 225,
+   "airline": "AJet",
+   "airlineCode": "VF",
+   "airlines": [
+    "AJet"
+   ],
+   "airlineCodes": [
+    "VF"
+   ],
+   "flightNumbers": [
+    "VF1"
+   ],
+   "origin": "SAW",
+   "originName": "Sabiha Gökçen International Airport",
+   "destination": "AMS",
+   "destinationName": "Amsterdam Airport Schiphol",
+   "departAt": "2026-11-13T10:45",
+   "arriveAt": "2026-11-13T12:40",
+   "departureDate": "2026-11-13",
+   "departureTime": "10:45",
+   "arrivalDate": "2026-11-13",
+   "arrivalTime": "12:40",
+   "durationMinutes": 235,
+   "stops": 0,
+   "layovers": [],
+   "legs": [
+    {
+     "flightNumber": "VF1",
+     "airlineCode": "VF",
+     "airline": "AJet",
+     "operatedBy": "Turkish Airlines",
+     "aircraft": "Boeing 737MAX 8 Passenger",
+     "from": "SAW",
+     "fromName": "Sabiha Gökçen International Airport",
+     "to": "AMS",
+     "toName": "Amsterdam Airport Schiphol",
+     "departAt": "2026-11-13T10:45",
+     "arriveAt": "2026-11-13T12:40",
+     "durationMinutes": 235,
+     "legroom": "29 in",
+     "emissionsKg": 155
+    }
+   ],
+   "emissionsKg": 155,
+   "typicalEmissionsKg": 209,
+   "emissionsVsTypicalPercent": -26,
+   "cabinClass": "economy",
+   "adults": 1,
+   "children": 0,
+   "infants": 0,
+   "searchDepartureDate": "2026-11-13",
+   "searchReturnDate": "2026-11-15",
+   "outboundFlightNumbers": null,
+   "bookingOptions": null,
+   "bookingToken": "CjRISXBPY21KcWFibDhBQlBLclFCRy0tLS0tLS0tLXlpYmR4NUFBQUFBR3J2UnhZRnZFRU1BEgNWRjEaCwjd7gEQAhoDRVVSOBxwkooC",
+   "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpGEgoyMDI2LTExLTEzIh0KA1NBVxIKMjAyNi0xMS0xMxoDQU1TKgJWRjIBMWoHCAESA0lTVGoHCAESA1NBV3IHCAESA0FNUxonEgoyMDI2LTExLTE1agcIARIDQU1TcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+   "scrapedAt": "2026-11-07T15:43:18.233Z"
+  },
+  {
+   "recordType": "flight",
+   "input": "IST,SAW-AMS 2026-11-13 2026-11-15",
+   "route": "IST,SAW-AMS-IST,SAW",
+   "tripType": "round-trip",
+   "section": "departing",
+   "rank": 5,
+   "isBestFlight": false,
+   "isCheapest": false,
+   "price": 404,
+   "currency": "EUR",
+   "priceLevel": "high",
+   "typicalPriceLow": 170,
+   "typicalPriceHigh": 225,
+   "airline": "Turkish Airlines",
+   "airlineCode": "TK",
+   "airlines": [
+    "Turkish Airlines"
+   ],
+   "airlineCodes": [
+    "TK"
+   ],
+   "flightNumbers": [
+    "TK1951"
+   ],
+   "origin": "IST",
+   "originName": "Istanbul Airport",
+   "destination": "AMS",
+   "destinationName": "Amsterdam Airport Schiphol",
+   "departAt": "2026-11-13T08:55",
+   "arriveAt": "2026-11-13T10:40",
+   "departureDate": "2026-11-13",
+   "departureTime": "08:55",
+   "arrivalDate": "2026-11-13",
+   "arrivalTime": "10:40",
+   "durationMinutes": 225,
+   "stops": 0,
+   "layovers": [],
+   "legs": [
+    {
+     "flightNumber": "TK1951",
+     "airlineCode": "TK",
+     "airline": "Turkish Airlines",
+     "operatedBy": null,
+     "aircraft": "Airbus A330",
+     "from": "IST",
+     "fromName": "Istanbul Airport",
+     "to": "AMS",
+     "toName": "Amsterdam Airport Schiphol",
+     "departAt": "2026-11-13T08:55",
+     "arriveAt": "2026-11-13T10:40",
+     "durationMinutes": 225,
+     "legroom": "31 in",
+     "emissionsKg": 163
+    }
+   ],
+   "emissionsKg": 163,
+   "typicalEmissionsKg": 209,
+   "emissionsVsTypicalPercent": -22,
+   "cabinClass": "economy",
+   "adults": 1,
+   "children": 0,
+   "infants": 0,
+   "searchDepartureDate": "2026-11-13",
+   "searchReturnDate": "2026-11-15",
+   "outboundFlightNumbers": null,
+   "bookingOptions": null,
+   "bookingToken": "CjRISXBPY21KcWFibDhBQlBLclFCRy0tLS0tLS0tLXlpYmR4NUFBQUFBR3J2UnhZRnZFRU1BEghUSzE5NTEjMRoLCMW7AhACGgNFVVI4HHDk3wI=",
+   "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTExLTEzIiAKA0lTVBIKMjAyNi0xMS0xMxoDQU1TKgJUSzIEMTk1MWoHCAESA0lTVGoHCAESA1NBV3IHCAESA0FNUxonEgoyMDI2LTExLTE1agcIARIDQU1TcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+   "scrapedAt": "2026-11-07T15:43:18.233Z"
+  }
+ ],
+ "karsilastirma": [
+  {
+   "sehir": "Dublin",
+   "giris": "2026-11-13",
+   "eski": 441,
+   "eskiAktarmasiz": 441,
+   "yeni": 510,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Paris",
+   "giris": "2026-11-13",
+   "eski": 322,
+   "eskiAktarmasiz": 322,
+   "yeni": 330,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Brüksel",
+   "giris": "2026-11-13",
+   "eski": 144,
+   "eskiAktarmasiz": 196,
+   "yeni": 231,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Amsterdam",
+   "giris": "2026-11-13",
+   "eski": 244,
+   "eskiAktarmasiz": 249,
+   "yeni": 248,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Lüksemburg",
+   "giris": "2026-11-13",
+   "eski": 354,
+   "eskiAktarmasiz": 354,
+   "yeni": 400,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Berlin",
+   "giris": "2026-11-13",
+   "eski": 164,
+   "eskiAktarmasiz": 164,
+   "yeni": 208,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Viyana",
+   "giris": "2026-11-13",
+   "eski": 196,
+   "eskiAktarmasiz": 236,
+   "yeni": 208,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Madrid",
+   "giris": "2026-11-13",
+   "eski": 209,
+   "eskiAktarmasiz": 359,
+   "yeni": 341,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Lizbon",
+   "giris": "2026-11-13",
+   "eski": 347,
+   "eskiAktarmasiz": 736,
+   "yeni": 418,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Roma",
+   "giris": "2026-11-13",
+   "eski": 266,
+   "eskiAktarmasiz": 389,
+   "yeni": 560,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Valletta",
+   "giris": "2026-11-13",
+   "eski": 256,
+   "eskiAktarmasiz": 378,
+   "yeni": 443,
+   "yeniUcus": 3,
+   "ozet": null
+  },
+  {
+   "sehir": "Atina",
+   "giris": "2026-11-13",
+   "eski": 192,
+   "eskiAktarmasiz": 193,
+   "yeni": 222,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Stokholm",
+   "giris": "2026-11-13",
+   "eski": 175,
+   "eskiAktarmasiz": 208,
+   "yeni": 750,
+   "yeniUcus": 4,
+   "ozet": null
+  },
+  {
+   "sehir": "Kopenhag",
+   "giris": "2026-11-13",
+   "eski": 243,
+   "eskiAktarmasiz": 371,
+   "yeni": 337,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Helsinki",
+   "giris": "2026-11-13",
+   "eski": 266,
+   "eskiAktarmasiz": 266,
+   "yeni": 468,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Tallinn",
+   "giris": "2026-11-13",
+   "eski": 310,
+   "eskiAktarmasiz": 594,
+   "yeni": 419,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Riga",
+   "giris": "2026-11-13",
+   "eski": 289,
+   "eskiAktarmasiz": 793,
+   "yeni": 457,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Vilnius",
+   "giris": "2026-11-13",
+   "eski": 367,
+   "eskiAktarmasiz": 623,
+   "yeni": 336,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Varşova",
+   "giris": "2026-11-13",
+   "eski": 378,
+   "eskiAktarmasiz": 697,
+   "yeni": 493,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Prag",
+   "giris": "2026-11-13",
+   "eski": 277,
+   "eskiAktarmasiz": 286,
+   "yeni": 550,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Bratislava",
+   "giris": "2026-11-13",
+   "eski": 180,
+   "eskiAktarmasiz": 234,
+   "yeni": null,
+   "yeniUcus": 0,
+   "ozet": null
+  },
+  {
+   "sehir": "Budapeşte",
+   "giris": "2026-11-13",
+   "eski": 219,
+   "eskiAktarmasiz": 244,
+   "yeni": 259,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Ljubljana",
+   "giris": "2026-11-13",
+   "eski": 148,
+   "eskiAktarmasiz": 148,
+   "yeni": 155,
+   "yeniUcus": 3,
+   "ozet": null
+  },
+  {
+   "sehir": "Zagreb",
+   "giris": "2026-11-13",
+   "eski": 229,
+   "eskiAktarmasiz": 276,
+   "yeni": 255,
+   "yeniUcus": 3,
+   "ozet": null
+  },
+  {
+   "sehir": "Bükreş",
+   "giris": "2026-11-13",
+   "eski": 186,
+   "eskiAktarmasiz": 186,
+   "yeni": 253,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Sofya",
+   "giris": "2026-11-13",
+   "eski": 112,
+   "eskiAktarmasiz": 112,
+   "yeni": 138,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Dublin",
+   "giris": "2026-11-20",
+   "eski": 287,
+   "eskiAktarmasiz": 314,
+   "yeni": 666,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Paris",
+   "giris": "2026-11-20",
+   "eski": 252,
+   "eskiAktarmasiz": 418,
+   "yeni": 281,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Brüksel",
+   "giris": "2026-11-20",
+   "eski": 194,
+   "eskiAktarmasiz": 198,
+   "yeni": 229,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Amsterdam",
+   "giris": "2026-11-20",
+   "eski": 218,
+   "eskiAktarmasiz": 247,
+   "yeni": 239,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Lüksemburg",
+   "giris": "2026-11-20",
+   "eski": 292,
+   "eskiAktarmasiz": 338,
+   "yeni": 347,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Berlin",
+   "giris": "2026-11-20",
+   "eski": 140,
+   "eskiAktarmasiz": 140,
+   "yeni": 156,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Viyana",
+   "giris": "2026-11-20",
+   "eski": 241,
+   "eskiAktarmasiz": 314,
+   "yeni": 298,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Madrid",
+   "giris": "2026-11-20",
+   "eski": 195,
+   "eskiAktarmasiz": 341,
+   "yeni": null,
+   "yeniUcus": 0,
+   "ozet": null
+  },
+  {
+   "sehir": "Lizbon",
+   "giris": "2026-11-20",
+   "eski": 297,
+   "eskiAktarmasiz": null,
+   "yeni": 488,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Roma",
+   "giris": "2026-11-20",
+   "eski": 249,
+   "eskiAktarmasiz": 249,
+   "yeni": 266,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Valletta",
+   "giris": "2026-11-20",
+   "eski": 287,
+   "eskiAktarmasiz": 441,
+   "yeni": 569,
+   "yeniUcus": 2,
+   "ozet": null
+  },
+  {
+   "sehir": "Atina",
+   "giris": "2026-11-20",
+   "eski": 190,
+   "eskiAktarmasiz": 190,
+   "yeni": 247,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Stokholm",
+   "giris": "2026-11-20",
+   "eski": 169,
+   "eskiAktarmasiz": 169,
+   "yeni": 318,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Kopenhag",
+   "giris": "2026-11-20",
+   "eski": 304,
+   "eskiAktarmasiz": 381,
+   "yeni": 372,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Helsinki",
+   "giris": "2026-11-20",
+   "eski": 267,
+   "eskiAktarmasiz": 311,
+   "yeni": 551,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Tallinn",
+   "giris": "2026-11-20",
+   "eski": 259,
+   "eskiAktarmasiz": 461,
+   "yeni": 339,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Riga",
+   "giris": "2026-11-20",
+   "eski": 299,
+   "eskiAktarmasiz": 477,
+   "yeni": 310,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Vilnius",
+   "giris": "2026-11-20",
+   "eski": 274,
+   "eskiAktarmasiz": 289,
+   "yeni": 316,
+   "yeniUcus": 3,
+   "ozet": null
+  },
+  {
+   "sehir": "Varşova",
+   "giris": "2026-11-20",
+   "eski": 274,
+   "eskiAktarmasiz": 381,
+   "yeni": 327,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Prag",
+   "giris": "2026-11-20",
+   "eski": 244,
+   "eskiAktarmasiz": 244,
+   "yeni": 373,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Bratislava",
+   "giris": "2026-11-20",
+   "eski": 158,
+   "eskiAktarmasiz": 158,
+   "yeni": null,
+   "yeniUcus": 0,
+   "ozet": null
+  },
+  {
+   "sehir": "Budapeşte",
+   "giris": "2026-11-20",
+   "eski": 172,
+   "eskiAktarmasiz": 172,
+   "yeni": 220,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Ljubljana",
+   "giris": "2026-11-20",
+   "eski": 201,
+   "eskiAktarmasiz": 235,
+   "yeni": 269,
+   "yeniUcus": 3,
+   "ozet": null
+  },
+  {
+   "sehir": "Zagreb",
+   "giris": "2026-11-20",
+   "eski": 173,
+   "eskiAktarmasiz": 289,
+   "yeni": 229,
+   "yeniUcus": 2,
+   "ozet": null
+  },
+  {
+   "sehir": "Bükreş",
+   "giris": "2026-11-20",
+   "eski": 199,
+   "eskiAktarmasiz": 223,
+   "yeni": 272,
+   "yeniUcus": 5,
+   "ozet": null
+  },
+  {
+   "sehir": "Sofya",
+   "giris": "2026-11-20",
+   "eski": 152,
+   "eskiAktarmasiz": 152,
+   "yeni": 191,
+   "yeniUcus": 5,
+   "ozet": null
+  }
+ ]
+}
