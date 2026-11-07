@@ -27,6 +27,7 @@ async function get(path, params) {
       if (r.status === 429) { await sleep(5000 * (i + 1)); continue; }
       let j; try { j = JSON.parse(txt); } catch { j = null; }
       if (!r.ok || !j) { stats.hata++; return { error: `HTTP ${r.status}: ${txt.slice(0, 120)}` }; }
+      if (j.error) stats.apiHata = (stats.apiHata || 0) + 1;
       await sleep(350);
       return j;
     } catch (e) { stats.hata++; await sleep(1500); if (i === 2) return { error: String(e.message) }; }
@@ -42,25 +43,29 @@ const out = { tarih: new Date().toISOString(), hafta_sonu: W, otel: 0, bulunan: 
 
 // /search çalışıyor mu?
 const probe = await get("/search", { query: "Hotel Gellert Budapest", location_type: "accommodation" });
-out.aramaDurumu = probe.error ? "search çalışmıyor: " + String(probe.error).slice(0, 120) : `search çalışıyor (${(probe.result && probe.result.list || []).length} sonuç)`;
+out.aramaDurumu = probe.error ? "search çalışmıyor: " + JSON.stringify(probe.error).slice(0, 200) : `search çalışıyor (${(probe.result && probe.result.list || []).length} sonuç)`;
 const listCache = {};
 async function cityList(sehir, geoKey) {
   if (listCache[sehir]) return listCache[sehir];
   const all = [];
-  for (let off = 0; off < 600; off += 100) {
+  for (let off = 0; off < 1000; off += 100) {
     const j = await get("/list", { location_key: geoKey, limit: 100, offset: off, sort: "popularity" });
     const l = (j.result && j.result.list) || []; all.push(...l);
     if (l.length < 100) break;
   }
+  const ctr = CENTER[sehir], ds = ctr ? all.filter((x) => x.geo).map((x) => km(ctr, [x.geo.latitude, x.geo.longitude])).sort((a, b) => a - b) : [];
+  out.geoKontrol[sehir] = { kimlik: geoKey, otelSayisi: all.length, toplam: all.length, merkezeOrtancaKm: ds.length ? Math.round(ds[Math.floor(ds.length / 2)] * 10) / 10 : null, ilkUc: all.slice(0, 3).map((x) => x.name) };
   return (listCache[sehir] = all);
 }
-const geoCache = {};
-async function geoKeyOf(sehir, ulke) {
-  if (geoCache[sehir] !== undefined) return geoCache[sehir];
-  const j = await get("/search", { query: `${sehir} ${ulke}`, location_type: "geo" });
-  const g = (j.result && j.result.list || [])[0];
-  return (geoCache[sehir] = g ? g.location_key || g.hotel_key || null : null);
-}
+// TripAdvisor şehir kimlikleri (Xotelo'nun ücretsiz sürümünde /search kapalı). Doğruluk: listedeki otellerin şehir merkezine uzaklığıyla kontrol edilir.
+const GEO = { "Dublin": "g186605", "Paris": "g187147", "Brüksel": "g188644", "Amsterdam": "g188590", "Lüksemburg": "g190356", "Berlin": "g187323", "Viyana": "g190454",
+  "Madrid": "g187514", "Lizbon": "g189158", "Roma": "g187791", "Valletta": "g190328", "Atina": "g189400", "Stokholm": "g189852", "Kopenhag": "g189541", "Helsinki": "g189934",
+  "Tallinn": "g274958", "Riga": "g274967", "Vilnius": "g274951", "Varşova": "g274856", "Prag": "g274707", "Bratislava": "g274924", "Budapeşte": "g274887",
+  "Ljubljana": "g274873", "Zagreb": "g294454", "Bükreş": "g294458", "Sofya": "g294452" };
+const rcfg = JSON.parse(await readFile(root + "data/restoran-ayarlari.json", "utf8"));
+const CENTER = Object.fromEntries(rcfg.sehirler.map((c) => [c.sehir, c.merkez]));
+out.geoKontrol = {};
+async function geoKeyOf(sehir) { return GEO[sehir] || null; }
 
 for (const c of hotels.sehirler) {
   if (only.length && !only.includes(c.sehir)) continue;
@@ -77,7 +82,7 @@ for (const c of hotels.sehirler) {
       if (cand) { k = { key: cand.hotel_key, ad: cand.name, yer: cand.short_place_name || null }; how = "search"; }
     }
     if (!k) {
-      const geo = await geoKeyOf(c.sehir, c.ulke);
+      const geo = await geoKeyOf(c.sehir);
       if (geo) {
         const list = await cityList(c.sehir, geo.replace(/-d\d+$/, ""));
         const cand = list.filter((x) => x.key && nameOk(h, x.name)).map((x) => ({ x, d: pos && x.geo ? km(pos, [x.geo.latitude, x.geo.longitude]) : null }))
@@ -102,6 +107,7 @@ for (const c of hotels.sehirler) {
   }
   console.log(`${c.sehir}: ${cs.bulunan}/${cs.otel} bulundu, ${cs.fiyatli} fiyatlı`);
 }
+for (const [s2, g] of Object.entries(out.geoKontrol)) console.log(`${s2}: ${g.kimlik} ${g.otelSayisi} otel, merkeze ortanca ${g.merkezeOrtancaKm} km (${g.ilkUc.join(" | ")})`);
 // özet
 const pairs = out.karsilastirma.filter((r) => r.xotelo && r.bizim);
 const med = (a) => { const s = a.slice().sort((x, y) => x - y); return s.length ? s[Math.floor(s.length / 2)] : null; };
@@ -111,7 +117,7 @@ out.ozet = {
   medyanFarkVergili: pairs.length ? Math.round(100 * med(pairs.map((r) => rel(r.xotelo, r.bizim)))) : null,
   medyanFarkVergisiz: pairs.filter((r) => r.bizimVergisiz).length ? Math.round(100 * med(pairs.filter((r) => r.bizimVergisiz).map((r) => rel(r.xotelo, r.bizimVergisiz)))) : null,
   yuzde10Icinde: pairs.length ? Math.round((100 * pairs.filter((r) => Math.abs(rel(r.xotelo, r.bizimVergisiz || r.bizim)) <= 0.1).length) / pairs.length) : null,
-  istek: stats.istek, istekHata: stats.hata,
+  istek: stats.istek, istekHata: stats.hata, apiHata: stats.apiHata || 0,
 };
 await writeFile(root + "data/xotelo-deneme.json", JSON.stringify(out, null, 1) + "\n");
 await writeFile(root + "data/xotelo-anahtar.json", JSON.stringify(keys, null, 1) + "\n");
