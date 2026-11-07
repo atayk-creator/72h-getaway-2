@@ -1,0 +1,18 @@
+11-07 11:43:58.317  3383  3383 E Capacitor/Console: File:  - Line 6 - Msg: Error injecting safe area CSS: TypeError: Cannot read properties of null (reading 'style')
+11-07 11:43:59.305  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.308  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.308  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.309  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.310  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.310  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.311  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.428  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: {"connected":true,"connectionType":"wifi"}
+11-07 11:43:59.430  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: {"value":null}
+11-07 11:43:59.432  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: {"value":null}
+11-07 11:43:59.433  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-07 11:43:59.433  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-07 11:43:59.554  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:43:59.556  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-07 11:44:18.436  3383  3383 I Capacitor/Console: File:  - Line 349 - Msg: [object Object]
+11-07 11:44:18.446  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: undefined
+11-07 11:44:36.825  3383  3383 I Capacitor/Console: File:  - Line 333 - Msg: {"canGoBack":true}

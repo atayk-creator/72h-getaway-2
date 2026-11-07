@@ -1,0 +1,26 @@
+2026-11-07 11:45:07.656 Df App[25452:117c2] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-07 11:45:07.763 Df App[25452:117c2] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-07 11:45:08.646 Df App[25452:117c2] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-07 11:45:08.648 Df App[25452:117c2] [com.apple.xpc:connection] [0x131f0e080] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-07 11:45:09.053 Df App[25452:117de] [com.apple.xpc:connection] [0x131f78c80] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-07 11:45:09.441 Df App[25452:117c2] [com.apple.xpc:connection] [0x131f79900] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-07 11:45:10.697 Df App[25452:117fc] [com.apple.AppSSO:SOClient] configurationWithCompletion: success = YES, error = (null)
+2026-11-07 11:45:10.985 E  App[25452:117c2] [com.apple.WebKit:ResourceLoadStatistics] Failed to request known fingerprinting scripts from WebPrivacy: Error Domain=WebPrivacyErrorDomain Code=1001 "List data not found" UserInfo={NSLocalizedDescription=List data not found}
+2026-11-07 11:45:11.626 E  App[25452:117de] [com.apple.TextInputUI:CandidateGeneration] Attempted to update accumulator from source type: 0, after completion has already been called for token:[E12D2E91]. This is an error and will be ignored.
+2026-11-07 11:45:15.780 Df App[25452:117c2] [com.apple.WebKit:Process] 0x1022f5518 - [pageProxyID=7, webPageID=8, PID=25471] WebPageProxy::makeViewBlankIfUnpaintedSinceLastLoadCommit: Making the view blank because of a JS prompt before the first paint for its page
+2026-11-07 11:45:15.792 Df App[25452:117c2] [com.apple.WebKit:Process] 0x1022f5518 - [pageProxyID=7, webPageID=8, PID=25471] WebPageProxy::makeViewBlankIfUnpaintedSinceLastLoadCommit: Making the view blank because of a JS prompt before the first paint for its page
+2026-11-07 11:45:15.827 Df App[25452:117c2] [com.apple.xpc:connection] [0x131e5c140] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-07 11:45:16.384 Df App[25452:117c2] [com.apple.WebKit:Loading] 0x1022f5518 - [pageProxyID=7, webPageID=8, PID=25471] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-07 11:45:16.397 Df App[25452:117c2] [com.apple.WebKit:Loading] 0x1022f5518 - [pageProxyID=7, webPageID=8, PID=25471] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-07 11:46:17.083 Df App[26726:125d0] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-07 11:46:17.156 Df App[26726:125b3] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-07 11:46:17.909 Df App[26726:125b3] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-07 11:46:17.914 Df App[26726:125b3] [com.apple.xpc:connection] [0x1363361c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-07 11:46:18.244 Df App[26726:125dd] [com.apple.xpc:connection] [0x13639c780] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-07 11:46:18.376 Df App[26726:125b3] [com.apple.xpc:connection] [0x13639ea80] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-07 11:46:18.518 E  App[26726:125d9] [com.apple.TextInputUI:CandidateGeneration] Attempted to update accumulator from source type: 0, after completion has already been called for token:[31C1B5CB]. This is an error and will be ignored.
+2026-11-07 11:46:21.185 Df App[26726:125b3] [com.apple.WebKit:Process] 0x106705518 - [pageProxyID=7, webPageID=8, PID=26733] WebPageProxy::makeViewBlankIfUnpaintedSinceLastLoadCommit: Making the view blank because of a JS prompt before the first paint for its page
+2026-11-07 11:46:21.206 Df App[26726:125b3] [com.apple.WebKit:Process] 0x106705518 - [pageProxyID=7, webPageID=8, PID=26733] WebPageProxy::makeViewBlankIfUnpaintedSinceLastLoadCommit: Making the view blank because of a JS prompt before the first paint for its page
+2026-11-07 11:46:21.236 Df App[26726:125b3] [com.apple.xpc:connection] [0x136281040] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-07 11:46:21.436 Df App[26726:125b3] [com.apple.WebKit:Loading] 0x106705518 - [pageProxyID=7, webPageID=8, PID=26733] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-07 11:46:21.436 Df App[26726:125b3] [com.apple.WebKit:Loading] 0x106705518 - [pageProxyID=7, webPageID=8, PID=26733] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
