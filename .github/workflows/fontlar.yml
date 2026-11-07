@@ -1,0 +1,38 @@
+name: Marka fontlarını indir
+# Marka rehberi: Archivo (başlık), Figtree (metin), IBM Plex Mono (rakam/etiket). Siteye gömülü (self-host) woff2.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/fontlar.yml"]
+permissions:
+  contents: write
+jobs:
+  indir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Fontsource paketleri
+        run: |
+          mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null
+          npm i @fontsource/archivo@5 @fontsource/figtree@5 @fontsource/ibm-plex-mono@5
+          cd "$GITHUB_WORKSPACE"
+          for sub in latin latin-ext; do
+            for w in 600 800; do cp /tmp/f/node_modules/@fontsource/archivo/files/archivo-$sub-$w-normal.woff2 fonts/; done
+            for w in 400 600 700; do cp /tmp/f/node_modules/@fontsource/figtree/files/figtree-$sub-$w-normal.woff2 fonts/; done
+            for w in 500 700; do cp /tmp/f/node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-$sub-$w-normal.woff2 fonts/; done
+          done
+          cp /tmp/f/node_modules/@fontsource/archivo/LICENSE fonts/OFL-archivo.txt || true
+          cp /tmp/f/node_modules/@fontsource/figtree/LICENSE fonts/OFL-figtree.txt || true
+          cp /tmp/f/node_modules/@fontsource/ibm-plex-mono/LICENSE fonts/OFL-ibm-plex-mono.txt || true
+          ls -la fonts
+      - name: Kaydet
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fonts
+          git diff --cached --quiet && exit 0
+          git commit -m "Marka fontları (woff2, self-host)"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done

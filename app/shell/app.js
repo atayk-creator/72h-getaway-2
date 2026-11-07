@@ -153,11 +153,11 @@
     trips = trips.filter(function (x) { return x.q !== q; });
     trips.unshift({ id: Date.now(), sehir: sehir, q: q, toplam: total.trim(), ozet: ozet.trim(), t: new Date().toISOString() });
     trips = trips.slice(0, 50); saveTrips(); badge();
-    toast("Tur kaydedildi · ⭐ Turlarım'da");
+    toast("Tur kaydedildi · Turlarım'da");
   }
   function renderTrips() {
     var list = $("tripList");
-    if (!trips.length) { list.innerHTML = '<div class="empty"><b>Henüz kayıtlı turun yok</b>Biletim sekmesinde bir tur hesapla, sonra ⭐ Turu kaydet\'e dokun.</div>'; return; }
+    if (!trips.length) { list.innerHTML = '<div class="empty"><b>Henüz kayıtlı turun yok</b>Biletim sekmesinde bir tur hesapla, sonra Turu kaydet\'e dokun.</div>'; return; }
     list.innerHTML = trips.map(function (x) {
       return '<div class="trip"><button type="button" class="t" data-q="' + esc(x.q) + '"><b>' + esc(x.sehir) + "</b><span>" + esc(x.ozet) + "</span><em>Kaydederken: " + esc(x.toplam) + '</em></button><button type="button" class="del" data-id="' + x.id + '" aria-label="' + esc(x.sehir) + ' turunu sil">✕</button></div>';
     }).join("");
@@ -180,7 +180,7 @@
     var S = [
       ["1", "Bu hafta sonu nereye?", "Keşfet'te her hafta değişen 6 şehir, gerçek uçak ve otel fiyatlarıyla hikâye gibi akar. Beğendiğine dokun, takvimini gör."],
       ["2", "Fiyatlar gerçek", "Robotlarımız İstanbul çıkışlı Cuma sabah gidiş, Pazar akşam dönüş uçuşlarını ve otel fiyatlarını düzenli kontrol ediyor. Takvim hangi hafta sonunun ucuz, hangisinin pahalı olduğunu gösterir."],
-      ["3", "Biletin hazır", "Biletim'de yemek ve gezi dahil tam bütçeni gör, ⭐ ile kaydet, hikâyende paylaş ya da PDF olarak al. İnternet yokken de son fiyatlarla çalışır."]
+      ["3", "Biletin hazır", "Biletim'de yemek ve gezi dahil tam bütçeni gör, Turu kaydet ile sakla, hikâyende paylaş ya da PDF olarak al. İnternet yokken de son fiyatlarla çalışır."]
     ], i = 0, el = document.createElement("div");
     el.className = "app-intro"; el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Tanıtım");
     var draw = function () {
@@ -238,7 +238,7 @@
     // Turu kaydet düğmesi (Biletim)
     var share = $("shareBtn");
     if (share) {
-      var sv = document.createElement("button"); sv.type = "button"; sv.className = "btn ghost app-save"; sv.id = "saveTrip"; sv.textContent = "⭐ Turu kaydet";
+      var sv = document.createElement("button"); sv.type = "button"; sv.className = "btn ghost app-save"; sv.id = "saveTrip"; sv.textContent = "Turu kaydet";
       sv.addEventListener("click", saveCurrent); share.insertAdjacentElement("afterend", sv);
       $("pdfBtn") && ($("pdfBtn").textContent = "📄 Programı PDF olarak al");
     }
