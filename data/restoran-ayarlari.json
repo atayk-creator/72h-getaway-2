@@ -69,7 +69,8 @@
   "Karaoke bar"
  ],
  "sabit_kur": {
-  "BGN": 1.95583
+  "BGN": 1.95583,
+  "BAM": 1.95583
  },
  "yedek_kur": {
   "HUF": 366,
@@ -79,7 +80,8 @@
   "DKK": 7.46,
   "RON": 5.05,
   "GBP": 0.86,
-  "USD": 1.08
+  "USD": 1.08,
+  "RSD": 117.2
  },
  "sehirler": [
   {
@@ -315,6 +317,24 @@
    ],
    "yaricap_km": 1.5,
    "para": "EUR"
+  },
+  {
+   "sehir": "Belgrad",
+   "merkez": [
+    44.8176,
+    20.4569
+   ],
+   "yaricap_km": 1.5,
+   "para": "RSD"
+  },
+  {
+   "sehir": "Saraybosna",
+   "merkez": [
+    43.859,
+    18.429
+   ],
+   "yaricap_km": 1.5,
+   "para": "BAM"
   }
  ]
 }

@@ -190,11 +190,11 @@ test("generate: tüm sayfalar, dizin ve sitemap", () => {
   assert.ok(files["sitemap.xml"].includes("<loc>https://72hgetaway.com/hakkinda.html</loc>"));
 });
 
-test("gerçek veriyle 26 şehir üretilir", () => {
+test("gerçek veriyle 28 şehir üretilir", () => {
   const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
   const { models, files } = generate({ root, today: TODAY, write: false });
-  assert.equal(models.length, 26);
-  assert.equal(new Set(models.map((m) => m.slug)).size, 26);
+  assert.equal(models.length, 28);
+  assert.equal(new Set(models.map((m) => m.slug)).size, 28);
   for (const m of models) assert.match(m.slug, /^[a-z0-9-]+$/);
   for (const [k, v] of Object.entries(files)) if (k.endsWith(".html")) assert.ok(!v.includes("undefined") && !v.includes("NaN"), k);
 });

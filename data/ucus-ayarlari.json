@@ -44,6 +44,8 @@
     {"sehir":"Ljubljana","havalimani":["LJU"]},
     {"sehir":"Zagreb","havalimani":["ZAG"]},
     {"sehir":"Bükreş","havalimani":["OTP"]},
-    {"sehir":"Sofya","havalimani":["SOF"]}
+    {"sehir":"Sofya","havalimani":["SOF"]},
+    {"sehir":"Belgrad","havalimani":["BEG"]},
+    {"sehir":"Saraybosna","havalimani":["SJJ"]}
   ]
 }

@@ -216,7 +216,9 @@ export function buildCity(data, cityName, today) {
     // Kalkış saati pencerenin dışındaysa (filtresiz, ucuz ama elverişsiz uçuş) fiyat etikete girmez: "doğrulanıyor".
     const dogrulaniyor = !!(fl && !fl.saatUygun);
     const toplam = otel && fl && !dogrulaniyor ? otel.toplam + 2 * fl.fiyat : null;
-    return { g, cikis: cikis(g), toplam, otel: otel ? otel.ad : null, otelDolu: !otel, dogrulaniyor, ucus: fl && !dogrulaniyor ? fl.fiyat : null };
+    // "Otel dolu" yalnızca robot o hafta sonu otellere baktıysa; hiç veri yoksa (yeni şehir) fiyat yok sayılır
+    const otelBakildi = !!(hs[g] && hs[g].oteller && Object.keys(hs[g].oteller).length);
+    return { g, cikis: cikis(g), toplam, otel: otel ? otel.ad : null, otelDolu: !otel && otelBakildi, dogrulaniyor, ucus: fl && !dogrulaniyor ? fl.fiyat : null };
   });
   const zaman = etiketle(zamanRaw);
   const kategoriler = KAT_SIRA.filter((k) => (city.oteller || []).some((h) => h.kategori === k)).map((k) => {
@@ -526,8 +528,8 @@ export function renderCityPage(m) {
 
 export function renderIndexPage(models, today) {
   const url = `${SITE}/sehir/`;
-  const title = "Avrupa'da hafta sonu bütçesi: 26 başkent, otel + uçak (TL) | 72h Getaway";
-  const description = "İstanbul'dan 26 Avrupa başkentine Cuma–Pazar kaçamağı: şehir şehir en ucuz hafta sonu otel ve uçak tahmini, restoran ve gezi fiyatları. 2 kişi, TL.";
+  const title = "Avrupa'da hafta sonu bütçesi: 28 başkent, otel + uçak (TL) | 72h Getaway";
+  const description = "İstanbul'dan 28 Avrupa başkentine Cuma–Pazar kaçamağı: şehir şehir en ucuz hafta sonu otel ve uçak tahmini, restoran ve gezi fiyatları. 2 kişi, TL.";
   const sorted = models.slice().sort((a, b) => a.sehir.localeCompare(b.sehir, "tr"));
   const ld = {
     "@context": "https://schema.org",
@@ -546,12 +548,12 @@ export function renderIndexPage(models, today) {
     else body = `<div class="muted">Fiyatlar henüz hazır değil</div>`;
     return `<li><a href="/sehir/${esc(m.slug)}/"><b>${esc(m.sehir)}</b> <span class="muted">${esc(m.ulke)}</span>${body}</a></li>`;
   }).join("");
-  return head({ title, description, canonical: url, ogTitle: "Avrupa'da hafta sonu bütçesi: 26 başkent", ogDescription: description, ld }) + `
+  return head({ title, description, canonical: url, ogTitle: "Avrupa'da hafta sonu bütçesi: 28 başkent", ogDescription: description, ld }) + `
 <body>
 <header>
   <div class="wrap">
     <nav aria-label="Konum"><ol class="crumbs"><li><a href="/">72h Getaway</a></li><li><span aria-current="page">Şehirler</span></li></ol></nav>
-    <h1>Hafta sonu nereye? 26 Avrupa başkenti</h1>
+    <h1>Hafta sonu nereye? 28 Avrupa başkenti</h1>
     <p>Her şehir için önümüzdeki 8 hafta sonunun en ucuzu: seçtiğimiz otellerin en ucuzunda 2 gece + İstanbul'dan 2 kişi gidiş-dönüş uçak. Robot fiyatlarına göre, tahminidir.</p>
     <div class="hero"><a class="big" href="/">Kendi bütçeni hesapla</a><a class="ghost" href="/oteller.html">Otel fiyat takvimi →</a></div>
   </div>

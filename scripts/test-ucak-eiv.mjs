@@ -66,8 +66,8 @@ function fakeApify(log) {
   const posts = log.filter((x) => x.init.method === "POST");
   // her hafta sonu: 1 ana + 1 tekrar (Stokholm + Valletta) + 1 saatsiz (Bratislava)
   assert.equal(posts.length, plan.length * 3, "hafta sonu başına 3 çalışma");
-  assert.equal(out.report.arama, plan.length * (26 + 2 + 1));
-  assert.equal(out.report.fiyat, plan.length * 25); assert.equal(out.report.hata, plan.length); assert.equal(out.report.yok || 0, 0);
+  assert.equal(out.report.arama, plan.length * (28 + 2 + 1));
+  assert.equal(out.report.fiyat, plan.length * 27); assert.equal(out.report.hata, plan.length); assert.equal(out.report.yok || 0, 0);
   const g = plan[0].giris, S = out.state.haftaSonlari[g].sehirler;
   assert.equal(S["Budapeşte"].son.fiyat, 150); assert.deepEqual(S["Budapeşte"].son.saat, { gidis: "05:00–12:00", donus: "16:00–24:00" }); assert.equal(S["Budapeşte"].son.fiyatSeviyesi, "yuksek");
   assert.equal(S["Stokholm"].son.durum, "fiyat", "Google hatası tekrarla düzelir");

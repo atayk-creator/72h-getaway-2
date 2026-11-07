@@ -468,6 +468,42 @@
     "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
     "url": "https://www.pexels.com/photo/36902671/"
    }
+  ],
+  "belgrad": [
+   {
+    "dosya": "/img/sehir/belgrad-1.jpg",
+    "kucuk": "/img/sehir/belgrad-1-640.jpg",
+    "alt": "Belgrad, eski şehirde barok çan kulesi ve çatılar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72h_05_aziz_sava.mp4"
+   },
+   {
+    "dosya": "/img/sehir/belgrad-2.jpg",
+    "kucuk": "/img/sehir/belgrad-2-640.jpg",
+    "alt": "Belgrad, Zemun'un kırmızı çatıları ve Tuna",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72h_07_zemun_tuna.mp4"
+   }
+  ],
+  "saraybosna": [
+   {
+    "dosya": "/img/sehir/saraybosna-2.jpg",
+    "kucuk": "/img/sehir/saraybosna-2-640.jpg",
+    "alt": "Saraybosna, Başçarşı meydanı ve dağlar",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hsj_03_bascarsija_carsi.mp4"
+   },
+   {
+    "dosya": "/img/sehir/saraybosna-1.jpg",
+    "kucuk": "/img/sehir/saraybosna-1-640.jpg",
+    "alt": "Saraybosna, Başçarşı'daki Sebil",
+    "kaynak": "Pexels",
+    "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
+    "klip": "72hsj_08_sebil_guvercin.mp4"
+   }
   ]
  }
 }

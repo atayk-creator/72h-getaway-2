@@ -14,7 +14,7 @@ Yaş sınırı: Herkes / 4+
 Avrupa başkentlerine hafta sonu kaçamağının bütçesi: uçak, otel, yemek ve gezi.
 
 ## Tanıtım metni (App Store, en çok 170 karakter)
-Hafta sonu kaçamağın kaça patlar? 26 Avrupa başkentinde İstanbul çıkışlı uçak, otel, yemek ve gezi bütçeni birkaç dokunuşla gör.
+Hafta sonu kaçamağın kaça patlar? 28 Avrupa başkentinde İstanbul çıkışlı uçak, otel, yemek ve gezi bütçeni birkaç dokunuşla gör.
 
 ## Uzun açıklama (iki mağaza için)
 Hafta sonu kaçamağın kaça patlar? 72h Getaway, İstanbul'dan Avrupa başkentlerine 2 gece 3 günlük bir kaçamağın toplam bütçesini birkaç dokunuşla çıkarır.
@@ -52,7 +52,7 @@ Not: Fiyatlar bilgi amaçlıdır ve son kontrol anını gösterir. Rezervasyonda
 hafta sonu,tatil,bütçe,uçak bileti,otel,avrupa,şehir turu,gezi planı,ucuz tatil,seyahat,kaçamak
 
 ## "Yenilikler" (ilk sürüm)
-İlk sürüm: 26 Avrupa başkenti, canlı uçak ve otel fiyatları; Keşfet hikâyeleri, hafta sonu takvimi, kaydırarak karşılaştırma, fotoğraflı biniş kartı, Turlarım, PDF ve hikâye paylaşımı.
+İlk sürüm: 28 Avrupa başkenti, canlı uçak ve otel fiyatları; Keşfet hikâyeleri, hafta sonu takvimi, kaydırarak karşılaştırma, fotoğraflı biniş kartı, Turlarım, PDF ve hikâye paylaşımı.
 
 ## Apple incelemecisine not (App Review Notes)
 The app calculates the total budget of a 2-night weekend trip (Friday morning to Sunday evening) from Istanbul to 26 European capitals. No login is required and no account can be created.

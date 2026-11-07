@@ -6190,6 +6190,312 @@
      "kapali": "gecici"
     }
    ]
+  },
+  "Belgrad": {
+   "para": "RSD",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 0,
+     "aciklama": "Belgrad'da otobüs, tramvay ve troleybüs 1 Ocak 2025'ten beri şehir sınırları içinde ücretsiz",
+     "kaynak": "https://aifly.one/2026/05/beg-airport-guide/"
+    },
+    "gunluk": {
+     "fiyat": 0,
+     "aciklama": "Toplu taşıma ücretsiz olduğu için günlük bilete gerek yok",
+     "kaynak": "https://aifly.one/2026/05/beg-airport-guide/"
+    },
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 0,
+     "sure_dk": 50,
+     "aciklama": "Havalimanı → 72 numaralı otobüs Zeleni Venac (Cumhuriyet Meydanı yakını), ücretsiz; daha hızlısı özel A1 minibüsü Slavija'ya 400 RSD (yalnızca nakit dinar), yaklaşık 30 dk",
+     "kaynak": "https://aifly.one/2026/05/beg-airport-guide/"
+    },
+    "not": "Merkez (Knez Mihailova, Kalemegdan, Skadarlija) yürünebilir. Taksi için Yandex Go, CarGo ya da Bolt uygulaması daha güvenli; havalimanından taksi yaklaşık 1.800–3.500 RSD."
+   },
+   "yerler": [
+    {
+     "id": "belgrad-kalemegdan",
+     "ad": "Kalemegdan Kalesi ve Parkı",
+     "arama": "Belgrade Fortress Kalemegdan",
+     "tur": "Kale",
+     "bolge": "kale",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz (park ve surlar); içerideki bazı kule ve müzeler ücretli",
+     "bilgi": "Sava ile Tuna'nın birleştiği yerde, şehrin en güzel gün batımı noktası. Pobednik anıtı ve surlar boyunca yürüyüş.",
+     "kaynak": null
+    },
+    {
+     "id": "belgrad-knez-mihailova",
+     "ad": "Knez Mihailova Caddesi",
+     "arama": "Knez Mihailova Street Belgrade",
+     "tur": "Cadde",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Cumhuriyet Meydanı'ndan Kalemegdan'a uzanan yaya caddesi; kafeler, mağazalar ve 19. yüzyıl binaları.",
+     "kaynak": null
+    },
+    {
+     "id": "belgrad-aziz-sava",
+     "ad": "Aziz Sava Tapınağı",
+     "arama": "Church of Saint Sava Belgrade",
+     "tur": "Kilise",
+     "bolge": "vracar",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Dünyanın en büyük Ortodoks kiliselerinden; altın mozaikli kripta mutlaka görülmeli. Merkezden yürüyerek 25–30 dk.",
+     "kaynak": null
+    },
+    {
+     "id": "belgrad-tesla-muzesi",
+     "ad": "Nikola Tesla Müzesi",
+     "arama": "Nikola Tesla Museum Belgrade",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 800,
+     "fiyat_hs": null,
+     "fiyat_yazi": "İngilizce rehberli tur 800 RSD (yalnızca nakit dinar)",
+     "bilgi": "Tesla'nın kişisel eşyaları ve çalışan deneyleri; ziyaret rehberli turla, her saat başı yaklaşık 45 dk. Küçük olduğu için tur saatinden 15 dk önce gidin.",
+     "kaynak": "https://tesla-museum.org/?p=1857"
+    },
+    {
+     "id": "belgrad-yugoslavya-muzesi",
+     "ad": "Yugoslavya Müzesi",
+     "arama": "Museum of Yugoslavia Belgrade",
+     "tur": "Müze",
+     "bolge": "dedinje",
+     "sure_dk": 90,
+     "fiyat": 800,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Tam bilet 800 RSD; pazartesi kapalı",
+     "bilgi": "Yugoslavya'nın tarihini anlatan müze kompleksi. Tito'nun kabrinin bulunduğu Çiçek Evi geçici olarak kapalı olabilir, gitmeden kontrol edin.",
+     "kaynak": "https://muzej-jugoslavije.org/en/posetite-nas/"
+    },
+    {
+     "id": "belgrad-skadarlija",
+     "ad": "Skadarlija",
+     "arama": "Skadarlija Belgrade",
+     "tur": "Sokak",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Arnavut kaldırımlı bohem sokak; akşamları canlı müzikli geleneksel Sırp lokantaları (kafana).",
+     "kaynak": null
+    },
+    {
+     "id": "belgrad-zemun",
+     "ad": "Zemun ve Gardoš Kulesi",
+     "arama": "Gardos Tower Zemun",
+     "tur": "Semt",
+     "bolge": "zemun",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Semt ücretsiz; kuleye çıkış ücretli (fiyat doğrulanıyor)",
+     "bilgi": "Tuna kıyısında eski Avusturya kasabası havasında semt; kırmızı çatılar, balık lokantaları ve tepeden Belgrad manzarası. Merkezden otobüsle 20 dk.",
+     "kaynak": null
+    },
+    {
+     "id": "belgrad-ulusal-muze",
+     "ad": "Sırbistan Ulusal Müzesi",
+     "arama": "National Museum of Serbia",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
+     "bilgi": "Cumhuriyet Meydanı'nda; ortaçağ el yazmalarından Avrupa resmine geniş koleksiyon.",
+     "kaynak": null
+    },
+    {
+     "id": "belgrad-beton-hala",
+     "ad": "Savamala ve Beton Hala",
+     "arama": "Beton Hala Belgrade",
+     "tur": "Nehir kıyısı",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Sava kıyısında eski depo binalarında restoranlar ve barlar; akşam yemeği ve nehir manzarası için.",
+     "kaynak": null
+    },
+    {
+     "id": "belgrad-ada-ciganlija",
+     "ad": "Ada Ciganlija",
+     "arama": "Ada Ciganlija Belgrade",
+     "tur": "Park",
+     "bolge": "ada",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Sava üzerindeki yarımada; göl kıyısında yürüyüş ve bisiklet. Yazın şehir plajı olur.",
+     "kaynak": null
+    }
+   ]
+  },
+  "Saraybosna": {
+   "para": "BAM",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.2,
+     "aciklama": "GRAS tramvay ve otobüs tek bilet, 2,20 KM",
+     "kaynak": "https://easybalkantransfers.com/blog/sarajevo-history-tour-tunnel-of-hope/"
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 5,
+     "sure_dk": 30,
+     "aciklama": "Havalimanı otobüsü (shuttle) Başçarşı'ya yaklaşık 5 KM, 30 dk; taksi 20–30 KM, 20–30 dk",
+     "kaynak": "https://indico.cern.ch/event/1653474/page/41726-practical-information"
+    },
+    "not": "Eski şehir (Başçarşı, Ferhadija, Latin Köprüsü) tamamen yürünebilir. Tramvay hattı nehir boyunca merkezi baştan başa geçer. Konvertibl mark (KM) euroya sabittir: 1 € = 1,95583 KM."
+   },
+   "yerler": [
+    {
+     "id": "saraybosna-bascarsi",
+     "ad": "Başçarşı ve Sebil",
+     "arama": "Bascarsija Sarajevo",
+     "tur": "Çarşı",
+     "bolge": "bascarsi",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Osmanlı çarşısı; bakırcılar, kahveciler ve güvercinlerle dolu Sebil meydanı. Boşnak kahvesi ve ćevapi burada.",
+     "kaynak": null
+    },
+    {
+     "id": "saraybosna-gazi-husrev-bey",
+     "ad": "Gazi Hüsrev Bey Camii",
+     "arama": "Gazi Husrev-beg Mosque",
+     "tur": "Cami",
+     "bolge": "bascarsi",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Turist girişi ücretli; güncel fiyat doğrulanıyor",
+     "bilgi": "16. yüzyıldan Balkanların en önemli Osmanlı camilerinden; avlusu ve şadırvanı çok güzel. Namaz vakitlerinde ziyaret yapılmaz.",
+     "kaynak": null
+    },
+    {
+     "id": "saraybosna-latin-koprusu",
+     "ad": "Latin Köprüsü",
+     "arama": "Latin Bridge Sarajevo",
+     "tur": "Köprü",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Arşidük Franz Ferdinand'ın 1914'te köprünün yanında vurulduğu, Birinci Dünya Savaşı'nı başlatan olayın yeri.",
+     "kaynak": null
+    },
+    {
+     "id": "saraybosna-1878-1918",
+     "ad": "Saraybosna 1878–1918 Müzesi",
+     "arama": "Museum Sarajevo 1878-1918",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
+     "bilgi": "Latin Köprüsü'nün köşesinde küçük müze; Avusturya-Macaristan dönemi ve 1914 suikastı.",
+     "kaynak": null
+    },
+    {
+     "id": "saraybosna-umut-tuneli",
+     "ad": "Umut Tüneli Müzesi",
+     "arama": "Sarajevo Tunnel Museum",
+     "tur": "Müze",
+     "bolge": "butmir",
+     "sure_dk": 90,
+     "fiyat": 20,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 20 KM (yalnızca nakit KM)",
+     "bilgi": "Kuşatma yıllarında şehri dış dünyaya bağlayan tünelin bir bölümü ve müzesi. Havalimanı yakınında; merkezden taksiyle 15 dk.",
+     "kaynak": "https://easybalkantransfers.com/blog/sarajevo-history-tour-tunnel-of-hope/"
+    },
+    {
+     "id": "saraybosna-trebevic",
+     "ad": "Trebević Teleferiği",
+     "arama": "Trebevic Cable Car Sarajevo",
+     "tur": "Teleferik",
+     "bolge": "trebevic",
+     "sure_dk": 90,
+     "fiyat": 20,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Gidiş-dönüş 20 KM",
+     "bilgi": "Şehrin üstündeki dağa çıkan teleferik; tepeden Saraybosna manzarası ve 1984 Olimpiyatları'nın terk edilmiş kızak pisti.",
+     "kaynak": "https://www.inyourpocket.com/trebevic-cable-car_167895v"
+    },
+    {
+     "id": "saraybosna-vijecnica",
+     "ad": "Belediye Binası (Vijećnica)",
+     "arama": "Vijecnica Sarajevo City Hall",
+     "tur": "Tarihi bina",
+     "bolge": "bascarsi",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
+     "bilgi": "Neo-Moorish tarzda eski kütüphane; 1992'de yandı, restore edildi. İçerideki tavan ve vitraylar görülmeye değer.",
+     "kaynak": null
+    },
+    {
+     "id": "saraybosna-sari-tabya",
+     "ad": "Sarı Tabya",
+     "arama": "Yellow Fortress Sarajevo",
+     "tur": "Seyir noktası",
+     "bolge": "bascarsi",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski şehrin üstünde Osmanlı tabyası; gün batımında tüm vadiyi görürsünüz. Başçarşı'dan yokuş yukarı 15–20 dk.",
+     "kaynak": null
+    },
+    {
+     "id": "saraybosna-savas-cocuklugu",
+     "ad": "Savaş Çocukluğu Müzesi",
+     "arama": "War Childhood Museum Sarajevo",
+     "tur": "Müze",
+     "bolge": "bascarsi",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
+     "bilgi": "Kuşatmada büyüyen çocukların eşyaları ve anlatımlarıyla etkileyici küçük müze.",
+     "kaynak": null
+    },
+    {
+     "id": "saraybosna-ferhadija",
+     "ad": "Ferhadija ve Doğu-Batı Buluşma Noktası",
+     "arama": "Sarajevo Meeting of Cultures",
+     "tur": "Cadde",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Osmanlı çarşısının Avusturya-Macaristan caddesine dönüştüğü çizgi; yerdeki işaretin bir yanı doğu, bir yanı batı.",
+     "kaynak": null
+    }
+   ]
   }
  },
  "harcama": {

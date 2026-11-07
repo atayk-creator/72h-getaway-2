@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="İstanbul'dan 26 Avrupa başkentine hafta sonu kaçamağı: gerçek otel, uçak, restoran ve gezi fiyatlarıyla bütçe hesapla, tur planını çıkar.">
+<meta name="description" content="İstanbul'dan 28 Avrupa başkentine hafta sonu kaçamağı: gerçek otel, uçak, restoran ve gezi fiyatlarıyla bütçe hesapla, tur planını çıkar.">
 <meta name="theme-color" content="#0F2A43">
 <link rel="canonical" href="https://72hgetaway.com/">
 <meta property="og:url" content="https://72hgetaway.com/">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="72h Getaway">
 <meta property="og:title" content="72h Getaway · Kendi Turunu Kur">
-<meta property="og:description" content="İstanbul'dan Avrupa'ya hafta sonu bütçesi: 26 başkentte gerçek otel, uçak ve restoran fiyatları.">
+<meta property="og:description" content="İstanbul'dan Avrupa'ya hafta sonu bütçesi: 28 başkentte gerçek otel, uçak ve restoran fiyatları.">
 <meta property="og:image" content="https://72hgetaway.com/img/paylas.png?v=2">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -609,7 +609,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 
 <div class="tab" id="tab-sehirler" data-tab="sehirler" hidden>
   <div class="wrap pad">
-    <div class="tabhead"><h2>Şehirler</h2><span>26 başkent · hafta sonu takvimi</span></div>
+    <div class="tabhead"><h2>Şehirler</h2><span>28 başkent · hafta sonu takvimi</span></div>
     <div class="cgrid" id="cgrid"></div>
     <section class="cother" id="cother" aria-labelledby="h-cother" hidden>
       <h3 id="h-cother">Diğer başkentler</h3>
@@ -1099,7 +1099,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
   /* ====================== GEZİ YERLERİ VE ULAŞIM ====================== */
-  // data/gezi.json: 26 başkentte 10'ar gezi yeri (süre, resmî bilet fiyatı, bilgi, Google Maps konumu) ve toplu taşıma fiyatları.
+  // data/gezi.json: 28 başkentte 10'ar gezi yeri (süre, resmî bilet fiyatı, bilgi, Google Maps konumu) ve toplu taşıma fiyatları.
   // Fiyatlar yerel para biriminde; euroya data.json'daki günlük ECB kuruyla çevrilir.
   var GEZI = null, FX_FALLBACK = { EUR: 1, CZK: 24.4, PLN: 4.25, SEK: 11, DKK: 7.46, RON: 5.05 };
   function fxOf(cur) {
@@ -2061,7 +2061,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   function stPick() {
     var o = lastO || inputs(), v = vList(o); if (!v) return null;
-    // Sıra fiyattan bağımsız: 26 şehir alfabetik, her dönem 6 adım ilerler; fiyatı olmayan şehir atlanır
+    // Sıra fiyattan bağımsız: 28 şehir alfabetik, her dönem 6 adım ilerler; fiyatı olmayan şehir atlanır
     var pool = v.list.slice().sort(function (a, b) { return a.n.localeCompare(b.n, "tr"); });
     if (!pool.some(function (x) { return x.t != null; })) return null;
     var per = stPeriod(), n = pool.length, start = (per.p * 6) % n, out = [];
@@ -2461,7 +2461,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     x.fillStyle = NAVY; x.font = "800 34px " + SANS; spaced("72 SAAT. GERÇEK FİYAT.", cl, fy + 8, 2, "left");
     x.font = "700 30px " + MONO; x.textAlign = "right"; x.fillText("72hgetaway.com", cr, fy + 8);
     x.fillStyle = CREAM; x.font = "800 46px " + SANS; x.textAlign = "center"; x.fillText("Senin hafta sonun kaça patlar?", W / 2, T + CH + 110);
-    x.fillStyle = CREAM; x.font = "500 32px " + SANS; x.fillText("İstanbul'dan 26 başkent · gerçek fiyatlar", W / 2, T + CH + 162);
+    x.fillStyle = CREAM; x.font = "500 32px " + SANS; x.fillText("İstanbul'dan 28 başkent · gerçek fiyatlar", W / 2, T + CH + 162);
     if (b.photo) { x.fillStyle = "rgba(251,246,236,0.6)"; x.font = "500 22px " + SANS; x.fillText("Fotoğraf: Pexels", W / 2, H - 28); }
     return new Promise(function (res) { cv.toBlob(function (bl) { res(bl); }, "image/png"); });
   }

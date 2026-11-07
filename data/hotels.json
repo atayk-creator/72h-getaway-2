@@ -382,6 +382,34 @@
         {"id":"sof-favorit","ad":"Hotel Favorit","arama":"Hotel Favorit Sofia Knyaz Boris I","kategori":"ucuz","not":"Merkezde Knyaz Boris I caddesinde, iyi puanlı 3 yıldızlı otel"},
         {"id":"sof-art-plaza","ad":"Art Plaza Hotel","arama":"Art Plaza Hotel Sofia","kategori":"ucuz","not":"Şehir merkezinde uygun fiyatlı 3 yıldızlı otel; metroya yakın"}
       ]
+    },
+    {
+      "sehir": "Belgrad",
+      "ulke": "Sırbistan",
+      "oteller": [
+        {"id":"beg-moskva","ad":"Hotel Moskva","arama":"Hotel Moskva Belgrade","kategori":"ikonik","not":"1908'den beri Terazije'de, şehrin simgesi tarihî otel; Knez Mihailova'ya yürüme mesafesi"},
+        {"id":"beg-square-nine","ad":"Square Nine Hotel","arama":"Square Nine Hotel Belgrade","kategori":"pahali","not":"Studentski trg'da tasarım oteli, Kalemegdan'a birkaç dakika"},
+        {"id":"beg-metropol","ad":"Metropol Palace","arama":"Metropol Palace Luxury Collection Belgrade","kategori":"pahali","not":"Tašmajdan Parkı karşısında köklü beş yıldızlı otel"},
+        {"id":"beg-mama-shelter","ad":"Mama Shelter Belgrade","arama":"Mama Shelter Belgrade","kategori":"konforlu","not":"Knez Mihailova üzerinde, çatı terası olan eğlenceli otel"},
+        {"id":"beg-townhouse-27","ad":"Townhouse 27","arama":"Townhouse 27 Belgrade","kategori":"konforlu","not":"Eski şehirde küçük butik otel"},
+        {"id":"beg-majestic","ad":"Hotel Majestic","arama":"Hotel Majestic Belgrade","kategori":"konforlu","not":"Cumhuriyet Meydanı yakınında klasik şehir oteli"},
+        {"id":"beg-royal","ad":"Hotel Royal","arama":"Hotel Royal Belgrade","kategori":"ucuz","not":"Kralja Petra Caddesi'nde sade, merkezi otel"},
+        {"id":"beg-prag","ad":"Hotel Prag","arama":"Hotel Prag Belgrade","kategori":"ucuz","not":"Merkezde uygun fiyatlı otel"}
+      ]
+    },
+    {
+      "sehir": "Saraybosna",
+      "ulke": "Bosna-Hersek",
+      "oteller": [
+        {"id":"sjj-europe","ad":"Hotel Europe","arama":"Hotel Europe Sarajevo","kategori":"ikonik","not":"1882'den beri Başçarşı'nın kıyısında, şehrin en köklü oteli"},
+        {"id":"sjj-swissotel","ad":"Swissôtel Sarajevo","arama":"Swissotel Sarajevo","kategori":"pahali","not":"Modern beş yıldızlı otel; merkeze tramvayla birkaç durak"},
+        {"id":"sjj-president","ad":"Hotel President","arama":"Hotel President Sarajevo","kategori":"pahali","not":"Başçarşı'ya yürüme mesafesinde lüks otel"},
+        {"id":"sjj-central","ad":"Hotel Central","arama":"Hotel Central Sarajevo","kategori":"konforlu","not":"Ferhadija yakınında, merkezin tam ortasında"},
+        {"id":"sjj-aziza","ad":"Hotel Aziza","arama":"Hotel Aziza Sarajevo","kategori":"konforlu","not":"Bistrik'te, Başçarşı'ya köprüden yürüme mesafesi"},
+        {"id":"sjj-hecco","ad":"Hotel Hecco Deluxe","arama":"Hotel Hecco Deluxe Sarajevo","kategori":"konforlu","not":"Şehir manzaralı, merkezde modern otel"},
+        {"id":"sjj-kovaci","ad":"Hotel Kovači","arama":"Hotel Kovaci Sarajevo","kategori":"ucuz","not":"Başçarşı'nın hemen üstünde, Kovači'de sade otel"},
+        {"id":"sjj-stari-grad","ad":"Hotel Stari Grad","arama":"Hotel Stari Grad Sarajevo","kategori":"ucuz","not":"Eski şehirde uygun fiyatlı küçük otel"}
+      ]
     }
   ]
 }

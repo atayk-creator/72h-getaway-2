@@ -27,6 +27,9 @@ export function validate(j) {
   // Diğer şehirlerin para birimleri (gezi ve ulaşım fiyatları için); geçersiz olan atlanır
   const kurlar = {};
   for (const k of ["CZK", "PLN", "SEK", "DKK", "RON"]) { const v = j.rates[k]; if (typeof v === "number" && v > 0 && v < 1000) kurlar[k] = Math.round(v * 10000) / 10000; }
+  // ECB'nin yayımlamadığı ama sabit/yönetilen kurlar: BAM euroya yasal olarak sabit; RSD Sırbistan Merkez Bankası'nca dar bantta tutulur
+  kurlar.BAM = 1.95583;
+  if (!kurlar.RSD) kurlar.RSD = 117.2;
   return { eurTry: round2(t), eurHuf: round2(h), date: j.date, kurlar };
 }
 
