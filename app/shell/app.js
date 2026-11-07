@@ -17,6 +17,8 @@
   var native = !!(Cap && Cap.isNativePlatform && Cap.isNativePlatform());
   var page = /oteller\.html$/.test(location.pathname) ? "oteller" : /hakkinda\.html$/.test(location.pathname) ? "hakkinda" : /(^\/$|index\.html$)/.test(location.pathname) ? "hesapla" : "diger";
   var state = { offline: false, liveOk: false };
+  // Sitenin :root çentik boşluğu uygulamada kapatılır; çentik payını üst çubuk karşılar (app.css: html.in-app)
+  try { document.documentElement.classList.add("in-app"); } catch (e) {}
 
   /* ---------------- Depolama (Preferences varsa o, yoksa localStorage) ---------------- */
   var store = {

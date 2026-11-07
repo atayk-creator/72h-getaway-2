@@ -1,5 +1,6 @@
 /* 72h Getaway uygulama kabuğu: sadece telefon uygulamasında (body.in-app) geçerli */
 :root { --tabbar-h: 62px; --appbar-h: 52px; --sat: max(env(safe-area-inset-top, 0px), var(--safe-area-inset-top, 0px)); --sab: max(env(safe-area-inset-bottom, 0px), var(--safe-area-inset-bottom, 0px)); }
+html.in-app { padding-top: 0 !important; padding-bottom: 0 !important; background: #0F2A43; }
 body.in-app { padding-top: 0; padding-bottom: calc(var(--sab) + 20px); -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
 /* Ana sayfada alt menü sitenin kendi sekme çubuğudur (.tabbar): uygulamada her genişlikte altta sabit */
 body.in-app.page-main { padding-bottom: calc(var(--tabbar-h) + var(--sab) + 10px); }
