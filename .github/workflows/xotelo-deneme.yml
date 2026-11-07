@@ -1,0 +1,42 @@
+name: Xotelo otel fiyatı denemesi (ücretsiz)
+# Tek seferlik karşılaştırma: scripts/xotelo-deneme.mjs değişince çalışır. Apify kullanmaz, ücretsizdir.
+on:
+  push:
+    branches: [main]
+    paths: [scripts/xotelo-deneme.mjs]
+  workflow_dispatch:
+    inputs:
+      sehir:
+        description: "Sadece bu şehir(ler) (virgülle). Boş = hepsi"
+        type: string
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: xotelo-deneme
+  cancel-in-progress: false
+jobs:
+  deneme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Deneme
+        env:
+          SEHIR: ${{ github.event.inputs.sehir || '' }}
+        run: node scripts/xotelo-deneme.mjs
+      - name: Depoya kaydet
+        if: always()
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/xotelo-deneme.json data/xotelo-anahtar.json 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git commit -m "Xotelo denemesi sonucu"
+          git pull --rebase --autostash
+          git push
