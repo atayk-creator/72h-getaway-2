@@ -1,10 +1,10 @@
 {
  "aciklama": "Toplu yenileme isteği. Bu dosya değişince Actions > 'Toplu yenileme' tüm robotları sırayla çalıştırır. Mod boşsa o robot atlanır. otel/ucak: hepsi | takvim | yakin (uçak) | test; restoran: kesif | yenile | sec; *_sehir: virgülle şehirler, boş = hepsi.",
- "istek": "2026-11-08 20:45 (kullanıcı: robotları görevlerini ve bilgilerini yenile)",
- "otel": "hepsi",
+ "istek": "2026-11-08 21:30 (Belgrad/Saraybosna restoranlarını dinar/mark düzeltmesiyle yeniden seç, ücretsiz)",
+ "otel": "",
  "otel_sehir": "",
- "ucak": "hepsi",
+ "ucak": "",
  "ucak_sehir": "",
- "restoran": "kesif",
+ "restoran": "sec",
  "restoran_sehir": "Belgrad,Saraybosna"
 }

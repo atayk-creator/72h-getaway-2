@@ -24,14 +24,14 @@ export async function fetchFx(cfg, fetchImpl = fetch) {
       const r = await fetchImpl(url, { headers: { accept: "application/json" } });
       if (!r.ok) continue;
       const j = await r.json();
-      if (j && j.rates && num(j.rates.HUF)) return { kaynak: "ECB " + j.date, ...cfg.sabit_kur, ...j.rates, EUR: 1 };
+      if (j && j.rates && num(j.rates.HUF)) return { kaynak: "ECB " + j.date, ...cfg.yedek_kur, ...(cfg.ek_kur || {}), ...cfg.sabit_kur, ...j.rates, EUR: 1 };
     } catch {}
   }
-  return { kaynak: "yedek kur (ayarlar)", ...cfg.yedek_kur, ...cfg.sabit_kur, EUR: 1 };
+  return { kaynak: "yedek kur (ayarlar)", ...cfg.yedek_kur, ...(cfg.ek_kur || {}), ...cfg.sabit_kur, EUR: 1 };
 }
 
 // ---------- fiyat yazısı ----------
-const SYMBOLS = [[/Ft|HUF/i, "HUF"], [/Kč|CZK/i, "CZK"], [/zł|PLN/i, "PLN"], [/lei|RON/i, "RON"], [/лв|BGN/i, "BGN"], [/€|EUR/i, "EUR"], [/£|GBP/i, "GBP"], [/\$|USD/i, "USD"], [/SEK/i, "SEK"], [/DKK/i, "DKK"], [/kr/i, null]];
+const SYMBOLS = [[/RSD|дин/i, "RSD"], [/\bKM\b|BAM/i, "BAM"], [/Ft|HUF/i, "HUF"], [/Kč|CZK/i, "CZK"], [/zł|PLN/i, "PLN"], [/lei|RON/i, "RON"], [/лв|BGN/i, "BGN"], [/€|EUR/i, "EUR"], [/£|GBP/i, "GBP"], [/\$|USD/i, "USD"], [/SEK/i, "SEK"], [/DKK/i, "DKK"], [/kr/i, null]];
 const toNumber = (t) => {
   const s = t.replace(/\s/g, "");
   if (/^\d{1,3}([.,]\d{3})+$/.test(s)) return Number(s.replace(/[.,]/g, "")); // binlik ayırıcı
@@ -220,6 +220,9 @@ export async function run({ token, cfg, state = emptyRestaurants(), cands = { se
       list = [...byId.values()];
       cands.sehirler[city.sehir] = { guncellendi: t, adaylar: list };
     }
+    // Kuru sonradan eklenen para birimleri (örn. RSD): fiyat yazısı olan ama euro karşılığı hesaplanamamış adaylar yeniden hesaplanır
+    list = list.map((c) => (c.kisiBasiEur == null && c.fiyatYazi ? { ...c, kisiBasiEur: perPersonEur(parsePrice(c.fiyatYazi, city.para), fx) } : c));
+    if (mode === "sec") cands.sehirler[city.sehir] = { ...(cands.sehirler[city.sehir] || {}), adaylar: list };
     // Tablodan elle düzenlenen (kilit) restoranlar olduğu gibi kalır; Aktif=HAYIR yapılanlar (haric) bir daha seçilmez.
     const prevCity = state.sehirler[city.sehir] || {};
     const haric = new Set(prevCity.haric || []);
@@ -288,6 +291,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const P = { cfg: root + "data/restoran-ayarlari.json", state: root + "data/restoranlar.json", cands: root + "data/restoran-adaylari.json", hotels: root + "data/hotels.json" };
   (async () => {
     const cfg = await readJson(P.cfg), hotels = await readJson(P.hotels, { ayarlar: {} });
+    cfg.ek_kur = (await readJson(root + "data.json", {})).kurlar || {}; // ECB'nin yayımlamadığı kurlar (RSD vb.), günlük kur robotundan
     const only = (process.env.SEHIR || "").split(",").map((s) => s.trim()).filter(Boolean);
     const out = await run({ token: process.env.APIFY_TOKEN, cfg, state: await readJson(P.state, emptyRestaurants()), cands: await readJson(P.cands, { sehirler: {} }), hotelSettings: hotels.ayarlar, mode: (process.env.MOD || "yenile").trim(), only: only.length ? only : null });
     const md = toMarkdown({ ...out, cfg }); console.log(md);
