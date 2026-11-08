@@ -6695,7 +6695,14 @@
      "fiyat_yazi": "Ücretsiz (bağış kutusu var; özel sergiler ücretli)",
      "bilgi": "Rosetta Taşı, Mısır mumyaları ve Parthenon heykelleri; çok büyük, 2–3 bölümü seçip gidin. Online ücretsiz saat rezervasyonu girişi hızlandırır.",
      "kaynak": "https://www.britishmuseum.org/visit",
-     "konum": null
+     "konum": [
+      51.51941,
+      -0.12696
+     ],
+     "googleAd": "The British Museum",
+     "puan": 4.5,
+     "yorum": 3727,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20British%20Museum&query_place_id=ChIJB9OTMDIbdkgRp0JWbQGZsS8"
     },
     {
      "id": "londra-national-gallery",
@@ -6709,7 +6716,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Van Gogh'un Ayçiçekleri'nden Turner'a Avrupa resminin başyapıtları; önündeki Trafalgar Meydanı ve Nelson Sütunu şehrin kalbi.",
      "kaynak": "https://www.nationalgallery.org.uk/visiting",
-     "konum": null
+     "konum": [
+      51.50893,
+      -0.1283
+     ],
+     "googleAd": "The National Gallery",
+     "puan": 4.8,
+     "yorum": 64474,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20National%20Gallery&query_place_id=ChIJeclqF84EdkgRtKAjTmWFr0I"
     },
     {
      "id": "londra-covent-garden",
@@ -6723,7 +6737,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Sokak sanatçıları, kapalı çarşı ve kafelerle canlı bir meydan; akşam West End tiyatrolarına çok yakın.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      51.51166,
+      -0.12404
+     ],
+     "googleAd": "Covent Garden",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Covent%20Garden&query_place_id=ChIJs4GOh8sEdkgRRiBFZKMP8ZE"
     },
     {
      "id": "londra-westminster-big-ben",
@@ -6737,7 +6758,14 @@
      "fiyat_yazi": "Ücretsiz (dışarıdan)",
      "bilgi": "Parlamento binası ve Big Ben saat kulesi; en güzel fotoğraf Westminster Köprüsü'nden ya da karşı yakadaki South Bank'ten.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      51.50073,
+      -0.12463
+     ],
+     "googleAd": "Big Ben",
+     "puan": 4.6,
+     "yorum": 99380,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Big%20Ben&query_place_id=ChIJ2dGMjMMEdkgRqVqkuXQkj7c"
     },
     {
      "id": "londra-westminster-abbey",
@@ -6751,7 +6779,14 @@
      "fiyat_yazi": "Yetişkin 32 £; pazar günü turistik ziyarete kapalı",
      "bilgi": "Taç giyme törenlerinin yapıldığı, Newton ve Darwin'in gömülü olduğu gotik manastır kilisesi. Hafta sonu gelecekseniz cumartesiye koyun; pazar yalnızca ayinlere açık.",
      "kaynak": "https://www.westminster-abbey.org/visit-us/prices-and-entry-times",
-     "konum": null
+     "konum": [
+      51.49937,
+      -0.1273
+     ],
+     "googleAd": "Westminster Abbey",
+     "puan": 4.6,
+     "yorum": 53297,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Westminster%20Abbey&query_place_id=ChIJLzVDusQEdkgRelObBaL_jto"
     },
     {
      "id": "londra-buckingham-st-james",
@@ -6765,7 +6800,14 @@
      "fiyat_yazi": "Ücretsiz (dışarıdan); sarayın içi yalnızca yazın ücretli açık",
      "bilgi": "Muhafız değişimi töreni belirli günlerde 11:00'de; St James's Park'ın göl kıyısından saraya yürüyüş çok keyifli.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      51.50136,
+      -0.14189
+     ],
+     "googleAd": "Buckingham Palace",
+     "puan": 4.5,
+     "yorum": 196932,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Buckingham%20Palace&query_place_id=ChIJtV5bzSAFdkgRpwLZFPWrJgo"
     },
     {
      "id": "londra-tower-of-london",
@@ -6779,7 +6821,14 @@
      "fiyat_yazi": "Yetişkin yaklaşık 37 £ (bağış dahil); resmi sitede teyit et",
      "bilgi": "Taç Mücevherleri, Beefeater rehberli turları ve 900 yıllık tarih. Hemen yanındaki Tower Bridge'den karşıya yürümeyi unutmayın.",
      "kaynak": "https://www.artvisitguide.com/tower-of-london-tickets-guide/",
-     "konum": null
+     "konum": [
+      51.50811,
+      -0.07595
+     ],
+     "googleAd": "Tower of London",
+     "puan": 4.7,
+     "yorum": 123236,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tower%20of%20London&query_place_id=ChIJ3TgfM0kDdkgRZ2TV4d1Jv6g"
     },
     {
      "id": "londra-st-pauls",
@@ -6793,7 +6842,14 @@
      "fiyat_yazi": "Yetişkin 27 £ (bağışlı 29,70 £); online alınabilir",
      "bilgi": "Wren'in devasa kubbesi; Fısıltı Galerisi ve kubbenin üstünden şehir manzarası için 500'den fazla basamak.",
      "kaynak": "https://www.stpauls.co.uk/visit",
-     "konum": null
+     "konum": [
+      51.51385,
+      -0.09835
+     ],
+     "googleAd": "St. Paul's Cathedral",
+     "puan": 4.7,
+     "yorum": 58637,
+     "harita": "https://www.google.com/maps/search/?api=1&query=St.%20Paul's%20Cathedral&query_place_id=ChIJh7wHoqwEdkgR3l-vqQE1HTo"
     },
     {
      "id": "londra-tate-modern",
@@ -6807,7 +6863,14 @@
      "fiyat_yazi": "Ücretsiz (özel sergiler ücretli)",
      "bilgi": "Eski elektrik santralindeki modern sanat müzesi; 10. kattaki seyir terası ücretsiz. Millennium Köprüsü ile St Paul's'a yürüyerek geçilir.",
      "kaynak": "https://www.tate.org.uk/visit/tate-modern",
-     "konum": null
+     "konum": [
+      51.5076,
+      -0.09936
+     ],
+     "googleAd": "Tate Modern",
+     "puan": 4.5,
+     "yorum": 84574,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tate%20Modern&query_place_id=ChIJlRl2MakEdkgR55tr4CNv_B8"
     },
     {
      "id": "londra-borough-market",
@@ -6821,7 +6884,14 @@
      "fiyat_yazi": "Ücretsiz giriş",
      "bilgi": "Londra'nın en ünlü yemek pazarı; sokak lezzetleri ve peynirciler. Cumartesi öğle çok kalabalık, erken gidin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      51.50558,
+      -0.09048
+     ],
+     "googleAd": "Borough Market",
+     "puan": 4.6,
+     "yorum": 132771,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Borough%20Market&query_place_id=ChIJD2bPdVcDdkgRuUSgnOXnKDE"
     }
    ]
   },
@@ -6865,7 +6935,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "UNESCO listesindeki eski şehir; 6 km'lik kemerli alışveriş galerileri (Lauben), renkli çeşmeler ve Einstein'ın yaşadığı sokak.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.94719,
+      7.45951
+     ],
+     "googleAd": "Bern Old Town Viewpoint",
+     "puan": 4.8,
+     "yorum": 384,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bern%20Old%20Town%20Viewpoint&query_place_id=ChIJ1yUzp1Y5jkcRQcYS67CbmNc"
     },
     {
      "id": "bern-zytglogge",
@@ -6879,7 +6956,14 @@
      "fiyat_yazi": "Ücretsiz (dışarıdan saat gösterisi); kule içi rehberli tur ücretli, fiyatı teyit et",
      "bilgi": "13. yüzyıldan kalma astronomik saat; her saat başından birkaç dakika önce mekanik figürlerin gösterisi başlar.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.94803,
+      7.4478
+     ],
+     "googleAd": "Zytglogge",
+     "puan": 4.6,
+     "yorum": 6085,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Zytglogge&query_place_id=ChIJ2VyJVME5jkcRRrAu5ve6FDI"
     },
     {
      "id": "bern-einsteinhaus",
@@ -6893,7 +6977,14 @@
      "fiyat_yazi": "Fiyatı teyit et",
      "bilgi": "Einstein'ın özel görelilik kuramını geliştirdiği yıllarda yaşadığı küçük daire; Kramgasse 49'da, kısa ama keyifli bir ziyaret.",
      "kaynak": "https://www.einstein-bern.ch/en/einstein-house",
-     "konum": null
+     "konum": [
+      46.9478,
+      7.45
+     ],
+     "googleAd": "Einstein House",
+     "puan": 4,
+     "yorum": 3331,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Einstein%20House&query_place_id=ChIJ2xw0icM5jkcRkFsR9RV9OJU"
     },
     {
      "id": "bern-munster",
@@ -6907,7 +6998,14 @@
      "fiyat_yazi": "Kilise ücretsiz; kuleye çıkış ücretli, fiyatı teyit et",
      "bilgi": "İsviçre'nin en yüksek kilise kulesi (100 m); 312 basamakla çıkılan kuleden Alpler ve Aare görünür. Arkasındaki Münsterplattform terası da güzel.",
      "kaynak": "https://www.bernermuenster.ch/besuchen/oeffnungszeiten",
-     "konum": null
+     "konum": [
+      46.94724,
+      7.45153
+     ],
+     "googleAd": "Cathedral of Bern",
+     "puan": 4.6,
+     "yorum": 6815,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Cathedral%20of%20Bern&query_place_id=ChIJbbJxhMQ5jkcRmDwoIsGO3x4"
     },
     {
      "id": "bern-bundeshaus",
@@ -6921,7 +7019,15 @@
      "fiyat_yazi": "Ücretsiz rehberli turlar (önceden rezervasyon, kimlik gerekli)",
      "bilgi": "İsviçre parlamentosu; önündeki Bundesplatz'daki su fıskiyeleri ve arka terastan Aare ile Alp manzarası. Turlar oturum dışı günlerde, yer sınırlı.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.94656,
+      7.44426
+     ],
+     "googleAd": "Parliament Building",
+     "puan": 4.6,
+     "yorum": 2515,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Parliament%20Building&query_place_id=ChIJ7QMXJsc5jkcRdcaSO2ngq74",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Parliament Building\" buldu"
     },
     {
      "id": "bern-barenpark",
@@ -6935,7 +7041,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin sembolü ayıların yaşadığı Aare kıyısındaki park; Nydegg köprüsünden eski şehrin klasik fotoğrafını çekin.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.94812,
+      7.45945
+     ],
+     "googleAd": "BearPark",
+     "puan": 4.4,
+     "yorum": 18676,
+     "harita": "https://www.google.com/maps/search/?api=1&query=BearPark&query_place_id=ChIJvXFBHtw5jkcRud-_FEnVeaI",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"BearPark\" buldu"
     },
     {
      "id": "bern-rosengarten",
@@ -6949,7 +7063,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski şehrin kırmızı çatılarına ve Aare kıvrımına yukarıdan bakan en iyi seyir noktası; Bärenpark'tan kısa bir yokuşla çıkılır.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.95093,
+      7.46057
+     ],
+     "googleAd": "Restaurant Rosengarten",
+     "puan": 4.5,
+     "yorum": 6369,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Restaurant%20Rosengarten&query_place_id=ChIJlYrlCd45jkcRYzSv1-5Gx-Q"
     },
     {
      "id": "bern-historisches-museum",
@@ -6963,7 +7084,14 @@
      "fiyat_yazi": "Fiyatı teyit et (tek bilet iki müzeyi kapsar)",
      "bilgi": "Masalsı şato binasında İsviçre tarihi; içindeki Einstein Müzesi hayatını ve buluşlarını kapsamlı anlatır.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.9431,
+      7.44931
+     ],
+     "googleAd": "Bernisches Historisches Museum / Einstein Museum",
+     "puan": 4.6,
+     "yorum": 3706,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bernisches%20Historisches%20Museum%20%2F%20Einstein%20Museum&query_place_id=ChIJgyUZgcU5jkcR6TuTu8aclmk"
     },
     {
      "id": "bern-zentrum-paul-klee",
@@ -6977,7 +7105,14 @@
      "fiyat_yazi": "Fiyatı teyit et",
      "bilgi": "Renzo Piano'nun dalga şeklindeki binasında dünyanın en büyük Paul Klee koleksiyonu; merkezden 12 numaralı otobüsle 15 dk.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      46.94908,
+      7.4743
+     ],
+     "googleAd": "Zentrum Paul Klee",
+     "puan": 4.4,
+     "yorum": 2865,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Zentrum%20Paul%20Klee&query_place_id=ChIJyximEGc3jkcRUUA0OfZgpw0"
     },
     {
      "id": "bern-gurten",
@@ -6991,7 +7126,14 @@
      "fiyat_yazi": "Bern Ticket ile füniküler ücretsiz",
      "bilgi": "Şehrin ev tepesi; fünikülerle çıkılıp Bern ve açık havada Alpler seyredilir. Wabern'e 9 numaralı tramvayla gidilir.",
      "kaynak": "https://www.bern.com/en/bern-ticket",
-     "konum": null
+     "konum": [
+      46.91726,
+      7.44379
+     ],
+     "googleAd": "Gurten",
+     "puan": 4.8,
+     "yorum": 641,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gurten&query_place_id=ChIJc5D-ET44jkcR4SuSxwqebm8"
     }
    ]
   },
@@ -7030,7 +7172,14 @@
      "fiyat_yazi": "Ücretsiz (çatı); temsiller ücretli",
      "bilgi": "Buzdağını andıran binanın eğimli çatısına yürüyerek çıkılır; fiyort ve şehir manzarası, özellikle gün batımında.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.90749,
+      10.75313
+     ],
+     "googleAd": "Oslo Opera House",
+     "puan": 4.7,
+     "yorum": 32090,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Oslo%20Opera%20House&query_place_id=ChIJFfcho4tuQUYREdaiosanthw"
     },
     {
      "id": "oslo-munch",
@@ -7044,7 +7193,14 @@
      "fiyat_yazi": "Yetişkin 200 NOK'tan başlayan fiyatlarla; 18 yaş altı ücretsiz",
      "bilgi": "Çığlık'ın da bulunduğu dünyanın en büyük Edvard Munch koleksiyonu; Opera'nın hemen yanında, üst katlardan fiyort manzarası.",
      "kaynak": "https://munch.no/en/buy-tickets/",
-     "konum": null
+     "konum": [
+      59.9059,
+      10.75526
+     ],
+     "googleAd": "Munch",
+     "puan": 4.5,
+     "yorum": 18797,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Munch&query_place_id=ChIJJ0uE7VtuQUYRGxJdLJL1PmU"
     },
     {
      "id": "oslo-karl-johan-slottet",
@@ -7058,7 +7214,14 @@
      "fiyat_yazi": "Ücretsiz (sarayın bahçesi ve dışı)",
      "bilgi": "Oslo S'ten Kraliyet Sarayı'na uzanan ana cadde; Parlamento, Ulusal Tiyatro ve saray önündeki nöbet değişimi yol üzerinde.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.9131,
+      10.74127
+     ],
+     "googleAd": "Karl Johans gt.",
+     "puan": 4.6,
+     "yorum": 605,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Karl%20Johans%20gt.&query_place_id=ChIJa0kmUn1uQUYR-WooLUwxijA"
     },
     {
      "id": "oslo-akershus",
@@ -7072,7 +7235,14 @@
      "fiyat_yazi": "Kale alanı ücretsiz; içerideki şato ve müzeler ücretli",
      "bilgi": "Ortaçağ kalesi ve surları; limana bakan surlardan Aker Brygge ve fiyort güzel görünür.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.90759,
+      10.73708
+     ],
+     "googleAd": "Akershus Fortress",
+     "puan": 4.5,
+     "yorum": 18466,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Akershus%20Fortress&query_place_id=ChIJ035kbYZuQUYRuu0uM9oMKao"
     },
     {
      "id": "oslo-radhuset",
@@ -7086,7 +7256,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Nobel Barış Ödülü töreninin yapıldığı salon; dev duvar resimleri etkileyici. Hafta sonu açılış saatlerine bakın.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.91228,
+      10.73388
+     ],
+     "googleAd": "Oslo City Hall",
+     "puan": 4.6,
+     "yorum": 2611,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Oslo%20City%20Hall&query_place_id=ChIJpaMsOYduQUYRvIhIclNW9lI"
     },
     {
      "id": "oslo-aker-brygge",
@@ -7100,7 +7277,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Fiyort kıyısında restoran ve kafelerle dolu yürüyüş alanı; ucundaki Tjuvholmen'de Astrup Fearnley Müzesi ve küçük plaj var.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.90996,
+      10.72581
+     ],
+     "googleAd": "Aker Brygge",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Aker%20Brygge&query_place_id=ChIJ-eTqvIFuQUYRdUY2f_X-j-Y"
     },
     {
      "id": "oslo-nasjonalmuseet",
@@ -7114,7 +7298,14 @@
      "fiyat_yazi": "Fiyatı teyit et",
      "bilgi": "İskandinavya'nın en büyük sanat müzesi; Munch'un Çığlık'ının bir versiyonu da burada. Belediye Sarayı'nın arkasında.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.91151,
+      10.72925
+     ],
+     "googleAd": "National Museum",
+     "puan": 4.6,
+     "yorum": 9826,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum&query_place_id=ChIJOdGZU3xuQUYRRpZUX1Z3YUM"
     },
     {
      "id": "oslo-vigeland",
@@ -7128,7 +7319,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Gustav Vigeland'ın 200'den fazla heykeliyle dünyanın en büyük tek sanatçı heykel parkı; Monolit ve Kızgın Çocuk mutlaka görülmeli. 12 numaralı tramvayla gidilir.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.92703,
+      10.70087
+     ],
+     "googleAd": "The Vigeland Park",
+     "puan": 4.7,
+     "yorum": 25710,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Vigeland%20Park&query_place_id=ChIJsV__us5tQUYRlsdVNqT4Ywg"
     },
     {
      "id": "oslo-fram",
@@ -7142,7 +7340,14 @@
      "fiyat_yazi": "Fiyatı teyit et",
      "bilgi": "Kutup keşiflerinde kullanılan Fram gemisinin içine girebildiğiniz müze; Bygdøy yarımadasında, Kon-Tiki Müzesi hemen karşısında.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.90338,
+      10.69973
+     ],
+     "googleAd": "The Fram Museum",
+     "puan": 4.7,
+     "yorum": 16074,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Fram%20Museum&query_place_id=ChIJMcBwszpsQUYReqPeWg4Oe4A"
     },
     {
      "id": "oslo-holmenkollen",
@@ -7156,7 +7361,14 @@
      "fiyat_yazi": "Dışarıdan ücretsiz; müze ve kule fiyatını teyit et",
      "bilgi": "Şehrin tepesindeki dev kayak atlama rampası; kule tepesinden Oslo fiyordu manzarası. Merkezden 1 numaralı metroyla yaklaşık 25 dk.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      59.96409,
+      10.66641
+     ],
+     "googleAd": "Holmenkollen Ski Museum",
+     "puan": 4.6,
+     "yorum": 8848,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Holmenkollen%20Ski%20Museum&query_place_id=ChIJAVYeCn9tQUYR-b71kdo6ySs"
     }
    ]
   },
@@ -7195,7 +7407,14 @@
      "fiyat_yazi": "Kilise ücretsiz, kule 1.500 ISK",
      "bilgi": "Şehrin simgesi bazalt sütunlu kilise; asansörle çıkılan kuleden renkli çatılı Reykjavik manzarası.",
      "kaynak": "https://www.hallgrimskirkja.is/en-gb/opnunartimar",
-     "konum": null
+     "konum": [
+      64.14202,
+      -21.92655
+     ],
+     "googleAd": "Hallgrimskirkja",
+     "puan": 4.6,
+     "yorum": 29704,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Hallgrimskirkja&query_place_id=ChIJtS1DoMx01kgR76qdSMQor_c"
     },
     {
      "id": "reykjavik-laugavegur",
@@ -7209,7 +7428,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin ana alışveriş caddesi ve gökkuşağı boyalı Skólavörðustígur; kafeler, tasarım dükkânları ve barlar.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      64.14302,
+      -21.91263
+     ],
+     "googleAd": "Laugavegur",
+     "puan": 4.5,
+     "yorum": 246,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Laugavegur&query_place_id=ChIJ6wAHSsx01kgRcnHIYGUNueg"
     },
     {
      "id": "reykjavik-harpa",
@@ -7223,7 +7449,14 @@
      "fiyat_yazi": "Ücretsiz (binayı gezmek); konserler ücretli",
      "bilgi": "Cam petekli cephesiyle ödüllü konser binası; içi gezilebilir, gün ışığında renk oyunları çok güzel.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      64.15025,
+      -21.93228
+     ],
+     "googleAd": "Harpa Concert Hall and Conference Centre",
+     "puan": 4.6,
+     "yorum": 9789,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Harpa%20Concert%20Hall%20and%20Conference%20Centre&query_place_id=ChIJS4YW06l11kgRW-aFizec8sE"
     },
     {
      "id": "reykjavik-sun-voyager",
@@ -7237,7 +7470,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Deniz kıyısında Viking gemisi formunda çelik heykel; Esja dağı manzarasıyla gün batımında çok fotojenik.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      64.14763,
+      -21.92228
+     ],
+     "googleAd": "Sun Voyager",
+     "puan": 4.5,
+     "yorum": 10642,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sun%20Voyager&query_place_id=ChIJz-YMCc501kgRqKacmXs6e9g"
     },
     {
      "id": "reykjavik-old-harbour",
@@ -7251,7 +7491,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Balık restoranları, balina turu iskeleleri ve Grandi'nin renkli depo binalarıyla keyifli yürüyüş alanı.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      64.15117,
+      -21.94438
+     ],
+     "googleAd": "Old Harbour House | Food, Drinks & Tours",
+     "puan": 4.4,
+     "yorum": 474,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Old%20Harbour%20House%20%7C%20Food%2C%20Drinks%20%26%20Tours&query_place_id=ChIJuUo2G2sL1kgRb9M1PxaqWTI"
     },
     {
      "id": "reykjavik-tjornin",
@@ -7265,7 +7512,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Merkezdeki küçük göl, kuğular ve ördeklerle çevrili; kıyısındaki Belediye Binası'nda dev İzlanda kabartma haritası var.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      64.14362,
+      -21.94202
+     ],
+     "googleAd": "Tjörnin",
+     "puan": 4.6,
+     "yorum": 325,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tj%C3%B6rnin&query_place_id=ChIJk4puPDIL1kgRB3U6fdxLseM"
     },
     {
      "id": "reykjavik-national-museum",
@@ -7279,7 +7533,14 @@
      "fiyat_yazi": "Fiyatı teyit et",
      "bilgi": "Vikinglerin gelişinden bugüne İzlanda tarihi; Tjörnin'den 10 dakika yürüme.",
      "kaynak": "https://www.thjodminjasafn.is/english",
-     "konum": null
+     "konum": [
+      64.14161,
+      -21.94858
+     ],
+     "googleAd": "National Museum of Iceland",
+     "puan": 4.5,
+     "yorum": 4220,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20Iceland&query_place_id=ChIJr6HBrjEL1kgRlTxmCyjm_tg"
     },
     {
      "id": "reykjavik-perlan",
@@ -7293,7 +7554,14 @@
      "fiyat_yazi": "Fiyatı teyit et (seyir terası ve sergiler ücretli)",
      "bilgi": "Öskjuhlíð tepesindeki cam kubbede buzul mağarası, kuzey ışıkları planetaryumu ve 360° şehir manzarası. Merkezden otobüs ya da 30 dk yürüyüş.",
      "kaynak": "https://perlan.is",
-     "konum": null
+     "konum": [
+      64.12925,
+      -21.91887
+     ],
+     "googleAd": "Perlan",
+     "puan": 4.5,
+     "yorum": 11827,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Perlan&query_place_id=ChIJnXOkuUwL1kgRKT9vWdb_DnI"
     },
     {
      "id": "reykjavik-sky-lagoon",
@@ -7307,7 +7575,14 @@
      "fiyat_yazi": "Saman paketi 13.990 ISK'den başlar (Sér 16.990 ISK); saate göre değişir",
      "bilgi": "Günübirlik: merkezden 15 dk, okyanusa bakan sonsuzluk havuzu ve 7 adımlı ritüel. Önceden rezervasyon şart.",
      "kaynak": "https://www.iceland-highlights.com/iceland-geothermal-lagoons-compared/",
-     "konum": null
+     "konum": [
+      64.11649,
+      -21.94629
+     ],
+     "googleAd": "Sky Lagoon",
+     "puan": 4.7,
+     "yorum": 9806,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sky%20Lagoon&query_place_id=ChIJpyUozoYL1kgREGm6RWPXuio"
     },
     {
      "id": "reykjavik-blue-lagoon",
@@ -7321,7 +7596,8 @@
      "fiyat_yazi": "Comfort bileti 11.990 ISK'den başlar; saate göre değişir, ulaşım ayrı",
      "bilgi": "Günübirlik: lav sahası ortasındaki ünlü süt mavisi kaplıca, merkezden ~45–50 dk. Havalimanına yakın olduğu için varış/dönüş günü de yapılabilir.",
      "kaynak": "https://www.iceland-highlights.com/iceland-geothermal-lagoons-compared/",
-     "konum": null
+     "konum": null,
+     "konumNotu": "Google 38 km uzakta bir yer buldu: Blue Lagoon"
     }
    ]
   },
@@ -7356,7 +7632,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin manevi merkezi; neoklasik katedral, çan kulesi ve 7/24 açık çiçek pazarı.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      47.0261,
+      28.8346
+     ],
+     "googleAd": "Metropolitan Cathedral of Christ's Nativity",
+     "puan": 4.7,
+     "yorum": 1986,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Metropolitan%20Cathedral%20of%20Christ's%20Nativity&query_place_id=ChIJW2JQSTR8yUARYT7apI1_7cY"
     },
     {
      "id": "kisinev-zafer-taki",
@@ -7370,7 +7653,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Katedral Parkı'nın girişindeki 1840 tarihli zafer takı ve hükümet binasının önündeki büyük meydan.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      47.02478,
+      28.8326
+     ],
+     "googleAd": "The Triumphal Arch",
+     "puan": 4.7,
+     "yorum": 8154,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20Triumphal%20Arch&query_place_id=ChIJtdmicDR8yUARRbbG68hKT8c",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"The Triumphal Arch\" buldu"
     },
     {
      "id": "kisinev-stefan-cel-mare-parki",
@@ -7384,7 +7675,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin en eski parkı; Moldova'nın ulusal kahramanı Büyük Ștefan'ın heykeli ve klasikler sokağı.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      47.02551,
+      28.82796
+     ],
+     "googleAd": "Stephen the Great Central Park",
+     "puan": 4.6,
+     "yorum": 14958,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Stephen%20the%20Great%20Central%20Park&query_place_id=ChIJtz5tUzN8yUARTXkgw9DMPg0",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Stephen the Great Central Park\" buldu"
     },
     {
      "id": "kisinev-etnografya-muzesi",
@@ -7398,7 +7697,14 @@
      "fiyat_yazi": "50 lei",
      "bilgi": "Şark üslubu etkileyici binada Moldova halk kültürü ve doğa tarihi; dev dinotherium iskeleti en ünlü parçası.",
      "kaynak": "https://mc.gov.md/sites/default/files/file-cloud/ord-mc-36-2025.pdf",
-     "konum": null
+     "konum": [
+      47.0233,
+      28.81991
+     ],
+     "googleAd": "National Museum of Ethnography and Natural History",
+     "puan": 4.7,
+     "yorum": 3272,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20Ethnography%20and%20Natural%20History&query_place_id=ChIJO2_0kM19yUARDniXqxC2MI0"
     },
     {
      "id": "kisinev-tarih-muzesi",
@@ -7412,7 +7718,14 @@
      "fiyat_yazi": "50 lei",
      "bilgi": "Antik çağdan bugüne Moldova tarihi; önündeki Roma kurt heykeli fotoğraf durağıdır.",
      "kaynak": "https://mc.gov.md/sites/default/files/file-cloud/ord-mc-36-2025.pdf",
-     "konum": null
+     "konum": [
+      47.02259,
+      28.82813
+     ],
+     "googleAd": "National History Museum of Moldova",
+     "puan": 4.6,
+     "yorum": 3225,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20History%20Museum%20of%20Moldova&query_place_id=ChIJuf8_-zJ8yUAR-BdiqXDsBe8"
     },
     {
      "id": "kisinev-sanat-muzesi",
@@ -7426,7 +7739,14 @@
      "fiyat_yazi": "50 lei",
      "bilgi": "Ana bulvardaki tarihî binada Moldova ve Avrupa resim, ikon ve heykel koleksiyonu.",
      "kaynak": "https://mc.gov.md/sites/default/files/file-cloud/ord-mc-36-2025.pdf",
-     "konum": null
+     "konum": [
+      47.02178,
+      28.83024
+     ],
+     "googleAd": "National Museum of Fine Arts of Moldova",
+     "puan": 4.7,
+     "yorum": 1437,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20Fine%20Arts%20of%20Moldova&query_place_id=ChIJi1fOSTJ8yUARRwk8RatgrBA"
     },
     {
      "id": "kisinev-merkez-pazari",
@@ -7440,7 +7760,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Peynir, bal, kuru meyve ve yerel şaraplarla dolu kalabalık pazar; Moldova gündelik hayatını görmek için ideal.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      47.02044,
+      28.84093
+     ],
+     "googleAd": "Chisinau Central Market",
+     "puan": 3.8,
+     "yorum": 24973,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Chisinau%20Central%20Market&query_place_id=ChIJ-YGOUjp8yUARWNaM2ccc_bY"
     },
     {
      "id": "kisinev-valea-morilor",
@@ -7454,7 +7781,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Göl çevresinde yürüyüş parkı; ünlü merdivenlerden göl manzarası. Merkezden 20 dk yürüme.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      47.01857,
+      28.81937
+     ],
+     "googleAd": "Mills' Valley Park",
+     "puan": 4.8,
+     "yorum": 16804,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mills'%20Valley%20Park&query_place_id=ChIJmccGidN9yUARDoSPXQUA13Y",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Mills' Valley Park\" buldu"
     },
     {
      "id": "kisinev-eternitate",
@@ -7468,7 +7803,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "İkinci Dünya Savaşı kurbanları için yapılmış, beş süngü formunda Sovyet dönemi anıtı ve ebedi ateş.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      47.00888,
+      28.83215
+     ],
+     "googleAd": "Eternity Memorial Complex",
+     "puan": 4.7,
+     "yorum": 4595,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Eternity%20Memorial%20Complex&query_place_id=ChIJL4vUeyd8yUARYZteLADZ160"
     },
     {
      "id": "kisinev-cricova",
@@ -7482,7 +7824,14 @@
      "fiyat_yazi": "Underground City turu 400 lei, hafta sonu ve 16:00 sonrası 500 lei",
      "bilgi": "Yarım günlük gezi: merkezden ~15 km, kilometrelerce uzunluktaki yeraltı şarap şehri ve tadım. Rezervasyon şart, taksiyle gitmek en pratiği.",
      "kaynak": "https://cricova.md/en/tours",
-     "konum": null
+     "konum": [
+      47.14858,
+      28.86037
+     ],
+     "googleAd": "Cricova Winery",
+     "puan": 4.7,
+     "yorum": 5776,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Cricova%20Winery&query_place_id=ChIJ8SyL243Yy0ARAtul638TQ-c"
     }
    ]
   },
@@ -7517,7 +7866,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Morača Nehri üzerindeki eğik direkli asma köprü, şehrin modern simgesi; akşam ışıklandırmasıyla çok güzel.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.44521,
+      19.25811
+     ],
+     "googleAd": "Millennium",
+     "puan": 4.4,
+     "yorum": 1687,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Millennium&query_place_id=ChIJM20S_zXrTRMRwy1-YnTDZAU"
     },
     {
      "id": "podgorica-bagimsizlik-meydani",
@@ -7531,7 +7887,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin kalbi; fıskiyeli meydan ve çevresindeki Slobode ile Njegoševa caddelerinin kafeleri.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.44126,
+      19.26289
+     ],
+     "googleAd": "Independence Square",
+     "puan": 4.2,
+     "yorum": 2030,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Independence%20Square&query_place_id=ChIJ4Rei-0jrTRMRnPonT9P59cY"
     },
     {
      "id": "podgorica-katedral",
@@ -7545,7 +7908,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Altın varaklı fresk ve mozaikleriyle etkileyici Sırp Ortodoks katedrali; merkezden 15 dk yürüme.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.44574,
+      19.24798
+     ],
+     "googleAd": "Temple of Christ's Resurrection",
+     "puan": 4.8,
+     "yorum": 2252,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Temple%20of%20Christ's%20Resurrection&query_place_id=ChIJufFR7zHrTRMRjU4jSMyadC0"
     },
     {
      "id": "podgorica-stara-varos",
@@ -7559,7 +7929,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Osmanlı döneminden kalma eski çarşı mahallesi; 17. yüzyıl saat kulesi ve Osmanagić Camii.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.4356,
+      19.26007
+     ],
+     "googleAd": "Clock Tower",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Clock%20Tower&query_place_id=ChIJUXZAUEfrTRMR9YK6FehF1YQ",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Clock Tower\" buldu"
     },
     {
      "id": "podgorica-ribnica",
@@ -7573,7 +7951,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Ribnica ile Morača'nın birleştiği yerde Osmanlı taş köprüsü ve eski kale kalıntıları.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.439,
+      19.25913
+     ],
+     "googleAd": "Nemanja's Town",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Nemanja's%20Town&query_place_id=ChIJpZbFCzjrTRMRjc-vPTPANAI",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Nemanja's Town\" buldu"
     },
     {
      "id": "podgorica-dvorac-petrovica",
@@ -7587,7 +7973,15 @@
      "fiyat_yazi": "Fiyatı teyit et",
      "bilgi": "Kral Nikola'nın oğlu için yapılmış saray, bugün Çağdaş Sanat Merkezi; çevresinde gölgeli park.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.43799,
+      19.25021
+     ],
+     "googleAd": "Petrovic Mansion",
+     "puan": 4.2,
+     "yorum": 367,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Petrovic%20Mansion&query_place_id=ChIJra2YDDvrTRMRPJdGaUv45SA",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Petrovic Mansion\" buldu"
     },
     {
      "id": "podgorica-gorica-tepesi",
@@ -7601,7 +7995,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehre adını veren ormanlık tepe; yürüyüş yolları, şehir manzarası ve küçük Aziz George Kilisesi.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.44936,
+      19.26742
+     ],
+     "googleAd": "Gorica Park",
+     "puan": 4.7,
+     "yorum": 975,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gorica%20Park&query_place_id=ChIJ05sWF7OUTRMReb_ehSRoXqo"
     },
     {
      "id": "podgorica-doclea",
@@ -7615,7 +8016,15 @@
      "fiyat_yazi": "Fiyatı teyit et",
      "bilgi": "Merkezin 3 km kuzeyinde Roma dönemi kenti kalıntıları; forum, bazilika ve hamam temelleri. Taksiyle gitmek pratik.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.46733,
+      19.26633
+     ],
+     "googleAd": "Duklja ruins",
+     "puan": 4.3,
+     "yorum": 266,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Duklja%20ruins&query_place_id=ChIJpb9qHJaUTRMRae4FwRPO6jg",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Duklja ruins\" buldu"
     },
     {
      "id": "podgorica-skadar-golu",
@@ -7629,7 +8038,8 @@
      "fiyat_yazi": "Milli park girişi 5 €; tekne turu yaklaşık 15–25 € ayrıca",
      "bilgi": "Yarım günlük gezi: Balkanların en büyük gölü, nilüferler ve pelikanlar arasında tekne turu. Podgorica'dan trenle ~30 dk (1,20 €).",
      "kaynak": "https://loudavymkrokem.cz/en/?p=257773",
-     "konum": null
+     "konum": null,
+     "konumNotu": "Google 27 km uzakta bir yer buldu: Virpazar"
     },
     {
      "id": "podgorica-cetinje",
@@ -7643,7 +8053,8 @@
      "fiyat_yazi": "Kasabayı gezmek ücretsiz; müzeler ve manastır içi ayrıca ücretli olabilir",
      "bilgi": "Yarım günlük gezi: Karadağ'ın eski kraliyet başkenti; Cetinje Manastırı, Kral Nikola Sarayı ve eski elçilik binaları. Otobüsle ~45 dk.",
      "kaynak": null,
-     "konum": null
+     "konum": null,
+     "konumNotu": "Google 29 km uzakta bir yer buldu: Cetinje"
     }
    ]
   },
@@ -7678,7 +8089,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Fatih Sultan Mehmed döneminde (15. yy) Vardar üzerine yapılan, şehrin sembolü Osmanlı köprüsü. Makedonya Meydanı'nı Eski Çarşı'ya bağlar.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.99721,
+      21.43337
+     ],
+     "googleAd": "Stone Bridge",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Stone%20Bridge&query_place_id=ChIJTa3g4LMVVBMRmzfJmbktEzc"
     },
     {
      "id": "uskup-makedonya-meydani",
@@ -7692,7 +8110,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Dev 'Atlı Savaşçı' (Büyük İskender) heykeli ve Skopje 2014 projesinin neoklasik binalarıyla çevrili ana meydan. Akşam ışıklandırmasıyla daha etkileyici.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.99721,
+      21.4331
+     ],
+     "googleAd": "Macedonia Square",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Macedonia%20Square&query_place_id=ChIJrz9c5rMVVBMRJcc1ac7pMbU"
     },
     {
      "id": "uskup-eski-carsi",
@@ -7706,7 +8131,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Balkanlar'ın en büyük Osmanlı çarşılarından; Kapan Han, Suli Han, Bezisten ve köprü başındaki Davut Paşa Hamamı (bugün sanat galerisi) burada. Kebapçılar ve Türk kahvesi molası için ideal.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.0005,
+      21.43662
+     ],
+     "googleAd": "Old Bazaar - Skopje Old Town",
+     "puan": 4.5,
+     "yorum": 28130,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Old%20Bazaar%20-%20Skopje%20Old%20Town&query_place_id=ChIJN5g3ra8VVBMRSB7eXi9zn9E"
     },
     {
      "id": "uskup-mustafa-pasa-camii",
@@ -7720,7 +8152,14 @@
      "fiyat_yazi": "Ücretsiz (bağış kutusu var)",
      "bilgi": "1492'de yapılan, Üsküp'ün en zarif ve en iyi korunmuş Osmanlı camii; Türkiye'nin desteğiyle restore edildi. Kale'nin hemen altında, çarşının üst ucunda.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.00202,
+      21.43542
+     ],
+     "googleAd": "Mustafa Pasha Mosque",
+     "puan": 4.7,
+     "yorum": 1485,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mustafa%20Pasha%20Mosque&query_place_id=ChIJ9xOWRK4VVBMRFvfRsTVuw_k"
     },
     {
      "id": "uskup-hunkar-camii",
@@ -7734,7 +8173,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "II. Murad'ın 1436'da yaptırdığı, şehrin en eski camilerinden; avlusundaki Saat Kulesi Balkanlar'ın ilk saat kulelerinden sayılır.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.00154,
+      21.44139
+     ],
+     "googleAd": "Sultan Murat Mosque",
+     "puan": 4.8,
+     "yorum": 263,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sultan%20Murat%20Mosque&query_place_id=ChIJWc7hCaUVVBMRKWXy9iPzoQY"
     },
     {
      "id": "uskup-kale",
@@ -7748,7 +8194,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski Çarşı'nın üstündeki tepede; surlardan Vardar vadisine ve şehre geniş manzara. Gün batımında güzel.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.00192,
+      21.43258
+     ],
+     "googleAd": "Skopje Fortress",
+     "puan": 4.1,
+     "yorum": 2900,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Skopje%20Fortress&query_place_id=ChIJAQAAMKwVVBMRAz-uaD8LTfw"
     },
     {
      "id": "uskup-arkeoloji-muzesi",
@@ -7762,7 +8215,14 @@
      "fiyat_yazi": "400 MKD (rehberli tur dâhil)",
      "bilgi": "Taş Köprü'nün çarşı tarafında, nehir kıyısındaki görkemli binada; Bizans ikonaları ve antik dönem eserleri. Salı–pazar 10:00–18:00.",
      "kaynak": "https://amm.org.mk/en/plan-your-visit/",
-     "konum": null
+     "konum": [
+      41.99678,
+      21.43434
+     ],
+     "googleAd": "Archaeological Museum of the Republic of Macedonia",
+     "puan": 4,
+     "yorum": 1850,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Archaeological%20Museum%20of%20the%20Republic%20of%20Macedonia&query_place_id=ChIJfX-e-K4VVBMRNK4TurP3EH8"
     },
     {
      "id": "uskup-rahibe-teresa-evi",
@@ -7776,7 +8236,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Üsküp doğumlu Rahibe Teresa'nın hayatını anlatan küçük müze, Makedonya Caddesi yaya yolunda. Meydandan 5 dakika.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.99382,
+      21.43087
+     ],
+     "googleAd": "Mother Teresa Memorial House",
+     "puan": 4.4,
+     "yorum": 4177,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mother%20Teresa%20Memorial%20House&query_place_id=ChIJ9bheqbUVVBMR_e0Sr1BQ-sQ"
     },
     {
      "id": "uskup-vodno-milenyum-haci",
@@ -7790,7 +8257,14 @@
      "fiyat_yazi": "Teleferik gidiş-dönüş 120 MKD",
      "bilgi": "Sredno Vodno'dan teleferikle 66 metrelik haça çıkılır; tüm Üsküp ayağınızın altında. Pazartesi kapalı; alt istasyona taksiyle gidin.",
      "kaynak": "https://inyourpocket.com/skopje/millennium-cross_150534v",
-     "konum": null
+     "konum": [
+      41.96503,
+      21.39443
+     ],
+     "googleAd": "Millennium Cross",
+     "puan": 4.6,
+     "yorum": 5643,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Millennium%20Cross&query_place_id=ChIJL6lWg7kWVBMR_3lG08ZSQhc"
     },
     {
      "id": "uskup-matka-kanyonu",
@@ -7804,7 +8278,14 @@
      "fiyat_yazi": "Giriş ücretsiz; Vrelo Mağarası tekne turu kişi başı 400 MKD",
      "bilgi": "Yarım günlük gezi: şehrin 15 km güneybatısında, yeşil sulu kanyon, ortaçağ manastırı ve tekne/kano turları. 60 numaralı otobüsle 40–50 dk ya da taksiyle 20–25 dk.",
      "kaynak": "https://www.skopje.in/post/guide-to-matka-canyon-in-skopje",
-     "konum": null
+     "konum": [
+      41.95349,
+      21.29755
+     ],
+     "googleAd": "Matka Canyon Skopje",
+     "puan": 4.7,
+     "yorum": 1626,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Matka%20Canyon%20Skopje&query_place_id=ChIJDU74GAAPVBMRBUob9V77Yp8"
     }
    ]
   },
@@ -7839,7 +8320,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin kalbi; dev taş kaplı meydan, İskender Bey heykeli, Ulusal Tarih Müzesi'nin mozaikli cephesi ve Opera binası.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.3285,
+      19.81838
+     ],
+     "googleAd": "Skanderbeg Square",
+     "puan": 4.5,
+     "yorum": 15337,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Skanderbeg%20Square&query_place_id=ChIJObkn_A8xUBMRFY95E3CdgpE"
     },
     {
      "id": "tiran-ethem-bey-camii",
@@ -7853,7 +8341,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "18. yüzyıl sonu–19. yüzyıl başında yapılan, iç ve dış duvarları natüralist fresklerle süslü Osmanlı camii; komünist dönemde yıkılmaktan kurtulmuş nadir yapılardan.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.32779,
+      19.81928
+     ],
+     "googleAd": "Et'hem Bej Mosque",
+     "puan": 4.4,
+     "yorum": 3590,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Et'hem%20Bej%20Mosque&query_place_id=ChIJ2XOfBRAxUBMRxMsbIMvf_-Y"
     },
     {
      "id": "tiran-saat-kulesi",
@@ -7867,7 +8362,15 @@
      "fiyat_yazi": "Fiyatı teyit et (dışarıdan görmek ücretsiz)",
      "bilgi": "1822'de Hacı Ethem Bey'in yaptırdığı, Ethem Bey Camii'nin hemen yanındaki kule; tepesinden meydan manzarası.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.32773,
+      19.81972
+     ],
+     "googleAd": "Kulla e Sahatit",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Kulla%20e%20Sahatit&query_place_id=ChIJQXe-DhAxUBMRvbCRTVBxtFc",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Kulla e Sahatit\" buldu"
     },
     {
      "id": "tiran-namazgah-camii",
@@ -7881,7 +8384,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Türkiye Diyanet Vakfı'nın inşa ettiği, 2024'te açılan Balkanlar'ın en büyük camilerinden; klasik Osmanlı mimarisi tarzında. Meclis binası yakınında, meydandan 10 dk yürüme.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.32573,
+      19.82444
+     ],
+     "googleAd": "Mosque of Namazgah",
+     "puan": 4.8,
+     "yorum": 2507,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mosque%20of%20Namazgah&query_place_id=ChIJuaSa2ZcxUBMRV0zoQ2kKihc"
     },
     {
      "id": "tiran-bunkart-2",
@@ -7895,7 +8405,14 @@
      "fiyat_yazi": "500 lek (güncelliğini kapıda teyit et)",
      "bilgi": "Meydanın hemen yanında, İçişleri Bakanlığı'nın eski nükleer sığınağında komünist dönem polis teşkilatını anlatan müze. Her gün 09:30–18:30.",
      "kaynak": "https://whichmuseum.co.uk/museum/bunk-art-2-tirana-24505/tickets-prices",
-     "konum": null
+     "konum": [
+      41.32698,
+      19.81956
+     ],
+     "googleAd": "Bunk'Art 2",
+     "puan": 4.2,
+     "yorum": 10121,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bunk'Art%202&query_place_id=ChIJ9UMspBoxUBMRfwKKAxuMsQg"
     },
     {
      "id": "tiran-yapraklar-evi",
@@ -7909,7 +8426,14 @@
      "fiyat_yazi": "700 lek",
      "bilgi": "Komünist gizli servis Sigurimi'nin dinleme merkezi olan bina; rejimin halkı nasıl izlediğini çarpıcı biçimde anlatır. Her gün 09:00–19:00 (sezon dışı saatler değişebilir).",
      "kaynak": "https://www.visit-tirana.com/?p=2572",
-     "konum": null
+     "konum": [
+      41.32657,
+      19.81653
+     ],
+     "googleAd": "House of Leaves Museum",
+     "puan": 4.3,
+     "yorum": 2829,
+     "harita": "https://www.google.com/maps/search/?api=1&query=House%20of%20Leaves%20Museum&query_place_id=ChIJS-JbDQUxUBMRJpTxxW-ELEU"
     },
     {
      "id": "tiran-piramit-blloku",
@@ -7923,7 +8447,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Hoca'nın anıt-müzesi olarak yapılan piramit yenilenerek dışından tepesine çıkılabilen bir gençlik merkezine dönüştü. Hemen yanındaki Blloku, bir zamanlar parti elitine ayrılmış, bugün kafe ve barlarla dolu semt.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.32307,
+      19.82146
+     ],
+     "googleAd": "Pyramid of Tirana",
+     "puan": 4.2,
+     "yorum": 11109,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pyramid%20of%20Tirana&query_place_id=ChIJ13HJcBsxUBMRg0s9vq3gwuA"
     },
     {
      "id": "tiran-kale",
@@ -7937,7 +8468,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Meydanın birkaç adım güneyinde, Osmanlı dönemi surlarının kalıntıları arasında restoranlı ve dükkânlı küçük yaya sokağı.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.32644,
+      19.82215
+     ],
+     "googleAd": "Tirana Castle",
+     "puan": 4.4,
+     "yorum": 5015,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tirana%20Castle&query_place_id=ChIJMbZaqRAxUBMRYG5EIVzBwqI"
     },
     {
      "id": "tiran-yeni-pazar",
@@ -7951,7 +8489,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Renkli binalarla çevrili kapalı sebze-meyve pazarı ve etrafındaki geleneksel Arnavut restoranları; öğle yemeği için iyi durak. Meydandan 10 dk.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      41.32998,
+      19.82447
+     ],
+     "googleAd": "Pazari i Ri",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pazari%20i%20Ri&query_place_id=ChIJw_xRNRExUBMRf68YulV8sPo"
     },
     {
      "id": "tiran-dajti-teleferik",
@@ -7965,7 +8510,14 @@
      "fiyat_yazi": "Gidiş-dönüş 1.500 lek",
      "bilgi": "Yarım günlük gezi: Balkanlar'ın en uzun teleferiklerinden biriyle 15 dakikada Dajti Dağı'na çıkılır, Tiran ovası manzarası. Salı kapalı; alt istasyona Saat Kulesi'nden kalkan Porcelan otobüsüyle (40 lek) ya da taksiyle gidilir.",
      "kaynak": "https://albaniatourguide.com/is-the-dajti-cable-car-worth-it-price-time-length-opening-times-getting-there-dajti-ekspres/",
-     "konum": null
+     "konum": [
+      41.35067,
+      19.86076
+     ],
+     "googleAd": "Dajti Ekspres (Stacioni i poshtëm/Lower station)",
+     "puan": 4.5,
+     "yorum": 2690,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Dajti%20Ekspres%20(Stacioni%20i%20posht%C3%ABm%2FLower%20station)&query_place_id=ChIJkRG_spw1UBMRQBRzQ1t0t7I"
     }
    ]
   },
@@ -8004,7 +8556,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehrin kafelerle dolu yaya bulvarı; bir ucunda İskender Bey heykeli, boyunca hükümet binaları ve akşam gezintisi yapan kalabalık.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.6623,
+      21.16297
+     ],
+     "googleAd": "Bulevardi Nënë Tereza",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Bulevardi%20N%C3%ABn%C3%AB%20Tereza&query_place_id=ChIJ7aI15-CeVBMRb25YCrb2khM",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Bulevardi Nënë Tereza\" buldu"
     },
     {
      "id": "pristine-newborn",
@@ -8018,7 +8578,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "2008 bağımsızlık ilanıyla dikilen dev harfler; her yıl yeni bir temayla boyanır. Gençlik ve Spor Sarayı karşısında.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.66076,
+      21.15842
+     ],
+     "googleAd": "Newborn Monument",
+     "puan": 4.4,
+     "yorum": 4207,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Newborn%20Monument&query_place_id=ChIJk9Rnq8vyVBMRWlQySYPll1w"
     },
     {
      "id": "pristine-fatih-camii",
@@ -8032,7 +8599,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "1461'de Fatih Sultan Mehmed'in yaptırdığı, Priştine'nin en önemli Osmanlı eseri; büyük kubbesiyle çarşı bölgesinin merkezinde. Yanında Kosova Müzesi var.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.66698,
+      21.16705
+     ],
+     "googleAd": "Sultan Mehmed Mosque",
+     "puan": 4.8,
+     "yorum": 888,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sultan%20Mehmed%20Mosque&query_place_id=ChIJGcP5tCGfVBMRQHxNWfyk1GI",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Sultan Mehmed Mosque\" buldu"
     },
     {
      "id": "pristine-carsi-camii",
@@ -8046,7 +8621,15 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Geleneksel olarak 1389 Kosova Savaşı'nın anısına yapıldığı kabul edilen, şehrin en eski camisi (Taş Cami); hemen yakındaki 19. yüzyıl Saat Kulesi eski çarşının simgesi.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.6655,
+      21.16542
+     ],
+     "googleAd": "Xhamia e Çarshisë",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Xhamia%20e%20%C3%87arshis%C3%AB&query_place_id=ChIJCYji9x-fVBMR12UD-dS7jU8",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Xhamia e Çarshisë\" buldu"
     },
     {
      "id": "pristine-cezar-pasa-camii",
@@ -8060,7 +8643,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "19. yüzyıl başında yapılan, içi barok esintili kalem işleriyle süslü küçük Osmanlı camii; Fatih Camii'ne birkaç dakika yürüme.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.66603,
+      21.16635
+     ],
+     "googleAd": "Xhamia Jashar Pasha",
+     "puan": 5,
+     "yorum": 1,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Xhamia%20Jashar%20Pasha&query_place_id=ChIJg2dVKwCfVBMRiPnBOlA37MA"
     },
     {
      "id": "pristine-etnografya-muzesi",
@@ -8074,7 +8664,14 @@
      "fiyat_yazi": "Fiyatı teyit et (ücretsiz ya da birkaç euro)",
      "bilgi": "18.–19. yüzyıldan kalma Osmanlı dönemi konak kompleksinde geleneksel Kosova yaşamı; rehberli anlatım genelde dahil. Fatih Camii'ne birkaç dakika.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.66775,
+      21.16736
+     ],
+     "googleAd": "Ethnographic Museum - Muzeu Etnologjik",
+     "puan": 4.1,
+     "yorum": 410,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ethnographic%20Museum%20-%20Muzeu%20Etnologjik&query_place_id=ChIJPyg0myGfVBMR92GLTu1M4cU"
     },
     {
      "id": "pristine-milli-kutuphane",
@@ -8088,7 +8685,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "99 kubbesi ve metal ağ cephesiyle 'dünyanın en tuhaf binaları' listelerine giren Yugoslav dönemi yapı; lobisine girilebilir.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.65755,
+      21.16224
+     ],
+     "googleAd": "The National Library of Kosovo \"Pjetër Bogdani\"",
+     "puan": 4.4,
+     "yorum": 749,
+     "harita": "https://www.google.com/maps/search/?api=1&query=The%20National%20Library%20of%20Kosovo%20%22Pjet%C3%ABr%20Bogdani%22&query_place_id=ChIJe-6kS-aeVBMR3cE1Eix6ghE"
     },
     {
      "id": "pristine-ana-tereza-katedrali",
@@ -8102,7 +8706,14 @@
      "fiyat_yazi": "Giriş ücretsiz; çan kulesine asansör küçük bir ücretle (teyit et)",
      "bilgi": "Milli Kütüphane'nin hemen yanında; çan kulesinden şehrin en iyi panoramik manzarası.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.65628,
+      21.15935
+     ],
+     "googleAd": "Mother Theresa Cathedral",
+     "puan": 4.6,
+     "yorum": 1903,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mother%20Theresa%20Cathedral&query_place_id=ChIJUbVKq-ieVBMRDqvQZezqvMU"
     },
     {
      "id": "pristine-sultan-murat-turbesi",
@@ -8116,7 +8727,14 @@
      "fiyat_yazi": "Ücretsiz (bağış yapılabilir)",
      "bilgi": "1389 Kosova Savaşı'nda şehit düşen Sultan I. Murad'ın iç organlarının gömülü olduğu türbe; Osmanlı'nın Balkanlar'daki ilk türbelerinden. Merkezden taksiyle 15–20 dk.",
      "kaynak": null,
-     "konum": null
+     "konum": [
+      42.70224,
+      21.10475
+     ],
+     "googleAd": "Tomb of Sultan Murad I",
+     "puan": 4.8,
+     "yorum": 1187,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tomb%20of%20Sultan%20Murad%20I&query_place_id=ChIJwd3EUsefVBMReU8nhqkILSo"
     },
     {
      "id": "pristine-prizren",
@@ -8130,21 +8748,22 @@
      "fiyat_yazi": "Şehir gezisi ücretsiz; ulaşım ayrı",
      "bilgi": "Günübirlik gezi: Priştine'den otobüsle yaklaşık 1,5 saat; Sinan Paşa Camii, Taş Köprü, kale manzarası ve Türkçenin yaygın konuşulduğu Osmanlı çarşısı. Kosova'nın en güzel şehri, 3 günlük programda bir günü ayırmaya değer.",
      "kaynak": null,
-     "konum": null
+     "konum": null,
+     "konumNotu": "Google 61 km uzakta bir yer buldu: Prizren Fortress"
     }
    ]
   }
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 1.26
+  "usd": 1.66
  },
  "apifyKullanim": {
-  "usd": 57.9,
+  "usd": 58.57,
   "sinir": 75,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-08T18:15:52.761Z"
+  "kontrol": "2026-11-08T20:47:12.316Z"
  },
  "olcumler": [
   {
@@ -8173,6 +8792,13 @@
    "t": "2026-11-08T18:15:52.761Z",
    "sorgu": 20,
    "usd": 0.06,
+   "sorguBasi": 0.003
+  },
+  {
+   "robot": "gezi-konum",
+   "t": "2026-11-08T20:47:12.316Z",
+   "sorgu": 90,
+   "usd": 0.27,
    "sorguBasi": 0.003
   }
  ]
