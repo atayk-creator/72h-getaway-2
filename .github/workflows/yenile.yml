@@ -1,0 +1,70 @@
+name: Toplu yenileme (tüm robotlar sırayla)
+# data/yenile.json değişince (ya da elle) çalışır: kur, otel, uçak, restoran, gezi konumu ve tablo robotlarını sırayla çalıştırır.
+# Her robottan sonra sonuç depoya kaydedilir; biri hata verirse diğerleri yine çalışır. Bütçe koruması her robotta geçerli.
+on:
+  push:
+    branches: [main]
+    paths: [data/yenile.json]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: apify-robotlari
+  cancel-in-progress: false
+jobs:
+  yenile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Ayarları oku
+        id: ayar
+        run: |
+          for k in otel otel_sehir ucak ucak_sehir restoran restoran_sehir; do echo "$k=$(jq -r ".$k // \"\"" data/yenile.json)" >> "$GITHUB_OUTPUT"; done
+          cat data/yenile.json
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          printf '#!/usr/bin/env bash\ngit add -A data/\nif git diff --cached --quiet; then echo "Değişiklik yok."; exit 0; fi\ngit commit -m "$1 ($(TZ=Europe/Istanbul date "+%%Y-%%m-%%d %%H:%%M"))"\ngit pull --rebase --autostash && git push\n' > /tmp/kaydet.sh; chmod +x /tmp/kaydet.sh
+      - name: Testler
+        run: |
+          node scripts/test-otel-fiyatlari.mjs >/dev/null && node scripts/test-ucak-fiyatlari.mjs >/dev/null && node scripts/test-ucak-eiv.mjs >/dev/null && node scripts/test-restoranlar.mjs >/dev/null && node scripts/test-update-rates.mjs >/dev/null && echo "Testler geçti"
+      - name: Kur
+        continue-on-error: true
+        run: node scripts/update-rates.mjs && /tmp/kaydet.sh "Kur güncellendi"
+      - name: Otel fiyatları
+        if: steps.ayar.outputs.otel != ''
+        continue-on-error: true
+        env:
+          MOD: ${{ steps.ayar.outputs.otel }}
+          SEHIR: ${{ steps.ayar.outputs.otel_sehir }}
+        run: node scripts/otel-fiyatlari.mjs; /tmp/kaydet.sh "Otel fiyatları yenilendi (toplu)"
+      - name: Uçak fiyatları
+        if: steps.ayar.outputs.ucak != ''
+        continue-on-error: true
+        env:
+          MOD: ${{ steps.ayar.outputs.ucak }}
+          SEHIR: ${{ steps.ayar.outputs.ucak_sehir }}
+        run: node scripts/ucak-fiyatlari.mjs; /tmp/kaydet.sh "Uçak fiyatları yenilendi (toplu)"
+      - name: Restoranlar
+        if: steps.ayar.outputs.restoran != ''
+        continue-on-error: true
+        env:
+          MOD: ${{ steps.ayar.outputs.restoran }}
+          SEHIR: ${{ steps.ayar.outputs.restoran_sehir }}
+        run: node scripts/restoranlar.mjs; /tmp/kaydet.sh "Restoranlar yenilendi (toplu)"
+      - name: Gezi yerlerinin eksik konumları
+        continue-on-error: true
+        run: node scripts/gezi-konum.mjs; /tmp/kaydet.sh "Gezi konumları (toplu)"
+      - name: Google tablosu
+        continue-on-error: true
+        run: pip install -q openpyxl==3.1.5 && python scripts/tablo.py ice; /tmp/kaydet.sh "Tablodaki değişiklikler işlendi (toplu)"
