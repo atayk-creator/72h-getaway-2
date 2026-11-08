@@ -6225,7 +6225,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz (park ve surlar); içerideki bazı kule ve müzeler ücretli",
      "bilgi": "Sava ile Tuna'nın birleştiği yerde, şehrin en güzel gün batımı noktası. Pobednik anıtı ve surlar boyunca yürüyüş.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.82412,
+      20.45019
+     ],
+     "googleAd": "Belgrade Fortress",
+     "puan": 4.8,
+     "yorum": 53642,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Belgrade%20Fortress&query_place_id=ChIJUyxcAUllWkcRstJIPZ95CxY"
     },
     {
      "id": "belgrad-knez-mihailova",
@@ -6238,7 +6246,16 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Cumhuriyet Meydanı'ndan Kalemegdan'a uzanan yaya caddesi; kafeler, mağazalar ve 19. yüzyıl binaları.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.81774,
+      20.45699
+     ],
+     "googleAd": "Kneza Mihaila",
+     "puan": 4.8,
+     "yorum": 2381,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Kneza%20Mihaila&query_place_id=ChIJV7ObbAVuWkcRodcwruzwsVg",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Kneza Mihaila\" buldu"
     },
     {
      "id": "belgrad-aziz-sava",
@@ -6251,7 +6268,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Dünyanın en büyük Ortodoks kiliselerinden; altın mozaikli kripta mutlaka görülmeli. Merkezden yürüyerek 25–30 dk.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.79814,
+      20.46905
+     ],
+     "googleAd": "Church of Saint Sava",
+     "puan": 4.9,
+     "yorum": 47073,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Church%20of%20Saint%20Sava&query_place_id=ChIJj44lpwxwWkcRTDTAbxo5Eb4"
     },
     {
      "id": "belgrad-tesla-muzesi",
@@ -6264,7 +6289,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "İngilizce rehberli tur 800 RSD (yalnızca nakit dinar)",
      "bilgi": "Tesla'nın kişisel eşyaları ve çalışan deneyleri; ziyaret rehberli turla, her saat başı yaklaşık 45 dk. Küçük olduğu için tur saatinden 15 dk önce gidin.",
-     "kaynak": "https://tesla-museum.org/?p=1857"
+     "kaynak": "https://tesla-museum.org/?p=1857",
+     "konum": [
+      44.80509,
+      20.47069
+     ],
+     "googleAd": "Nikola Tesla Museum",
+     "puan": 4.1,
+     "yorum": 20796,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Nikola%20Tesla%20Museum&query_place_id=ChIJc63z4aB6WkcRGu4Aewl9Xsk"
     },
     {
      "id": "belgrad-yugoslavya-muzesi",
@@ -6277,7 +6310,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Tam bilet 800 RSD; pazartesi kapalı",
      "bilgi": "Yugoslavya'nın tarihini anlatan müze kompleksi. Tito'nun kabrinin bulunduğu Çiçek Evi geçici olarak kapalı olabilir, gitmeden kontrol edin.",
-     "kaynak": "https://muzej-jugoslavije.org/en/posetite-nas/"
+     "kaynak": "https://muzej-jugoslavije.org/en/posetite-nas/",
+     "konum": [
+      44.78795,
+      20.45197
+     ],
+     "googleAd": "Museum of Yugoslavia",
+     "puan": 4.5,
+     "yorum": 4626,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Museum%20of%20Yugoslavia&query_place_id=ChIJ--VOUxZwWkcRHlTGqWAr0Vc"
     },
     {
      "id": "belgrad-skadarlija",
@@ -6290,7 +6331,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Arnavut kaldırımlı bohem sokak; akşamları canlı müzikli geleneksel Sırp lokantaları (kafana).",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.81778,
+      20.46472
+     ],
+     "googleAd": "Skadarlija",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Skadarlija&query_place_id=ChIJCdPET7F6WkcRG-noKds5UBA"
     },
     {
      "id": "belgrad-zemun",
@@ -6303,7 +6352,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Semt ücretsiz; kuleye çıkış ücretli (fiyat doğrulanıyor)",
      "bilgi": "Tuna kıyısında eski Avusturya kasabası havasında semt; kırmızı çatılar, balık lokantaları ve tepeden Belgrad manzarası. Merkezden otobüsle 20 dk.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.84837,
+      20.40976
+     ],
+     "googleAd": "Gardoš Tower",
+     "puan": 4.7,
+     "yorum": 7068,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gardo%C5%A1%20Tower&query_place_id=ChIJc6195K1lWkcRjJbp1AA3CjI"
     },
     {
      "id": "belgrad-ulusal-muze",
@@ -6316,7 +6373,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
      "bilgi": "Cumhuriyet Meydanı'nda; ortaçağ el yazmalarından Avrupa resmine geniş koleksiyon.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.81662,
+      20.45986
+     ],
+     "googleAd": "National Museum of Serbia",
+     "puan": 4.7,
+     "yorum": 8736,
+     "harita": "https://www.google.com/maps/search/?api=1&query=National%20Museum%20of%20Serbia&query_place_id=ChIJU6fXRLJ6WkcRPzI4qdPWiOY"
     },
     {
      "id": "belgrad-beton-hala",
@@ -6329,7 +6394,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Sava kıyısında eski depo binalarında restoranlar ve barlar; akşam yemeği ve nehir manzarası için.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.81908,
+      20.44865
+     ],
+     "googleAd": "Beton Hala",
+     "puan": 4.5,
+     "yorum": 1357,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Beton%20Hala&query_place_id=ChIJe3WW9U5lWkcRLvDlmiFf0BM"
     },
     {
      "id": "belgrad-ada-ciganlija",
@@ -6342,7 +6415,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Sava üzerindeki yarımada; göl kıyısında yürüyüş ve bisiklet. Yazın şehir plajı olur.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      44.79182,
+      20.41261
+     ],
+     "googleAd": "Ada Ciganlija",
+     "puan": 4.7,
+     "yorum": 4313,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ada%20Ciganlija&query_place_id=ChIJb8v4QbFvWkcRVoO6sH2Xbrc"
     }
    ]
   },
@@ -6376,7 +6457,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Osmanlı çarşısı; bakırcılar, kahveciler ve güvercinlerle dolu Sebil meydanı. Boşnak kahvesi ve ćevapi burada.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.86003,
+      18.42999
+     ],
+     "googleAd": "Baščaršija",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Ba%C5%A1%C4%8Dar%C5%A1ija&query_place_id=ChIJDz44AcnIWEcRSWyJBGXNbUs"
     },
     {
      "id": "saraybosna-gazi-husrev-bey",
@@ -6389,7 +6478,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Turist girişi ücretli; güncel fiyat doğrulanıyor",
      "bilgi": "16. yüzyıldan Balkanların en önemli Osmanlı camilerinden; avlusu ve şadırvanı çok güzel. Namaz vakitlerinde ziyaret yapılmaz.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.85915,
+      18.42929
+     ],
+     "googleAd": "Gazi Husrev-beg Mosque",
+     "puan": 4.8,
+     "yorum": 5242,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gazi%20Husrev-beg%20Mosque&query_place_id=ChIJ3Uam5cjIWEcRgsvnpvOBLtE"
     },
     {
      "id": "saraybosna-latin-koprusu",
@@ -6402,7 +6499,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Arşidük Franz Ferdinand'ın 1914'te köprünün yanında vurulduğu, Birinci Dünya Savaşı'nı başlatan olayın yeri.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.85761,
+      18.42896
+     ],
+     "googleAd": "Latin Bridge",
+     "puan": 4.6,
+     "yorum": 8163,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Latin%20Bridge&query_place_id=ChIJl-jshsjIWEcRW1d5AaNhoNs"
     },
     {
      "id": "saraybosna-1878-1918",
@@ -6415,7 +6520,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
      "bilgi": "Latin Köprüsü'nün köşesinde küçük müze; Avusturya-Macaristan dönemi ve 1914 suikastı.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.85795,
+      18.42902
+     ],
+     "googleAd": "Sarajevo Museum 1878–1918",
+     "puan": 4.3,
+     "yorum": 876,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sarajevo%20Museum%201878%E2%80%931918&query_place_id=ChIJpx1Jj8jIWEcROyxg_bFXEmc"
     },
     {
      "id": "saraybosna-umut-tuneli",
@@ -6428,7 +6541,16 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Yetişkin 20 KM (yalnızca nakit KM)",
      "bilgi": "Kuşatma yıllarında şehri dış dünyaya bağlayan tünelin bir bölümü ve müzesi. Havalimanı yakınında; merkezden taksiyle 15 dk.",
-     "kaynak": "https://easybalkantransfers.com/blog/sarajevo-history-tour-tunnel-of-hope/"
+     "kaynak": "https://easybalkantransfers.com/blog/sarajevo-history-tour-tunnel-of-hope/",
+     "konum": [
+      43.81979,
+      18.33734
+     ],
+     "googleAd": "Tunnel of Salvation",
+     "puan": 4.6,
+     "yorum": 8755,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Tunnel%20of%20Salvation&query_place_id=ChIJVYYAdfHJWEcRkWfIrYD3rM0",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Tunnel of Salvation\" buldu"
     },
     {
      "id": "saraybosna-trebevic",
@@ -6441,7 +6563,16 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Gidiş-dönüş 20 KM",
      "bilgi": "Şehrin üstündeki dağa çıkan teleferik; tepeden Saraybosna manzarası ve 1984 Olimpiyatları'nın terk edilmiş kızak pisti.",
-     "kaynak": "https://www.inyourpocket.com/trebevic-cable-car_167895v"
+     "kaynak": "https://www.inyourpocket.com/trebevic-cable-car_167895v",
+     "konum": [
+      43.85556,
+      18.43497
+     ],
+     "googleAd": "Sarajevska žičara",
+     "puan": 4.6,
+     "yorum": 6631,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sarajevska%20%C5%BEi%C4%8Dara&query_place_id=ChIJMYUGybnIWEcR643LiroTctQ",
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Sarajevska žičara\" buldu"
     },
     {
      "id": "saraybosna-vijecnica",
@@ -6454,7 +6585,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
      "bilgi": "Neo-Moorish tarzda eski kütüphane; 1992'de yandı, restore edildi. İçerideki tavan ve vitraylar görülmeye değer.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.85919,
+      18.43358
+     ],
+     "googleAd": "Gradska vijećnica Sarajevo",
+     "puan": 4.7,
+     "yorum": 6010,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gradska%20vije%C4%87nica%20Sarajevo&query_place_id=ChIJOSXH1cnIWEcRin2s04N6rKs"
     },
     {
      "id": "saraybosna-sari-tabya",
@@ -6467,7 +6606,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Eski şehrin üstünde Osmanlı tabyası; gün batımında tüm vadiyi görürsünüz. Başçarşı'dan yokuş yukarı 15–20 dk.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.86144,
+      18.43765
+     ],
+     "googleAd": "Yellow Fortress",
+     "puan": 4.6,
+     "yorum": 6713,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Yellow%20Fortress&query_place_id=ChIJHfuUyLXIWEcRyNqzdTOEDOk"
     },
     {
      "id": "saraybosna-savas-cocuklugu",
@@ -6480,7 +6627,15 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretli; güncel fiyat doğrulanıyor",
      "bilgi": "Kuşatmada büyüyen çocukların eşyaları ve anlatımlarıyla etkileyici küçük müze.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.8619,
+      18.42841
+     ],
+     "googleAd": "War Childhood Museum",
+     "puan": 4.8,
+     "yorum": 1406,
+     "harita": "https://www.google.com/maps/search/?api=1&query=War%20Childhood%20Museum&query_place_id=ChIJfbLLq87IWEcR1WNjKPH04fc"
     },
     {
      "id": "saraybosna-ferhadija",
@@ -6493,21 +6648,29 @@
      "fiyat_hs": null,
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Osmanlı çarşısının Avusturya-Macaristan caddesine dönüştüğü çizgi; yerdeki işaretin bir yanı doğu, bir yanı batı.",
-     "kaynak": null
+     "kaynak": null,
+     "konum": [
+      43.85931,
+      18.42782
+     ],
+     "googleAd": "Sarajevo Meeting Of Cultures",
+     "puan": 4.7,
+     "yorum": 528,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sarajevo%20Meeting%20Of%20Cultures&query_place_id=ChIJNbd_0MjIWEcRSHMduGsx3uM"
     }
    ]
   }
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 1.17
+  "usd": 1.26
  },
  "apifyKullanim": {
-  "usd": 41.15,
+  "usd": 57.9,
   "sinir": 75,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-03T16:40:38.782Z"
+  "kontrol": "2026-11-08T18:15:52.761Z"
  },
  "olcumler": [
   {
@@ -6530,6 +6693,13 @@
    "sorgu": 7,
    "usd": 0.02,
    "sorguBasi": 0.00286
+  },
+  {
+   "robot": "gezi-konum",
+   "t": "2026-11-08T18:15:52.761Z",
+   "sorgu": 20,
+   "usd": 0.06,
+   "sorguBasi": 0.003
   }
  ]
 }
