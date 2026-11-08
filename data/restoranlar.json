@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-08T18:12:54.185Z",
+ "guncellendi": "2026-11-08T18:20:49.580Z",
  "kaynak": "Google Maps (Apify: compass/crawler-google-places)",
  "aciklama": "Kişi başı fiyat: Google'daki kullanıcıların bildirdiği aralığın ortası, euroya çevrilmiş",
  "kur": {
@@ -3936,7 +3936,7 @@
    ]
   },
   "Saraybosna": {
-   "guncellendi": "2026-11-08T18:12:54.185Z",
+   "guncellendi": "2026-11-08T18:20:49.580Z",
    "esik": {
     "uygun": 8.9,
     "luks": 23
@@ -4072,13 +4072,140 @@
    ]
   },
   "Belgrad": {
-   "guncellendi": "2026-11-08T18:12:54.185Z",
+   "guncellendi": "2026-11-08T18:20:49.580Z",
    "esik": {
-    "uygun": 0,
-    "luks": 0
+    "uygun": 10.7,
+    "luks": 19.3
    },
-   "aday": 0,
-   "restoranlar": []
+   "aday": 51,
+   "restoranlar": [
+    {
+     "id": "ChIJRQ991ah6WkcRzeXKgOBVn1g",
+     "ad": "Amigo",
+     "mutfak": "Pancake restaurant",
+     "mutfakTr": "Pancake",
+     "puan": 4.8,
+     "yorum": 1004,
+     "fiyatYazi": "RSD 1–500",
+     "kisiBasiEur": 2.1,
+     "artiFiyat": false,
+     "semt": "Stari Grad",
+     "konum": [
+      44.80937,
+      20.46109
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Amigo&query_place_id=ChIJRQ991ah6WkcRzeXKgOBVn1g",
+     "web": "http://amigopalacinkarnica.com/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "uygun"
+    },
+    {
+     "id": "ChIJx6VEq8J7WkcR60GXqHgi2Io",
+     "ad": "Figo",
+     "mutfak": "Pizza restaurant",
+     "mutfakTr": "Pizza",
+     "puan": 4.9,
+     "yorum": 436,
+     "fiyatYazi": "RSD 1,000–1,500",
+     "kisiBasiEur": 10.7,
+     "artiFiyat": false,
+     "semt": null,
+     "konum": [
+      44.8114,
+      20.47228
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Figo&query_place_id=ChIJx6VEq8J7WkcR60GXqHgi2Io",
+     "web": "http://www.figo.rs/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "uygun"
+    },
+    {
+     "id": "ChIJHTUwo6h6WkcRpw0_GULEPI4",
+     "ad": "The Three Carrots IRISH PUB",
+     "mutfak": "Irish pub",
+     "mutfakTr": "Irish pub",
+     "puan": 4.6,
+     "yorum": 2896,
+     "fiyatYazi": "RSD 500–2,500",
+     "kisiBasiEur": 12.8,
+     "artiFiyat": false,
+     "semt": "Stari Grad",
+     "konum": [
+      44.80801,
+      20.46268
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=The%20Three%20Carrots%20IRISH%20PUB&query_place_id=ChIJHTUwo6h6WkcRpw0_GULEPI4",
+     "web": "https://www.irishpub.rs/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJvbw4oR97WkcR9w0F2H5E6Ro",
+     "ad": "Cevaplija",
+     "mutfak": "Serbian restaurant",
+     "mutfakTr": "Sırp",
+     "puan": 4.5,
+     "yorum": 1674,
+     "fiyatYazi": "RSD 1,000–2,500",
+     "kisiBasiEur": 14.9,
+     "artiFiyat": false,
+     "semt": null,
+     "konum": [
+      44.811,
+      20.47254
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Cevaplija&query_place_id=ChIJvbw4oR97WkcR9w0F2H5E6Ro",
+     "web": "http://www.cevaplija.rs/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJgUXmectlWkcRn8F_wlaxYvk",
+     "ad": "Thyme - StreetCuisine & Cocktails",
+     "mutfak": "Restaurant",
+     "mutfakTr": "Restoran",
+     "puan": 4.7,
+     "yorum": 2089,
+     "fiyatYazi": "RSD 1,500–4,500",
+     "kisiBasiEur": 25.6,
+     "artiFiyat": false,
+     "semt": "Stari Grad",
+     "konum": [
+      44.81949,
+      20.45366
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Thyme%20-%20StreetCuisine%20%26%20Cocktails&query_place_id=ChIJgUXmectlWkcRn8F_wlaxYvk",
+     "web": "https://thyme.rs/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "luks"
+    },
+    {
+     "id": "ChIJdVDHbAB7WkcRWvcr1OQiqCE",
+     "ad": "Delirium",
+     "mutfak": "Fine dining restaurant",
+     "mutfakTr": "Gurme",
+     "puan": 4.9,
+     "yorum": 249,
+     "fiyatYazi": "RSD 5,000+",
+     "kisiBasiEur": 55.5,
+     "artiFiyat": true,
+     "semt": "Stari Grad",
+     "konum": [
+      44.81833,
+      20.46264
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Delirium&query_place_id=ChIJdVDHbAB7WkcRWvcr1OQiqCE",
+     "web": "http://deliriumsilence.com/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "luks"
+    }
+   ]
   }
  }
 }
