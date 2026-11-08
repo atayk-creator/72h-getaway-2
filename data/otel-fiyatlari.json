@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-05T10:59:38.204Z",
+ "guncellendi": "2026-11-08T17:46:48.609Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -211,7 +211,22 @@
   "ams-college-hotel": "ChgI8pK2n9O24JkeGgwvZy8xbjM2ZzRxbnAQAQ",
   "ams-sir-albert": "ChkIkqvYleeB2PjnARoML2cvMWhtNV9ud3d2EAE",
   "ams-park-centraal": "ChkIr6fz6cnTjOgUGg0vZy8xMWJ4YzdkeHdmEAE",
-  "ams-morgan-mees": "ChoIrMC3nsaXlJ7rARoNL2cvMTFiNnF3czFqMRAB"
+  "ams-morgan-mees": "ChoIrMC3nsaXlJ7rARoNL2cvMTFiNnF3czFqMRAB",
+  "beg-moskva": "ChUI9-7ShsDsk6hSGgkvbS8wY19oYjIQAQ",
+  "beg-square-nine": "ChgIj4zizMW2qsD8ARoLL2cvMXR4Zm15angQAQ",
+  "beg-mama-shelter": "ChoI47CDo4zKsvToARoNL2cvMTF0bms0dzRicRAB",
+  "beg-townhouse-27": "ChgI5_TVo9_Hhp_LARoLL2cvMXRyY2Y2NzYQAQ",
+  "beg-majestic": "ChkI773IsK7one6lARoML2cvMTEzcWJuOTlwEAE",
+  "beg-royal": "ChgIndvf0Pr4ktCgARoLL2cvMXRmenc4ZGgQAQ",
+  "beg-prag": "ChgI0dP8qMm_uOmkARoLL2cvMXRoa19tejkQAQ",
+  "sjj-europe": "ChYIi-v09M7zxI5LGgovbS8wbmNkMThqEAE",
+  "sjj-swissotel": "ChkIgsXU77Hkhs1KGg0vZy8xMWdoc2hobnA5EAE",
+  "sjj-president": "ChkIieKl66ab44VGGg0vZy8xMWJ3Mmh0aGpsEAE",
+  "sjj-central": "ChkIs83j06iTsc4iGg0vZy8xMWd4anQ4dF90EAE",
+  "sjj-aziza": "ChkIhY6e18n828sdGg0vZy8xMWRkeDRuZ245EAE",
+  "sjj-hecco": "ChcIwbjwhN-958gzGgsvZy8xdGRrcWw2ZBAB",
+  "sjj-kovaci": "ChgI98f8mcnTnPoyGgwvZy8xaGM3eHhiODUQAQ",
+  "sjj-stari-grad": "ChoQyZKS4rr-rqLQARoNL2cvMTFudHQ2Y3MzORAC"
  },
  "konum": {
   "dub-shelbourne": [
@@ -727,8 +742,8 @@
    14.41425
   ],
   "prg-mandarin-oriental": [
-   50.08532,
-   14.40535
+   50.084489999999995,
+   14.405569999999999
   ],
   "prg-josef": [
    50.09,
@@ -1045,34 +1060,94 @@
   "ams-morgan-mees": [
    52.37435,
    4.874560000000001
+  ],
+  "beg-moskva": [
+   44.81303,
+   20.46043
+  ],
+  "beg-square-nine": [
+   44.819480000000006,
+   20.456349999999997
+  ],
+  "beg-mama-shelter": [
+   44.81997,
+   20.45405
+  ],
+  "beg-townhouse-27": [
+   44.81639,
+   20.45366
+  ],
+  "beg-majestic": [
+   44.8151,
+   20.4588
+  ],
+  "beg-royal": [
+   44.82125,
+   20.457
+  ],
+  "beg-prag": [
+   44.81084,
+   20.45977
+  ],
+  "sjj-europe": [
+   43.85833,
+   18.427490000000002
+  ],
+  "sjj-swissotel": [
+   43.8554,
+   18.40812
+  ],
+  "sjj-president": [
+   43.85828,
+   18.43015
+  ],
+  "sjj-central": [
+   43.85786,
+   18.42596
+  ],
+  "sjj-aziza": [
+   43.86319,
+   18.43618
+  ],
+  "sjj-hecco": [
+   43.85867,
+   18.42191
+  ],
+  "sjj-kovaci": [
+   43.86,
+   18.43211
+  ],
+  "sjj-stari-grad": [
+   43.85828,
+   18.42631
   ]
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 17.99
+  "usd": 26.69
  },
  "sonCalisma": {
-  "tarih": "2026-11-05T10:59:38.204Z",
-  "mod": "takvim",
-  "hafta_sonu": 8,
-  "kontrol": 1664,
-  "fiyatli": 1507,
-  "dogrulanamadi": 33,
-  "supheli": 37,
+  "tarih": "2026-11-08T17:46:48.609Z",
+  "mod": "hepsi",
+  "hafta_sonu": 13,
+  "kontrol": 2919,
+  "fiyatli": 2569,
+  "dogrulanamadi": 78,
+  "supheli": 66,
   "vergi": {
-   "dahil": 64,
-   "eklendi": 1448,
-   "bilinmiyor": 65
+   "dahil": 98,
+   "eklendi": 2448,
+   "bilinmiyor": 167
   },
-  "tahminiMaliyetUsd": 4.99,
+  "tahminiMaliyetUsd": 8.7,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 46.27,
+  "usd": 55.93,
   "sinir": 75,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-05T10:59:38.204Z"
+  "kontrol": "2026-11-08T17:46:48.609Z"
  },
  "olcumler": [
   {
@@ -1130,6 +1205,13 @@
    "sorgu": 1664,
    "usd": 4.82,
    "sorguBasi": 0.0029
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-08T17:46:48.609Z",
+   "sorgu": 2899,
+   "usd": 8.34,
+   "sorguBasi": 0.00288
   }
  ],
  "sehirler": {
@@ -1158,6 +1240,8 @@
   "Ljubljana": "data/fiyatlar/ljubljana.json",
   "Zagreb": "data/fiyatlar/zagreb.json",
   "Bükreş": "data/fiyatlar/bukres.json",
-  "Sofya": "data/fiyatlar/sofya.json"
+  "Sofya": "data/fiyatlar/sofya.json",
+  "Belgrad": "data/fiyatlar/belgrad.json",
+  "Saraybosna": "data/fiyatlar/saraybosna.json"
  }
 }
