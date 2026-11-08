@@ -1,21 +1,21 @@
 {
- "guncellendi": "2026-11-03T10:46:45.329Z",
+ "guncellendi": "2026-11-08T18:12:54.185Z",
  "kaynak": "Google Maps (Apify: compass/crawler-google-places)",
  "aciklama": "Kişi başı fiyat: Google'daki kullanıcıların bildirdiği aralığın ortası, euroya çevrilmiş",
  "kur": {
-  "kaynak": "ECB 2026-11-02",
-  "tarih": "2026-11-03"
+  "kaynak": "ECB 2026-11-06",
+  "tarih": "2026-11-08"
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 11.28
+  "usd": 12.06
  },
  "apifyKullanim": {
-  "usd": 37.53,
+  "usd": 57.84,
   "sinir": 75,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-03T10:46:45.329Z"
+  "kontrol": "2026-11-08T18:12:54.185Z"
  },
  "olcumler": [
   {
@@ -38,6 +38,13 @@
    "sorgu": 156,
    "usd": 0.78,
    "sorguBasi": 0.005
+  },
+  {
+   "robot": "restoran-kesif",
+   "t": "2026-11-08T18:12:54.185Z",
+   "sorgu": 120,
+   "usd": 0.72,
+   "sorguBasi": 0.006
   }
  ],
  "sehirler": {
@@ -3927,6 +3934,151 @@
      "seviye": "luks"
     }
    ]
+  },
+  "Saraybosna": {
+   "guncellendi": "2026-11-08T18:12:54.185Z",
+   "esik": {
+    "uygun": 8.9,
+    "luks": 23
+   },
+   "aday": 52,
+   "restoranlar": [
+    {
+     "id": "ChIJsZQgfGTJWEcR-93DUM9igN0",
+     "ad": "Pazarske mantije Sarajevo - NiNa Čik probaj...!",
+     "mutfak": "Family restaurant",
+     "mutfakTr": "Aile restoranı",
+     "puan": 4.8,
+     "yorum": 1187,
+     "fiyatYazi": "KM 5–10",
+     "kisiBasiEur": 3.8,
+     "artiFiyat": false,
+     "semt": null,
+     "konum": [
+      43.8591,
+      18.42983
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Pazarske%20mantije%20Sarajevo%20-%20NiNa%20%C4%8Cik%20probaj...!&query_place_id=ChIJsZQgfGTJWEcR-93DUM9igN0",
+     "web": null,
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "uygun"
+    },
+    {
+     "id": "ChIJOV81f8_IWEcRjxy2zgj2eHo",
+     "ad": "Ćevabdžinica Nune",
+     "mutfak": "Barbecue restaurant",
+     "mutfakTr": "Mangal / barbekü",
+     "puan": 4.8,
+     "yorum": 5869,
+     "fiyatYazi": "KM 10–20",
+     "kisiBasiEur": 7.7,
+     "artiFiyat": false,
+     "semt": null,
+     "konum": [
+      43.85845,
+      18.42328
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=%C4%86evabd%C5%BEinica%20Nune&query_place_id=ChIJOV81f8_IWEcRjxy2zgj2eHo",
+     "web": "https://nune.ba/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "uygun"
+    },
+    {
+     "id": "ChIJQ8OFqsnIWEcRN2hZY0MagHg",
+     "ad": "Dveri",
+     "mutfak": "Restaurant",
+     "mutfakTr": "Restoran",
+     "puan": 4.6,
+     "yorum": 3077,
+     "fiyatYazi": "KM 20–50",
+     "kisiBasiEur": 17.9,
+     "artiFiyat": false,
+     "semt": null,
+     "konum": [
+      43.8595,
+      18.43051
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Dveri&query_place_id=ChIJQ8OFqsnIWEcRN2hZY0MagHg",
+     "web": "http://www.dveri.co.ba/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJ2etCzLfIWEcRKz9X-bXrM-M",
+     "ad": "House of Spite",
+     "mutfak": "Eastern European restaurant",
+     "mutfakTr": "Doğu Avrupa",
+     "puan": 4.5,
+     "yorum": 2642,
+     "fiyatYazi": "KM 20–50",
+     "kisiBasiEur": 17.9,
+     "artiFiyat": false,
+     "semt": null,
+     "konum": [
+      43.85851,
+      18.43431
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=House%20of%20Spite&query_place_id=ChIJ2etCzLfIWEcRKz9X-bXrM-M",
+     "web": "http://inat-kuca.com//",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "populer"
+    },
+    {
+     "id": "ChIJ2-SARs_IWEcRZh9ZiBP87nU",
+     "ad": "Strossa Fine Bistro",
+     "mutfak": "Restaurant",
+     "mutfakTr": "Restoran",
+     "puan": 4.8,
+     "yorum": 237,
+     "fiyatYazi": "KM 50+",
+     "kisiBasiEur": 33.2,
+     "artiFiyat": true,
+     "semt": null,
+     "konum": [
+      43.85873,
+      18.42557
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=Strossa%20Fine%20Bistro&query_place_id=ChIJ2-SARs_IWEcRZh9ZiBP87nU",
+     "web": "https://strossabistro.ba/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "luks"
+    },
+    {
+     "id": "ChIJqxEDNdHIWEcRYfA7av8-XJc",
+     "ad": "The Four Rooms of Mrs. Safija",
+     "mutfak": "Fine dining restaurant",
+     "mutfakTr": "Gurme",
+     "puan": 4.6,
+     "yorum": 1695,
+     "fiyatYazi": "KM 50+",
+     "kisiBasiEur": 33.2,
+     "artiFiyat": true,
+     "semt": null,
+     "konum": [
+      43.86414,
+      18.41487
+     ],
+     "url": "https://www.google.com/maps/search/?api=1&query=The%20Four%20Rooms%20of%20Mrs.%20Safija&query_place_id=ChIJqxEDNdHIWEcRYfA7av8-XJc",
+     "web": "http://restoransarajevo.com/",
+     "rezervasyon": null,
+     "kontrol": "2026-11-08T18:12:54.185Z",
+     "seviye": "luks"
+    }
+   ]
+  },
+  "Belgrad": {
+   "guncellendi": "2026-11-08T18:12:54.185Z",
+   "esik": {
+    "uygun": 0,
+    "luks": 0
+   },
+   "aday": 0,
+   "restoranlar": []
   }
  }
 }
