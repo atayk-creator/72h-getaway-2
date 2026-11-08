@@ -1,14 +1,14 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "eurTry": 56.03,
-  "eurHuf": 363.09,
+  "eurHuf": 363.41,
   "source": "Piyasa orta kuru (currency-api, günlük; ECB'nin yayımlamadığı günlerde)",
   "kurlar": {
-    "CZK": 24.3227,
-    "PLN": 4.393,
-    "SEK": 11.0212,
-    "DKK": 7.4746,
-    "RON": 5.3392,
+    "CZK": 24.3435,
+    "PLN": 4.3993,
+    "SEK": 11.0332,
+    "DKK": 7.4808,
+    "RON": 5.3257,
     "BAM": 1.95583,
     "RSD": 117.2
   }
