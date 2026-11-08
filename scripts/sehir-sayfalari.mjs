@@ -591,7 +591,7 @@ ${paths.map((p) => `  <url><loc>${esc(SITE + p)}</loc><lastmod>${today}</lastmod
 /** Tüm sayfaları üretir. write=false ise dosya yazmaz, {yol: içerik} döndürür. */
 export function generate({ root, today = process.env.BUGUN || todayIstanbul(), data = null, write = true } = {}) {
   const d = data || loadData(root);
-  const names = (d.hotels.sehirler || []).map((c) => c.sehir).filter(Boolean);
+  const names = (d.hotels.sehirler || []).filter((c) => !c.baslangic || c.baslangic <= today).map((c) => c.sehir).filter(Boolean); // başlangıç günü gelmeyen şehrin sayfası henüz üretilmez
   const models = names.map((n) => buildCity(d, n, today));
   const out = {};
   for (const m of models) out[`sehir/${m.slug}/index.html`] = renderCityPage(m);

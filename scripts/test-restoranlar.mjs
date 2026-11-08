@@ -12,7 +12,7 @@ const FX = { EUR: 1, HUF: 400, CZK: 25, PLN: 4, SEK: 10, DKK: 7.5, RON: 5, BGN: 
 // 0) ayarlar: otel listesindeki her şehir var, merkez ve yarıçap makul
 { const names = new Set(cfg.sehirler.map((c) => c.sehir));
   for (const c of hotels.sehirler) assert.ok(names.has(c.sehir), c.sehir);
-  for (const c of cfg.sehirler) { assert.ok(c.merkez[0] > 34 && c.merkez[0] < 61 && c.merkez[1] > -10 && c.merkez[1] < 27, c.sehir); assert.ok(c.yaricap_km >= 0.8 && c.yaricap_km <= 3); }
+  for (const c of cfg.sehirler) { assert.ok(c.merkez[0] > 34 && c.merkez[0] < 67 && c.merkez[1] > -25 && c.merkez[1] < 30, c.sehir); assert.ok(c.yaricap_km >= 0.8 && c.yaricap_km <= 3); }
   console.log(`ok 0: ${cfg.sehirler.length} şehir`); }
 
 // 0b) Türkçe mutfak adı: sözlük, milliyet, bilinmeyende " restaurant" atılır; veri dosyasında her restoranda var

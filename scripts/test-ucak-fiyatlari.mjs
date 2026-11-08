@@ -85,7 +85,7 @@ const hs = { ...hotels.ayarlar, apify_plan: "starter", aylik_butce_usd: 100, fat
 // 5) uçtan uca Salı: yakın hafta sonları x 26 şehir (tek tek), harcama uçak dosyasında
 { const seen = [], st = { ...emptyFlights(), harcama: { donem: "2026-10-28", usd: 1.5 } };
   const out = await run({ token: TOKEN, cfg, state: st, hotelSettings: hs, now: new Date("2026-11-03T03:17:00Z"), fetchImpl: fake({ seen }), sleep: async () => {} });
-  const posts = seen.filter((s) => s.init.method === "POST").length, n = out.plan.length * cfg.sehirler.length;
+  const posts = seen.filter((s) => s.init.method === "POST").length, n = out.plan.length * cfg.sehirler.filter((c) => !c.baslangic || c.baslangic <= "2026-11-03").length;
   assert.equal(posts, n + out.plan.length, "Valletta için saat şartsız ikinci arama"); assert.equal(out.report.fiyat, n); assert.equal(out.report.yok || 0, 0);
   const v = out.state.haftaSonlari["2026-11-06"].sehirler["Valletta"].son; assert.equal(v.saatDisi, true); assert.equal(v.fiyat, 240); assert.ok(!v.saat);
   const s = out.state.haftaSonlari["2026-11-06"].sehirler["Budapeşte"].son; assert.equal(s.fiyat, 150); assert.equal(s.aktarmasiz.fiyat, 190); assert.deepEqual(s.saat, { gidis: "05:00–12:00", donus: "16:00–24:00" });
@@ -103,7 +103,7 @@ const hs = { ...hotels.ayarlar, apify_plan: "starter", aylik_butce_usd: 100, fat
   const out = await run({ token: TOKEN, cfg: tcfg, hotelSettings: hs, mode: "test", now: new Date("2026-11-03T03:17:00Z"), fetchImpl: multi, sleep: async () => {} });
   const posts = seen.filter((x) => x.init.method === "POST"); assert.equal(posts.length, 1);
   const inp = JSON.parse(posts[0].init.body); assert.ok(inp.destination.includes("CDG") && inp.destination.includes("ORY") && inp.destination.includes("BUD")); assert.ok(inp.maxResults >= 26 * 2);
-  const w = out.state.haftaSonlari["2026-11-06"].sehirler; assert.equal(w["Paris"].son.durum, "fiyat"); assert.equal(w["Valletta"].son.durum, "yok"); assert.equal(out.report.calisma, 1); assert.equal(out.report.arama, cfg.sehirler.length);
+  const w = out.state.haftaSonlari["2026-11-06"].sehirler; assert.equal(w["Paris"].son.durum, "fiyat"); assert.equal(w["Valletta"].son.durum, "yok"); assert.equal(out.report.calisma, 1); assert.equal(out.report.arama, cfg.sehirler.filter((c) => !c.baslangic || c.baslangic <= "2026-11-03").length);
   console.log("ok 5b: toplu arama"); }
 
 // 6) ortak bütçe dolunca arama yapılmaz; şehir filtresi; kontrol günü değilse boş

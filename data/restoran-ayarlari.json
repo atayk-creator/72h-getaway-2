@@ -81,8 +81,7 @@
   "RSD": 117.2,
   "RON": 5.05,
   "GBP": 0.86,
-  "USD": 1.08,
-  "RSD": 117.2
+  "USD": 1.08
  },
  "sehirler": [
   {
@@ -336,6 +335,96 @@
    ],
    "yaricap_km": 1.5,
    "para": "BAM"
+  },
+  {
+   "sehir": "Londra",
+   "merkez": [
+    51.5115,
+    -0.13
+   ],
+   "yaricap_km": 1.2,
+   "para": "GBP",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Bern",
+   "merkez": [
+    46.948,
+    7.4474
+   ],
+   "yaricap_km": 1.2,
+   "para": "CHF",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Oslo",
+   "merkez": [
+    59.9127,
+    10.7461
+   ],
+   "yaricap_km": 1.5,
+   "para": "NOK",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Reykjavik",
+   "merkez": [
+    64.1466,
+    -21.9426
+   ],
+   "yaricap_km": 1.5,
+   "para": "ISK",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Kişinev",
+   "merkez": [
+    47.0245,
+    28.8323
+   ],
+   "yaricap_km": 1.5,
+   "para": "MDL",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Podgorica",
+   "merkez": [
+    42.441,
+    19.2627
+   ],
+   "yaricap_km": 1.8,
+   "para": "EUR",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Üsküp",
+   "merkez": [
+    41.9965,
+    21.4314
+   ],
+   "yaricap_km": 1.5,
+   "para": "MKD",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Tiran",
+   "merkez": [
+    41.3275,
+    19.8187
+   ],
+   "yaricap_km": 1.5,
+   "para": "ALL",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Priştine",
+   "merkez": [
+    42.6629,
+    21.1655
+   ],
+   "yaricap_km": 1.5,
+   "para": "EUR",
+   "baslangic": "2026-11-28"
   }
  ]
 }

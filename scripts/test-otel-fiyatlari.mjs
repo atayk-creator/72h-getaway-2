@@ -6,7 +6,7 @@ import {
 } from "./otel-fiyatlari.mjs";
 
 const doc = JSON.parse(await readFile(new URL("../data/hotels.json", import.meta.url), "utf8"));
-const S = doc.ayarlar, ALL = doc.sehirler.flatMap((c) => c.oteller), BUD = doc.sehirler.find((c) => c.sehir === "Budapeşte").oteller;
+const S = doc.ayarlar, ALL = doc.sehirler.filter((c) => !c.baslangic).flatMap((c) => c.oteller), BUD = doc.sehirler.find((c) => c.sehir === "Budapeşte").oteller;
 const TOKEN = "apify_api_TESTJETON1234567890abcdef";
 const res = (b, status = 200) => ({ ok: status < 400, status, text: async () => (typeof b === "string" ? b : JSON.stringify(b)) });
 

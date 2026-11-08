@@ -2611,7 +2611,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var body = $("tripBody");
     var s1 = trKeep && $("plist") ? $("plist").scrollLeft : 0, s2 = trKeep && $("pscroll") ? $("pscroll").scrollLeft : 0; trKeep = true;
     if (!c.places) {
-      body.innerHTML = '<p class="empty">Gezi planı şimdilik <b>' + (GEZI ? Object.keys(GEZI.sehirler).length + " AB başkenti" : "Budapeşte") + '</b> için hazır. ' + c.n + ' için gezilecek yerleri henüz eklemedik. Şimdilik ' +
+      body.innerHTML = '<p class="empty">Gezi planı şimdilik <b>' + (GEZI ? Object.keys(GEZI.sehirler).length + " başkent" : "Budapeşte") + '</b> için hazır. ' + c.n + ' için gezilecek yerleri henüz eklemedik. Şimdilik ' +
         '<a href="' + mapsUrl("tourist attractions in " + c.n + " " + c.c) + '" target="_blank" rel="noopener noreferrer">haritada gezilecek yerlere bak ↗</a></p>';
       return;
     }
@@ -2877,7 +2877,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   if (window.HOTELS_URL && window.fetch) {
     var getJ = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }); };
     Promise.all([getJ(window.HOTELS_URL), getJ(window.HOTEL_META_URL).catch(function () { return null; })]).then(function (r) {
-      if (r[0] && Array.isArray(r[0].sehirler)) { LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
+      if (r[0] && Array.isArray(r[0].sehirler)) { var bugun = new Date(Date.now() + 3 * 36e5).toISOString().slice(0, 10); r[0].sehirler = r[0].sehirler.filter(function (c) { return !c.baslangic || c.baslangic <= bugun; }); /* başlangıç günü gelmeyen şehir otel fiyatı gelene kadar tahminle gösterilir */ LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
     }).catch(function () {});
   }
   if (window.VITRIN_URL && window.fetch) {

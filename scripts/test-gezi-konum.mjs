@@ -13,7 +13,7 @@ const res = (b, status = 200) => ({ ok: status < 400, status, text: async () => 
 // 0) veri: otel listesindeki her şehir var, yerlerin zorunlu alanları dolu, fiyat sayı ya da null
 { for (const c of hotels.sehirler) assert.ok(data.sehirler[c.sehir], c.sehir);
   for (const [s, c] of Object.entries(data.sehirler)) {
-    assert.ok(["EUR", "HUF", "CZK", "PLN", "SEK", "DKK", "RON", "RSD", "BAM"].includes(c.para), s + " para");
+    assert.ok(["EUR", "HUF", "CZK", "PLN", "SEK", "DKK", "RON", "RSD", "BAM", "GBP", "CHF", "NOK", "ISK", "MDL", "MKD", "ALL"].includes(c.para), s + " para");
     const u = c.ulasim; assert.ok(u && u.tek_bilet && typeof u.tek_bilet.fiyat === "number", s + " tek bilet");
     assert.ok(u.havalimani && typeof u.havalimani.fiyat === "number", s + " havalimanı");
     const ids = new Set();

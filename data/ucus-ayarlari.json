@@ -46,6 +46,15 @@
     {"sehir":"Bükreş","havalimani":["OTP"]},
     {"sehir":"Sofya","havalimani":["SOF"]},
     {"sehir":"Belgrad","havalimani":["BEG"]},
-    {"sehir":"Saraybosna","havalimani":["SJJ"]}
+    {"sehir":"Saraybosna","havalimani":["SJJ"]},
+    {"sehir":"Londra","havalimani":["LHR", "LGW", "STN", "LTN"],"baslangic":"2026-11-28"},
+    {"sehir":"Bern","havalimani":["ZRH"],"baslangic":"2026-11-28"},
+    {"sehir":"Oslo","havalimani":["OSL"],"baslangic":"2026-11-28"},
+    {"sehir":"Reykjavik","havalimani":["KEF"],"baslangic":"2026-11-28"},
+    {"sehir":"Kişinev","havalimani":["RMO"],"baslangic":"2026-11-28"},
+    {"sehir":"Podgorica","havalimani":["TGD"],"baslangic":"2026-11-28"},
+    {"sehir":"Üsküp","havalimani":["SKP"],"baslangic":"2026-11-28"},
+    {"sehir":"Tiran","havalimani":["TIA"],"baslangic":"2026-11-28"},
+    {"sehir":"Priştine","havalimani":["PRN"],"baslangic":"2026-11-28"}
   ]
 }

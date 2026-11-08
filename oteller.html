@@ -405,6 +405,8 @@ section + section { margin-top: 38px; }
   Promise.all([getJson("data/hotels.json"), getJson("data/otel-fiyatlari.json").catch(function () { return null; })])
     .then(function (r) {
       hotelsDoc = r[0]; meta = r[1];
+      var bugun = new Date(Date.now() + 3 * 36e5).toISOString().slice(0, 10); // İstanbul günü; başlangıç günü gelmeyen şehir listede görünmez
+      hotelsDoc.sehirler = hotelsDoc.sehirler.filter(function (c) { return !c.baslangic || c.baslangic <= bugun; });
       var names = hotelsDoc.sehirler.map(function (c) { return c.sehir; }).sort(function (a, b) { return a.localeCompare(b, "tr"); });
       var opts = names.map(function (n) { return '<option value="' + esc(n) + '">' + esc(n + " · " + cityOf(n).ulke) + "</option>"; }).join("");
       var q = (new URLSearchParams(location.search).get("sehir") || "").trim();

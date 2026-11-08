@@ -410,6 +410,141 @@
         {"id":"sjj-kovaci","ad":"Hotel Kovači","arama":"Hotel Kovaci Sarajevo","kategori":"ucuz","not":"Başçarşı'nın hemen üstünde, Kovači'de sade otel"},
         {"id":"sjj-stari-grad","ad":"Hotel Stari Grad","arama":"Hotel Stari Grad Sarajevo","kategori":"ucuz","not":"Eski şehirde uygun fiyatlı küçük otel"}
       ]
+    },
+    {
+      "sehir": "Londra",
+      "ulke": "Birleşik Krallık",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"lon-savoy","ad":"The Savoy","arama":"The Savoy London","kategori":"ikonik","not":"1889'dan beri Strand'de, Thames kıyısında efsanevi otel; Covent Garden ve Trafalgar'a yürüme mesafesi"},
+        {"id":"lon-langham","ad":"The Langham, London","arama":"The Langham London","kategori":"pahali","not":"Regent Street'in başında, Oxford Circus ve Marylebone'a birkaç dakika uzaklıkta köklü lüks otel"},
+        {"id":"lon-the-ned","ad":"The Ned","arama":"The Ned London","kategori":"pahali","not":"City'de eski bir banka binasında, St Paul's ve Bank'a yakın gösterişli otel"},
+        {"id":"lon-hoxton-holborn","ad":"The Hoxton, Holborn","arama":"The Hoxton Holborn London","kategori":"konforlu","not":"Holborn'da, British Museum ve Covent Garden'a yürüyerek gidilebilen şık ve canlı otel"},
+        {"id":"lon-strand-palace","ad":"Strand Palace Hotel","arama":"Strand Palace Hotel London","kategori":"konforlu","not":"Strand üzerinde, Covent Garden ve West End tiyatrolarının tam ortasında klasik otel"},
+        {"id":"lon-park-plaza-westminster","ad":"Park Plaza Westminster Bridge","arama":"Park Plaza Westminster Bridge London","kategori":"konforlu","not":"Westminster Köprüsü'nün yanında, Big Ben ve London Eye manzaralı büyük otel"},
+        {"id":"lon-premier-inn-county-hall","ad":"Premier Inn London County Hall","arama":"Premier Inn London County Hall hotel","kategori":"ucuz","not":"London Eye'ın hemen arkasında, Westminster'a köprüyle geçilen sade ve güvenilir zincir otel"},
+        {"id":"lon-z-piccadilly","ad":"The Z Hotel Piccadilly","arama":"The Z Hotel Piccadilly London","kategori":"ucuz","not":"Leicester Square ile Piccadilly arasında küçük ama temiz odalı, konumu çok iyi bütçe oteli"}
+      ]
+    },
+    {
+      "sehir": "Bern",
+      "ulke": "İsviçre",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"brn-bellevue-palace","ad":"Hotel Bellevue Palace","arama":"Hotel Bellevue Palace Bern","kategori":"ikonik","not":"Federal Meclis binasının hemen yanında, Aare ve Alp manzaralı, devlet konuklarının kaldığı tarihî saray otel"},
+        {"id":"brn-schweizerhof","ad":"Hotel Schweizerhof Bern & Spa","arama":"Hotel Schweizerhof Bern & Spa","kategori":"pahali","not":"Tren garının tam karşısında, eski şehre adım mesafede beş yıldızlı otel; çatı barı meşhur"},
+        {"id":"brn-savoy","ad":"Hotel Savoy Bern","arama":"Hotel Savoy Bern","kategori":"pahali","not":"Eski şehrin batı ucunda, Neuengasse'de garın birkaç dakika ötesinde zarif dört yıldızlı otel"},
+        {"id":"brn-bristol","ad":"Hotel Bristol Bern","arama":"Hotel Bristol Bern","kategori":"konforlu","not":"Bundesplatz'a ve gara birkaç dakika, eski şehrin içinde rahat dört yıldızlı otel"},
+        {"id":"brn-kreuz","ad":"Hotel Kreuz Bern","arama":"Hotel Kreuz Bern","kategori":"konforlu","not":"Zeughausgasse'de, Zytglogge ve kemerli alışveriş sokaklarının ortasında merkezi şehir oteli"},
+        {"id":"brn-city-am-bahnhof","ad":"Hotel City am Bahnhof","arama":"Hotel City am Bahnhof Bern","kategori":"konforlu","not":"Adı üstünde garın hemen yanında; Zürih'ten trenle gelip bavulla yürümek isteyene ideal"},
+        {"id":"brn-ibis-styles-city","ad":"ibis Styles Bern City","arama":"ibis Styles Bern City","kategori":"ucuz","not":"Garın birkaç durak batısında, kahvaltı dahil fiyatlarıyla Bern'in en makul zincir otellerinden"},
+        {"id":"brn-national","ad":"Hotel National Bern","arama":"Hotel National Bern","kategori":"ucuz","not":"Hirschengraben'de, gara ve eski şehre yürüme mesafesinde, sade odalı eski tip uygun fiyatlı otel"}
+      ]
+    },
+    {
+      "sehir": "Oslo",
+      "ulke": "Norveç",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"osl-grand","ad":"Grand Hotel Oslo","arama":"Grand Hotel Oslo","kategori":"ikonik","not":"1874'ten beri Karl Johans gate üzerinde, Nobel Barış Ödülü sahiplerinin kaldığı tarihî otel"},
+        {"id":"osl-the-thief","ad":"The Thief","arama":"The Thief Oslo","kategori":"pahali","not":"Tjuvholmen'de fiyort kıyısında, Astrup Fearnley Müzesi'nin yanında tasarım oteli"},
+        {"id":"osl-sommerro","ad":"Sommerro","arama":"Sommerro Oslo","kategori":"pahali","not":"Frogner'de art deco binada, çatı havuzu ve terası olan yeni lüks otel; Vigeland Parkı'na yakın"},
+        {"id":"osl-bristol","ad":"Hotel Bristol Oslo","arama":"Hotel Bristol Oslo","kategori":"konforlu","not":"Karl Johans gate'in hemen arkasında, klasik salonlarıyla köklü ve merkezi otel"},
+        {"id":"osl-the-hub","ad":"Clarion Hotel The Hub","arama":"Clarion Hotel The Hub Oslo","kategori":"konforlu","not":"Oslo S garının yanında, havalimanı treninden inip yürüyerek ulaşılan büyük modern otel"},
+        {"id":"osl-rosenkrantz","ad":"Thon Hotel Rosenkrantz Oslo","arama":"Thon Hotel Rosenkrantz Oslo","kategori":"konforlu","not":"Parlamento ve Karl Johan'a birkaç adım, akşam hafif yemek ikramı olan rahat şehir oteli"},
+        {"id":"osl-citybox","ad":"Citybox Oslo","arama":"Citybox Oslo","kategori":"ucuz","not":"Oslo S'e birkaç dakika, kendi kendine check-in yapılan sade ama temiz bütçe oteli"},
+        {"id":"osl-smarthotel","ad":"Smarthotel Oslo","arama":"Smarthotel Oslo","kategori":"ucuz","not":"Karl Johan ve Kraliyet Sarayı'na yürüme mesafesinde küçük odalı, uygun fiyatlı otel"}
+      ]
+    },
+    {
+      "sehir": "Reykjavik",
+      "ulke": "İzlanda",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"rey-borg","ad":"Hotel Borg by Keahotels","arama":"Hotel Borg by Keahotels Reykjavik","kategori":"ikonik","not":"1930'dan beri Austurvöllur Meydanı'nda, Art Deco tarzıyla şehrin en ünlü tarihî oteli."},
+        {"id":"rey-edition","ad":"The Reykjavik EDITION","arama":"The Reykjavik EDITION Reykjavik","kategori":"pahali","not":"Harpa'nın hemen yanında, liman manzaralı lüks otel; spa ve çatı barı var."},
+        {"id":"rey-konsulat","ad":"Konsulat Hotel Reykjavik, Curio Collection by Hilton","arama":"Konsulat Hotel Reykjavik Curio Collection by Hilton","kategori":"pahali","not":"Eski şehrin kalbinde, Austurstræti'de şık butik otel; spası ve sıcak havuzu var."},
+        {"id":"rey-canopy","ad":"Canopy by Hilton Reykjavik City Centre","arama":"Canopy by Hilton Reykjavik City Centre","kategori":"konforlu","not":"Laugavegur'a birkaç adım, rahat ve renkli tasarım oteli."},
+        {"id":"rey-sand","ad":"Sand Hotel by Keahotels","arama":"Sand Hotel by Keahotels Reykjavik","kategori":"konforlu","not":"Doğrudan Laugavegur üzerinde, sıcak atmosferli butik otel."},
+        {"id":"rey-plaza","ad":"CenterHotels Plaza","arama":"CenterHotels Plaza Reykjavik","kategori":"konforlu","not":"Ingólfstorg Meydanı'nda, her yere yürüme mesafesinde klasik şehir oteli."},
+        {"id":"rey-leifur","ad":"Hotel Leifur Eiriksson","arama":"Hotel Leifur Eiriksson Reykjavik","kategori":"ucuz","not":"Hallgrímskirkja'nın tam karşısında, sade ama çok merkezi aile işletmesi otel."},
+        {"id":"rey-lind","ad":"Fosshotel Lind","arama":"Fosshotel Lind Reykjavik","kategori":"ucuz","not":"Hlemmur yakınında, Laugavegur'a 5 dakika; Reykjavik ölçüsünde uygun fiyatlı."}
+      ]
+    },
+    {
+      "sehir": "Kişinev",
+      "ulke": "Moldova",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"kiv-nobil","ad":"Nobil Luxury Boutique Hotel","arama":"Nobil Luxury Boutique Hotel Chisinau","kategori":"ikonik","not":"Şehrin en lüks ve en bilinen oteli; Ștefan cel Mare Bulvarı'na ve Katedral Parkı'na yürüme mesafesinde."},
+        {"id":"kiv-leogrand","ad":"Radisson Blu Leogrand Hotel","arama":"Radisson Blu Leogrand Hotel Chisinau","kategori":"pahali","not":"Merkezde, ana bulvara birkaç dakika uzaklıkta uluslararası zincir otel."},
+        {"id":"kiv-bristol","ad":"Bristol Central Park Hotel","arama":"Bristol Central Park Hotel Chisinau","kategori":"pahali","not":"Ștefan cel Mare Parkı'nın yanında, klasik dekorlu üst segment otel."},
+        {"id":"kiv-jolly-alon","ad":"Jolly Alon Hotel","arama":"Jolly Alon Hotel Chisinau","kategori":"konforlu","not":"Valea Morilor ile merkez arasında, köklü ve güvenilir dört yıldızlı otel."},
+        {"id":"kiv-codru","ad":"Hotel Codru","arama":"Hotel Codru Chisinau","kategori":"konforlu","not":"Tam merkezde, Ștefan cel Mare Parkı'na birkaç adım mesafede yenilenmiş otel."},
+        {"id":"kiv-city-park","ad":"City Park Hotel","arama":"City Park Hotel Chisinau","kategori":"konforlu","not":"Eugen Doga yaya caddesinde, kafelerin ortasında butik otel."},
+        {"id":"kiv-cosmos","ad":"Hotel Cosmos","arama":"Hotel Cosmos Chisinau","kategori":"ucuz","not":"Sovyet döneminden kalma büyük otel; tren garına yakın, sade ve uygun fiyatlı."},
+        {"id":"kiv-chisinau","ad":"Hotel Chisinau","arama":"Hotel Chisinau Chisinau","kategori":"ucuz","not":"Merkeze yürüme mesafesinde, eski usul ama ekonomik şehir oteli."}
+      ]
+    },
+    {
+      "sehir": "Podgorica",
+      "ulke": "Karadağ",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"tgd-hilton","ad":"Hilton Podgorica Crna Gora","arama":"Hilton Podgorica Crna Gora","kategori":"ikonik","not":"1953'ten beri şehrin simgesi olan tarihî Hotel Crna Gora binasında, Bağımsızlık Meydanı'na birkaç adım."},
+        {"id":"tgd-podgorica","ad":"Hotel Podgorica","arama":"Hotel Podgorica Montenegro","kategori":"pahali","not":"Morača Nehri kıyısında, taş cepheli mimarisiyle ünlü köklü otel; Millennium Köprüsü'ne yürüme mesafesi."},
+        {"id":"tgd-aurel","ad":"Hotel Aurel","arama":"Hotel Aurel Podgorica","kategori":"pahali","not":"Merkeze yakın, spa ve geniş odalarıyla şehrin üst segment otellerinden."},
+        {"id":"tgd-ziya","ad":"Hotel Ziya","arama":"Hotel Ziya Podgorica","kategori":"konforlu","not":"Merkezde modern butik otel, Bağımsızlık Meydanı'na yürüme mesafesinde."},
+        {"id":"tgd-philia","ad":"Hotel Philia","arama":"Hotel Philia Podgorica","kategori":"konforlu","not":"Merkezi konumda küçük ve şık dört yıldızlı otel."},
+        {"id":"tgd-centreville","ad":"CentreVille Hotel & Experiences","arama":"CentreVille Hotel Podgorica","kategori":"konforlu","not":"Nehrin karşı yakasında, merkeze 10 dk yürüme, havuzlu rahat otel."},
+        {"id":"tgd-kerber","ad":"Hotel Kerber","arama":"Hotel Kerber Podgorica","kategori":"ucuz","not":"Tam merkezde, kafeler sokağına yakın sade ve uygun fiyatlı otel."},
+        {"id":"tgd-evropa","ad":"Hotel Evropa","arama":"Hotel Evropa Podgorica","kategori":"ucuz","not":"Otogar ve tren garına çok yakın ekonomik otel; Skadar ve Cetinje gezileri için pratik."}
+      ]
+    },
+    {
+      "sehir": "Üsküp",
+      "ulke": "Kuzey Makedonya",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"skp-stone-bridge","ad":"Stone Bridge Hotel","arama":"Stone Bridge Hotel Skopje","kategori":"ikonik","not":"Taş Köprü'nün hemen yanında, Osmanlı konağı havasında butik otel; Eski Çarşı ile Makedonya Meydanı arasında"},
+        {"id":"skp-marriott","ad":"Skopje Marriott Hotel","arama":"Skopje Marriott Hotel","kategori":"pahali","not":"Doğrudan Makedonya Meydanı'nda beş yıldızlı otel; Taş Köprü'ye iki dakika"},
+        {"id":"skp-solun","ad":"Solun Hotel & SPA","arama":"Solun Hotel & SPA Skopje","kategori":"pahali","not":"Meydanın birkaç sokak gerisinde, spa'sı olan şık beş yıldızlı otel"},
+        {"id":"skp-senigallia","ad":"Hotel Senigallia","arama":"Hotel Senigallia Skopje","kategori":"konforlu","not":"Vardar Nehri üzerinde demirli gemi-otel; Taş Köprü ve meydana 3 dakika yürüme"},
+        {"id":"skp-arka","ad":"Hotel Arka","arama":"Hotel Arka Skopje","kategori":"konforlu","not":"Bit Pazarı tarafında, Eski Çarşı'nın tam kenarında rahat dört yıldızlı otel"},
+        {"id":"skp-alexandar-square","ad":"Alexandar Square Boutique Hotel","arama":"Alexandar Square Boutique Hotel Skopje","kategori":"konforlu","not":"Makedonya Meydanı'na bir sokak mesafede, konumu çok beğenilen butik otel"},
+        {"id":"skp-premium","ad":"Hotel Premium","arama":"Hotel Premium Skopje Bitpazarska","kategori":"ucuz","not":"Bitpazarska Caddesi'nde, Eski Çarşı'nın içinde sade ve uygun fiyatlı otel"},
+        {"id":"skp-de-koka","ad":"Hotel De KOKA","arama":"Hotel De KOKA Skopje","kategori":"ucuz","not":"Goce Delčev Caddesi'nde, meydana ve çarşıya yürüme mesafesinde ekonomik otel"}
+      ]
+    },
+    {
+      "sehir": "Tiran",
+      "ulke": "Arnavutluk",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"tia-tirana-international","ad":"Tirana International Hotel","arama":"Tirana International Hotel Skanderbeg Square Tirana","kategori":"ikonik","not":"Doğrudan İskender Bey Meydanı'nda, şehrin simgesi sayılan köklü otel; her yere yürüme mesafesi"},
+        {"id":"tia-rogner","ad":"Rogner Hotel Tirana","arama":"Rogner Hotel Tirana","kategori":"pahali","not":"Ana bulvarda, bahçeli ve havuzlu klasik beş yıldızlı otel; Blloku ve Piramit'e birkaç dakika"},
+        {"id":"tia-maritim-plaza","ad":"Maritim Hotel Plaza Tirana","arama":"Maritim Hotel Plaza Tirana","kategori":"pahali","not":"Meydanın yanındaki gökdelende, üst katlardan şehir manzaralı beş yıldızlı otel"},
+        {"id":"tia-opera","ad":"Hotel Opera","arama":"Hotel Opera Tirana","kategori":"konforlu","not":"Opera binasının arkasında, meydana bir dakika; misafir puanı çok yüksek dört yıldızlı otel"},
+        {"id":"tia-lot-boutique","ad":"Lot Boutique Hotel","arama":"Lot Boutique Hotel Tirana","kategori":"konforlu","not":"Meydana ve Yeni Pazar'a yürüme mesafesinde şık butik otel"},
+        {"id":"tia-colosseo","ad":"Hotel Colosseo Tirana","arama":"Hotel Colosseo Tirana","kategori":"konforlu","not":"Merkezde, geniş odaları ve spa'sıyla beğenilen dört yıldızlı otel"},
+        {"id":"tia-centrum","ad":"Centrum Hotel","arama":"Centrum Hotel Tirana","kategori":"ucuz","not":"İskender Bey Meydanı'na birkaç yüz metre, sade ve uygun fiyatlı otel"},
+        {"id":"tia-la-voglia","ad":"La Voglia Hotel Boutique","arama":"La Voglia Hotel Boutique Tirana","kategori":"ucuz","not":"Merkezde, fiyatına göre temiz ve rahat küçük otel"}
+      ]
+    },
+    {
+      "sehir": "Priştine",
+      "ulke": "Kosova",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"prn-swiss-diamond","ad":"Swiss Diamond Hotel Prishtina","arama":"Swiss Diamond Hotel Prishtina Pristina","kategori":"ikonik","not":"Ana Tereza Bulvarı'nın başında, şehrin en prestijli beş yıldızlı oteli; her şeye yürüme mesafesi"},
+        {"id":"prn-sirius","ad":"Hotel Sirius","arama":"Hotel Sirius Pristina","kategori":"pahali","not":"Merkezde, bulvara ve çarşı tarafına yürüme mesafesinde üst segment otel"},
+        {"id":"prn-garden","ad":"Hotel Garden","arama":"Hotel Garden Pristina","kategori":"pahali","not":"Merkeze yaklaşık 2–3 km, yeşil ve sakin bölgede lüks otel; şehre taksiyle birkaç dakika"},
+        {"id":"prn-pejton","ad":"Hotel Pejton","arama":"Hotel Pejton Pristina","kategori":"konforlu","not":"Pejton semtinde, bulvara birkaç dakika; misafir puanı yüksek rahat otel"},
+        {"id":"prn-parlament","ad":"Parlament Hotel","arama":"Parlament Hotel Pristina","kategori":"konforlu","not":"Meclis binası yakınında, Ana Tereza Bulvarı'na birkaç yüz metre"},
+        {"id":"prn-afa","ad":"Hotel Afa","arama":"Hotel Afa Pristina","kategori":"konforlu","not":"Merkeze yakın, sade ve rahat dört yıldızlı otel"},
+        {"id":"prn-prima","ad":"Hotel Prima","arama":"Hotel Prima Pristina","kategori":"ucuz","not":"Ana Tereza Meydanı yakınında, puanı çok yüksek küçük ekonomik otel (asansör yok)"},
+        {"id":"prn-begolli","ad":"Hotel Begolli","arama":"Hotel Begolli Pristina","kategori":"ucuz","not":"Merkeze yürüme mesafesinde, fiyatına göre çok beğenilen aile işletmesi otel"}
+      ]
     }
   ]
 }
