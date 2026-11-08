@@ -8,7 +8,7 @@
 // Fiyat bulunamazsa tahmin yürütmez; fiyatsız restoran seçilmez.
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { runActor, apifyUsage, makeBudget, measureCost, istanbulToday, billingPeriod } from "./otel-fiyatlari.mjs";
+import { runActor, apifyUsage, makeBudget, measureCost, istanbulToday, billingPeriod, isActive } from "./otel-fiyatlari.mjs";
 
 export const MAPS_ACTOR = "compass~crawler-google-places";
 export const COST_PER_PLACE = 0.0065; // ölçülen: detay sayfasıyla ~0,006 $
@@ -183,7 +183,7 @@ async function pool(items, size, fn) { let i = 0; await Promise.all(Array.from({
 
 export async function run({ token, cfg, state = emptyRestaurants(), cands = { sehirler: {} }, hotelSettings = {}, mode = "kesif", only = null, now = new Date(), fetchImpl = fetch, sleep = (ms) => new Promise((r) => setTimeout(r, ms)), concurrency = 3 }) {
   state = { ...emptyRestaurants(), ...structuredClone(state) }; cands = structuredClone(cands); cands.sehirler ||= {};
-  const t = now.toISOString(), cities = cfg.sehirler.filter((c) => !only || only.includes(c.sehir));
+  const t = now.toISOString(), cities = cfg.sehirler.filter((c) => (!only || only.includes(c.sehir)) && isActive(c, istanbulToday(now)));
   const report = { mod: mode, sehir: 0, aday: 0, secilen: 0, eksik: [], degisen: [], hatalar: [], tahminiMaliyetUsd: 0 };
   const fx = await fetchFx(cfg, fetchImpl); state.kur = { kaynak: fx.kaynak, tarih: t.slice(0, 10) };
   let usage = null, B = null;

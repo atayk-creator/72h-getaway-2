@@ -12,7 +12,7 @@
 // Sonuç: denetci-rapor.md (Türkçe markdown) ve GITHUB_OUTPUT'a sorun=1/0. Issue'yu iş akışı gh ile açar/kapatır.
 import { readFile, writeFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { istanbulToday, upcomingWeekends, usable, citySlug, categoryWarnings } from "./otel-fiyatlari.mjs";
+import { istanbulToday, upcomingWeekends, usable, citySlug, categoryWarnings, isActive } from "./otel-fiyatlari.mjs";
 
 export const SITE = "https://72hgetaway.com/";
 export const LIMITS = { kurIsGunu: 4, otelGun: 5, ucusGun: 9, restoranGun: 40, kapsama: 0.6, haftaSonu: 2 };
@@ -70,7 +70,7 @@ export function checkData({ now, rates, hotelMeta, hotelsDoc, cityFiles, flights
   if (hotelsDoc && cityFiles) {
     const next = upcomingWeekends(today, LIMITS.haftaSonu).map((w) => w.giris);
     const low = [], dead = [], waiting = [];
-    for (const c of hotelsDoc.sehirler) {
+    for (const c of hotelsDoc.sehirler.filter((x) => isActive(x, today))) { // başlangıç tarihi gelmemiş yeni şehirler atlanır
       const f = cityFiles[citySlug(c.sehir)] || { haftaSonlari: {} }, hs = f.haftaSonlari || {};
       const per = next.map((g) => c.oteller.filter((h) => usable(hs[g] && hs[g].oteller && hs[g].oteller[h.id] && hs[g].oteller[h.id].son)).length);
       const ok = per.reduce((a, b) => a + b, 0), all = c.oteller.length * next.length;
@@ -94,7 +94,7 @@ export function checkData({ now, rates, hotelMeta, hotelsDoc, cityFiles, flights
     else bilgi.push(`Otel fiyat kapsaması: her şehirde önümüzdeki ${next.length} hafta sonu için en az %${LIMITS.kapsama * 100}.`);
     if (dead.length) sorunlar.push(`Gelecek hafta sonlarının hiçbirinde kullanılabilir fiyatı olmayan oteller (değiştirmeyi düşün):\n${dead.map((x) => "  - " + x).join("\n")}`);
     if (waiting.length) bilgi.push(`Henüz hiç kontrol edilmemiş oteller (yeni eklenmiş olabilir): ${waiting.join(", ")}.`);
-    const kat = hotelsDoc.sehirler.flatMap((c) => categoryWarnings({ sehirler: [c] }, (cityFiles[citySlug(c.sehir)] || {}).haftaSonlari || {}));
+    const kat = hotelsDoc.sehirler.filter((x) => isActive(x, today)).flatMap((c) => categoryWarnings({ sehirler: [c] }, (cityFiles[citySlug(c.sehir)] || {}).haftaSonlari || {}));
     if (kat.length) uyarilar.push(...kat);
   }
   // tablo aktarımı

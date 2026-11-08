@@ -35,6 +35,8 @@ export function istanbulToday(now = new Date()) {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Istanbul", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
 }
 export const weekday = (s) => toDate(s).getUTCDay();
+// "baslangic" tarihi olan şehirler o güne kadar ücretli robotlara girmez (yeni şehirler bütçe dönemi başında açılır)
+export const isActive = (c, today) => !c.baslangic || c.baslangic <= today;
 
 // Bugünden itibaren gelen Cuma'lar. Cuma günü çalışırsa o hafta sonu da dahil (son dakika fiyatı).
 export function upcomingWeekends(todayIso, count) {
@@ -462,7 +464,7 @@ export async function run({ token, hotelsDoc, state = emptyState(), archive = { 
   const trusted = settings.guvenilir_siteler || DEFAULT_TRUSTED;
   const vergi = settings.vergi_kontrolu !== false; // false: site fiyatları olduğu gibi (pazar A/B testi için)
   state = { ...emptyState(), ...structuredClone(state) }; // girdiyi değiştirmemek için kopya
-  const cities = hotelsDoc.sehirler.filter((c) => !only || only.includes(c.sehir));
+  const cities = hotelsDoc.sehirler.filter((c) => (!only || only.includes(c.sehir)) && isActive(c, today));
   const hotels = cities.flatMap((c) => c.oteller);
   pruneRemoved(state, hotelsDoc.sehirler.flatMap((c) => c.oteller.map((h) => h.id)));
 

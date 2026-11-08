@@ -91,4 +91,12 @@ function fakeApify(log) {
   const o = st.haftaSonlari[W.giris].sehirler.Berlin; assert.equal(o.son.fiyat, 160); assert.equal(o.son.kontrol, "2026-11-03T10:00:00Z"); assert.equal(o.sonHata.kod, "GOOGLE_ERROR"); assert.equal(o.gecmis.length, 2);
   mergeFlight(st, W, "Berlin", { durum: "fiyat", fiyat: 170 }, "2026-11-10T10:00:00Z"); assert.equal(o.son.fiyat, 170); assert.ok(!o.sonHata);
   console.log("ok 5: hata eski fiyatı silmez"); }
+// 6) başlangıç tarihi gelmemiş şehir aranmaz
+{ const { isActive } = await import("./otel-fiyatlari.mjs");
+  assert.ok(isActive({}, "2026-11-10") && isActive({ baslangic: "2026-11-10" }, "2026-11-10") && !isActive({ baslangic: "2026-11-28" }, "2026-11-10"));
+  const log = [], c2 = { ...cfg, sehirler: [...cfg.sehirler.filter((c) => !c.baslangic), { sehir: "Oslo", havalimani: ["OSL"], baslangic: "2099-01-01" }] };
+  await run({ token: TOKEN, cfg: c2, hotelSettings: { aylik_butce_usd: 75, fatura_gunu: 28 }, now: new Date("2026-11-10T06:00:00Z"), fetchImpl: fakeApify(log), sleep: async () => {} }).catch(() => {});
+  const lines = log.filter((x) => x.init.method === "POST").flatMap((x) => JSON.parse(x.init.body).searches);
+  assert.ok(lines.length > 0 && !lines.some((l) => l.includes("OSL")), "Oslo aranmamalı");
+  console.log("ok 6: başlangıç tarihi"); }
 console.log("TÜM TESTLER GEÇTİ");

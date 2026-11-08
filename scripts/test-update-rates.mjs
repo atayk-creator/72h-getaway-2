@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { mkdtemp, writeFile, readFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { update, validate, fromDaily, SRC_DAILY, SRC_ECB } from "./update-rates.mjs";
+import { update, validate, fromDaily, SRC_DAILY, SRC_ECB, YEDEK } from "./update-rates.mjs";
 
 const NOW = new Date("2026-10-05T12:00:00Z");
 const base = { updated: "2026-10-02", eurTry: 55.3, eurHuf: 368.5, source: "elle" };
@@ -12,9 +12,9 @@ async function tmpFile(obj = base) { const d = await mkdtemp(join(tmpdir(), "kur
 // 1) normal güncelleme
 { const f = await tmpFile(); const changed = await update({ file: f, now: NOW, fetchImpl: ok({ TRY: 55.8123, HUF: 370.456, CZK: 24.312345, PLN: 4.25, SEK: -1 }) });
   const j = JSON.parse(await readFile(f, "utf8"));
-  assert.equal(changed, true); assert.equal(j.eurTry, 55.81); assert.equal(j.eurHuf, 370.46); assert.equal(j.updated, "2026-10-05"); assert.match(j.source, /ECB/); assert.deepEqual(j.kurlar, { CZK: 24.3123, PLN: 4.25, BAM: 1.95583, RSD: 117.2 }); console.log("ok 1: normal güncelleme, diğer kurlar"); }
+  assert.equal(changed, true); assert.equal(j.eurTry, 55.81); assert.equal(j.eurHuf, 370.46); assert.equal(j.updated, "2026-10-05"); assert.match(j.source, /ECB/); assert.deepEqual(j.kurlar, { ...YEDEK, CZK: 24.3123, PLN: 4.25, BAM: 1.95583 }); console.log("ok 1: normal güncelleme, diğer kurlar"); }
 // 2) değişiklik yoksa dosya yazılmaz
-{ const f = await tmpFile({ ...base, updated: "2026-10-05", eurTry: 55.81, eurHuf: 370.46, kurlar: { BAM: 1.95583, RSD: 117.2 }, source: "ECB referans kuru (Frankfurter API)" });
+{ const f = await tmpFile({ ...base, updated: "2026-10-05", eurTry: 55.81, eurHuf: 370.46, kurlar: { ...YEDEK, BAM: 1.95583 }, source: "ECB referans kuru (Frankfurter API)" });
   assert.equal(await update({ file: f, now: NOW, fetchImpl: ok({ TRY: 55.81, HUF: 370.46 }) }), false); console.log("ok 2: değişiklik yok"); }
 // 3) birinci adres düşerse ikincisi denenir
 { let n = 0; const f = await tmpFile(); const fetchImpl = async () => (++n === 1 ? { ok: false, status: 503, json: async () => ({}) } : { ok: true, status: 200, json: async () => ({ date: "2026-10-05", rates: { TRY: 56, HUF: 371 } }) });
@@ -57,4 +57,11 @@ const dSat = { date: "2026-10-31", eur: { try: 55.912345, huf: 366.8, czk: 24.36
   assert.equal(await update({ file: f, now: new Date("2026-11-02T04:00:00Z"), fetchImpl: route(ecbFri, null) }), false);
   assert.throws(() => fromDaily({ date: "2026-10-31", eur: { try: 0.01, huf: 366 } }));
   console.log("ok 10: eski kura dönmez, saçma günlük değer reddedilir"); }
+// 11) yeni para birimleri: ECB günü GBP/NOK/CHF/ISK gelir, ALL/MKD/MDL eldeki son değerde kalır; günlük kaynak hepsini verir
+{ const f = await tmpFile({ ...base, updated: "2026-11-01", eurTry: 55.9, eurHuf: 366.8, kurlar: { ALL: 97.1, MKD: 61.6 } });
+  await update({ file: f, now: new Date("2026-11-02T16:00:00Z"), fetchImpl: async () => ({ ok: true, status: 200, json: async () => ({ date: "2026-11-02", rates: { TRY: 56, HUF: 367, GBP: 0.871, NOK: 11.62, CHF: 0.928, ISK: 144.3 } }) }) });
+  const k = JSON.parse(await readFile(f, "utf8")).kurlar; assert.equal(k.GBP, 0.871); assert.equal(k.ISK, 144.3); assert.equal(k.ALL, 97.1, "eldeki son değer korunur"); assert.equal(k.MDL, YEDEK.MDL);
+  const d = fromDaily({ date: "2026-11-08", eur: { try: 56, huf: 367, all: 97.5, mkd: 61.55, mdl: 19.8, rsd: 117.1, gbp: 0.87 } });
+  assert.equal(d.kurlar.ALL, 97.5); assert.equal(d.kurlar.MKD, 61.55); assert.equal(d.kurlar.MDL, 19.8); assert.equal(d.kurlar.RSD, 117.1);
+  console.log("ok 11: yeni para birimleri"); }
 console.log("TÜM TESTLER GEÇTİ");

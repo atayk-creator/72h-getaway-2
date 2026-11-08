@@ -11,7 +11,7 @@
 // Fiyat bulunamazsa tahmin yürütmez: "yok" ya da "hata" yazar.
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { runActor, planFor, istanbulToday, billingPeriod, apifyUsage, makeBudget, measureCost } from "./otel-fiyatlari.mjs";
+import { runActor, planFor, istanbulToday, billingPeriod, apifyUsage, makeBudget, measureCost, isActive } from "./otel-fiyatlari.mjs";
 
 export const FLIGHT_ACTOR = "dz_omar~google-flights-scraper";
 export const EIV_ACTOR = "eiv~google-flights-scraper";
@@ -159,7 +159,7 @@ export async function run({ token, cfg, state = emptyFlights(), hotelSettings = 
   const usage = planFor(today, cfg, mode).length ? await apifyUsage({ token, fetchImpl }) : null;
   if (usage) state.apifyKullanim = { ...usage, kontrol: now.toISOString() };
   const B = makeBudget(state, hotelSettings.aylik_butce_usd, usage);
-  const cities = cfg.sehirler.filter((c) => !only || only.includes(c.sehir));
+  const cities = cfg.sehirler.filter((c) => (!only || only.includes(c.sehir)) && isActive(c, istanbulToday(now)));
   const plan = planFor(today, cfg, mode);
   const eiv = isEiv(cfg);
   const jobs = [];

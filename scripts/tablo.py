@@ -578,7 +578,8 @@ def save_hotels(doc):
     lines += ['    "kontrol_takvimi": [', ",\n".join("      " + J(t) for t in a["kontrol_takvimi"]), "    ]", "  },", '  "sehirler": [']
     cs = []
     for c in doc["sehirler"]:
-        cs.append("    {\n" + f'      "sehir": {json.dumps(c["sehir"], ensure_ascii=False)},\n      "ulke": {json.dumps(c["ulke"], ensure_ascii=False)},\n      "oteller": [\n'
+        cs.append("    {\n" + f'      "sehir": {json.dumps(c["sehir"], ensure_ascii=False)},\n      "ulke": {json.dumps(c["ulke"], ensure_ascii=False)},\n'
+                  + (f'      "baslangic": {json.dumps(c["baslangic"])},\n' if c.get("baslangic") else "") + '      "oteller": [\n'
                   + ",\n".join("        " + J(h) for h in c["oteller"]) + "\n      ]\n    }")
     lines += [",\n".join(cs), "  ]", "}"]
     text = "\n".join(lines) + "\n"

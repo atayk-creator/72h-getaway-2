@@ -6,8 +6,8 @@ import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 const URLS = [
-  "https://api.frankfurter.dev/v1/latest?base=EUR&symbols=TRY,HUF,CZK,PLN,SEK,DKK,RON",
-  "https://api.frankfurter.app/latest?from=EUR&to=TRY,HUF,CZK,PLN,SEK,DKK,RON",
+  "https://api.frankfurter.dev/v1/latest?base=EUR&symbols=TRY,HUF,CZK,PLN,SEK,DKK,RON,GBP,NOK,CHF,ISK",
+  "https://api.frankfurter.app/latest?from=EUR&to=TRY,HUF,CZK,PLN,SEK,DKK,RON,GBP,NOK,CHF,ISK",
 ];
 const DAILY_URLS = [
   "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/eur.min.json",
@@ -18,6 +18,10 @@ export const SRC_DAILY = "Piyasa orta kuru (currency-api, günlük; ECB'nin yay�
 const MAX_JUMP = { eurTry: 0.15, eurHuf: 0.10 }; // eski değere göre izin verilen en büyük değişim
 
 const round2 = (n) => Math.round(n * 100) / 100;
+// Şehirlerin yerel para birimleri. ECB'de olmayanlar (ALL, MKD, MDL, RSD) günlük piyasa kurundan gelir.
+export const KURLAR = ["CZK", "PLN", "SEK", "DKK", "RON", "GBP", "NOK", "CHF", "ISK", "ALL", "MKD", "MDL", "RSD"];
+// Hiç kur alınamamışsa kullanılacak başlangıç değerleri (sonra her gün gerçek kurla güncellenir)
+export const YEDEK = { RSD: 117.2, ALL: 98, MKD: 61.5, MDL: 19.6, GBP: 0.86, NOK: 11.7, CHF: 0.93, ISK: 145 };
 
 export function validate(j) {
   const t = j && j.rates && j.rates.TRY, h = j && j.rates && j.rates.HUF;
@@ -26,10 +30,9 @@ export function validate(j) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(j.date || "")) throw new Error("Tarih geçersiz: " + j.date);
   // Diğer şehirlerin para birimleri (gezi ve ulaşım fiyatları için); geçersiz olan atlanır
   const kurlar = {};
-  for (const k of ["CZK", "PLN", "SEK", "DKK", "RON"]) { const v = j.rates[k]; if (typeof v === "number" && v > 0 && v < 1000) kurlar[k] = Math.round(v * 10000) / 10000; }
-  // ECB'nin yayımlamadığı ama sabit/yönetilen kurlar: BAM euroya yasal olarak sabit; RSD Sırbistan Merkez Bankası'nca dar bantta tutulur
+  for (const k of KURLAR) { const v = j.rates[k]; if (typeof v === "number" && v > 0 && v < 1000) kurlar[k] = Math.round(v * 10000) / 10000; }
+  // BAM euroya yasal olarak sabit
   kurlar.BAM = 1.95583;
-  if (!kurlar.RSD) kurlar.RSD = 117.2;
   return { eurTry: round2(t), eurHuf: round2(h), date: j.date, kurlar };
 }
 
@@ -37,7 +40,7 @@ export function validate(j) {
 export function fromDaily(j) {
   const e = (j && j.eur) || {};
   const rates = {};
-  for (const k of ["TRY", "HUF", "CZK", "PLN", "SEK", "DKK", "RON"]) if (typeof e[k.toLowerCase()] === "number") rates[k] = e[k.toLowerCase()];
+  for (const k of ["TRY", "HUF", ...KURLAR]) if (typeof e[k.toLowerCase()] === "number") rates[k] = e[k.toLowerCase()];
   return validate({ date: j && j.date, rates });
 }
 
@@ -88,7 +91,8 @@ export async function update({ file = "data.json", fetchImpl = fetch, now = new 
     const jump = Math.abs(r[key] / old[key] - 1);
     if (jump > MAX_JUMP[key]) throw new Error(`${key} eskisine göre %${(jump * 100).toFixed(1)} değişti (sınır %${MAX_JUMP[key] * 100}). Elle kontrol et.`);
   }
-  const next = { ...old, updated: r.date, eurTry: r.eurTry, eurHuf: r.eurHuf, kurlar: { ...(old.kurlar || {}), ...r.kurlar }, source: r.source };
+  // Bu seferki kaynakta olmayan kur (örn. ECB günü ALL/MKD/MDL) için eldeki son değer, o da yoksa başlangıç değeri kalır
+  const next = { ...old, updated: r.date, eurTry: r.eurTry, eurHuf: r.eurHuf, kurlar: { ...YEDEK, ...(old.kurlar || {}), ...r.kurlar }, source: r.source };
   if (JSON.stringify(next) === JSON.stringify(old)) return false;
   await writeFile(file, JSON.stringify(next, null, 2) + "\n", "utf8");
   return true;
