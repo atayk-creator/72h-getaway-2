@@ -1,1 +1,1 @@
-{ "aciklama": "Deplasman sayfası olan takımlar (data/<slug>.json). Robot, sayfa üreticisi ve site bu listeyi kullanır.", "takimlar": ["fenerbahce", "galatasaray", "besiktas"] }
+{"aciklama": "Deplasman sayfası olan takımlar ve tema 'şehirleri' (data/<slug>.json, ör. noel). Robot, sayfa üreticisi ve site bu listeyi kullanır.", "takimlar": ["fenerbahce", "galatasaray", "besiktas", "noel"]}

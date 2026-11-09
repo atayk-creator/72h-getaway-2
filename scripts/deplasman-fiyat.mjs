@@ -11,7 +11,7 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 const TEAMS_FILE = root + "data/takimlar.json";
 const TRUSTED = /booking|expedia|hotels\.com|agoda|trip\.com|priceline/i;
 const AD = { IST: "İstanbul", SAW: "Sabiha Gökçen" };
-const HAV = { LHR: "Heathrow", LGW: "Gatwick", STN: "Stansted", LTN: "Luton", LCY: "London City", VIE: "Viyana", MAD: "Madrid", ATH: "Atina", CDG: "Charles de Gaulle", ORY: "Orly", CGN: "Köln/Bonn", DUS: "Düsseldorf", LCA: "Larnaka" };
+const HAV = { LHR: "Heathrow", LGW: "Gatwick", STN: "Stansted", LTN: "Luton", LCY: "London City", VIE: "Viyana", MAD: "Madrid", ATH: "Atina", CDG: "Charles de Gaulle", ORY: "Orly", CGN: "Köln/Bonn", DUS: "Düsseldorf", LCA: "Larnaka", MUC: "Münih", NUE: "Nürnberg", KRK: "Krakov", BSL: "Basel-Mulhouse", SXB: "Strazburg", RVN: "Rovaniemi", HEL: "Helsinki", FRA: "Frankfurt" };
 const r0 = (n) => Math.round(n);
 const num = (x) => typeof x === "number" && Number.isFinite(x) && x > 0;
 const GUN = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
@@ -76,7 +76,7 @@ export function applyMatch(m, flightRows, hotelRows) {
     const top = uniq.slice(0, 8).map(({ fiyat, havayolu, havalimani, not }) => ({ fiyat, havayolu, havalimani, not }));
     m.ucus.secenekler = top;
     const tekHavayolu = opts.find((o) => o.ayni && (!m.donus_min || (o.donusSaat && o.donusSaat >= m.donus_min))) || opts.find((o) => o.ayni) || opts[0];
-    m.ucus.oneri = { fiyat: tekHavayolu.fiyat, havayolu: tekHavayolu.havayolu, aktarma: tekHavayolu.aktarma || 0, havalimani: `${tekHavayolu.havalimani} (${tekHavayolu.kod})`, gidis: tekHavayolu.gidis, donus: tekHavayolu.donus || m.ucus.oneri.donus };
+    m.ucus.oneri = { fiyat: tekHavayolu.fiyat, havayolu: tekHavayolu.havayolu, aktarma: tekHavayolu.aktarma || 0, havalimani: `${tekHavayolu.havalimani} (${tekHavayolu.kod})`, gidis: tekHavayolu.gidis, donus: tekHavayolu.donus || (m.ucus.oneri && m.ucus.oneri.donus) || null };
     const sum = (flightRows || []).filter((r) => r && r.recordType === "search-summary");
     const lv = sum.map((s) => s.priceLevel).find(Boolean);
     if (lv) m.ucus.seviye = lv === "high" ? "yuksek" : lv === "low" ? "dusuk" : "normal";
@@ -141,6 +141,7 @@ async function runTeam(slug, token) {
   const today = process.env.BUGUN || istanbulToday();
   const list = upcoming(team, today);
   if (!list.length) return console.log("Yaklaşan maç yok.");
+  team.robot = team.robot || {};
   if (!due(team, today, process.env.ZORLA === "1")) return console.log(`Son arama ${team.robot.son_arama}; ${team.robot.her_kac_gun} günde bir aranıyor, bugün atlandı.`);
   if (!token) throw new Error("APIFY_TOKEN yok");
   const use = await apifyUsage({ token });

@@ -18,6 +18,7 @@ on:
       - "data/fenerbahce.json"
       - "data/galatasaray.json"
       - "data/besiktas.json"
+      - "data/noel.json"
       - "data/takimlar.json"
       - "img/sehir/fotolar.json"
   workflow_run:

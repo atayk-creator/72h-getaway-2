@@ -1,0 +1,1186 @@
+{
+ "aciklama": "Noel 'şehri' (/sehir/noel/): Aralık hafta sonlarında Noel pazarı şehirleri. Yapı data/fenerbahce.json ile aynı; tur=tema (maç yerine etkinlik, maç bileti yok).",
+ "takim": "Noel",
+ "slug": "noel",
+ "tur": "tema",
+ "etiket": "Noel",
+ "turnuva": "Aralık 2026 hafta sonları · Noel pazarı şehirleri",
+ "renk": {
+  "a": "#C8102E",
+  "b": "#0F3D2E"
+ },
+ "guncellendi": "2026-11-09",
+ "robot": {
+  "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan hafta sonlarının uçak + otel fiyatını 2 günde bir günceller.",
+  "her_kac_gun": 2,
+  "son_arama": null,
+  "butce_payi_usd": 5,
+  "zorla": true
+ },
+ "kaynaklar": [
+  {
+   "ad": "Nürnberg Christkindlesmarkt 2026 (Nürnberg Belediyesi)",
+   "url": "https://www.nuernberg.de/imperia/md/kommunikation_stadtmarketing/dokumente/internet/ckm/ckm_26_information_en.pdf"
+  },
+  {
+   "ad": "Münih Christkindlmarkt 2026 (resmî site)",
+   "url": "https://christkindlmarkt-muenchen.de/en/home"
+  },
+  {
+   "ad": "Krakov Noel pazarı 2026 (In Your Pocket)",
+   "url": "https://www.inyourpocket.com/poland/krakow/events/krakow-christmas-fair-on-the-market-square"
+  },
+  {
+   "ad": "Strazburg Noel pazarı 2026 (Pixidia)",
+   "url": "https://pixidia.com/en/strasbourg-christmas-market-2026/"
+  },
+  {
+   "ad": "EuroAirport'tan Strazburg'a ulaşım",
+   "url": "https://www.euroairport.com/en/transport"
+  },
+  {
+   "ad": "Rovaniemi havalimanı ulaşımı (Finavia)",
+   "url": "https://finavia.fi/en/airports/rovaniemi/parking-access/public-transport"
+  }
+ ],
+ "maclar": [
+  {
+   "id": "munih",
+   "sehir": "Münih",
+   "ulke": "Almanya",
+   "etkinlik": "Christkindlmarkt",
+   "yer": "Marienplatz",
+   "pazar_bas": "2026-11-20",
+   "pazar_bit": "2026-12-24",
+   "pazar_yazi": "20 Kasım – 24 Aralık",
+   "pazar_saat": "10:00–21:00 (Pazar 20:00)",
+   "tarih": "2026-12-05",
+   "gidis": "2026-12-04",
+   "donus": "2026-12-06",
+   "plan": "Cuma sabah gidiş, Pazar akşam dönüş; 2 gece Münih, Altstadt'ta.",
+   "vize": "Schengen vizesi gerekir.",
+   "arama_ucus": [
+    "IST,SAW-MUC 2026-12-04 2026-12-06"
+   ],
+   "ucus_saat": "5-14",
+   "donus_min": "15:00",
+   "ozet": "Marienplatz'ın dev Noel ağacı, Residenz'deki avlu pazarı ve Englischer Garten'daki Chinesischer Turm pazarı: Bavyera Noeli tek hafta sonunda.",
+   "oteller": [
+    {
+     "ad": "Hotel Bayerischer Hof",
+     "kategori": "ikonik",
+     "arama": "Hotel Bayerischer Hof Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Platzl Hotel",
+     "kategori": "pahali",
+     "arama": "Platzl Hotel Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Louis Hotel",
+     "kategori": "pahali",
+     "arama": "Louis Hotel Munich Viktualienmarkt",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Torbräu",
+     "kategori": "konforlu",
+     "arama": "Hotel Torbräu Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Mercure Hotel München Altstadt",
+     "kategori": "konforlu",
+     "arama": "Mercure Hotel München Altstadt",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Blauer Bock",
+     "kategori": "konforlu",
+     "arama": "Hotel Blauer Bock Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One München-Sendlinger Tor",
+     "kategori": "ucuz",
+     "arama": "Motel One München-Sendlinger Tor",
+     "toplam": null
+    },
+    {
+     "ad": "Meininger Hotel München City Center",
+     "kategori": "ucuz",
+     "arama": "Meininger Hotel München City Center",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 29,
+    "yazi": "Havalimanı → Marienplatz: S1 ya da S8 ile ~40 dk. MVV tek bilet (M–5 bölgesi) tek yön ~14 €; gidiş-dönüş kişi başı ~29 € (tahmini, MVV uygulamasından teyit et)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 12,
+    "yazi": "Altstadt yürünür; Englischer Garten ve Residenz için MVV günlük bilet (M bölgesi) yeterli."
+   },
+   "pazara": "Marienplatz, Residenz ve Viktualienmarkt pazarları birbirine 5–10 dk yürüme mesafesinde; Chinesischer Turm pazarına U3/U6 Giselastraße'den 15 dk yürüme.",
+   "akis": [
+    {
+     "gun": "Cuma 4 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Münih",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "S-Bahn ile Marienplatz",
+       "~40 dk"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Altstadt"
+      ],
+      [
+       "17:00",
+       "Christkindlmarkt – Marienplatz",
+       "Yeni Belediye Sarayı önünde dev ağaç"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Bierhalle'de domuz paçası ya da Weißwurst"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 5 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Viktualienmarkt",
+       "Açık hava gıda pazarı"
+      ],
+      [
+       "11:30",
+       "Frauenkirche ve St. Peter kulesi",
+       "Kuleden şehir manzarası"
+      ],
+      [
+       "13:30",
+       "Residenz avlu pazarı",
+       "Weihnachtsdorf im Kaiserhof"
+      ],
+      [
+       "16:00",
+       "Englischer Garten – Chinesischer Turm",
+       "Ahşap pagodanın altında pazar"
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Schwabing"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 6 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Mittelaltermarkt",
+       "Wittelsbacherplatz'ta Orta Çağ pazarı"
+      ],
+      [
+       "",
+       "Havalimanına",
+       "S1/S8"
+      ],
+      [
+       "",
+       "Münih → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Bratwurst ve Glühwein, pazar standı",
+     "Ara",
+     "~9 €"
+    ],
+    [
+     "Viktualienmarkt'ta öğle",
+     "Öğle",
+     "~15 €"
+    ],
+    [
+     "Bierhalle (Augustiner, Hofbräuhaus)",
+     "Akşam",
+     "~28 €"
+    ],
+    [
+     "Kafe: Apfelstrudel + kahve",
+     "Ara",
+     "~9 €"
+    ]
+   ],
+   "gezi": [
+    "Marienplatz Noel pazarı (ücretsiz)",
+    "Residenz avlu pazarı (ücretsiz)",
+    "Chinesischer Turm pazarı (ücretsiz)",
+    "Frauenkirche (ücretsiz)",
+    "St. Peter kulesi (ücretli)",
+    "Viktualienmarkt (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 29,
+     "otel": 0,
+     "ulasim": 12,
+     "yemek": 120,
+     "gezi": 15
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 29,
+     "otel": 0,
+     "ulasim": 12,
+     "yemek": 85,
+     "gezi": 8
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  },
+  {
+   "id": "nurnberg",
+   "sehir": "Nürnberg",
+   "ulke": "Almanya",
+   "etkinlik": "Christkindlesmarkt",
+   "yer": "Hauptmarkt",
+   "pazar_bas": "2026-11-27",
+   "pazar_bit": "2026-12-24",
+   "pazar_yazi": "27 Kasım – 24 Aralık",
+   "pazar_saat": "10:00–21:00",
+   "tarih": "2026-12-12",
+   "gidis": "2026-12-11",
+   "donus": "2026-12-13",
+   "plan": "Cuma sabah gidiş, Pazar akşam dönüş; 2 gece Nürnberg, surların içinde.",
+   "vize": "Schengen vizesi gerekir.",
+   "arama_ucus": [
+    "IST,SAW-NUE 2026-12-11 2026-12-13"
+   ],
+   "ucus_saat": "5-14",
+   "donus_min": "15:00",
+   "ozet": "Dünyanın en ünlü Noel pazarı: Hauptmarkt'ta 'Christkind', zencefilli Lebkuchen ve parmak boyu Nürnberger sosis.",
+   "oteller": [
+    {
+     "ad": "Le Méridien Grand Hotel Nürnberg",
+     "kategori": "ikonik",
+     "arama": "Le Meridien Grand Hotel Nuremberg",
+     "toplam": null
+    },
+    {
+     "ad": "Sorat Hotel Saxx",
+     "kategori": "pahali",
+     "arama": "Sorat Hotel Saxx Nürnberg Hauptmarkt",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Drei Raben",
+     "kategori": "konforlu",
+     "arama": "Hotel Drei Raben Nuremberg",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Victoria",
+     "kategori": "konforlu",
+     "arama": "Hotel Victoria Nürnberg",
+     "toplam": null
+    },
+    {
+     "ad": "NH Collection Nürnberg City",
+     "kategori": "konforlu",
+     "arama": "NH Collection Nürnberg City",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One Nürnberg-Plärrer",
+     "kategori": "ucuz",
+     "arama": "Motel One Nürnberg-Plärrer",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Nürnberg Altstadt",
+     "kategori": "ucuz",
+     "arama": "ibis Nürnberg Altstadt",
+     "toplam": null
+    },
+    {
+     "ad": "B&B Hotel Nürnberg-City",
+     "kategori": "ucuz",
+     "arama": "B&B Hotel Nürnberg-City",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 8,
+    "yazi": "Havalimanı → Hauptbahnhof: U2 metro ~12 dk, VGN A bölgesi tek bilet; gidiş-dönüş kişi başı ~8 € (tahmini, VGN'den teyit et)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 8,
+    "yazi": "Surların içi tamamen yürünür. Kale ve pazarlar arası 10 dk; toplu taşıma neredeyse gerekmez."
+   },
+   "pazara": "Hauptmarkt şehrin tam ortasında; Hauptbahnhof'tan Königstraße boyunca 10 dk yürüme. Yanında çocuklara özel Kinderweihnacht ve kardeş şehirler pazarı var.",
+   "akis": [
+    {
+     "gun": "Cuma 11 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Nürnberg",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "U2 ile Hauptbahnhof",
+       "~12 dk"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Altstadt"
+      ],
+      [
+       "17:00",
+       "Christkindlesmarkt – Hauptmarkt",
+       "Akşam ışıkları en güzel"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Bratwursthäusle'de Nürnberger sosis"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 12 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Kaiserburg",
+       "İmparatorluk kalesi, şehir manzarası"
+      ],
+      [
+       "12:00",
+       "Albrecht Dürer Evi",
+       "Ressamın evi"
+      ],
+      [
+       "13:30",
+       "Öğle: Drei im Weggla",
+       "Ekmek arası 3 sosis"
+      ],
+      [
+       "15:00",
+       "Kardeş şehirler pazarı",
+       "Rathausplatz"
+      ],
+      [
+       "17:00",
+       "Christkindlesmarkt – Hauptmarkt",
+       "Lebkuchen ve Feuerzangenbowle"
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Weißgerbergasse"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 13 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Pegnitz kıyısı",
+       "Henkersteg ve Weinstadel"
+      ],
+      [
+       "",
+       "Havalimanına",
+       "U2 ~12 dk"
+      ],
+      [
+       "",
+       "Nürnberg → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Drei im Weggla (3 sosis ekmek arası)",
+     "Öğle",
+     "~5 €"
+    ],
+    [
+     "Glühwein + Lebkuchen",
+     "Ara",
+     "~8 €"
+    ],
+    [
+     "Frankonya meyhanesi (Schäufele)",
+     "Akşam",
+     "~25 €"
+    ],
+    [
+     "Kafe",
+     "Ara",
+     "~8 €"
+    ]
+   ],
+   "gezi": [
+    "Christkindlesmarkt (ücretsiz)",
+    "Kaiserburg (ücretli)",
+    "Albrecht Dürer Evi (ücretli)",
+    "Kardeş şehirler pazarı (ücretsiz)",
+    "Weißgerbergasse (ücretsiz)",
+    "Henkersteg (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 8,
+     "otel": 0,
+     "ulasim": 8,
+     "yemek": 105,
+     "gezi": 20
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 8,
+     "otel": 0,
+     "ulasim": 8,
+     "yemek": 75,
+     "gezi": 10
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  },
+  {
+   "id": "strazburg",
+   "sehir": "Strazburg",
+   "ulke": "Fransa",
+   "etkinlik": "Christkindelsmärik",
+   "yer": "Place Broglie ve Katedral meydanı",
+   "pazar_bas": "2026-11-27",
+   "pazar_bit": "2026-12-27",
+   "pazar_yazi": "27 Kasım – 27 Aralık",
+   "pazar_saat": "11:30–21:00",
+   "tarih": "2026-12-19",
+   "gidis": "2026-12-18",
+   "donus": "2026-12-20",
+   "plan": "Cuma sabah Basel-Mulhouse'a uçuş, trenle Strazburg; 2 gece Strazburg, Cumartesi trenle Colmar gezisi.",
+   "vize": "Schengen vizesi gerekir (havalimanı Fransa tarafında).",
+   "dikkat": "İstanbul'dan Strazburg'a direkt uçuş yok: Basel-Mulhouse (EuroAirport) havalimanına inip otobüs + trenle ~1,5 saatte varılır. Pazar tarihleri rehber sitelerden; resmî program açıklanınca teyit edilmeli.",
+   "arama_ucus": [
+    "IST,SAW-BSL 2026-12-18 2026-12-20"
+   ],
+   "ucus_saat": "5-14",
+   "donus_min": "15:00",
+   "havalimani_tercih": "BSL",
+   "ozet": "Kendine 'Noel'in başkenti' diyen şehir: katedralin dibinde 1570'ten beri kurulan pazar ve trenle 30 dk ötede masal köyü Colmar.",
+   "oteller": [
+    {
+     "ad": "Maison Rouge Strasbourg Hotel & Spa",
+     "kategori": "ikonik",
+     "arama": "Maison Rouge Strasbourg Hotel & Spa Autograph Collection",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Cour du Corbeau",
+     "kategori": "pahali",
+     "arama": "Hotel Cour du Corbeau Strasbourg",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Régent Petite France",
+     "kategori": "pahali",
+     "arama": "Hotel Regent Petite France Strasbourg",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Gutenberg",
+     "kategori": "konforlu",
+     "arama": "Hotel Gutenberg Strasbourg",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Cathédrale",
+     "kategori": "konforlu",
+     "arama": "Hotel Cathedrale Strasbourg",
+     "toplam": null
+    },
+    {
+     "ad": "Mercure Strasbourg Centre Petite France",
+     "kategori": "konforlu",
+     "arama": "Mercure Strasbourg Centre Petite France",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Strasbourg Centre Petite France",
+     "kategori": "ucuz",
+     "arama": "ibis Strasbourg Centre Petite France",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Le Kléber",
+     "kategori": "ucuz",
+     "arama": "Hotel Le Kleber Strasbourg",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 58,
+    "yazi": "EuroAirport → 11 numaralı otobüsle Saint-Louis istasyonu (3 €, ~12 dk), oradan TER treniyle Strazburg (~1 saat 15 dk). Gidiş-dönüş kişi başı ~58 € (tren fiyatı tahmini, TER Grand Est'ten teyit et)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 30,
+    "yazi": "Merkez yürünür; Cumartesi Colmar gezisi için TER Strazburg–Colmar gidiş-dönüş ~25 € (tahmini) ve tramvay."
+   },
+   "pazara": "Pazarlar Grande Île üzerinde dağınık: Place Broglie (en büyüğü), Katedral meydanı, Place Kléber'deki dev ağaç ve Petite France; hepsi 5–10 dk yürüme.",
+   "akis": [
+    {
+     "gun": "Cuma 18 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Basel-Mulhouse",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Otobüs + TER ile Strazburg",
+       "~1,5 saat"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Grande Île"
+      ],
+      [
+       "17:00",
+       "Christkindelsmärik – Place Broglie",
+       "1570'ten beri"
+      ],
+      [
+       "19:00",
+       "Place Kléber'deki dev ağaç",
+       "Katedral ışıkları"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Winstub'da choucroute"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 19 Aralık · Colmar",
+     "adimlar": [
+      [
+       "09:30",
+       "TER ile Colmar",
+       "~30 dk"
+      ],
+      [
+       "10:00",
+       "Colmar eski şehir ve Petite Venise",
+       "Masal köyü görüntüsü"
+      ],
+      [
+       "12:30",
+       "Öğle: tarte flambée",
+       "Colmar"
+      ],
+      [
+       "13:30",
+       "Colmar'ın 6 Noel pazarı",
+       "Place des Dominicains, Koïfhus"
+      ],
+      [
+       "16:30",
+       "Strazburg'a dönüş",
+       ""
+      ],
+      [
+       "18:00",
+       "Katedral meydanı pazarı",
+       "Notre-Dame"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Petite France"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 20 Aralık · dönüş",
+     "adimlar": [
+      [
+       "09:30",
+       "Petite France ve Barrage Vauban",
+       "Sabah sakinliği"
+      ],
+      [
+       "",
+       "TER + otobüs ile EuroAirport",
+       "~1,5 saat"
+      ],
+      [
+       "",
+       "Basel-Mulhouse → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Bretzel + vin chaud, pazar standı",
+     "Ara",
+     "~8 €"
+    ],
+    [
+     "Tarte flambée",
+     "Öğle",
+     "~14 €"
+    ],
+    [
+     "Winstub'da choucroute",
+     "Akşam",
+     "~28 €"
+    ],
+    [
+     "Bredele (Noel kurabiyesi) + kahve",
+     "Ara",
+     "~8 €"
+    ]
+   ],
+   "gezi": [
+    "Christkindelsmärik (ücretsiz)",
+    "Strazburg Katedrali (ücretsiz, kule ücretli)",
+    "Petite France (ücretsiz)",
+    "Barrage Vauban (ücretsiz)",
+    "Colmar ve Petite Venise (ücretsiz)",
+    "Colmar Noel pazarları (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 58,
+     "otel": 0,
+     "ulasim": 30,
+     "yemek": 115,
+     "gezi": 15
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 58,
+     "otel": 0,
+     "ulasim": 30,
+     "yemek": 80,
+     "gezi": 8
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  },
+  {
+   "id": "rovaniemi",
+   "sehir": "Rovaniemi",
+   "ulke": "Finlandiya",
+   "etkinlik": "Noel Baba Köyü",
+   "yer": "Santa Claus Village, Kuzey Kutup Dairesi",
+   "pazar_bas": "2026-11-01",
+   "pazar_bit": "2027-01-10",
+   "pazar_yazi": "kış boyu",
+   "pazar_saat": "10:00–17:00 (köy)",
+   "tarih": "2026-12-19",
+   "gidis": "2026-12-18",
+   "donus": "2026-12-20",
+   "plan": "Cuma gidiş, Pazar dönüş; 2 gece Rovaniemi merkezde, Cumartesi Noel Baba Köyü.",
+   "vize": "Schengen vizesi gerekir.",
+   "dikkat": "Aralık'ta gün ışığı yalnızca 2–3 saat, sıcaklık −10 ile −25 °C arası: termal içlik, bot ve eldiven şart. Kuzey ışıkları hava açıksa görülür, garanti değil. Husky ve ren geyiği turları bütçeye dahil değil (kişi başı ~100–200 €). İstanbul'dan direkt sefer haftanın belli günleri var, robot o hafta sonuna uyan en uygun uçuşu seçer.",
+   "arama_ucus": [
+    "IST,SAW-RVN 2026-12-18 2026-12-20"
+   ],
+   "donus_min": "10:00",
+   "ozet": "Kuzey Kutup Dairesi'nin üstünde Noel Baba'nın resmî köyü: karlı orman, ren geyikleri ve şanslıysan kuzey ışıkları.",
+   "oteller": [
+    {
+     "ad": "Arctic TreeHouse Hotel",
+     "kategori": "ikonik",
+     "arama": "Arctic TreeHouse Hotel Rovaniemi",
+     "toplam": null
+    },
+    {
+     "ad": "Arctic Light Hotel",
+     "kategori": "pahali",
+     "arama": "Arctic Light Hotel Rovaniemi",
+     "toplam": null
+    },
+    {
+     "ad": "Santa Claus Holiday Village",
+     "kategori": "konforlu",
+     "arama": "Santa Claus Holiday Village Rovaniemi",
+     "toplam": null
+    },
+    {
+     "ad": "Original Sokos Hotel Vaakuna",
+     "kategori": "konforlu",
+     "arama": "Original Sokos Hotel Vaakuna Rovaniemi",
+     "toplam": null
+    },
+    {
+     "ad": "Scandic Rovaniemi City",
+     "kategori": "konforlu",
+     "arama": "Scandic Rovaniemi City",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Santa Claus",
+     "kategori": "konforlu",
+     "arama": "Hotel Santa Claus Rovaniemi",
+     "toplam": null
+    },
+    {
+     "ad": "Santa's Hotel Rudolf",
+     "kategori": "ucuz",
+     "arama": "Santa's Hotel Rudolf Rovaniemi",
+     "toplam": null
+    },
+    {
+     "ad": "Cityhotel Rovaniemi",
+     "kategori": "ucuz",
+     "arama": "Cityhotel Rovaniemi",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 16,
+    "yazi": "Havalimanı → merkez: Airport Express otobüsü ~15 dk, bilet otobüste; gidiş-dönüş kişi başı ~16 € (tahmini, airportbus.fi'den teyit et)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 10,
+    "yazi": "Merkez–Noel Baba Köyü arası 8 km: Santa's Express ya da 8 numaralı şehir otobüsü (~20 dk)."
+   },
+   "pazara": "Noel Baba Köyü merkeze 8 km, Kuzey Kutup Dairesi çizgisinin üstünde; otobüsle ~20 dk. Noel Baba ile tanışmak ücretsiz, fotoğrafı ücretli.",
+   "akis": [
+    {
+     "gun": "Cuma 18 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Rovaniemi",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Airport Express ile merkez",
+       "~15 dk"
+      ],
+      [
+       "",
+       "Otele yerleş, termal giyin",
+       ""
+      ],
+      [
+       "",
+       "Arktikum",
+       "Laponya ve kuzey ışıkları müzesi"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Ren geyiği yahnisi (poronkäristys)"
+      ],
+      [
+       "22:00",
+       "Kuzey ışıkları için Ounasvaara",
+       "Hava açıksa"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 19 Aralık · Noel Baba",
+     "adimlar": [
+      [
+       "10:00",
+       "Santa Claus Village – Kuzey Kutup Dairesi",
+       "Çizgiyi adımla geç"
+      ],
+      [
+       "10:30",
+       "Noel Baba ile tanış",
+       "Ücretsiz, fotoğraf ücretli"
+      ],
+      [
+       "11:30",
+       "Noel Baba Postanesi",
+       "Kartpostal 'Kutup Dairesi' damgalı"
+      ],
+      [
+       "13:00",
+       "Öğle: köyde",
+       "Somon çorbası"
+      ],
+      [
+       "14:00",
+       "İsteğe bağlı: husky ya da ren geyiği kızağı",
+       "Bütçeye dahil değil"
+      ],
+      [
+       "17:00",
+       "Merkeze dönüş",
+       ""
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Lapin yemekleri"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 20 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Jätkänkynttilä Köprüsü",
+       "Kemijoki nehri"
+      ],
+      [
+       "",
+       "Havalimanına",
+       "Airport Express"
+      ],
+      [
+       "",
+       "Rovaniemi → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Somon çorbası (lohikeitto)",
+     "Öğle",
+     "~16 €"
+    ],
+    [
+     "Ren geyiği yahnisi",
+     "Akşam",
+     "~35 €"
+    ],
+    [
+     "Kafe: korvapuusti + kahve",
+     "Ara",
+     "~9 €"
+    ],
+    [
+     "Süpermarket atıştırmalık",
+     "Ara",
+     "~8 €"
+    ]
+   ],
+   "gezi": [
+    "Noel Baba Köyü (ücretsiz)",
+    "Kuzey Kutup Dairesi çizgisi (ücretsiz)",
+    "Noel Baba Postanesi (ücretsiz)",
+    "Arktikum (ücretli)",
+    "Ounasvaara tepesi (ücretsiz)",
+    "Husky / ren geyiği turu (isteğe bağlı, ücretli)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 16,
+     "otel": 0,
+     "ulasim": 10,
+     "yemek": 140,
+     "gezi": 40
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 16,
+     "otel": 0,
+     "ulasim": 10,
+     "yemek": 100,
+     "gezi": 20
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  },
+  {
+   "id": "krakov",
+   "sehir": "Krakov",
+   "ulke": "Polonya",
+   "etkinlik": "Noel pazarı",
+   "yer": "Rynek Główny (Ana Meydan)",
+   "pazar_bas": "2026-11-27",
+   "pazar_bit": "2027-01-03",
+   "pazar_yazi": "27 Kasım – 3 Ocak",
+   "pazar_saat": "10:00–21:00",
+   "tarih": "2026-12-26",
+   "gidis": "2026-12-25",
+   "donus": "2026-12-27",
+   "plan": "Noel günü gidiş, Pazar dönüş; 2 gece Krakov, Ana Meydan çevresi.",
+   "vize": "Schengen vizesi gerekir.",
+   "dikkat": "25–26 Aralık Polonya'da resmî tatil: Noel pazarı açık ama müzelerin ve dükkanların çoğu kapalı ya da kısa saatli. Wawel ve Tuz Madeni için saatleri önceden kontrol et.",
+   "arama_ucus": [
+    "IST,SAW-KRK 2026-12-25 2026-12-27"
+   ],
+   "ucus_saat": "5-14",
+   "donus_min": "15:00",
+   "ozet": "Noel'den sonra da açık tek büyük pazar: Avrupa'nın en geniş Orta Çağ meydanında, en uygun fiyatlı Noel hafta sonu.",
+   "oteller": [
+    {
+     "ad": "Hotel Copernicus",
+     "kategori": "ikonik",
+     "arama": "Hotel Copernicus Krakow",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Stary",
+     "kategori": "pahali",
+     "arama": "Hotel Stary Krakow",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Wentzl",
+     "kategori": "pahali",
+     "arama": "Hotel Wentzl Krakow",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Saski",
+     "kategori": "konforlu",
+     "arama": "Hotel Saski Krakow",
+     "toplam": null
+    },
+    {
+     "ad": "Mercure Kraków Stare Miasto",
+     "kategori": "konforlu",
+     "arama": "Mercure Krakow Stare Miasto",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Pod Wawelem",
+     "kategori": "konforlu",
+     "arama": "Hotel Pod Wawelem Krakow",
+     "toplam": null
+    },
+    {
+     "ad": "Puro Kraków Stare Miasto",
+     "kategori": "ucuz",
+     "arama": "Puro Krakow Stare Miasto",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Kraków Stare Miasto",
+     "kategori": "ucuz",
+     "arama": "ibis Krakow Stare Miasto",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 9,
+    "yazi": "Havalimanı → Kraków Główny: banliyö treni ~20 dk; gidiş-dönüş kişi başı ~9 € (tahmini)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 6,
+    "yazi": "Eski şehir ve Kazimierz yürünür; tramvay tek bilet birkaç zloti."
+   },
+   "pazara": "Pazar Ana Meydan'ın (Rynek Główny) ortasında, Kumaş Hali'nin iki yanında; eski şehrin her yerinden 5 dk.",
+   "akis": [
+    {
+     "gun": "Cuma 25 Aralık · Noel günü varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Krakov",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Trenle Kraków Główny",
+       "~20 dk"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Eski şehir"
+      ],
+      [
+       "16:00",
+       "Noel pazarı – Rynek Główny",
+       "Kumaş Hali önünde"
+      ],
+      [
+       "17:00",
+       "St. Mary Bazilikası",
+       "Saat başı borazan"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Pierogi ve żurek"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 26 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Wawel Tepesi",
+       "Kale ve katedral (tatil saatlerini kontrol et)"
+      ],
+      [
+       "12:30",
+       "Kazimierz",
+       "Eski Yahudi mahallesi"
+      ],
+      [
+       "13:30",
+       "Öğle: zapiekanka",
+       "Plac Nowy"
+      ],
+      [
+       "16:00",
+       "Noel pazarı – Rynek Główny",
+       "Grzaniec (sıcak şarap) ve oscypek"
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Eski şehir"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 27 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Planty parkı ve Barbakan",
+       "Sur yürüyüşü"
+      ],
+      [
+       "",
+       "Havalimanına",
+       "Tren ~20 dk"
+      ],
+      [
+       "",
+       "Krakov → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Pazarda oscypek (ızgara peynir) + grzaniec",
+     "Ara",
+     "~6 €"
+    ],
+    [
+     "Zapiekanka, Plac Nowy",
+     "Öğle",
+     "~5 €"
+    ],
+    [
+     "Pierogi ve żurek, milk bar ya da restoran",
+     "Akşam",
+     "~16 €"
+    ],
+    [
+     "Kafe: sernik (cheesecake)",
+     "Ara",
+     "~6 €"
+    ]
+   ],
+   "gezi": [
+    "Noel pazarı, Rynek Główny (ücretsiz)",
+    "St. Mary Bazilikası (ücretli)",
+    "Wawel Tepesi (avlu ücretsiz, salonlar ücretli)",
+    "Kazimierz (ücretsiz)",
+    "Planty ve Barbakan (ücretsiz)",
+    "Kumaş Hali (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 9,
+     "otel": 0,
+     "ulasim": 6,
+     "yemek": 70,
+     "gezi": 15
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 9,
+     "otel": 0,
+     "ulasim": 6,
+     "yemek": 50,
+     "gezi": 8
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  }
+ ]
+}
