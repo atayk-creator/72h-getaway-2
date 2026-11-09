@@ -17,8 +17,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.24,
-  "zorla": true
+  "son_maliyet_usd": 0.15
  },
  "kaynaklar": [
   {
@@ -517,7 +516,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 796,
      "transfer": 7,
      "otel": 289,
      "ulasim": 8,
@@ -525,7 +524,7 @@
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 465,
      "transfer": 7,
      "otel": 236,
      "ulasim": 8,
@@ -538,10 +537,48 @@
     "ucuz": "ibis Dresden Zentrum"
    },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
-    "seviye": "normal",
-    "normal_aralik": ""
+    "oneri": {
+     "fiyat": 796,
+     "havayolu": "Lufthansa",
+     "aktarma": 2,
+     "havalimani": "Dresden (DRS)",
+     "gidis": "Cuma IST 06:30 → DRS 19:45 (LH1305, LH116, LH2128)",
+     "donus": "Pazar DRS 19:05 → IST 18:10"
+    },
+    "secenekler": [
+     {
+      "fiyat": 465,
+      "havayolu": "Lufthansa",
+      "havalimani": "Dresden",
+      "not": "Cuma IST 06:30 → DRS 19:45, Pazar 11:00 dönüş · 2 aktarma"
+     },
+     {
+      "fiyat": 1389,
+      "havayolu": "LOT",
+      "havalimani": "Dresden",
+      "not": "Cuma IST 15:00 → DRS 22:10 · 2 aktarma"
+     },
+     {
+      "fiyat": 1910,
+      "havayolu": "Pegasus",
+      "havalimani": "Dresden",
+      "not": "Cuma SAW 14:05 → DRS 22:10 · 3 aktarma"
+     },
+     {
+      "fiyat": 2293,
+      "havayolu": "Aegean",
+      "havalimani": "Dresden",
+      "not": "Cuma IST 11:30 → DRS 19:45 · 2 aktarma"
+     },
+     {
+      "fiyat": 2566,
+      "havayolu": "Azerbaijan Airlines",
+      "havalimani": "Dresden",
+      "not": "Cuma SAW 10:50 → DRS 22:10 · 2 aktarma"
+     }
+    ],
+    "seviye": "yuksek",
+    "normal_aralik": "250–445 €"
    },
    "foto": null
   },
@@ -830,7 +867,8 @@
      "ad": "Puro Gdańsk Stare Miasto",
      "kategori": "konforlu",
      "arama": "PURO Gdansk Stare Miasto",
-     "toplam": 645
+     "toplam": 645,
+     "eski": true
     },
     {
      "ad": "Mercure Gdańsk Stare Miasto",
@@ -1106,7 +1144,7 @@
      "ad": "ibis München City",
      "kategori": "ucuz",
      "arama": "ibis München City",
-     "toplam": 288
+     "toplam": 319
     }
    ],
    "havalimani_ulasim": {
@@ -1242,7 +1280,7 @@
     "ucuz": {
      "ucus": 257,
      "transfer": 29,
-     "otel": 144,
+     "otel": 160,
      "ulasim": 12,
      "yemek": 85,
      "gezi": 8
@@ -1354,7 +1392,7 @@
      "ad": "Hôtel Cathédrale",
      "kategori": "konforlu",
      "arama": "Hotel Cathedrale Strasbourg",
-     "toplam": 702
+     "toplam": 650
     },
     {
      "ad": "Mercure Strasbourg Centre Petite France",
@@ -1517,7 +1555,7 @@
     "konforlu": {
      "ucus": 258,
      "transfer": 58,
-     "otel": 351,
+     "otel": 325,
      "ulasim": 30,
      "yemek": 115,
      "gezi": 15
@@ -1525,7 +1563,7 @@
     "ucuz": {
      "ucus": 258,
      "transfer": 58,
-     "otel": 351,
+     "otel": 325,
      "ulasim": 30,
      "yemek": 80,
      "gezi": 8
@@ -1624,13 +1662,14 @@
      "ad": "Scandic Rovaniemi City",
      "kategori": "konforlu",
      "arama": "Scandic Rovaniemi City",
-     "toplam": 1058
+     "toplam": 1076
     },
     {
      "ad": "Hotel Santa Claus",
      "kategori": "konforlu",
      "arama": "Hotel Santa Claus Rovaniemi",
-     "toplam": 1898
+     "toplam": 1898,
+     "eski": true
     },
     {
      "ad": "Hotelli Aakenus",
@@ -1779,7 +1818,7 @@
     "konforlu": {
      "ucus": 980,
      "transfer": 16,
-     "otel": 529,
+     "otel": 538,
      "ulasim": 10,
      "yemek": 140,
      "gezi": 40
