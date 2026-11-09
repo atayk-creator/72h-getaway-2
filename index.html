@@ -97,6 +97,7 @@ header p { margin: 0; color: #D5DEE8; max-width: 54ch; font-size: 1rem; }
 .bgrid b { font: 700 1.05rem/1.1 "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
 .bgrid span { font-size: 0.75rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bgrid .off b { color: var(--muted); font-size: 0.9rem; }
+.bgrid .wide { grid-column: 1 / -1; border-color: #E0C000; background: linear-gradient(90deg, rgba(244,211,11,0.18), transparent 70%), var(--bg); }
 .bgrid .bt-tag { float: right; font: 700 0.62rem/1.6 "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .bp-src { margin: 0 0 4px; font: 700 0.7rem/1.4 "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; letter-spacing: .1em; color: var(--muted); }
 .bp-slogan { margin: 0 0 12px; font-weight: 800; letter-spacing: .06em; font-size: 0.9rem; }
@@ -922,10 +923,11 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     ["Podgorica","Karadağ","Balkanlar",70,32,3,10],
     ["Üsküp","Kuzey Makedonya","Balkanlar",55,26,2,9],
     ["Tiran","Arnavutluk","Balkanlar",60,26,2,9],
-    ["Priştine","Kosova","Balkanlar",55,26,2,8]
+    ["Priştine","Kosova","Balkanlar",55,26,2,8],
+    ["Linz","Avusturya","Deplasman",110,45,7,18,"est","Fenerbahçe deplasmanı için maç şehri (başkent değil)."]
   ].map(function (a) {
     return { n:a[0], c:a[1], r:a[2], h:a[3], f:a[4], t:a[5], a:a[6], s:a[7] || "est", note:a[8] || "",
-             hotels:a[9] || null, restos:a[10] || null, places:a[11] || null };
+             hotels:a[9] || null, restos:a[10] || null, places:a[11] || null, mac: a[2] === "Deplasman" };
   });
   var QUICK = ["Budapeşte","Prag","Atina","Lizbon","Sofya","Belgrad","Roma","Viyana","Paris","Londra","Berlin","Madrid","Amsterdam","Varşova"];
   var TNAME = ["", "ucuz", "orta", "pahalı", "çok pahalı"];
@@ -1058,7 +1060,43 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   // Varsayılan seçim puanı: 3 = seçilen hafta sonu fiyatı var, 2 = ortalama/henüz yok ama sorun yok, 0 = dolu ya da kullanılamaz
   var BAD = { dolu: 1, "tumu-dolu": 1, dogrulanamadi: 1, supheli: 1 };
+  // ---- MAÇ MODU: takım takviminde bir maça dokununca Biletim o maçın şehri, tarihleri, maç günü uçuşu,
+  // maç tarihlerindeki otel fiyatları ve maç biletiyle hesaplanır (data/fenerbahce.json). Şehir ya da tarih değişince biter.
+  var MAC = null;
+  function macFor(c, o) {
+    if (!MAC || !c || c.n !== MAC.sehir) return null;
+    o = o || lastO;
+    if (o && o.a && o.b && (isoD(o.a) !== MAC.gidis || isoD(o.b) !== MAC.donus)) return null;
+    return MAC;
+  }
+  function macHotels(c, m) {
+    var KS = ["ikonik", "pahali", "konforlu", "ucuz"], kon = (LIVE.meta && LIVE.meta.konum) || {};
+    return m.oteller.slice().sort(function (a, b) { return KS.indexOf(a.kategori) - KS.indexOf(b.kategori) || a.toplam - b.toplam; }).map(function (h) {
+      var cat = LCAT[h.kategori] || LCAT.konforlu, ctr = c.center || (c.places && c.places[0]) || null;
+      return { t: cat.t, lvl: cat.lvl, name: escH(h.ad), label: escH(h.ad), p: Math.round(h.toplam / 2), s: "live", src: "canli",
+        desc: "Maç tarihleri (" + escH(weekendText(m.gidis, m.donus)) + ") için 2 gece toplam ~" + nf.format(h.toplam) + " €, vergiler dahil; " + escH(dShort.format(parseD(FBD.guncellendi))) + " günü Google'dan kontrol edildi." + (m.secim && m.secim.konforlu === h.ad ? " Deplasman planındaki otel." : ""),
+        sc: "", sct: "Google puanı", live: true, badge: null, score: m.secim && m.secim.konforlu === h.ad ? 4 : 3, q: h.arama || h.ad, priceKnown: true, ad: h.ad, vergi: "dahil",
+        lat: ctr ? ctr.lat : undefined, lon: ctr ? ctr.lon : undefined };
+    });
+  }
+  function macFlight(m) {
+    var o = m.ucus && m.ucus.oneri; if (!o) return null;
+    var g = /([A-Z]{3}) (\d\d:\d\d) → ([A-Z]{3})/.exec(o.gidis || "") || [];
+    var lv = { yuksek: "yuksek", dusuk: "dusuk", normal: "normal" }[m.ucus.seviye] || null, ar = /(\d+)\D+(\d+)/.exec(m.ucus.normal_aralik || "");
+    return { p: o.fiyat, kind: "live", src: "canli", g: m.gidis, cikis: m.donus, exact: true, mac: true,
+      s: { fiyat: o.fiyat, havayolu: o.havayolu, aktarma: 0, kalkis: g[1] || "IST", varis: g[3] || "", ucusSaati: g[2] ? m.gidis + "T" + g[2] : "", kontrol: FBD.guncellendi,
+        fiyatSeviyesi: lv, tipikAralik: ar ? [+ar[1], +ar[2]] : null, link: "", gidisYazi: o.gidis, donusYazi: o.donus } };
+  }
+  function fbOpen(id) {
+    var m = (FBD && FBD.maclar || []).filter(function (x) { return x.id === id; })[0]; if (!m) return;
+    var i = idxOf(m.sehir); if (i < 0) return;
+    MAC = m; $("d1").value = m.gidis; $("d2").value = m.donus; datesAuto = false; addFlightUser = null;
+    $("city").value = i; resetCity();
+    var hs = macHotels(D[i], m); hs.forEach(function (h, j) { if (m.secim && h.ad === m.secim.konforlu) { hIdx = j; hDefault = false; } });
+    render(); toBilet();
+  }
   function liveHotels(c) {
+    var mm = macFor(c); if (mm) return macHotels(c, mm);
     var city = liveCity(c);
     if (!city) return null;
     var file = liveFile(c), o = lastO, konum = (LIVE.meta && LIVE.meta.konum) || {};
@@ -1250,6 +1288,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   var FLY = null, addFlightUser = null;
   function flyHtml(link) { return String(link || "").replace(/([?&])hl=[^&]*/, "$1hl=tr"); }
   function flightFor(c, o) {
+    var mm = macFor(c, o); if (mm) return macFlight(mm);
     if (!FLY || !FLY.haftaSonlari) return null;
     var hs = FLY.haftaSonlari, today = todayIst();
     var keys = Object.keys(hs).filter(function (k) { return (hs[k].cikis || addDays(k, 2)) >= today; }).sort();
@@ -1273,6 +1312,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   function flightIncluded(c, o) {
     if (o && o.past) return false;
+    if (macFor(c, o) && addFlightUser === null) return true;
     if (addFlightUser !== null) return addFlightUser;
     return !!(o && o.exact);
   }
@@ -1419,6 +1459,11 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
           if (!exact) msg += "<br>Robot otel ve uçak fiyatlarını cuma–pazar (2 gece) için kontrol ediyor; seçtiğin tarihlerin fiyatları en yakın hafta sonundan tahmin edilir.";
         }
         var sn = past ? "" : seasonNote(a, b); if (sn) msg += "<br>" + sn;
+        if (MAC && isoD(a) === MAC.gidis && isoD(b) === MAC.donus && !past) {
+          exact = true;
+          msg = "<b>Maç: " + escH(MAC.rakip) + " – " + escH(FBD.takim) + "</b> · " + escH(dLong.format(parseD(MAC.tarih))) + " " + escH(MAC.saat_tsi) + " TSİ · " + escH(MAC.stat) +
+            "<br><b>" + nights + " gece</b> · " + DAYS[a.getUTCDay()] + " → " + DAYS[b.getUTCDay()] + ". Uçak ve otel bu maç tarihleri için kontrol edildi; maç bileti bütçede.";
+        }
       }
     } else { warn = true; msg = "Tarihleri seçince gece sayısı kendiliğinden hesaplanır. Şimdilik 2 gece."; a = b = null; }
     var el = $("dnote"); el.innerHTML = msg; el.className = "dnote" + (warn ? " warn" : "");
@@ -1453,10 +1498,17 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
         act = ts.eur * o.ppl; ticketNote = { n: sel.length, unknown: ts.unknown };
       } else act = c.a * o.ppl * o.nights;
     }
+    var mm = macFor(c, o), mac = 0;
+    if (mm) {
+      mac = (FBD.bilet && FBD.bilet.fiyat || 0) * o.ppl;
+      var kb = mm.butce && mm.butce.konforlu || {};
+      trans = ((kb.transfer || 0) + (kb.ulasim || 0)) * o.ppl; tp = null;
+    }
     var R = restosOf(c)[ridx];
     var src = { hotel: H.src || (H.s === "res" ? "tahmini" : "tahmini"), food: "tahmini", resto: R && R.live ? "ortalama" : "tahmini",
       trans: tp ? "resmi" : "tahmini", act: c.places && c.places.length && c.gezi ? "resmi" : c.n === "Budapeşte" && c.places ? "resmi" : "tahmini", fly: fp ? fp.src : null };
-    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, fly: fly, flight: fp, tp: tp, tickets: ticketNote, src: src, sum: hotel + food + resto + trans + act + fly };
+    if (mm) src.trans = "tahmini";
+    return { hotel: hotel, food: food, resto: resto, trans: trans, act: act, fly: fly, flight: fp, tp: tp, tickets: ticketNote, src: src, mac: mac, sum: hotel + food + resto + trans + act + fly + mac };
   }
 
   /* ====================== MESAFE VE PLAN ====================== */
@@ -2198,7 +2250,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   function oneriCount(n) { var c = ONERI && ONERI.sehirler && ONERI.sehirler[n]; return c && Array.isArray(c.oneriler) ? c.oneriler.filter(function (x) { return x && x.baslik; }).length : 0; }
   function renderCities() {
     var o = lastO || inputs(), today = todayIst(), g = $("cgrid");
-    var all = D.map(function (c, i) { return { c: c, i: i }; }).sort(function (a, b) { return a.c.n.localeCompare(b.c.n, "tr"); });
+    var all = D.map(function (c, i) { return { c: c, i: i }; }).filter(function (x) { return !x.c.mac; }).sort(function (a, b) { return a.c.n.localeCompare(b.c.n, "tr"); });
     var has = function (x) { return VITRIN && VITRIN.sehirler && VITRIN.sehirler[x.c.n]; };
     var list = VITRIN ? all.filter(has) : all, others = VITRIN ? all.filter(function (x) { return !has(x); }) : [];
     $("cother").hidden = !others.length;
@@ -2242,9 +2294,9 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       return '<button type="button" role="listitem" class="cv-row' + (k === 0 ? " sel" : "") + '" data-id="' + escH(m.id) + '" aria-label="' + escH(weekendText(m.gidis, m.donus) + ", " + m.sehir + ", " + m.rakip + " maçı, 2 kişi " + r(fbUO(m)) + ". Deplasman planını gör") + '">' +
         '<span class="d">' + escH(wkShort(m.gidis, m.donus)) + '<span class="mc">' + escH(m.sehir) + "</span></span><span>" + chip + '</span><span class="pr">' + r(fbUO(m)) + "</span></button>";
     }).join("");
-    $("cvList").querySelectorAll(".cv-row").forEach(function (b) { b.addEventListener("click", function () { location.href = "/sehir/" + FBD.slug + "/#" + b.dataset.id; }); });
-    $("cvNote").textContent = "Her satır bir deplasman: 2 kişinin gidiş-dönüş uçağı ve 2 gece konforlu otel toplamı, maç gününe göre seçilmiş uçuşlarla. Etiket maçların ortanca fiyatına göre. Bir maça dokun; maç bileti, yemek ve 72 saatlik akışla tam planı gör.";
-    $("cvGo").textContent = "Deplasman planını gör";
+    $("cvList").querySelectorAll(".cv-row").forEach(function (b) { b.addEventListener("click", function () { fbOpen(b.dataset.id); }); });
+    $("cvNote").textContent = "Her satır bir deplasman: 2 kişinin gidiş-dönüş uçağı ve 2 gece konforlu otel toplamı, maç gününe göre seçilmiş uçuşlarla. Etiket maçların ortanca fiyatına göre. Bir maça dokun; maç bileti, yemek ve gezi dahil tam bütçe Biletim'de hesaplansın.";
+    $("cvGo").textContent = "Sıradaki maçın tam bütçesini hesapla";
     $("oneriSec").hidden = true;
   }
 
@@ -2282,7 +2334,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     $("cvNote").textContent = priced.length ? "Rakamlar 2 kişinin gidiş-dönüş uçağı ve 2 gece konforlu otel toplamı. Etiket şehrin kendi ortanca fiyatına göre: %10 ucuzsa ucuz, %10 pahalıysa pahalı. Bir hafta sonuna dokun, yemek ve gezi dahil tam bütçe Biletim'de hesaplansın." : "";
     renderOneri(c);
   }
-  $("cvGo").addEventListener("click", function () { if (TEAM) { var m = fbNext(); location.href = "/sehir/" + ((FBD && FBD.slug) || "fenerbahce") + "/" + (m ? "#" + m.id : ""); } else toBilet(); });
+  $("cvGo").addEventListener("click", function () { if (TEAM) { var m = fbNext(); if (m) fbOpen(m.id); } else toBilet(); });
   function renderOneri(c) {
     var d = ONERI && ONERI.sehirler && ONERI.sehirler[c.n], kats = (ONERI && ONERI.kategoriler) || [];
     $("onH").textContent = "72h önerileri: " + c.n;
@@ -2413,7 +2465,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       ph.innerHTML = f ? vImg(f, true) : '<span class="fb" aria-hidden="true"></span>';
     }
     $("bpCredit").textContent = f && f.kaynak ? "Fotoğraf: " + f.kaynak : "";
-    $("bpCity").textContent = upTr(c.n);
+    $("bpCity").textContent = upTr(c.n) + (macFor(c, o) ? " · MAÇ" : "");
     var when = o.a && o.b ? upTr(dShort.format(o.a) + " – " + dShort.format(o.b)) : "";
     $("bpWhen").innerHTML = escH(when) + "<br>" + (o.nights === 2 ? "72 SAAT" : o.nights + " GECE");
     var ff = k.flight, s = ff ? (ff.kind === "live" ? ff.s : ff.best.s) : null;
@@ -2432,6 +2484,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       { l: "Yemek", v: tl((k.food + k.resto) * o.rate), d: visits === 0 ? "restoran eklenmedi" : plainTxt(r.name || r.label) + " dahil", t: "Tahmini" },
       { l: "Ulaşım + gezi", v: tl((k.trans + k.act) * o.rate), d: tix ? k.tickets.n + " yer, " + (k.tp ? "toplu taşıma" : "şehir içi") : (k.tp ? "toplu taşıma" : "şehir içi ulaşım"), t: tix ? "Resmî" : "Tahmini" }
     ];
+    var mm2 = macFor(c, o);
+    if (mm2 && k.mac) items.push({ l: "Maç bileti", v: tl(k.mac * o.rate), d: mm2.rakip + " – " + FBD.takim + " · " + mm2.stat, t: "Resmî", w: 1 });
     // Fiyatın tarihi ve kaynağı (marka rehberi: biniş kartında her zaman yazar)
     var srcDate = (flyLive && s && s.kontrol) || (FLY && FLY.guncellendi) || "", kaynak = [];
     if (flyLive) kaynak.push("GOOGLE FLIGHTS"); if (hotLive) kaynak.push("BOOKING"); if (tix) kaynak.push("RESMÎ");
@@ -2441,7 +2495,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     $("bpSrc").textContent = srcLine; $("bpSrc").hidden = o.past;
     var g = $("bgrid"); g.hidden = o.past;
     g.innerHTML = items.map(function (x) {
-      return '<div' + (x.off ? ' class="off"' : "") + '><small>' + escH(x.l) + (x.t ? ' <i class="bt-tag">' + escH(x.t) + "</i>" : "") + '</small><b>' + escH(x.v) + '</b><span>' + escH(x.d) + '</span></div>';
+      return '<div' + (x.off ? ' class="off"' : x.w ? ' class="wide"' : "") + '><small>' + escH(x.l) + (x.t ? ' <i class="bt-tag">' + escH(x.t) + "</i>" : "") + '</small><b>' + escH(x.v) + '</b><span>' + escH(x.d) + '</span></div>';
     }).join("");
     var st = $("bpStamp"); st.hidden = o.past;
     var key = c.n + "|" + Math.round(total) + "|" + o.ppl;
@@ -2824,6 +2878,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   function draw() {
     var c0 = D[+$("city").value];
+    if (MAC && (c0.n !== MAC.sehir || $("d1").value !== MAC.gidis || $("d2").value !== MAC.donus)) MAC = null;
     ensureLiveCity(c0);
     if (datesAuto) { var w = autoWeekend(c0); $("d1").value = w[0]; $("d2").value = w[1]; }
     setDateMins();
@@ -2831,7 +2886,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     fixHotelIdx(hotelsOf(c0)); fixRestoIdx(restosOf(c0));
     var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate, noFly = k.sum - k.fly;
     renderFlight(c, o, k); $("rAir").textContent = k.fly ? "uçak dahil" : "uçak hariç";
-    $("rCity").textContent = c.n + ", " + c.c; chipEl($("rChip"), cityStatus(c, o, k));
+    $("rCity").textContent = macFor(c, o) ? MAC.rakip + " – " + FBD.takim + " · " + c.n : c.n + ", " + c.c; chipEl($("rChip"), cityStatus(c, o, k));
     var h = hs[hIdx], r = rs[rIdx], notes = resultNotes(c, o, k, h), warn = $("rWarn");
     warn.hidden = !notes.length;
     warn.innerHTML = notes.map(function (t) { return "<p>" + escH(t) + "</p>"; }).join("");
@@ -2843,6 +2898,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var note = $("rNote"); note.hidden = !c.note || o.past; note.textContent = c.note;
     var parts = [["Otel", k.hotel * o.rate, k.src.hotel], ["Yemek", k.food * o.rate, k.src.food], ["Restoran", k.resto * o.rate, k.src.resto], ["Ulaşım", k.trans * o.rate, k.src.trans], ["Gezi", k.act * o.rate, o.act ? k.src.act : null]];
     if (k.fly) parts.unshift(["Uçak", k.fly * o.rate, k.src.fly]);
+    if (k.mac) parts.splice(k.fly ? 2 : 1, 0, ["Maç bileti", k.mac * o.rate, "resmi"]);
     var max = Math.max.apply(null, parts.map(function (p) { return p[1]; })) || 1, ff = flightFor(c, o);
     $("brk").hidden = o.past;
     $("brk").innerHTML = (k.fly ? "" : '<li class="air"><span>Uçak</span><span>' + (ff ? "Bütçeye eklenmedi ✈️ (" + (o.exact ? "kutudan ekleyebilirsin" : "tarihler cuma–pazar değil, istersen kutudan ekle") + ")" : "Biletini sen alıyorsun ✈️") + '</span></li>') + parts.map(function (p) {
@@ -2890,7 +2946,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     this.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
     visits = parseInt(b.dataset.v, 10); render();
   });
-  sel.addEventListener("change", function () { resetCity(); render(); });
+  sel.addEventListener("change", function () { MAC = null; resetCity(); render(); });
   // Tarihe dokunulunca otomatik hafta sonu seçimi biter; uçak kutusu yeni tarihlere göre varsayılana döner
   ["d1", "d2"].forEach(function (id) {
     var touch = function () { datesAuto = false; addFlightUser = null; };
@@ -2906,7 +2962,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   });
   ["d1", "d2", "ppl", "rate", "act"].forEach(function (id) { $(id).addEventListener("input", render); $(id).addEventListener("change", render); });
   $("dice").addEventListener("click", function () {
-    var i; do { i = Math.floor(Math.random() * D.length); } while (i === +sel.value);
+    var i; do { i = Math.floor(Math.random() * D.length); } while (i === +sel.value || D[i].mac);
     sel.value = i; resetCity(); render();
   });
   $("pdfBtn").addEventListener("click", savePdf);

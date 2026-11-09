@@ -51,7 +51,7 @@ def find(ws, **match):
 
 # 1. dışa aktarma
 path, counts = T.export(os.path.join(tmp, "t.xlsx"))
-check("1 sekme sayıları", counts["Oteller"] > 100 and counts["Ulaşım"] == len(json.loads(read("gezi.json"))["sehirler"]), counts)
+check("1 sekme sayıları", counts["Oteller"] > 100 and counts["Ulaşım"] == sum(1 for v in json.loads(read("gezi.json"))["sehirler"].values() if not v.get("mac_sehri")), counts)
 before = {n: read(n) for n in ("hotels.json", "restoranlar.json", "gezi.json")}
 
 # 2. değişmemiş tablo hiçbir şeyi değiştirmez

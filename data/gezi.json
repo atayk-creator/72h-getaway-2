@@ -8752,6 +8752,185 @@
      "konumNotu": "Google 61 km uzakta bir yer buldu: Prizren Fortress"
     }
    ]
+  },
+  "Linz": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3.2,
+     "aciklama": "Linz AG tek yolculuk (MIDI) 3,20 €; kısa mesafe (MINI) 1,60 €",
+     "kaynak": "https://www.linzag.at/media/dokumente/linien_1/vertragsbedingungen___tarifblaetter/Fahrpreise-Kernzone-Linz.pdf"
+    },
+    "gunluk": {
+     "fiyat": 6.4,
+     "aciklama": "24 saatlik bilet (MAXI) 6,40 €",
+     "kaynak": "https://www.linzag.at/media/dokumente/linien_1/vertragsbedingungen___tarifblaetter/Fahrpreise-Kernzone-Linz.pdf"
+    },
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 4.4,
+     "sure_dk": 22,
+     "aciklama": "Linz Havalimanı → ana tren istasyonu 601 otobüsü 4,40 €. Viyana'ya uçup arabayla gelirsen ~2 saat.",
+     "kaynak": "https://linz-airport.com/en/Passengers-Visitors/To-and-from-Linz/Public-transport"
+    },
+    "not": "Maç bileti, maçtan 5 saat önceden gece yarısına kadar şehir içi ulaşımı ücretsiz yapar. Merkez yürünebilir."
+   },
+   "yerler": [
+    {
+     "id": "hauptplatz",
+     "ad": "Hauptplatz ve Noel pazarı",
+     "arama": "Hauptplatz Linz",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Avrupa'nın en büyük meydanlarından; ortasında Kutsal Üçleme Sütunu. Aralıkta Noel pazarı kurulur.",
+     "kaynak": null,
+     "konum": [
+      48.3059,
+      14.2864
+     ]
+    },
+    {
+     "id": "mariendom",
+     "ad": "Mariendom (Yeni Katedral)",
+     "arama": "Mariendom Linz",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Avusturya'nın en büyük kilisesi; neo-gotik, renkli vitrayları ünlü. 8 Aralık katedralin bayram günü.",
+     "kaynak": null,
+     "konum": [
+      48.301,
+      14.283
+     ]
+    },
+    {
+     "id": "landstrasse",
+     "ad": "Landstraße",
+     "arama": "Landstraße Linz",
+     "tur": "Cadde",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin ana alışveriş caddesi, Hauptplatz'dan Mariendom'a uzanır.",
+     "kaynak": null,
+     "konum": [
+      48.3015,
+      14.2905
+     ]
+    },
+    {
+     "id": "schloss",
+     "ad": "Linz Kalesi (Schlossmuseum)",
+     "arama": "Schlossmuseum Linz",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "Tepedeki kale; terasından Tuna ve şehir manzarası. İçinde Yukarı Avusturya tarihi müzesi.",
+     "kaynak": null,
+     "konum": [
+      48.3053,
+      14.2824
+     ]
+    },
+    {
+     "id": "lentos",
+     "ad": "Lentos Sanat Müzesi",
+     "arama": "Lentos Kunstmuseum Linz",
+     "tur": "Müze",
+     "bolge": "tuna",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "Tuna kıyısında cam kutu gibi modern sanat müzesi; akşam ışıklarıyla renk değiştirir.",
+     "kaynak": null,
+     "konum": [
+      48.3079,
+      14.2896
+     ]
+    },
+    {
+     "id": "ars-electronica",
+     "ad": "Ars Electronica Center",
+     "arama": "Ars Electronica Center Linz",
+     "tur": "Müze",
+     "bolge": "tuna",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "Bilim, teknoloji ve dijital sanat müzesi; yapay zekâ ve robot sergileri.",
+     "kaynak": null,
+     "konum": [
+      48.3097,
+      14.2845
+     ]
+    },
+    {
+     "id": "nibelungen",
+     "ad": "Nibelungen Köprüsü ve Donaulände",
+     "arama": "Nibelungenbrücke Linz",
+     "tur": "Manzara",
+     "bolge": "tuna",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Tuna'nın iki yakası; köprüden Lentos ve Ars Electronica manzarası.",
+     "kaynak": null,
+     "konum": [
+      48.3082,
+      14.2865
+     ]
+    },
+    {
+     "id": "postlingberg",
+     "ad": "Pöstlingberg dağ tramvayı",
+     "arama": "Pöstlingberg Linz",
+     "tur": "Manzara",
+     "bolge": "postlingberg",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Tramvay bileti: fiyatı teyit et",
+     "bilgi": "Dünyanın en dik adhezyon tramvaylarından; tepeden bütün Linz ve Tuna görünür.",
+     "kaynak": null,
+     "konum": [
+      48.3224,
+      14.2595
+     ]
+    },
+    {
+     "id": "volksgarten",
+     "ad": "Volksgarten Noel pazarı",
+     "arama": "Volksgarten Linz",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Ana tren istasyonuna yakın, yerlilerin gittiği Noel pazarı; sıcak şarap ve sokak lezzetleri.",
+     "kaynak": null,
+     "konum": [
+      48.2959,
+      14.2905
+     ]
+    }
+   ]
   }
  },
  "harcama": {
