@@ -18,8 +18,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.18,
-  "zorla": true
+  "son_maliyet_usd": 0.1
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Beşiktaş Jimnastik Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -46,12 +45,12 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 132,
-     "havayolu": "Pegasus",
+     "fiyat": 139,
+     "havayolu": "AJet",
      "aktarma": 0,
-     "havalimani": "Düsseldorf (DUS)",
-     "gidis": "Çarşamba SAW 07:45 → DUS 09:00 (PC1007)",
-     "donus": ""
+     "havalimani": "Köln/Bonn (CGN)",
+     "gidis": "Çarşamba SAW 13:20 → CGN 14:55 (VF89)",
+     "donus": "Cuma CGN 15:55 → SAW 21:10"
     },
     "secenekler": [
      {
@@ -59,6 +58,12 @@
       "havayolu": "AJet gidiş + Pegasus dönüş",
       "havalimani": "Düsseldorf",
       "not": "Çarşamba SAW 11:00 → DUS 12:30, Cuma 12:55 dönüş"
+     },
+     {
+      "fiyat": 126,
+      "havayolu": "AJet",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba SAW 14:05 → DUS 15:35"
      },
      {
       "fiyat": 132,
@@ -77,12 +82,6 @@
       "havayolu": "Pegasus",
       "havalimani": "Köln/Bonn",
       "not": "Çarşamba SAW 08:50 → CGN 10:15, Cuma 00:55 dönüş"
-     },
-     {
-      "fiyat": 152,
-      "havayolu": "AJet",
-      "havalimani": "Düsseldorf",
-      "not": "Çarşamba SAW 11:00 → DUS 12:30, Cuma 10:55 dönüş"
      },
      {
       "fiyat": 249,
@@ -130,7 +129,7 @@
      "ad": "25hours Hotel The Circle",
      "kategori": "konforlu",
      "arama": "25hours Hotel The Circle Köln",
-     "toplam": 436
+     "toplam": 435
     },
     {
      "ad": "NH Collection Köln Mediapark",
@@ -160,8 +159,50 @@
      "nereye": "Köln Hbf",
      "tarih": "2026-12-09",
      "saat": "10:00",
-     "fiyat": null,
-     "not": "ICE/RE ~30–55 dk. Köln/Bonn'a inersen S-Bahn ile 15 dk, 3,80 €."
+     "fiyat": 21.79,
+     "not": "ICE/RE ~30–55 dk. Köln/Bonn'a inersen S-Bahn ile 15 dk, 3,80 €.",
+     "secenekler": [
+      {
+       "kalkis": "10:02",
+       "varis": "10:48",
+       "sure_dk": 46,
+       "aktarma": 1,
+       "tren": "RE3 + ICE 105",
+       "fiyat": 21.79
+      },
+      {
+       "kalkis": "11:02",
+       "varis": "11:45",
+       "sure_dk": 43,
+       "aktarma": 1,
+       "tren": "RE3 + ICE 1521",
+       "fiyat": 21.79
+      },
+      {
+       "kalkis": "00:02",
+       "varis": "00:33",
+       "sure_dk": 31,
+       "aktarma": 0,
+       "tren": "ICE 842",
+       "fiyat": 17.99
+      },
+      {
+       "kalkis": "00:32",
+       "varis": "01:21",
+       "sure_dk": 49,
+       "aktarma": 1,
+       "tren": "RE1 + ICE 209",
+       "fiyat": 10.79
+      }
+     ],
+     "secili": {
+      "kalkis": "10:02",
+      "varis": "10:48",
+      "sure_dk": 46,
+      "aktarma": 1,
+      "tren": "RE3 + ICE 105",
+      "fiyat": 21.79
+     }
     },
     {
      "ad": "Köln → Leverkusen (maça)",
@@ -208,8 +249,34 @@
      "nereye": "Düsseldorf Flughafen",
      "tarih": "2026-12-11",
      "saat": "09:30",
-     "fiyat": null,
-     "not": "ICE/RE ~30–55 dk."
+     "fiyat": 21.79,
+     "not": "ICE/RE ~30–55 dk.",
+     "secenekler": [
+      {
+       "kalkis": "10:14",
+       "varis": "10:52",
+       "sure_dk": 38,
+       "aktarma": 1,
+       "tren": "ICE 1022 + RE3",
+       "fiyat": 21.79
+      },
+      {
+       "kalkis": "00:14",
+       "varis": "01:02",
+       "sure_dk": 48,
+       "aktarma": 1,
+       "tren": "ICE 22 + RE6",
+       "fiyat": 10.79
+      }
+     ],
+     "secili": {
+      "kalkis": "10:14",
+      "varis": "10:52",
+      "sure_dk": 38,
+      "aktarma": 1,
+      "tren": "ICE 1022 + RE3",
+      "fiyat": 21.79
+     }
     }
    ],
    "sehir_ulasim": {
@@ -340,8 +407,8 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 132,
-     "transfer": 18,
+     "ucus": 139,
+     "transfer": 54,
      "otel": 176,
      "bilet": 50,
      "ulasim": 8,
@@ -350,7 +417,7 @@
     },
     "ucuz": {
      "ucus": 126,
-     "transfer": 18,
+     "transfer": 54,
      "otel": 125,
      "bilet": 50,
      "ulasim": 8,
@@ -439,8 +506,7 @@
      "ad": "Hilton Nicosia",
      "kategori": "pahali",
      "arama": "Hilton Nicosia",
-     "toplam": null,
-     "eski": true
+     "toplam": 333
     },
     {
      "ad": "Cleopatra Hotel",
