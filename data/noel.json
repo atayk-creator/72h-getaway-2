@@ -16,7 +16,8 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.19
+  "son_maliyet_usd": 0.19,
+  "zorla": true
  },
  "kaynaklar": [
   {
@@ -46,256 +47,6 @@
  ],
  "maclar": [
   {
-   "id": "munih",
-   "sehir": "Münih",
-   "ulke": "Almanya",
-   "etkinlik": "Christkindlmarkt",
-   "yer": "Marienplatz",
-   "pazar_bas": "2026-11-20",
-   "pazar_bit": "2026-12-24",
-   "pazar_yazi": "20 Kasım – 24 Aralık",
-   "pazar_saat": "10:00–21:00 (Pazar 20:00)",
-   "tarih": "2026-12-05",
-   "gidis": "2026-12-04",
-   "donus": "2026-12-06",
-   "plan": "Cuma sabah gidiş, Pazar akşam dönüş; 2 gece Münih, Altstadt'ta.",
-   "vize": "Schengen vizesi gerekir.",
-   "arama_ucus": [
-    "IST,SAW-MUC 2026-12-04 2026-12-06"
-   ],
-   "ucus_saat": "5-14",
-   "donus_min": "15:00",
-   "ozet": "Marienplatz'ın dev Noel ağacı, Residenz'deki avlu pazarı ve Englischer Garten'daki Chinesischer Turm pazarı: Bavyera Noeli tek hafta sonunda.",
-   "oteller": [
-    {
-     "ad": "Hotel Bayerischer Hof",
-     "kategori": "ikonik",
-     "arama": "Hotel Bayerischer Hof Munich",
-     "toplam": 3009
-    },
-    {
-     "ad": "Platzl Hotel",
-     "kategori": "pahali",
-     "arama": "Platzl Hotel Munich",
-     "toplam": 1865
-    },
-    {
-     "ad": "Louis Hotel",
-     "kategori": "pahali",
-     "arama": "Louis Hotel Munich Viktualienmarkt",
-     "toplam": 1512
-    },
-    {
-     "ad": "Hotel Torbräu",
-     "kategori": "konforlu",
-     "arama": "Hotel Torbräu Munich",
-     "toplam": 1094
-    },
-    {
-     "ad": "Mercure Hotel München Altstadt",
-     "kategori": "konforlu",
-     "arama": "Mercure Hotel München Altstadt",
-     "toplam": null,
-     "eski": true
-    },
-    {
-     "ad": "Hotel Blauer Bock",
-     "kategori": "konforlu",
-     "arama": "Hotel Blauer Bock Munich",
-     "toplam": null,
-     "eski": true
-    },
-    {
-     "ad": "Motel One München-Sendlinger Tor",
-     "kategori": "ucuz",
-     "arama": "Motel One München-Sendlinger Tor",
-     "toplam": null,
-     "eski": true
-    },
-    {
-     "ad": "Motel One München-Deutsches Museum",
-     "kategori": "ucuz",
-     "arama": "Motel One München-Deutsches Museum",
-     "toplam": 458
-    }
-   ],
-   "havalimani_ulasim": {
-    "fiyat": 29,
-    "yazi": "Havalimanı → Marienplatz: S1 ya da S8 ile ~40 dk. MVV tek bilet (M–5 bölgesi) tek yön ~14 €; gidiş-dönüş kişi başı ~29 € (tahmini, MVV uygulamasından teyit et)."
-   },
-   "sehir_ulasim": {
-    "fiyat": 12,
-    "yazi": "Altstadt yürünür; Englischer Garten ve Residenz için MVV günlük bilet (M bölgesi) yeterli."
-   },
-   "pazara": "Marienplatz, Residenz ve Viktualienmarkt pazarları birbirine 5–10 dk yürüme mesafesinde; Chinesischer Turm pazarına U3/U6 Giselastraße'den 15 dk yürüme.",
-   "akis": [
-    {
-     "gun": "Cuma 4 Aralık · varış",
-     "adimlar": [
-      [
-       "—",
-       "İstanbul → Münih",
-       "Uçuş saatini robot günceller"
-      ],
-      [
-       "",
-       "S-Bahn ile Marienplatz",
-       "~40 dk"
-      ],
-      [
-       "",
-       "Otele yerleş",
-       "Altstadt"
-      ],
-      [
-       "17:00",
-       "Christkindlmarkt – Marienplatz",
-       "Yeni Belediye Sarayı önünde dev ağaç"
-      ],
-      [
-       "20:00",
-       "Akşam yemeği",
-       "Bierhalle'de domuz paçası ya da Weißwurst"
-      ]
-     ]
-    },
-    {
-     "gun": "Cumartesi 5 Aralık · pazar günü",
-     "adimlar": [
-      [
-       "10:00",
-       "Viktualienmarkt",
-       "Açık hava gıda pazarı"
-      ],
-      [
-       "11:30",
-       "Frauenkirche ve St. Peter kulesi",
-       "Kuleden şehir manzarası"
-      ],
-      [
-       "13:30",
-       "Residenz avlu pazarı",
-       "Weihnachtsdorf im Kaiserhof"
-      ],
-      [
-       "16:00",
-       "Englischer Garten – Chinesischer Turm",
-       "Ahşap pagodanın altında pazar"
-      ],
-      [
-       "19:30",
-       "Akşam yemeği",
-       "Schwabing"
-      ]
-     ]
-    },
-    {
-     "gun": "Pazar 6 Aralık · dönüş",
-     "adimlar": [
-      [
-       "10:00",
-       "Kahvaltı, Mittelaltermarkt",
-       "Wittelsbacherplatz'ta Orta Çağ pazarı"
-      ],
-      [
-       "",
-       "Havalimanına",
-       "S1/S8"
-      ],
-      [
-       "",
-       "Münih → İstanbul",
-       "Uçuş saatini robot günceller"
-      ]
-     ]
-    }
-   ],
-   "yemek": [
-    [
-     "Bratwurst ve Glühwein, pazar standı",
-     "Ara",
-     "~9 €"
-    ],
-    [
-     "Viktualienmarkt'ta öğle",
-     "Öğle",
-     "~15 €"
-    ],
-    [
-     "Bierhalle (Augustiner, Hofbräuhaus)",
-     "Akşam",
-     "~28 €"
-    ],
-    [
-     "Kafe: Apfelstrudel + kahve",
-     "Ara",
-     "~9 €"
-    ]
-   ],
-   "gezi": [
-    "Marienplatz Noel pazarı (ücretsiz)",
-    "Residenz avlu pazarı (ücretsiz)",
-    "Chinesischer Turm pazarı (ücretsiz)",
-    "Frauenkirche (ücretsiz)",
-    "St. Peter kulesi (ücretli)",
-    "Viktualienmarkt (ücretsiz)"
-   ],
-   "butce": {
-    "konforlu": {
-     "ucus": 163,
-     "transfer": 29,
-     "otel": 547,
-     "ulasim": 12,
-     "yemek": 120,
-     "gezi": 15
-    },
-    "ucuz": {
-     "ucus": 163,
-     "transfer": 29,
-     "otel": 547,
-     "ulasim": 12,
-     "yemek": 85,
-     "gezi": 8
-    }
-   },
-   "secim": {},
-   "ucus": {
-    "oneri": {
-     "fiyat": 163,
-     "havayolu": "Pegasus",
-     "aktarma": 0,
-     "havalimani": "Münih (MUC)",
-     "gidis": "Cuma SAW 08:40 → MUC 09:25 (PC1019)",
-     "donus": "Pazar MUC 18:00 → SAW 22:40"
-    },
-    "secenekler": [
-     {
-      "fiyat": 163,
-      "havayolu": "Pegasus",
-      "havalimani": "Münih",
-      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 18:00 dönüş"
-     },
-     {
-      "fiyat": 179,
-      "havayolu": "AJet",
-      "havalimani": "Münih",
-      "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 13:40 dönüş"
-     },
-     {
-      "fiyat": 223,
-      "havayolu": "THY",
-      "havalimani": "Münih",
-      "not": "Cuma IST 10:30 → MUC 11:15"
-     }
-    ],
-    "seviye": "normal",
-    "normal_aralik": "120–255 €"
-   },
-   "foto": "/img/sehir/munih-noel.jpg",
-   "foto_alt": "Münih, Marienplatz'taki Noel pazarı, gece",
-   "foto_kaynak": "Unsplash · Daniel Seßler"
-  },
-  {
    "id": "nurnberg",
    "sehir": "Nürnberg",
    "ulke": "Almanya",
@@ -305,13 +56,13 @@
    "pazar_bit": "2026-12-24",
    "pazar_yazi": "27 Kasım – 24 Aralık",
    "pazar_saat": "10:00–21:00",
-   "tarih": "2026-12-12",
-   "gidis": "2026-12-11",
-   "donus": "2026-12-13",
+   "tarih": "2026-12-05",
+   "gidis": "2026-12-04",
+   "donus": "2026-12-06",
    "plan": "Cuma sabah gidiş, Pazar akşam dönüş; 2 gece Nürnberg, surların içinde.",
    "vize": "Schengen vizesi gerekir.",
    "arama_ucus": [
-    "IST,SAW-NUE 2026-12-11 2026-12-13"
+    "IST,SAW-NUE 2026-12-04 2026-12-06"
    ],
    "ucus_saat": "5-14",
    "donus_min": "15:00",
@@ -321,49 +72,49 @@
      "ad": "Le Méridien Grand Hotel Nürnberg",
      "kategori": "ikonik",
      "arama": "Le Meridien Grand Hotel Nuremberg",
-     "toplam": 580
+     "toplam": null
     },
     {
      "ad": "Sorat Hotel Saxx",
      "kategori": "pahali",
      "arama": "Sorat Hotel Saxx Nürnberg Hauptmarkt",
-     "toplam": 693
+     "toplam": null
     },
     {
      "ad": "Hotel Drei Raben",
      "kategori": "konforlu",
      "arama": "Hotel Drei Raben Nuremberg",
-     "toplam": 1354
+     "toplam": null
     },
     {
      "ad": "Hotel Victoria",
      "kategori": "konforlu",
      "arama": "Hotel Victoria Nürnberg",
-     "toplam": 644
+     "toplam": null
     },
     {
      "ad": "NH Collection Nürnberg City",
      "kategori": "konforlu",
      "arama": "NH Collection Nürnberg City",
-     "toplam": 485
+     "toplam": null
     },
     {
      "ad": "Motel One Nürnberg-Plärrer",
      "kategori": "ucuz",
      "arama": "Motel One Nürnberg-Plärrer",
-     "toplam": 390
+     "toplam": null
     },
     {
      "ad": "ibis Nürnberg Altstadt",
      "kategori": "ucuz",
      "arama": "ibis Nürnberg Altstadt",
-     "toplam": 439
+     "toplam": null
     },
     {
      "ad": "B&B Hotel Nürnberg-City",
      "kategori": "ucuz",
      "arama": "B&B Hotel Nürnberg-City",
-     "toplam": 479
+     "toplam": null
     }
    ],
    "havalimani_ulasim": {
@@ -377,7 +128,7 @@
    "pazara": "Hauptmarkt şehrin tam ortasında; Hauptbahnhof'tan Königstraße boyunca 10 dk yürüme. Yanında çocuklara özel Kinderweihnacht ve kardeş şehirler pazarı var.",
    "akis": [
     {
-     "gun": "Cuma 11 Aralık · varış",
+     "gun": "Cuma 4 Aralık · varış",
      "adimlar": [
       [
        "—",
@@ -407,7 +158,7 @@
      ]
     },
     {
-     "gun": "Cumartesi 12 Aralık · pazar günü",
+     "gun": "Cumartesi 5 Aralık · pazar günü",
      "adimlar": [
       [
        "10:00",
@@ -442,7 +193,7 @@
      ]
     },
     {
-     "gun": "Pazar 13 Aralık · dönüş",
+     "gun": "Pazar 6 Aralık · dönüş",
      "adimlar": [
       [
        "10:00",
@@ -510,10 +261,7 @@
      "gezi": 10
     }
    },
-   "secim": {
-    "konforlu": "NH Collection Nürnberg City",
-    "ucuz": "Motel One Nürnberg-Plärrer"
-   },
+   "secim": {},
    "ucus": {
     "oneri": {
      "fiyat": 277,
@@ -543,6 +291,259 @@
    "foto": "/img/sehir/nurnberg-noel.jpg",
    "foto_alt": "Nürnberg eski şehir ve St. Sebald kilisesi",
    "foto_kaynak": "Unsplash · Markus Spiske"
+  },
+  {
+   "id": "munih",
+   "sehir": "Münih",
+   "ulke": "Almanya",
+   "etkinlik": "Christkindlmarkt",
+   "yer": "Marienplatz",
+   "pazar_bas": "2026-11-20",
+   "pazar_bit": "2026-12-24",
+   "pazar_yazi": "20 Kasım – 211 Aralık",
+   "pazar_saat": "10:00–21:00 (Pazar 20:00)",
+   "tarih": "2026-12-12",
+   "gidis": "2026-12-11",
+   "donus": "2026-12-13",
+   "plan": "Cuma sabah gidiş, Pazar akşam dönüş; 2 gece Münih, Altstadt'ta.",
+   "vize": "Schengen vizesi gerekir.",
+   "arama_ucus": [
+    "IST,SAW-MUC 2026-12-11 2026-12-13"
+   ],
+   "ucus_saat": "5-14",
+   "donus_min": "15:00",
+   "ozet": "Marienplatz'ın dev Noel ağacı, Residenz'deki avlu pazarı ve Englischer Garten'daki Chinesischer Turm pazarı: Bavyera Noeli tek hafta sonunda.",
+   "oteller": [
+    {
+     "ad": "Hotel Bayerischer Hof",
+     "kategori": "ikonik",
+     "arama": "Hotel Bayerischer Hof Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Platzl Hotel",
+     "kategori": "pahali",
+     "arama": "Platzl Hotel Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Louis Hotel",
+     "kategori": "pahali",
+     "arama": "Louis Hotel Munich Viktualienmarkt",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Torbräu",
+     "kategori": "konforlu",
+     "arama": "Hotel Torbräu Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Mercure Hotel München Altstadt",
+     "kategori": "konforlu",
+     "arama": "Mercure Hotel München Altstadt",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Blauer Bock",
+     "kategori": "konforlu",
+     "arama": "Hotel Blauer Bock Munich",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One München-Sendlinger Tor",
+     "kategori": "ucuz",
+     "arama": "Motel One München-Sendlinger Tor",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One München-Deutsches Museum",
+     "kategori": "ucuz",
+     "arama": "Motel One München-Deutsches Museum",
+     "toplam": null
+    },
+    {
+     "ad": "ibis München City",
+     "kategori": "ucuz",
+     "arama": "ibis München City",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 29,
+    "yazi": "Havalimanı → Marienplatz: S1 ya da S8 ile ~40 dk. MVV tek bilet (M–5 bölgesi) tek yön ~14 €; gidiş-dönüş kişi başı ~29 € (tahmini, MVV uygulamasından teyit et)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 12,
+    "yazi": "Altstadt yürünür; Englischer Garten ve Residenz için MVV günlük bilet (M bölgesi) yeterli."
+   },
+   "pazara": "Marienplatz, Residenz ve Viktualienmarkt pazarları birbirine 5–10 dk yürüme mesafesinde; Chinesischer Turm pazarına U3/U6 Giselastraße'den 15 dk yürüme.",
+   "akis": [
+    {
+     "gun": "Cuma 11 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Münih",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "S-Bahn ile Marienplatz",
+       "~40 dk"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Altstadt"
+      ],
+      [
+       "17:00",
+       "Christkindlmarkt – Marienplatz",
+       "Yeni Belediye Sarayı önünde dev ağaç"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Bierhalle'de domuz paçası ya da Weißwurst"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 12 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Viktualienmarkt",
+       "Açık hava gıda pazarı"
+      ],
+      [
+       "11:30",
+       "Frauenkirche ve St. Peter kulesi",
+       "Kuleden şehir manzarası"
+      ],
+      [
+       "13:30",
+       "Residenz avlu pazarı",
+       "Weihnachtsdorf im Kaiserhof"
+      ],
+      [
+       "16:00",
+       "Englischer Garten – Chinesischer Turm",
+       "Ahşap pagodanın altında pazar"
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Schwabing"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 13 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Mittelaltermarkt",
+       "Wittelsbacherplatz'ta Orta Çağ pazarı"
+      ],
+      [
+       "",
+       "Havalimanına",
+       "S1/S8"
+      ],
+      [
+       "",
+       "Münih → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Bratwurst ve Glühwein, pazar standı",
+     "Ara",
+     "~9 €"
+    ],
+    [
+     "Viktualienmarkt'ta öğle",
+     "Öğle",
+     "~15 €"
+    ],
+    [
+     "Bierhalle (Augustiner, Hofbräuhaus)",
+     "Akşam",
+     "~28 €"
+    ],
+    [
+     "Kafe: Apfelstrudel + kahve",
+     "Ara",
+     "~9 €"
+    ]
+   ],
+   "gezi": [
+    "Marienplatz Noel pazarı (ücretsiz)",
+    "Residenz avlu pazarı (ücretsiz)",
+    "Chinesischer Turm pazarı (ücretsiz)",
+    "Frauenkirche (ücretsiz)",
+    "St. Peter kulesi (ücretli)",
+    "Viktualienmarkt (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 163,
+     "transfer": 29,
+     "otel": 0,
+     "ulasim": 12,
+     "yemek": 120,
+     "gezi": 15
+    },
+    "ucuz": {
+     "ucus": 163,
+     "transfer": 29,
+     "otel": 0,
+     "ulasim": 12,
+     "yemek": 85,
+     "gezi": 8
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": {
+     "fiyat": 163,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Münih (MUC)",
+     "gidis": "Cuma SAW 08:40 → MUC 09:25 (PC1019)",
+     "donus": "Pazar MUC 18:00 → SAW 22:40"
+    },
+    "secenekler": [
+     {
+      "fiyat": 163,
+      "havayolu": "Pegasus",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 18:00 dönüş"
+     },
+     {
+      "fiyat": 179,
+      "havayolu": "AJet",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 13:40 dönüş"
+     },
+     {
+      "fiyat": 223,
+      "havayolu": "THY",
+      "havalimani": "Münih",
+      "not": "Cuma IST 10:30 → MUC 11:15"
+     }
+    ],
+    "seviye": "normal",
+    "normal_aralik": "120–255 €"
+   },
+   "foto": "/img/sehir/munih-noel.jpg",
+   "foto_alt": "Münih, Marienplatz'taki Noel pazarı, gece",
+   "foto_kaynak": "Unsplash · Daniel Seßler"
   },
   {
    "id": "strazburg",
