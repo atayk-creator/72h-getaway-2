@@ -68,7 +68,9 @@ export function flightOptions(rows) {
 /** Maçı yeni fiyatlarla günceller; bulunamayan fiyat eskisini korur. Değişen kalemleri döndürür. */
 export function applyMatch(m, flightRows, hotelRows) {
   const log = [];
-  const opts = flightOptions(flightRows || []);
+  let opts = flightOptions(flightRows || []);
+  // Havalimanı tercihi (ör. CGN): o havalimanına uygun dönüşlü seçenek varsa yalnız onlar kullanılır (tren planı buna göre)
+  if (m.havalimani_tercih) { const t = opts.filter((o) => o.kod === m.havalimani_tercih && (!m.donus_min || (o.donusSaat && o.donusSaat >= m.donus_min))); if (t.length) opts = t; }
   if (opts.length) {
     const uniq = []; for (const o of opts) if (!uniq.some((u) => u.havayolu === o.havayolu && u.havalimani === o.havalimani)) uniq.push(o);
     const top = uniq.slice(0, 8).map(({ fiyat, havayolu, havalimani, not }) => ({ fiyat, havayolu, havalimani, not }));

@@ -421,7 +421,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 .st-chips span { background: rgba(251,246,236,0.16); border: 1px solid rgba(251,246,236,0.28); border-radius: 999px; padding: 5px 10px; font-size: 0.8rem; font-weight: 600; }
 .st-cta { display: block; text-align: center; min-height: 50px; line-height: 50px; border-radius: 14px; background: #F4A62A; color: #0F2A43; font-weight: 800; border: 0; font-size: 1rem; cursor: pointer; width: 100%; font-family: inherit; }
 .st-ph .fbt { background: repeating-linear-gradient(90deg, rgba(244,211,11,0.95) 0 34px, #0F2A43 34px 68px) top / 100% 38% no-repeat, radial-gradient(circle, rgba(244,211,11,0.28) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
-.story.takim .st-cta { background: #F4D30B; text-decoration: none; }
+.story.takim .st-cta { background: var(--tk-a, #F4D30B); color: var(--tk-b, #0F2A43); text-decoration: none; }
 .st-cr { font-size: 0.68rem; color: rgba(251,246,236,0.65); text-align: right; margin-top: -4px; }
 /* ---------- Şehirler listesi ---------- */
 .cgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 10px; }
@@ -823,7 +823,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 </main>
 
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json"; window.VITRIN_URL = "data/vitrin.json"; window.ONERI_URL = "data/oneriler.json"; window.STVIDEO_URL = "data/hikaye-video.json"; window.FB_URL = "data/fenerbahce.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json"; window.VITRIN_URL = "data/vitrin.json"; window.ONERI_URL = "data/oneriler.json"; window.STVIDEO_URL = "data/hikaye-video.json"; window.TEAMS_URL = "data/takimlar.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -928,7 +928,9 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     ["Üsküp","Kuzey Makedonya","Balkanlar",55,26,2,9],
     ["Tiran","Arnavutluk","Balkanlar",60,26,2,9],
     ["Priştine","Kosova","Balkanlar",55,26,2,8],
-    ["Linz","Avusturya","Deplasman",110,45,7,18,"est","Fenerbahçe deplasmanı için maç şehri (başkent değil)."]
+    ["Linz","Avusturya","Deplasman",110,45,7,18,"est","Deplasman maçı için maç şehri (başkent değil)."],
+    ["Köln","Almanya","Deplasman",130,55,8,20,"est","Deplasman maçı için konaklama şehri (Leverkusen'e 15 dk)."],
+    ["Lefkoşa","Güney Kıbrıs","Deplasman",95,45,5,12,"est","Deplasman maçı için maç şehri."]
   ].map(function (a) {
     return { n:a[0], c:a[1], r:a[2], h:a[3], f:a[4], t:a[5], a:a[6], s:a[7] || "est", note:a[8] || "",
              hotels:a[9] || null, restos:a[10] || null, places:a[11] || null, mac: a[2] === "Deplasman" };
@@ -1084,7 +1086,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
         var b = bFor(h.kategori), cat = LCAT[h.kategori] || LCAT.konforlu, tot = h.toplam + b.toplam, nm = A.sehir + ": " + h.ad + " + " + B.sehir + ": " + b.ad;
         var sel = A.secim.konforlu === h.ad && B.secim.konforlu === b.ad;
         return { t: cat.t, lvl: cat.lvl, name: escH(nm), label: escH(nm), p: Math.round(tot / 2), s: "live", src: "canli", vergi: "dahil",
-          desc: "1. gece " + escH(A.sehir) + " (" + escH(dShort.format(parseD(A.gece))) + ") " + nf.format(h.toplam) + " €, 2. gece " + escH(B.sehir) + " (" + escH(dShort.format(parseD(B.gece))) + ") " + nf.format(b.toplam) + " €; toplam ~" + nf.format(tot) + " €, vergiler dahil; " + escH(dShort.format(parseD(FBD.guncellendi))) + " günü Google'dan kontrol edildi." + (sel ? " Deplasman planındaki oteller." : ""),
+          desc: "1. gece " + escH(A.sehir) + " (" + escH(dShort.format(parseD(A.gece))) + ") " + nf.format(h.toplam) + " €, 2. gece " + escH(B.sehir) + " (" + escH(dShort.format(parseD(B.gece))) + ") " + nf.format(b.toplam) + " €; toplam ~" + nf.format(tot) + " €, vergiler dahil; " + escH(dShort.format(parseD(MACT.guncellendi))) + " günü Google'dan kontrol edildi." + (sel ? " Deplasman planındaki oteller." : ""),
           sc: "", sct: "Google puanı", live: true, badge: null, score: sel ? 4 : 3, q: h.arama || h.ad, priceKnown: true, ad: nm, sec: sel,
           lat: ctr0 ? ctr0.lat : undefined, lon: ctr0 ? ctr0.lon : undefined };
       });
@@ -1092,7 +1094,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     return m.oteller.slice().sort(function (a, b) { return KS.indexOf(a.kategori) - KS.indexOf(b.kategori) || a.toplam - b.toplam; }).map(function (h) {
       var cat = LCAT[h.kategori] || LCAT.konforlu, ctr = c.center || (c.places && c.places[0]) || null;
       return { t: cat.t, lvl: cat.lvl, name: escH(h.ad), label: escH(h.ad), p: Math.round(h.toplam / 2), s: "live", src: "canli",
-        desc: "Maç tarihleri (" + escH(weekendText(m.gidis, m.donus)) + ") için 2 gece toplam ~" + nf.format(h.toplam) + " €, vergiler dahil; " + escH(dShort.format(parseD(FBD.guncellendi))) + " günü Google'dan kontrol edildi." + (m.secim && m.secim.konforlu === h.ad ? " Deplasman planındaki otel." : ""),
+        desc: "Maç tarihleri (" + escH(weekendText(m.gidis, m.donus)) + ") için 2 gece toplam ~" + nf.format(h.toplam) + " €, vergiler dahil; " + escH(dShort.format(parseD(MACT.guncellendi))) + " günü Google'dan kontrol edildi." + (m.secim && m.secim.konforlu === h.ad ? " Deplasman planındaki otel." : ""),
         sc: "", sct: "Google puanı", live: true, badge: null, score: m.secim && m.secim.konforlu === h.ad ? 4 : 3, q: h.arama || h.ad, priceKnown: true, ad: h.ad, vergi: "dahil",
         lat: ctr ? ctr.lat : undefined, lon: ctr ? ctr.lon : undefined };
     });
@@ -1102,13 +1104,13 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var g = /([A-Z]{3}) (\d\d:\d\d) → ([A-Z]{3})/.exec(o.gidis || "") || [];
     var lv = { yuksek: "yuksek", dusuk: "dusuk", normal: "normal" }[m.ucus.seviye] || null, ar = /(\d+)\D+(\d+)/.exec(m.ucus.normal_aralik || "");
     return { p: o.fiyat, kind: "live", src: "canli", g: m.gidis, cikis: m.donus, exact: true, mac: true,
-      s: { fiyat: o.fiyat, havayolu: o.havayolu, aktarma: 0, kalkis: g[1] || "IST", varis: g[3] || "", ucusSaati: g[2] ? m.gidis + "T" + g[2] : "", kontrol: FBD.guncellendi,
+      s: { fiyat: o.fiyat, havayolu: o.havayolu, aktarma: 0, kalkis: g[1] || "IST", varis: g[3] || "", ucusSaati: g[2] ? m.gidis + "T" + g[2] : "", kontrol: MACT.guncellendi,
         fiyatSeviyesi: lv, tipikAralik: ar ? [+ar[1], +ar[2]] : null, link: "", gidisYazi: o.gidis, donusYazi: o.donus } };
   }
   function fbOpen(id) {
     var m = (FBD && FBD.maclar || []).filter(function (x) { return x.id === id; })[0]; if (!m) return;
     var i = idxOf(m.sehir); if (i < 0) return;
-    MAC = m; $("d1").value = m.gidis; $("d2").value = m.donus; datesAuto = false; addFlightUser = null;
+    MAC = m; MACT = FBD; $("d1").value = m.gidis; $("d2").value = m.donus; datesAuto = false; addFlightUser = null;
     $("city").value = i; resetCity();
     var hs = macHotels(D[i], m); hs.forEach(function (h, j) { if (h.sec || (m.secim && h.ad === m.secim.konforlu)) { hIdx = j; hDefault = false; } });
     render(); toBilet();
@@ -1479,8 +1481,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
         var sn = past ? "" : seasonNote(a, b); if (sn) msg += "<br>" + sn;
         if (MAC && isoD(a) === MAC.gidis && isoD(b) === MAC.donus && !past) {
           exact = true;
-          msg = "<b>Maç: " + escH(MAC.rakip) + " – " + escH(FBD.takim) + "</b> · " + escH(dLong.format(parseD(MAC.tarih))) + " " + escH(MAC.saat_tsi) + " TSİ · " + escH(MAC.stat) +
-            "<br><b>" + nights + " gece</b> · " + DAYS[a.getUTCDay()] + " → " + DAYS[b.getUTCDay()] + ". " + (MAC.plan ? escH(MAC.plan) + " " : "") + "Uçak ve otel bu maç tarihleri için kontrol edildi; maç bileti bütçede." + (FBD.bagimsiz ? '<br><span style="opacity:.75">' + escH(FBD.bagimsiz) + "</span>" : "");
+          msg = "<b>Maç: " + escH(MAC.rakip) + " – " + escH(MACT.takim) + "</b> · " + escH(dLong.format(parseD(MAC.tarih))) + " " + escH(MAC.saat_tsi) + " TSİ · " + escH(MAC.stat) +
+            "<br><b>" + nights + " gece</b> · " + DAYS[a.getUTCDay()] + " → " + DAYS[b.getUTCDay()] + ". " + (MAC.plan ? escH(MAC.plan) + " " : "") + "Uçak ve otel bu maç tarihleri için kontrol edildi; maç bileti bütçede." + (MACT.bagimsiz ? '<br><span style="opacity:.75">' + escH(MACT.bagimsiz) + "</span>" : "");
         }
       }
     } else { warn = true; msg = "Tarihleri seçince gece sayısı kendiliğinden hesaplanır. Şimdilik 2 gece."; a = b = null; }
@@ -1518,7 +1520,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     }
     var mm = macFor(c, o), mac = 0;
     if (mm) {
-      mac = (FBD.bilet && FBD.bilet.fiyat || 0) * o.ppl;
+      mac = (MACT.bilet && MACT.bilet.fiyat || 0) * o.ppl;
       var kb = mm.butce && mm.butce.konforlu || {};
       trans = ((kb.transfer || 0) + (kb.ulasim || 0)) * o.ppl; tp = null;
     }
@@ -2101,7 +2103,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var panel = r.t;
     if (r.t === "takvim" || (r.t === "sehirler" && r.slug)) {
       panel = "sehir";
-      TEAM = !!(r.slug && FBD && r.slug === FBD.slug) || (r.slug === "fenerbahce");
+      TEAM = r.slug && (TEAMS[r.slug] || /^(fenerbahce|galatasaray|besiktas)$/.test(r.slug)) ? r.slug : false;
+      if (TEAM && TEAMS[TEAM]) FBD = TEAMS[TEAM];
       if (r.slug && !TEAM) { var ci = cityFromParam(r.slug); if (ci >= 0) selectCity(ci); }
     } else TEAM = false;
     var changed = TAB !== panel + "|" + (r.slug || "") + "|" + r.t;
@@ -2114,7 +2117,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     if (panel === "karsilastir") swOpen();
     if (panel === "biletim") syncArrows();
     if (changed && !first) window.scrollTo(0, 0);
-    var titles = { kesfet: "Keşfet", sehirler: "Şehirler", sehir: TEAM ? "Fenerbahçe" : D[+$("city").value].n, karsilastir: "Karşılaştır", biletim: "Biletim" };
+    var titles = { kesfet: "Keşfet", sehirler: "Şehirler", sehir: TEAM ? (FBD && FBD.slug === TEAM ? FBD.takim : "Deplasman") : D[+$("city").value].n, karsilastir: "Karşılaştır", biletim: "Biletim" };
     document.title = titles[panel] + " · 72h Getaway";
   }
   window.addEventListener("hashchange", function () { route(); });
@@ -2143,31 +2146,35 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var per = stPeriod(), n = pool.length, start = (per.p * 6) % n, out = [];
     for (var j = 0; j < n && out.length < 6; j++) { var x = pool[(start + j) % n]; if (x.t != null) out.push(x); }
     out.sort(function (a, b) { return a.t - b.t; });
-    // Takım kartı (Fenerbahçe deplasmanı) şehirlerin arasına, 2. sıraya girer: takım bir şehir gibi
-    var fb = fbSlide(); if (fb) out.splice(Math.min(1, out.length), 0, fb);
+    // Takım kartları (deplasmanlar) şehirlerin arasına 2., 4., 6. sıraya girer: takım bir şehir gibi
+    TORDER.map(function (sl) { return teamSlide(TEAMS[sl]); }).filter(Boolean).sort(function (a, b) { return a.m.tarih < b.m.tarih ? -1 : 1; })
+      .forEach(function (x, j) { out.splice(Math.min(1 + j * 2, out.length), 0, x); });
     return { g: v.g, list: out, next: per.next };
   }
   // ---- Takım deplasman kartı (data/fenerbahce.json): sıradaki deplasman maçı, 2 kişi konforlu toplam
-  var FBD = null;
-  function fbSlide() {
-    if (!FBD || !Array.isArray(FBD.maclar)) return null;
-    var today = todayIst(), m = FBD.maclar.filter(function (x) { return x.tarih >= today; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; })[0];
-    if (!m || !m.butce || !m.butce.konforlu) return null;
+  // Takımlar (data/takimlar.json → data/<slug>.json). FBD: o an açık takım (takvim / maç modu).
+  var TEAMS = {}, TORDER = [], FBD = null, MACT = null;
+  function teamBg(t) { var c = (t && t.renk) || { a: "#F4D30B", b: "#0F2A43" }; return "background: repeating-linear-gradient(90deg, " + c.a + " 0 30px, " + c.b + " 30px 60px) top / 100% 55% no-repeat, radial-gradient(circle, " + c.a + "40 1.4px, transparent 1.5px) 0 0 / 16px 16px, " + c.b; }
+  function teamSlide(t) {
+    if (!t || !Array.isArray(t.maclar)) return null;
+    var today = todayIst(), l = t.maclar.filter(function (x) { return x.tarih >= today; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; }), m = l[0];
+    if (!m || !m.butce || !m.butce.konforlu || !m.butce.konforlu.ucus) return null;
     var e = 0; Object.keys(m.butce.konforlu).forEach(function (k) { if (typeof m.butce.konforlu[k] === "number") e += m.butce.konforlu[k]; });
-    return { takim: true, n: FBD.takim, m: m, t: e * DATA.eurTry, kalan: FBD.maclar.filter(function (x) { return x.tarih >= today; }).length };
+    return { takim: true, team: t, n: t.takim, m: m, t: e * DATA.eurTry, kalan: l.length };
   }
   function stTeam(x) {
     var m = x.m, o = m.ucus && m.ucus.oneri;
-    $("stPh").innerHTML = m.foto ? '<img src="' + escH(m.foto) + '" alt="" decoding="async">' : '<span class="fb fbt"></span>';
+    $("stPh").innerHTML = m.foto ? '<img src="' + escH(m.foto) + '" alt="" decoding="async">' : '<span class="fb fbt" style="' + teamBg(x.team) + '"></span>';
     var chips = [dTr(m.tarih) + " · " + m.saat_tsi + " TSİ", m.rakip + " – " + x.n + " · " + m.stat];
     if (o) chips.push(o.havayolu + " " + tl(Math.round(o.fiyat * DATA.eurTry / 100) * 100) + "'den, " + (o.aktarma === 0 ? "aktarmasız" : "aktarmalı"));
     if (x.kalan > 1) chips.push(x.kalan + " deplasman kaldı");
-    $("story").setAttribute("aria-label", "Bu haftanın 6 şehri, " + (ST.k + 1) + ". kart: " + x.n + " deplasmanı, " + m.sehir);
-    $("stBot").innerHTML = '<span class="st-eb">' + escH(upTr(x.n) + " DEPLASMANI · " + upTr(m.sehir) + " · 72 SAAT") + "</span>" +
-      '<h2 class="st-h">' + escH("Sıradaki deplasman: " + m.sehir) + "</h2>" +
+    var ms = m.mac_sehri || m.sehir;
+    $("story").setAttribute("aria-label", "Bu haftanın 6 şehri, " + (ST.k + 1) + ". kart: " + x.n + " deplasmanı, " + ms);
+    $("stBot").innerHTML = '<span class="st-eb">' + escH(upTr(x.n) + " DEPLASMANI · " + upTr(ms) + " · 72 SAAT") + "</span>" +
+      '<h2 class="st-h">' + escH("Sıradaki deplasman: " + ms) + "</h2>" +
       '<div class="st-pr"><b>~' + tl(Math.round(x.t * 2 / 100) * 100) + "</b><span>2 kişi toplam · kişi başı ~" + tl(Math.round(x.t / 100) * 100) + " · uçak + otel + maç bileti + yemek</span></div>" +
       '<div class="st-chips">' + chips.map(function (c) { return "<span>" + escH(c) + "</span>"; }).join("") + "</div>" +
-      '<a class="st-cta" id="stCta" href="#takvim/' + escH(FBD.slug) + '">' + escH(x.n) + " maç takvimi ve planı</a>" +
+      '<a class="st-cta" id="stCta" href="#takvim/' + escH(x.team.slug) + '">' + escH(x.n) + " maç takvimi ve planı</a>" +
       (m.foto ? '<span class="st-cr">Görüntü: ' + escH(m.foto_kaynak || "Pexels") + "</span>" : "");
   }
   function dTr(s) { var d = parseD(s), ay = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"], g = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]; return d.getUTCDate() + " " + ay[d.getUTCMonth()] + " " + g[d.getUTCDay()]; }
@@ -2190,6 +2197,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var n = ST.list.length; ST.k = ((k % n) + n) % n;
     var x = ST.list[ST.k];
     $("story").classList.toggle("takim", !!x.takim);
+    if (x.takim) { var sc = $("story").style; sc.setProperty("--tk-a", x.team.renk ? x.team.renk.a : "#F4D30B"); sc.setProperty("--tk-b", x.team.renk ? x.team.renk.b : "#0F2A43"); }
     if (x.takim) {
       var bt = $("stBars").children;
       for (var q = 0; q < bt.length; q++) bt[q].className = q < ST.k ? "done" : "";
@@ -2233,7 +2241,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var vid = $("stPh") && $("stPh").querySelector("video"); if (!vid) return;
     if (ST.paused || ST.hold) vid.pause(); else { var p = vid.play(); if (p && p.catch) p.catch(function () {}); }
   }
-  function stOpenCity() { var x = ST.list && ST.list[ST.k]; if (x && x.takim) { go("#takvim/" + FBD.slug); return; } if (x) { selectCity(x.i); go("#takvim/" + liveSlug(x.n)); } }
+  function stOpenCity() { var x = ST.list && ST.list[ST.k]; if (x && x.takim) { go("#takvim/" + x.team.slug); return; } if (x) { selectCity(x.i); go("#takvim/" + liveSlug(x.n)); } }
   function stApply() { $("story").classList.toggle("paused", ST.paused || ST.hold); stVideoSync(); }
   function stHold(h) { ST.hold = h; stApply(); }
   function stResume() { ST.hold = document.hidden; stApply(); }
@@ -2280,25 +2288,27 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
         (k ? '<span class="on">' + k + " öneri</span>" : "") +
         '<span class="bt"><b>' + escH(x.c.n) + "</b><span>" + line + "</span></span></a>";
     }).join("");
-    // Takım bir şehir gibi: Fenerbahçe kartı, alfabetik yerine (F)
-    var tm = fbNext();
-    if (tm) {
-      var card = '<a class="ccard" href="#sehirler/' + escH(FBD.slug) + '"><span class="fb fbt"></span><span class="tk">Deplasman</span>' +
-        '<span class="bt"><b>' + escH(FBD.takim) + "</b><span>sıradaki " + escH(weekendText(tm.gidis, tm.donus)) + " · " + escH(tm.sehir) + " · ~" + tl(fbUO(tm) * o.rate) + " 2 kişi</span></span></a>";
+    // Takımlar bir şehir gibi: her takımın kartı alfabetik yerine
+    TORDER.forEach(function (sl) {
+      var T = TEAMS[sl], tm = teamNext(T); if (!tm) return;
+      var card = '<a class="ccard" href="#sehirler/' + escH(T.slug) + '"><span class="fb fbt" style="' + teamBg(T) + '"></span><span class="tk" style="background:' + escH(T.renk ? T.renk.a : "#F4D30B") + ";color:" + escH(T.renk ? T.renk.b : "#0F2A43") + '">Deplasman</span>' +
+        '<span class="bt"><b>' + escH(T.takim) + "</b><span>sıradaki " + escH(weekendText(tm.gidis, tm.donus)) + " · " + escH(tm.mac_sehri || tm.sehir) + (fbUO(tm) ? " · ~" + tl(fbUO(tm) * o.rate) + " 2 kişi" : "") + "</span></span></a>";
       var cards = g.querySelectorAll(".ccard"), at = null;
-      for (var q = 0; q < cards.length; q++) { var nm = cards[q].querySelector("b").textContent; if (nm.localeCompare(FBD.takim, "tr") > 0) { at = cards[q]; break; } }
+      for (var q = 0; q < cards.length; q++) { var nm = cards[q].querySelector("b").textContent; if (nm.localeCompare(T.takim, "tr") > 0) { at = cards[q]; break; } }
       if (at) at.insertAdjacentHTML("beforebegin", card); else g.insertAdjacentHTML("beforeend", card);
-    }
+    });
   }
   // ---- Takım (Fenerbahçe) yardımcıları: maçlar hafta sonu gibi; ölçü = 2 kişi uçak + 2 gece konforlu otel (EUR)
+  function teamList(T) { var t = todayIst(); return T && Array.isArray(T.maclar) ? T.maclar.filter(function (m) { return m.tarih >= t; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; }) : []; }
+  function teamNext(T) { return teamList(T)[0] || null; }
   function fbList() { var t = todayIst(); return FBD && Array.isArray(FBD.maclar) ? FBD.maclar.filter(function (m) { return m.tarih >= t; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; }) : []; }
   function fbNext() { return fbList()[0] || null; }
   function fbUO(m) { var k = m.butce && m.butce.konforlu || {}; return 2 * ((k.ucus || 0) + (k.otel || 0)); }
   function renderTeam() {
     var o = lastO || inputs(), r = function (eur) { return tl(eur * o.rate); };
-    var ph = $("cvPh"), f0 = (fbList()[0] || {}).foto, key = f0 || "fbt";
-    if (ph.dataset.src !== key) { ph.dataset.src = key; ph.innerHTML = f0 ? '<img src="' + escH(f0.replace(/\.jpg$/, "-640.jpg")) + '" srcset="' + escH(f0.replace(/\.jpg$/, "-640.jpg")) + " 640w, " + escH(f0) + ' 1600w" sizes="100vw" alt="">' : '<span class="fb fbt"></span>'; }
-    $("cvName").textContent = FBD ? FBD.takim : "Fenerbahçe";
+    var ph = $("cvPh"), f0 = (fbList()[0] || {}).foto, key = (f0 || "fbt") + (FBD ? FBD.slug : "");
+    if (ph.dataset.src !== key) { ph.dataset.src = key; ph.innerHTML = f0 ? '<img src="' + escH(f0.replace(/\.jpg$/, "-640.jpg")) + '" srcset="' + escH(f0.replace(/\.jpg$/, "-640.jpg")) + " 640w, " + escH(f0) + ' 1600w" sizes="100vw" alt="">' : '<span class="fb fbt" style="' + teamBg(FBD) + '"></span>'; }
+    $("cvName").textContent = FBD ? FBD.takim : "Deplasman";
     $("cvSub").textContent = "Deplasmanlar · uçak + otel · 2 kişi · 2 gece";
     var l = fbList();
     if (!l.length) { $("cvSum").innerHTML = ""; $("cvList").innerHTML = '<p class="cv-note">' + (FBD ? "Yaklaşan deplasman maçı yok." : "Maçlar yükleniyor…") + "</p>"; $("cvNote").textContent = ""; $("oneriSec").hidden = true; $("cvGo").textContent = "Deplasman planını gör"; return; }
@@ -2311,7 +2321,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       var f = med ? Math.round((fbUO(m) - med) / med * 100) : 0, e = f <= -10 ? "ucuz" : f >= 10 ? "pahali" : "normal";
       var chip = m === lo && l.length > 1 ? '<span class="etk ucuz">En uygun' + (f < 0 ? " · −%" + Math.abs(f) : "") + "</span>" : etkHtml({ etiket: e, fark: f });
       return '<button type="button" role="listitem" class="cv-row' + (k === 0 ? " sel" : "") + '" data-id="' + escH(m.id) + '" aria-label="' + escH(weekendText(m.gidis, m.donus) + ", " + m.sehir + ", " + m.rakip + " maçı, 2 kişi " + r(fbUO(m)) + ". Deplasman planını gör") + '">' +
-        '<span class="d">' + escH(wkShort(m.gidis, m.donus)) + '<span class="mc">' + escH(m.sehir) + "</span></span><span>" + chip + '</span><span class="pr">' + r(fbUO(m)) + "</span></button>";
+        '<span class="d">' + escH(wkShort(m.gidis, m.donus)) + '<span class="mc">' + escH(m.mac_sehri || m.sehir) + "</span></span><span>" + chip + '</span><span class="pr">' + r(fbUO(m)) + "</span></button>";
     }).join("");
     $("cvList").querySelectorAll(".cv-row").forEach(function (b) { b.addEventListener("click", function () { fbOpen(b.dataset.id); }); });
     $("cvNote").textContent = "Her satır bir deplasman: 2 kişinin gidiş-dönüş uçağı ve 2 gece önerilen otel toplamı, maç gününe göre seçilmiş uçuşlarla. Etiket maçların ortanca fiyatına göre. Bir maça dokun; maç bileti, yemek ve gezi dahil tam bütçe Biletim'de hesaplansın." + (FBD && FBD.bagimsiz ? " " + FBD.bagimsiz : "");
@@ -2504,7 +2514,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       { l: "Ulaşım + gezi", v: tl((k.trans + k.act) * o.rate), d: tix ? k.tickets.n + " yer, " + (k.tp ? "toplu taşıma" : "şehir içi") : (k.tp ? "toplu taşıma" : "şehir içi ulaşım"), t: tix ? "Resmî" : "Tahmini" }
     ];
     var mm2 = macFor(c, o);
-    if (mm2 && k.mac) items.push({ l: "Maç bileti", v: tl(k.mac * o.rate), d: mm2.rakip + " – " + FBD.takim + " · " + mm2.stat, t: "Resmî", w: 1 });
+    if (mm2 && k.mac) items.push({ l: "Maç bileti", v: tl(k.mac * o.rate), d: mm2.rakip + " – " + MACT.takim + " · " + mm2.stat, t: "Resmî", w: 1 });
     // Fiyatın tarihi ve kaynağı (marka rehberi: biniş kartında her zaman yazar)
     var srcDate = (flyLive && s && s.kontrol) || (FLY && FLY.guncellendi) || "", kaynak = [];
     if (flyLive) kaynak.push("GOOGLE FLIGHTS"); if (hotLive) kaynak.push("BOOKING"); if (tix) kaynak.push("RESMÎ");
@@ -2905,7 +2915,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     fixHotelIdx(hotelsOf(c0)); fixRestoIdx(restosOf(c0));
     var c = c0, hs = hotelsOf(c), rs = restosOf(c), k = cost(c, o, hIdx, rIdx, true), total = k.sum * o.rate, noFly = k.sum - k.fly;
     renderFlight(c, o, k); $("rAir").textContent = k.fly ? "uçak dahil" : "uçak hariç";
-    $("rCity").textContent = macFor(c, o) ? MAC.rakip + " – " + FBD.takim + " · " + c.n : c.n + ", " + c.c; chipEl($("rChip"), cityStatus(c, o, k));
+    $("rCity").textContent = macFor(c, o) ? MAC.rakip + " – " + MACT.takim + " · " + c.n : c.n + ", " + c.c; chipEl($("rChip"), cityStatus(c, o, k));
     var h = hs[hIdx], r = rs[rIdx], notes = resultNotes(c, o, k, h), warn = $("rWarn");
     warn.hidden = !notes.length;
     warn.innerHTML = notes.map(function (t) { return "<p>" + escH(t) + "</p>"; }).join("");
@@ -3036,9 +3046,12 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       if (d && d.sehirler) { VITRIN = d; render(); }
     }).catch(function () {});
   }
-  if (window.FB_URL && window.fetch) {
-    fetch(window.FB_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (d && Array.isArray(d.maclar)) { FBD = d; render(); if (TEAM) renderTeam(); if (TAB && TAB.indexOf("sehirler") === 0) renderCities(); }
+  if (window.TEAMS_URL && window.fetch) {
+    var jget = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
+    jget(window.TEAMS_URL).then(function (l) { return Promise.all(((l && l.takimlar) || []).map(function (sl) { return jget("data/" + sl + ".json"); })); }).then(function (ds) {
+      ds.forEach(function (d) { if (d && d.slug && Array.isArray(d.maclar)) { TEAMS[d.slug] = d; TORDER.push(d.slug); } });
+      if (TEAM && TEAMS[TEAM]) FBD = TEAMS[TEAM];
+      if (TORDER.length) { render(); if (TEAM) renderTeam(); if (TAB && TAB.indexOf("sehirler") === 0) renderCities(); }
     }).catch(function () {});
   }
   if (window.GEZI_URL && window.fetch) {

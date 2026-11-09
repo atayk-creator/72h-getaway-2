@@ -58,7 +58,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     const k = kalan(today, m.tarih);
     return `<a class="mk${i === 0 ? " ilk" : ""}" href="#${esc(m.id)}">
       <span class="mk-eb">${i === 0 ? "SIRADAKİ · " : ""}${esc(m.hafta)}. HAFTA</span>
-      <b class="mk-s">${esc(m.sehir)}</b>
+      <b class="mk-s">${esc(m.mac_sehri || m.sehir)}</b>
       <span class="mk-r">${esc(m.rakip)} – ${esc(team.takim)}</span>
       <span class="mk-t">${esc(tarihKisa(m.tarih))} ${esc(gunAd(m.tarih))} · ${esc(m.saat_tsi)} TSİ${k >= 0 ? ` · ${k === 0 ? "bugün" : k + " gün kaldı"}` : ""}</span>
       <span class="mk-p">~${esc(tl(toplam(m.butce.konforlu) * 2))}</span><span class="mk-ps">2 kişi toplam · her şey dahil</span>
@@ -84,7 +84,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
       }).join("");
       return (g.baslik ? `<h4 class="gece">${esc(g.baslik)}${g.tarih ? ` <span class="muted">· ${esc(tarihKisa(g.tarih))} ${esc(gunAd(g.tarih))}</span>` : ""}</h4>` : "") + (g.not ? `<p class="secim">${esc(g.not)}</p>` : "") + `<ul class="rows">${l}</ul>`;
     }).join("");
-    const trenler = (m.trenler || []).map((t) => { const c = t.secili || {}; return `<div class="card${t === m.trenler[0] ? "" : ""}"><h4>${esc(t.ad)}</h4><div class="p sm">${esc(tl(t.fiyat))} <span class="eur">(${esc(String(t.fiyat.toFixed(2)).replace(".", ","))} €)</span></div><p><b>${esc(tarihKisa(t.tarih))} ${esc(gunAd(t.tarih))} · ${esc(c.kalkis || t.saat)} → ${esc(c.varis || "")}</b> · ${esc(c.tren || "")}${c.aktarma ? ` · ${c.aktarma} aktarma` : " · aktarmasız"} · ${esc(String(c.sure_dk || ""))} dk</p>${t.not ? `<p class="muted">${esc(t.not)}</p>` : ""}${(t.secenekler || []).length > 1 ? `<details><summary>Diğer seferler</summary><ul class="rows">${t.secenekler.map((x) => `<li><span>${esc(x.kalkis)} → ${esc(x.varis)} · ${esc(x.tren)}${x.aktarma ? ` · ${x.aktarma} aktarma` : ""}</span><span class="r">${esc(String(x.fiyat.toFixed(2)).replace(".", ","))} €</span></li>`).join("")}</ul></details>` : ""}</div>`; }).join("");
+    const trenler = (m.trenler || []).map((t) => { const c = t.secili || {}; return `<div class="card${t === m.trenler[0] ? "" : ""}"><h4>${esc(t.ad)}</h4><div class="p sm">${typeof t.fiyat === "number" ? `${esc(tl(t.fiyat))} <span class="eur">(${esc(t.fiyat.toFixed(2).replace(".", ","))} €)</span>` : "fiyat bekleniyor"}</div><p><b>${esc(tarihKisa(t.tarih))} ${esc(gunAd(t.tarih))} · ${esc(c.kalkis || t.saat)} → ${esc(c.varis || "")}</b> · ${esc(c.tren || "")}${c.aktarma ? ` · ${c.aktarma} aktarma` : " · aktarmasız"} · ${esc(String(c.sure_dk || ""))} dk</p>${t.not ? `<p class="muted">${esc(t.not)}</p>` : ""}${(t.secenekler || []).length > 1 ? `<details><summary>Diğer seferler</summary><ul class="rows">${t.secenekler.map((x) => `<li><span>${esc(x.kalkis)} → ${esc(x.varis)} · ${esc(x.tren)}${x.aktarma ? ` · ${x.aktarma} aktarma` : ""}</span><span class="r">${typeof x.fiyat === "number" ? esc(x.fiyat.toFixed(2).replace(".", ",")) + " €" : "—"}</span></li>`).join("")}</ul></details>` : ""}</div>`; }).join("");
     const yemek = (m.yemek || []).map(([ad, ne, f]) => `<li><span><b>${esc(ad)}</b><small>${esc(ne)}</small></span><span class="r">${esc(f)}</span></li>`).join("");
     const ulasim = [
       m.trenler ? null : m.araba ? ["Viyana'dan arabayla", `~${tl(m.araba.toplam)} araç başı`, m.araba.yazi] : m.havalimani_ulasim ? ["Havalimanından şehre", m.havalimani_ulasim.fiyat ? `~${tl(m.havalimani_ulasim.fiyat)} kişi başı` : "turist kartına dahil", m.havalimani_ulasim.yazi] : null,
@@ -99,7 +99,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
       <div class="bn">
         <span class="eb">${esc(m.hafta)}. HAFTA · ${esc(m.sehir.toLocaleUpperCase("tr"))} · 72 SAAT</span>
         <h2>${esc(m.rakip)} – ${esc(team.takim)}</h2>
-        <p>${esc(tarihUzun(m.tarih))} · ${esc(m.saat_tsi)} TSİ (yerel ${esc(m.saat_yerel)}) · ${esc(m.stat)}</p>
+        <p>${esc(tarihUzun(m.tarih))} · ${esc(m.saat_tsi)} TSİ (yerel ${esc(m.saat_yerel)}) · ${esc(m.stat)}${m.mac_sehri ? ", " + esc(m.mac_sehri) : ""}</p>
       </div>
       ${m.foto ? `<span class="cr">Görüntü: ${esc(m.foto_kaynak || "Pexels")}</span>` : ""}
     </div>
@@ -120,6 +120,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
       <div class="bar" role="img" aria-label="Bütçe dağılımı">${bar}</div>
       <ul class="kalem">${kalemler}<li class="top"><b>Kişi başı toplam</b><span class="r">~${para(tk, eurTry)}</span></li></ul>
       <div class="chips">${seviye}<span class="etk vize">${esc(m.vize)}</span></div>
+      ${m.dikkat ? `<p class="dikkat"><b>Dikkat:</b> ${esc(m.dikkat)}</p>` : ""}
     </div>
 
     <h3>72 saatin akışı</h3>
@@ -138,7 +139,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 
     <h3>Maç bileti</h3>
     <div class="grid2">
-      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~${para(team.bilet.fiyat, eurTry)}</div><p>Deplasman tribünü, Fenerbahçe'nin satışı üzerinden. UEFA tavanı uygulanır.</p></div>
+      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~${para(team.bilet.fiyat, eurTry)}</div><p>Deplasman tribünü, ${esc(team.takim)} kulübünün satışı üzerinden. UEFA tavanı uygulanır.</p></div>
       <div class="card"><h4>İkinci el siteler</h4><div class="p sm">~90 €'dan başlıyor</div><p>Pahalı ve deplasman tribünü garanti değil; önermiyoruz.</p></div>
     </div>
 
@@ -161,7 +162,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   const secOtel = (m) => { const a = secimAd(m); return a ? { ad: a } : null; };
   const standart = !ilk ? "" : `
   <section>
-    <h2>Sıradaki maç: ${esc(aralikTr(ilk.gidis, ilk.donus))} · ${esc(ilk.sehir)}</h2>
+    <h2>Sıradaki maç: ${esc(aralikTr(ilk.gidis, ilk.donus))} · ${esc(ilk.mac_sehri || ilk.sehir)}</h2>
     <p class="lead">${esc(ilk.rakip)} – ${esc(team.takim)}, ${esc(tarihUzun(ilk.tarih))} ${esc(ilk.saat_tsi)} TSİ. Fiyatlar ${esc(tarihUzun(team.guncellendi))} tarihli robot kontrolüne göre; 2 gece, 2 kişi.</p>
     <div class="sum">
       <div class="muted">${esc(aralikTr(ilk.gidis, ilk.donus))} · 2 kişi · uçak + önerilen otel</div>
@@ -177,11 +178,11 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     <h2>Hangi maça gitmeli?</h2>
     <p class="lead">Kalan deplasmanlar, hafta sonu takvimi gibi: 2 kişi uçak + önerilen otel (2 gece). Etiket maçların ortanca fiyatına göre: %10 altındaysa Fırsat, %10 üstündeyse Pahalı.</p>
     <div class="tri">
-      <div><span class="muted">Sıradaki · ${esc(ilk.sehir)}</span><b>${esc(tl(ucakOtel(ilk)))}</b></div>
-      <div class="iyi"><span class="muted">En uygun · ${esc(lo.sehir)}</span><b>${esc(tl(ucakOtel(lo)))}</b></div>
-      <div><span class="muted">En pahalı · ${esc(hi.sehir)}</span><b>${esc(tl(ucakOtel(hi)))}</b></div>
+      <div><span class="muted">Sıradaki · ${esc(ilk.mac_sehri || ilk.sehir)}</span><b>${esc(tl(ucakOtel(ilk)))}</b></div>
+      <div class="iyi"><span class="muted">En uygun · ${esc(lo.mac_sehri || lo.sehir)}</span><b>${esc(tl(ucakOtel(lo)))}</b></div>
+      <div><span class="muted">En pahalı · ${esc(hi.mac_sehri || hi.sehir)}</span><b>${esc(tl(ucakOtel(hi)))}</b></div>
     </div>
-    <ul class="rows">${list.map((m, i) => `<li><span><a href="#${esc(m.id)}"><b>${esc(aralikTr(m.gidis, m.donus))}</b></a> · ${esc(m.sehir)} <span class="etk ${m === lo && list.length > 1 ? "ucuz" : etk[i].etiket}">${m === lo && list.length > 1 ? "En uygun" : ETK[etk[i].etiket]}${etk[i].fark && etk[i].etiket !== "normal" ? ` · ${etk[i].fark > 0 ? "+" : "−"}%${Math.abs(etk[i].fark)}` : ""}</span><small>${esc(m.rakip)} · ${esc(tarihKisa(m.tarih))} ${esc(m.saat_tsi)} TSİ</small></span><span class="r${m === lo ? " best" : ""}">${para(ucakOtel(m), eurTry)}</span></li>`).join("")}</ul>
+    <ul class="rows">${list.map((m, i) => `<li><span><a href="#${esc(m.id)}"><b>${esc(aralikTr(m.gidis, m.donus))}</b></a> · ${esc(m.mac_sehri || m.sehir)} <span class="etk ${m === lo && list.length > 1 ? "ucuz" : etk[i].etiket}">${m === lo && list.length > 1 ? "En uygun" : ETK[etk[i].etiket]}${etk[i].fark && etk[i].etiket !== "normal" ? ` · ${etk[i].fark > 0 ? "+" : "−"}%${Math.abs(etk[i].fark)}` : ""}</span><small>${esc(m.rakip)} · ${esc(tarihKisa(m.tarih))} ${esc(m.saat_tsi)} TSİ</small></span><span class="r${m === lo ? " best" : ""}">${para(ucakOtel(m), eurTry)}</span></li>`).join("")}</ul>
   </section>
   <section>
     <h2>Otel, 2 gece</h2>
@@ -195,12 +196,16 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   </section>
   <section><h2>Maç maç 72 saat</h2><p class="lead">Her deplasman için gün gün akış, bütün uçuş ve otel seçenekleri, maç bileti, ulaşım ve yemek.</p></section>`;
 
+  const rk = team.renk || { a: "#F4D30B", b: "#0F2A43" };
+  // --tk-c: açık zeminde görünen vurgu rengi (beyaz takım rengi kenarlıkta görünmez, o zaman ikinci renk)
+  const acik = (h) => { const n = parseInt(h.slice(1), 16); return ((n >> 16) * 299 + ((n >> 8) & 255) * 587 + (n & 255) * 114) / 1000 > 200; };
   const css = `<style>
-.fbbar { height: 8px; background: repeating-linear-gradient(90deg, #F4D30B 0 28px, #0F2A43 28px 56px); }
+:root { --tk-a: ${rk.a}; --tk-b: ${rk.b}; --tk-c: ${acik(rk.a) ? rk.b : rk.a}; --tk-ink: ${acik(rk.a) ? "#FFFFFF" : rk.a}; }
+.fbbar { height: 8px; background: repeating-linear-gradient(90deg, var(--tk-a) 0 28px, var(--tk-b) 28px 56px); }
 .mks { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 1fr); gap: 10px; overflow-x: auto; margin: 18px -16px 0; padding: 0 16px 6px; scroll-snap-type: x mandatory; }
 .mk { scroll-snap-align: start; display: grid; gap: 2px; text-decoration: none; color: #FBF6EC; background: rgba(251,246,236,0.07); border: 1.5px solid rgba(251,246,236,0.18); border-radius: 16px; padding: 12px 14px; }
-.mk.ilk { background: #F4D30B; color: #0F2A43; border-color: #F4D30B; }
-.mk:hover { border-color: #F4D30B; }
+.mk.ilk { background: var(--tk-a); color: var(--tk-b); border-color: var(--tk-a); }
+.mk:hover { border-color: var(--tk-a); }
 .mk-eb { font: 700 0.68rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.12em; opacity: .85; }
 .mk-s { font-size: 1.35rem; letter-spacing: -0.01em; }
 .mk-r, .mk-t, .mk-ps { font-size: 0.82rem; opacity: .9; }
@@ -215,9 +220,9 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 .banner { position: relative; border-radius: 18px; overflow: hidden; min-height: 230px; display: flex; align-items: flex-end; background: #0F2A43; color: #FBF6EC; }
 .banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 25%, rgba(10,31,51,0.92)); }
-.banner.cizgi { background: repeating-linear-gradient(90deg, #F4D30B 0 34px, #0F2A43 34px 68px) top / 100% 45% no-repeat, #0F2A43; }
+.banner.cizgi { background: repeating-linear-gradient(90deg, var(--tk-a) 0 34px, var(--tk-b) 34px 68px) top / 100% 45% no-repeat, var(--tk-b); }
 .bn { position: relative; z-index: 1; padding: 16px 18px; }
-.bn .eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.14em; color: #F4D30B; }
+.bn .eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.14em; color: var(--tk-ink); }
 .bn h2 { font-size: clamp(1.4rem, 5vw, 2rem); margin: 4px 0; line-height: 1.1; }
 .bn p { margin: 0; color: #D5DEE8; font-size: 0.92rem; }
 .banner .cr { position: absolute; right: 8px; top: 8px; z-index: 1; font-size: 0.7rem; background: rgba(10,31,51,0.7); padding: 2px 8px; border-radius: 999px; }
@@ -242,16 +247,17 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 .gun ol { list-style: none; margin: 8px 0 0 4px; padding: 0; border-left: 2px solid var(--line); }
 .gun li { display: grid; grid-template-columns: 50px 1fr; gap: 8px; padding: 5px 0 5px 14px; position: relative; }
 .gun li::before { content: ""; position: absolute; left: -7px; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--surface); border: 2px solid var(--muted); }
-.gun li.mac-an::before { background: #F4D30B; border-color: #0F2A43; width: 10px; height: 10px; left: -8px; }
-.gun li.mac-an b { background: #F4D30B; color: #0F2A43; border-radius: 6px; padding: 1px 6px; }
+.gun li.mac-an::before { background: var(--tk-a); border-color: var(--tk-b); width: 10px; height: 10px; left: -8px; }
+.gun li.mac-an b { background: var(--tk-a); color: var(--tk-b); box-shadow: 0 0 0 1px var(--tk-b); border-radius: 6px; padding: 1px 6px; }
 .gun time { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); }
-.secim { background: var(--surface); border-left: 4px solid #F4D30B; border-radius: 8px; padding: 8px 12px; margin: 0 0 10px; }
+.secim { background: var(--surface); border-left: 4px solid var(--tk-c); border-radius: 8px; padding: 8px 12px; margin: 0 0 10px; }
 .rows li.sec { background: var(--pick); }
 .rows .r { white-space: nowrap; }
-.tag { font-style: normal; font-size: 0.72rem; font-weight: 800; background: #0F2A43; color: #F4D30B; border-radius: 999px; padding: 2px 8px; }
+.tag { font-style: normal; font-size: 0.72rem; font-weight: 800; background: var(--tk-b); color: var(--tk-a); outline: 1px solid var(--tk-a); border-radius: 999px; padding: 2px 8px; }
 .tag.u { background: var(--chip-bg); color: var(--chip-ink); }
 .grid2, .grid3 { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
-.card.sec { border-color: #E0C000; }
+.card.sec { border-color: var(--tk-c); }
+.dikkat { margin: 12px 0 0; padding: 10px 14px; border-radius: 12px; background: #FBE1CF; color: #8A3A12; font-size: 0.92rem; }
 .card p { margin: 6px 0 0; font-size: 0.92rem; }
 .card .p.sm { font-size: 1.05rem; }
 .gez { margin: 0; padding-left: 20px; }

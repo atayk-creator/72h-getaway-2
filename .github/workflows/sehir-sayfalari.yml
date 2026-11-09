@@ -16,6 +16,9 @@ on:
       - "scripts/sehir-sayfalari.mjs"
       - "scripts/deplasman.mjs"
       - "data/fenerbahce.json"
+      - "data/galatasaray.json"
+      - "data/besiktas.json"
+      - "data/takimlar.json"
       - "img/sehir/fotolar.json"
   workflow_run:
     workflows:

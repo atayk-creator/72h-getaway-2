@@ -598,7 +598,7 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   const out = {};
   for (const m of models) out[`sehir/${m.slug}/index.html`] = renderCityPage(m);
   // Takım deplasman sayfaları (data/fenerbahce.json …): takım bir şehir gibi
-  const teams = data ? data.takimlar || [] : ["fenerbahce"].map((s) => readJson(join(root, `data/${s}.json`), null)).filter(Boolean);
+  const teams = data ? data.takimlar || [] : (readJson(join(root, "data/takimlar.json"), { takimlar: ["fenerbahce"] }).takimlar || []).map((s) => readJson(join(root, `data/${s}.json`), null)).filter((t) => t && (t.maclar || []).some((m) => m.butce && m.butce.konforlu && m.butce.konforlu.ucus));
   const eurTry = (d.kur && d.kur.eurTry) || 0;
   for (const t of teams) {
     out[`sehir/${t.slug}/index.html`] = renderTeamPage(t, { today, eurTry, esc, para, fmtTl, fmtEur, head, foot, SITE });

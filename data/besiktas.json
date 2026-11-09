@@ -36,7 +36,7 @@
    "saat_yerel": "21:00",
    "gidis": "2026-12-09",
    "donus": "2026-12-11",
-   "plan": "Konaklama Köln'de (2 gece), maça trenle Leverkusen'e; ulaşım tren.",
+   "plan": "Konaklama Köln'de (2 gece), Köln/Bonn Havalimanı; maça trenle Leverkusen'e. Ulaşım tren.",
    "foto": null,
    "vize": "Schengen vizesi gerekir.",
    "arama_ucus": [
@@ -153,56 +153,23 @@
    ],
    "trenler": [
     {
-     "ad": "Düsseldorf Havalimanı → Köln Hbf",
-     "aktor": "db",
-     "nereden": "Düsseldorf Flughafen",
+     "ad": "Köln/Bonn Havalimanı → Köln Hbf",
+     "sabit": true,
+     "nereden": "Köln/Bonn Flughafen",
      "nereye": "Köln Hbf",
      "tarih": "2026-12-09",
-     "saat": "10:00",
-     "fiyat": 21.79,
-     "not": "ICE/RE ~30–55 dk. Köln/Bonn'a inersen S-Bahn ile 15 dk, 3,80 €.",
-     "secenekler": [
-      {
-       "kalkis": "10:02",
-       "varis": "10:48",
-       "sure_dk": 46,
-       "aktarma": 1,
-       "tren": "RE3 + ICE 105",
-       "fiyat": 21.79
-      },
-      {
-       "kalkis": "11:02",
-       "varis": "11:45",
-       "sure_dk": 43,
-       "aktarma": 1,
-       "tren": "RE3 + ICE 1521",
-       "fiyat": 21.79
-      },
-      {
-       "kalkis": "00:02",
-       "varis": "00:33",
-       "sure_dk": 31,
-       "aktarma": 0,
-       "tren": "ICE 842",
-       "fiyat": 17.99
-      },
-      {
-       "kalkis": "00:32",
-       "varis": "01:21",
-       "sure_dk": 49,
-       "aktarma": 1,
-       "tren": "RE1 + ICE 209",
-       "fiyat": 10.79
-      }
-     ],
+     "saat": "15:30",
+     "fiyat": 3.8,
      "secili": {
-      "kalkis": "10:02",
-      "varis": "10:48",
-      "sure_dk": 46,
-      "aktarma": 1,
-      "tren": "RE3 + ICE 105",
-      "fiyat": 21.79
-     }
+      "kalkis": "15:30",
+      "varis": "15:45",
+      "sure_dk": 15,
+      "aktarma": 0,
+      "tren": "S-Bahn S19 / RE",
+      "fiyat": 3.8
+     },
+     "not": "VRS 1b tek bilet 3,80 € (resmî tarife); her 10–20 dk.",
+     "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
     },
     {
      "ad": "Köln → Leverkusen (maça)",
@@ -243,40 +210,23 @@
      "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
     },
     {
-     "ad": "Köln Hbf → Düsseldorf Havalimanı",
-     "aktor": "db",
+     "ad": "Köln Hbf → Köln/Bonn Havalimanı",
+     "sabit": true,
      "nereden": "Köln Hbf",
-     "nereye": "Düsseldorf Flughafen",
+     "nereye": "Köln/Bonn Flughafen",
      "tarih": "2026-12-11",
-     "saat": "09:30",
-     "fiyat": 21.79,
-     "not": "ICE/RE ~30–55 dk.",
-     "secenekler": [
-      {
-       "kalkis": "10:14",
-       "varis": "10:52",
-       "sure_dk": 38,
-       "aktarma": 1,
-       "tren": "ICE 1022 + RE3",
-       "fiyat": 21.79
-      },
-      {
-       "kalkis": "00:14",
-       "varis": "01:02",
-       "sure_dk": 48,
-       "aktarma": 1,
-       "tren": "ICE 22 + RE6",
-       "fiyat": 10.79
-      }
-     ],
+     "saat": "13:30",
+     "fiyat": 3.8,
      "secili": {
-      "kalkis": "10:14",
-      "varis": "10:52",
-      "sure_dk": 38,
-      "aktarma": 1,
-      "tren": "ICE 1022 + RE3",
-      "fiyat": 21.79
-     }
+      "kalkis": "13:30",
+      "varis": "13:45",
+      "sure_dk": 15,
+      "aktarma": 0,
+      "tren": "S-Bahn S19 / RE",
+      "fiyat": 3.8
+     },
+     "not": "VRS 1b tek bilet 3,80 €.",
+     "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
     }
    ],
    "sehir_ulasim": {
@@ -289,22 +239,22 @@
      "gun": "Çarşamba 9 Aralık · Köln",
      "adimlar": [
       [
-       "—",
-       "İstanbul → Köln/Bonn",
-       "Uçuş saatini robot günceller"
+       "13:20",
+       "AJet SAW → Köln/Bonn",
+       "Yerel saatle 14:55 iniş"
       ],
       [
-       "",
+       "15:30",
        "Trenle Köln Hbf",
-       "Düsseldorf Havalimanı'ndan ICE/RE ~30–55 dk"
+       "S-Bahn 15 dk · 3,80 €"
       ],
       [
-       "",
+       "16:15",
        "Kölner Dom",
        "Katedral ücretsiz"
       ],
       [
-       "17:00",
+       "17:30",
        "Dom önündeki Noel pazarı",
        "Köln'ün en ünlü Noel pazarı"
       ],
@@ -364,14 +314,14 @@
        ""
       ],
       [
-       "09:30",
-       "Trenle Düsseldorf Havalimanı",
-       ""
+       "13:30",
+       "Trenle Köln/Bonn Havalimanı",
+       "15 dk · 3,80 €"
       ],
       [
-       "",
-       "Köln → İstanbul",
-       "Uçuş saatini robot günceller"
+       "15:55",
+       "AJet Köln/Bonn → SAW",
+       "TSİ 21:10 iniş"
       ]
      ]
     }
@@ -408,7 +358,7 @@
    "butce": {
     "konforlu": {
      "ucus": 139,
-     "transfer": 54,
+     "transfer": 18,
      "otel": 176,
      "bilet": 50,
      "ulasim": 8,
@@ -416,8 +366,8 @@
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 126,
-     "transfer": 54,
+     "ucus": 139,
+     "transfer": 18,
      "otel": 125,
      "bilet": 50,
      "ulasim": 8,
@@ -429,7 +379,8 @@
     "konforlu": "NH Collection Köln Mediapark",
     "ucuz": "ibis Köln Centrum"
    },
-   "donus_min": "09:00"
+   "donus_min": "09:00",
+   "havalimani_tercih": "CGN"
   },
   {
    "id": "lefkosa",

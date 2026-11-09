@@ -8931,6 +8931,292 @@
      ]
     }
    ]
+  },
+  "Köln": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3.8,
+     "aciklama": "VRS tek bilet (Köln içi, 1b) 3,80 €",
+     "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
+    },
+    "gunluk": {
+     "fiyat": 9.2,
+     "aciklama": "VRS 24 saatlik bilet (1b) 9,20 €",
+     "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
+    },
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 3.8,
+     "sure_dk": 15,
+     "aciklama": "Köln/Bonn Havalimanı → Köln Hbf S-Bahn/RE ~15 dk, VRS bileti",
+     "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
+    },
+    "not": "Leverkusen (stat) VRS 2b bölgesinde: tek bilet 5,10 €."
+   },
+   "yerler": [
+    {
+     "id": "dom",
+     "ad": "Kölner Dom",
+     "arama": "Kölner Dom",
+     "tur": "Kilise",
+     "bolge": "dom",
+     "sure_dk": 50,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Dünyanın en büyük gotik katedrallerinden; UNESCO Dünya Mirası. Kuleye çıkış ayrı ücretli.",
+     "kaynak": null,
+     "konum": [
+      50.9413,
+      6.9583
+     ]
+    },
+    {
+     "id": "dom-noel",
+     "ad": "Dom önündeki Noel pazarı",
+     "arama": "Weihnachtsmarkt am Kölner Dom",
+     "tur": "Pazar",
+     "bolge": "dom",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Katedralin dibinde, Köln'ün en ünlü Noel pazarı.",
+     "kaynak": null,
+     "konum": [
+      50.9405,
+      6.9578
+     ]
+    },
+    {
+     "id": "alter-markt",
+     "ad": "Alter Markt Noel pazarı",
+     "arama": "Weihnachtsmarkt Alter Markt Köln",
+     "tur": "Pazar",
+     "bolge": "altstadt",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski şehirde, cüce masallarıyla süslü pazar.",
+     "kaynak": null,
+     "konum": [
+      50.9381,
+      6.9594
+     ]
+    },
+    {
+     "id": "hohenzollern",
+     "ad": "Hohenzollern Köprüsü",
+     "arama": "Hohenzollernbrücke Köln",
+     "tur": "Manzara",
+     "bolge": "ren",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Aşk kilitleriyle dolu demiryolu köprüsü; Dom manzarası.",
+     "kaynak": null,
+     "konum": [
+      50.9414,
+      6.9654
+     ]
+    },
+    {
+     "id": "altstadt",
+     "ad": "Ren kıyısı ve Altstadt",
+     "arama": "Rheinufer Altstadt Köln",
+     "tur": "Yürüyüş",
+     "bolge": "altstadt",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Renkli evler, brauhaus'lar ve nehir kıyısı.",
+     "kaynak": null,
+     "konum": [
+      50.937,
+      6.962
+     ]
+    },
+    {
+     "id": "cikolata",
+     "ad": "Çikolata Müzesi",
+     "arama": "Schokoladenmuseum Köln",
+     "tur": "Müze",
+     "bolge": "ren",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "Ren kıyısında çikolata yapımını anlatan müze; çikolata çeşmesi.",
+     "kaynak": null,
+     "konum": [
+      50.9322,
+      6.964
+     ]
+    },
+    {
+     "id": "ludwig",
+     "ad": "Museum Ludwig",
+     "arama": "Museum Ludwig Köln",
+     "tur": "Müze",
+     "bolge": "dom",
+     "sure_dk": 75,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "Pop art ve modern sanat; Dom'un yanında.",
+     "kaynak": null,
+     "konum": [
+      50.9408,
+      6.9604
+     ]
+    },
+    {
+     "id": "belcika",
+     "ad": "Belçika Mahallesi",
+     "arama": "Belgisches Viertel Köln",
+     "tur": "Mahalle",
+     "bolge": "bati",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kafeler ve küçük dükkânlarla dolu genç mahalle.",
+     "kaynak": null,
+     "konum": [
+      50.9378,
+      6.93
+     ]
+    }
+   ]
+  },
+  "Lefkoşa": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2,
+     "aciklama": "Şehir otobüsü tek bilet ~2 € (fiyatı teyit et); merkez yürünebilir",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 8,
+     "sure_dk": 40,
+     "aciklama": "Larnaka Havalimanı → Lefkoşa Kapnos Airport Shuttle 8 € (tek yön)",
+     "kaynak": "https://www.myguidecyprus.com/usefulinfo/kapnos-airport-shuttle"
+    },
+    "not": "Stada taksi önerilir (~15 dk)."
+   },
+   "yerler": [
+    {
+     "id": "ledra",
+     "ad": "Ledra Caddesi",
+     "arama": "Ledra Street Nicosia",
+     "tur": "Cadde",
+     "bolge": "sur-ici",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Surlar içindeki ana alışveriş caddesi.",
+     "kaynak": null,
+     "konum": [
+      35.1725,
+      33.3613
+     ]
+    },
+    {
+     "id": "eleftheria",
+     "ad": "Eleftheria Meydanı ve Venedik surları",
+     "arama": "Eleftheria Square Nicosia",
+     "tur": "Meydan",
+     "bolge": "sur-ici",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "16. yüzyıl Venedik surları ve modern meydan.",
+     "kaynak": null,
+     "konum": [
+      35.1701,
+      33.36
+     ]
+    },
+    {
+     "id": "kibris-muzesi",
+     "ad": "Kıbrıs Müzesi",
+     "arama": "Cyprus Museum Nicosia",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "Adanın en kapsamlı arkeoloji müzesi.",
+     "kaynak": null,
+     "konum": [
+      35.1717,
+      33.3558
+     ]
+    },
+    {
+     "id": "laiki",
+     "ad": "Laiki Geitonia",
+     "arama": "Laiki Geitonia Nicosia",
+     "tur": "Mahalle",
+     "bolge": "sur-ici",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Restore edilmiş eski mahalle; taverna ve kafeler.",
+     "kaynak": null,
+     "konum": [
+      35.1705,
+      33.3626
+     ]
+    },
+    {
+     "id": "bizans",
+     "ad": "Bizans Müzesi ve Başpiskoposluk",
+     "arama": "Byzantine Museum Nicosia",
+     "tur": "Müze",
+     "bolge": "sur-ici",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "İkon koleksiyonu ve tarihi saray.",
+     "kaynak": null,
+     "konum": [
+      35.1723,
+      33.3667
+     ]
+    },
+    {
+     "id": "shacolas",
+     "ad": "Shacolas Kulesi gözlem katı",
+     "arama": "Shacolas Tower Observatory Nicosia",
+     "tur": "Manzara",
+     "bolge": "sur-ici",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Fiyatı teyit et",
+     "bilgi": "Şehrin iki yakasını gösteren manzara katı.",
+     "kaynak": null,
+     "konum": [
+      35.1735,
+      33.3612
+     ]
+    }
+   ]
   }
  },
  "harcama": {

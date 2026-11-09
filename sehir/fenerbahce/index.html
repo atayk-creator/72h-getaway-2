@@ -88,11 +88,12 @@ footer { border-top: 1.5px solid var(--line); color: var(--muted); font-size: 0.
 footer a { display: inline-flex; align-items: center; min-height: 44px; margin-right: 14px; }
 </style>
 <style>
-.fbbar { height: 8px; background: repeating-linear-gradient(90deg, #F4D30B 0 28px, #0F2A43 28px 56px); }
+:root { --tk-a: #F4D30B; --tk-b: #0F2A43; --tk-c: #F4D30B; --tk-ink: #F4D30B; }
+.fbbar { height: 8px; background: repeating-linear-gradient(90deg, var(--tk-a) 0 28px, var(--tk-b) 28px 56px); }
 .mks { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 1fr); gap: 10px; overflow-x: auto; margin: 18px -16px 0; padding: 0 16px 6px; scroll-snap-type: x mandatory; }
 .mk { scroll-snap-align: start; display: grid; gap: 2px; text-decoration: none; color: #FBF6EC; background: rgba(251,246,236,0.07); border: 1.5px solid rgba(251,246,236,0.18); border-radius: 16px; padding: 12px 14px; }
-.mk.ilk { background: #F4D30B; color: #0F2A43; border-color: #F4D30B; }
-.mk:hover { border-color: #F4D30B; }
+.mk.ilk { background: var(--tk-a); color: var(--tk-b); border-color: var(--tk-a); }
+.mk:hover { border-color: var(--tk-a); }
 .mk-eb { font: 700 0.68rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.12em; opacity: .85; }
 .mk-s { font-size: 1.35rem; letter-spacing: -0.01em; }
 .mk-r, .mk-t, .mk-ps { font-size: 0.82rem; opacity: .9; }
@@ -107,9 +108,9 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 .banner { position: relative; border-radius: 18px; overflow: hidden; min-height: 230px; display: flex; align-items: flex-end; background: #0F2A43; color: #FBF6EC; }
 .banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 25%, rgba(10,31,51,0.92)); }
-.banner.cizgi { background: repeating-linear-gradient(90deg, #F4D30B 0 34px, #0F2A43 34px 68px) top / 100% 45% no-repeat, #0F2A43; }
+.banner.cizgi { background: repeating-linear-gradient(90deg, var(--tk-a) 0 34px, var(--tk-b) 34px 68px) top / 100% 45% no-repeat, var(--tk-b); }
 .bn { position: relative; z-index: 1; padding: 16px 18px; }
-.bn .eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.14em; color: #F4D30B; }
+.bn .eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.14em; color: var(--tk-ink); }
 .bn h2 { font-size: clamp(1.4rem, 5vw, 2rem); margin: 4px 0; line-height: 1.1; }
 .bn p { margin: 0; color: #D5DEE8; font-size: 0.92rem; }
 .banner .cr { position: absolute; right: 8px; top: 8px; z-index: 1; font-size: 0.7rem; background: rgba(10,31,51,0.7); padding: 2px 8px; border-radius: 999px; }
@@ -134,16 +135,17 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 .gun ol { list-style: none; margin: 8px 0 0 4px; padding: 0; border-left: 2px solid var(--line); }
 .gun li { display: grid; grid-template-columns: 50px 1fr; gap: 8px; padding: 5px 0 5px 14px; position: relative; }
 .gun li::before { content: ""; position: absolute; left: -7px; top: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--surface); border: 2px solid var(--muted); }
-.gun li.mac-an::before { background: #F4D30B; border-color: #0F2A43; width: 10px; height: 10px; left: -8px; }
-.gun li.mac-an b { background: #F4D30B; color: #0F2A43; border-radius: 6px; padding: 1px 6px; }
+.gun li.mac-an::before { background: var(--tk-a); border-color: var(--tk-b); width: 10px; height: 10px; left: -8px; }
+.gun li.mac-an b { background: var(--tk-a); color: var(--tk-b); box-shadow: 0 0 0 1px var(--tk-b); border-radius: 6px; padding: 1px 6px; }
 .gun time { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); }
-.secim { background: var(--surface); border-left: 4px solid #F4D30B; border-radius: 8px; padding: 8px 12px; margin: 0 0 10px; }
+.secim { background: var(--surface); border-left: 4px solid var(--tk-c); border-radius: 8px; padding: 8px 12px; margin: 0 0 10px; }
 .rows li.sec { background: var(--pick); }
 .rows .r { white-space: nowrap; }
-.tag { font-style: normal; font-size: 0.72rem; font-weight: 800; background: #0F2A43; color: #F4D30B; border-radius: 999px; padding: 2px 8px; }
+.tag { font-style: normal; font-size: 0.72rem; font-weight: 800; background: var(--tk-b); color: var(--tk-a); outline: 1px solid var(--tk-a); border-radius: 999px; padding: 2px 8px; }
 .tag.u { background: var(--chip-bg); color: var(--chip-ink); }
 .grid2, .grid3 { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
-.card.sec { border-color: #E0C000; }
+.card.sec { border-color: var(--tk-c); }
+.dikkat { margin: 12px 0 0; padding: 10px 14px; border-radius: 12px; background: #FBE1CF; color: #8A3A12; font-size: 0.92rem; }
 .card p { margin: 6px 0 0; font-size: 0.92rem; }
 .card .p.sm { font-size: 1.05rem; }
 .gez { margin: 0; padding-left: 20px; }
@@ -247,6 +249,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
       <div class="bar" role="img" aria-label="Bütçe dağılımı"><i style="width:24.2%;background:#0F2A43" title="Uçak"></i><i style="width:4.8%;background:#4B6A88" title="Havalimanı ve tren"></i><i style="width:39.8%;background:#F4A62A" title="Otel"></i><i style="width:6.0%;background:#E0C000" title="Maç bileti"></i><i style="width:17.9%;background:#C4374D" title="Yemek"></i><i style="width:3.0%;background:#17744C" title="Şehir içi ulaşım"></i><i style="width:4.5%;background:#8E7CC3" title="Gezi"></i></div>
       <ul class="kalem"><li><span><i class="dot" style="background:#0F2A43"></i>Uçak<small>AJet, aktarmasız</small></span><span class="r">11.400 TL <span class="eur">(203 €)</span></span></li><li><span><i class="dot" style="background:#4B6A88"></i>Havalimanı ve tren<small>Stansted Express treni</small></span><span class="r">2.200 TL <span class="eur">(40 €)</span></span></li><li><span><i class="dot" style="background:#F4A62A"></i>Otel<small>Premier Inn County Hall, 2 gecenin yarısı</small></span><span class="r">18.700 TL <span class="eur">(334 €)</span></span></li><li><span><i class="dot" style="background:#E0C000"></i>Maç bileti<small>deplasman tribünü, resmî satış</small></span><span class="r">2.800 TL <span class="eur">(50 €)</span></span></li><li><span><i class="dot" style="background:#C4374D"></i>Yemek</span><span class="r">8.400 TL <span class="eur">(150 €)</span></span></li><li><span><i class="dot" style="background:#17744C"></i>Şehir içi ulaşım</span><span class="r">1.400 TL <span class="eur">(25 €)</span></span></li><li><span><i class="dot" style="background:#8E7CC3"></i>Gezi</span><span class="r">2.100 TL <span class="eur">(38 €)</span></span></li><li class="top"><b>Kişi başı toplam</b><span class="r">~47.100 TL <span class="eur">(840 €)</span></span></li></ul>
       <div class="chips"><span class="etk normal">Uçak normal fiyatında</span><span class="etk vize">İngiltere vizesi gerekir (Schengen geçmez). Maça 16 gün var; vizen yoksa öncelikli başvuruya bak.</span></div>
+      
     </div>
 
     <h3>72 saatin akışı</h3>
@@ -265,7 +268,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 
     <h3>Maç bileti</h3>
     <div class="grid2">
-      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~2.800 TL <span class="eur">(50 €)</span></div><p>Deplasman tribünü, Fenerbahçe'nin satışı üzerinden. UEFA tavanı uygulanır.</p></div>
+      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~2.800 TL <span class="eur">(50 €)</span></div><p>Deplasman tribünü, Fenerbahçe kulübünün satışı üzerinden. UEFA tavanı uygulanır.</p></div>
       <div class="card"><h4>İkinci el siteler</h4><div class="p sm">~90 €'dan başlıyor</div><p>Pahalı ve deplasman tribünü garanti değil; önermiyoruz.</p></div>
     </div>
 
@@ -304,6 +307,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
       <div class="bar" role="img" aria-label="Bütçe dağılımı"><i style="width:19.0%;background:#0F2A43" title="Uçak"></i><i style="width:4.7%;background:#4B6A88" title="Havalimanı ve tren"></i><i style="width:42.3%;background:#F4A62A" title="Otel"></i><i style="width:7.9%;background:#E0C000" title="Maç bileti"></i><i style="width:22.1%;background:#C4374D" title="Yemek"></i><i style="width:1.6%;background:#17744C" title="Şehir içi ulaşım"></i><i style="width:2.4%;background:#8E7CC3" title="Gezi"></i></div>
       <ul class="kalem"><li><span><i class="dot" style="background:#0F2A43"></i>Uçak<small>Pegasus, aktarmasız</small></span><span class="r">6.700 TL <span class="eur">(120 €)</span></span></li><li><span><i class="dot" style="background:#4B6A88"></i>Havalimanı ve tren<small>trenler: Havalimanı → Viyana merkez, Viyana → Linz, Linz → Viyana Havalimanı</small></span><span class="r">1.700 TL <span class="eur">(30 €)</span></span></li><li><span><i class="dot" style="background:#F4A62A"></i>Otel<small>Hotel MOTTO + Hotel am Domplatz, 2 gecenin yarısı</small></span><span class="r">15.000 TL <span class="eur">(268 €)</span></span></li><li><span><i class="dot" style="background:#E0C000"></i>Maç bileti<small>deplasman tribünü, resmî satış</small></span><span class="r">2.800 TL <span class="eur">(50 €)</span></span></li><li><span><i class="dot" style="background:#C4374D"></i>Yemek</span><span class="r">7.800 TL <span class="eur">(140 €)</span></span></li><li><span><i class="dot" style="background:#17744C"></i>Şehir içi ulaşım</span><span class="r">600 TL <span class="eur">(10 €)</span></span></li><li><span><i class="dot" style="background:#8E7CC3"></i>Gezi</span><span class="r">800 TL <span class="eur">(15 €)</span></span></li><li class="top"><b>Kişi başı toplam</b><span class="r">~35.500 TL <span class="eur">(633 €)</span></span></li></ul>
       <div class="chips"><span class="etk normal">Uçak normal fiyatında</span><span class="etk vize">Schengen vizesi yeterli.</span></div>
+      
     </div>
 
     <h3>72 saatin akışı</h3>
@@ -322,7 +326,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 
     <h3>Maç bileti</h3>
     <div class="grid2">
-      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~2.800 TL <span class="eur">(50 €)</span></div><p>Deplasman tribünü, Fenerbahçe'nin satışı üzerinden. UEFA tavanı uygulanır.</p></div>
+      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~2.800 TL <span class="eur">(50 €)</span></div><p>Deplasman tribünü, Fenerbahçe kulübünün satışı üzerinden. UEFA tavanı uygulanır.</p></div>
       <div class="card"><h4>İkinci el siteler</h4><div class="p sm">~90 €'dan başlıyor</div><p>Pahalı ve deplasman tribünü garanti değil; önermiyoruz.</p></div>
     </div>
 
@@ -361,6 +365,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
       <div class="bar" role="img" aria-label="Bütçe dağılımı"><i style="width:38.5%;background:#0F2A43" title="Uçak"></i><i style="width:26.8%;background:#F4A62A" title="Otel"></i><i style="width:6.8%;background:#E0C000" title="Maç bileti"></i><i style="width:20.3%;background:#C4374D" title="Yemek"></i><i style="width:3.1%;background:#17744C" title="Şehir içi ulaşım"></i><i style="width:4.5%;background:#8E7CC3" title="Gezi"></i></div>
       <ul class="kalem"><li><span><i class="dot" style="background:#0F2A43"></i>Uçak<small>Air Europa, aktarmasız</small></span><span class="r">15.900 TL <span class="eur">(284 €)</span></span></li><li><span><i class="dot" style="background:#4B6A88"></i>Havalimanı ve tren</span><span class="r">—</span></li><li><span><i class="dot" style="background:#F4A62A"></i>Otel<small>Catalonia Las Cortes, 2 gecenin yarısı</small></span><span class="r">11.100 TL <span class="eur">(198 €)</span></span></li><li><span><i class="dot" style="background:#E0C000"></i>Maç bileti<small>deplasman tribünü, resmî satış</small></span><span class="r">2.800 TL <span class="eur">(50 €)</span></span></li><li><span><i class="dot" style="background:#C4374D"></i>Yemek</span><span class="r">8.400 TL <span class="eur">(150 €)</span></span></li><li><span><i class="dot" style="background:#17744C"></i>Şehir içi ulaşım</span><span class="r">1.300 TL <span class="eur">(23 €)</span></span></li><li><span><i class="dot" style="background:#8E7CC3"></i>Gezi</span><span class="r">1.800 TL <span class="eur">(33 €)</span></span></li><li class="top"><b>Kişi başı toplam</b><span class="r">~41.400 TL <span class="eur">(738 €)</span></span></li></ul>
       <div class="chips"><span class="etk pahali">Uçak şu an pahalı · normali 140–215 €</span><span class="etk vize">Schengen vizesi yeterli.</span></div>
+      
     </div>
 
     <h3>72 saatin akışı</h3>
@@ -379,7 +384,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 
     <h3>Maç bileti</h3>
     <div class="grid2">
-      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~2.800 TL <span class="eur">(50 €)</span></div><p>Deplasman tribünü, Fenerbahçe'nin satışı üzerinden. UEFA tavanı uygulanır.</p></div>
+      <div class="card sec"><h4>Resmî satış (önerilen)</h4><div class="p">~2.800 TL <span class="eur">(50 €)</span></div><p>Deplasman tribünü, Fenerbahçe kulübünün satışı üzerinden. UEFA tavanı uygulanır.</p></div>
       <div class="card"><h4>İkinci el siteler</h4><div class="p sm">~90 €'dan başlıyor</div><p>Pahalı ve deplasman tribünü garanti değil; önermiyoruz.</p></div>
     </div>
 
