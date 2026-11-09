@@ -77,6 +77,8 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     const bk = m.butce.konforlu, bu = m.butce.ucuz, tk = toplam(bk), tu = toplam(bu);
     const o = m.ucus.oneri;
     const G = gruplar(m), adK = secimAd(m, "konforlu"), adU = secimAd(m, "ucuz");
+    // Uygun plan yalnız ayrı, fiyatı gerçek bir uygun otel varsa (ya da seçim elle sabitlenmişse) gösterilir
+    const uygunVar = m.uygun_plan !== undefined ? m.uygun_plan : !!adU && (adU !== adK || G.some((g) => g.secim.sabit));
     const bar = KALEM.filter(([k]) => bk[k] > 0).map(([k, ad, renk]) => `<i style="width:${((bk[k] / tk) * 100).toFixed(1)}%;background:${renk}" title="${esc(ad)}"></i>`).join("");
     const kalemler = KALEM.filter(([k]) => typeof bk[k] === "number").map(([k, ad, renk]) => {
       const alt = k === "ucus" ? `${o.havayolu}, ${aktarmaYazi(o)}` : k === "otel" && adK ? `${adK}, 2 gecenin yarısı` : k === "transfer" && m.transfer_yazi ? m.transfer_yazi.konforlu : k === "transfer" && m.trenler ? `trenler: ${m.trenler.map((t) => t.ad).join(", ")}` : k === "transfer" && m.araba ? "kiralık araba, 2 kişiye bölünmüş" : k === "bilet" ? "deplasman tribünü, resmî satış" : "";
@@ -86,8 +88,11 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     const akis = (m.akis || []).map((g) => `<div class="gun"><h4>${esc(g.gun)}</h4><ol>${g.adimlar.map(([saat, ne, not]) => `<li${/ – /.test(ne) ? ' class="mac-an"' : ""}><time>${esc(saat)}</time><span><b>${esc(ne)}</b>${not ? `<small>${esc(not)}</small>` : ""}</span></li>`).join("")}</ol></div>`).join("");
     const ucuslar = m.ucus.secenekler.map((s) => `<li${s.fiyat === o.fiyat && s.havayolu === o.havayolu ? ' class="sec"' : ""}><span><b>${esc(s.havayolu)}</b> · ${esc(s.havalimani)}<small>${esc(s.not)}</small></span><span class="r">${para(s.fiyat, eurTry)}</span></li>`).join("");
     const otelSatir = G.map((g) => {
-      const l = g.oteller.slice().sort((a, b) => KAT_SIRA.indexOf(a.kategori) - KAT_SIRA.indexOf(b.kategori) || a.toplam - b.toplam).map((h) => {
-        const tag = h.ad === g.secim.konforlu ? `<em class="tag">Bütçede</em>` : h.ad === g.secim.ucuz ? `<em class="tag u">Uygun planda</em>` : "";
+      // Fiyatı gelmeyen (ya da aşırı bulunup gizlenen) otel: 0 TL değil "fiyat doğrulanıyor"; listenin sonunda
+      const fiyatli = (h) => typeof h.toplam === "number" && h.toplam > 0;
+      const l = g.oteller.slice().sort((a, b) => (fiyatli(b) - fiyatli(a)) || KAT_SIRA.indexOf(a.kategori) - KAT_SIRA.indexOf(b.kategori) || a.toplam - b.toplam).map((h) => {
+        if (!fiyatli(h)) return `<li class="dog"><span><span class="chip">${esc(KAT_AD[h.kategori] || h.kategori)}</span> <b>${esc(h.ad)}</b><small>Bu tarihler için henüz fiyat yok</small></span><span class="r muted">fiyat doğrulanıyor</span></li>`;
+        const tag = h.ad === g.secim.konforlu ? `<em class="tag">Bütçede</em>` : h.ad === g.secim.ucuz && uygunVar ? `<em class="tag u">Uygun planda</em>` : "";
         return `<li${tag ? ' class="sec"' : ""}><span><span class="chip">${esc(KAT_AD[h.kategori] || h.kategori)}</span> <b>${esc(h.ad)}</b> ${tag}<small>kişi başı ${esc(tl(h.toplam / 2))}</small></span><span class="r">${para(h.toplam, eurTry)}</span></li>`;
       }).join("");
       return (g.baslik ? `<h4 class="gece">${esc(g.baslik)}${g.tarih ? ` <span class="muted">· ${esc(tarihKisa(g.tarih))} ${esc(gunAd(g.tarih))}</span>` : ""}</h4>` : "") + (g.not ? `<p class="secim">${esc(g.not)}</p>` : "") + `<ul class="rows">${l}</ul>`;
@@ -119,11 +124,11 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
           <div class="tot">~${para(tk * 2, eurTry)}</div>
           <div class="muted">Kişi başı ~${esc(tl(tk))} · ${esc(m.plan || `${tarihKisa(m.gidis)} ${gunAd(m.gidis).toLocaleLowerCase("tr")} gidiş, ${tarihKisa(m.donus)} ${gunAd(m.donus).toLocaleLowerCase("tr")} dönüş, 2 gece`)}</div>
         </div>
-        <div class="alt">
+        ${uygunVar ? `<div class="alt">
           <span class="muted">Daha uygun plan</span>
           <b>~${esc(tl(tu * 2))}</b>
           <span class="muted">2 kişi${adU ? ` · ${esc(adU)}` : ""}</span>
-        </div>
+        </div>` : ""}
       </div>
       <div class="bar" role="img" aria-label="Bütçe dağılımı">${bar}</div>
       <ul class="kalem">${kalemler}<li class="top"><b>Kişi başı toplam</b><span class="r">~${para(tk, eurTry)}</span></li></ul>

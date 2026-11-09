@@ -164,7 +164,8 @@
    "ucus_saat": "0-11",
    "secim": {
     "konforlu": "Premier Inn County Hall",
-    "ucuz": "Premier Inn County Hall"
+    "ucuz": "Premier Inn County Hall",
+    "sabit": true
    },
    "otel_not": "Ana öneri: Premier Inn County Hall (uygun seviye), Big Ben'in karşısında; Westminster'dan District hattı stada aktarmasız gider. Daha konforlu seçenek: Strand Palace.",
    "akis": [

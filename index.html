@@ -934,13 +934,11 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     ["Münih","Almanya","Noel",160,50,9,15,"est","Noel pazarı şehri (Aralık)."],
     ["Nürnberg","Almanya","Noel",120,45,6,12,"est","Noel pazarı şehri (Aralık)."],
     ["Strazburg","Fransa","Noel",140,48,6,12,"est","Noel pazarı şehri (Aralık)."],
-    ["Rovaniemi","Finlandiya","Noel",210,60,8,30,"est","Noel Baba Köyü (Aralık)."],
     ["Krakov","Polonya","Noel",85,30,4,10,"est","Noel pazarı şehri (Aralık)."],
     ["Dresden","Almanya","Noel",115,45,6,12,"est","Noel pazarı şehri (Aralık)."],
     ["Salzburg","Avusturya","Noel",150,50,6,15,"est","Noel pazarı şehri (Aralık)."],
     ["Gdańsk","Polonya","Noel",85,30,3,10,"est","Noel pazarı şehri (Aralık)."],
-    ["Brugge","Belçika","Noel",140,55,4,15,"est","Noel pazarı şehri (Aralık)."],
-    ["Edinburgh","Birleşik Krallık","Noel",160,60,6,20,"est","Noel pazarı şehri (Aralık)."]
+    ["Brugge","Belçika","Noel",140,55,4,15,"est","Noel pazarı şehri (Aralık)."]
   ].map(function (a) {
     return { n:a[0], c:a[1], r:a[2], h:a[3], f:a[4], t:a[5], a:a[6], s:a[7] || "est", note:a[8] || "",
              hotels:a[9] || null, restos:a[10] || null, places:a[11] || null, mac: a[2] === "Deplasman" || a[2] === "Noel" };
@@ -1104,7 +1102,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
           lat: ctr0 ? ctr0.lat : undefined, lon: ctr0 ? ctr0.lon : undefined };
       });
     }
-    return m.oteller.slice().sort(function (a, b) { return KS.indexOf(a.kategori) - KS.indexOf(b.kategori) || a.toplam - b.toplam; }).map(function (h) {
+    // Fiyatı gelmemiş (0/boş) otel Biletim'de listelenmez
+    return m.oteller.filter(function (h) { return typeof h.toplam === "number" && h.toplam > 0; }).sort(function (a, b) { return KS.indexOf(a.kategori) - KS.indexOf(b.kategori) || a.toplam - b.toplam; }).map(function (h) {
       var cat = LCAT[h.kategori] || LCAT.konforlu, ctr = c.center || (c.places && c.places[0]) || null;
       return { t: cat.t, lvl: cat.lvl, name: escH(h.ad), label: escH(h.ad), p: Math.round(h.toplam / 2), s: "live", src: "canli",
         desc: (isTema(MACT) ? "Plan tarihleri (" : "Maç tarihleri (") + escH(weekendText(m.gidis, m.donus)) + ") için 2 gece toplam ~" + nf.format(h.toplam) + " €, vergiler dahil; " + escH(dShort.format(parseD(MACT.guncellendi))) + " günü Google'dan kontrol edildi." + (m.secim && m.secim.konforlu === h.ad ? " Plandaki otel." : ""),

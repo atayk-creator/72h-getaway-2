@@ -4,7 +4,7 @@
  "slug": "noel",
  "tur": "tema",
  "etiket": "Noel",
- "turnuva": "Aralık 2026 hafta sonları · 10 Noel pazarı şehri",
+ "turnuva": "Aralık 2026 hafta sonları · 8 Noel pazarı şehri",
  "renk": {
   "a": "#C8102E",
   "b": "#0F3D2E",
@@ -17,7 +17,8 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.38
+  "son_maliyet_usd": 0.38,
+  "zorla": true
  },
  "kaynaklar": [
   {
@@ -41,10 +42,6 @@
    "url": "https://www.euroairport.com/en/transport"
   },
   {
-   "ad": "Rovaniemi havalimanı ulaşımı (Finavia)",
-   "url": "https://finavia.fi/en/airports/rovaniemi/parking-access/public-transport"
-  },
-  {
    "ad": "Dresden Striezelmarkt 2026 (Elberadweg)",
    "url": "https://www.elberadweg.de/veranstaltung/striezelmarkt-dresden-2026/"
   },
@@ -59,10 +56,6 @@
   {
    "ad": "Brugge Winter Glow 2026 (Nomado)",
    "url": "https://www.nomadotravel.app/en/guides/bruges-christmas-market-guide"
-  },
-  {
-   "ad": "Edinburgh Noel pazarı 2026 (Meininger)",
-   "url": "https://www.meininger-hotels.com/blog/en/edinburgh-christmas-market-dates/"
   }
  ],
  "maclar": [
@@ -335,7 +328,7 @@
    "donus": "2026-12-06",
    "plan": "Cuma sabah Berlin'e (BER) uçuş, trenle Dresden (~2 saat); 2 gece Dresden, Pazar trenle Berlin'e dönüp akşam uçuşu.",
    "vize": "Schengen vizesi gerekir.",
-   "dikkat": "İstanbul'dan Dresden'e direkt uçuş yok: en yakın direkt uçuşlu havalimanı Berlin Brandenburg (BER). Havalimanından Dresden Hbf'ye trenle ~2 saat; tren fiyatı robotla Deutsche Bahn'dan çekilir (erken alınan bilet ucuzlar).",
+   "dikkat": "İstanbul'dan Dresden'e direkt uçuş yok: en yakın direkt uçuşlu havalimanı Berlin Brandenburg (BER). Havalimanından Dresden Hbf'ye trenle ~2 saat; tren fiyatı robotla Deutsche Bahn'dan çekilir (erken alınan bilet daha uygun olur).",
    "arama_ucus": [
     "IST,SAW-BER 2026-12-04 2026-12-06"
    ],
@@ -715,20 +708,22 @@
    "tarih": "2026-12-05",
    "gidis": "2026-12-04",
    "donus": "2026-12-06",
-   "plan": "Cuma gidiş, Pazar akşam dönüş; 2 gece Salzburg, eski şehirde.",
+   "plan": "Cuma sabah Münih'e uçuş, trenle Salzburg (~2,5 saat); 2 gece Salzburg, Pazar öğleden sonra trenle Münih Havalimanı'na dönüp akşam uçuşu.",
    "vize": "Schengen vizesi gerekir.",
-   "dikkat": "Kışın İstanbul–Salzburg direkt seferi sınırlı; robot aktarmalı dahil en uygun uçuşu seçer. Münih havalimanı + trenle (~2 saat) de gidilebilir.",
+   "dikkat": "THY'nin Salzburg'a direkt seferi Cuma 17:45'te kalkıyor (Cuma günü kayboluyor); bu yüzden plan Münih'e sabah uçuşu + trenle. Münih Havalimanı–Salzburg treni ~2,5 saat (Münih'te aktarma); tren fiyatı robotla Deutsche Bahn'dan çekilir. İstersen dönüşte Salzburg'dan THY direkt (Pazar 19:10) de seçilebilir.",
    "arama_ucus": [
-    "IST,SAW-SZG 2026-12-04 2026-12-06"
+    "IST,SAW-MUC 2026-12-04 2026-12-06"
    ],
-   "donus_min": "14:00",
+   "donus_min": "17:00",
    "ozet": "Mozart'ın şehrinde katedral ile sarayın arasına kurulan pazar; kale tepesinden karlı Alpler.",
    "oteller": [
     {
      "ad": "Hotel Sacher Salzburg",
      "kategori": "ikonik",
      "arama": "Hotel Sacher Salzburg",
-     "toplam": 7369
+     "toplam": null,
+     "eski": true,
+     "kontrol": "7369 € bulundu (süit/özel oda olabilir), gösterilmiyor"
     },
     {
      "ad": "Hotel Goldener Hirsch",
@@ -771,10 +766,6 @@
      "eski": true
     }
    ],
-   "havalimani_ulasim": {
-    "fiyat": 6,
-    "yazi": "Havalimanı → eski şehir: 2 ya da 10 numaralı troleybüs ~20 dk; gidiş-dönüş kişi başı ~6 € (tahmini)."
-   },
    "sehir_ulasim": {
     "fiyat": 6,
     "yazi": "Eski şehir yürünür; Hohensalzburg'a füniküler bilete dahil."
@@ -786,18 +777,23 @@
      "adimlar": [
       [
        "—",
-       "İstanbul → Salzburg",
-       "Uçuş saatini robot günceller"
+       "İstanbul → Münih",
+       "Sabah uçuşu; saati robot günceller"
       ],
       [
-       "",
-       "Troleybüsle eski şehir",
-       "~20 dk"
+       "10:30",
+       "Tren: Münih Havalimanı → Salzburg Hbf",
+       "~2,5 saat"
       ],
       [
        "",
        "Otele yerleş",
        ""
+      ],
+      [
+       "15:00",
+       "Getreidegasse ve Mozart'ın doğduğu ev",
+       "İlk tur"
       ],
       [
        "17:00",
@@ -818,11 +814,6 @@
        "10:00",
        "Hohensalzburg Kalesi",
        "Füniküler, Alp manzarası"
-      ],
-      [
-       "12:30",
-       "Getreidegasse ve Mozart'ın doğduğu ev",
-       ""
       ],
       [
        "13:30",
@@ -850,19 +841,19 @@
      "gun": "Pazar 6 Aralık · dönüş",
      "adimlar": [
       [
-       "10:00",
+       "09:30",
        "Kahvaltı, Café Tomaselli",
        "Melange + Sachertorte"
       ],
       [
-       "",
-       "Havalimanına",
-       "Troleybüs"
+       "13:30",
+       "Tren: Salzburg Hbf → Münih Havalimanı",
+       "~2,5 saat"
       ],
       [
        "",
-       "Salzburg → İstanbul",
-       "Uçuş saatini robot günceller"
+       "Münih → İstanbul",
+       "Akşam uçuşu; saati robot günceller"
       ]
      ]
     }
@@ -900,7 +891,7 @@
    "butce": {
     "konforlu": {
      "ucus": 248,
-     "transfer": 6,
+     "transfer": 80,
      "otel": 672,
      "ulasim": 6,
      "yemek": 110,
@@ -908,7 +899,7 @@
     },
     "ucuz": {
      "ucus": 248,
-     "transfer": 6,
+     "transfer": 80,
      "otel": 251,
      "ulasim": 6,
      "yemek": 80,
@@ -920,28 +911,38 @@
     "ucuz": "Motel One Salzburg-Mirabell"
    },
    "ucus": {
-    "oneri": {
-     "fiyat": 248,
-     "havayolu": "THY",
-     "aktarma": 0,
-     "havalimani": "Salzburg (SZG)",
-     "gidis": "Cuma IST 17:45 → SZG 18:15 (TK1383)",
-     "donus": "Pazar SZG 19:10 → IST 23:40"
-    },
-    "secenekler": [
-     {
-      "fiyat": 248,
-      "havayolu": "THY",
-      "havalimani": "Salzburg",
-      "not": "Cuma IST 17:45 → SZG 18:15, Pazar 19:10 dönüş"
-     }
-    ],
+    "oneri": null,
+    "secenekler": [],
     "seviye": "normal",
-    "normal_aralik": "210–350 €"
+    "normal_aralik": ""
    },
    "foto": "/img/sehir/salzburg-noel.jpg",
    "foto_alt": "Salzburg, Hohensalzburg Kalesi ve eski şehir",
-   "foto_kaynak": "Unsplash · Erik Odiin"
+   "foto_kaynak": "Unsplash · Erik Odiin",
+   "ucus_saat": "5-12",
+   "havalimani_tercih": "MUC",
+   "trenler": [
+    {
+     "ad": "Münih Havalimanı → Salzburg",
+     "aktor": "db",
+     "nereden": "München Flughafen Terminal",
+     "nereye": "Salzburg Hbf",
+     "tarih": "2026-12-04",
+     "saat": "10:30",
+     "fiyat": 40,
+     "not": "Fiyat ilk aramaya kadar tahmini (~40 €)."
+    },
+    {
+     "ad": "Salzburg → Münih Havalimanı",
+     "aktor": "db",
+     "nereden": "Salzburg Hbf",
+     "nereye": "München Flughafen Terminal",
+     "tarih": "2026-12-06",
+     "saat": "13:30",
+     "fiyat": 40,
+     "not": "Fiyat ilk aramaya kadar tahmini (~40 €)."
+    }
+   ]
   },
   {
    "id": "gdansk",
@@ -1011,6 +1012,18 @@
      "arama": "ibis Gdansk Stare Miasto",
      "toplam": null,
      "eski": true
+    },
+    {
+     "ad": "Hotel Wolne Miasto",
+     "kategori": "ucuz",
+     "arama": "Hotel Wolne Miasto Gdansk",
+     "toplam": null
+    },
+    {
+     "ad": "Hampton by Hilton Gdańsk Old Town",
+     "kategori": "ucuz",
+     "arama": "Hampton by Hilton Gdansk Old Town",
+     "toplam": null
     }
    ],
    "havalimani_ulasim": {
@@ -1163,8 +1176,7 @@
     }
    },
    "secim": {
-    "konforlu": "Mercure Gdańsk Stare Miasto",
-    "ucuz": "Mercure Gdańsk Stare Miasto"
+    "konforlu": "Mercure Gdańsk Stare Miasto"
    },
    "ucus": {
     "oneri": {
@@ -1537,6 +1549,24 @@
      "arama": "Hotel Le Kleber Strasbourg",
      "toplam": null,
      "eski": true
+    },
+    {
+     "ad": "ibis Styles Strasbourg Centre Gare",
+     "kategori": "ucuz",
+     "arama": "ibis Styles Strasbourg Centre Gare",
+     "toplam": null
+    },
+    {
+     "ad": "B&B Hotel Strasbourg Centre Gare",
+     "kategori": "ucuz",
+     "arama": "B&B Hotel Strasbourg Centre Gare",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel du Dragon",
+     "kategori": "ucuz",
+     "arama": "Hotel du Dragon Strasbourg",
+     "toplam": null
     }
    ],
    "havalimani_ulasim": {
@@ -1694,8 +1724,7 @@
     }
    },
    "secim": {
-    "konforlu": "Hôtel Cathédrale",
-    "ucuz": "Hôtel Cathédrale"
+    "konforlu": "Hôtel Cathédrale"
    },
    "ucus": {
     "oneri": {
@@ -1732,281 +1761,6 @@
    "foto": "/img/sehir/strazburg-noel.jpg",
    "foto_alt": "Strazburg Katedrali ve eski şehir, gün batımı",
    "foto_kaynak": "Unsplash · Thomas Dorgler"
-  },
-  {
-   "id": "rovaniemi",
-   "sehir": "Rovaniemi",
-   "ulke": "Finlandiya",
-   "etkinlik": "Noel Baba Köyü",
-   "yer": "Santa Claus Village, Kuzey Kutup Dairesi",
-   "pazar_bas": "2026-11-01",
-   "pazar_bit": "2027-01-10",
-   "pazar_yazi": "kış boyu",
-   "pazar_saat": "10:00–17:00 (köy)",
-   "tarih": "2026-12-19",
-   "gidis": "2026-12-18",
-   "donus": "2026-12-20",
-   "plan": "Cuma gidiş, Pazar dönüş; 2 gece Rovaniemi merkezde, Cumartesi Noel Baba Köyü.",
-   "vize": "Schengen vizesi gerekir.",
-   "dikkat": "Aralık'ta gün ışığı yalnızca 2–3 saat, sıcaklık −10 ile −25 °C arası: termal içlik, bot ve eldiven şart. Kuzey ışıkları hava açıksa görülür, garanti değil. Bu hafta sonu otellerin çoğu şimdiden dolu, erken rezervasyon şart. Husky ve ren geyiği turları bütçeye dahil değil (kişi başı ~100–200 €). İstanbul'dan direkt sefer haftanın belli günleri var, robot o hafta sonuna uyan en uygun uçuşu seçer.",
-   "arama_ucus": [
-    "IST,SAW-RVN 2026-12-18 2026-12-20"
-   ],
-   "donus_min": "10:00",
-   "ozet": "Kuzey Kutup Dairesi'nin üstünde Noel Baba'nın resmî köyü: karlı orman, ren geyikleri ve şanslıysan kuzey ışıkları.",
-   "oteller": [
-    {
-     "ad": "Arctic TreeHouse Hotel",
-     "kategori": "ikonik",
-     "arama": "Arctic TreeHouse Hotel Rovaniemi",
-     "toplam": null,
-     "eski": true
-    },
-    {
-     "ad": "Arctic Light Hotel",
-     "kategori": "pahali",
-     "arama": "Arctic Light Hotel Rovaniemi",
-     "toplam": null,
-     "eski": true
-    },
-    {
-     "ad": "Santa Claus Holiday Village",
-     "kategori": "konforlu",
-     "arama": "Santa Claus Holiday Village Rovaniemi",
-     "toplam": null,
-     "eski": true
-    },
-    {
-     "ad": "Original Sokos Hotel Vaakuna",
-     "kategori": "konforlu",
-     "arama": "Original Sokos Hotel Vaakuna Rovaniemi",
-     "toplam": 1290
-    },
-    {
-     "ad": "Scandic Rovaniemi City",
-     "kategori": "konforlu",
-     "arama": "Scandic Rovaniemi City",
-     "toplam": 1058
-    },
-    {
-     "ad": "Hotel Santa Claus",
-     "kategori": "konforlu",
-     "arama": "Hotel Santa Claus Rovaniemi",
-     "toplam": 1898,
-     "eski": true
-    },
-    {
-     "ad": "Hotelli Aakenus",
-     "kategori": "ucuz",
-     "arama": "Hotel Aakenus Rovaniemi",
-     "toplam": 911
-    }
-   ],
-   "havalimani_ulasim": {
-    "fiyat": 16,
-    "yazi": "Havalimanı → merkez: Airport Express otobüsü ~15 dk, bilet otobüste; gidiş-dönüş kişi başı ~16 € (tahmini, airportbus.fi'den teyit et)."
-   },
-   "sehir_ulasim": {
-    "fiyat": 10,
-    "yazi": "Merkez–Noel Baba Köyü arası 8 km: Santa's Express ya da 8 numaralı şehir otobüsü (~20 dk)."
-   },
-   "pazara": "Noel Baba Köyü merkeze 8 km, Kuzey Kutup Dairesi çizgisinin üstünde; otobüsle ~20 dk. Noel Baba ile tanışmak ücretsiz, fotoğrafı ücretli.",
-   "akis": [
-    {
-     "gun": "Cuma 18 Aralık · varış",
-     "adimlar": [
-      [
-       "—",
-       "İstanbul → Rovaniemi",
-       "Uçuş saatini robot günceller"
-      ],
-      [
-       "",
-       "Airport Express ile merkez",
-       "~15 dk"
-      ],
-      [
-       "",
-       "Otele yerleş, termal giyin",
-       ""
-      ],
-      [
-       "",
-       "Arktikum",
-       "Laponya ve kuzey ışıkları müzesi"
-      ],
-      [
-       "20:00",
-       "Akşam yemeği",
-       "Ren geyiği yahnisi (poronkäristys)"
-      ],
-      [
-       "22:00",
-       "Kuzey ışıkları için Ounasvaara",
-       "Hava açıksa"
-      ]
-     ]
-    },
-    {
-     "gun": "Cumartesi 19 Aralık · Noel Baba",
-     "adimlar": [
-      [
-       "10:00",
-       "Santa Claus Village – Kuzey Kutup Dairesi",
-       "Çizgiyi adımla geç"
-      ],
-      [
-       "10:30",
-       "Noel Baba ile tanış",
-       "Ücretsiz, fotoğraf ücretli"
-      ],
-      [
-       "11:30",
-       "Noel Baba Postanesi",
-       "Kartpostal 'Kutup Dairesi' damgalı"
-      ],
-      [
-       "13:00",
-       "Öğle: köyde",
-       "Somon çorbası"
-      ],
-      [
-       "14:00",
-       "İsteğe bağlı: husky ya da ren geyiği kızağı",
-       "Bütçeye dahil değil"
-      ],
-      [
-       "17:00",
-       "Merkeze dönüş",
-       ""
-      ],
-      [
-       "19:30",
-       "Akşam yemeği",
-       "Lapin yemekleri"
-      ]
-     ]
-    },
-    {
-     "gun": "Pazar 20 Aralık · dönüş",
-     "adimlar": [
-      [
-       "10:00",
-       "Kahvaltı, Jätkänkynttilä Köprüsü",
-       "Kemijoki nehri"
-      ],
-      [
-       "",
-       "Havalimanına",
-       "Airport Express"
-      ],
-      [
-       "",
-       "Rovaniemi → İstanbul",
-       "Uçuş saatini robot günceller"
-      ]
-     ]
-    }
-   ],
-   "yemek": [
-    [
-     "Somon çorbası (lohikeitto)",
-     "Öğle",
-     "~16 €"
-    ],
-    [
-     "Ren geyiği yahnisi",
-     "Akşam",
-     "~35 €"
-    ],
-    [
-     "Kafe: korvapuusti + kahve",
-     "Ara",
-     "~9 €"
-    ],
-    [
-     "Süpermarket atıştırmalık",
-     "Ara",
-     "~8 €"
-    ]
-   ],
-   "gezi": [
-    "Noel Baba Köyü (ücretsiz)",
-    "Kuzey Kutup Dairesi çizgisi (ücretsiz)",
-    "Noel Baba Postanesi (ücretsiz)",
-    "Arktikum (ücretli)",
-    "Ounasvaara tepesi (ücretsiz)",
-    "Husky / ren geyiği turu (isteğe bağlı, ücretli)"
-   ],
-   "butce": {
-    "konforlu": {
-     "ucus": 979,
-     "transfer": 16,
-     "otel": 529,
-     "ulasim": 10,
-     "yemek": 140,
-     "gezi": 40
-    },
-    "ucuz": {
-     "ucus": 935,
-     "transfer": 16,
-     "otel": 456,
-     "ulasim": 10,
-     "yemek": 100,
-     "gezi": 20
-    }
-   },
-   "secim": {
-    "konforlu": "Scandic Rovaniemi City",
-    "ucuz": "Hotelli Aakenus"
-   },
-   "ucus": {
-    "oneri": {
-     "fiyat": 979,
-     "havayolu": "THY",
-     "aktarma": 1,
-     "havalimani": "Rovaniemi (RVN)",
-     "gidis": "Cuma IST 08:20 → RVN 21:05 (TK1761, AY537)",
-     "donus": "Pazar RVN 15:50 → IST 21:35"
-    },
-    "secenekler": [
-     {
-      "fiyat": 935,
-      "havayolu": "THY gidiş + Finnair dönüş",
-      "havalimani": "Rovaniemi",
-      "not": "Cuma IST 08:20 → RVN 21:05, Pazar 16:15 dönüş · 1 aktarma"
-     },
-     {
-      "fiyat": 940,
-      "havayolu": "THY",
-      "havalimani": "Rovaniemi",
-      "not": "Cuma IST 15:30 → RVN 08:40 · 1 aktarma"
-     },
-     {
-      "fiyat": 985,
-      "havayolu": "Lufthansa",
-      "havalimani": "Rovaniemi",
-      "not": "Cuma IST 19:05 → RVN 13:00 · 1 aktarma"
-     },
-     {
-      "fiyat": 1503,
-      "havayolu": "Pegasus",
-      "havalimani": "Rovaniemi",
-      "not": "Cuma SAW 10:00 → RVN 14:30 · 2 aktarma"
-     },
-     {
-      "fiyat": 1656,
-      "havayolu": "LOT",
-      "havalimani": "Rovaniemi",
-      "not": "Cuma IST 12:50 → RVN 15:20 · 2 aktarma"
-     }
-    ],
-    "seviye": "yuksek",
-    "normal_aralik": "580–860 €"
-   },
-   "foto": "/img/sehir/rovaniemi-noel.jpg",
-   "foto_alt": "Laponya'da kuzey ışıkları",
-   "foto_kaynak": "Unsplash · Sami Matias Breilin"
   },
   {
    "id": "krakov",
@@ -2508,254 +2262,6 @@
    "foto": "/img/sehir/brugge-noel.jpg",
    "foto_alt": "Brugge'de kanal ve tuğla evler",
    "foto_kaynak": "Unsplash · Suhail Kazi"
-  },
-  {
-   "id": "edinburgh",
-   "sehir": "Edinburgh",
-   "ulke": "İskoçya (Birleşik Krallık)",
-   "etkinlik": "Edinburgh's Christmas",
-   "yer": "East Princes Street Gardens",
-   "pazar_bas": "2026-11-14",
-   "pazar_bit": "2027-01-03",
-   "pazar_yazi": "14 Kasım – 3 Ocak (25 Aralık kapalı)",
-   "pazar_saat": "10:00–22:00 (26 Aralık 20:00'ye kadar)",
-   "tarih": "2026-12-26",
-   "gidis": "2026-12-25",
-   "donus": "2026-12-27",
-   "plan": "Noel günü gidiş, Pazar akşam dönüş; 2 gece Edinburgh, Old Town / New Town arası.",
-   "vize": "İngiltere vizesi gerekir (Schengen geçmez, ücretli).",
-   "dikkat": "Birleşik Krallık için ayrı vize gerekir; başvuru süresi uzun olabilir. Pazar 25 Aralık'ta kapalı, 26–27'de açık. 25–26 Aralık'ta toplu taşıma ve dükkânlar kısıtlı.",
-   "arama_ucus": [
-    "IST,SAW-EDI 2026-12-25 2026-12-27"
-   ],
-   "donus_min": "14:00",
-   "ozet": "Kalenin dibinde dönme dolap ve buz pisti; Royal Mile'da ortaçağ sokakları, akşam viski ve İskoç yemekleri.",
-   "oteller": [
-    {
-     "ad": "The Balmoral",
-     "kategori": "ikonik",
-     "arama": "The Balmoral Hotel Edinburgh",
-     "toplam": 1812
-    },
-    {
-     "ad": "Kimpton Charlotte Square",
-     "kategori": "pahali",
-     "arama": "Kimpton Charlotte Square Hotel Edinburgh",
-     "toplam": 767
-    },
-    {
-     "ad": "Hotel Indigo Edinburgh Princes Street",
-     "kategori": "konforlu",
-     "arama": "Hotel Indigo Edinburgh Princes Street",
-     "toplam": 515
-    },
-    {
-     "ad": "Radisson Blu Hotel Edinburgh",
-     "kategori": "konforlu",
-     "arama": "Radisson Blu Hotel Edinburgh Royal Mile",
-     "toplam": 679
-    },
-    {
-     "ad": "Motel One Edinburgh-Royal",
-     "kategori": "konforlu",
-     "arama": "Motel One Edinburgh-Royal",
-     "toplam": 406
-    },
-    {
-     "ad": "ibis Edinburgh Centre South Bridge",
-     "kategori": "ucuz",
-     "arama": "ibis Edinburgh Centre South Bridge Royal Mile",
-     "toplam": 355
-    },
-    {
-     "ad": "Motel One Edinburgh-Princes",
-     "kategori": "ucuz",
-     "arama": "Motel One Edinburgh-Princes",
-     "toplam": 395
-    }
-   ],
-   "havalimani_ulasim": {
-    "fiyat": 15,
-    "yazi": "Havalimanı → merkez: Airlink 100 otobüsü ya da tramvay ~30 dk; gidiş-dönüş kişi başı ~15 € (tahmini; 25 Aralık'ta sefer olmayabilir, taksi gerekebilir)."
-   },
-   "sehir_ulasim": {
-    "fiyat": 6,
-    "yazi": "Old Town ve New Town yürünür; yokuşlar için rahat ayakkabı."
-   },
-   "pazara": "Pazar Princes Street'te, Scott Anıtı ve Waverley istasyonunun yanında; kale ve Royal Mile 10 dk yürüme.",
-   "akis": [
-    {
-     "gun": "Cuma 25 Aralık · Noel günü varış",
-     "adimlar": [
-      [
-       "—",
-       "İstanbul → Edinburgh",
-       "Uçuş saatini robot günceller"
-      ],
-      [
-       "",
-       "Merkeze",
-       "Noel günü toplu taşıma kısıtlı"
-      ],
-      [
-       "",
-       "Otele yerleş",
-       ""
-      ],
-      [
-       "17:00",
-       "Princes Street ve Scott Anıtı ışıkları",
-       "Pazar bugün kapalı"
-      ],
-      [
-       "19:30",
-       "Akşam yemeği",
-       "Otel ya da Noel menüsü (önceden rezervasyon)"
-      ]
-     ]
-    },
-    {
-     "gun": "Cumartesi 26 Aralık · pazar günü",
-     "adimlar": [
-      [
-       "10:00",
-       "Edinburgh Kalesi",
-       "Önceden bilet al"
-      ],
-      [
-       "12:30",
-       "Royal Mile",
-       ""
-      ],
-      [
-       "13:30",
-       "Öğle: haggis ya da pie",
-       ""
-      ],
-      [
-       "15:00",
-       "Victoria Street ve Grassmarket",
-       ""
-      ],
-      [
-       "16:30",
-       "Edinburgh's Christmas – Princes Street Gardens",
-       "Dönme dolap, 20:00'ye kadar"
-      ],
-      [
-       "20:00",
-       "Akşam yemeği",
-       "İskoç mutfağı"
-      ]
-     ]
-    },
-    {
-     "gun": "Pazar 27 Aralık · dönüş",
-     "adimlar": [
-      [
-       "09:30",
-       "Calton Hill",
-       "Şehir manzarası"
-      ],
-      [
-       "11:00",
-       "Pazarda son tur",
-       ""
-      ],
-      [
-       "",
-       "Havalimanına",
-       "Airlink 100"
-      ],
-      [
-       "",
-       "Edinburgh → İstanbul",
-       "Uçuş saatini robot günceller"
-      ]
-     ]
-    }
-   ],
-   "yemek": [
-    [
-     "Pazarda sıcak içecek + atıştırmalık",
-     "Ara",
-     "~8 €"
-    ],
-    [
-     "Pie ya da fish & chips",
-     "Öğle",
-     "~15 €"
-    ],
-    [
-     "İskoç restoranı",
-     "Akşam",
-     "~38 €"
-    ],
-    [
-     "Kafe: scone + çay",
-     "Ara",
-     "~9 €"
-    ]
-   ],
-   "gezi": [
-    "Edinburgh's Christmas pazarı (ücretsiz, oyunlar ücretli)",
-    "Edinburgh Kalesi (ücretli)",
-    "Royal Mile (ücretsiz)",
-    "Victoria Street (ücretsiz)",
-    "Calton Hill (ücretsiz)",
-    "Scott Anıtı (ücretli)"
-   ],
-   "butce": {
-    "konforlu": {
-     "ucus": 316,
-     "transfer": 15,
-     "otel": 203,
-     "ulasim": 6,
-     "yemek": 125,
-     "gezi": 40
-    },
-    "ucuz": {
-     "ucus": 316,
-     "transfer": 15,
-     "otel": 178,
-     "ulasim": 6,
-     "yemek": 90,
-     "gezi": 15
-    }
-   },
-   "secim": {
-    "konforlu": "Motel One Edinburgh-Royal",
-    "ucuz": "ibis Edinburgh Centre South Bridge"
-   },
-   "ucus": {
-    "oneri": {
-     "fiyat": 316,
-     "havayolu": "Pegasus",
-     "aktarma": 0,
-     "havalimani": "Edinburgh (EDI)",
-     "gidis": "Cuma SAW 09:25 → EDI 10:55 (PC1187)",
-     "donus": "Pazar EDI 12:00 → SAW 19:20"
-    },
-    "secenekler": [
-     {
-      "fiyat": 316,
-      "havayolu": "Pegasus",
-      "havalimani": "Edinburgh",
-      "not": "Cuma SAW 09:25 → EDI 10:55"
-     },
-     {
-      "fiyat": 410,
-      "havayolu": "THY",
-      "havalimani": "Edinburgh",
-      "not": "Cuma IST 08:10 → EDI 09:40"
-     }
-    ],
-    "seviye": "normal",
-    "normal_aralik": "225–375 €"
-   },
-   "foto": "/img/sehir/edinburgh-noel.jpg",
-   "foto_alt": "Edinburgh Old Town ve Scott Anıtı",
-   "foto_kaynak": "Unsplash · Vishnu Prasad"
   }
  ]
 }

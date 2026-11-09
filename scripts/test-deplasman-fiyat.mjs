@@ -59,3 +59,18 @@ t("iki şehir konaklama ve ÖBB treni", () => {
   assert.equal(applyTrain(tr, []), false); assert.equal(tr.fiyat, 40.1);
 });
 console.log(`${n} test geçti (son)`);
+t("aşırı otel fiyatı, ayrı uygun otel, sınıf uyarısı, dönüşü bilinen uçuş", () => {
+  const F2 = (o) => ({ recordType: "flight", stops: 0, departureDate: "2026-12-04", departureTime: "12:50", arrivalTime: "13:40", origin: "IST", destination: "GDN", ...o });
+  const m = { ucus: { oneri: null }, butce: { konforlu: {}, ucuz: {} }, secim: { konforlu: "K", ucuz: "K" },
+    oteller: [{ ad: "S", arama: "s", kategori: "ikonik" }, { ad: "K", arama: "k", kategori: "konforlu" }, { ad: "K2", arama: "k2", kategori: "konforlu" }, { ad: "L", arama: "l", kategori: "pahali" }, { ad: "U", arama: "u", kategori: "ucuz" }] };
+  applyMatch(m, [F2({ section: "departing", airline: "LOT", price: 250, flightNumbers: ["LO1"] }), F2({ section: "departing", airline: "THY", price: 300, flightNumbers: ["TK1"] }),
+    F2({ section: "returning", airline: "THY", price: 300, outboundFlightNumbers: ["TK1"], departureTime: "18:00", departureDate: "2026-12-06" })],
+    [{ input: "s", totalPrice: 7000 }, { input: "k", totalPrice: 400 }, { input: "k2", totalPrice: 900 }, { input: "l", totalPrice: 500 }]);
+  assert.equal(m.oteller[0].toplam, null); assert.ok(m.oteller[0].kontrol);          // süit fiyatı gizlendi
+  assert.equal(m.ucus.oneri.havayolu, "THY"); assert.ok(m.ucus.oneri.donus);        // dönüşü bilinen öneri
+  assert.equal(m.secim.ucuz, undefined); assert.equal(m.uygun_plan, false);         // uygun otel fiyatsız → uygun plan yok
+  assert.equal(m.uyarilar.length, 1); assert.match(m.uyarilar[0], /K2 \(Konforlu, 900 €\).*L \(Lüks, 500 €\)/);
+  applyMatch(m, [], [{ input: "u", totalPrice: 300 }, { input: "k", totalPrice: 400 }]);
+  assert.equal(m.secim.ucuz, "U"); assert.equal(m.uygun_plan, true);
+});
+console.log(`${n} test geçti (kurul kuralları)`);
