@@ -9837,6 +9837,626 @@
      ]
     }
    ]
+  },
+  "Dresden": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3.2,
+     "aciklama": "VVO tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 3.5,
+     "sure_dk": 20,
+     "aciklama": "S2 havalimanı → Hbf, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "striezel",
+     "ad": "Striezelmarkt",
+     "arama": "Dresdner Striezelmarkt Altmarkt",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "1434'ten beri kurulan, Almanya'nın en eski Noel pazarı.",
+     "kaynak": null,
+     "konum": [
+      51.0496,
+      13.738
+     ]
+    },
+    {
+     "id": "frauenkirche",
+     "ad": "Frauenkirche",
+     "arama": "Frauenkirche Dresden",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Savaştan sonra yeniden yapılan barok kilise.",
+     "kaynak": null,
+     "konum": [
+      51.0519,
+      13.7416
+     ]
+    },
+    {
+     "id": "zwinger",
+     "ad": "Zwinger",
+     "arama": "Zwinger Dresden",
+     "tur": "Saray",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Barok saray avlusu; müzeler ücretli.",
+     "kaynak": null,
+     "konum": [
+      51.053,
+      13.7337
+     ]
+    },
+    {
+     "id": "stallhof",
+     "ad": "Stallhof Orta Çağ pazarı",
+     "arama": "Mittelalterlicher Weihnachtsmarkt Stallhof Dresden",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Meşaleli Orta Çağ pazarı.",
+     "kaynak": null,
+     "konum": [
+      51.053,
+      13.7392
+     ]
+    },
+    {
+     "id": "bruhl",
+     "ad": "Brühl Terası",
+     "arama": "Brühlsche Terrasse Dresden",
+     "tur": "Manzara",
+     "bolge": "elbe",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Elbe kıyısında 'Avrupa'nın balkonu'.",
+     "kaynak": null,
+     "konum": [
+      51.0532,
+      13.7437
+     ]
+    },
+    {
+     "id": "fuerstenzug",
+     "ad": "Fürstenzug",
+     "arama": "Fürstenzug Dresden",
+     "tur": "Sanat",
+     "bolge": "merkez",
+     "sure_dk": 15,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "102 m'lik porselen karo duvar resmi.",
+     "kaynak": null,
+     "konum": [
+      51.0526,
+      13.7389
+     ]
+    }
+   ]
+  },
+  "Salzburg": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.5,
+     "aciklama": "Şehir otobüsü tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 3,
+     "sure_dk": 20,
+     "aciklama": "2/10 troleybüs, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "ckm",
+     "ad": "Christkindlmarkt",
+     "arama": "Salzburger Christkindlmarkt Domplatz",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Katedral ile Residenz arasındaki pazar.",
+     "kaynak": null,
+     "konum": [
+      47.798,
+      13.047
+     ]
+    },
+    {
+     "id": "festung",
+     "ad": "Hohensalzburg Kalesi",
+     "arama": "Festung Hohensalzburg",
+     "tur": "Kale",
+     "bolge": "kale",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Füniküler ile çıkılan kale; Alp manzarası.",
+     "kaynak": null,
+     "konum": [
+      47.7949,
+      13.0476
+     ]
+    },
+    {
+     "id": "mozart",
+     "ad": "Mozart'ın doğduğu ev",
+     "arama": "Mozarts Geburtshaus Salzburg",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Getreidegasse 9.",
+     "kaynak": null,
+     "konum": [
+      47.8,
+      13.0435
+     ]
+    },
+    {
+     "id": "getreide",
+     "ad": "Getreidegasse",
+     "arama": "Getreidegasse Salzburg",
+     "tur": "Yürüyüş",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Demir tabelalı alışveriş sokağı.",
+     "kaynak": null,
+     "konum": [
+      47.7997,
+      13.043
+     ]
+    },
+    {
+     "id": "mirabell",
+     "ad": "Mirabell Bahçeleri ve pazarı",
+     "arama": "Mirabellgarten Salzburg",
+     "tur": "Bahçe",
+     "bolge": "yeni",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Sarayın önünde ikinci Noel pazarı.",
+     "kaynak": null,
+     "konum": [
+      47.8057,
+      13.0418
+     ]
+    },
+    {
+     "id": "dom",
+     "ad": "Salzburg Katedrali",
+     "arama": "Salzburger Dom",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 25,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Barok katedral.",
+     "kaynak": null,
+     "konum": [
+      47.7979,
+      13.0466
+     ]
+    }
+   ]
+  },
+  "Gdańsk": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.2,
+     "aciklama": "ZTM tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 1.8,
+     "sure_dk": 30,
+     "aciklama": "210 otobüs / PKM, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "jarmark",
+     "ad": "Noel pazarı",
+     "arama": "Jarmark Bożonarodzeniowy Gdańsk Targ Węglowy",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Dönme dolaplı Noel pazarı.",
+     "kaynak": null,
+     "konum": [
+      54.351,
+      18.649
+     ]
+    },
+    {
+     "id": "dlugi",
+     "ad": "Długi Targ ve Neptün Çeşmesi",
+     "arama": "Długi Targ Gdańsk",
+     "tur": "Yürüyüş",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Renkli Hansa evleri.",
+     "kaynak": null,
+     "konum": [
+      54.3486,
+      18.6533
+     ]
+    },
+    {
+     "id": "mariacka",
+     "ad": "Mariacka Sokağı",
+     "arama": "Ulica Mariacka Gdańsk",
+     "tur": "Yürüyüş",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kehribar dükkânları.",
+     "kaynak": null,
+     "konum": [
+      54.3497,
+      18.656
+     ]
+    },
+    {
+     "id": "stmary",
+     "ad": "St. Mary Kilisesi kulesi",
+     "arama": "Bazylika Mariacka Gdańsk",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 50,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Dünyanın en büyük tuğla kiliselerinden.",
+     "kaynak": null,
+     "konum": [
+      54.3497,
+      18.6531
+     ]
+    },
+    {
+     "id": "zuraw",
+     "ad": "Żuraw",
+     "arama": "Żuraw Gdańsk",
+     "tur": "Müze",
+     "bolge": "nehir",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Orta Çağ liman vinci.",
+     "kaynak": null,
+     "konum": [
+      54.3505,
+      18.6574
+     ]
+    },
+    {
+     "id": "ecs",
+     "ad": "Avrupa Dayanışma Merkezi",
+     "arama": "European Solidarity Centre Gdańsk",
+     "tur": "Müze",
+     "bolge": "tersane",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Dayanışma hareketinin müzesi.",
+     "kaynak": null,
+     "konum": [
+      54.361,
+      18.649
+     ]
+    }
+   ]
+  },
+  "Brugge": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3,
+     "aciklama": "De Lijn tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 21,
+     "sure_dk": 90,
+     "aciklama": "Brüksel Havalimanı → Brugge treni, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "markt",
+     "ad": "Winter Glow, Markt",
+     "arama": "Markt Brugge",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 50,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Belfort'un dibindeki ana pazar.",
+     "kaynak": null,
+     "konum": [
+      51.2088,
+      3.2247
+     ]
+    },
+    {
+     "id": "belfort",
+     "ad": "Belfort kulesi",
+     "arama": "Belfort Brugge",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "366 basamaklı ortaçağ kulesi.",
+     "kaynak": null,
+     "konum": [
+      51.208,
+      3.2248
+     ]
+    },
+    {
+     "id": "stevin",
+     "ad": "Simon Stevinplein pazarı",
+     "arama": "Simon Stevinplein Brugge",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 25,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Daha sakin ikinci pazar.",
+     "kaynak": null,
+     "konum": [
+      51.2063,
+      3.2236
+     ]
+    },
+    {
+     "id": "begijnhof",
+     "ad": "Begijnhof",
+     "arama": "Begijnhof Brugge",
+     "tur": "Yürüyüş",
+     "bolge": "guney",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Beyaz evli sessiz avlu.",
+     "kaynak": null,
+     "konum": [
+      51.2014,
+      3.224
+     ]
+    },
+    {
+     "id": "minnewater",
+     "ad": "Minnewater ve buz pisti",
+     "arama": "Minnewater Brugge",
+     "tur": "Manzara",
+     "bolge": "guney",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Aşk gölü; buz pisti yanında.",
+     "kaynak": null,
+     "konum": [
+      51.198,
+      3.225
+     ]
+    },
+    {
+     "id": "kanal",
+     "ad": "Kanal turu",
+     "arama": "Boat tour Brugge",
+     "tur": "Gezi",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Hava izin verirse.",
+     "kaynak": null,
+     "konum": [
+      51.2066,
+      3.228
+     ]
+    }
+   ]
+  },
+  "Edinburgh": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.3,
+     "aciklama": "Lothian Buses tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 7.5,
+     "sure_dk": 30,
+     "aciklama": "Airlink 100 / tramvay, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "market",
+     "ad": "Edinburgh's Christmas",
+     "arama": "Edinburgh's Christmas East Princes Street Gardens",
+     "tur": "Pazar",
+     "bolge": "newtown",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Dönme dolap ve buz pistli pazar; 25 Aralık kapalı.",
+     "kaynak": null,
+     "konum": [
+      55.952,
+      -3.192
+     ]
+    },
+    {
+     "id": "castle",
+     "ad": "Edinburgh Kalesi",
+     "arama": "Edinburgh Castle",
+     "tur": "Kale",
+     "bolge": "oldtown",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Volkanik kaya üstündeki kale.",
+     "kaynak": null,
+     "konum": [
+      55.9486,
+      -3.1999
+     ]
+    },
+    {
+     "id": "royalmile",
+     "ad": "Royal Mile",
+     "arama": "Royal Mile Edinburgh",
+     "tur": "Yürüyüş",
+     "bolge": "oldtown",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kaleden Holyrood'a uzanan cadde.",
+     "kaynak": null,
+     "konum": [
+      55.9502,
+      -3.1872
+     ]
+    },
+    {
+     "id": "victoria",
+     "ad": "Victoria Street ve Grassmarket",
+     "arama": "Victoria Street Edinburgh",
+     "tur": "Yürüyüş",
+     "bolge": "oldtown",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Renkli kıvrımlı sokak.",
+     "kaynak": null,
+     "konum": [
+      55.9486,
+      -3.1932
+     ]
+    },
+    {
+     "id": "calton",
+     "ad": "Calton Hill",
+     "arama": "Calton Hill Edinburgh",
+     "tur": "Manzara",
+     "bolge": "newtown",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehir manzarası.",
+     "kaynak": null,
+     "konum": [
+      55.9553,
+      -3.1827
+     ]
+    },
+    {
+     "id": "scott",
+     "ad": "Scott Anıtı",
+     "arama": "Scott Monument",
+     "tur": "Manzara",
+     "bolge": "newtown",
+     "sure_dk": 40,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "287 basamaklı gotik anıt.",
+     "kaynak": null,
+     "konum": [
+      55.9524,
+      -3.1933
+     ]
+    }
+   ]
   }
  },
  "harcama": {

@@ -4,7 +4,7 @@
  "slug": "noel",
  "tur": "tema",
  "etiket": "Noel",
- "turnuva": "Aralık 2026 hafta sonları · Noel pazarı şehirleri",
+ "turnuva": "Aralık 2026 hafta sonları · 10 Noel pazarı şehri",
  "renk": {
   "a": "#C8102E",
   "b": "#0F3D2E",
@@ -17,7 +17,8 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.13
+  "son_maliyet_usd": 0.13,
+  "zorla": true
  },
  "kaynaklar": [
   {
@@ -43,6 +44,26 @@
   {
    "ad": "Rovaniemi havalimanı ulaşımı (Finavia)",
    "url": "https://finavia.fi/en/airports/rovaniemi/parking-access/public-transport"
+  },
+  {
+   "ad": "Dresden Striezelmarkt 2026 (Elberadweg)",
+   "url": "https://www.elberadweg.de/veranstaltung/striezelmarkt-dresden-2026/"
+  },
+  {
+   "ad": "Salzburg Christkindlmarkt 2026 (Salzburg Turizm)",
+   "url": "https://www.salzburg.info/de/veranstaltungen/veranstaltungskalender/salzburger-christkindlmarkt-am-dom-und-residenzplatz_event_42164337"
+  },
+  {
+   "ad": "Gdańsk Noel pazarı 2026 (In Your Pocket)",
+   "url": "https://www.inyourpocket.com/poland/gdansk/events/gdansk-christmas-market"
+  },
+  {
+   "ad": "Brugge Winter Glow 2026 (Nomado)",
+   "url": "https://www.nomadotravel.app/en/guides/bruges-christmas-market-guide"
+  },
+  {
+   "ad": "Edinburgh Noel pazarı 2026 (Meininger)",
+   "url": "https://www.meininger-hotels.com/blog/en/edinburgh-christmas-market-dates/"
   }
  ],
  "maclar": [
@@ -299,6 +320,664 @@
    "foto": "/img/sehir/nurnberg-noel.jpg",
    "foto_alt": "Nürnberg eski şehir ve St. Sebald kilisesi",
    "foto_kaynak": "Unsplash · Markus Spiske"
+  },
+  {
+   "id": "dresden",
+   "sehir": "Dresden",
+   "ulke": "Almanya",
+   "etkinlik": "Striezelmarkt",
+   "yer": "Altmarkt",
+   "pazar_bas": "2026-11-25",
+   "pazar_bit": "2026-12-24",
+   "pazar_yazi": "25 Kasım – 24 Aralık",
+   "pazar_saat": "10:00–21:00 (tahmini; resmî saatleri kontrol et)",
+   "tarih": "2026-12-05",
+   "gidis": "2026-12-04",
+   "donus": "2026-12-06",
+   "plan": "Cuma gidiş, Pazar akşam dönüş; 2 gece Dresden, Altstadt'ta.",
+   "vize": "Schengen vizesi gerekir.",
+   "dikkat": "İstanbul–Dresden arasında her gün direkt uçuş olmayabilir; robot o hafta sonu için aktarmalı dahil en uygun uçuşu seçer.",
+   "arama_ucus": [
+    "IST,SAW-DRS 2026-12-04 2026-12-06"
+   ],
+   "donus_min": "14:00",
+   "ozet": "Almanya'nın en eski Noel pazarı (1434): dev ahşap piramit, Stollen ve barok Elbe kıyısı.",
+   "oteller": [
+    {
+     "ad": "Hotel Taschenbergpalais Kempinski",
+     "kategori": "ikonik",
+     "arama": "Hotel Taschenbergpalais Kempinski Dresden",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Gewandhaus Dresden",
+     "kategori": "pahali",
+     "arama": "Hotel Gewandhaus Dresden Autograph Collection",
+     "toplam": null
+    },
+    {
+     "ad": "Hyperion Hotel Dresden am Schloss",
+     "kategori": "konforlu",
+     "arama": "Hyperion Hotel Dresden am Schloss",
+     "toplam": null
+    },
+    {
+     "ad": "NH Collection Dresden Altmarkt",
+     "kategori": "konforlu",
+     "arama": "NH Collection Dresden Altmarkt",
+     "toplam": null
+    },
+    {
+     "ad": "Innside by Meliá Dresden",
+     "kategori": "konforlu",
+     "arama": "Innside by Melia Dresden",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One Dresden am Zwinger",
+     "kategori": "ucuz",
+     "arama": "Motel One Dresden am Zwinger",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Dresden Zentrum",
+     "kategori": "ucuz",
+     "arama": "ibis Dresden Zentrum",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 7,
+    "yazi": "Havalimanı → Hauptbahnhof/Neustadt: S2 treni ~20 dk; gidiş-dönüş kişi başı ~7 € (tahmini, VVO'dan teyit et)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 8,
+    "yazi": "Altstadt yürünür; Neustadt için tramvay günlük bileti."
+   },
+   "pazara": "Striezelmarkt Altmarkt'ta; Frauenkirche, Neumarkt'taki tarihi pazar ve Stallhof'taki Orta Çağ pazarı 5–10 dk yürüme.",
+   "akis": [
+    {
+     "gun": "Cuma 4 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Dresden",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "S2 ile merkez",
+       "~20 dk"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Altstadt"
+      ],
+      [
+       "17:00",
+       "Striezelmarkt – Altmarkt",
+       "Dev Noel piramidi"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Sakson mutfağı"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 5 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Frauenkirche",
+       "Kubbeye çıkış ücretli"
+      ],
+      [
+       "11:30",
+       "Zwinger ve Semperoper",
+       "Dışarıdan"
+      ],
+      [
+       "13:00",
+       "Öğle: Neumarkt pazarı",
+       "Tarihi Noel pazarı"
+      ],
+      [
+       "15:00",
+       "Fürstenzug ve Brühl Terası",
+       "Elbe manzarası"
+      ],
+      [
+       "17:00",
+       "Stallhof Orta Çağ pazarı – Stallhof",
+       "Meşaleler ve demirci"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Neustadt"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 6 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Stollen tadımı",
+       "Dresdner Christstollen"
+      ],
+      [
+       "",
+       "Havalimanına",
+       "S2"
+      ],
+      [
+       "",
+       "Dresden → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Dresdner Stollen + Glühwein",
+     "Ara",
+     "~9 €"
+    ],
+    [
+     "Pazar standında Bratwurst",
+     "Öğle",
+     "~6 €"
+    ],
+    [
+     "Sakson restoranı",
+     "Akşam",
+     "~26 €"
+    ],
+    [
+     "Kafe: Eierschecke + kahve",
+     "Ara",
+     "~8 €"
+    ]
+   ],
+   "gezi": [
+    "Striezelmarkt (ücretsiz)",
+    "Frauenkirche (ücretsiz, kubbe ücretli)",
+    "Zwinger avlusu (ücretsiz)",
+    "Stallhof Orta Çağ pazarı (ücretli giriş olabilir)",
+    "Brühl Terası (ücretsiz)",
+    "Fürstenzug (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 7,
+     "otel": 0,
+     "ulasim": 8,
+     "yemek": 100,
+     "gezi": 20
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 7,
+     "otel": 0,
+     "ulasim": 8,
+     "yemek": 70,
+     "gezi": 10
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  },
+  {
+   "id": "salzburg",
+   "sehir": "Salzburg",
+   "ulke": "Avusturya",
+   "etkinlik": "Christkindlmarkt",
+   "yer": "Domplatz ve Residenzplatz",
+   "pazar_bas": "2026-11-19",
+   "pazar_bit": "2027-01-01",
+   "pazar_yazi": "19 Kasım – 1 Ocak",
+   "pazar_saat": "Cuma 10:00–21:00, Cumartesi 9:00–21:00, Pazar 9:00–20:30",
+   "tarih": "2026-12-05",
+   "gidis": "2026-12-04",
+   "donus": "2026-12-06",
+   "plan": "Cuma gidiş, Pazar akşam dönüş; 2 gece Salzburg, eski şehirde.",
+   "vize": "Schengen vizesi gerekir.",
+   "dikkat": "Kışın İstanbul–Salzburg direkt seferi sınırlı; robot aktarmalı dahil en uygun uçuşu seçer. Münih havalimanı + trenle (~2 saat) de gidilebilir.",
+   "arama_ucus": [
+    "IST,SAW-SZG 2026-12-04 2026-12-06"
+   ],
+   "donus_min": "14:00",
+   "ozet": "Mozart'ın şehrinde katedral ile sarayın arasına kurulan pazar; kale tepesinden karlı Alpler.",
+   "oteller": [
+    {
+     "ad": "Hotel Sacher Salzburg",
+     "kategori": "ikonik",
+     "arama": "Hotel Sacher Salzburg",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Goldener Hirsch",
+     "kategori": "pahali",
+     "arama": "Hotel Goldener Hirsch Salzburg",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Elefant",
+     "kategori": "konforlu",
+     "arama": "Hotel Elefant Salzburg",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Stein",
+     "kategori": "konforlu",
+     "arama": "Hotel Stein Salzburg",
+     "toplam": null
+    },
+    {
+     "ad": "Arthotel Blaue Gans",
+     "kategori": "konforlu",
+     "arama": "Arthotel Blaue Gans Salzburg",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One Salzburg-Mirabell",
+     "kategori": "ucuz",
+     "arama": "Motel One Salzburg-Mirabell",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Salzburg City",
+     "kategori": "ucuz",
+     "arama": "ibis Salzburg City",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 6,
+    "yazi": "Havalimanı → eski şehir: 2 ya da 10 numaralı troleybüs ~20 dk; gidiş-dönüş kişi başı ~6 € (tahmini)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 6,
+    "yazi": "Eski şehir yürünür; Hohensalzburg'a füniküler bilete dahil."
+   },
+   "pazara": "Pazar Domplatz ve Residenzplatz'ta, Getreidegasse'ye 3 dk; Mirabell Sarayı önünde ikinci bir pazar var.",
+   "akis": [
+    {
+     "gun": "Cuma 4 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Salzburg",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Troleybüsle eski şehir",
+       "~20 dk"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       ""
+      ],
+      [
+       "17:00",
+       "Christkindlmarkt – Domplatz",
+       "Katedral önünde"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Avusturya mutfağı"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 5 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Hohensalzburg Kalesi",
+       "Füniküler, Alp manzarası"
+      ],
+      [
+       "12:30",
+       "Getreidegasse ve Mozart'ın doğduğu ev",
+       ""
+      ],
+      [
+       "13:30",
+       "Öğle: Würstelstand",
+       "Bosna sosisi"
+      ],
+      [
+       "15:00",
+       "Mirabell Bahçeleri pazarı – Mirabellplatz",
+       ""
+      ],
+      [
+       "17:30",
+       "Christkindlmarkt – Residenzplatz",
+       "Akşam ışıkları"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Augustiner Bräu"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 6 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Café Tomaselli",
+       "Melange + Sachertorte"
+      ],
+      [
+       "",
+       "Havalimanına",
+       "Troleybüs"
+      ],
+      [
+       "",
+       "Salzburg → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Bosna (Salzburg usulü sosis)",
+     "Öğle",
+     "~6 €"
+    ],
+    [
+     "Glühwein + kestane",
+     "Ara",
+     "~8 €"
+    ],
+    [
+     "Augustiner Bräu biraevi",
+     "Akşam",
+     "~22 €"
+    ],
+    [
+     "Kafe: Sachertorte + melange",
+     "Ara",
+     "~11 €"
+    ]
+   ],
+   "gezi": [
+    "Christkindlmarkt (ücretsiz)",
+    "Hohensalzburg Kalesi (ücretli)",
+    "Mozart'ın doğduğu ev (ücretli)",
+    "Getreidegasse (ücretsiz)",
+    "Mirabell Bahçeleri (ücretsiz)",
+    "Salzburg Katedrali (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 6,
+     "otel": 0,
+     "ulasim": 6,
+     "yemek": 110,
+     "gezi": 35
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 6,
+     "otel": 0,
+     "ulasim": 6,
+     "yemek": 80,
+     "gezi": 15
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  },
+  {
+   "id": "gdansk",
+   "sehir": "Gdańsk",
+   "ulke": "Polonya",
+   "etkinlik": "Noel pazarı",
+   "yer": "Targ Węglowy",
+   "pazar_bas": "2026-11-20",
+   "pazar_bit": "2026-12-23",
+   "pazar_yazi": "20 Kasım – 23 Aralık",
+   "pazar_saat": "12:00–21:00",
+   "tarih": "2026-12-05",
+   "gidis": "2026-12-04",
+   "donus": "2026-12-06",
+   "plan": "Cuma gidiş, Pazar akşam dönüş; 2 gece Gdańsk, Ana Şehir'de (Główne Miasto).",
+   "vize": "Schengen vizesi gerekir.",
+   "arama_ucus": [
+    "IST,SAW-GDN 2026-12-04 2026-12-06"
+   ],
+   "donus_min": "14:00",
+   "ozet": "Baltık kıyısında renkli Hansa evleri, dönme dolap ve kehribar: Avrupa'nın en güzel Noel pazarlarından biri, Polonya fiyatlarıyla.",
+   "oteller": [
+    {
+     "ad": "Hotel Gdańsk Boutique",
+     "kategori": "ikonik",
+     "arama": "Hotel Gdansk Boutique",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Podewils",
+     "kategori": "pahali",
+     "arama": "Hotel Podewils Gdansk",
+     "toplam": null
+    },
+    {
+     "ad": "Hilton Gdańsk",
+     "kategori": "pahali",
+     "arama": "Hilton Gdansk",
+     "toplam": null
+    },
+    {
+     "ad": "Puro Gdańsk Stare Miasto",
+     "kategori": "konforlu",
+     "arama": "PURO Gdansk Stare Miasto",
+     "toplam": null
+    },
+    {
+     "ad": "Mercure Gdańsk Stare Miasto",
+     "kategori": "konforlu",
+     "arama": "Mercure Gdansk Stare Miasto",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Hanza",
+     "kategori": "konforlu",
+     "arama": "Hotel Hanza Gdansk",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Gdańsk Stare Miasto",
+     "kategori": "ucuz",
+     "arama": "ibis Gdansk Stare Miasto",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 4,
+    "yazi": "Havalimanı → merkez: 210 otobüsü ya da PKM treni ~30 dk; gidiş-dönüş kişi başı ~4 € (tahmini)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 4,
+    "yazi": "Ana Şehir tamamen yürünür."
+   },
+   "pazara": "Pazar Targ Węglowy'de; Długi Targ, Neptün Çeşmesi ve Mariacka Sokağı 5 dk yürüme.",
+   "akis": [
+    {
+     "gun": "Cuma 4 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Gdańsk",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Otobüs ya da trenle merkez",
+       "~30 dk"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Ana Şehir"
+      ],
+      [
+       "17:00",
+       "Noel pazarı – Targ Węglowy",
+       "Dönme dolap"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Pierogi ve Baltık balığı"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 5 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Długi Targ ve Neptün Çeşmesi",
+       ""
+      ],
+      [
+       "11:00",
+       "Mariacka Sokağı",
+       "Kehribar dükkânları"
+      ],
+      [
+       "12:00",
+       "St. Mary Kilisesi kulesi",
+       "Şehir manzarası"
+      ],
+      [
+       "13:30",
+       "Öğle: süt barı",
+       "Uygun Polonya mutfağı"
+      ],
+      [
+       "15:00",
+       "Motława kıyısı ve Żuraw vinci",
+       ""
+      ],
+      [
+       "17:00",
+       "Noel pazarı – Targ Węglowy",
+       "Grzaniec ve zapiekanka"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       ""
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 6 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Avrupa Dayanışma Merkezi",
+       "İsteğe bağlı müze"
+      ],
+      [
+       "",
+       "Havalimanına",
+       ""
+      ],
+      [
+       "",
+       "Gdańsk → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Pazarda oscypek + grzaniec",
+     "Ara",
+     "~6 €"
+    ],
+    [
+     "Süt barı (bar mleczny)",
+     "Öğle",
+     "~8 €"
+    ],
+    [
+     "Restoran: pierogi, balık",
+     "Akşam",
+     "~20 €"
+    ],
+    [
+     "Kafe",
+     "Ara",
+     "~6 €"
+    ]
+   ],
+   "gezi": [
+    "Noel pazarı (ücretsiz)",
+    "Długi Targ (ücretsiz)",
+    "Mariacka Sokağı (ücretsiz)",
+    "St. Mary Kilisesi kulesi (ücretli)",
+    "Żuraw (ücretli)",
+    "Avrupa Dayanışma Merkezi (ücretli)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 4,
+     "otel": 0,
+     "ulasim": 4,
+     "yemek": 70,
+     "gezi": 20
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 4,
+     "otel": 0,
+     "ulasim": 4,
+     "yemek": 50,
+     "gezi": 8
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
   },
   {
    "id": "munih",
@@ -1363,6 +2042,453 @@
     ],
     "seviye": "yuksek",
     "normal_aralik": "165–240 €"
+   },
+   "foto": null
+  },
+  {
+   "id": "brugge",
+   "sehir": "Brugge",
+   "ulke": "Belçika",
+   "etkinlik": "Winter Glow",
+   "yer": "Markt ve Simon Stevinplein",
+   "pazar_bas": "2026-11-20",
+   "pazar_bit": "2027-01-03",
+   "pazar_yazi": "20 Kasım – 3 Ocak",
+   "pazar_saat": "ışık rotası 17:30'dan itibaren; pazar gün boyu",
+   "tarih": "2026-12-26",
+   "gidis": "2026-12-25",
+   "donus": "2026-12-27",
+   "plan": "Noel günü Brüksel'e uçuş, trenle Brugge; 2 gece Brugge, Pazar akşam dönüş.",
+   "vize": "Schengen vizesi gerekir.",
+   "dikkat": "Brugge'nin havalimanı yok: Brüksel Havalimanı'na inip trenle ~1,5 saat (Brüksel'de aktarma). 25 Aralık'ta tren seferleri azalabilir, saatleri SNCB'den kontrol et.",
+   "arama_ucus": [
+    "IST,SAW-BRU 2026-12-25 2026-12-27"
+   ],
+   "donus_min": "15:00",
+   "havalimani_tercih": "BRU",
+   "ozet": "Kanallar, Belfort kulesi ve buz pisti: Noel'den sonra da açık masal şehri, Belçika çikolatası ve waffle eşliğinde.",
+   "oteller": [
+    {
+     "ad": "Hotel Dukes' Palace",
+     "kategori": "ikonik",
+     "arama": "Hotel Dukes Palace Brugge",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Heritage",
+     "kategori": "pahali",
+     "arama": "Hotel Heritage Bruges",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Navarra",
+     "kategori": "konforlu",
+     "arama": "Hotel Navarra Brugge",
+     "toplam": null
+    },
+    {
+     "ad": "NH Brugge",
+     "kategori": "konforlu",
+     "arama": "NH Brugge",
+     "toplam": null
+    },
+    {
+     "ad": "Martin's Brugge",
+     "kategori": "konforlu",
+     "arama": "Martin's Brugge",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Brugge Centrum",
+     "kategori": "ucuz",
+     "arama": "ibis Brugge Centrum",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Montanus",
+     "kategori": "pahali",
+     "arama": "Hotel Montanus Brugge",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 42,
+    "yazi": "Brüksel Havalimanı → Brugge treni ~1,5 saat (aktarmalı), havalimanı ücreti dahil tek yön ~21 €; gidiş-dönüş kişi başı ~42 € (tahmini, SNCB'den teyit et)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 5,
+    "yazi": "Merkez tamamen yürünür; istasyondan merkeze 15 dk yürüme ya da otobüs."
+   },
+   "pazara": "Ana pazar Markt'ta Belfort kulesinin dibinde, ikincisi 300 m güneyde Simon Stevinplein'de; buz pisti Minnewater yanında.",
+   "akis": [
+    {
+     "gun": "Cuma 25 Aralık · Noel günü varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Brüksel",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Trenle Brugge",
+       "~1,5 saat"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       ""
+      ],
+      [
+       "18:00",
+       "Winter Glow – Markt",
+       "Işık rotası"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Midye ya da Flaman yahnisi"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 26 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Belfort kulesi",
+       "366 basamak"
+      ],
+      [
+       "11:30",
+       "Kanal turu",
+       "Hava izin verirse"
+      ],
+      [
+       "13:00",
+       "Öğle: frites + waffle",
+       ""
+      ],
+      [
+       "14:30",
+       "Begijnhof ve Minnewater",
+       "Sessiz avlu"
+      ],
+      [
+       "16:00",
+       "Buz pisti – Minnewater",
+       "İsteğe bağlı"
+      ],
+      [
+       "18:00",
+       "Winter Glow – Simon Stevinplein",
+       ""
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       ""
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 27 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, çikolata dükkânları",
+       ""
+      ],
+      [
+       "",
+       "Trenle Brüksel Havalimanı",
+       "~1,5 saat"
+      ],
+      [
+       "",
+       "Brüksel → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Frites (külah patates)",
+     "Öğle",
+     "~5 €"
+    ],
+    [
+     "Waffle + sıcak çikolata",
+     "Ara",
+     "~9 €"
+    ],
+    [
+     "Flaman restoranı (midye, yahni)",
+     "Akşam",
+     "~32 €"
+    ],
+    [
+     "Pazarda Glühwein",
+     "Ara",
+     "~5 €"
+    ]
+   ],
+   "gezi": [
+    "Winter Glow pazarları (ücretsiz)",
+    "Belfort kulesi (ücretli)",
+    "Kanal turu (ücretli)",
+    "Begijnhof (ücretsiz)",
+    "Minnewater (ücretsiz)",
+    "Buz pisti (ücretli, ~8 €)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 42,
+     "otel": 0,
+     "ulasim": 5,
+     "yemek": 115,
+     "gezi": 30
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 42,
+     "otel": 0,
+     "ulasim": 5,
+     "yemek": 85,
+     "gezi": 15
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "foto": null
+  },
+  {
+   "id": "edinburgh",
+   "sehir": "Edinburgh",
+   "ulke": "İskoçya (Birleşik Krallık)",
+   "etkinlik": "Edinburgh's Christmas",
+   "yer": "East Princes Street Gardens",
+   "pazar_bas": "2026-11-14",
+   "pazar_bit": "2027-01-03",
+   "pazar_yazi": "14 Kasım – 3 Ocak (25 Aralık kapalı)",
+   "pazar_saat": "10:00–22:00 (26 Aralık 20:00'ye kadar)",
+   "tarih": "2026-12-26",
+   "gidis": "2026-12-25",
+   "donus": "2026-12-27",
+   "plan": "Noel günü gidiş, Pazar akşam dönüş; 2 gece Edinburgh, Old Town / New Town arası.",
+   "vize": "İngiltere vizesi gerekir (Schengen geçmez, ücretli).",
+   "dikkat": "Birleşik Krallık için ayrı vize gerekir; başvuru süresi uzun olabilir. Pazar 25 Aralık'ta kapalı, 26–27'de açık. 25–26 Aralık'ta toplu taşıma ve dükkânlar kısıtlı.",
+   "arama_ucus": [
+    "IST,SAW-EDI 2026-12-25 2026-12-27"
+   ],
+   "donus_min": "14:00",
+   "ozet": "Kalenin dibinde dönme dolap ve buz pisti; Royal Mile'da ortaçağ sokakları, akşam viski ve İskoç yemekleri.",
+   "oteller": [
+    {
+     "ad": "The Balmoral",
+     "kategori": "ikonik",
+     "arama": "The Balmoral Hotel Edinburgh",
+     "toplam": null
+    },
+    {
+     "ad": "Kimpton Charlotte Square",
+     "kategori": "pahali",
+     "arama": "Kimpton Charlotte Square Hotel Edinburgh",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Indigo Edinburgh Princes Street",
+     "kategori": "konforlu",
+     "arama": "Hotel Indigo Edinburgh Princes Street",
+     "toplam": null
+    },
+    {
+     "ad": "Radisson Blu Hotel Edinburgh",
+     "kategori": "konforlu",
+     "arama": "Radisson Blu Hotel Edinburgh Royal Mile",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One Edinburgh-Royal",
+     "kategori": "konforlu",
+     "arama": "Motel One Edinburgh-Royal",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Edinburgh Centre South Bridge",
+     "kategori": "ucuz",
+     "arama": "ibis Edinburgh Centre South Bridge Royal Mile",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One Edinburgh-Princes",
+     "kategori": "ucuz",
+     "arama": "Motel One Edinburgh-Princes",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 15,
+    "yazi": "Havalimanı → merkez: Airlink 100 otobüsü ya da tramvay ~30 dk; gidiş-dönüş kişi başı ~15 € (tahmini; 25 Aralık'ta sefer olmayabilir, taksi gerekebilir)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 6,
+    "yazi": "Old Town ve New Town yürünür; yokuşlar için rahat ayakkabı."
+   },
+   "pazara": "Pazar Princes Street'te, Scott Anıtı ve Waverley istasyonunun yanında; kale ve Royal Mile 10 dk yürüme.",
+   "akis": [
+    {
+     "gun": "Cuma 25 Aralık · Noel günü varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Edinburgh",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Merkeze",
+       "Noel günü toplu taşıma kısıtlı"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       ""
+      ],
+      [
+       "17:00",
+       "Princes Street ve Scott Anıtı ışıkları",
+       "Pazar bugün kapalı"
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Otel ya da Noel menüsü (önceden rezervasyon)"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 26 Aralık · pazar günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Edinburgh Kalesi",
+       "Önceden bilet al"
+      ],
+      [
+       "12:30",
+       "Royal Mile",
+       ""
+      ],
+      [
+       "13:30",
+       "Öğle: haggis ya da pie",
+       ""
+      ],
+      [
+       "15:00",
+       "Victoria Street ve Grassmarket",
+       ""
+      ],
+      [
+       "16:30",
+       "Edinburgh's Christmas – Princes Street Gardens",
+       "Dönme dolap, 20:00'ye kadar"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "İskoç mutfağı"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 27 Aralık · dönüş",
+     "adimlar": [
+      [
+       "09:30",
+       "Calton Hill",
+       "Şehir manzarası"
+      ],
+      [
+       "11:00",
+       "Pazarda son tur",
+       ""
+      ],
+      [
+       "",
+       "Havalimanına",
+       "Airlink 100"
+      ],
+      [
+       "",
+       "Edinburgh → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Pazarda sıcak içecek + atıştırmalık",
+     "Ara",
+     "~8 €"
+    ],
+    [
+     "Pie ya da fish & chips",
+     "Öğle",
+     "~15 €"
+    ],
+    [
+     "İskoç restoranı",
+     "Akşam",
+     "~38 €"
+    ],
+    [
+     "Kafe: scone + çay",
+     "Ara",
+     "~9 €"
+    ]
+   ],
+   "gezi": [
+    "Edinburgh's Christmas pazarı (ücretsiz, oyunlar ücretli)",
+    "Edinburgh Kalesi (ücretli)",
+    "Royal Mile (ücretsiz)",
+    "Victoria Street (ücretsiz)",
+    "Calton Hill (ücretsiz)",
+    "Scott Anıtı (ücretli)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 15,
+     "otel": 0,
+     "ulasim": 6,
+     "yemek": 125,
+     "gezi": 40
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 15,
+     "otel": 0,
+     "ulasim": 6,
+     "yemek": 90,
+     "gezi": 15
+    }
+   },
+   "secim": {},
+   "ucus": {
+    "oneri": null,
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
    },
    "foto": null
   }
