@@ -1,0 +1,23 @@
+name: Noel foto aday (tek seferlik)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/noel-foto.yml]
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p img/aday
+          for id in 1695512294611-80be329e683b 1756326276813-8cfe422d90c4 1538467472788-dc7740301fea 1623130622557-8fab31968b8f 1603384264558-92d2e675b8dd 1657571575815-5487216793e3 1595255326276-5a03d713c46b 1702591850143-7b839d480d98 1670249820969-3cc2285432b2 1559392682-9cdd066a8d02 1456006524560-3226535625b4; do
+            curl -sfL "https://images.unsplash.com/photo-$id?w=1600&q=80&fm=jpg&fit=max" -o img/aday/$id.jpg || echo "yok $id"
+            curl -sfL "https://images.unsplash.com/photo-$id?w=640&q=75&fm=jpg&fit=max" -o img/aday/$id-640.jpg || true
+          done
+          ls -la img/aday
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add img/aday && git commit -m "Noel foto adayları (2)"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
