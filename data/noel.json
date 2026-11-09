@@ -16,8 +16,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.19,
-  "zorla": true
+  "son_maliyet_usd": 0.1
  },
  "kaynaklar": [
   {
@@ -72,49 +71,55 @@
      "ad": "Le Méridien Grand Hotel Nürnberg",
      "kategori": "ikonik",
      "arama": "Le Meridien Grand Hotel Nuremberg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Sorat Hotel Saxx",
      "kategori": "pahali",
      "arama": "Sorat Hotel Saxx Nürnberg Hauptmarkt",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Drei Raben",
      "kategori": "konforlu",
      "arama": "Hotel Drei Raben Nuremberg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Victoria",
      "kategori": "konforlu",
      "arama": "Hotel Victoria Nürnberg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "NH Collection Nürnberg City",
      "kategori": "konforlu",
      "arama": "NH Collection Nürnberg City",
-     "toplam": null
+     "toplam": 601
     },
     {
      "ad": "Motel One Nürnberg-Plärrer",
      "kategori": "ucuz",
      "arama": "Motel One Nürnberg-Plärrer",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "ibis Nürnberg Altstadt",
      "kategori": "ucuz",
      "arama": "ibis Nürnberg Altstadt",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "B&B Hotel Nürnberg-City",
      "kategori": "ucuz",
      "arama": "B&B Hotel Nürnberg-City",
-     "toplam": null
+     "toplam": 479
     }
    ],
    "havalimani_ulasim": {
@@ -247,7 +252,7 @@
     "konforlu": {
      "ucus": 277,
      "transfer": 8,
-     "otel": 243,
+     "otel": 301,
      "ulasim": 8,
      "yemek": 105,
      "gezi": 20
@@ -255,13 +260,16 @@
     "ucuz": {
      "ucus": 277,
      "transfer": 8,
-     "otel": 195,
+     "otel": 240,
      "ulasim": 8,
      "yemek": 75,
      "gezi": 10
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "NH Collection Nürnberg City",
+    "ucuz": "B&B Hotel Nürnberg-City"
+   },
    "ucus": {
     "oneri": {
      "fiyat": 277,
@@ -318,55 +326,59 @@
      "ad": "Hotel Bayerischer Hof",
      "kategori": "ikonik",
      "arama": "Hotel Bayerischer Hof Munich",
-     "toplam": null
+     "toplam": 1217
     },
     {
      "ad": "Platzl Hotel",
      "kategori": "pahali",
      "arama": "Platzl Hotel Munich",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Louis Hotel",
      "kategori": "pahali",
      "arama": "Louis Hotel Munich Viktualienmarkt",
-     "toplam": null
+     "toplam": 1451
     },
     {
      "ad": "Hotel Torbräu",
      "kategori": "konforlu",
      "arama": "Hotel Torbräu Munich",
-     "toplam": null
+     "toplam": 1090
     },
     {
      "ad": "Mercure Hotel München Altstadt",
      "kategori": "konforlu",
      "arama": "Mercure Hotel München Altstadt",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Blauer Bock",
      "kategori": "konforlu",
      "arama": "Hotel Blauer Bock Munich",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Motel One München-Sendlinger Tor",
      "kategori": "ucuz",
      "arama": "Motel One München-Sendlinger Tor",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Motel One München-Deutsches Museum",
      "kategori": "ucuz",
      "arama": "Motel One München-Deutsches Museum",
-     "toplam": null
+     "toplam": 358
     },
     {
      "ad": "ibis München City",
      "kategori": "ucuz",
      "arama": "ibis München City",
-     "toplam": null
+     "toplam": 290
     }
    ],
    "havalimani_ulasim": {
@@ -492,50 +504,53 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 163,
+     "ucus": 194,
      "transfer": 29,
-     "otel": 0,
+     "otel": 545,
      "ulasim": 12,
      "yemek": 120,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 163,
+     "ucus": 194,
      "transfer": 29,
-     "otel": 0,
+     "otel": 145,
      "ulasim": 12,
      "yemek": 85,
      "gezi": 8
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Hotel Torbräu",
+    "ucuz": "ibis München City"
+   },
    "ucus": {
     "oneri": {
-     "fiyat": 163,
+     "fiyat": 194,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Münih (MUC)",
-     "gidis": "Cuma SAW 08:40 → MUC 09:25 (PC1019)",
+     "gidis": "Cuma SAW 12:45 → MUC 13:30 (PC1021)",
      "donus": "Pazar MUC 18:00 → SAW 22:40"
     },
     "secenekler": [
      {
-      "fiyat": 163,
+      "fiyat": 194,
       "havayolu": "Pegasus",
       "havalimani": "Münih",
-      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 18:00 dönüş"
+      "not": "Cuma SAW 12:45 → MUC 13:30"
      },
      {
-      "fiyat": 179,
+      "fiyat": 195,
       "havayolu": "AJet",
       "havalimani": "Münih",
-      "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 13:40 dönüş"
+      "not": "Cuma SAW 11:45 → MUC 12:40"
      },
      {
-      "fiyat": 223,
+      "fiyat": 267,
       "havayolu": "THY",
       "havalimani": "Münih",
-      "not": "Cuma IST 10:30 → MUC 11:15"
+      "not": "Cuma IST 12:45 → MUC 13:30"
      }
     ],
     "seviye": "normal",
@@ -593,13 +608,13 @@
      "ad": "Hôtel Gutenberg",
      "kategori": "konforlu",
      "arama": "Hotel Gutenberg Strasbourg",
-     "toplam": 928
+     "toplam": 929
     },
     {
      "ad": "Hôtel Cathédrale",
      "kategori": "konforlu",
      "arama": "Hotel Cathedrale Strasbourg",
-     "toplam": 702
+     "toplam": 701
     },
     {
      "ad": "Mercure Strasbourg Centre Petite France",
@@ -1033,13 +1048,16 @@
     "ucuz": {
      "ucus": 935,
      "transfer": 16,
-     "otel": 529,
+     "otel": 456,
      "ulasim": 10,
      "yemek": 100,
      "gezi": 20
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Scandic Rovaniemi City",
+    "ucuz": "Hotelli Aakenus"
+   },
    "ucus": {
     "oneri": {
      "fiyat": 980,
@@ -1114,50 +1132,49 @@
      "ad": "Hotel Copernicus",
      "kategori": "ikonik",
      "arama": "Hotel Copernicus Krakow",
-     "toplam": 398
+     "toplam": 434
     },
     {
      "ad": "Hotel Stary",
      "kategori": "pahali",
      "arama": "Hotel Stary Krakow",
-     "toplam": 304
+     "toplam": 342
     },
     {
      "ad": "Hotel Wentzl",
      "kategori": "pahali",
      "arama": "Hotel Wentzl Krakow",
-     "toplam": 441
+     "toplam": 366
     },
     {
      "ad": "Hotel Saski",
      "kategori": "konforlu",
      "arama": "Hotel Saski Krakow",
-     "toplam": 484
+     "toplam": 625
     },
     {
      "ad": "Mercure Kraków Stare Miasto",
      "kategori": "konforlu",
      "arama": "Mercure Krakow Stare Miasto",
-     "toplam": 263
+     "toplam": 268
     },
     {
      "ad": "Hotel Pod Wawelem",
      "kategori": "konforlu",
      "arama": "Hotel Pod Wawelem Krakow",
-     "toplam": 233
+     "toplam": 245
     },
     {
      "ad": "Puro Kraków Stare Miasto",
      "kategori": "ucuz",
      "arama": "PURO Kraków Stare Miasto",
-     "toplam": null,
-     "eski": true
+     "toplam": 247
     },
     {
      "ad": "ibis Kraków Stare Miasto",
      "kategori": "ucuz",
      "arama": "ibis Krakow Stare Miasto",
-     "toplam": 152
+     "toplam": 169
     }
    ],
    "havalimani_ulasim": {
@@ -1293,47 +1310,80 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 521,
+     "ucus": 253,
      "transfer": 9,
-     "otel": 117,
+     "otel": 123,
      "ulasim": 6,
      "yemek": 70,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 261,
+     "ucus": 239,
      "transfer": 9,
-     "otel": 76,
+     "otel": 85,
      "ulasim": 6,
      "yemek": 50,
      "gezi": 8
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Hotel Pod Wawelem",
+    "ucuz": "ibis Kraków Stare Miasto"
+   },
    "ucus": {
     "oneri": {
-     "fiyat": 521,
-     "havayolu": "THY",
-     "aktarma": 0,
+     "fiyat": 253,
+     "havayolu": "LOT",
+     "aktarma": 1,
      "havalimani": "Krakov (KRK)",
-     "gidis": "Cuma IST 08:00 → KRK 08:20 (TK1271)",
-     "donus": "Pazar KRK 09:15 → IST 13:50"
+     "gidis": "Cumartesi IST 12:10 → KRK 12:25 (LO2102)",
+     "donus": "Pazartesi KRK 18:10 → IST 14:00"
     },
     "secenekler": [
      {
-      "fiyat": 261,
-      "havayolu": "THY gidiş + LOT dönüş",
+      "fiyat": 239,
+      "havayolu": "LOT",
       "havalimani": "Krakov",
-      "not": "Cuma IST 08:00 → KRK 08:20, Pazar 06:40 dönüş"
+      "not": "Cumartesi IST 12:10 → KRK 12:25, Pazartesi 05:35 dönüş"
      },
      {
-      "fiyat": 521,
+      "fiyat": 271,
+      "havayolu": "THY gidiş + LOT dönüş",
+      "havalimani": "Krakov",
+      "not": "Cumartesi IST 18:15 → KRK 18:30, Pazartesi 05:35 dönüş"
+     },
+     {
+      "fiyat": 323,
+      "havayolu": "LOT gidiş + THY dönüş",
+      "havalimani": "Krakov",
+      "not": "Cumartesi IST 12:10 → KRK 12:25, Pazartesi 19:25 dönüş"
+     },
+     {
+      "fiyat": 344,
+      "havayolu": "Air Serbia",
+      "havalimani": "Krakov",
+      "not": "Cumartesi IST 17:45 → KRK 19:30 · 1 aktarma"
+     },
+     {
+      "fiyat": 355,
       "havayolu": "THY",
       "havalimani": "Krakov",
-      "not": "Cuma IST 08:00 → KRK 08:20, Pazar 09:15 dönüş"
+      "not": "Cumartesi IST 18:15 → KRK 18:30, Pazartesi 19:25 dönüş"
+     },
+     {
+      "fiyat": 367,
+      "havayolu": "Lufthansa",
+      "havalimani": "Krakov",
+      "not": "Cumartesi IST 19:05 → KRK 23:05 · 1 aktarma"
+     },
+     {
+      "fiyat": 562,
+      "havayolu": "Pegasus",
+      "havalimani": "Krakov",
+      "not": "Cumartesi SAW 18:45 → KRK 08:20 · 1 aktarma"
      }
     ],
-    "seviye": "yuksek",
+    "seviye": "normal",
     "normal_aralik": "165–240 €"
    },
    "foto": null,
