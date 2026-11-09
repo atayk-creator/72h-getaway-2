@@ -16,8 +16,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": null,
-  "butce_payi_usd": 5
+  "son_arama": "2026-11-09",
+  "butce_payi_usd": 5,
+  "son_maliyet_usd": 0.18
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Beşiktaş Jimnastik Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -44,65 +45,110 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": null,
-     "havayolu": "",
+     "fiyat": 132,
+     "havayolu": "Pegasus",
      "aktarma": 0,
-     "havalimani": "",
-     "gidis": "",
+     "havalimani": "Düsseldorf (DUS)",
+     "gidis": "Çarşamba SAW 07:45 → DUS 09:00 (PC1007)",
      "donus": ""
     },
-    "secenekler": [],
+    "secenekler": [
+     {
+      "fiyat": 126,
+      "havayolu": "AJet gidiş + Pegasus dönüş",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba SAW 11:00 → DUS 12:30, Cuma 12:55 dönüş"
+     },
+     {
+      "fiyat": 132,
+      "havayolu": "Pegasus",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba SAW 07:45 → DUS 09:00"
+     },
+     {
+      "fiyat": 139,
+      "havayolu": "AJet",
+      "havalimani": "Köln/Bonn",
+      "not": "Çarşamba SAW 13:20 → CGN 14:55, Cuma 00:15 dönüş"
+     },
+     {
+      "fiyat": 142,
+      "havayolu": "Pegasus",
+      "havalimani": "Köln/Bonn",
+      "not": "Çarşamba SAW 08:50 → CGN 10:15, Cuma 00:55 dönüş"
+     },
+     {
+      "fiyat": 152,
+      "havayolu": "AJet",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba SAW 11:00 → DUS 12:30, Cuma 10:55 dönüş"
+     },
+     {
+      "fiyat": 249,
+      "havayolu": "THY",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba IST 15:45 → DUS 17:10"
+     },
+     {
+      "fiyat": 265,
+      "havayolu": "THY",
+      "havalimani": "Köln/Bonn",
+      "not": "Çarşamba IST 09:05 → CGN 10:30"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "70–230 €"
    },
    "oteller": [
     {
      "ad": "Excelsior Hotel Ernst",
      "kategori": "ikonik",
      "arama": "Excelsior Hotel Ernst Köln",
-     "toplam": null
+     "toplam": 1361
     },
     {
      "ad": "Hyatt Regency Köln",
      "kategori": "pahali",
      "arama": "Hyatt Regency Köln",
-     "toplam": null
+     "toplam": 605
     },
     {
      "ad": "Dorint Hotel am Heumarkt",
      "kategori": "pahali",
      "arama": "Dorint Hotel am Heumarkt Köln",
-     "toplam": null
+     "toplam": 1781
     },
     {
      "ad": "Hotel Mondial am Dom",
      "kategori": "konforlu",
      "arama": "Hotel Mondial am Dom Köln MGallery",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "25hours Hotel The Circle",
      "kategori": "konforlu",
      "arama": "25hours Hotel The Circle Köln",
-     "toplam": null
+     "toplam": 436
     },
     {
      "ad": "NH Collection Köln Mediapark",
      "kategori": "konforlu",
      "arama": "NH Collection Köln Mediapark",
-     "toplam": null
+     "toplam": 352
     },
     {
      "ad": "Motel One Köln-Altstadt",
      "kategori": "ucuz",
      "arama": "Motel One Köln-Altstadt",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "ibis Köln Centrum",
      "kategori": "ucuz",
      "arama": "ibis Köln Centrum",
-     "toplam": null
+     "toplam": 249
     }
    ],
    "trenler": [
@@ -143,8 +189,26 @@
      "nereye": "Köln/Bonn Flughafen",
      "tarih": "2026-12-11",
      "saat": "12:00",
-     "fiyat": null,
-     "not": "~15 dk."
+     "fiyat": 17.99,
+     "not": "~15 dk.",
+     "secenekler": [
+      {
+       "kalkis": "00:12",
+       "varis": "00:52",
+       "sure_dk": 40,
+       "aktarma": 1,
+       "tren": "ICE 619 + S19",
+       "fiyat": 17.99
+      }
+     ],
+     "secili": {
+      "kalkis": "00:12",
+      "varis": "00:52",
+      "sure_dk": 40,
+      "aktarma": 1,
+      "tren": "ICE 619 + S19",
+      "fiyat": 17.99
+     }
     }
    ],
    "sehir_ulasim": {
@@ -275,23 +339,27 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
-     "transfer": 0,
-     "otel": 0,
+     "ucus": 132,
+     "transfer": 18,
+     "otel": 176,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 120,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 0,
-     "transfer": 0,
-     "otel": 0,
+     "ucus": 126,
+     "transfer": 18,
+     "otel": 125,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 85,
      "gezi": 5
     }
+   },
+   "secim": {
+    "konforlu": "NH Collection Köln Mediapark",
+    "ucuz": "ibis Köln Centrum"
    }
   },
   {
@@ -316,53 +384,91 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": null,
-     "havayolu": "",
-     "aktarma": 0,
-     "havalimani": "",
-     "gidis": "",
-     "donus": ""
+     "fiyat": 225,
+     "havayolu": "Air Serbia",
+     "aktarma": 1,
+     "havalimani": "Larnaka (LCA)",
+     "gidis": "Çarşamba IST 16:40 → LCA 16:50 (JU423, JU482)",
+     "donus": "Cuma LCA 03:30 → IST 15:55"
     },
-    "secenekler": [],
-    "seviye": "normal",
-    "normal_aralik": ""
+    "secenekler": [
+     {
+      "fiyat": 225,
+      "havayolu": "Air Serbia",
+      "havalimani": "Larnaka",
+      "not": "Çarşamba IST 16:40 → LCA 16:50, Cuma 03:30 dönüş · 1 aktarma"
+     },
+     {
+      "fiyat": 348,
+      "havayolu": "THY gidiş + Air Serbia dönüş",
+      "havalimani": "Larnaka",
+      "not": "Çarşamba IST 14:55 → LCA 16:50, Cuma 03:30 dönüş · 1 aktarma"
+     },
+     {
+      "fiyat": 352,
+      "havayolu": "SKY express",
+      "havalimani": "Larnaka",
+      "not": "Çarşamba IST 10:30 → LCA 19:10 · 1 aktarma"
+     },
+     {
+      "fiyat": 355,
+      "havayolu": "THY",
+      "havalimani": "Larnaka",
+      "not": "Çarşamba IST 19:45 → LCA 02:45 · 1 aktarma"
+     },
+     {
+      "fiyat": 385,
+      "havayolu": "Aegean",
+      "havalimani": "Larnaka",
+      "not": "Çarşamba IST 11:30 → LCA 14:50 · 1 aktarma"
+     },
+     {
+      "fiyat": 472,
+      "havayolu": "Royal Jordanian",
+      "havalimani": "Larnaka",
+      "not": "Çarşamba IST 22:10 → LCA 20:35 · 1 aktarma"
+     }
+    ],
+    "seviye": "dusuk",
+    "normal_aralik": "240–340 €"
    },
    "oteller": [
     {
      "ad": "Hilton Nicosia",
      "kategori": "pahali",
      "arama": "Hilton Nicosia",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Cleopatra Hotel",
      "kategori": "konforlu",
      "arama": "Cleopatra Hotel Nicosia",
-     "toplam": null
+     "toplam": 363
     },
     {
      "ad": "Classic Hotel",
      "kategori": "konforlu",
      "arama": "Classic Hotel Nicosia",
-     "toplam": null
+     "toplam": 313
     },
     {
      "ad": "Centrum Hotel",
      "kategori": "konforlu",
      "arama": "Centrum Hotel Nicosia",
-     "toplam": null
+     "toplam": 240
     },
     {
      "ad": "Asty Hotel",
      "kategori": "ucuz",
      "arama": "Asty Hotel Nicosia",
-     "toplam": null
+     "toplam": 150
     },
     {
      "ad": "Castelli Hotel",
      "kategori": "ucuz",
      "arama": "Castelli Hotel Nicosia",
-     "toplam": null
+     "toplam": 193
     }
    ],
    "havalimani_ulasim": {
@@ -477,23 +583,27 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 225,
      "transfer": 16,
-     "otel": 0,
+     "otel": 120,
      "bilet": 50,
      "ulasim": 20,
      "yemek": 100,
      "gezi": 10
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 225,
      "transfer": 16,
-     "otel": 0,
+     "otel": 75,
      "bilet": 50,
      "ulasim": 20,
      "yemek": 75,
      "gezi": 5
     }
+   },
+   "secim": {
+    "konforlu": "Centrum Hotel",
+    "ucuz": "Asty Hotel"
    }
   }
  ],

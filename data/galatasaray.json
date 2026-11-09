@@ -16,8 +16,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": null,
-  "butce_payi_usd": 5
+  "son_arama": "2026-11-09",
+  "butce_payi_usd": 5,
+  "son_maliyet_usd": 0.09
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Galatasaray Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -44,65 +45,96 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": null,
-     "havayolu": "",
+     "fiyat": 149,
+     "havayolu": "Aegean",
      "aktarma": 0,
-     "havalimani": "",
-     "gidis": "",
+     "havalimani": "Atina (ATH)",
+     "gidis": "Pazartesi IST 16:45 → ATH 17:15 (A3993)",
      "donus": ""
     },
-    "secenekler": [],
+    "secenekler": [
+     {
+      "fiyat": 149,
+      "havayolu": "Aegean gidiş + SKY express dönüş",
+      "havalimani": "Atina",
+      "not": "Pazartesi IST 11:30 → ATH 12:00, Çarşamba 07:00 dönüş"
+     },
+     {
+      "fiyat": 149,
+      "havayolu": "Aegean",
+      "havalimani": "Atina",
+      "not": "Pazartesi IST 16:45 → ATH 17:15"
+     },
+     {
+      "fiyat": 160,
+      "havayolu": "SKY express",
+      "havalimani": "Atina",
+      "not": "Pazartesi IST 10:30 → ATH 10:55"
+     },
+     {
+      "fiyat": 235,
+      "havayolu": "THY",
+      "havalimani": "Atina",
+      "not": "Pazartesi IST 20:30 → ATH 21:00"
+     },
+     {
+      "fiyat": 268,
+      "havayolu": "Pegasus",
+      "havalimani": "Atina",
+      "not": "Pazartesi SAW 07:40 → ATH 08:05"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "80–155 €"
    },
    "oteller": [
     {
      "ad": "Hotel Grande Bretagne",
      "kategori": "ikonik",
      "arama": "Hotel Grande Bretagne Athens",
-     "toplam": null
+     "toplam": 886
     },
     {
      "ad": "Electra Metropolis",
      "kategori": "pahali",
      "arama": "Electra Metropolis Athens",
-     "toplam": null
+     "toplam": 548
     },
     {
      "ad": "AthensWas Hotel",
      "kategori": "pahali",
      "arama": "AthensWas Hotel Athens",
-     "toplam": null
+     "toplam": 590
     },
     {
      "ad": "AVA Hotel & Suites",
      "kategori": "konforlu",
      "arama": "AVA Hotel and Suites Athens Plaka",
-     "toplam": null
+     "toplam": 564
     },
     {
      "ad": "The Modernist Athens",
      "kategori": "konforlu",
      "arama": "The Modernist Athens Kolonaki",
-     "toplam": null
+     "toplam": 341
     },
     {
      "ad": "Herodion Hotel",
      "kategori": "konforlu",
      "arama": "Herodion Hotel Athens",
-     "toplam": null
+     "toplam": 213
     },
     {
      "ad": "Phaedra Hotel",
      "kategori": "ucuz",
      "arama": "Phaedra Hotel Plaka Athens",
-     "toplam": null
+     "toplam": 107
     },
     {
      "ad": "Attalos Hotel",
      "kategori": "ucuz",
      "arama": "Attalos Hotel Athens Monastiraki",
-     "toplam": null
+     "toplam": 156
     }
    ],
    "havalimani_ulasim": {
@@ -233,23 +265,27 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 149,
      "transfer": 11,
-     "otel": 0,
+     "otel": 107,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 110,
      "gezi": 35
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 149,
      "transfer": 11,
-     "otel": 0,
+     "otel": 54,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 80,
      "gezi": 20
     }
+   },
+   "secim": {
+    "konforlu": "Herodion Hotel",
+    "ucuz": "Phaedra Hotel"
    }
   },
   {
@@ -276,65 +312,90 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": null,
-     "havayolu": "",
+     "fiyat": 239,
+     "havayolu": "Air France",
      "aktarma": 0,
-     "havalimani": "",
-     "gidis": "",
+     "havalimani": "Charles de Gaulle (CDG)",
+     "gidis": "Salı IST 07:15 → CDG 09:00 (AF1391)",
      "donus": ""
     },
-    "secenekler": [],
+    "secenekler": [
+     {
+      "fiyat": 239,
+      "havayolu": "Air France",
+      "havalimani": "Charles de Gaulle",
+      "not": "Salı IST 07:15 → CDG 09:00"
+     },
+     {
+      "fiyat": 254,
+      "havayolu": "Transavia",
+      "havalimani": "Orly",
+      "not": "Salı IST 13:50 → ORY 15:40, Perşembe 07:00 dönüş"
+     },
+     {
+      "fiyat": 310,
+      "havayolu": "Pegasus",
+      "havalimani": "Orly",
+      "not": "Salı SAW 12:55 → ORY 14:40, Perşembe 15:45 dönüş"
+     },
+     {
+      "fiyat": 344,
+      "havayolu": "THY",
+      "havalimani": "Charles de Gaulle",
+      "not": "Salı IST 20:50 → CDG 22:35"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "130–340 €"
    },
    "oteller": [
     {
      "ad": "Mandarin Oriental Lutetia",
      "kategori": "ikonik",
      "arama": "Mandarin Oriental Lutetia Paris",
-     "toplam": null
+     "toplam": 3434
     },
     {
      "ad": "Le Meurice",
      "kategori": "pahali",
      "arama": "Hotel Le Meurice Paris",
-     "toplam": null
+     "toplam": 4934
     },
     {
      "ad": "Hôtel Regina Louvre",
      "kategori": "pahali",
      "arama": "Hotel Regina Louvre Paris",
-     "toplam": null
+     "toplam": 1136
     },
     {
      "ad": "Hôtel Le Walt",
      "kategori": "konforlu",
      "arama": "Hotel Le Walt Paris",
-     "toplam": null
+     "toplam": 533
     },
     {
      "ad": "Hôtel Bachaumont",
      "kategori": "konforlu",
      "arama": "Hotel Bachaumont Paris",
-     "toplam": null
+     "toplam": 589
     },
     {
      "ad": "Hôtel Fabric",
      "kategori": "konforlu",
      "arama": "Hotel Fabric Paris",
-     "toplam": null
+     "toplam": 580
     },
     {
      "ad": "Hôtel du Cygne",
      "kategori": "ucuz",
      "arama": "Hôtel du Cygne Paris",
-     "toplam": null
+     "toplam": 293
     },
     {
      "ad": "Hôtel Chopin",
      "kategori": "ucuz",
      "arama": "Hotel Chopin Paris Passage Jouffroy",
-     "toplam": null
+     "toplam": 332
     }
    ],
    "havalimani_ulasim": {
@@ -465,23 +526,27 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 239,
      "transfer": 28,
-     "otel": 0,
+     "otel": 267,
      "bilet": 50,
      "ulasim": 15,
      "yemek": 140,
      "gezi": 40
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 239,
      "transfer": 28,
-     "otel": 0,
+     "otel": 147,
      "bilet": 50,
      "ulasim": 15,
      "yemek": 100,
      "gezi": 15
     }
+   },
+   "secim": {
+    "konforlu": "Hôtel Le Walt",
+    "ucuz": "Hôtel du Cygne"
    }
   }
  ],
