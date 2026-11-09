@@ -96,6 +96,8 @@ header p { margin: 0; color: #D5DEE8; max-width: 54ch; font-size: 1rem; }
 .bgrid small { font-weight: 700; font-size: 0.78rem; color: var(--muted); }
 .bgrid b { font: 700 1.05rem/1.1 "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
 .bgrid span { font-size: 0.75rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ic { display: inline-block; vertical-align: -0.16em; flex: none; }
+.btn .ic, button .ic { margin-right: 2px; }
 .bgrid .off b { color: var(--muted); font-size: 0.9rem; }
 .bgrid .wide { grid-column: 1 / -1; border-color: #E0C000; background: linear-gradient(90deg, rgba(244,211,11,0.18), transparent 70%), var(--bg); }
 .bgrid .bt-tag { float: right; font: 700 0.62rem/1.6 "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
@@ -593,7 +595,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   <div class="st-bars" id="stBars" aria-hidden="true"></div>
   <div class="st-top">
     <span class="st-who"><b>72H</b><span id="stWho"></span></span>
-    <button type="button" class="ov-x" id="stPause" aria-label="Durdur">❚❚</button>
+    <button type="button" class="ov-x" id="stPause" aria-label="Durdur"><svg width="1.05em" height="1.05em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ic"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/></svg></button>
   </div>
   <button type="button" class="st-arr prev" id="stPrev" aria-label="Önceki şehir">‹</button>
   <button type="button" class="st-arr next" id="stNext" aria-label="Sonraki şehir">›</button>
@@ -608,7 +610,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 </section>
 
 <div class="board" role="region" aria-label="Başkent fiyat bandı">
-  <button type="button" class="bpause" id="bpause" aria-pressed="false" aria-label="Bandı durdur">⏸</button>
+  <button type="button" class="bpause" id="bpause" aria-pressed="false" aria-label="Bandı durdur"><svg width="1.05em" height="1.05em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ic"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" stroke="none"/></svg></button>
   <div class="bview"><div class="btrack" id="btrack"></div></div>
 </div>
 </div>
@@ -652,8 +654,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     <div class="sw-head"><h2 id="swTitle">Gider miydin?</h2><span id="swCount"></span></div>
     <div class="sw-deck" id="swDeck"></div>
     <div class="sw-btns" id="swBtns">
-      <button type="button" class="sw-no" id="swNo" aria-label="Geç">✕</button>
-      <button type="button" class="sw-yes" id="swYes" aria-label="Beğen">♥</button>
+      <button type="button" class="sw-no" id="swNo" aria-label="Geç"><svg width="1.05em" height="1.05em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ic" stroke-width="2.6"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      <button type="button" class="sw-yes" id="swYes" aria-label="Beğen"><svg width="1.05em" height="1.05em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ic"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" fill="currentColor"/></svg></button>
     </div>
     <p class="sw-hint" id="swHint">Sağa kaydır: giderim · sola kaydır: geç · klavyede ← →</p>
     <div class="sw-liked" id="swLiked"></div>
@@ -676,7 +678,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
         <p class="cleg" id="cleg" title="Kısayollardaki ve kayan banttaki rakamlar uçak hariç toplamdır: aynı tarih, kişi sayısı ve otel seviyesiyle hesaplanır."></p>
         <div class="cityrow">
           <select id="city" aria-label="Tüm başkentler"></select>
-          <button type="button" class="btn" id="dice">🎲 Beni şaşırt</button>
+          <button type="button" class="btn" id="dice"><svg width="1.05em" height="1.05em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ic"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.2" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.2" fill="currentColor"/></svg> Beni şaşırt</button>
         </div>
       </div>
 
@@ -728,7 +730,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       </div>
 
       <div class="ticketbox" id="ticketbox">
-        <strong>✈️ Uçak biletin burada hesaplanmıyor</strong>
+        <strong><svg width="1.05em" height="1.05em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ic"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg> Uçak biletin burada hesaplanmıyor</strong>
         Biletini kendin bul, tarihini sen seç. Toplam bütçene biletinin fiyatını ayrıca ekle.
         <div class="links">
           <a href="https://www.google.com/travel/flights" target="_blank" rel="noopener noreferrer">Google Flights</a>
@@ -885,6 +887,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       info: "Macar tarihinin kahramanlarını anan büyük anıt meydanı. Széchenyi Hamamı'na yürüme mesafesinde, onunla aynı gün planlamak mantıklı.",
       price: "Ücretsiz" }
   ];
+  // Sitedeki ikonlar: emoji yerine alt menüdeki çizgi ikonlarla aynı stilde SVG
+  var ICO = {"plane": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><path d=\"M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z\"/></svg>", "dice": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"1.2\" fill=\"currentColor\"/><circle cx=\"15.5\" cy=\"15.5\" r=\"1.2\" fill=\"currentColor\"/><circle cx=\"12\" cy=\"12\" r=\"1.2\" fill=\"currentColor\"/><circle cx=\"15.5\" cy=\"8.5\" r=\"1.2\" fill=\"currentColor\"/><circle cx=\"8.5\" cy=\"15.5\" r=\"1.2\" fill=\"currentColor\"/></svg>", "route": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><circle cx=\"6\" cy=\"19\" r=\"3\"/><path d=\"M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15\"/><circle cx=\"18\" cy=\"5\" r=\"3\"/></svg>", "walk": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><circle cx=\"13\" cy=\"4\" r=\"2\"/><path d=\"m9 20 3-6 3 3v4\"/><path d=\"m6 12 2-3 4-1 3 3 3 1\"/><path d=\"m12 14-1-6\"/></svg>", "car": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><path d=\"M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2\"/><circle cx=\"7\" cy=\"17\" r=\"2\"/><path d=\"M9 17h6\"/><circle cx=\"17\" cy=\"17\" r=\"2\"/></svg>", "pause": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><rect x=\"6\" y=\"5\" width=\"4\" height=\"14\" rx=\"1\" fill=\"currentColor\" stroke=\"none\"/><rect x=\"14\" y=\"5\" width=\"4\" height=\"14\" rx=\"1\" fill=\"currentColor\" stroke=\"none\"/></svg>", "play": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><path d=\"M7 5v14l12-7z\" fill=\"currentColor\" stroke=\"none\"/></svg>", "x": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\" stroke-width=\"2.6\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg>", "heart": "<svg width=\"1.05em\" height=\"1.05em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" class=\"ic\"><path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\" fill=\"currentColor\"/></svg>"};
   var D = [
     ["Londra","Birleşik Krallık","Batı Avrupa",200,80,10,28],
     ["Dublin","İrlanda","Batı Avrupa",170,62,8,22],
@@ -949,6 +953,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     if (c.hotels) return c.hotels;
     return TIER.map(function (x) { return { t: x.t, name: "", label: x.label, p: r5(c.h * x.m), sc: "", s: "est", desc: x.desc }; });
   }
+  var noEmoji = function (t) { return String(t == null ? "" : t).replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, "").replace(/\s{2,}/g, " ").trim(); };
   function restosOf(c) {
     var lr = liveRestos(c);
     if (lr) return lr;
@@ -1259,7 +1264,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     return s.restoranlar.map(function (r) {
       var lv = RLV[r.seviye] || RLV.populer;
       var bits = [mutfakTr(r) || null, r.semt, r.yorum ? r.yorum.toLocaleString("tr-TR") + " Google yorumu" : null].filter(Boolean).join(" · ");
-      return { t: lv.t, lvl: lv.lvl, name: escH(r.ad), label: escH(r.ad), p: Math.max(3, Math.round(r.kisiBasiEur)), s: "res", url: /^https:\/\/www\.google\.com\/maps\//.test(r.url || "") ? escH(r.url) : null,
+      return { t: lv.t, lvl: lv.lvl, name: escH(noEmoji(r.ad)), label: escH(noEmoji(r.ad)), p: Math.max(3, Math.round(r.kisiBasiEur)), s: "res", url: /^https:\/\/www\.google\.com\/maps\//.test(r.url || "") ? escH(r.url) : null,
         sc: r.puan ? String(r.puan).replace(".", ",") : "", sct: "Google puanı", lat: r.konum ? r.konum[0] : undefined, lon: r.konum ? r.konum[1] : undefined, live: true,
         desc: escH(r.elle
           ? "Bizim seçimimiz" + (bits ? " · " + bits : "") + ". " + (r.not ? r.not + ". " : "") + "Kişi başı " + (r.fiyatKaynagi === "google" ? priceRangeTr(r.fiyatYazi) + " (Google kullanıcılarının bildirdiği aralık)." : "~" + Math.round(r.kisiBasiEur) + " € (menü ve yorumlardan tahmin).")
@@ -1320,7 +1325,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   function renderFlight(c, o, k) {
     var box = $("ticketbox"), f = flightFor(c, o);
     if (!f) {
-      box.innerHTML = '<strong>✈️ Uçak biletin burada hesaplanmıyor</strong>' + (FLY ? c.n + " için İstanbul çıkışlı uçuş verisi henüz yok. " : "") + 'Biletini kendin bul, tarihini sen seç. Toplam bütçene biletinin fiyatını ayrıca ekle.' +
+      box.innerHTML = '<strong>' + ICO.plane + ' Uçak biletin burada hesaplanmıyor</strong>' + (FLY ? c.n + " için İstanbul çıkışlı uçuş verisi henüz yok. " : "") + 'Biletini kendin bul, tarihini sen seç. Toplam bütçene biletinin fiyatını ayrıca ekle.' +
         '<div class="links"><a href="https://www.google.com/travel/flights?hl=tr" target="_blank" rel="noopener noreferrer">Google Flights</a>' + LINKS_ALT + '</div>';
       return;
     }
@@ -1522,7 +1527,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     return { km: km, walk: Math.max(1, Math.round(km / 5 * 60)), taxi: Math.max(3, Math.round(4 + km / 22 * 60)) };
   }
   var legTxt = function (l) {
-    return "🚶 " + fmtMin(l.walk) + " · 🚕 " + fmtMin(l.taxi) + " · " + nf1.format(l.km) + " km" + (l.walk > 35 ? " (uzun, taksi ya da metro mantıklı)" : "");
+    return ICO.walk + " " + fmtMin(l.walk) + " · " + ICO.car + " " + fmtMin(l.taxi) + " · " + nf1.format(l.km) + " km" + (l.walk > 35 ? " (uzun, taksi ya da metro mantıklı)" : "");
   };
   function split(n, w) {
     var sw = w.reduce(function (a, b) { return a + b; }, 0), raw = w.map(function (x) { return x * n / sw; });
@@ -2221,7 +2226,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   function stResume() { ST.hold = document.hidden; stApply(); }
   function stPause(p) {
     ST.paused = p; stApply();
-    $("stPause").textContent = p ? "▶" : "❚❚"; $("stPause").setAttribute("aria-label", p ? "Devam et" : "Durdur");
+    $("stPause").innerHTML = p ? ICO.play : ICO.pause; $("stPause").setAttribute("aria-label", p ? "Devam et" : "Durdur");
   }
   $("stBars").addEventListener("animationend", function () { if (!ST.paused && !ST.hold) stGo(ST.k + 1); });
   $("stNext").addEventListener("click", function (e) { e.stopPropagation(); stGo(ST.k + 1); });
@@ -2750,7 +2755,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       return '<div class="arrows"><button type="button" data-t="' + id + '" data-d="-1" aria-label="Önceki ' + what + '">‹</button><button type="button" data-t="' + id + '" data-d="1" aria-label="Sonraki ' + what + '">›</button></div>';
     };
     body.innerHTML = '<p class="lead">Seçtiğin otelden (<b>' + (hotel.name || hotel.label) + '</b>) uzaklıklar kartlarda. Yana kaydırarak gez, dokunarak seç ya da planı bize bırak.</p>' + (c.n === "Budapeşte" ? priceBox(c) : geziBox(c)) +
-      '<div class="actions"><button type="button" class="btn" id="autoPlan">✨ Bana tur planı çıkar</button><button type="button" class="btn ghost" id="clearPlan">Seçimi temizle</button></div>' +
+      '<div class="actions"><button type="button" class="btn" id="autoPlan">' + ICO.route + ' Bana tur planı çıkar</button><button type="button" class="btn ghost" id="clearPlan">Seçimi temizle</button></div>' +
       '<div class="rowhead"><h3>Gezilecek yerler <span class="hint">(' + P.length + ' yer · ' + (auto ? sel.length + " önerilen" : picked.length + " seçili") + ')</span></h3>' + arrows("plist", "yerler") + '</div>' +
       '<div class="hs" id="plist" tabindex="0" role="region" aria-label="Gezilecek yerler, yatay kaydırılır"></div>' +
       '<div class="rowhead" style="margin-top:14px"><h3>' + (auto ? "Önerilen tur planın" : "Tur planın") + '</h3>' + arrows("pscroll", "günler") + '</div>' +
@@ -2901,7 +2906,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     if (k.mac) parts.splice(k.fly ? 2 : 1, 0, ["Maç bileti", k.mac * o.rate, "resmi"]);
     var max = Math.max.apply(null, parts.map(function (p) { return p[1]; })) || 1, ff = flightFor(c, o);
     $("brk").hidden = o.past;
-    $("brk").innerHTML = (k.fly ? "" : '<li class="air"><span>Uçak</span><span>' + (ff ? "Bütçeye eklenmedi ✈️ (" + (o.exact ? "kutudan ekleyebilirsin" : "tarihler cuma–pazar değil, istersen kutudan ekle") + ")" : "Biletini sen alıyorsun ✈️") + '</span></li>') + parts.map(function (p) {
+    $("brk").innerHTML = (k.fly ? "" : '<li class="air"><span>Uçak</span><span>' + (ff ? "Bütçeye eklenmedi (" + (o.exact ? "kutudan ekleyebilirsin" : "tarihler cuma–pazar değil, istersen kutudan ekle") + ")" : "Biletini sen alıyorsun ✈️") + '</span></li>') + parts.map(function (p) {
       return '<li><span>' + p[0] + srcTag(p[2]) + '</span><div class="track"><div class="fill" style="width:' + (p[1] / max * 100).toFixed(1) + '%"></div></div><span class="amt">' + tl(p[1]) + '</span></li>';
     }).join("");
     renderPass(c, o, k, h, r, total);
@@ -2977,7 +2982,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   window.addEventListener("resize", syncArrows);
   $("bpause").addEventListener("click", function () {
     var p = $("btrack").parentNode.parentNode.classList.toggle("paused");
-    this.setAttribute("aria-pressed", p ? "true" : "false"); this.textContent = p ? "▶" : "⏸";
+    this.setAttribute("aria-pressed", p ? "true" : "false"); this.innerHTML = p ? ICO.play : ICO.pause;
     this.setAttribute("aria-label", p ? "Bandı başlat" : "Bandı durdur");
   });
 

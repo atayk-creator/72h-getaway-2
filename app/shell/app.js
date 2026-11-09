@@ -240,7 +240,7 @@
     if (share) {
       var sv = document.createElement("button"); sv.type = "button"; sv.className = "btn ghost app-save"; sv.id = "saveTrip"; sv.textContent = "Turu kaydet";
       sv.addEventListener("click", saveCurrent); share.insertAdjacentElement("afterend", sv);
-      $("pdfBtn") && ($("pdfBtn").textContent = "📄 Programı PDF olarak al");
+      $("pdfBtn") && ($("pdfBtn").textContent = "Programı PDF olarak al");
     }
     if (page === "hesapla") {
       window.addEventListener("hashchange", function () { setTimeout(syncTitle, 0); });

@@ -106,7 +106,7 @@ export function toCandidate(r, city, fx) {
   if (!r || !r.title || !r.placeId) return null;
   const fp = parsePrice(r.price, city.para);
   return {
-    id: r.placeId, ad: r.title, mutfak: r.categoryName || null, mutfakTr: mutfakTr(r.categoryName), kategoriler: r.categories || [],
+    id: r.placeId, ad: String(r.title || "").replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, "").replace(/\s{2,}/g, " ").trim(), mutfak: r.categoryName || null, mutfakTr: mutfakTr(r.categoryName), kategoriler: r.categories || [],
     puan: num(r.totalScore) ? r.totalScore : null, yorum: num(r.reviewsCount) ? r.reviewsCount : 0,
     fiyatYazi: r.price || null, kisiBasiEur: perPersonEur(fp, fx), artiFiyat: !!(fp && fp.arti),
     semt: r.neighborhood || null, konum: r.location && num(r.location.lat) ? [Math.round(r.location.lat * 1e5) / 1e5, Math.round(r.location.lng * 1e5) / 1e5] : null,
