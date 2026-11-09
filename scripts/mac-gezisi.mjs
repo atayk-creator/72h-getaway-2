@@ -1,6 +1,6 @@
 // TEK SEFERLİK: Fenerbahçe deplasman maçları için 2 gecelik (salı → perşembe) otel ve uçak fiyatları.
 // Otel: eiv~google-hotels-scraper (otel adıyla, ~0,003 $/otel). Uçak: eiv~google-flights-scraper (~0,003 $/arama).
-// Ham sonuçları data/mac-gezisi.json'a yazar; yorumlama elle yapılır. Toplam maliyet ~0,15 $.
+// Ham sonuçları data/mac-gezisi-2.json'a yazar; yorumlama elle yapılır. Toplam maliyet ~0,15 $.
 import { readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { runActor, apifyUsage } from "./otel-fiyatlari.mjs";
@@ -21,11 +21,17 @@ const TRIPS = [
   { mac: "Atlético Madrid – Fenerbahçe (Madrid, Metropolitano)", giris: "2027-01-26", cikis: "2027-01-28", oteller: ours("Madrid"),
     ucus: ["IST,SAW-MAD 2027-01-26 2027-01-28"] },
 ];
+// 2. tur: sadece hata veren uçuş aramaları (oteller ilk turda alındı)
+const RETRY = [
+  { mac: "Londra uçuş (tekrar)", ucus: ["IST,SAW-LHR 2026-11-24 2026-11-26", "IST,SAW-LGW,STN,LTN 2026-11-24 2026-11-26"] },
+  { mac: "Linz çevresi uçuş (tekrar)", ucus: ["IST,SAW-VIE 2026-12-08 2026-12-10", "IST,SAW-MUC 2026-12-08 2026-12-10", "IST,SAW-SZG 2026-12-08 2026-12-10"] },
+];
+TRIPS.length = 0; TRIPS.push(...RETRY);
 const before = await apifyUsage({ token }).catch(() => null);
 const out = { tarih: new Date().toISOString(), not: "2 yetişkin, 1 oda, 2 gece; uçak 1 kişi gidiş-dönüş EUR", geziler: [] };
 for (const t of TRIPS) {
   const g = { mac: t.mac, giris: t.giris, cikis: t.cikis };
-  try {
+  if (t.oteller) try {
     g.otel = await runActor({ hotels: t.oteller, checkInDate: t.giris, checkOutDate: t.cikis, adults: 2, currency: "EUR", country: "tr", language: "en", maxConcurrency: 8 },
       { token, sleep: (ms) => new Promise((r) => setTimeout(r, ms)), maxPolls: 60 });
   } catch (e) { g.otelHata = String(e.message); }
@@ -39,5 +45,5 @@ for (const t of TRIPS) {
 }
 const after = await apifyUsage({ token }).catch(() => null);
 out.maliyet = before && after ? Math.round((after.usd - before.usd) * 1000) / 1000 : null; out.sayac = after;
-await writeFile(root + "data/mac-gezisi.json", JSON.stringify(out, null, 1) + "\n");
+await writeFile(root + "data/mac-gezisi-2.json", JSON.stringify(out, null, 1) + "\n");
 console.log("maliyet:", out.maliyet);
