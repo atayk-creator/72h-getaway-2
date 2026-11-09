@@ -17,8 +17,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.24,
-  "zorla": true
+  "son_maliyet_usd": 0.38
  },
  "kaynaklar": [
   {
@@ -140,7 +139,7 @@
      "ad": "B&B Hotel Nürnberg-City",
      "kategori": "ucuz",
      "arama": "B&B Hotel Nürnberg-City",
-     "toplam": 479
+     "toplam": 480
     }
    ],
    "havalimani_ulasim": {
@@ -514,7 +513,7 @@
    "butce": {
     "konforlu": {
      "ucus": 146,
-     "transfer": 114,
+     "transfer": 95,
      "otel": 289,
      "ulasim": 8,
      "yemek": 100,
@@ -522,7 +521,7 @@
     },
     "ucuz": {
      "ucus": 146,
-     "transfer": 114,
+     "transfer": 95,
      "otel": 236,
      "ulasim": 8,
      "yemek": 70,
@@ -570,9 +569,49 @@
      "nereye": "Dresden Hbf",
      "tarih": "2026-12-04",
      "saat": "09:30",
-     "fiyat": 57.99,
+     "fiyat": 64.99,
      "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
      "secenekler": [
+      {
+       "kalkis": "09:31",
+       "varis": "12:50",
+       "sure_dk": 199,
+       "aktarma": 2,
+       "tren": "RE20 + ICE 91 + IC 2445",
+       "fiyat": 64.99
+      },
+      {
+       "kalkis": "10:46",
+       "varis": "13:07",
+       "sure_dk": 141,
+       "aktarma": 1,
+       "tren": "FEX + RJ 175",
+       "fiyat": 56.99
+      },
+      {
+       "kalkis": "11:01",
+       "varis": "14:34",
+       "sure_dk": 213,
+       "aktarma": 2,
+       "tren": "FEX + ICE 599 + RE50",
+       "fiyat": 64.99
+      },
+      {
+       "kalkis": "11:16",
+       "varis": "14:50",
+       "sure_dk": 214,
+       "aktarma": 2,
+       "tren": "FEX + ICE 1507 + IC 2443",
+       "fiyat": 71.99
+      },
+      {
+       "kalkis": "12:46",
+       "varis": "15:07",
+       "sure_dk": 141,
+       "aktarma": 1,
+       "tren": "FEX + RJ 383",
+       "fiyat": 49.99
+      },
       {
        "kalkis": "13:01",
        "varis": "16:34",
@@ -580,55 +619,15 @@
        "aktarma": 2,
        "tren": "FEX + ICE 691 + RE50",
        "fiyat": 57.99
-      },
-      {
-       "kalkis": "13:31",
-       "varis": "16:50",
-       "sure_dk": 199,
-       "aktarma": 2,
-       "tren": "RE20 + ICE 1205 + IC 2441",
-       "fiyat": 57.99
-      },
-      {
-       "kalkis": "14:16",
-       "varis": "17:07",
-       "sure_dk": 171,
-       "aktarma": 1,
-       "tren": "FEX + RJ 177",
-       "fiyat": 61.99
-      },
-      {
-       "kalkis": "14:23",
-       "varis": "17:07",
-       "sure_dk": 164,
-       "aktarma": 2,
-       "tren": "RB22 + RB33 + RJ 177",
-       "fiyat": 54.99
-      },
-      {
-       "kalkis": "15:01",
-       "varis": "18:07",
-       "sure_dk": 186,
-       "aktarma": 2,
-       "tren": "FEX + ICE 693 + IC 1933",
-       "fiyat": 64.99
-      },
-      {
-       "kalkis": "15:16",
-       "varis": "18:50",
-       "sure_dk": 214,
-       "aktarma": 2,
-       "tren": "FEX + ICE 1601 + IC 2049",
-       "fiyat": 57.99
       }
      ],
      "secili": {
-      "kalkis": "13:01",
-      "varis": "16:34",
-      "sure_dk": 213,
+      "kalkis": "09:31",
+      "varis": "12:50",
+      "sure_dk": 199,
       "aktarma": 2,
-      "tren": "FEX + ICE 691 + RE50",
-      "fiyat": 57.99
+      "tren": "RE20 + ICE 91 + IC 2445",
+      "fiyat": 64.99
      }
     },
     {
@@ -638,25 +637,9 @@
      "nereye": "Flughafen BER",
      "tarih": "2026-12-06",
      "saat": "14:00",
-     "fiyat": 55.99,
+     "fiyat": 29.99,
      "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
      "secenekler": [
-      {
-       "kalkis": "12:53",
-       "varis": "14:43",
-       "sure_dk": 110,
-       "aktarma": 1,
-       "tren": "RJ 382 + FEX",
-       "fiyat": 55.99
-      },
-      {
-       "kalkis": "13:34",
-       "varis": "15:45",
-       "sure_dk": 131,
-       "aktarma": 1,
-       "tren": "IC 2586 + FEX",
-       "fiyat": 40.99
-      },
       {
        "kalkis": "14:53",
        "varis": "16:43",
@@ -688,15 +671,31 @@
        "aktarma": 0,
        "tren": "IC 2172",
        "fiyat": 26.99
+      },
+      {
+       "kalkis": "18:53",
+       "varis": "20:43",
+       "sure_dk": 110,
+       "aktarma": 1,
+       "tren": "RJ 172 + FEX",
+       "fiyat": 50.99
+      },
+      {
+       "kalkis": "19:00",
+       "varis": "22:29",
+       "sure_dk": 209,
+       "aktarma": 2,
+       "tren": "IC 2448 + ICE 702 + FEX",
+       "fiyat": 50.99
       }
      ],
      "secili": {
-      "kalkis": "12:53",
-      "varis": "14:43",
-      "sure_dk": 110,
-      "aktarma": 1,
-      "tren": "RJ 382 + FEX",
-      "fiyat": 55.99
+      "kalkis": "15:35",
+      "varis": "17:04",
+      "sure_dk": 89,
+      "aktarma": 0,
+      "tren": "IC 2174",
+      "fiyat": 29.99
      }
     }
    ]
@@ -766,7 +765,8 @@
      "ad": "ibis Salzburg City",
      "kategori": "ucuz",
      "arama": "ibis Salzburg City",
-     "toplam": 298
+     "toplam": 298,
+     "eski": true
     }
    ],
    "havalimani_ulasim": {
@@ -1774,13 +1774,13 @@
      "ad": "Original Sokos Hotel Vaakuna",
      "kategori": "konforlu",
      "arama": "Original Sokos Hotel Vaakuna Rovaniemi",
-     "toplam": 1269
+     "toplam": 1290
     },
     {
      "ad": "Scandic Rovaniemi City",
      "kategori": "konforlu",
      "arama": "Scandic Rovaniemi City",
-     "toplam": 1076
+     "toplam": 1058
     },
     {
      "ad": "Hotel Santa Claus",
@@ -1934,9 +1934,9 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 980,
+     "ucus": 979,
      "transfer": 16,
-     "otel": 538,
+     "otel": 529,
      "ulasim": 10,
      "yemek": 140,
      "gezi": 40
@@ -1956,7 +1956,7 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 980,
+     "fiyat": 979,
      "havayolu": "THY",
      "aktarma": 1,
      "havalimani": "Rovaniemi (RVN)",
@@ -1977,7 +1977,7 @@
       "not": "Cuma IST 15:30 → RVN 08:40 · 1 aktarma"
      },
      {
-      "fiyat": 986,
+      "fiyat": 985,
       "havayolu": "Lufthansa",
       "havalimani": "Rovaniemi",
       "not": "Cuma IST 19:05 → RVN 13:00 · 1 aktarma"
@@ -2047,7 +2047,7 @@
      "ad": "Hotel Saski",
      "kategori": "konforlu",
      "arama": "Hotel Saski Krakow",
-     "toplam": 483
+     "toplam": 485
     },
     {
      "ad": "Mercure Kraków Stare Miasto",
@@ -2451,7 +2451,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 189,
      "transfer": 42,
      "otel": 201,
      "ulasim": 5,
@@ -2459,7 +2459,7 @@
      "gezi": 30
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 189,
      "transfer": 42,
      "otel": 175,
      "ulasim": 5,
@@ -2472,10 +2472,30 @@
     "ucuz": "ibis Brugge Centrum"
    },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 189,
+     "havayolu": "AJet",
+     "aktarma": 0,
+     "havalimani": "Brüksel (BRU)",
+     "gidis": "Cuma SAW 11:10 → BRU 12:50 (VF65)",
+     "donus": "Pazar BRU 16:50 → SAW 22:20"
+    },
+    "secenekler": [
+     {
+      "fiyat": 189,
+      "havayolu": "AJet",
+      "havalimani": "Brüksel",
+      "not": "Cuma SAW 11:10 → BRU 12:50, Pazar 16:50 dönüş"
+     },
+     {
+      "fiyat": 266,
+      "havayolu": "THY",
+      "havalimani": "Brüksel",
+      "not": "Cuma IST 12:45 → BRU 14:15, Pazar 18:35 dönüş"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "150–250 €"
    },
    "foto": null
   },
@@ -2511,7 +2531,7 @@
      "ad": "Kimpton Charlotte Square",
      "kategori": "pahali",
      "arama": "Kimpton Charlotte Square Hotel Edinburgh",
-     "toplam": 755
+     "toplam": 767
     },
     {
      "ad": "Hotel Indigo Edinburgh Princes Street",
@@ -2711,7 +2731,7 @@
       "fiyat": 316,
       "havayolu": "Pegasus",
       "havalimani": "Edinburgh",
-      "not": "Cuma SAW 09:25 → EDI 10:55, Pazar 12:00 dönüş"
+      "not": "Cuma SAW 09:25 → EDI 10:55"
      },
      {
       "fiyat": 410,
