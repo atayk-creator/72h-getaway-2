@@ -14,7 +14,7 @@ const input = (searches) => ({ searches, adults: 1, cabinClass: "economy", curre
   maxResultsPerSearch: 30, maxItems: searches.length * 30 + 20, includePriceInsights: true, includeSearchSummary: true, returnFlightsTop: 6, maxConcurrency: 3 });
 const before = await apifyUsage({ token }).catch(() => null);
 let rows = await runActor(input(LINES), { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 });
-const bad = LINES.filter((l) => rows.some((r) => r.input === l && r.errorCode === "GOOGLE_ERROR") && !rows.some((r) => r.input === l && r.recordType === "flight"));
+const bad = LINES.filter((l) => !l.includes("SEN") && !rows.some((r) => r.input === l && r.recordType === "flight"));
 if (bad.length) {
   console.log("tekrar:", bad);
   rows = rows.filter((r) => !bad.includes(r.input)).concat(await runActor(input(bad), { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 }));
