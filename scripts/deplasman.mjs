@@ -44,7 +44,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     <div class="mbas">
       <span class="eb">${esc(m.hafta)}. hafta · ${esc(m.sehir.toLocaleUpperCase("tr"))} · 72 SAAT</span>
       <h2>${esc(m.rakip)} – ${esc(team.takim)}</h2>
-      <p class="lead">${esc(tarihUzun(m.tarih))}, ${esc(m.saat_tsi)} TSİ (yerel ${esc(m.saat_yerel)}) · ${esc(m.stat)}, ${esc(m.sehir)}. Plan: ${esc(tarihKisa(m.gidis))} salı gidiş, ${esc(tarihKisa(m.donus))} perşembe dönüş, 2 gece.</p>
+      <p class="lead">${esc(tarihUzun(m.tarih))}, ${esc(m.saat_tsi)} TSİ (yerel ${esc(m.saat_yerel)}) · ${esc(m.stat)}, ${esc(m.sehir)}. Plan: ${esc(m.plan || `${tarihKisa(m.gidis)} ${GUN[d(m.gidis).getUTCDay()].toLocaleLowerCase("tr")} gidiş, ${tarihKisa(m.donus)} ${GUN[d(m.donus).getUTCDay()].toLocaleLowerCase("tr")} dönüş, 2 gece.`)}</p>
     </div>
     ${m.foto ? `<figure class="cover"><img src="${esc(m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="lazy"><figcaption>Görüntü: Pexels</figcaption></figure>` : ""}
     <div class="sum">
@@ -106,7 +106,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   <div class="wrap">
     <nav aria-label="Konum"><ol class="crumbs"><li><a href="/">72h Getaway</a></li><li><span aria-current="page">${esc(team.takim)} deplasmanı</span></li></ol></nav>
     <h1>${esc(team.takim)} deplasmanı kaça patlar?</h1>
-    <p>${esc(team.turnuva)}. Her deplasman bir 72 saatlik kaçamak: salı gidiş, çarşamba maç, perşembe dönüş. Uçak, otel ve maç bileti gerçek fiyatlarla, kişi başı.</p>
+    <p>${esc(team.turnuva)}. Her deplasman bir 72 saatlik kaçamak: 2 gece, maç gününe göre planlanmış uçuşlar. Uçak, otel ve maç bileti gerçek fiyatlarla, kişi başı.</p>
     <div class="menu">${menu}</div>
   </div>
 </header>

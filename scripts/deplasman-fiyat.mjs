@@ -105,14 +105,19 @@ async function main() {
   const use = await apifyUsage({ token });
   if (use && use.sinir && use.usd > use.sinir - (team.robot.butce_payi_usd || 5)) return console.log(`Apify kullanımı ${use.usd}/${use.sinir} $: bütçe payı korunuyor, arama yapılmadı.`);
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-  const lines = list.flatMap((m) => m.arama_ucus || []);
-  const flights = await runActor({ searches: lines, adults: 1, cabinClass: "economy", currency: "EUR", market: "TR", language: "en", sortBy: "price",
-    maxResultsPerSearch: 30, maxItems: lines.length * 30 + 20, includePriceInsights: true, includeSearchSummary: true, returnFlightsTop: 4, maxConcurrency: 3 },
-    { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 }).catch((e) => { console.log("uçak hatası:", e.message); return []; });
+  // Maç başına ayrı uçuş araması: her maçın kendi kalkış saati aralığı olabilir (ucus_saat, ör. "0-11")
+  const flightsOf = {};
+  for (const m of list) {
+    const lines = m.arama_ucus || []; if (!lines.length) continue;
+    flightsOf[m.id] = await runActor({ searches: lines, adults: 1, cabinClass: "economy", currency: "EUR", market: "TR", language: "en", sortBy: "price",
+      maxResultsPerSearch: 30, maxItems: lines.length * 30 + 20, includePriceInsights: true, includeSearchSummary: true, returnFlightsTop: 4, maxConcurrency: 3,
+      ...(m.ucus_saat ? { departureTimeRange: m.ucus_saat } : {}) },
+      { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 }).catch((e) => { console.log(m.sehir, "uçak hatası:", e.message); return []; });
+  }
   for (const m of list) {
     const hotels = await runActor({ hotels: m.oteller.map((h) => h.arama), checkInDate: m.gidis, checkOutDate: m.donus, adults: 2, currency: "EUR", country: "tr", language: "en", maxConcurrency: 8 },
       { token, sleep, maxPolls: 60 }).catch((e) => { console.log(m.sehir, "otel hatası:", e.message); return []; });
-    const fr = flights.filter((r) => (m.arama_ucus || []).includes(r.input));
+    const fr = flightsOf[m.id] || [];
     console.log(m.sehir + ":", applyMatch(m, fr, hotels).join(", "));
   }
   const after = await apifyUsage({ token }).catch(() => null);
