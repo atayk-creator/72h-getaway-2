@@ -1,6 +1,6 @@
 // Deplasman fiyat robotu testleri (ağ yok). Çalıştır: node scripts/test-deplasman-fiyat.mjs
 import assert from "node:assert/strict";
-import { due, upcoming, hotelTotal, flightOptions, applyMatch, applyTrain } from "./deplasman-fiyat.mjs";
+import { donusDoldur, due, upcoming, hotelTotal, flightOptions, applyMatch, applyTrain } from "./deplasman-fiyat.mjs";
 import { upcoming as pageUpcoming } from "./deplasman.mjs";
 let n = 0; const t = (name, f) => { f(); n++; console.log("ok", name); };
 const team = { robot: { son_arama: "2026-11-09", her_kac_gun: 2 }, maclar: [{ tarih: "2026-11-25" }, { tarih: "2026-12-09" }] };
@@ -74,3 +74,13 @@ t("aşırı otel fiyatı, ayrı uygun otel, sınıf uyarısı, dönüşü biline
   assert.equal(m.secim.ucuz, "U"); assert.equal(m.uygun_plan, true);
 });
 console.log(`${n} test geçti (kurul kuralları)`);
+t("uygun otel konforludan ucuz olmalı; tek yön dönüş", () => {
+  const m = { ucus: { oneri: { havayolu: "LOT", havalimani: "Gdańsk (GDN)" } }, donus_min: "14:00", butce: { konforlu: {}, ucuz: {} }, secim: {},
+    oteller: [{ ad: "M", arama: "m", kategori: "konforlu" }, { ad: "H", arama: "h", kategori: "ucuz" }] };
+  applyMatch(m, [], [{ input: "m", totalPrice: 312 }, { input: "h", totalPrice: 594 }]);
+  assert.equal(m.secim.konforlu, "M"); assert.equal(m.secim.ucuz, undefined); assert.equal(m.uygun_plan, false);
+  const D = (a, h) => ({ recordType: "flight", airline: a, stops: 0, departureDate: "2026-12-06", departureTime: h, arrivalTime: "20:00", origin: "GDN", destination: "IST", flightNumbers: ["LO1"] });
+  assert.equal(donusDoldur(m, [D("LOT", "06:00"), D("LOT", "15:10"), D("Turkish Airlines", "14:30")]), true);
+  assert.match(m.ucus.oneri.donus, /GDN 15:10 → IST/);
+});
+console.log(`${n} test geçti (uygun ve dönüş)`);

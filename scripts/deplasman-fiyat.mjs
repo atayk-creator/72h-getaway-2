@@ -97,10 +97,10 @@ export function applyMatch(m, flightRows, hotelRows) {
     seg.oteller.forEach((h, i) => {
       all++;
       const t = yeni[i];
-      // Aşırı fiyat (ör. süit fiyatı): aynı aramadaki diğer otellerin ortancasının 3 katından fazlaysa gösterilmez
+      // Aşırı fiyat (ör. süit fiyatı): aynı aramadaki diğer otellerin ortancasının 5 katından fazlaysa gösterilmez
       const diger = yeni.filter((x, j) => j !== i && num(x)).sort((a, b) => a - b);
       const med = diger.length >= 2 ? diger[Math.floor((diger.length - 1) / 2)] : null;
-      if (t && med && t > 3 * med) { h.toplam = null; h.eski = true; h.kontrol = `${t} € bulundu, diğer otellerin ortancasının ${(t / med).toFixed(1)} katı: süit/özel oda olabilir, gösterilmiyor`; log.push(`UYARI: ${h.ad} ${t} € aşırı, gizlendi`); return; }
+      if (t && med && t > 5 * med) { h.toplam = null; h.eski = true; h.kontrol = `${t} € bulundu, diğer otellerin ortancasının ${(t / med).toFixed(1)} katı: süit/özel oda olabilir, gösterilmiyor`; log.push(`UYARI: ${h.ad} ${t} € aşırı, gizlendi`); return; }
       if (t) { h.toplam = t; n++; delete h.eski; delete h.kontrol; } else h.eski = true;
     });
   }
@@ -113,8 +113,13 @@ export function applyMatch(m, flightRows, hotelRows) {
     if (seg.secim.sabit) continue; // elle seçilmiş (ör. Londra: iki planda da Premier Inn)
     if (!seg.secim.konforlu || !fiyatli(seg.secim.konforlu)) { const h = cheapest("konforlu") || cheapest("pahali"); if (h) seg.secim.konforlu = h.ad; }
     // Uygun plan: konforludan ayrı, fiyatı gerçek, "uygun" sınıfında bir otel; yoksa uygun plan yok
-    if (!seg.secim.ucuz || !fiyatli(seg.secim.ucuz) || seg.secim.ucuz === seg.secim.konforlu) {
-      const h = cheapest("ucuz"); if (h && h.ad !== seg.secim.konforlu) seg.secim.ucuz = h.ad; else delete seg.secim.ucuz;
+    // ve konforlu otelden ucuz olmalı (ör. Gdańsk'ta "uygun" Hampton, konforlu Mercure'den pahalıydı)
+    const fiyat = (ad) => (seg.oteller.find((h) => h.ad === ad && num(h.toplam)) || {}).toplam;
+    const kF = fiyat(seg.secim.konforlu);
+    const uygunOk = (ad) => ad && fiyatli(ad) && ad !== seg.secim.konforlu && (!kF || fiyat(ad) < kF);
+    if (!uygunOk(seg.secim.ucuz)) {
+      const h = seg.oteller.filter((x) => x.kategori === "ucuz" && uygunOk(x.ad)).sort((a, b) => a.toplam - b.toplam)[0];
+      if (h) seg.secim.ucuz = h.ad; else delete seg.secim.ucuz;
     }
   }
   const pick = (seg, k) => { const s = seg.secim && seg.secim[k] && seg.oteller.find((h) => h.ad === seg.secim[k]); if (s) return s.toplam;
@@ -131,6 +136,18 @@ export function applyMatch(m, flightRows, hotelRows) {
   m.uyarilar = sinifUyarilari(segs.map(({ seg }) => seg));
   for (const u of m.uyarilar) log.push("UYARI: " + u);
   return log;
+}
+
+/** Tek yön dönüş aramasından önerilen havayolunun uygun saatli seferini m.ucus.oneri.donus'a yazar (fiyata dokunmaz). */
+export function donusDoldur(m, rows) {
+  const tr = (a) => (a === "Turkish Airlines" ? "THY" : a);
+  const fl = (rows || []).filter((r) => r && r.recordType === "flight" && r.departureTime);
+  const hy = m.ucus.oneri.havayolu, ok = (r) => !m.donus_min || r.departureTime >= m.donus_min;
+  const c = fl.filter((r) => tr(r.airline) === hy && !r.stops && ok(r)).sort((a, b) => a.departureTime.localeCompare(b.departureTime))[0]
+    || fl.filter((r) => tr(r.airline) === hy && ok(r))[0];
+  if (!c) return false;
+  m.ucus.oneri.donus = `${gun(c.departureDate)} ${c.origin} ${c.departureTime} → ${c.destination} ${c.arrivalTime}${c.flightNumbers ? " (" + c.flightNumbers.join(", ") + ")" : ""}`;
+  return true;
 }
 
 const SINIF = ["ucuz", "konforlu", "pahali", "ikonik"], SINIF_AD = { ucuz: "Uygun", konforlu: "Konforlu", pahali: "Lüks", ikonik: "İkonik" };
@@ -185,14 +202,14 @@ async function runTeam(slug, token) {
   const flightsOf = {};
   for (const m of list) {
     const lines = m.arama_ucus || []; if (!lines.length) continue;
-    // Apify uçuş aracı art arda aramalarda ara sıra FAILED veriyor: 2 kez bekleyip yeniden dene
-    for (let deneme = 1; deneme <= 3; deneme++) {
+    // Apify uçuş aracı art arda aramalarda ara sıra FAILED veriyor: 60 sn bekleyip 3 kez daha dene
+    for (let deneme = 1; deneme <= 4; deneme++) {
     flightsOf[m.id] = await runActor({ searches: lines, adults: 1, cabinClass: "economy", currency: "EUR", market: "TR", language: "en", sortBy: "price",
       maxResultsPerSearch: 30, maxItems: lines.length * 30 + 20, includePriceInsights: true, includeSearchSummary: true, returnFlightsTop: 4, maxConcurrency: 3,
       ...(m.ucus_saat ? { departureTimeRange: m.ucus_saat } : {}) },
       { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 }).catch((e) => { console.log(m.sehir, "uçak hatası:", e.message); return []; });
-    if (flightsOf[m.id].some((r) => r && r.recordType === "flight") || deneme === 3) break;
-    console.log(m.sehir, `uçuş yok, ${deneme + 1}. deneme`); await sleep(20000);
+    if (flightsOf[m.id].some((r) => r && r.recordType === "flight") || deneme === 4) break;
+    console.log(m.sehir, `uçuş yok, ${deneme + 1}. deneme`); await sleep(60000);
     }
   }
   const H = (names, g, c, who) => runActor({ hotels: names, checkInDate: g, checkOutDate: c, adults: 2, currency: "EUR", country: "tr", language: "en", maxConcurrency: 8 },
@@ -204,6 +221,15 @@ async function runTeam(slug, token) {
       : await H(m.oteller.map((h) => h.arama), m.gidis, m.donus, m.sehir);
     const fr = flightsOf[m.id] || [];
     const log = applyMatch(m, fr, hotels);
+    // Dönüş seferi eşleşmediyse (ör. LOT Gdańsk): tek yön dönüş aramasıyla yalnız saat bilgisi doldurulur
+    if (m.ucus.oneri && !m.ucus.oneri.donus && (m.arama_ucus || [])[0]) {
+      const [rota] = m.arama_ucus[0].split(" "), [kalkis] = rota.split("-"), kod = (m.ucus.oneri.havalimani.match(/\(([A-Z]{3})\)/) || [])[1];
+      if (kod) {
+        const rows = await runActor({ searches: [`${kod}-${kalkis} ${m.donus}`], adults: 1, cabinClass: "economy", currency: "EUR", market: "TR", language: "en", sortBy: "price", maxResultsPerSearch: 20, maxItems: 30 },
+          { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 }).catch((e) => { console.log(m.sehir, "dönüş hatası:", e.message); return []; });
+        log.push(donusDoldur(m, rows) ? "dönüş tek yön aramayla bulundu" : "UYARI: dönüş tek yön aramada da bulunamadı");
+      }
+    }
     // Trenler (ÖBB, Apify jindrich.bar~oebb-ticket-scraper, ~0,0004 $/bağlantı)
     if (Array.isArray(m.trenler) && m.trenler.length) {
       let ok = 0;
