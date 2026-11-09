@@ -5,6 +5,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { renderTeamPage } from "./deplasman.mjs";
 
 export const SITE = "https://72hgetaway.com";
 const KAT_SIRA = ["ikonik", "pahali", "konforlu", "ucuz"];
@@ -596,7 +597,10 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   const out = {};
   for (const m of models) out[`sehir/${m.slug}/index.html`] = renderCityPage(m);
   out["sehir/index.html"] = renderIndexPage(models, today);
-  const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", ...models.map((m) => `/sehir/${m.slug}/`)];
+  // Takım deplasman sayfaları (data/fenerbahce.json …): takım bir şehir gibi
+  const teams = data ? data.takimlar || [] : ["fenerbahce"].map((s) => readJson(join(root, `data/${s}.json`), null)).filter(Boolean);
+  for (const t of teams) out[`deplasman/${t.slug}/index.html`] = renderTeamPage(t, { today, eurTry: (d.kur && d.kur.eurTry) || 0, esc, para, fmtTl, fmtEur, head, foot, SITE });
+  const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", ...teams.map((t) => `/deplasman/${t.slug}/`), ...models.map((m) => `/sehir/${m.slug}/`)];
   out["sitemap.xml"] = renderSitemap(paths, today);
   out["data/vitrin.json"] = renderVitrin(models, today);
   if (write) {

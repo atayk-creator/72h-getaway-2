@@ -1,0 +1,172 @@
+{
+ "aciklama": "Fenerbahçe deplasman sayfası (site: /deplasman/fenerbahce/, ana sayfa hikâyesinde ayrı kart). Takım bir 'şehir' gibi: her maç bir 72 saatlik kaçamak. Fiyatlar EUR, kişi başı (2 kişi aynı odada). Otel toplamı = 2 gece, vergiler dahil, tanınmış sitedeki en ucuz. Uçak = kişi başı gidiş-dönüş, Google Flights. scripts/sehir-sayfalari.mjs sayfayı bu dosyadan üretir.",
+ "takim": "Fenerbahçe",
+ "slug": "fenerbahce",
+ "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
+ "guncellendi": "2026-11-09",
+ "bilet": {
+  "fiyat": 50,
+  "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
+  "kaynak": "https://www.cityam.com/?p=2255750"
+ },
+ "maclar": [
+  {
+   "id": "londra",
+   "hafta": 5,
+   "rakip": "Shakhtar Donetsk",
+   "sehir": "Londra",
+   "ulke": "İngiltere",
+   "stat": "Stamford Bridge",
+   "stat_not": "Shakhtar, savaş nedeniyle bu sezonki iç saha maçlarını Chelsea'nin stadında oynuyor.",
+   "stat_kaynak": "https://shakhtar.com/en/news/2026/august/21_news/21_shakhtar_stamford_bridge/",
+   "tarih": "2026-11-25",
+   "saat_tsi": "23:00",
+   "saat_yerel": "20:00",
+   "gidis": "2026-11-24",
+   "donus": "2026-11-26",
+   "foto": null,
+   "vize": "İngiltere vizesi gerekir (Schengen geçmez). Maça 16 gün var; vizen yoksa öncelikli başvuruya bak.",
+   "ucus": {
+    "oneri": {"fiyat": 211, "havayolu": "Pegasus", "aktarma": 0, "havalimani": "Stansted (STN)", "gidis": "Salı SAW 10:50 → STN 11:50 (PC1161) ya da 13:35 / 15:20", "donus": "Perşembe STN 13:15 → SAW 20:00"},
+    "secenekler": [
+     {"fiyat": 191, "havayolu": "Pegasus gidiş + AJet dönüş", "havalimani": "Stansted", "not": "Salı SAW 13:35 → STN 14:35, perşembe STN 12:35 → SAW 19:30; en ucuzu"},
+     {"fiyat": 211, "havayolu": "Pegasus (gidiş-dönüş)", "havalimani": "Stansted", "not": "Salı 10:50 / 13:35 / 15:20 kalkış, perşembe 13:15 ya da 18:10 dönüş"},
+     {"fiyat": 211, "havayolu": "AJet", "havalimani": "Stansted", "not": "Salı SAW 10:20 → STN 11:30"},
+     {"fiyat": 270, "havayolu": "British Airways", "havalimani": "Heathrow", "not": "Salı IST 14:55, perşembe LHR 17:30 dönüş"},
+     {"fiyat": 289, "havayolu": "Pegasus", "havalimani": "Gatwick", "not": "Salı SAW 09:50 → LGW 11:10, perşembe 12:15 dönüş"},
+     {"fiyat": 299, "havayolu": "THY", "havalimani": "Gatwick", "not": "Salı IST 15:25"},
+     {"fiyat": 316, "havayolu": "THY", "havalimani": "Heathrow", "not": "Salı IST 21:25; Heathrow THY 316–358 €"},
+     {"fiyat": 318, "havayolu": "THY", "havalimani": "Stansted", "not": "Salı IST 15:15"}
+    ],
+    "yok": "Luton'a aktarmasız uçuş yok; London City'ye sadece 2 aktarmalı (518 €); Southend'e uçuş yok.",
+    "seviye": "normal",
+    "normal_aralik": "135–285 € (Stansted)"
+   },
+   "havalimani_ulasim": {"fiyat": 40, "yazi": "Stansted Express ile Liverpool Street 47–50 dk. 2 kişilik 'Duo' gidiş-dönüş 66,90 £ (kişi başı ~40 €). Daha ucuzu National Express otobüsü (tek yön 9–17 £, 1–1,5 saat).", "kaynak": "https://www.toptiplondon.com/transport/airports/stansted"},
+   "sehir_ulasim": {"fiyat": 32, "yazi": "Temassız kartla metro + otobüs günlük tavan 8,90 £; 3 gün ~32 €."},
+   "stada": "District hattıyla Fulham Broadway'e in, stat 5 dk yürüme. Westminster'dan ~25 dk. Deplasman seyircisi genelde Shed End tribünü.",
+   "oteller": [
+    {"ad": "The Savoy", "kategori": "ikonik", "toplam": 2705},
+    {"ad": "The Ned", "kategori": "pahali", "toplam": 1401},
+    {"ad": "The Langham", "kategori": "pahali", "toplam": 1821},
+    {"ad": "Strand Palace", "kategori": "konforlu", "toplam": 806},
+    {"ad": "The Hoxton, Holborn", "kategori": "konforlu", "toplam": 813},
+    {"ad": "Park Plaza Westminster Bridge", "kategori": "konforlu", "toplam": 764},
+    {"ad": "Premier Inn County Hall", "kategori": "ucuz", "toplam": 693},
+    {"ad": "The Z Hotel Piccadilly", "kategori": "ucuz", "toplam": 681}
+   ],
+   "gezi": ["Westminster, Big Ben ve Parlamento (ücretsiz)", "St James's Park → Buckingham Sarayı (dışarıdan, ücretsiz)", "National Gallery ve Trafalgar Meydanı (ücretsiz)", "Covent Garden (ücretsiz)", "Borough Market'te öğle yemeği", "Westminster Abbey (32 £, isteğe bağlı)"],
+   "butce": {
+    "konforlu": {"ucus": 211, "transfer": 40, "otel": 403, "bilet": 50, "ulasim": 32, "yemek": 165, "gezi": 40},
+    "ucuz": {"ucus": 191, "transfer": 25, "otel": 341, "bilet": 50, "ulasim": 32, "yemek": 120, "gezi": 0}
+   }
+  },
+  {
+   "id": "linz",
+   "hafta": 6,
+   "rakip": "LASK",
+   "sehir": "Linz",
+   "ulke": "Avusturya",
+   "stat": "Raiffeisen Arena",
+   "stat_not": "17.117 kişilik (UEFA maçlarında). Deplasman tribünü Doğu Tribünü, E6 kapısı (~1.900 kişi).",
+   "stat_kaynak": "https://footballgroundguide.com/leagues/lask-linz-raiffeisen-arena.html",
+   "tarih": "2026-12-09",
+   "saat_tsi": "23:00",
+   "saat_yerel": "21:00",
+   "gidis": "2026-12-08",
+   "donus": "2026-12-10",
+   "foto": "/img/sehir/viyana-1.jpg",
+   "foto_alt": "Viyana; Linz'e Viyana'dan arabayla gidiliyor",
+   "vize": "Schengen vizesi yeterli.",
+   "ucus": {
+    "oneri": {"fiyat": 118, "havayolu": "Pegasus", "aktarma": 0, "havalimani": "Viyana (VIE)", "gidis": "Salı SAW 08:45 → VIE 09:05 (PC901)", "donus": "Perşembe VIE 10:05 → SAW 14:20 (akşam 19:55 dönüşüyle 120 €)"},
+    "secenekler": [
+     {"fiyat": 118, "havayolu": "Pegasus", "havalimani": "Viyana", "not": "Salı 08:45, perşembe 10:05 dönüş"},
+     {"fiyat": 120, "havayolu": "Pegasus", "havalimani": "Viyana", "not": "Salı 08:45, perşembe 19:55 dönüş (Linz'de bütün gün)"},
+     {"fiyat": 142, "havayolu": "Pegasus", "havalimani": "Viyana", "not": "Salı 16:55 kalkış"},
+     {"fiyat": 200, "havayolu": "THY", "havalimani": "Viyana", "not": "Salı IST 17:40"},
+     {"fiyat": 219, "havayolu": "AJet", "havalimani": "Viyana", "not": "Salı SAW 12:30"}
+    ],
+    "yok": "Linz'e doğrudan uçuş yok (Lufthansa aktarmalı 393 €'dan başlıyor).",
+    "seviye": "normal",
+    "normal_aralik": "80–215 €"
+   },
+   "araba": {
+    "kisi_basi": 85,
+    "toplam": 170,
+    "yazi": "Viyana Havalimanı'ndan araba kirala, A1 otoyoluyla Linz ~200 km, ~2 saat. Kiralık araçlarda Avusturya otoyol vinyeti genelde araçta olur (yoksa 1 günlük 9,60 €, 10 günlük 12,80 €). Tahmini toplam (araç başı): kiralama 3 gün ~60–100 €, benzin ~45 € (400 km, litresi 1,75 €), Linz'de otel/garaj otoparkı ~40 €. 2 kişide kişi başı ~85 €, 4 kişide ~45 €. Maça arabayla değil otobüsle git: maç bileti şehir içi ulaşımı ücretsiz yapıyor.",
+    "sart": "21 yaş üstü, kredi kartı, ehliyet; uluslararası sürücü belgesini kiralama şirketine sor.",
+    "kaynak": "https://vintrica.com/de-AT/blog/vignette-oesterreich-preise-2026/"
+   },
+   "sehir_ulasim": {"fiyat": 7, "yazi": "24 saatlik bilet 6,40 €; maç bileti maçtan 5 saat önce gece yarısına kadar ulaşımı ücretsiz yapar.", "kaynak": "https://www.linzag.at/media/dokumente/linien_1/vertragsbedingungen___tarifblaetter/Fahrpreise-Kernzone-Linz.pdf"},
+   "stada": "Ana tren istasyonundan (Hauptbahnhof) 17, 19, 45a veya 46 numaralı otobüsle 'Stadion' durağı 5–7 dk; yürüyerek 15–20 dk (yokuş).",
+   "oteller": [
+    {"ad": "Hotel am Domplatz", "kategori": "konforlu", "toplam": 401},
+    {"ad": "Park Inn by Radisson Linz", "kategori": "konforlu", "toplam": 523},
+    {"ad": "Hotel Schillerpark (Radisson)", "kategori": "konforlu", "toplam": 333},
+    {"ad": "Austria Classic Hotel Wolfinger", "kategori": "konforlu", "toplam": 276},
+    {"ad": "Hotel Schwarzer Bär", "kategori": "ucuz", "toplam": 203},
+    {"ad": "ARCOTEL Nike", "kategori": "ucuz", "toplam": 231},
+    {"ad": "AMEDIA Hotel Linz", "kategori": "ucuz", "toplam": 199}
+   ],
+   "otel_uyari": "Courtyard by Marriott Linz 2 gece için 1.458 € istiyor (normalin 3–4 katı); maç haftası talebi.",
+   "gezi": ["Noel pazarları: ana meydan (Hauptplatz) ve Volksgarten", "8 Aralık Avusturya'da tatil; Mariendom katedralinin bayram günü", "Pöstlingberg dağ tramvayı ve şehir manzarası", "Ars Electronica Center ve Lentos müzesi (fiyatı teyit et)", "Linzer Torte'yi doğduğu şehirde ye"],
+   "butce": {
+    "konforlu": {"ucus": 120, "transfer": 85, "otel": 200, "bilet": 50, "ulasim": 7, "yemek": 135, "gezi": 30},
+    "ucuz": {"ucus": 118, "transfer": 85, "otel": 102, "bilet": 50, "ulasim": 7, "yemek": 100, "gezi": 10}
+   }
+  },
+  {
+   "id": "madrid",
+   "hafta": 8,
+   "rakip": "Atlético Madrid",
+   "sehir": "Madrid",
+   "ulke": "İspanya",
+   "stat": "Metropolitano",
+   "stat_not": "Şehir merkezine 8–9 km.",
+   "tarih": "2027-01-27",
+   "saat_tsi": "23:00",
+   "saat_yerel": "21:00",
+   "gidis": "2027-01-26",
+   "donus": "2027-01-28",
+   "foto": "/img/sehir/madrid-1.jpg",
+   "foto_alt": "Madrid",
+   "vize": "Schengen vizesi yeterli.",
+   "ucus": {
+    "oneri": {"fiyat": 284, "havayolu": "Air Europa", "aktarma": 0, "havalimani": "Madrid (MAD)", "gidis": "Salı IST 16:45 → MAD 19:00", "donus": "Perşembe MAD 09:10 → IST 14:55"},
+    "secenekler": [
+     {"fiyat": 284, "havayolu": "Air Europa", "havalimani": "Madrid", "not": "Aktarmasız, salı 16:45"},
+     {"fiyat": 322, "havayolu": "Pegasus", "havalimani": "Madrid", "not": "1 aktarmalı, salı 05:35 ya da 07:25 kalkış, 13:15 varış"},
+     {"fiyat": 346, "havayolu": "Pegasus", "havalimani": "Madrid", "not": "Aktarmasız, salı 09:15 (ilk aramada görüldü)"},
+     {"fiyat": 386, "havayolu": "THY", "havalimani": "Madrid", "not": "Dönüş perşembe 06:15 ya da 14:20"}
+    ],
+    "seviye": "yuksek",
+    "normal_aralik": "140–215 €"
+   },
+   "havalimani_ulasim": {"fiyat": 0, "yazi": "3 günlük turist kartı (Abono Turístico, 23,10 €) havalimanı metrosunu da kapsar; 3 € havalimanı eki ödenmez."},
+   "sehir_ulasim": {"fiyat": 23, "yazi": "Abono Turístico 3 gün 23,10 €: metro, otobüs, havalimanı."},
+   "stada": "Metro 7. hat (L7) ile 'Estadio Metropolitano' istasyonu; Sol'dan ~35 dk. Maç çıkışında metro çok kalabalık olur.",
+   "oteller": [
+    {"ad": "The Palace", "kategori": "ikonik", "toplam": 977},
+    {"ad": "Gran Hotel Inglés", "kategori": "pahali", "toplam": 734},
+    {"ad": "Rosewood Villa Magna", "kategori": "pahali", "toplam": 2149},
+    {"ad": "Catalonia Las Cortes", "kategori": "konforlu", "toplam": 396},
+    {"ad": "Hotel Preciados", "kategori": "konforlu", "toplam": 305},
+    {"ad": "Only YOU Boutique Hotel", "kategori": "konforlu", "toplam": 487},
+    {"ad": "ibis Styles Madrid Prado", "kategori": "ucuz", "toplam": 272},
+    {"ad": "Hotel Europa", "kategori": "ucuz", "toplam": 204}
+   ],
+   "gezi": ["Puerta del Sol → Plaza Mayor → San Miguel Pazarı", "Kraliyet Sarayı (18 €)", "Gün batımında Debod Tapınağı (ücretsiz)", "Prado Müzesi (15 €; salı akşamı 18–20 ücretsiz)", "Retiro Parkı"],
+   "butce": {
+    "konforlu": {"ucus": 284, "transfer": 0, "otel": 198, "bilet": 50, "ulasim": 23, "yemek": 150, "gezi": 33},
+    "ucuz": {"ucus": 284, "transfer": 0, "otel": 102, "bilet": 50, "ulasim": 23, "yemek": 110, "gezi": 0}
+   }
+  }
+ ],
+ "kaynaklar": [
+  {"ad": "Fenerbahçe 2026-27 Şampiyonlar Ligi fikstürü (Milli Gazete)", "url": "https://www.milligazete.com.tr/fenerbahcenin-avrupa-maclari-2026-2027-sampiyonlar-ligi-fiksturu-rakipler-mac-tarihleri-ve-saatleri"},
+  {"ad": "Shakhtar maçları Stamford Bridge'de (resmî)", "url": "https://shakhtar.com/en/news/2026/august/21_news/21_shakhtar_stamford_bridge/"},
+  {"ad": "UEFA deplasman bileti tavanı (City AM)", "url": "https://www.cityam.com/?p=2255750"},
+  {"ad": "Raiffeisen Arena rehberi", "url": "https://footballgroundguide.com/leagues/lask-linz-raiffeisen-arena.html"}
+ ]
+}

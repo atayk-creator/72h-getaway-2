@@ -417,6 +417,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 .st-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .st-chips span { background: rgba(251,246,236,0.16); border: 1px solid rgba(251,246,236,0.28); border-radius: 999px; padding: 5px 10px; font-size: 0.8rem; font-weight: 600; }
 .st-cta { display: block; text-align: center; min-height: 50px; line-height: 50px; border-radius: 14px; background: #F4A62A; color: #0F2A43; font-weight: 800; border: 0; font-size: 1rem; cursor: pointer; width: 100%; font-family: inherit; }
+.st-ph .fbt { background: repeating-linear-gradient(90deg, rgba(244,211,11,0.95) 0 34px, #0F2A43 34px 68px) top / 100% 38% no-repeat, radial-gradient(circle, rgba(244,211,11,0.28) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
+.story.takim .st-cta { background: #F4D30B; text-decoration: none; }
 .st-cr { font-size: 0.68rem; color: rgba(251,246,236,0.65); text-align: right; margin-top: -4px; }
 /* ---------- Şehirler listesi ---------- */
 .cgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 10px; }
@@ -815,7 +817,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 </main>
 
 
-<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json"; window.VITRIN_URL = "data/vitrin.json"; window.ONERI_URL = "data/oneriler.json"; window.STVIDEO_URL = "data/hikaye-video.json";</script>
+<script>window.DATA_URL = "data.json"; window.PRICES_URL = "prices.json"; window.PRICE_STATUS_URL = "price-status.json"; window.HOTELS_URL = "data/hotels.json"; window.HOTEL_META_URL = "data/otel-fiyatlari.json"; window.FLIGHTS_URL = "data/ucuslar.json"; window.RESTOS_URL = "data/restoranlar.json"; window.GEZI_URL = "data/gezi.json"; window.VITRIN_URL = "data/vitrin.json"; window.ONERI_URL = "data/oneriler.json"; window.STVIDEO_URL = "data/hikaye-video.json"; window.FB_URL = "data/fenerbahce.json";</script>
 <script>
 (function () {
   // Kur verisi tek yerden gelir. Kendi sitende barındırırsan data.json her gün otomatik güncellenir (window.DATA_URL tanımlıysa).
@@ -2067,8 +2069,34 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var per = stPeriod(), n = pool.length, start = (per.p * 6) % n, out = [];
     for (var j = 0; j < n && out.length < 6; j++) { var x = pool[(start + j) % n]; if (x.t != null) out.push(x); }
     out.sort(function (a, b) { return a.t - b.t; });
+    // Takım kartı (Fenerbahçe deplasmanı) şehirlerin arasına, 2. sıraya girer: takım bir şehir gibi
+    var fb = fbSlide(); if (fb) out.splice(Math.min(1, out.length), 0, fb);
     return { g: v.g, list: out, next: per.next };
   }
+  // ---- Takım deplasman kartı (data/fenerbahce.json): sıradaki deplasman maçı, 2 kişi konforlu toplam
+  var FBD = null;
+  function fbSlide() {
+    if (!FBD || !Array.isArray(FBD.maclar)) return null;
+    var today = todayIst(), m = FBD.maclar.filter(function (x) { return x.tarih >= today; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; })[0];
+    if (!m || !m.butce || !m.butce.konforlu) return null;
+    var e = 0; Object.keys(m.butce.konforlu).forEach(function (k) { if (typeof m.butce.konforlu[k] === "number") e += m.butce.konforlu[k]; });
+    return { takim: true, n: FBD.takim, m: m, t: e * DATA.eurTry, kalan: FBD.maclar.filter(function (x) { return x.tarih >= today; }).length };
+  }
+  function stTeam(x) {
+    var m = x.m, o = m.ucus && m.ucus.oneri;
+    $("stPh").innerHTML = m.foto ? '<img src="' + escH(m.foto) + '" alt="" decoding="async">' : '<span class="fb fbt"></span>';
+    var chips = [dTr(m.tarih) + " · " + m.saat_tsi + " TSİ", m.rakip + " – " + x.n + " · " + m.stat];
+    if (o) chips.push(o.havayolu + " " + tl(Math.round(o.fiyat * DATA.eurTry / 100) * 100) + "'den, " + (o.aktarma === 0 ? "aktarmasız" : "aktarmalı"));
+    if (x.kalan > 1) chips.push(x.kalan + " deplasman kaldı");
+    $("story").setAttribute("aria-label", "Bu haftanın 6 şehri, " + (ST.k + 1) + ". kart: " + x.n + " deplasmanı, " + m.sehir);
+    $("stBot").innerHTML = '<span class="st-eb">' + escH(upTr(x.n) + " DEPLASMANI · " + upTr(m.sehir) + " · 72 SAAT") + "</span>" +
+      '<h2 class="st-h">' + escH("Sıradaki deplasman: " + m.sehir) + "</h2>" +
+      '<div class="st-pr"><b>~' + tl(Math.round(x.t * 2 / 100) * 100) + "</b><span>2 kişi toplam · kişi başı ~" + tl(Math.round(x.t / 100) * 100) + " · uçak + otel + maç bileti + yemek</span></div>" +
+      '<div class="st-chips">' + chips.map(function (c) { return "<span>" + escH(c) + "</span>"; }).join("") + "</div>" +
+      '<a class="st-cta" id="stCta" href="/deplasman/' + escH(FBD.slug) + '/#' + escH(m.id) + '">' + escH(x.n) + " deplasman planı</a>" +
+      (m.foto ? '<span class="st-cr">Görüntü: Pexels</span>' : "");
+  }
+  function dTr(s) { var d = parseD(s), ay = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"], g = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]; return d.getUTCDate() + " " + ay[d.getUTCMonth()] + " " + g[d.getUTCDay()]; }
   function renderStory() {
     var sec = $("story"), pk = stPick();
     if (!pk) { sec.hidden = true; return; }
@@ -2086,7 +2114,15 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   function stGo(k) {
     if (!ST.list || !ST.list.length) return;
     var n = ST.list.length; ST.k = ((k % n) + n) % n;
-    var x = ST.list[ST.k], f = (x.c.fotolar || [])[0], s = flySon(ST.g, x.n);
+    var x = ST.list[ST.k];
+    $("story").classList.toggle("takim", !!x.takim);
+    if (x.takim) {
+      var bt = $("stBars").children;
+      for (var q = 0; q < bt.length; q++) bt[q].className = q < ST.k ? "done" : "";
+      void $("stBars").offsetWidth; bt[ST.k].className = "cur";
+      stTeam(x); return;
+    }
+    var f = (x.c.fotolar || [])[0], s = flySon(ST.g, x.n);
     $("stPh").innerHTML = (f ? sizeFix(vImg(f, true), "(max-width: 1040px) 100vw, 1040px") : '<span class="fb"></span>') + stVideoHtml(x.n);
     var vid = $("stPh").querySelector("video");
     if (vid) { vid.addEventListener("playing", function () { vid.style.opacity = "1"; }); stVideoSync(); }
@@ -2123,7 +2159,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var vid = $("stPh") && $("stPh").querySelector("video"); if (!vid) return;
     if (ST.paused || ST.hold) vid.pause(); else { var p = vid.play(); if (p && p.catch) p.catch(function () {}); }
   }
-  function stOpenCity() { var x = ST.list && ST.list[ST.k]; if (x) { selectCity(x.i); go("#takvim/" + liveSlug(x.n)); } }
+  function stOpenCity() { var x = ST.list && ST.list[ST.k]; if (x && x.takim) { location.href = "/deplasman/" + FBD.slug + "/#" + x.m.id; return; } if (x) { selectCity(x.i); go("#takvim/" + liveSlug(x.n)); } }
   function stApply() { $("story").classList.toggle("paused", ST.paused || ST.hold); stVideoSync(); }
   function stHold(h) { ST.hold = h; stApply(); }
   function stResume() { ST.hold = document.hidden; stApply(); }
@@ -2883,6 +2919,11 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   if (window.VITRIN_URL && window.fetch) {
     fetch(window.VITRIN_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { VITRIN = d; render(); }
+    }).catch(function () {});
+  }
+  if (window.FB_URL && window.fetch) {
+    fetch(window.FB_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (d && Array.isArray(d.maclar)) { FBD = d; render(); }
     }).catch(function () {});
   }
   if (window.GEZI_URL && window.fetch) {
