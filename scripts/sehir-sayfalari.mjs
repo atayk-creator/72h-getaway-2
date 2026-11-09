@@ -8,8 +8,8 @@ import { fileURLToPath } from "node:url";
 import { renderTeamPage, renderRedirect, teamCard } from "./deplasman.mjs";
 
 export const SITE = "https://72hgetaway.com";
-const KAT_SIRA = ["ikonik", "pahali", "konforlu", "ucuz"];
-const KAT_AD = { ikonik: "İkonik", pahali: "Pahalı", konforlu: "Konforlu", ucuz: "Ucuz" };
+const KAT_SIRA = ["ucuz", "konforlu", "pahali", "ikonik"];
+const KAT_AD = { ikonik: "İkonik", pahali: "Lüks", konforlu: "Konforlu", ucuz: "Uygun" };
 const SEVIYE_AD = { uygun: "Uygun", populer: "Popüler", luks: "Lüks" };
 const SEVIYE_SIRA = { uygun: 0, populer: 1, luks: 2 };
 const UZAK_HAFTA = 8; // "önümüzdeki 8 hafta sonu"
@@ -166,7 +166,7 @@ export function etiketle(haftalar) {
   });
   return { normal, enUcuz, enPahali, haftalar: out };
 }
-export const ETIKET_AD = { ucuz: "Ucuz", normal: "Normal fiyat", pahali: "Pahalı" };
+export const ETIKET_AD = { ucuz: "Fırsat", normal: "Normal fiyat", pahali: "Pahalı" };
 
 export function buildCity(data, cityName, today) {
   const city = (data.hotels.sehirler || []).find((c) => c.sehir === cityName) || { sehir: cityName, oteller: [] };
@@ -391,7 +391,7 @@ export function renderCityPage(m) {
   const title = `${m.sehir} hafta sonu bütçesi: otel, uçak, restoran (TL) | 72h Getaway`;
   const s = m.secili;
   const parts = [];
-  if (s && s.otel) parts.push(`en ucuz otel gecelik ${fmtTl(s.otel.gecelik, kur) || fmtEur(s.otel.gecelik)}`);
+  if (s && s.otel) parts.push(`en uygun otel gecelik ${fmtTl(s.otel.gecelik, kur) || fmtEur(s.otel.gecelik)}`);
   if (m.enUcuzUcus) parts.push(`İstanbul'dan uçak kişi başı ${fmtTl(m.enUcuzUcus.fiyat, kur) || fmtEur(m.enUcuzUcus.fiyat)}'den`);
   const description = `${yonelme(m.sehir)} hafta sonu kaçamağı kaça patlar? ` +
     (parts.length ? (s ? aralik(s.g, s.cikis) + " için " : "") + parts.join(", ") + ". " : "") +
@@ -416,7 +416,7 @@ export function renderCityPage(m) {
     else lines.push(`<li>Bu hafta sonu için güvenilir otel fiyatı yok.</li>`);
     if (s.ucus) { tot += 2 * s.ucus.fiyat; lines.push(`<li>Uçak, 2 kişi gidiş-dönüş: ${para(2 * s.ucus.fiyat, kur)} <span class="muted">· ${esc(s.ucus.havayolu || "")}${s.ucus.aktarma === 0 ? ", aktarmasız" : s.ucus.aktarma ? `, ${s.ucus.aktarma} aktarma` : ""}</span></li>`); }
     else lines.push(`<li>Bu hafta sonu için uçak fiyatı henüz yok.</li>`);
-    ozet = `<div class="sum"><div class="muted">${esc(aralik(s.g, s.cikis))} hafta sonu · 2 kişi · en ucuz seçeneklerle</div>
+    ozet = `<div class="sum"><div class="muted">${esc(aralik(s.g, s.cikis))} hafta sonu · 2 kişi · en uygun seçeneklerle</div>
       <div class="tot">${s.otel && s.ucus ? "~" : ""}${para(tot, kur)}</div>
       <div class="muted">${s.otel && s.ucus ? "otel + uçak toplamı; yemek, gezi ve ulaşım hariç" : "eksik kalemler hariç"}</div>
       <ul>${lines.join("")}</ul></div>`;
@@ -429,7 +429,7 @@ export function renderCityPage(m) {
     if (!bu && !eu) return `<div class="card"><h3>${esc(k.ad)}</h3><div class="s">Önümüzdeki hafta sonlarında güvenilir fiyat yok.</div></div>`;
     return `<div class="card"><h3>${esc(k.ad)}</h3>` +
       (bu ? `<div class="p">${para(bu.gecelik, kur)}</div><div class="s">gecelik · ${esc(bu.ad)} · ${esc(aralikKisa(s.g, s.cikis))} · ${bu.vergi === "dahil" || bu.vergi === "eklendi" ? "vergiler dahil" : "vergiler dahil olmayabilir"}</div>` : `<div class="s">${s ? esc(aralikKisa(s.g, s.cikis)) + " için fiyat yok." : ""}</div>`) +
-      (eu && (!bu || eu.g !== bu.g || eu.gecelik < bu.gecelik) ? `<div class="s" style="margin-top:6px">8 hafta içinde en ucuzu: <b>${esc(fmtTl(eu.gecelik, kur) || fmtEur(eu.gecelik))}</b> gecelik, ${esc(aralikKisa(eu.g, eu.cikis))} (${esc(eu.ad)})</div>` : "") +
+      (eu && (!bu || eu.g !== bu.g || eu.gecelik < bu.gecelik) ? `<div class="s" style="margin-top:6px">8 hafta içinde en uygunu: <b>${esc(fmtTl(eu.gecelik, kur) || fmtEur(eu.gecelik))}</b> gecelik, ${esc(aralikKisa(eu.g, eu.cikis))} (${esc(eu.ad)})</div>` : "") +
       `</div>`;
   }).join("");
 
@@ -458,7 +458,7 @@ export function renderCityPage(m) {
   let zamanHtml;
   if (z && z.normal) {
     const tri = `<div class="tri"><div><span class="muted">Normal fiyat</span><b>${para(z.normal, kur)}</b></div>` +
-      `<div class="iyi"><span class="muted">En ucuz · ${esc(aralikKisa(z.enUcuz.g, z.enUcuz.cikis))}</span><b>${para(z.enUcuz.toplam, kur)}</b></div>` +
+      `<div class="iyi"><span class="muted">En uygun · ${esc(aralikKisa(z.enUcuz.g, z.enUcuz.cikis))}</span><b>${para(z.enUcuz.toplam, kur)}</b></div>` +
       `<div><span class="muted">En pahalı · ${esc(aralikKisa(z.enPahali.g, z.enPahali.cikis))}</span><b>${para(z.enPahali.toplam, kur)}</b></div></div>`;
     const rows = z.haftalar.map((h) => {
       const etk = h.etiket ? `<span class="etk ${h.etiket}">${esc(ETIKET_AD[h.etiket])}${h.etiket !== "normal" ? ` · ${h.fark > 0 ? "+" : "−"}%${Math.abs(h.fark)}` : ""}</span>` : h.otelDolu ? `<span class="etk dolu">Otel dolu</span>` : h.dogrulaniyor ? `<span class="muted">fiyat doğrulanıyor</span>` : `<span class="muted">fiyat yok</span>`;
@@ -493,17 +493,17 @@ export function renderCityPage(m) {
   </section>
   <section aria-labelledby="h-zaman" class="zaman">
     <h2 id="h-zaman">Ne zaman gitmeli?</h2>
-    <p class="lead">Önümüzdeki hafta sonlarında 2 kişi uçak + konforlu otel (2 gece). Etiket, şehrin kendi ortanca fiyatına göre: %10 ucuzsa ucuz, %10 pahalıysa pahalı.</p>
+    <p class="lead">Önümüzdeki hafta sonlarında 2 kişi uçak + konforlu otel (2 gece). Etiket, şehrin kendi ortanca fiyatına göre: %10 altındaysa Fırsat, %10 üstündeyse Pahalı.</p>
     ${zamanHtml}
   </section>
   <section aria-labelledby="h-otel">
     <h2 id="h-otel">Otel, gecelik</h2>
-    <p class="lead">Seçtiğimiz otellerde kategori kategori en ucuz gecelik fiyat (2 kişilik oda). Tüm hafta sonları için <a href="${esc(otelLink)}">otel fiyat takvimine</a> bak.</p>
+    <p class="lead">Seçtiğimiz otellerde kategori kategori en uygun gecelik fiyat (2 kişilik oda). Tüm hafta sonları için <a href="${esc(otelLink)}">otel fiyat takvimine</a> bak.</p>
     <div class="grid">${otelKart || '<p class="empty">Bu şehir için otel listesi yok.</p>'}</div>
   </section>
   <section aria-labelledby="h-ucak">
     <h2 id="h-ucak">İstanbul'dan uçak</h2>
-    <p class="lead">Kişi başı gidiş-dönüş, Cuma gidiş Pazar dönüş, IST ya da SAW çıkışlı en ucuz uçuş.</p>
+    <p class="lead">Kişi başı gidiş-dönüş, Cuma gidiş Pazar dönüş, IST ya da SAW çıkışlı en uygun uçuş.</p>
     ${ucusList}
   </section>
   <section aria-labelledby="h-rest">
@@ -530,7 +530,7 @@ export function renderCityPage(m) {
 export function renderIndexPage(models, today, extra = []) {
   const url = `${SITE}/sehir/`;
   const title = "Avrupa'da hafta sonu bütçesi: 28 başkent, otel + uçak (TL) | 72h Getaway";
-  const description = "İstanbul'dan 28 Avrupa başkentine Cuma–Pazar kaçamağı: şehir şehir en ucuz hafta sonu otel ve uçak tahmini, restoran ve gezi fiyatları. 2 kişi, TL.";
+  const description = "İstanbul'dan 28 Avrupa başkentine Cuma–Pazar kaçamağı: şehir şehir en uygun hafta sonu otel ve uçak tahmini, restoran ve gezi fiyatları. 2 kişi, TL.";
   const sorted = models.slice().sort((a, b) => a.sehir.localeCompare(b.sehir, "tr"));
   const ld = {
     "@context": "https://schema.org",
@@ -556,7 +556,7 @@ export function renderIndexPage(models, today, extra = []) {
   <div class="wrap">
     <nav aria-label="Konum"><ol class="crumbs"><li><a href="/">72h Getaway</a></li><li><span aria-current="page">Şehirler</span></li></ol></nav>
     <h1>Hafta sonu nereye? 28 Avrupa başkenti</h1>
-    <p>Her şehir için önümüzdeki 8 hafta sonunun en ucuzu: seçtiğimiz otellerin en ucuzunda 2 gece + İstanbul'dan 2 kişi gidiş-dönüş uçak. Robot fiyatlarına göre, tahminidir.</p>
+    <p>Her şehir için önümüzdeki 8 hafta sonunun en uygunu: seçtiğimiz otellerin en uygununda 2 gece + İstanbul'dan 2 kişi gidiş-dönüş uçak. Robot fiyatlarına göre, tahminidir.</p>
     <div class="hero"><a class="big" href="/">Kendi bütçeni hesapla</a><a class="ghost" href="/oteller.html">Otel fiyat takvimi →</a></div>
   </div>
 </header>

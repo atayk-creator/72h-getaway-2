@@ -1,5 +1,5 @@
 {
- "aciklama": "Fenerbahçe deplasman sayfası (site: /deplasman/fenerbahce/, ana sayfa hikâyesinde ayrı kart). Takım bir 'şehir' gibi: her maç bir 72 saatlik kaçamak. Fiyatlar EUR, kişi başı (2 kişi aynı odada). Otel toplamı = 2 gece, vergiler dahil, tanınmış sitedeki en ucuz. Uçak = kişi başı gidiş-dönüş, Google Flights. scripts/sehir-sayfalari.mjs sayfayı bu dosyadan üretir.",
+ "aciklama": "Fenerbahçe deplasman sayfası (site: /deplasman/fenerbahce/, ana sayfa hikâyesinde ayrı kart). Takım bir 'şehir' gibi: her maç bir 72 saatlik kaçamak. Fiyatlar EUR, kişi başı (2 kişi aynı odada). Otel toplamı = 2 gece, vergiler dahil, tanınmış sitedeki en uygun. Uçak = kişi başı gidiş-dönüş, Google Flights. scripts/sehir-sayfalari.mjs sayfayı bu dosyadan üretir.",
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
@@ -67,7 +67,7 @@
    },
    "havalimani_ulasim": {
     "fiyat": 40,
-    "yazi": "Stansted Express ile Liverpool Street 47–50 dk. 2 kişilik 'Duo' gidiş-dönüş 66,90 £ (kişi başı ~40 €). Daha ucuzu National Express otobüsü (tek yön 9–17 £, 1–1,5 saat).",
+    "yazi": "Önerilen: Stansted Express ile Liverpool Street 47 dk; 2 kişilik 'Duo' gidiş-dönüş 66,90 £ (kişi başı ~40 €). Uygun planda: National Express otobüsü, tek yön 9–17 £ (gidiş-dönüş kişi başı ~25 €), 1–1,5 saat.",
     "kaynak": "https://www.toptiplondon.com/transport/airports/stansted"
    },
    "sehir_ulasim": {
@@ -164,9 +164,9 @@
    "ucus_saat": "0-11",
    "secim": {
     "konforlu": "Premier Inn County Hall",
-    "ucuz": "The Z Hotel Piccadilly"
+    "ucuz": "Premier Inn County Hall"
    },
-   "otel_not": "Premier Inn County Hall Big Ben'in karşısında; Westminster'dan District hattı stada aktarmasız gider.",
+   "otel_not": "Ana öneri: Premier Inn County Hall (uygun seviye), Big Ben'in karşısında; Westminster'dan District hattı stada aktarmasız gider. Daha konforlu seçenek: Strand Palace.",
    "akis": [
     {
      "gun": "Çarşamba 25 Kasım · maç günü",
@@ -316,9 +316,13 @@
      "~25 £"
     ]
    ],
-   "uyari": "AJet'in en ucuz biletinde genelde sadece kabin çantası var; bavul eklersen fiyat artar.",
+   "uyari": "AJet'in en uygun biletinde genelde sadece kabin çantası var; bavul eklersen fiyat artar.",
    "foto_alt": "Londra, gece Big Ben",
-   "foto_kaynak": "Unsplash · David W. Meyer"
+   "foto_kaynak": "Unsplash · David W. Meyer",
+   "transfer_yazi": {
+    "konforlu": "Stansted Express treni",
+    "ucuz": "National Express otobüsü"
+   }
   },
   {
    "id": "linz",
@@ -441,7 +445,7 @@
       [
        "10:30",
        "Otele bavul bırak",
-       "Hotel MOTTO (konforlu) · Motel One Westbahnhof (ucuz)"
+       "Hotel MOTTO (konforlu) · Motel One Westbahnhof (uygun)"
       ],
       [
        "11:00",
@@ -481,7 +485,7 @@
       [
        "10:45",
        "Otele bavul bırak",
-       "Hotel am Domplatz (konforlu) · Schwarzer Bär (ucuz)"
+       "Hotel am Domplatz (konforlu) · Schwarzer Bär (uygun)"
       ],
       [
        "11:30",

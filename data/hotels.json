@@ -211,7 +211,7 @@
         {"id":"cph-nyhavn-71","ad":"71 Nyhavn Hotel","arama":"71 Nyhavn Hotel Copenhagen","kategori":"konforlu","not":"Nyhavn kanalının ucunda tarihi depo binası; ahşap kirişli, liman manzaralı"},
         {"id":"cph-ottilia","ad":"Hotel Ottilia","arama":"Hotel Ottilia Copenhagen","kategori":"konforlu","not":"Carlsberg City'de eski bira fabrikası binası; çatı terası ve akşam şarap ikramı"},
         {"id":"cph-sp34","ad":"Hotel SP34","arama":"Hotel SP34 Copenhagen","kategori":"konforlu","not":"Latin Mahallesi'nde, Strøget'e 2 dk; tasarım odaklı butik otel"},
-        {"id":"cph-wakeup-borgergade","ad":"Wakeup Copenhagen Borgergade","arama":"Wakeup Copenhagen Borgergade","kategori":"ucuz","not":"Kongens Have ve Nyhavn'a yürüme mesafesi; küçük ama şık odalı ucuz seçenek"},
+        {"id":"cph-wakeup-borgergade","ad":"Wakeup Copenhagen Borgergade","arama":"Wakeup Copenhagen Borgergade","kategori":"ucuz","not":"Kongens Have ve Nyhavn'a yürüme mesafesi; küçük ama şık odalı uygun fiyatlı seçenek"},
         {"id":"cph-cabinn-city","ad":"Cabinn City","arama":"Cabinn City Hotel Copenhagen","kategori":"ucuz","not":"Tivoli ve Merkez İstasyon'a 5 dk; kamara tarzı kompakt odalar, çok uygun"}
       ]
     },
@@ -239,7 +239,7 @@
         {"id":"tll-hotel-cru","ad":"Hotel Cru","arama":"Cru Hotel Tallinn","kategori":"konforlu","not":"Eski Şehir'in kalbinde 14. yy binası; ahşap tavanlar, Belediye Meydanı'na 3 dk"},
         {"id":"tll-nordic-forum","ad":"Nordic Hotel Forum","arama":"Nordic Hotel Forum Tallinn","kategori":"konforlu","not":"Viru Kapısı'nın karşısında; çatıda havuz ve sauna, Eski Şehir manzarası"},
         {"id":"tll-kreutzwald","ad":"Kreutzwald Hotel","arama":"Kreutzwald Hotel Tallinn","kategori":"konforlu","not":"Merkezde, Eski Şehir'e 10 dk; sakin, iyi fiyatlı ve spa'lı bir otel"},
-        {"id":"tll-go-hotel-shnelli","ad":"Go Hotel Shnelli","arama":"Go Hotel Shnelli Tallinn","kategori":"ucuz","not":"Balti Jaam istasyonunun yanında, Eski Şehir'e 5 dk; ucuz ve temiz"},
+        {"id":"tll-go-hotel-shnelli","ad":"Go Hotel Shnelli","arama":"Go Hotel Shnelli Tallinn","kategori":"ucuz","not":"Balti Jaam istasyonunun yanında, Eski Şehir'e 5 dk; uygun fiyatlı ve temiz"},
         {"id":"tll-tallink-express","ad":"Tallink Express Hotel","arama":"Tallink Express Hotel Tallinn","kategori":"ucuz","not":"Liman ile Eski Şehir arasında; sade ve modern odalar, çok uygun fiyat"}
       ]
     },
@@ -337,7 +337,7 @@
         {"id":"lju-vander-urbani","ad":"Vander Urbani Resort","arama":"Vander Urbani Resort Ljubljana","kategori":"konforlu","not":"Ljubljanica nehri kıyısında tasarım otel; çatı havuzu ve iyi restoranı var"},
         {"id":"lju-cubo","ad":"Hotel Cubo","arama":"Hotel Cubo Ljubljana","kategori":"konforlu","not":"Merkezde minimalist tasarım otel; Kongre Meydanı'na yürüme mesafesi"},
         {"id":"lju-slon","ad":"Best Western Premier Hotel Slon","arama":"Best Western Premier Hotel Slon Ljubljana","kategori":"konforlu","not":"Eski Şehir'in girişinde, Prešeren Meydanı'na 3 dakika; köklü ve büyük şehir oteli"},
-        {"id":"lju-emonec","ad":"Hotel Emonec","arama":"Hotel Emonec Ljubljana","kategori":"ucuz","not":"Kongre Meydanı'nın hemen yanında sade, temiz ve ucuz otel"},
+        {"id":"lju-emonec","ad":"Hotel Emonec","arama":"Hotel Emonec Ljubljana","kategori":"ucuz","not":"Kongre Meydanı'nın hemen yanında sade, temiz ve uygun fiyatlı otel"},
         {"id":"lju-bb-park","ad":"B&B Hotel Ljubljana Park","arama":"B&B Hotel Ljubljana Park","kategori":"ucuz","not":"Merkezde, Eski Şehir'e 10 dk yürüme mesafesinde bütçe dostu zincir otel"}
       ]
     },

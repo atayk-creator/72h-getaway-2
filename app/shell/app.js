@@ -179,7 +179,7 @@
   function intro() {
     var S = [
       ["1", "Bu hafta sonu nereye?", "Keşfet'te her hafta değişen 6 şehir, gerçek uçak ve otel fiyatlarıyla hikâye gibi akar. Beğendiğine dokun, takvimini gör."],
-      ["2", "Fiyatlar gerçek", "Robotlarımız İstanbul çıkışlı Cuma sabah gidiş, Pazar akşam dönüş uçuşlarını ve otel fiyatlarını düzenli kontrol ediyor. Takvim hangi hafta sonunun ucuz, hangisinin pahalı olduğunu gösterir."],
+      ["2", "Fiyatlar gerçek", "Robotlarımız İstanbul çıkışlı Cuma sabah gidiş, Pazar akşam dönüş uçuşlarını ve otel fiyatlarını düzenli kontrol ediyor. Takvim hangi hafta sonunun fırsat, hangisinin pahalı olduğunu gösterir."],
       ["3", "Biletin hazır", "Biletim'de yemek ve gezi dahil tam bütçeni gör, Turu kaydet ile sakla, hikâyende paylaş ya da PDF olarak al. İnternet yokken de son fiyatlarla çalışır."]
     ], i = 0, el = document.createElement("div");
     el.className = "app-intro"; el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "true"); el.setAttribute("aria-label", "Tanıtım");

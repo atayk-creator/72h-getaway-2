@@ -20,8 +20,8 @@ Hafta sonu kaçamağın kaça patlar? 28 Avrupa başkentinde İstanbul çıkış
 Hafta sonu kaçamağın kaça patlar? 72h Getaway, İstanbul'dan Avrupa başkentlerine 2 gece 3 günlük bir kaçamağın toplam bütçesini birkaç dokunuşla çıkarır.
 
 GERÇEK FİYATLAR
-• Uçak: İstanbul (IST ve SAW) çıkışlı, Cuma sabah gidiş, Pazar akşam dönüş uçuşlarının fiyatları Google Flights'tan düzenli kontrol edilir. En ucuz ve aktarmasız seçenekleri yan yana görürsün.
-• Otel: Her şehirde seçtiğimiz 8 otelin (ikonik, pahalı, konforlu, ucuz) Cuma–Pazar fiyatları tanınmış rezervasyon sitelerinden takip edilir.
+• Uçak: İstanbul (IST ve SAW) çıkışlı, Cuma sabah gidiş, Pazar akşam dönüş uçuşlarının fiyatları Google Flights'tan düzenli kontrol edilir. En uygun ve aktarmasız seçenekleri yan yana görürsün.
+• Otel: Her şehirde seçtiğimiz 8 otelin (uygun, konforlu, lüks, ikonik) Cuma–Pazar fiyatları tanınmış rezervasyon sitelerinden takip edilir.
 • Yemek: Her şehirde uygun, popüler ve lüks restoranlar; kişi başı fiyat aralıklarıyla.
 • Ulaşım ve gezi: Havalimanı ulaşımı, toplu taşıma kartları ve müze biletleri resmî fiyat listelerinden.
 • Kur: Euro/TL her gün güncellenir.
@@ -31,7 +31,7 @@ KEŞFET
 • "Bu hafta sonu başka nereye?" ile bütün şehirleri fiyatına göre sırala.
 
 TAKVİM
-• Her şehir için önümüzdeki hafta sonları: hangisi ucuz, hangisi normal, hangisi pahalı.
+• Her şehir için önümüzdeki hafta sonları: hangisi fırsat, hangisi normal, hangisi pahalı.
 • Bir hafta sonuna dokun, o tarihin tam bütçesi hesaplansın.
 
 KARŞILAŞTIR
@@ -80,7 +80,7 @@ The app does not sell anything, has no in-app purchases, no ads, no tracking and
 ## Ekran görüntüleri (hazırlanacak)
 - App Store: 6,9" iPhone (1320×2868 ya da 1290×2796), en az 3 adet. Uygulama yalnızca iPhone ve dikey ekran (iPad ekran görüntüsü gerekmez).
 - Google Play: telefon, en az 2 adet (1080×1920 ya da 1080×2400)
-- Sahneler: 1) Keşfet hikâyesi 2) Takvim (ucuz / normal / pahalı) 3) Biletim (fotoğraflı biniş kartı) 4) Karşılaştır (kaydırma) 5) Hikâye görseli paylaşımı
+- Sahneler: 1) Keşfet hikâyesi 2) Takvim (fırsat / normal / pahalı) 3) Biletim (fotoğraflı biniş kartı) 4) Karşılaştır (kaydırma) 5) Hikâye görseli paylaşımı
 
 ## Göndermeden önce kontrol listesi
 - [ ] merhaba@72hgetaway.com açık ve gelen kutusu çalışıyor (Hakkında'da ve inceleme notunda yazıyor; Apple yazarsa geri dönmemeli)
