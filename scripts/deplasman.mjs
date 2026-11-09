@@ -23,6 +23,14 @@ export function etiketler(list) {
   return list.map((m) => { const f = med ? Math.round(((ucakOtel(m) - med) / med) * 100) : 0; return { etiket: f <= -10 ? "ucuz" : f >= 10 ? "pahali" : "normal", fark: f }; });
 }
 
+/** Konaklama grupları: tek şehir (m.oteller, tüm geceler) ya da gece gece şehir (m.konaklama). */
+export function gruplar(m) {
+  if (Array.isArray(m.konaklama) && m.konaklama.length) return m.konaklama.map((k, i) => ({ baslik: `${i + 1}. gece · ${k.sehir}`, gece: 1, tarih: k.gece, secim: k.secim || {}, oteller: k.oteller, not: k.not }));
+  return [{ baslik: null, gece: 2, secim: m.secim || {}, oteller: m.oteller || [], not: m.otel_not }];
+}
+/** Bütçedeki otel adları ("A + B"). */
+export const secimAd = (m, k = "konforlu") => gruplar(m).map((g) => g.secim[k]).filter(Boolean).join(" + ");
+
 /** Yaklaşan maçlar (maç günü dahil), tarih sırasıyla. */
 export function upcoming(team, today) {
   return (team.maclar || []).filter((m) => m.tarih >= today).sort((a, b) => a.tarih.localeCompare(b.tarih));
@@ -60,24 +68,26 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   const sections = list.map((m) => {
     const bk = m.butce.konforlu, bu = m.butce.ucuz, tk = toplam(bk), tu = toplam(bu);
     const o = m.ucus.oneri;
-    const secK = m.secim && m.oteller.find((h) => h.ad === m.secim.konforlu);
-    const secU = m.secim && m.oteller.find((h) => h.ad === m.secim.ucuz);
-    const oteller = m.oteller.slice().sort((a, b) => KAT_SIRA.indexOf(a.kategori) - KAT_SIRA.indexOf(b.kategori) || a.toplam - b.toplam);
+    const G = gruplar(m), adK = secimAd(m, "konforlu"), adU = secimAd(m, "ucuz");
     const bar = KALEM.filter(([k]) => bk[k] > 0).map(([k, ad, renk]) => `<i style="width:${((bk[k] / tk) * 100).toFixed(1)}%;background:${renk}" title="${esc(ad)}"></i>`).join("");
     const kalemler = KALEM.filter(([k]) => typeof bk[k] === "number").map(([k, ad, renk]) => {
-      const alt = k === "ucus" ? `${o.havayolu}, aktarmasız` : k === "otel" && secK ? `${secK.ad}, 2 gecenin yarısı` : k === "transfer" && m.araba ? "kiralık araba, 2 kişiye bölünmüş" : k === "bilet" ? "deplasman tribünü, resmî satış" : "";
+      const alt = k === "ucus" ? `${o.havayolu}, aktarmasız` : k === "otel" && adK ? `${adK}, 2 gecenin yarısı` : k === "transfer" && m.trenler ? `trenler: ${m.trenler.map((t) => t.ad).join(", ")}` : k === "transfer" && m.araba ? "kiralık araba, 2 kişiye bölünmüş" : k === "bilet" ? "deplasman tribünü, resmî satış" : "";
       return `<li><span><i class="dot" style="background:${renk}"></i>${esc(ad)}${alt ? `<small>${esc(alt)}</small>` : ""}</span><span class="r">${bk[k] ? para(bk[k], eurTry) : "—"}</span></li>`;
     }).join("");
     const seviye = m.ucus.seviye === "yuksek" ? `<span class="etk pahali">Uçak şu an pahalı · normali ${esc(m.ucus.normal_aralik)}</span>` : m.ucus.seviye === "dusuk" ? `<span class="etk ucuz">Uçak ucuz</span>` : `<span class="etk normal">Uçak normal fiyatında</span>`;
     const akis = (m.akis || []).map((g) => `<div class="gun"><h4>${esc(g.gun)}</h4><ol>${g.adimlar.map(([saat, ne, not]) => `<li${/ – /.test(ne) ? ' class="mac-an"' : ""}><time>${esc(saat)}</time><span><b>${esc(ne)}</b>${not ? `<small>${esc(not)}</small>` : ""}</span></li>`).join("")}</ol></div>`).join("");
     const ucuslar = m.ucus.secenekler.map((s) => `<li${s.fiyat === o.fiyat && s.havayolu === o.havayolu ? ' class="sec"' : ""}><span><b>${esc(s.havayolu)}</b> · ${esc(s.havalimani)}<small>${esc(s.not)}</small></span><span class="r">${para(s.fiyat, eurTry)}</span></li>`).join("");
-    const otelSatir = oteller.map((h) => {
-      const tag = secK && h.ad === secK.ad ? `<em class="tag">Bütçede</em>` : secU && h.ad === secU.ad ? `<em class="tag u">Ucuz planda</em>` : "";
-      return `<li${tag ? ' class="sec"' : ""}><span><span class="chip">${esc(KAT_AD[h.kategori] || h.kategori)}</span> <b>${esc(h.ad)}</b> ${tag}<small>kişi başı ${esc(tl(h.toplam / 2))}</small></span><span class="r">${para(h.toplam, eurTry)}</span></li>`;
+    const otelSatir = G.map((g) => {
+      const l = g.oteller.slice().sort((a, b) => KAT_SIRA.indexOf(a.kategori) - KAT_SIRA.indexOf(b.kategori) || a.toplam - b.toplam).map((h) => {
+        const tag = h.ad === g.secim.konforlu ? `<em class="tag">Bütçede</em>` : h.ad === g.secim.ucuz ? `<em class="tag u">Ucuz planda</em>` : "";
+        return `<li${tag ? ' class="sec"' : ""}><span><span class="chip">${esc(KAT_AD[h.kategori] || h.kategori)}</span> <b>${esc(h.ad)}</b> ${tag}<small>kişi başı ${esc(tl(h.toplam / 2))}</small></span><span class="r">${para(h.toplam, eurTry)}</span></li>`;
+      }).join("");
+      return (g.baslik ? `<h4 class="gece">${esc(g.baslik)}${g.tarih ? ` <span class="muted">· ${esc(tarihKisa(g.tarih))} ${esc(gunAd(g.tarih))}</span>` : ""}</h4>` : "") + (g.not ? `<p class="secim">${esc(g.not)}</p>` : "") + `<ul class="rows">${l}</ul>`;
     }).join("");
+    const trenler = (m.trenler || []).map((t) => { const c = t.secili || {}; return `<div class="card${t === m.trenler[0] ? "" : ""}"><h4>${esc(t.ad)}</h4><div class="p sm">${esc(tl(t.fiyat))} <span class="eur">(${esc(String(t.fiyat.toFixed(2)).replace(".", ","))} €)</span></div><p><b>${esc(tarihKisa(t.tarih))} ${esc(gunAd(t.tarih))} · ${esc(c.kalkis || t.saat)} → ${esc(c.varis || "")}</b> · ${esc(c.tren || "")}${c.aktarma ? ` · ${c.aktarma} aktarma` : " · aktarmasız"} · ${esc(String(c.sure_dk || ""))} dk</p>${t.not ? `<p class="muted">${esc(t.not)}</p>` : ""}${(t.secenekler || []).length > 1 ? `<details><summary>Diğer seferler</summary><ul class="rows">${t.secenekler.map((x) => `<li><span>${esc(x.kalkis)} → ${esc(x.varis)} · ${esc(x.tren)}${x.aktarma ? ` · ${x.aktarma} aktarma` : ""}</span><span class="r">${esc(String(x.fiyat.toFixed(2)).replace(".", ","))} €</span></li>`).join("")}</ul></details>` : ""}</div>`; }).join("");
     const yemek = (m.yemek || []).map(([ad, ne, f]) => `<li><span><b>${esc(ad)}</b><small>${esc(ne)}</small></span><span class="r">${esc(f)}</span></li>`).join("");
     const ulasim = [
-      m.araba ? ["Viyana'dan arabayla", `~${tl(m.araba.toplam)} araç başı`, m.araba.yazi] : m.havalimani_ulasim ? ["Havalimanından şehre", m.havalimani_ulasim.fiyat ? `~${tl(m.havalimani_ulasim.fiyat)} kişi başı` : "turist kartına dahil", m.havalimani_ulasim.yazi] : null,
+      m.trenler ? null : m.araba ? ["Viyana'dan arabayla", `~${tl(m.araba.toplam)} araç başı`, m.araba.yazi] : m.havalimani_ulasim ? ["Havalimanından şehre", m.havalimani_ulasim.fiyat ? `~${tl(m.havalimani_ulasim.fiyat)} kişi başı` : "turist kartına dahil", m.havalimani_ulasim.yazi] : null,
       ["Stada", "", m.stada + (m.stat_not ? " " + m.stat_not : "")],
       ["Şehir içi", m.sehir_ulasim.fiyat ? `~${tl(m.sehir_ulasim.fiyat)} kişi başı` : "", m.sehir_ulasim.yazi],
     ].filter(Boolean).map(([h, p, t]) => `<div class="card"><h4>${esc(h)}</h4>${p ? `<div class="p sm">${esc(p)}</div>` : ""}<p>${esc(t)}</p></div>`).join("");
@@ -91,7 +101,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
         <h2>${esc(m.rakip)} – ${esc(team.takim)}</h2>
         <p>${esc(tarihUzun(m.tarih))} · ${esc(m.saat_tsi)} TSİ (yerel ${esc(m.saat_yerel)}) · ${esc(m.stat)}</p>
       </div>
-      ${m.foto ? `<span class="cr">Görüntü: Pexels</span>` : ""}
+      ${m.foto ? `<span class="cr">Görüntü: ${esc(m.foto_kaynak || "Pexels")}</span>` : ""}
     </div>
 
     <div class="ozet">
@@ -104,7 +114,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
         <div class="alt">
           <span class="muted">Daha ucuz plan</span>
           <b>~${esc(tl(tu * 2))}</b>
-          <span class="muted">2 kişi${secU ? ` · ${esc(secU.ad)}` : ""}</span>
+          <span class="muted">2 kişi${adU ? ` · ${esc(adU)}` : ""}</span>
         </div>
       </div>
       <div class="bar" role="img" aria-label="Bütçe dağılımı">${bar}</div>
@@ -120,10 +130,11 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     <ul class="rows">${ucuslar}</ul>
     <p class="muted">${m.ucus.yok ? esc(m.ucus.yok) + " " : ""}${m.uyari ? esc(m.uyari) : ""}</p>
 
-    <h3>Otel <span class="muted">· 2 gece toplam, 2 kişilik oda, vergiler dahil</span></h3>
-    ${m.otel_not ? `<p class="secim">${esc(m.otel_not)}</p>` : ""}
-    <ul class="rows">${otelSatir}</ul>
+    <h3>Otel <span class="muted">· ${G.length > 1 ? "gece başına toplam" : "2 gece toplam"}, 2 kişilik oda, vergiler dahil</span></h3>
+    ${otelSatir}
     ${m.otel_uyari ? `<p class="muted">${esc(m.otel_uyari)}</p>` : ""}
+
+    ${trenler ? `<h3>Trenler <span class="muted">· kişi başı, ÖBB 2. sınıf, gerçek fiyat</span></h3><div class="grid3">${trenler}</div>` : ""}
 
     <h3>Maç bileti</h3>
     <div class="grid2">
@@ -147,7 +158,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   const lo = list.length ? list.reduce((a, b) => (ucakOtel(b) < ucakOtel(a) ? b : a)) : null;
   const hi = list.length ? list.reduce((a, b) => (ucakOtel(b) > ucakOtel(a) ? b : a)) : null;
   const ETK = { ucuz: "Ucuz", normal: "Normal fiyat", pahali: "Pahalı" };
-  const secOtel = (m) => (m.secim && m.oteller.find((h) => h.ad === m.secim.konforlu)) || null;
+  const secOtel = (m) => { const a = secimAd(m); return a ? { ad: a } : null; };
   const standart = !ilk ? "" : `
   <section>
     <h2>Sıradaki maç: ${esc(aralikTr(ilk.gidis, ilk.donus))} · ${esc(ilk.sehir)}</h2>
@@ -244,6 +255,10 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 .card p { margin: 6px 0 0; font-size: 0.92rem; }
 .card .p.sm { font-size: 1.05rem; }
 .gez { margin: 0; padding-left: 20px; }
+.bagimsiz { margin: 0 0 18px; padding: 10px 14px; border-radius: 12px; background: var(--surface); border: 1.5px dashed var(--line); font-size: 0.9rem; color: var(--muted); }
+.mac h4.gece { margin: 14px 0 6px; font-size: 1rem; }
+.card details { margin-top: 8px; font-size: 0.88rem; }
+.card details summary { cursor: pointer; color: var(--muted); }
 .gez li { margin: 3px 0; }
 </style>`;
   return head({ title, description, canonical: url, ogTitle: `${team.takim} deplasmanı kaça patlar?`, ogDescription: description, ld }).replace("</head>", css + "</head>") + `
@@ -259,9 +274,10 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 </header>
 <div class="fbbar" aria-hidden="true"></div>
 <main class="wrap">
+  <p class="bagimsiz">${esc(team.bagimsiz || `Bağımsız bir seyahat planlayıcısıyız; ${team.takim} ile resmî bir bağımız yoktur.`)}</p>
   ${standart}
   ${sections || `<p class="empty">Yaklaşan deplasman maçı yok.</p>`}
-  <div class="note">${esc(team.bilet.yazi)} Uçak ve otel fiyatları ${esc(tarihUzun(team.guncellendi))} günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, araba ve gezi tahminidir. ${eurTry ? `TL tutarları 1 € = ${esc(String(eurTry).replace(".", ","))} TL kuruyla.` : ""} Oynanan maç sayfadan kendiliğinden kalkar. Bu sayfanın ${esc(team.takim)} kulübüyle resmî bir bağı yoktur.
+  <div class="note">${esc(team.bilet.yazi)} Uçak ve otel fiyatları ${esc(tarihUzun(team.guncellendi))} günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, araba ve gezi tahminidir. ${eurTry ? `TL tutarları 1 € = ${esc(String(eurTry).replace(".", ","))} TL kuruyla.` : ""} Tren fiyatları ÖBB'nin bilet verisinden. Oynanan maç sayfadan kendiliğinden kalkar. ${esc(team.bagimsiz || "")} Fotoğraflar: Unsplash ve Pexels (ücretsiz lisans).
   <br>Kaynaklar: ${(team.kaynaklar || []).map((k) => `<a href="${esc(k.url)}" rel="noopener">${esc(k.ad)}</a>`).join(" · ")}</div>
 </main>
 ` + foot();

@@ -78,20 +78,39 @@ export function applyMatch(m, flightRows, hotelRows) {
     m.butce.ucuz.ucus = opts[0].fiyat; m.butce.konforlu.ucus = tekHavayolu.fiyat;
     log.push(`uçak ${opts[0].fiyat}–${tekHavayolu.fiyat} €`);
   } else log.push("uçak bulunamadı, eski fiyat kaldı");
-  let n = 0;
-  for (const h of m.oteller) {
-    const r = (hotelRows || []).find((x) => x && x.input === h.arama);
-    const t = hotelTotal(r);
+  // Konaklama: tek şehir (m.oteller, tüm geceler) ya da gece gece farklı şehir (m.konaklama[i].oteller, 1'er gece)
+  const segs = m.konaklama ? m.konaklama.map((k, i) => ({ seg: k, rows: (hotelRows && hotelRows[i]) || [] })) : [{ seg: m, rows: hotelRows || [] }];
+  let n = 0, all = 0;
+  for (const { seg, rows } of segs) for (const h of seg.oteller) {
+    all++;
+    const t = hotelTotal(rows.find((x) => x && x.input === h.arama));
     if (t) { h.toplam = t; n++; delete h.eski; } else h.eski = true;
   }
-  // Bütçe oteli: secim'de adı verilen otel (yoksa kategorinin en ucuzu)
-  const pick = (k) => { const s = m.secim && m.secim[k] && m.oteller.find((h) => h.ad === m.secim[k]); if (s) return s.toplam;
-    const l = m.oteller.filter((h) => h.kategori === k && !h.eski).map((h) => h.toplam); return l.length ? Math.min(...l) : null; };
-  const k = pick("konforlu"), u = pick("ucuz");
-  if (k) m.butce.konforlu.otel = r0(k / 2);
-  if (u) m.butce.ucuz.otel = r0(u / 2);
-  log.push(`otel ${n}/${m.oteller.length}`);
+  // Bütçe oteli: secim'de adı verilen otel (yoksa kategorinin en ucuzu); konaklamada gecelerin toplamı
+  const pick = (seg, k) => { const s = seg.secim && seg.secim[k] && seg.oteller.find((h) => h.ad === seg.secim[k]); if (s) return s.toplam;
+    const l = seg.oteller.filter((h) => h.kategori === k && !h.eski).map((h) => h.toplam); return l.length ? Math.min(...l) : null; };
+  for (const kat of ["konforlu", "ucuz"]) {
+    const v = segs.map(({ seg }) => pick(seg, kat));
+    if (v.every((x) => x)) m.butce[kat].otel = r0(v.reduce((a, b) => a + b, 0) / 2);
+  }
+  log.push(`otel ${n}/${all}`);
   return log;
+}
+
+/** Tren: ÖBB bağlantılarından istenen saate en yakın aktarmasız bağlantıyı (yoksa en yakını) seçer, fiyatı günceller. */
+export function applyTrain(t, rows) {
+  const ok = (rows || []).filter((c) => c && c.departure && num(c.priceAmount) && c.priceCoversFullJourney !== false);
+  if (!ok.length) return false;
+  const min = (x) => { const [h, mm] = x.slice(11, 16).split(":").map(Number); return h * 60 + mm; };
+  const want = (() => { const [h, mm] = t.saat.split(":").map(Number); return h * 60 + mm; })();
+  const pool = ok.filter((c) => !c.transfers).length ? ok.filter((c) => !c.transfers) : ok;
+  const sec = pool.slice().sort((a, b) => Math.abs(min(a.departure) - want) - Math.abs(min(b.departure) - want) || a.priceAmount - b.priceAmount)[0];
+  t.secenekler = ok.slice(0, 6).map((c) => ({ kalkis: c.departure.slice(11, 16), varis: c.arrival.slice(11, 16), sure_dk: c.durationMinutes, aktarma: c.transfers || 0,
+    tren: (c.legs || []).map((l) => [l.line, l.number].filter(Boolean).join(" ")).filter(Boolean).join(" + "), fiyat: c.priceAmount }));
+  t.secili = { kalkis: sec.departure.slice(11, 16), varis: sec.arrival.slice(11, 16), sure_dk: sec.durationMinutes, aktarma: sec.transfers || 0,
+    tren: (sec.legs || []).map((l) => [l.line, l.number].filter(Boolean).join(" ")).filter(Boolean).join(" + "), fiyat: sec.priceAmount };
+  t.fiyat = sec.priceAmount;
+  return true;
 }
 
 async function main() {
@@ -114,11 +133,28 @@ async function main() {
       ...(m.ucus_saat ? { departureTimeRange: m.ucus_saat } : {}) },
       { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 }).catch((e) => { console.log(m.sehir, "uçak hatası:", e.message); return []; });
   }
+  const H = (names, g, c, who) => runActor({ hotels: names, checkInDate: g, checkOutDate: c, adults: 2, currency: "EUR", country: "tr", language: "en", maxConcurrency: 8 },
+    { token, sleep, maxPolls: 60 }).catch((e) => { console.log(who, "otel hatası:", e.message); return []; });
+  const ertesi = (s) => new Date(Date.parse(s + "T00:00:00Z") + 864e5).toISOString().slice(0, 10);
   for (const m of list) {
-    const hotels = await runActor({ hotels: m.oteller.map((h) => h.arama), checkInDate: m.gidis, checkOutDate: m.donus, adults: 2, currency: "EUR", country: "tr", language: "en", maxConcurrency: 8 },
-      { token, sleep, maxPolls: 60 }).catch((e) => { console.log(m.sehir, "otel hatası:", e.message); return []; });
+    const hotels = m.konaklama
+      ? await Promise.all(m.konaklama.map((k) => H(k.oteller.map((h) => h.arama), k.gece, ertesi(k.gece), m.sehir + "/" + k.sehir)))
+      : await H(m.oteller.map((h) => h.arama), m.gidis, m.donus, m.sehir);
     const fr = flightsOf[m.id] || [];
-    console.log(m.sehir + ":", applyMatch(m, fr, hotels).join(", "));
+    const log = applyMatch(m, fr, hotels);
+    // Trenler (ÖBB, Apify jindrich.bar~oebb-ticket-scraper, ~0,0004 $/bağlantı)
+    if (Array.isArray(m.trenler) && m.trenler.length) {
+      let ok = 0;
+      for (const t of m.trenler) {
+        const rows = await runActor({ from: t.nereden, to: t.nereye, date: t.tarih, time: t.arama_saat || t.saat, adults: 1, sortBy: "DEPARTURE", maxResults: 8 },
+          { token, actor: "jindrich.bar~oebb-ticket-scraper", sleep, maxPolls: 60 }).catch((e) => { console.log("tren hatası:", e.message); return []; });
+        if (applyTrain(t, rows)) ok++;
+      }
+      const tr = m.trenler.reduce((a, t) => a + (num(t.fiyat) ? t.fiyat : 0), 0);
+      m.butce.konforlu.transfer = r0(tr); m.butce.ucuz.transfer = r0(tr);
+      log.push(`tren ${ok}/${m.trenler.length}`);
+    }
+    console.log(m.sehir + ":", log.join(", "));
   }
   const after = await apifyUsage({ token }).catch(() => null);
   team.robot.son_arama = today;

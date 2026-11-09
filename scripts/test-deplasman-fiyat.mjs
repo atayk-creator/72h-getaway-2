@@ -1,6 +1,6 @@
 // Deplasman fiyat robotu testleri (ağ yok). Çalıştır: node scripts/test-deplasman-fiyat.mjs
 import assert from "node:assert/strict";
-import { due, upcoming, hotelTotal, flightOptions, applyMatch } from "./deplasman-fiyat.mjs";
+import { due, upcoming, hotelTotal, flightOptions, applyMatch, applyTrain } from "./deplasman-fiyat.mjs";
 import { upcoming as pageUpcoming } from "./deplasman.mjs";
 let n = 0; const t = (name, f) => { f(); n++; console.log("ok", name); };
 const team = { robot: { son_arama: "2026-11-09", her_kac_gun: 2 }, maclar: [{ tarih: "2026-11-25" }, { tarih: "2026-12-09" }] };
@@ -45,3 +45,17 @@ t("seçili otel ve geç dönüş tercihi", () => {
   assert.equal(m.ucus.secenekler.length, 1);
 });
 console.log(`${n} test geçti (toplam)`);
+t("iki şehir konaklama ve ÖBB treni", () => {
+  const m = { ucus: { oneri: {} }, butce: { konforlu: {}, ucuz: {} }, konaklama: [
+    { gece: "2026-12-08", secim: { konforlu: "V1", ucuz: "V2" }, oteller: [{ ad: "V1", arama: "v1", kategori: "konforlu", toplam: 300 }, { ad: "V2", arama: "v2", kategori: "ucuz", toplam: 100 }] },
+    { gece: "2026-12-09", secim: { konforlu: "L1", ucuz: "L2" }, oteller: [{ ad: "L1", arama: "l1", kategori: "konforlu", toplam: 200 }, { ad: "L2", arama: "l2", kategori: "ucuz", toplam: 120 }] }] };
+  applyMatch(m, [], [[{ input: "v1", totalPrice: 340 }], []]);
+  assert.equal(m.konaklama[0].oteller[0].toplam, 340); assert.equal(m.konaklama[1].oteller[0].eski, true);
+  assert.equal(m.butce.konforlu.otel, 270); assert.equal(m.butce.ucuz.otel, 110);
+  const tr = { saat: "09:30" };
+  const C = (dep, p, x = 0) => ({ departure: `2026-12-09T${dep}:00.000`, arrival: "2026-12-09T11:00:00.000", durationMinutes: 80, transfers: x, priceAmount: p, priceCoversFullJourney: true, legs: [{ line: "RJ", number: "1" }] });
+  assert.equal(applyTrain(tr, [C("09:13", 9.9), C("09:28", 40.1), C("09:31", 12, 1)]), true);
+  assert.equal(tr.secili.kalkis, "09:28"); assert.equal(tr.fiyat, 40.1);
+  assert.equal(applyTrain(tr, []), false); assert.equal(tr.fiyat, 40.1);
+});
+console.log(`${n} test geçti (son)`);
