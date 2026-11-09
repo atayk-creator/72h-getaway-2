@@ -21,6 +21,7 @@ export const daysBetween = (a, b) => Math.round((new Date(b + "T00:00:00Z") - ne
 export function due(team, today, force = false) {
   if (force) return true;
   const r = team.robot || {};
+  if (r.zorla) return true;
   return !r.son_arama || daysBetween(r.son_arama, today) >= (r.her_kac_gun || 2);
 }
 export const upcoming = (team, today) => (team.maclar || []).filter((m) => m.tarih >= today);
@@ -114,7 +115,9 @@ export function applyTrain(t, rows) {
   if (!ok.length) return false;
   const min = (x) => { const [h, mm] = x.slice(11, 16).split(":").map(Number); return h * 60 + mm; };
   const want = (() => { const [h, mm] = t.saat.split(":").map(Number); return h * 60 + mm; })();
-  const pool = ok.filter((c) => !c.transfers).length ? ok.filter((c) => !c.transfers) : ok;
+  const near = ok.filter((c) => Math.abs(min(c.departure) - want) <= 180);
+  if (!near.length) return false;
+  const pool = near.filter((c) => !c.transfers).length ? near.filter((c) => !c.transfers) : near;
   const sec = pool.slice().sort((a, b) => Math.abs(min(a.departure) - want) - Math.abs(min(b.departure) - want) || a.priceAmount - b.priceAmount)[0];
   t.secenekler = ok.slice(0, 6).map((c) => ({ kalkis: c.departure.slice(11, 16), varis: c.arrival.slice(11, 16), sure_dk: c.durationMinutes, aktarma: c.transfers || 0,
     tren: (c.legs || []).map((l) => [l.line, l.number].filter(Boolean).join(" ")).filter(Boolean).join(" + "), fiyat: c.priceAmount }));
@@ -162,19 +165,19 @@ async function runTeam(slug, token) {
     // Trenler (ÖBB, Apify jindrich.bar~oebb-ticket-scraper, ~0,0004 $/bağlantı)
     if (Array.isArray(m.trenler) && m.trenler.length) {
       let ok = 0;
-      for (const t of m.trenler) {
+      for (const t of m.trenler.filter((x) => !x.sabit)) {
         const rows = await runActor(t.aktor === "db" ? { from: t.nereden, to: t.nereye, date: t.tarih, time: t.arama_saat || t.saat, maxResults: 8 } : { from: t.nereden, to: t.nereye, date: t.tarih, time: t.arama_saat || t.saat, adults: 1, sortBy: "DEPARTURE", maxResults: 8 },
           { token, actor: t.aktor === "db" ? "jindrich.bar~deutsche-bahn-ticket-scraper" : "jindrich.bar~oebb-ticket-scraper", sleep, maxPolls: 60 }).catch((e) => { console.log("tren hatası:", e.message); return []; });
         if (applyTrain(t, rows)) ok++;
       }
       const tr = m.trenler.reduce((a, t) => a + (num(t.fiyat) ? t.fiyat : 0), 0);
       m.butce.konforlu.transfer = r0(tr); m.butce.ucuz.transfer = r0(tr);
-      log.push(`tren ${ok}/${m.trenler.length}`);
+      log.push(`tren ${ok}/${m.trenler.filter((x) => !x.sabit).length}`);
     }
     console.log(m.sehir + ":", log.join(", "));
   }
   const after = await apifyUsage({ token }).catch(() => null);
-  team.robot.son_arama = today;
+  team.robot.son_arama = today; delete team.robot.zorla;
   team.guncellendi = today;
   if (use && after) team.robot.son_maliyet_usd = Math.round((after.usd - use.usd) * 100) / 100;
   await writeFile(FILE, JSON.stringify(team, null, 1) + "\n");

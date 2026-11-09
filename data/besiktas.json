@@ -18,7 +18,8 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.18
+  "son_maliyet_usd": 0.18,
+  "zorla": true
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Beşiktaş Jimnastik Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -153,62 +154,62 @@
    ],
    "trenler": [
     {
-     "ad": "Köln/Bonn Havalimanı → Köln Hbf",
+     "ad": "Düsseldorf Havalimanı → Köln Hbf",
      "aktor": "db",
-     "nereden": "Köln/Bonn Flughafen",
+     "nereden": "Düsseldorf Flughafen",
      "nereye": "Köln Hbf",
      "tarih": "2026-12-09",
-     "saat": "12:00",
+     "saat": "10:00",
      "fiyat": null,
-     "not": "S-Bahn/RE, ~15 dk. Düsseldorf'a inersen S-Bahn/RE ile Köln ~40 dk."
+     "not": "ICE/RE ~30–55 dk. Köln/Bonn'a inersen S-Bahn ile 15 dk, 3,80 €."
     },
     {
      "ad": "Köln → Leverkusen (maça)",
-     "aktor": "db",
+     "sabit": true,
      "nereden": "Köln Hbf",
      "nereye": "Leverkusen Mitte",
      "tarih": "2026-12-10",
      "saat": "19:00",
-     "fiyat": null,
-     "not": "VRS 2b bölgesi; tek bilet 5,10 €. Leverkusen Mitte'den stada ~15 dk yürüme."
+     "fiyat": 5.1,
+     "secili": {
+      "kalkis": "19:00",
+      "varis": "19:15",
+      "sure_dk": 15,
+      "aktarma": 0,
+      "tren": "S-Bahn / RE",
+      "fiyat": 5.1
+     },
+     "not": "VRS 2b tek bilet 5,10 € (resmî tarife). Leverkusen Mitte'den stada ~15 dk yürüme.",
+     "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
     },
     {
      "ad": "Leverkusen → Köln (dönüş)",
-     "aktor": "db",
+     "sabit": true,
      "nereden": "Leverkusen Mitte",
      "nereye": "Köln Hbf",
      "tarih": "2026-12-10",
      "saat": "23:15",
-     "fiyat": null,
-     "not": "Maç sonrası; trenler kalabalık."
+     "fiyat": 5.1,
+     "secili": {
+      "kalkis": "23:15",
+      "varis": "23:30",
+      "sure_dk": 15,
+      "aktarma": 0,
+      "tren": "S-Bahn / RE",
+      "fiyat": 5.1
+     },
+     "not": "VRS 2b tek bilet 5,10 €; maç sonrası trenler kalabalık.",
+     "kaynak": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
     },
     {
-     "ad": "Köln Hbf → Köln/Bonn Havalimanı",
+     "ad": "Köln Hbf → Düsseldorf Havalimanı",
      "aktor": "db",
      "nereden": "Köln Hbf",
-     "nereye": "Köln/Bonn Flughafen",
+     "nereye": "Düsseldorf Flughafen",
      "tarih": "2026-12-11",
-     "saat": "12:00",
-     "fiyat": 17.99,
-     "not": "~15 dk.",
-     "secenekler": [
-      {
-       "kalkis": "00:12",
-       "varis": "00:52",
-       "sure_dk": 40,
-       "aktarma": 1,
-       "tren": "ICE 619 + S19",
-       "fiyat": 17.99
-      }
-     ],
-     "secili": {
-      "kalkis": "00:12",
-      "varis": "00:52",
-      "sure_dk": 40,
-      "aktarma": 1,
-      "tren": "ICE 619 + S19",
-      "fiyat": 17.99
-     }
+     "saat": "09:30",
+     "fiyat": null,
+     "not": "ICE/RE ~30–55 dk."
     }
    ],
    "sehir_ulasim": {
@@ -228,7 +229,7 @@
       [
        "",
        "Trenle Köln Hbf",
-       "~15 dk"
+       "Düsseldorf Havalimanı'ndan ICE/RE ~30–55 dk"
       ],
       [
        "",
@@ -296,8 +297,8 @@
        ""
       ],
       [
-       "12:00",
-       "Trenle havalimanına",
+       "09:30",
+       "Trenle Düsseldorf Havalimanı",
        ""
       ],
       [
@@ -360,7 +361,8 @@
    "secim": {
     "konforlu": "NH Collection Köln Mediapark",
     "ucuz": "ibis Köln Centrum"
-   }
+   },
+   "donus_min": "09:00"
   },
   {
    "id": "lefkosa",
