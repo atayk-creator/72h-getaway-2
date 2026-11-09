@@ -113,11 +113,10 @@
      "eski": true
     },
     {
-     "ad": "Meininger Hotel München City Center",
+     "ad": "Motel One München-Deutsches Museum",
      "kategori": "ucuz",
-     "arama": "Meininger Hotel München City Center",
-     "toplam": null,
-     "eski": true
+     "arama": "Motel One München-Deutsches Museum",
+     "toplam": 458
     }
    ],
    "havalimani_ulasim": {
@@ -259,10 +258,7 @@
      "gezi": 8
     }
    },
-   "secim": {
-    "konforlu": "Hotel Torbräu",
-    "ucuz": "Hotel Torbräu"
-   },
+   "secim": {},
    "ucus": {
     "oneri": {
      "fiyat": 163,
@@ -295,7 +291,9 @@
     "seviye": "normal",
     "normal_aralik": "120–255 €"
    },
-   "foto": null
+   "foto": "/img/sehir/munih-noel.jpg",
+   "foto_alt": "Münih, Marienplatz'taki Noel pazarı, gece",
+   "foto_kaynak": "Unsplash · Daniel Seßler"
   },
   {
    "id": "nurnberg",
@@ -542,7 +540,9 @@
     "seviye": "normal",
     "normal_aralik": "140–300 €"
    },
-   "foto": null
+   "foto": "/img/sehir/nurnberg-noel.jpg",
+   "foto_alt": "Nürnberg eski şehir ve St. Sebald kilisesi",
+   "foto_kaynak": "Unsplash · Markus Spiske"
   },
   {
    "id": "strazburg",
@@ -811,7 +811,9 @@
     "seviye": "normal",
     "normal_aralik": "150–280 €"
    },
-   "foto": null
+   "foto": "/img/sehir/strazburg-noel.jpg",
+   "foto_alt": "Strazburg Katedrali ve eski şehir, gün batımı",
+   "foto_kaynak": "Unsplash · Thomas Dorgler"
   },
   {
    "id": "rovaniemi",
@@ -828,7 +830,7 @@
    "donus": "2026-12-20",
    "plan": "Cuma gidiş, Pazar dönüş; 2 gece Rovaniemi merkezde, Cumartesi Noel Baba Köyü.",
    "vize": "Schengen vizesi gerekir.",
-   "dikkat": "Aralık'ta gün ışığı yalnızca 2–3 saat, sıcaklık −10 ile −25 °C arası: termal içlik, bot ve eldiven şart. Kuzey ışıkları hava açıksa görülür, garanti değil. Husky ve ren geyiği turları bütçeye dahil değil (kişi başı ~100–200 €). İstanbul'dan direkt sefer haftanın belli günleri var, robot o hafta sonuna uyan en uygun uçuşu seçer.",
+   "dikkat": "Aralık'ta gün ışığı yalnızca 2–3 saat, sıcaklık −10 ile −25 °C arası: termal içlik, bot ve eldiven şart. Kuzey ışıkları hava açıksa görülür, garanti değil. Bu hafta sonu otellerin çoğu şimdiden dolu, erken rezervasyon şart. Husky ve ren geyiği turları bütçeye dahil değil (kişi başı ~100–200 €). İstanbul'dan direkt sefer haftanın belli günleri var, robot o hafta sonuna uyan en uygun uçuşu seçer.",
    "arama_ucus": [
     "IST,SAW-RVN 2026-12-18 2026-12-20"
    ],
@@ -876,18 +878,10 @@
      "eski": true
     },
     {
-     "ad": "Santa's Hotel Rudolf",
+     "ad": "Hotelli Aakenus",
      "kategori": "ucuz",
-     "arama": "Santa's Hotel Rudolf Rovaniemi",
-     "toplam": null,
-     "eski": true
-    },
-    {
-     "ad": "Cityhotel Rovaniemi",
-     "kategori": "ucuz",
-     "arama": "Cityhotel Rovaniemi",
-     "toplam": null,
-     "eski": true
+     "arama": "Hotel Aakenus Rovaniemi",
+     "toplam": 911
     }
    ],
    "havalimani_ulasim": {
@@ -1044,10 +1038,7 @@
      "gezi": 20
     }
    },
-   "secim": {
-    "konforlu": "Scandic Rovaniemi City",
-    "ucuz": "Scandic Rovaniemi City"
-   },
+   "secim": {},
    "ucus": {
     "oneri": {
      "fiyat": 980,
@@ -1092,7 +1083,9 @@
     "seviye": "yuksek",
     "normal_aralik": "580–860 €"
    },
-   "foto": null
+   "foto": "/img/sehir/rovaniemi-noel.jpg",
+   "foto_alt": "Laponya'da kuzey ışıkları",
+   "foto_kaynak": "Unsplash · Sami Matias Breilin"
   },
   {
    "id": "krakov",
@@ -1104,16 +1097,15 @@
    "pazar_bit": "2027-01-03",
    "pazar_yazi": "27 Kasım – 3 Ocak",
    "pazar_saat": "10:00–21:00",
-   "tarih": "2026-12-26",
-   "gidis": "2026-12-25",
-   "donus": "2026-12-27",
-   "plan": "Noel günü gidiş, Pazar dönüş; 2 gece Krakov, Ana Meydan çevresi.",
+   "tarih": "2026-12-27",
+   "gidis": "2026-12-26",
+   "donus": "2026-12-28",
+   "plan": "Noel'in ertesi günü Cumartesi gidiş, Pazartesi akşam dönüş; 2 gece Krakov, Ana Meydan çevresi. Pazartesi için izin gerekir.",
    "vize": "Schengen vizesi gerekir.",
-   "dikkat": "25–26 Aralık Polonya'da resmî tatil: Noel pazarı açık ama müzelerin ve dükkanların çoğu kapalı ya da kısa saatli. Wawel ve Tuz Madeni için saatleri önceden kontrol et.",
+   "dikkat": "25–26 Aralık Polonya'da resmî tatil: 26'sında müzelerin çoğu kapalı ya da kısa saatli, Noel pazarı açık. Pazar dönüşleri sabah 06:40–09:15'te olduğu için plan Cumartesi–Pazartesi; dönüş Varşova aktarmalı.",
    "arama_ucus": [
-    "IST,SAW-KRK 2026-12-25 2026-12-27"
+    "IST,SAW-KRK 2026-12-26 2026-12-28"
    ],
-   "ucus_saat": "5-14",
    "donus_min": "15:00",
    "ozet": "Noel'den sonra da açık tek büyük pazar: Avrupa'nın en geniş Orta Çağ meydanında, en uygun fiyatlı Noel hafta sonu.",
    "oteller": [
@@ -1156,7 +1148,7 @@
     {
      "ad": "Puro Kraków Stare Miasto",
      "kategori": "ucuz",
-     "arama": "Puro Krakow Stare Miasto",
+     "arama": "PURO Kraków Stare Miasto",
      "toplam": null,
      "eski": true
     },
@@ -1178,7 +1170,7 @@
    "pazara": "Pazar Ana Meydan'ın (Rynek Główny) ortasında, Kumaş Hali'nin iki yanında; eski şehrin her yerinden 5 dk.",
    "akis": [
     {
-     "gun": "Cuma 25 Aralık · Noel günü varış",
+     "gun": "Cumartesi 26 Aralık · varış",
      "adimlar": [
       [
        "—",
@@ -1213,12 +1205,12 @@
      ]
     },
     {
-     "gun": "Cumartesi 26 Aralık · pazar günü",
+     "gun": "Pazar 27 Aralık · pazar günü",
      "adimlar": [
       [
        "10:00",
        "Wawel Tepesi",
-       "Kale ve katedral (tatil saatlerini kontrol et)"
+       "Kale ve katedral"
       ],
       [
        "12:30",
@@ -1243,12 +1235,17 @@
      ]
     },
     {
-     "gun": "Pazar 27 Aralık · dönüş",
+     "gun": "Pazartesi 28 Aralık · dönüş",
      "adimlar": [
       [
        "10:00",
        "Kahvaltı, Planty parkı ve Barbakan",
        "Sur yürüyüşü"
+      ],
+      [
+       "12:00",
+       "Son tur: Kumaş Hali",
+       "Hediyelik"
       ],
       [
        "",
@@ -1311,10 +1308,7 @@
      "gezi": 8
     }
    },
-   "secim": {
-    "konforlu": "Hotel Pod Wawelem",
-    "ucuz": "ibis Kraków Stare Miasto"
-   },
+   "secim": {},
    "ucus": {
     "oneri": {
      "fiyat": 521,
@@ -1341,7 +1335,8 @@
     "seviye": "yuksek",
     "normal_aralik": "165–240 €"
    },
-   "foto": null
+   "foto": null,
+   "aktarma_ok": true
   }
  ]
 }

@@ -38,11 +38,12 @@ export function hotelTotal(r) {
 
 /** Uçuş satırlarından tüm aktarmasız gidiş-dönüş adayları (gidiş × o gidişin dönüşleri), ucuzdan pahalıya.
  *  Dönüşü bilinmeyen gidiş de aday olur (dönüş bilgisi boş). */
-export function flightOptions(rows) {
+export function flightOptions(rows, { aktarmaOk = false } = {}) {
   const fl = rows.filter((r) => r && r.recordType === "flight" && num(r.price));
   // Aktarmasız uçuş yoksa (ör. İstanbul–Larnaka) aktarmalılar da aday olur
   const direkt = fl.some((r) => r.section !== "returning" && r.stops === 0);
-  const ok = (r) => (direkt ? r.stops === 0 : true);
+  // aktarmaOk: direkt sefer olsa da aktarmalılar da aday (ör. Krakov Pazartesi dönüşü yalnız Varşova aktarmalı)
+  const ok = (r) => (direkt && !aktarmaOk ? r.stops === 0 : true);
   const dep = fl.filter((r) => r.section !== "returning" && ok(r));
   const ret = fl.filter((r) => r.section === "returning" && ok(r));
   const tr = (a) => (a === "Turkish Airlines" ? "THY" : a);
@@ -68,7 +69,7 @@ export function flightOptions(rows) {
 /** Maçı yeni fiyatlarla günceller; bulunamayan fiyat eskisini korur. Değişen kalemleri döndürür. */
 export function applyMatch(m, flightRows, hotelRows) {
   const log = [];
-  let opts = flightOptions(flightRows || []);
+  let opts = flightOptions(flightRows || [], { aktarmaOk: !!m.aktarma_ok });
   // Havalimanı tercihi (ör. CGN): o havalimanına uygun dönüşlü seçenek varsa yalnız onlar kullanılır (tren planı buna göre)
   if (m.havalimani_tercih) { const t = opts.filter((o) => o.kod === m.havalimani_tercih && (!m.donus_min || (o.donusSaat && o.donusSaat >= m.donus_min))); if (t.length) opts = t; }
   if (opts.length) {
