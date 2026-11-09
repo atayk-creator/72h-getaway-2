@@ -17,8 +17,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-10",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.23,
-  "zorla": true
+  "son_maliyet_usd": 0.36
  },
  "kaynaklar": [
   {
@@ -263,7 +262,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 297,
+     "ucus": 296,
      "transfer": 8,
      "otel": 301,
      "ulasim": 8,
@@ -285,7 +284,7 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 297,
+     "fiyat": 296,
      "havayolu": "THY",
      "aktarma": 0,
      "havalimani": "Nürnberg (NUE)",
@@ -300,7 +299,7 @@
       "not": "Cuma SAW 23:25 → NUE 00:20, Pazar 14:00 dönüş"
      },
      {
-      "fiyat": 297,
+      "fiyat": 296,
       "havayolu": "THY",
       "havalimani": "Nürnberg",
       "not": "Cuma IST 08:50 → NUE 09:45, Pazar 10:40 dönüş"
@@ -355,7 +354,7 @@
      "ad": "Hyperion Hotel Dresden am Schloss",
      "kategori": "konforlu",
      "arama": "Hyperion Hotel Dresden am Schloss",
-     "toplam": 579
+     "toplam": 582
     },
     {
      "ad": "NH Collection Dresden Altmarkt",
@@ -509,7 +508,7 @@
     "konforlu": {
      "ucus": 146,
      "transfer": 95,
-     "otel": 290,
+     "otel": 291,
      "ulasim": 8,
      "yemek": 100,
      "gezi": 20
@@ -544,7 +543,7 @@
       "not": "Cuma SAW 07:00 → BER 07:55, Pazar 19:10 dönüş"
      },
      {
-      "fiyat": 148,
+      "fiyat": 147,
       "havayolu": "AJet",
       "havalimani": "Berlin",
       "not": "Cuma SAW 11:35 → BER 12:40, Pazar 17:05 dönüş"
@@ -760,7 +759,7 @@
      "ad": "Motel One Salzburg-Mirabell",
      "kategori": "ucuz",
      "arama": "Motel One Salzburg-Mirabell",
-     "toplam": 500
+     "toplam": 501
     },
     {
      "ad": "ibis Salzburg City",
@@ -894,7 +893,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 248,
+     "ucus": 163,
      "transfer": 86,
      "otel": 672,
      "ulasim": 6,
@@ -902,9 +901,9 @@
      "gezi": 35
     },
     "ucuz": {
-     "ucus": 248,
+     "ucus": 163,
      "transfer": 86,
-     "otel": 250,
+     "otel": 251,
      "ulasim": 6,
      "yemek": 80,
      "gezi": 15
@@ -915,10 +914,24 @@
     "ucuz": "Motel One Salzburg-Mirabell"
    },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 163,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Münih (MUC)",
+     "gidis": "Cuma SAW 08:40 → MUC 09:25 (PC1019)",
+     "donus": "Pazar MUC 18:00 → SAW 22:40"
+    },
+    "secenekler": [
+     {
+      "fiyat": 163,
+      "havayolu": "Pegasus",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 18:00 dönüş"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "120–255 €"
    },
    "foto": "/img/sehir/salzburg-noel.jpg",
    "foto_alt": "Salzburg, Hohensalzburg Kalesi ve eski şehir",
@@ -1146,7 +1159,7 @@
      "ad": "Hampton by Hilton Gdańsk Old Town",
      "kategori": "ucuz",
      "arama": "Hampton by Hilton Gdansk Old Town",
-     "toplam": 594
+     "toplam": 595
     }
    ],
    "havalimani_ulasim": {
@@ -1292,15 +1305,14 @@
     "ucuz": {
      "ucus": 260,
      "transfer": 4,
-     "otel": 297,
+     "otel": 298,
      "ulasim": 4,
      "yemek": 50,
      "gezi": 8
     }
    },
    "secim": {
-    "konforlu": "Mercure Gdańsk Stare Miasto",
-    "ucuz": "Hampton by Hilton Gdańsk Old Town"
+    "konforlu": "Mercure Gdańsk Stare Miasto"
    },
    "ucus": {
     "oneri": {
@@ -1325,9 +1337,9 @@
    "foto": "/img/sehir/gdansk-noel.jpg",
    "foto_alt": "Gdańsk eski şehir ve St. Mary Kilisesi, kuşbakışı",
    "foto_kaynak": "Unsplash · Sebastian Huber",
-   "uygun_plan": true,
+   "uygun_plan": false,
    "uyarilar": [
-    "Hampton by Hilton Gdańsk Old Town (Uygun, 594 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 312 €) otelinden pahalı"
+    "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 312 €) otelinden pahalı"
    ]
   },
   {
@@ -1356,9 +1368,7 @@
      "ad": "Hotel Bayerischer Hof",
      "kategori": "ikonik",
      "arama": "Hotel Bayerischer Hof Munich",
-     "toplam": null,
-     "eski": true,
-     "kontrol": "1090 € bulundu, diğer otellerin ortancasının 3.3 katı: süit/özel oda olabilir, gösterilmiyor"
+     "toplam": 1090
     },
     {
      "ad": "Platzl Hotel",
@@ -1371,17 +1381,13 @@
      "ad": "Louis Hotel",
      "kategori": "pahali",
      "arama": "Louis Hotel Munich Viktualienmarkt",
-     "toplam": null,
-     "eski": true,
-     "kontrol": "1463 € bulundu, diğer otellerin ortancasının 4.4 katı: süit/özel oda olabilir, gösterilmiyor"
+     "toplam": 1463
     },
     {
      "ad": "Hotel Torbräu",
      "kategori": "konforlu",
      "arama": "Hotel Torbräu Munich",
-     "toplam": null,
-     "eski": true,
-     "kontrol": "1050 € bulundu, diğer otellerin ortancasının 3.2 katı: süit/özel oda olabilir, gösterilmiyor"
+     "toplam": 1050
     },
     {
      "ad": "Mercure Hotel München Altstadt",
@@ -1542,7 +1548,7 @@
     "konforlu": {
      "ucus": 257,
      "transfer": 29,
-     "otel": 526,
+     "otel": 525,
      "ulasim": 12,
      "yemek": 120,
      "gezi": 15
@@ -1608,7 +1614,9 @@
    "foto_alt": "Münih, Marienplatz'taki Noel pazarı, gece",
    "foto_kaynak": "Unsplash · Daniel Seßler",
    "uygun_plan": true,
-   "uyarilar": []
+   "uyarilar": [
+    "Louis Hotel (Lüks, 1463 €) üst sınıftaki Hotel Bayerischer Hof (İkonik, 1090 €) otelinden pahalı"
+   ]
   },
   {
    "id": "strazburg",
@@ -1944,7 +1952,7 @@
      "ad": "Hotel Saski",
      "kategori": "konforlu",
      "arama": "Hotel Saski Krakow",
-     "toplam": 484
+     "toplam": 483
     },
     {
      "ad": "Mercure Kraków Stare Miasto",
@@ -1956,7 +1964,7 @@
      "ad": "Hotel Pod Wawelem",
      "kategori": "konforlu",
      "arama": "Hotel Pod Wawelem Krakow",
-     "toplam": 243
+     "toplam": 237
     },
     {
      "ad": "Puro Kraków Stare Miasto",
@@ -2102,7 +2110,7 @@
     "konforlu": {
      "ucus": 549,
      "transfer": 9,
-     "otel": 122,
+     "otel": 119,
      "ulasim": 6,
      "yemek": 70,
      "gezi": 15
@@ -2152,9 +2160,9 @@
    "uygun_plan": true,
    "uyarilar": [
     "Hotel Wentzl (Lüks, 440 €) üst sınıftaki Hotel Copernicus (İkonik, 397 €) otelinden pahalı",
-    "Hotel Saski (Konforlu, 484 €) üst sınıftaki Hotel Copernicus (İkonik, 397 €) otelinden pahalı",
-    "Hotel Saski (Konforlu, 484 €) üst sınıftaki Hotel Stary (Lüks, 304 €) otelinden pahalı",
-    "Hotel Saski (Konforlu, 484 €) üst sınıftaki Hotel Wentzl (Lüks, 440 €) otelinden pahalı"
+    "Hotel Saski (Konforlu, 483 €) üst sınıftaki Hotel Copernicus (İkonik, 397 €) otelinden pahalı",
+    "Hotel Saski (Konforlu, 483 €) üst sınıftaki Hotel Stary (Lüks, 304 €) otelinden pahalı",
+    "Hotel Saski (Konforlu, 483 €) üst sınıftaki Hotel Wentzl (Lüks, 440 €) otelinden pahalı"
    ]
   },
   {
