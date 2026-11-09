@@ -25,6 +25,7 @@ on:
       - "Kur güncelle (Euro/TL, Euro/Forint)"
       - "Tablo aktarımı (Google E-Tablolar)"
       - "Gezi yerleri konum robotu (Google Maps)"
+      - "Deplasman fiyat robotu (Fenerbahçe)"
     types: [completed]
     branches: [main]
   schedule:

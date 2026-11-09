@@ -1,0 +1,44 @@
+name: Deplasman fiyat robotu (Fenerbahçe)
+# Her sabah kontrol eder; fiyatları robot.her_kac_gun günde bir arar (~0,15–0,25 $). Oynanmış maça bakmaz.
+# Bitince "Şehir sayfaları" görevi (workflow_run) /deplasman/fenerbahce/ sayfasını yeniden üretir.
+on:
+  schedule:
+    - cron: "11 5 * * *" # 08:11 İstanbul
+  workflow_dispatch:
+    inputs:
+      zorla:
+        description: "1 = bugün hemen ara"
+        type: string
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: apify-robotlari
+  cancel-in-progress: false
+jobs:
+  fiyat:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testler
+        run: node scripts/test-deplasman-fiyat.mjs
+      - name: Fiyatları güncelle
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          ZORLA: ${{ github.event.inputs.zorla || '' }}
+        run: node scripts/deplasman-fiyat.mjs
+      - name: Depoya kaydet
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fenerbahce.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Deplasman fiyatları güncellendi"
+          git pull --rebase --autostash
+          git push
