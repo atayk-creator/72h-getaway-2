@@ -13,9 +13,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan hafta sonlarının uçak + otel fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": null,
+  "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "zorla": true
+  "son_maliyet_usd": 0.19
  },
  "kaynaklar": [
   {
@@ -70,49 +70,53 @@
      "ad": "Hotel Bayerischer Hof",
      "kategori": "ikonik",
      "arama": "Hotel Bayerischer Hof Munich",
-     "toplam": null
+     "toplam": 3009
     },
     {
      "ad": "Platzl Hotel",
      "kategori": "pahali",
      "arama": "Platzl Hotel Munich",
-     "toplam": null
+     "toplam": 1865
     },
     {
      "ad": "Louis Hotel",
      "kategori": "pahali",
      "arama": "Louis Hotel Munich Viktualienmarkt",
-     "toplam": null
+     "toplam": 1512
     },
     {
      "ad": "Hotel Torbräu",
      "kategori": "konforlu",
      "arama": "Hotel Torbräu Munich",
-     "toplam": null
+     "toplam": 1094
     },
     {
      "ad": "Mercure Hotel München Altstadt",
      "kategori": "konforlu",
      "arama": "Mercure Hotel München Altstadt",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Blauer Bock",
      "kategori": "konforlu",
      "arama": "Hotel Blauer Bock Munich",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Motel One München-Sendlinger Tor",
      "kategori": "ucuz",
      "arama": "Motel One München-Sendlinger Tor",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Meininger Hotel München City Center",
      "kategori": "ucuz",
      "arama": "Meininger Hotel München City Center",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     }
    ],
    "havalimani_ulasim": {
@@ -238,28 +242,57 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 163,
      "transfer": 29,
-     "otel": 0,
+     "otel": 547,
      "ulasim": 12,
      "yemek": 120,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 163,
      "transfer": 29,
-     "otel": 0,
+     "otel": 547,
      "ulasim": 12,
      "yemek": 85,
      "gezi": 8
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Hotel Torbräu",
+    "ucuz": "Hotel Torbräu"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 163,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Münih (MUC)",
+     "gidis": "Cuma SAW 08:40 → MUC 09:25 (PC1019)",
+     "donus": "Pazar MUC 18:00 → SAW 22:40"
+    },
+    "secenekler": [
+     {
+      "fiyat": 163,
+      "havayolu": "Pegasus",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 18:00 dönüş"
+     },
+     {
+      "fiyat": 179,
+      "havayolu": "AJet",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 13:40 dönüş"
+     },
+     {
+      "fiyat": 223,
+      "havayolu": "THY",
+      "havalimani": "Münih",
+      "not": "Cuma IST 10:30 → MUC 11:15"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "120–255 €"
    },
    "foto": null
   },
@@ -289,49 +322,49 @@
      "ad": "Le Méridien Grand Hotel Nürnberg",
      "kategori": "ikonik",
      "arama": "Le Meridien Grand Hotel Nuremberg",
-     "toplam": null
+     "toplam": 580
     },
     {
      "ad": "Sorat Hotel Saxx",
      "kategori": "pahali",
      "arama": "Sorat Hotel Saxx Nürnberg Hauptmarkt",
-     "toplam": null
+     "toplam": 693
     },
     {
      "ad": "Hotel Drei Raben",
      "kategori": "konforlu",
      "arama": "Hotel Drei Raben Nuremberg",
-     "toplam": null
+     "toplam": 1354
     },
     {
      "ad": "Hotel Victoria",
      "kategori": "konforlu",
      "arama": "Hotel Victoria Nürnberg",
-     "toplam": null
+     "toplam": 644
     },
     {
      "ad": "NH Collection Nürnberg City",
      "kategori": "konforlu",
      "arama": "NH Collection Nürnberg City",
-     "toplam": null
+     "toplam": 485
     },
     {
      "ad": "Motel One Nürnberg-Plärrer",
      "kategori": "ucuz",
      "arama": "Motel One Nürnberg-Plärrer",
-     "toplam": null
+     "toplam": 390
     },
     {
      "ad": "ibis Nürnberg Altstadt",
      "kategori": "ucuz",
      "arama": "ibis Nürnberg Altstadt",
-     "toplam": null
+     "toplam": 439
     },
     {
      "ad": "B&B Hotel Nürnberg-City",
      "kategori": "ucuz",
      "arama": "B&B Hotel Nürnberg-City",
-     "toplam": null
+     "toplam": 479
     }
    ],
    "havalimani_ulasim": {
@@ -462,28 +495,51 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 277,
      "transfer": 8,
-     "otel": 0,
+     "otel": 243,
      "ulasim": 8,
      "yemek": 105,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 277,
      "transfer": 8,
-     "otel": 0,
+     "otel": 195,
      "ulasim": 8,
      "yemek": 75,
      "gezi": 10
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "NH Collection Nürnberg City",
+    "ucuz": "Motel One Nürnberg-Plärrer"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 277,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Nürnberg (NUE)",
+     "gidis": "Cuma SAW 11:55 → NUE 12:50 (PC1027)",
+     "donus": null
+    },
+    "secenekler": [
+     {
+      "fiyat": 277,
+      "havayolu": "Pegasus",
+      "havalimani": "Nürnberg",
+      "not": "Cuma SAW 11:55 → NUE 12:50"
+     },
+     {
+      "fiyat": 287,
+      "havayolu": "THY",
+      "havalimani": "Nürnberg",
+      "not": "Cuma IST 08:50 → NUE 09:45"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "140–300 €"
    },
    "foto": null
   },
@@ -515,49 +571,53 @@
      "ad": "Maison Rouge Strasbourg Hotel & Spa",
      "kategori": "ikonik",
      "arama": "Maison Rouge Strasbourg Hotel & Spa Autograph Collection",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hôtel Cour du Corbeau",
      "kategori": "pahali",
      "arama": "Hotel Cour du Corbeau Strasbourg",
-     "toplam": null
+     "toplam": 1509
     },
     {
      "ad": "Hôtel Régent Petite France",
      "kategori": "pahali",
      "arama": "Hotel Regent Petite France Strasbourg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hôtel Gutenberg",
      "kategori": "konforlu",
      "arama": "Hotel Gutenberg Strasbourg",
-     "toplam": null
+     "toplam": 928
     },
     {
      "ad": "Hôtel Cathédrale",
      "kategori": "konforlu",
      "arama": "Hotel Cathedrale Strasbourg",
-     "toplam": null
+     "toplam": 702
     },
     {
      "ad": "Mercure Strasbourg Centre Petite France",
      "kategori": "konforlu",
      "arama": "Mercure Strasbourg Centre Petite France",
-     "toplam": null
+     "toplam": 897
     },
     {
      "ad": "ibis Strasbourg Centre Petite France",
      "kategori": "ucuz",
      "arama": "ibis Strasbourg Centre Petite France",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hôtel Le Kléber",
      "kategori": "ucuz",
      "arama": "Hotel Le Kleber Strasbourg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     }
    ],
    "havalimani_ulasim": {
@@ -698,28 +758,57 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 258,
      "transfer": 58,
-     "otel": 0,
+     "otel": 351,
      "ulasim": 30,
      "yemek": 115,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 258,
      "transfer": 58,
-     "otel": 0,
+     "otel": 351,
      "ulasim": 30,
      "yemek": 80,
      "gezi": 8
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Hôtel Cathédrale",
+    "ucuz": "Hôtel Cathédrale"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 258,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Basel-Mulhouse (BSL)",
+     "gidis": "Cuma SAW 10:10 → BSL 11:15 (PC939)",
+     "donus": "Pazar BSL 15:05 → SAW 20:05"
+    },
+    "secenekler": [
+     {
+      "fiyat": 258,
+      "havayolu": "Pegasus",
+      "havalimani": "Basel-Mulhouse",
+      "not": "Cuma SAW 10:10 → BSL 11:15, Pazar 15:05 dönüş"
+     },
+     {
+      "fiyat": 269,
+      "havayolu": "Pegasus gidiş + AJet dönüş",
+      "havalimani": "Basel-Mulhouse",
+      "not": "Cuma SAW 10:10 → BSL 11:15, Pazar 17:15 dönüş"
+     },
+     {
+      "fiyat": 410,
+      "havayolu": "THY",
+      "havalimani": "Basel-Mulhouse",
+      "not": "Cuma IST 08:40 → BSL 09:50, Pazar 18:25 dönüş"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "150–280 €"
    },
    "foto": null
   },
@@ -749,49 +838,55 @@
      "ad": "Arctic TreeHouse Hotel",
      "kategori": "ikonik",
      "arama": "Arctic TreeHouse Hotel Rovaniemi",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Arctic Light Hotel",
      "kategori": "pahali",
      "arama": "Arctic Light Hotel Rovaniemi",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Santa Claus Holiday Village",
      "kategori": "konforlu",
      "arama": "Santa Claus Holiday Village Rovaniemi",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Original Sokos Hotel Vaakuna",
      "kategori": "konforlu",
      "arama": "Original Sokos Hotel Vaakuna Rovaniemi",
-     "toplam": null
+     "toplam": 1290
     },
     {
      "ad": "Scandic Rovaniemi City",
      "kategori": "konforlu",
      "arama": "Scandic Rovaniemi City",
-     "toplam": null
+     "toplam": 1058
     },
     {
      "ad": "Hotel Santa Claus",
      "kategori": "konforlu",
      "arama": "Hotel Santa Claus Rovaniemi",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Santa's Hotel Rudolf",
      "kategori": "ucuz",
      "arama": "Santa's Hotel Rudolf Rovaniemi",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Cityhotel Rovaniemi",
      "kategori": "ucuz",
      "arama": "Cityhotel Rovaniemi",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     }
    ],
    "havalimani_ulasim": {
@@ -932,28 +1027,69 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 980,
      "transfer": 16,
-     "otel": 0,
+     "otel": 529,
      "ulasim": 10,
      "yemek": 140,
      "gezi": 40
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 935,
      "transfer": 16,
-     "otel": 0,
+     "otel": 529,
      "ulasim": 10,
      "yemek": 100,
      "gezi": 20
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Scandic Rovaniemi City",
+    "ucuz": "Scandic Rovaniemi City"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
-    "seviye": "normal",
-    "normal_aralik": ""
+    "oneri": {
+     "fiyat": 980,
+     "havayolu": "THY",
+     "aktarma": 1,
+     "havalimani": "Rovaniemi (RVN)",
+     "gidis": "Cuma IST 08:20 → RVN 21:05 (TK1761, AY537)",
+     "donus": "Pazar RVN 15:50 → IST 21:35"
+    },
+    "secenekler": [
+     {
+      "fiyat": 935,
+      "havayolu": "THY gidiş + Finnair dönüş",
+      "havalimani": "Rovaniemi",
+      "not": "Cuma IST 08:20 → RVN 21:05, Pazar 16:15 dönüş · 1 aktarma"
+     },
+     {
+      "fiyat": 940,
+      "havayolu": "THY",
+      "havalimani": "Rovaniemi",
+      "not": "Cuma IST 15:30 → RVN 08:40 · 1 aktarma"
+     },
+     {
+      "fiyat": 986,
+      "havayolu": "Lufthansa",
+      "havalimani": "Rovaniemi",
+      "not": "Cuma IST 19:05 → RVN 13:00 · 1 aktarma"
+     },
+     {
+      "fiyat": 1503,
+      "havayolu": "Pegasus",
+      "havalimani": "Rovaniemi",
+      "not": "Cuma SAW 10:00 → RVN 14:30 · 2 aktarma"
+     },
+     {
+      "fiyat": 1656,
+      "havayolu": "LOT",
+      "havalimani": "Rovaniemi",
+      "not": "Cuma IST 12:50 → RVN 15:20 · 2 aktarma"
+     }
+    ],
+    "seviye": "yuksek",
+    "normal_aralik": "580–860 €"
    },
    "foto": null
   },
@@ -984,49 +1120,50 @@
      "ad": "Hotel Copernicus",
      "kategori": "ikonik",
      "arama": "Hotel Copernicus Krakow",
-     "toplam": null
+     "toplam": 398
     },
     {
      "ad": "Hotel Stary",
      "kategori": "pahali",
      "arama": "Hotel Stary Krakow",
-     "toplam": null
+     "toplam": 304
     },
     {
      "ad": "Hotel Wentzl",
      "kategori": "pahali",
      "arama": "Hotel Wentzl Krakow",
-     "toplam": null
+     "toplam": 441
     },
     {
      "ad": "Hotel Saski",
      "kategori": "konforlu",
      "arama": "Hotel Saski Krakow",
-     "toplam": null
+     "toplam": 484
     },
     {
      "ad": "Mercure Kraków Stare Miasto",
      "kategori": "konforlu",
      "arama": "Mercure Krakow Stare Miasto",
-     "toplam": null
+     "toplam": 263
     },
     {
      "ad": "Hotel Pod Wawelem",
      "kategori": "konforlu",
      "arama": "Hotel Pod Wawelem Krakow",
-     "toplam": null
+     "toplam": 233
     },
     {
      "ad": "Puro Kraków Stare Miasto",
      "kategori": "ucuz",
      "arama": "Puro Krakow Stare Miasto",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "ibis Kraków Stare Miasto",
      "kategori": "ucuz",
      "arama": "ibis Krakow Stare Miasto",
-     "toplam": null
+     "toplam": 152
     }
    ],
    "havalimani_ulasim": {
@@ -1157,28 +1294,51 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 521,
      "transfer": 9,
-     "otel": 0,
+     "otel": 117,
      "ulasim": 6,
      "yemek": 70,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 261,
      "transfer": 9,
-     "otel": 0,
+     "otel": 76,
      "ulasim": 6,
      "yemek": 50,
      "gezi": 8
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Hotel Pod Wawelem",
+    "ucuz": "ibis Kraków Stare Miasto"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
-    "seviye": "normal",
-    "normal_aralik": ""
+    "oneri": {
+     "fiyat": 521,
+     "havayolu": "THY",
+     "aktarma": 0,
+     "havalimani": "Krakov (KRK)",
+     "gidis": "Cuma IST 08:00 → KRK 08:20 (TK1271)",
+     "donus": "Pazar KRK 09:15 → IST 13:50"
+    },
+    "secenekler": [
+     {
+      "fiyat": 261,
+      "havayolu": "THY gidiş + LOT dönüş",
+      "havalimani": "Krakov",
+      "not": "Cuma IST 08:00 → KRK 08:20, Pazar 06:40 dönüş"
+     },
+     {
+      "fiyat": 521,
+      "havayolu": "THY",
+      "havalimani": "Krakov",
+      "not": "Cuma IST 08:00 → KRK 08:20, Pazar 09:15 dönüş"
+     }
+    ],
+    "seviye": "yuksek",
+    "normal_aralik": "165–240 €"
    },
    "foto": null
   }
