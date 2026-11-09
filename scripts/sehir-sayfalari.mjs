@@ -5,7 +5,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { renderTeamPage } from "./deplasman.mjs";
+import { renderTeamPage, renderRedirect, teamCard } from "./deplasman.mjs";
 
 export const SITE = "https://72hgetaway.com";
 const KAT_SIRA = ["ikonik", "pahali", "konforlu", "ucuz"];
@@ -527,7 +527,7 @@ export function renderCityPage(m) {
 ` + foot();
 }
 
-export function renderIndexPage(models, today) {
+export function renderIndexPage(models, today, extra = []) {
   const url = `${SITE}/sehir/`;
   const title = "Avrupa'da hafta sonu bütçesi: 28 başkent, otel + uçak (TL) | 72h Getaway";
   const description = "İstanbul'dan 28 Avrupa başkentine Cuma–Pazar kaçamağı: şehir şehir en ucuz hafta sonu otel ve uçak tahmini, restoran ve gezi fiyatları. 2 kişi, TL.";
@@ -540,7 +540,7 @@ export function renderIndexPage(models, today) {
       { "@type": "ItemList", itemListElement: sorted.map((m, i) => ({ "@type": "ListItem", position: i + 1, name: m.sehir, url: `${SITE}/sehir/${m.slug}/` })) },
     ],
   };
-  const items = sorted.map((m) => {
+  const items0 = sorted.map((m) => {
     const k = m.enUcuzKombi;
     let body;
     if (k) body = `<div class="muted">${esc(aralikKisa(k.g, k.cikis))} · 2 kişi otel + uçak</div><div class="card-p"><b>~${para(k.toplam, m.eurTry)}</b></div>`;
@@ -548,7 +548,8 @@ export function renderIndexPage(models, today) {
     else if (m.enUcuzUcus) body = `<div class="muted">Uçak, kişi başı gidiş-dönüş</div><div><b>${para(m.enUcuzUcus.fiyat, m.eurTry)}</b> <span class="muted">· otel fiyatı yok</span></div>`;
     else body = `<div class="muted">Fiyatlar henüz hazır değil</div>`;
     return `<li><a href="/sehir/${esc(m.slug)}/"><b>${esc(m.sehir)}</b> <span class="muted">${esc(m.ulke)}</span>${body}</a></li>`;
-  }).join("");
+  });
+  const items = extra.join("") + items0.join("");
   return head({ title, description, canonical: url, ogTitle: "Avrupa'da hafta sonu bütçesi: 28 başkent", ogDescription: description, ld }) + `
 <body>
 <header>
@@ -596,11 +597,15 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   const models = names.map((n) => buildCity(d, n, today));
   const out = {};
   for (const m of models) out[`sehir/${m.slug}/index.html`] = renderCityPage(m);
-  out["sehir/index.html"] = renderIndexPage(models, today);
   // Takım deplasman sayfaları (data/fenerbahce.json …): takım bir şehir gibi
   const teams = data ? data.takimlar || [] : ["fenerbahce"].map((s) => readJson(join(root, `data/${s}.json`), null)).filter(Boolean);
-  for (const t of teams) out[`deplasman/${t.slug}/index.html`] = renderTeamPage(t, { today, eurTry: (d.kur && d.kur.eurTry) || 0, esc, para, fmtTl, fmtEur, head, foot, SITE });
-  const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", ...teams.map((t) => `/deplasman/${t.slug}/`), ...models.map((m) => `/sehir/${m.slug}/`)];
+  const eurTry = (d.kur && d.kur.eurTry) || 0;
+  for (const t of teams) {
+    out[`sehir/${t.slug}/index.html`] = renderTeamPage(t, { today, eurTry, esc, para, fmtTl, fmtEur, head, foot, SITE });
+    out[`deplasman/${t.slug}/index.html`] = renderRedirect(t, SITE);
+  }
+  out["sehir/index.html"] = renderIndexPage(models, today, teams.map((t) => teamCard(t, today, { esc, para, eurTry })));
+  const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", ...teams.map((t) => `/sehir/${t.slug}/`), ...models.map((m) => `/sehir/${m.slug}/`)];
   out["sitemap.xml"] = renderSitemap(paths, today);
   out["data/vitrin.json"] = renderVitrin(models, today);
   if (write) {

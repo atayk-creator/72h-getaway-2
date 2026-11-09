@@ -10,7 +10,7 @@ import { execSync } from "node:child_process";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const out = join(root, "app", "www");
 export const PAGES = ["index.html", "oteller.html", "hakkinda.html"];
-const COPY = ["img", "js", "video", "fonts", "deplasman", "favicon.ico", "data.json", "prices.json", "price-status.json"];
+const COPY = ["img", "js", "video", "fonts", "sehir/fenerbahce", "favicon.ico", "data.json", "prices.json", "price-status.json"];
 const DATA = ["hotels.json", "otel-fiyatlari.json", "ucuslar.json", "restoranlar.json", "gezi.json", "fiyatlar", "vitrin.json", "oneriler.json", "hikaye-video.json", "fenerbahce.json"];
 
 export function transform(html, build) {
