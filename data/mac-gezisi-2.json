@@ -1,0 +1,2864 @@
+{
+ "tarih": "2026-11-09T00:07:44.749Z",
+ "not": "2 yetişkin, 1 oda, 2 gece; uçak 1 kişi gidiş-dönüş EUR",
+ "geziler": [
+  {
+   "mac": "Londra uçuş (tekrar)",
+   "ucus": [
+    {
+     "recordType": "error",
+     "input": "IST,SAW-LGW,STN,LTN 2026-11-24 2026-11-26",
+     "errorCode": "GOOGLE_ERROR",
+     "errorMessage": "Google Flights failed on this search with its own internal error, three times. Run it again later, or try nearby dates.",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "search-summary",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "flightsFound": 13,
+     "lowestPrice": 261,
+     "cheapestNonstopPrice": 270,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPrice": 218,
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "priceHistory": [
+      {
+       "date": "2026-09-08",
+       "price": 194
+      },
+      {
+       "date": "2026-09-09",
+       "price": 194
+      },
+      {
+       "date": "2026-09-10",
+       "price": 194
+      },
+      {
+       "date": "2026-09-11",
+       "price": 195
+      },
+      {
+       "date": "2026-09-12",
+       "price": 195
+      },
+      {
+       "date": "2026-09-13",
+       "price": 172
+      },
+      {
+       "date": "2026-09-14",
+       "price": 179
+      },
+      {
+       "date": "2026-09-15",
+       "price": 180
+      },
+      {
+       "date": "2026-09-16",
+       "price": 175
+      },
+      {
+       "date": "2026-09-17",
+       "price": 176
+      },
+      {
+       "date": "2026-09-18",
+       "price": 175
+      },
+      {
+       "date": "2026-09-19",
+       "price": 185
+      },
+      {
+       "date": "2026-09-20",
+       "price": 189
+      },
+      {
+       "date": "2026-09-21",
+       "price": 184
+      },
+      {
+       "date": "2026-09-22",
+       "price": 181
+      },
+      {
+       "date": "2026-09-23",
+       "price": 181
+      },
+      {
+       "date": "2026-09-24",
+       "price": 182
+      },
+      {
+       "date": "2026-09-25",
+       "price": 176
+      },
+      {
+       "date": "2026-09-26",
+       "price": 175
+      },
+      {
+       "date": "2026-09-27",
+       "price": 175
+      },
+      {
+       "date": "2026-09-28",
+       "price": 189
+      },
+      {
+       "date": "2026-09-29",
+       "price": 189
+      },
+      {
+       "date": "2026-09-30",
+       "price": 188
+      },
+      {
+       "date": "2026-10-01",
+       "price": 188
+      },
+      {
+       "date": "2026-10-02",
+       "price": 190
+      },
+      {
+       "date": "2026-10-03",
+       "price": 189
+      },
+      {
+       "date": "2026-10-04",
+       "price": 189
+      },
+      {
+       "date": "2026-10-05",
+       "price": 189
+      },
+      {
+       "date": "2026-10-06",
+       "price": 192
+      },
+      {
+       "date": "2026-10-07",
+       "price": 192
+      },
+      {
+       "date": "2026-10-08",
+       "price": 193
+      },
+      {
+       "date": "2026-10-09",
+       "price": 192
+      },
+      {
+       "date": "2026-10-10",
+       "price": 195
+      },
+      {
+       "date": "2026-10-11",
+       "price": 187
+      },
+      {
+       "date": "2026-10-12",
+       "price": 187
+      },
+      {
+       "date": "2026-10-13",
+       "price": 188
+      },
+      {
+       "date": "2026-10-14",
+       "price": 187
+      },
+      {
+       "date": "2026-10-15",
+       "price": 213
+      },
+      {
+       "date": "2026-10-16",
+       "price": 215
+      },
+      {
+       "date": "2026-10-17",
+       "price": 207
+      },
+      {
+       "date": "2026-10-18",
+       "price": 215
+      },
+      {
+       "date": "2026-10-19",
+       "price": 215
+      },
+      {
+       "date": "2026-10-20",
+       "price": 220
+      },
+      {
+       "date": "2026-10-21",
+       "price": 220
+      },
+      {
+       "date": "2026-10-22",
+       "price": 221
+      },
+      {
+       "date": "2026-10-23",
+       "price": 221
+      },
+      {
+       "date": "2026-10-24",
+       "price": 221
+      },
+      {
+       "date": "2026-10-25",
+       "price": 221
+      },
+      {
+       "date": "2026-10-26",
+       "price": 222
+      },
+      {
+       "date": "2026-10-27",
+       "price": 222
+      },
+      {
+       "date": "2026-10-28",
+       "price": 221
+      },
+      {
+       "date": "2026-10-29",
+       "price": 228
+      },
+      {
+       "date": "2026-10-30",
+       "price": 229
+      },
+      {
+       "date": "2026-10-31",
+       "price": 244
+      },
+      {
+       "date": "2026-11-01",
+       "price": 242
+      },
+      {
+       "date": "2026-11-02",
+       "price": 245
+      },
+      {
+       "date": "2026-11-03",
+       "price": 232
+      },
+      {
+       "date": "2026-11-04",
+       "price": 254
+      },
+      {
+       "date": "2026-11-05",
+       "price": 254
+      },
+      {
+       "date": "2026-11-06",
+       "price": 255
+      },
+      {
+       "date": "2026-11-07",
+       "price": 261
+      },
+      {
+       "date": "2026-11-08",
+       "price": 261
+      }
+     ],
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI2LTExLTI0agcIARIDSVNUagcIARIDU0FXcgcIARIDTEhSGicSCjIwMjYtMTEtMjZqBwgBEgNMSFJyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 1,
+     "isBestFlight": false,
+     "isCheapest": true,
+     "price": 261,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "Air Serbia",
+     "airlineCode": "JU",
+     "airlines": [
+      "Air Serbia"
+     ],
+     "airlineCodes": [
+      "JU"
+     ],
+     "flightNumbers": [
+      "JU427",
+      "JU210"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T05:25",
+     "arriveAt": "2026-11-24T12:20",
+     "departureDate": "2026-11-24",
+     "departureTime": "05:25",
+     "arrivalDate": "2026-11-24",
+     "arrivalTime": "12:20",
+     "durationMinutes": 595,
+     "stops": 1,
+     "layovers": [
+      {
+       "airport": "BEG",
+       "airportName": "Belgrade Nikola Tesla Airport",
+       "city": "Belgrade",
+       "durationMinutes": 300,
+       "changesAirport": false
+      }
+     ],
+     "legs": [
+      {
+       "flightNumber": "JU427",
+       "airlineCode": "JU",
+       "airline": "Air Serbia",
+       "operatedBy": "Bulgaria Air for Air Serbia",
+       "aircraft": "Embraer 190",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "BEG",
+       "toName": "Belgrade Nikola Tesla Airport",
+       "departAt": "2026-11-24T05:25",
+       "arriveAt": "2026-11-24T05:10",
+       "durationMinutes": 105,
+       "legroom": "31 in",
+       "emissionsKg": 102
+      },
+      {
+       "flightNumber": "JU210",
+       "airlineCode": "JU",
+       "airline": "Air Serbia",
+       "operatedBy": null,
+       "aircraft": "Airbus A319",
+       "from": "BEG",
+       "fromName": "Belgrade Nikola Tesla Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-24T10:10",
+       "arriveAt": "2026-11-24T12:20",
+       "durationMinutes": 190,
+       "legroom": "30 in",
+       "emissionsKg": 167
+      }
+     ],
+     "emissionsKg": 269,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": 23,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgtKVTQyN3xKVTIxMBoLCLPLARACGgNFVVI4HHDd4gE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhppEgoyMDI2LTExLTI0Ih8KA0lTVBIKMjAyNi0xMS0yNBoDQkVHKgJKVTIDNDI3Ih8KA0JFRxIKMjAyNi0xMS0yNBoDTEhSKgJKVTIDMjEwagcIARIDSVNUagcIARIDU0FXcgcIARIDTEhSGicSCjIwMjYtMTEtMjZqBwgBEgNMSFJyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 2,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 270,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "British Airways",
+     "airlineCode": "BA",
+     "airlines": [
+      "British Airways"
+     ],
+     "airlineCodes": [
+      "BA"
+     ],
+     "flightNumbers": [
+      "BA677"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T14:55",
+     "arriveAt": "2026-11-24T16:10",
+     "departureDate": "2026-11-24",
+     "departureTime": "14:55",
+     "arrivalDate": "2026-11-24",
+     "arrivalTime": "16:10",
+     "durationMinutes": 255,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "BA677",
+       "airlineCode": "BA",
+       "airline": "British Airways",
+       "operatedBy": null,
+       "aircraft": "Airbus A320",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-24T14:55",
+       "arriveAt": "2026-11-24T16:10",
+       "durationMinutes": 255,
+       "legroom": "29 in",
+       "emissionsKg": 205
+      }
+     ],
+     "emissionsKg": 205,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": -6,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgVCQTY3NxoLCPbSARACGgNFVVI4HHCO6wE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpIEgoyMDI2LTExLTI0Ih8KA0lTVBIKMjAyNi0xMS0yNBoDTEhSKgJCQTIDNjc3agcIARIDSVNUagcIARIDU0FXcgcIARIDTEhSGicSCjIwMjYtMTEtMjZqBwgBEgNMSFJyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 3,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 292,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "British Airways",
+     "airlineCode": "BA",
+     "airlines": [
+      "British Airways"
+     ],
+     "airlineCodes": [
+      "BA"
+     ],
+     "flightNumbers": [
+      "BA679"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T18:35",
+     "arriveAt": "2026-11-24T19:45",
+     "departureDate": "2026-11-24",
+     "departureTime": "18:35",
+     "arrivalDate": "2026-11-24",
+     "arrivalTime": "19:45",
+     "durationMinutes": 250,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "BA679",
+       "airlineCode": "BA",
+       "airline": "British Airways",
+       "operatedBy": null,
+       "aircraft": "Airbus A320neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-24T18:35",
+       "arriveAt": "2026-11-24T19:45",
+       "durationMinutes": 250,
+       "legroom": "29 in",
+       "emissionsKg": 175
+      }
+     ],
+     "emissionsKg": 175,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": -20,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgVCQTY3ORoLCLjjARACGgNFVVI4HHDD/QE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpIEgoyMDI2LTExLTI0Ih8KA0lTVBIKMjAyNi0xMS0yNBoDTEhSKgJCQTIDNjc5agcIARIDSVNUagcIARIDU0FXcgcIARIDTEhSGicSCjIwMjYtMTEtMjZqBwgBEgNMSFJyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 4,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 295,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "LOT",
+     "airlineCode": "LO",
+     "airlines": [
+      "LOT"
+     ],
+     "airlineCodes": [
+      "LO"
+     ],
+     "flightNumbers": [
+      "LO136",
+      "LO281"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T18:30",
+     "arriveAt": "2026-11-25T09:35",
+     "departureDate": "2026-11-24",
+     "departureTime": "18:30",
+     "arrivalDate": "2026-11-25",
+     "arrivalTime": "09:35",
+     "durationMinutes": 1085,
+     "stops": 1,
+     "layovers": [
+      {
+       "airport": "WAW",
+       "airportName": "Warsaw Chopin Airport",
+       "city": "Warsaw",
+       "durationMinutes": 750,
+       "changesAirport": false
+      }
+     ],
+     "legs": [
+      {
+       "flightNumber": "LO136",
+       "airlineCode": "LO",
+       "airline": "LOT",
+       "operatedBy": null,
+       "aircraft": "Boeing 737MAX 8 Passenger",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "WAW",
+       "toName": "Warsaw Chopin Airport",
+       "departAt": "2026-11-24T18:30",
+       "arriveAt": "2026-11-24T19:05",
+       "durationMinutes": 155,
+       "legroom": "29 in",
+       "emissionsKg": 107
+      },
+      {
+       "flightNumber": "LO281",
+       "airlineCode": "LO",
+       "airline": "LOT",
+       "operatedBy": null,
+       "aircraft": "Boeing 737MAX 8 Passenger",
+       "from": "WAW",
+       "fromName": "Warsaw Chopin Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-25T07:35",
+       "arriveAt": "2026-11-25T09:35",
+       "durationMinutes": 180,
+       "legroom": "30 in",
+       "emissionsKg": 114
+      }
+     ],
+     "emissionsKg": 221,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": 1,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgtMTzEzNnxMTzI4MRoLCNvlARACGgNFVVI4HHCHgAI=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhppEgoyMDI2LTExLTI0Ih8KA0lTVBIKMjAyNi0xMS0yNBoDV0FXKgJMTzIDMTM2Ih8KA1dBVxIKMjAyNi0xMS0yNRoDTEhSKgJMTzIDMjgxagcIARIDSVNUagcIARIDU0FXcgcIARIDTEhSGicSCjIwMjYtMTEtMjZqBwgBEgNMSFJyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 5,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 316,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1987"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T21:25",
+     "arriveAt": "2026-11-24T22:30",
+     "departureDate": "2026-11-24",
+     "departureTime": "21:25",
+     "arrivalDate": "2026-11-24",
+     "arrivalTime": "22:30",
+     "durationMinutes": 245,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1987",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A321neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-24T21:25",
+       "arriveAt": "2026-11-24T22:30",
+       "durationMinutes": 245,
+       "legroom": "30 in",
+       "emissionsKg": 192
+      }
+     ],
+     "emissionsKg": 192,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": -12,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgZUSzE5ODcaCwjD9gEQAhoDRVVSOBxw5pIC",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTExLTI0IiAKA0lTVBIKMjAyNi0xMS0yNBoDTEhSKgJUSzIEMTk4N2oHCAESA0lTVGoHCAESA1NBV3IHCAESA0xIUhonEgoyMDI2LTExLTI2agcIARIDTEhScgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 6,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 321,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1983"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T20:05",
+     "arriveAt": "2026-11-24T21:05",
+     "departureDate": "2026-11-24",
+     "departureTime": "20:05",
+     "arrivalDate": "2026-11-24",
+     "arrivalTime": "21:05",
+     "durationMinutes": 240,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1983",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A321neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-24T20:05",
+       "arriveAt": "2026-11-24T21:05",
+       "durationMinutes": 240,
+       "legroom": "30 in",
+       "emissionsKg": 198
+      }
+     ],
+     "emissionsKg": 198,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": -9,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgZUSzE5ODMaCwiC+gEQAhoDRVVSOBxw2JYC",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTExLTI0IiAKA0lTVBIKMjAyNi0xMS0yNBoDTEhSKgJUSzIEMTk4M2oHCAESA0lTVGoHCAESA1NBV3IHCAESA0xIUhonEgoyMDI2LTExLTI2agcIARIDTEhScgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 7,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 334,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1971"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T15:25",
+     "arriveAt": "2026-11-24T16:20",
+     "departureDate": "2026-11-24",
+     "departureTime": "15:25",
+     "arrivalDate": "2026-11-24",
+     "arrivalTime": "16:20",
+     "durationMinutes": 235,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1971",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A330",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-24T15:25",
+       "arriveAt": "2026-11-24T16:20",
+       "durationMinutes": 235,
+       "legroom": "31 in",
+       "emissionsKg": 180
+      }
+     ],
+     "emissionsKg": 180,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": -17,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgZUSzE5NzEaCwjBhAIQAhoDRVVSOBxwsaIC",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTExLTI0IiAKA0lTVBIKMjAyNi0xMS0yNBoDTEhSKgJUSzIEMTk3MWoHCAESA0lTVGoHCAESA1NBV3IHCAESA0xIUhonEgoyMDI2LTExLTI2agcIARIDTEhScgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-LHR 2026-11-24 2026-11-26",
+     "route": "IST,SAW-LHR-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 8,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 343,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 190,
+     "typicalPriceHigh": 320,
+     "airline": "British Airways",
+     "airlineCode": "BA",
+     "airlines": [
+      "British Airways"
+     ],
+     "airlineCodes": [
+      "BA"
+     ],
+     "flightNumbers": [
+      "BA681"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "LHR",
+     "destinationName": "Heathrow Airport",
+     "departAt": "2026-11-24T07:40",
+     "arriveAt": "2026-11-24T09:05",
+     "departureDate": "2026-11-24",
+     "departureTime": "07:40",
+     "arrivalDate": "2026-11-24",
+     "arrivalTime": "09:05",
+     "durationMinutes": 265,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "BA681",
+       "airlineCode": "BA",
+       "airline": "British Airways",
+       "operatedBy": null,
+       "aircraft": "Airbus A321neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "LHR",
+       "toName": "Heathrow Airport",
+       "departAt": "2026-11-24T07:40",
+       "arriveAt": "2026-11-24T09:05",
+       "durationMinutes": 265,
+       "legroom": "29 in",
+       "emissionsKg": 170
+      }
+     ],
+     "emissionsKg": 170,
+     "typicalEmissionsKg": 218,
+     "emissionsVsTypicalPercent": -22,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-11-24",
+     "searchReturnDate": "2026-11-26",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFhQWdCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRJS1hiZVFBEgVCQTY4MRoLCLKLAhACGgNFVVI4HHCHqgI=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpIEgoyMDI2LTExLTI0Ih8KA0lTVBIKMjAyNi0xMS0yNBoDTEhSKgJCQTIDNjgxagcIARIDSVNUagcIARIDU0FXcgcIARIDTEhSGicSCjIwMjYtMTEtMjZqBwgBEgNMSFJyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:46.159Z"
+    }
+   ]
+  },
+  {
+   "mac": "Linz çevresi uçuş (tekrar)",
+   "ucus": [
+    {
+     "recordType": "search-summary",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "flightsFound": 11,
+     "lowestPrice": 118,
+     "cheapestNonstopPrice": 118,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPrice": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "priceHistory": null,
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI2LTEyLTA4agcIARIDSVNUagcIARIDU0FXcgcIARIDVklFGicSCjIwMjYtMTItMTBqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 1,
+     "isBestFlight": false,
+     "isCheapest": true,
+     "price": 118,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Pegasus",
+     "airlineCode": "PC",
+     "airlines": [
+      "Pegasus"
+     ],
+     "airlineCodes": [
+      "PC"
+     ],
+     "flightNumbers": [
+      "PC901"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T08:45",
+     "arriveAt": "2026-12-08T09:05",
+     "departureDate": "2026-12-08",
+     "departureTime": "08:45",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "09:05",
+     "durationMinutes": 140,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "PC901",
+       "airlineCode": "PC",
+       "airline": "Pegasus",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T08:45",
+       "arriveAt": "2026-12-08T09:05",
+       "durationMinutes": 140,
+       "legroom": "28 in",
+       "emissionsKg": 111
+      }
+     ],
+     "emissionsKg": 111,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": 0,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgVQQzkwMRoKCPFbEAIaA0VVUjgccLZm",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpIEgoyMDI2LTEyLTA4Ih8KA1NBVxIKMjAyNi0xMi0wOBoDVklFKgJQQzIDOTAxagcIARIDSVNUagcIARIDU0FXcgcIARIDVklFGicSCjIwMjYtMTItMTBqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 2,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 142,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Pegasus",
+     "airlineCode": "PC",
+     "airlines": [
+      "Pegasus"
+     ],
+     "airlineCodes": [
+      "PC"
+     ],
+     "flightNumbers": [
+      "PC905"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T16:55",
+     "arriveAt": "2026-12-08T17:15",
+     "departureDate": "2026-12-08",
+     "departureTime": "16:55",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "17:15",
+     "durationMinutes": 140,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "PC905",
+       "airlineCode": "PC",
+       "airline": "Pegasus",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T16:55",
+       "arriveAt": "2026-12-08T17:15",
+       "durationMinutes": 140,
+       "legroom": "28 in",
+       "emissionsKg": 111
+      }
+     ],
+     "emissionsKg": 111,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": 0,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgVQQzkwNRoKCLNuEAIaA0VVUjgccIh7",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpIEgoyMDI2LTEyLTA4Ih8KA1NBVxIKMjAyNi0xMi0wOBoDVklFKgJQQzIDOTA1agcIARIDSVNUagcIARIDU0FXcgcIARIDVklFGicSCjIwMjYtMTItMTBqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 3,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 156,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Pegasus",
+     "airlineCode": "PC",
+     "airlines": [
+      "Pegasus"
+     ],
+     "airlineCodes": [
+      "PC"
+     ],
+     "flightNumbers": [
+      "PC907"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T18:35",
+     "arriveAt": "2026-12-08T18:55",
+     "departureDate": "2026-12-08",
+     "departureTime": "18:35",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "18:55",
+     "durationMinutes": 140,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "PC907",
+       "airlineCode": "PC",
+       "airline": "Pegasus",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T18:35",
+       "arriveAt": "2026-12-08T18:55",
+       "durationMinutes": 140,
+       "legroom": "28 in",
+       "emissionsKg": 111
+      }
+     ],
+     "emissionsKg": 111,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": 0,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgVQQzkwNxoKCOh5EAIaA0VVUjgccOSHAQ==",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpIEgoyMDI2LTEyLTA4Ih8KA1NBVxIKMjAyNi0xMi0wOBoDVklFKgJQQzIDOTA3agcIARIDSVNUagcIARIDU0FXcgcIARIDVklFGicSCjIwMjYtMTItMTBqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 4,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 177,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Pegasus",
+     "airlineCode": "PC",
+     "airlines": [
+      "Pegasus"
+     ],
+     "airlineCodes": [
+      "PC"
+     ],
+     "flightNumbers": [
+      "PC903"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T13:30",
+     "arriveAt": "2026-12-08T13:50",
+     "departureDate": "2026-12-08",
+     "departureTime": "13:30",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "13:50",
+     "durationMinutes": 140,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "PC903",
+       "airlineCode": "PC",
+       "airline": "Pegasus",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T13:30",
+       "arriveAt": "2026-12-08T13:50",
+       "durationMinutes": 140,
+       "legroom": "28 in",
+       "emissionsKg": 111
+      }
+     ],
+     "emissionsKg": 111,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": 0,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgVQQzkwMxoLCJ2KARACGgNFVVI4HHCKmgE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpIEgoyMDI2LTEyLTA4Ih8KA1NBVxIKMjAyNi0xMi0wOBoDVklFKgJQQzIDOTAzagcIARIDSVNUagcIARIDU0FXcgcIARIDVklFGicSCjIwMjYtMTItMTBqBwgBEgNWSUVyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 5,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 200,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1887"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T17:40",
+     "arriveAt": "2026-12-08T18:00",
+     "departureDate": "2026-12-08",
+     "departureTime": "17:40",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "18:00",
+     "durationMinutes": 140,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1887",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A350",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T17:40",
+       "arriveAt": "2026-12-08T18:00",
+       "durationMinutes": 140,
+       "legroom": "31 in",
+       "emissionsKg": 100
+      }
+     ],
+     "emissionsKg": 100,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": -10,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgZUSzE4ODcaCwjKmwEQAhoDRVVSOBxwtq0B",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDVklFKgJUSzIEMTg4N2oHCAESA0lTVGoHCAESA1NBV3IHCAESA1ZJRRonEgoyMDI2LTEyLTEwagcIARIDVklFcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 6,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 219,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "AJet",
+     "airlineCode": "VF",
+     "airlines": [
+      "AJet"
+     ],
+     "airlineCodes": [
+      "VF"
+     ],
+     "flightNumbers": [
+      "VF17"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T12:30",
+     "arriveAt": "2026-12-08T13:00",
+     "departureDate": "2026-12-08",
+     "departureTime": "12:30",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "13:00",
+     "durationMinutes": 150,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "VF17",
+       "airlineCode": "VF",
+       "airline": "AJet",
+       "operatedBy": "Turkish Airlines",
+       "aircraft": "Boeing 737MAX 8 Passenger",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T12:30",
+       "arriveAt": "2026-12-08T13:00",
+       "durationMinutes": 150,
+       "legroom": "29 in",
+       "emissionsKg": 101
+      }
+     ],
+     "emissionsKg": 101,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": -9,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgRWRjE3GgsIwaoBEAIaA0VVUjgccIi+AQ==",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpHEgoyMDI2LTEyLTA4Ih4KA1NBVxIKMjAyNi0xMi0wOBoDVklFKgJWRjICMTdqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNWSUUaJxIKMjAyNi0xMi0xMGoHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAFwAZgBAQ&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 7,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 232,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "AJet",
+     "airlineCode": "VF",
+     "airlines": [
+      "AJet"
+     ],
+     "airlineCodes": [
+      "VF"
+     ],
+     "flightNumbers": [
+      "VF19"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T15:15",
+     "arriveAt": "2026-12-08T15:45",
+     "departureDate": "2026-12-08",
+     "departureTime": "15:15",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "15:45",
+     "durationMinutes": 150,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "VF19",
+       "airlineCode": "VF",
+       "airline": "AJet",
+       "operatedBy": "Turkish Airlines",
+       "aircraft": "Boeing 737MAX 8 Passenger",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T15:15",
+       "arriveAt": "2026-12-08T15:45",
+       "durationMinutes": 150,
+       "legroom": "29 in",
+       "emissionsKg": 101
+      }
+     ],
+     "emissionsKg": 101,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": -9,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgRWRjE5GgsI/7QBEAIaA0VVUjgccODJAQ==",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpHEgoyMDI2LTEyLTA4Ih4KA1NBVxIKMjAyNi0xMi0wOBoDVklFKgJWRjICMTlqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNWSUUaJxIKMjAyNi0xMi0xMGoHCAESA1ZJRXIHCAESA0lTVHIHCAESA1NBV0ABSAFwAZgBAQ&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-VIE 2026-12-08 2026-12-10",
+     "route": "IST,SAW-VIE-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 8,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 236,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1889"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "VIE",
+     "destinationName": "Vienna International Airport",
+     "departAt": "2026-12-08T21:35",
+     "arriveAt": "2026-12-08T21:55",
+     "departureDate": "2026-12-08",
+     "departureTime": "21:35",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "21:55",
+     "durationMinutes": 140,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1889",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A321 (Sharklets)",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "VIE",
+       "toName": "Vienna International Airport",
+       "departAt": "2026-12-08T21:35",
+       "arriveAt": "2026-12-08T21:55",
+       "durationMinutes": 140,
+       "legroom": "31 in",
+       "emissionsKg": 138
+      }
+     ],
+     "emissionsKg": 138,
+     "typicalEmissionsKg": 111,
+     "emissionsVsTypicalPercent": 24,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIWlIzclFvVk9sMlFBRlFiWFFCRy0tLS0tLXZ3aGEyNy1uMUFBQUFBR3J4RHRZRFYzN1dBEgZUSzE4ODkaCwiauAEQAhoDRVVSOBxwqs0B",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDVklFKgJUSzIEMTg4OWoHCAESA0lTVGoHCAESA1NBV3IHCAESA1ZJRRonEgoyMDI2LTEyLTEwagcIARIDVklFcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "search-summary",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "flightsFound": 9,
+     "lowestPrice": 144,
+     "cheapestNonstopPrice": 144,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPrice": 120,
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "priceHistory": [
+      {
+       "date": "2026-09-08",
+       "price": 136
+      },
+      {
+       "date": "2026-09-09",
+       "price": 137
+      },
+      {
+       "date": "2026-09-10",
+       "price": 136
+      },
+      {
+       "date": "2026-09-11",
+       "price": 137
+      },
+      {
+       "date": "2026-09-12",
+       "price": 137
+      },
+      {
+       "date": "2026-09-13",
+       "price": 127
+      },
+      {
+       "date": "2026-09-14",
+       "price": 126
+      },
+      {
+       "date": "2026-09-15",
+       "price": 104
+      },
+      {
+       "date": "2026-09-16",
+       "price": 98
+      },
+      {
+       "date": "2026-09-17",
+       "price": 99
+      },
+      {
+       "date": "2026-09-18",
+       "price": 104
+      },
+      {
+       "date": "2026-09-19",
+       "price": 119
+      },
+      {
+       "date": "2026-09-20",
+       "price": 127
+      },
+      {
+       "date": "2026-09-21",
+       "price": 127
+      },
+      {
+       "date": "2026-09-22",
+       "price": 126
+      },
+      {
+       "date": "2026-09-23",
+       "price": 126
+      },
+      {
+       "date": "2026-09-24",
+       "price": 127
+      },
+      {
+       "date": "2026-09-25",
+       "price": 127
+      },
+      {
+       "date": "2026-09-26",
+       "price": 127
+      },
+      {
+       "date": "2026-09-27",
+       "price": 127
+      },
+      {
+       "date": "2026-09-28",
+       "price": 128
+      },
+      {
+       "date": "2026-09-29",
+       "price": 128
+      },
+      {
+       "date": "2026-09-30",
+       "price": 127
+      },
+      {
+       "date": "2026-10-01",
+       "price": 127
+      },
+      {
+       "date": "2026-10-02",
+       "price": 128
+      },
+      {
+       "date": "2026-10-03",
+       "price": 128
+      },
+      {
+       "date": "2026-10-04",
+       "price": 128
+      },
+      {
+       "date": "2026-10-05",
+       "price": 128
+      },
+      {
+       "date": "2026-10-06",
+       "price": 143
+      },
+      {
+       "date": "2026-10-07",
+       "price": 142
+      },
+      {
+       "date": "2026-10-08",
+       "price": 143
+      },
+      {
+       "date": "2026-10-09",
+       "price": 142
+      },
+      {
+       "date": "2026-10-10",
+       "price": 143
+      },
+      {
+       "date": "2026-10-11",
+       "price": 143
+      },
+      {
+       "date": "2026-10-12",
+       "price": 142
+      },
+      {
+       "date": "2026-10-13",
+       "price": 143
+      },
+      {
+       "date": "2026-10-14",
+       "price": 143
+      },
+      {
+       "date": "2026-10-15",
+       "price": 143
+      },
+      {
+       "date": "2026-10-16",
+       "price": 142
+      },
+      {
+       "date": "2026-10-17",
+       "price": 142
+      },
+      {
+       "date": "2026-10-18",
+       "price": 143
+      },
+      {
+       "date": "2026-10-19",
+       "price": 142
+      },
+      {
+       "date": "2026-10-20",
+       "price": 144
+      },
+      {
+       "date": "2026-10-21",
+       "price": 147
+      },
+      {
+       "date": "2026-10-22",
+       "price": 124
+      },
+      {
+       "date": "2026-10-23",
+       "price": 122
+      },
+      {
+       "date": "2026-10-24",
+       "price": 124
+      },
+      {
+       "date": "2026-10-25",
+       "price": 121
+      },
+      {
+       "date": "2026-10-26",
+       "price": 121
+      },
+      {
+       "date": "2026-10-27",
+       "price": 121
+      },
+      {
+       "date": "2026-10-28",
+       "price": 121
+      },
+      {
+       "date": "2026-10-29",
+       "price": 120
+      },
+      {
+       "date": "2026-10-30",
+       "price": 121
+      },
+      {
+       "date": "2026-10-31",
+       "price": 123
+      },
+      {
+       "date": "2026-11-01",
+       "price": 121
+      },
+      {
+       "date": "2026-11-02",
+       "price": 120
+      },
+      {
+       "date": "2026-11-03",
+       "price": 143
+      },
+      {
+       "date": "2026-11-04",
+       "price": 142
+      },
+      {
+       "date": "2026-11-05",
+       "price": 135
+      },
+      {
+       "date": "2026-11-06",
+       "price": 136
+      },
+      {
+       "date": "2026-11-07",
+       "price": 144
+      },
+      {
+       "date": "2026-11-08",
+       "price": 144
+      }
+     ],
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI2LTEyLTA4agcIARIDSVNUagcIARIDU0FXcgcIARIDTVVDGicSCjIwMjYtMTItMTBqBwgBEgNNVUNyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 1,
+     "isBestFlight": false,
+     "isCheapest": true,
+     "price": 144,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "AJet",
+     "airlineCode": "VF",
+     "airlines": [
+      "AJet"
+     ],
+     "airlineCodes": [
+      "VF"
+     ],
+     "flightNumbers": [
+      "VF41"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T11:45",
+     "arriveAt": "2026-12-08T12:40",
+     "departureDate": "2026-12-08",
+     "departureTime": "11:45",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "12:40",
+     "durationMinutes": 175,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "VF41",
+       "airlineCode": "VF",
+       "airline": "AJet",
+       "operatedBy": null,
+       "aircraft": "Airbus A321neo",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T11:45",
+       "arriveAt": "2026-12-08T12:40",
+       "durationMinutes": 175,
+       "legroom": "29 in",
+       "emissionsKg": 123
+      }
+     ],
+     "emissionsKg": 123,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -15,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgRWRjQxGgoI428QAhoDRVVSOBxwzHw=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpHEgoyMDI2LTEyLTA4Ih4KA1NBVxIKMjAyNi0xMi0wOBoDTVVDKgJWRjICNDFqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNNVUMaJxIKMjAyNi0xMi0xMGoHCAESA01VQ3IHCAESA0lTVHIHCAESA1NBV0ABSAFwAZgBAQ&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 2,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 149,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "Pegasus",
+     "airlineCode": "PC",
+     "airlines": [
+      "Pegasus"
+     ],
+     "airlineCodes": [
+      "PC"
+     ],
+     "flightNumbers": [
+      "PC1019"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T08:30",
+     "arriveAt": "2026-12-08T09:15",
+     "departureDate": "2026-12-08",
+     "departureTime": "08:30",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "09:15",
+     "durationMinutes": 165,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "PC1019",
+       "airlineCode": "PC",
+       "airline": "Pegasus",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T08:30",
+       "arriveAt": "2026-12-08T09:15",
+       "durationMinutes": 165,
+       "legroom": "28 in",
+       "emissionsKg": 131
+      }
+     ],
+     "emissionsKg": 131,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -10,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgZQQzEwMTkaCgiQdBACGgNFVVI4HHC5gQE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA1NBVxIKMjAyNi0xMi0wOBoDTVVDKgJQQzIEMTAxOWoHCAESA0lTVGoHCAESA1NBV3IHCAESA01VQxonEgoyMDI2LTEyLTEwagcIARIDTVVDcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 3,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 149,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "Pegasus",
+     "airlineCode": "PC",
+     "airlines": [
+      "Pegasus"
+     ],
+     "airlineCodes": [
+      "PC"
+     ],
+     "flightNumbers": [
+      "PC1021"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T12:15",
+     "arriveAt": "2026-12-08T13:00",
+     "departureDate": "2026-12-08",
+     "departureTime": "12:15",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "13:00",
+     "durationMinutes": 165,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "PC1021",
+       "airlineCode": "PC",
+       "airline": "Pegasus",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T12:15",
+       "arriveAt": "2026-12-08T13:00",
+       "durationMinutes": 165,
+       "legroom": "28 in",
+       "emissionsKg": 131
+      }
+     ],
+     "emissionsKg": 131,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -10,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgZQQzEwMjEaCgiQdBACGgNFVVI4HHC5gQE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA1NBVxIKMjAyNi0xMi0wOBoDTVVDKgJQQzIEMTAyMWoHCAESA0lTVGoHCAESA1NBV3IHCAESA01VQxonEgoyMDI2LTEyLTEwagcIARIDTVVDcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 4,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 153,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "Pegasus",
+     "airlineCode": "PC",
+     "airlines": [
+      "Pegasus"
+     ],
+     "airlineCodes": [
+      "PC"
+     ],
+     "flightNumbers": [
+      "PC1023"
+     ],
+     "origin": "SAW",
+     "originName": "Sabiha Gökçen International Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T16:10",
+     "arriveAt": "2026-12-08T16:55",
+     "departureDate": "2026-12-08",
+     "departureTime": "16:10",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "16:55",
+     "durationMinutes": 165,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "PC1023",
+       "airlineCode": "PC",
+       "airline": "Pegasus",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "SAW",
+       "fromName": "Sabiha Gökçen International Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T16:10",
+       "arriveAt": "2026-12-08T16:55",
+       "durationMinutes": 165,
+       "legroom": "28 in",
+       "emissionsKg": 131
+      }
+     ],
+     "emissionsKg": 131,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -10,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgZQQzEwMjMaCgiEdxACGgNFVVI4HHDXhAE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA1NBVxIKMjAyNi0xMi0wOBoDTVVDKgJQQzIEMTAyM2oHCAESA0lTVGoHCAESA1NBV3IHCAESA01VQxonEgoyMDI2LTEyLTEwagcIARIDTVVDcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 5,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 191,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "Air Serbia",
+     "airlineCode": "JU",
+     "airlines": [
+      "Air Serbia"
+     ],
+     "airlineCodes": [
+      "JU"
+     ],
+     "flightNumbers": [
+      "JU427",
+      "JU340"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T05:25",
+     "arriveAt": "2026-12-08T08:45",
+     "departureDate": "2026-12-08",
+     "departureTime": "05:25",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "08:45",
+     "durationMinutes": 320,
+     "stops": 1,
+     "layovers": [
+      {
+       "airport": "BEG",
+       "airportName": "Belgrade Nikola Tesla Airport",
+       "city": "Belgrade",
+       "durationMinutes": 120,
+       "changesAirport": false
+      }
+     ],
+     "legs": [
+      {
+       "flightNumber": "JU427",
+       "airlineCode": "JU",
+       "airline": "Air Serbia",
+       "operatedBy": "Bulgaria Air for Air Serbia",
+       "aircraft": "Embraer 190",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "BEG",
+       "toName": "Belgrade Nikola Tesla Airport",
+       "departAt": "2026-12-08T05:25",
+       "arriveAt": "2026-12-08T05:10",
+       "durationMinutes": 105,
+       "legroom": "31 in",
+       "emissionsKg": 102
+      },
+      {
+       "flightNumber": "JU340",
+       "airlineCode": "JU",
+       "airline": "Air Serbia",
+       "operatedBy": null,
+       "aircraft": "Embraer 195",
+       "from": "BEG",
+       "fromName": "Belgrade Nikola Tesla Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T07:10",
+       "arriveAt": "2026-12-08T08:45",
+       "durationMinutes": 95,
+       "legroom": "30 in",
+       "emissionsKg": 100
+      }
+     ],
+     "emissionsKg": 202,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": 39,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgtKVTQyN3xKVTM0MBoLCJOVARACGgNFVVI4HHCgpgE=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhppEgoyMDI2LTEyLTA4Ih8KA0lTVBIKMjAyNi0xMi0wOBoDQkVHKgJKVTIDNDI3Ih8KA0JFRxIKMjAyNi0xMi0wOBoDTVVDKgJKVTIDMzQwagcIARIDSVNUagcIARIDU0FXcgcIARIDTVVDGicSCjIwMjYtMTItMTBqBwgBEgNNVUNyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 6,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 241,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1629"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T09:00",
+     "arriveAt": "2026-12-08T09:50",
+     "departureDate": "2026-12-08",
+     "departureTime": "09:00",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "09:50",
+     "durationMinutes": 170,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1629",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A321neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T09:00",
+       "arriveAt": "2026-12-08T09:50",
+       "durationMinutes": 170,
+       "legroom": "30 in",
+       "emissionsKg": 133
+      }
+     ],
+     "emissionsKg": 133,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -8,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgZUSzE2MjkaCwiCvAEQAhoDRVVSOBxwytEB",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDTVVDKgJUSzIEMTYyOWoHCAESA0lTVGoHCAESA1NBV3IHCAESA01VQxonEgoyMDI2LTEyLTEwagcIARIDTVVDcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 7,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 241,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1633"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T12:45",
+     "arriveAt": "2026-12-08T13:30",
+     "departureDate": "2026-12-08",
+     "departureTime": "12:45",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "13:30",
+     "durationMinutes": 165,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1633",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A321neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T12:45",
+       "arriveAt": "2026-12-08T13:30",
+       "durationMinutes": 165,
+       "legroom": "30 in",
+       "emissionsKg": 133
+      }
+     ],
+     "emissionsKg": 133,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -8,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgZUSzE2MzMaCwiCvAEQAhoDRVVSOBxwytEB",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDTVVDKgJUSzIEMTYzM2oHCAESA0lTVGoHCAESA1NBV3IHCAESA01VQxonEgoyMDI2LTEyLTEwagcIARIDTVVDcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-MUC 2026-12-08 2026-12-10",
+     "route": "IST,SAW-MUC-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 8,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 241,
+     "currency": "EUR",
+     "priceLevel": "typical",
+     "typicalPriceLow": 85,
+     "typicalPriceHigh": 245,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1635"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "MUC",
+     "destinationName": "Munich International Airport",
+     "departAt": "2026-12-08T17:00",
+     "arriveAt": "2026-12-08T17:45",
+     "departureDate": "2026-12-08",
+     "departureTime": "17:00",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "17:45",
+     "durationMinutes": 165,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1635",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Airbus A321neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "MUC",
+       "toName": "Munich International Airport",
+       "departAt": "2026-12-08T17:00",
+       "arriveAt": "2026-12-08T17:45",
+       "durationMinutes": 165,
+       "legroom": "30 in",
+       "emissionsKg": 133
+      }
+     ],
+     "emissionsKg": 133,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -8,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIYlJoRkZ3dThDWGdBRkxodXdCRy0tLS0tLS0tLXZ0cXAyMkFBQUFBR3J4RHRVTkh4UFVBEgZUSzE2MzUaCwiCvAEQAhoDRVVSOBxwytEB",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDTVVDKgJUSzIEMTYzNWoHCAESA0lTVGoHCAESA1NBV3IHCAESA01VQxonEgoyMDI2LTEyLTEwagcIARIDTVVDcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "search-summary",
+     "input": "IST,SAW-SZG 2026-12-08 2026-12-10",
+     "route": "IST,SAW-SZG-IST,SAW",
+     "tripType": "round-trip",
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "flightsFound": 5,
+     "lowestPrice": 411,
+     "cheapestNonstopPrice": 695,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPrice": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "priceHistory": null,
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhonEgoyMDI2LTEyLTA4agcIARIDSVNUagcIARIDU0FXcgcIARIDU1pHGicSCjIwMjYtMTItMTBqBwgBEgNTWkdyBwgBEgNJU1RyBwgBEgNTQVdAAUgBcAGYAQE&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-SZG 2026-12-08 2026-12-10",
+     "route": "IST,SAW-SZG-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 1,
+     "isBestFlight": false,
+     "isCheapest": true,
+     "price": 411,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Lufthansa",
+     "airlineCode": "LH",
+     "airlines": [
+      "Lufthansa"
+     ],
+     "airlineCodes": [
+      "LH"
+     ],
+     "flightNumbers": [
+      "LH1301",
+      "LH1266"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "SZG",
+     "destinationName": "Salzburg Airport",
+     "departAt": "2026-12-08T19:05",
+     "arriveAt": "2026-12-08T22:35",
+     "departureDate": "2026-12-08",
+     "departureTime": "19:05",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "22:35",
+     "durationMinutes": 330,
+     "stops": 1,
+     "layovers": [
+      {
+       "airport": "FRA",
+       "airportName": "Frankfurt Airport",
+       "city": "Frankfurt am Main",
+       "durationMinutes": 85,
+       "changesAirport": false
+      }
+     ],
+     "legs": [
+      {
+       "flightNumber": "LH1301",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A320neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "FRA",
+       "toName": "Frankfurt Airport",
+       "departAt": "2026-12-08T19:05",
+       "arriveAt": "2026-12-08T20:10",
+       "durationMinutes": 185,
+       "legroom": "29 in",
+       "emissionsKg": 143
+      },
+      {
+       "flightNumber": "LH1266",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A321",
+       "from": "FRA",
+       "fromName": "Frankfurt Airport",
+       "to": "SZG",
+       "toName": "Salzburg Airport",
+       "departAt": "2026-12-08T21:35",
+       "arriveAt": "2026-12-08T22:35",
+       "durationMinutes": 60,
+       "legroom": "30 in",
+       "emissionsKg": 63
+      }
+     ],
+     "emissionsKg": 206,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": 42,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIMTdZendlTHpTVWtBRlIxUndCRy0tLS0tLS0tLXZ3eGQyMkFBQUFBR3J4RHRVTlhIOTJBEg1MSDEzMDF8TEgxMjY2GgsIy8ACEAIaA0VVUjgccK3lAg==",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhprEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDRlJBKgJMSDIEMTMwMSIgCgNGUkESCjIwMjYtMTItMDgaA1NaRyoCTEgyBDEyNjZqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNTWkcaJxIKMjAyNi0xMi0xMGoHCAESA1NaR3IHCAESA0lTVHIHCAESA1NBV0ABSAFwAZgBAQ&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-SZG 2026-12-08 2026-12-10",
+     "route": "IST,SAW-SZG-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 2,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 508,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Lufthansa",
+     "airlineCode": "LH",
+     "airlines": [
+      "Lufthansa"
+     ],
+     "airlineCodes": [
+      "LH"
+     ],
+     "flightNumbers": [
+      "LH1305",
+      "LH1260"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "SZG",
+     "destinationName": "Salzburg Airport",
+     "departAt": "2026-12-08T06:30",
+     "arriveAt": "2026-12-08T10:05",
+     "departureDate": "2026-12-08",
+     "departureTime": "06:30",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "10:05",
+     "durationMinutes": 335,
+     "stops": 1,
+     "layovers": [
+      {
+       "airport": "FRA",
+       "airportName": "Frankfurt Airport",
+       "city": "Frankfurt am Main",
+       "durationMinutes": 90,
+       "changesAirport": false
+      }
+     ],
+     "legs": [
+      {
+       "flightNumber": "LH1305",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A320neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "FRA",
+       "toName": "Frankfurt Airport",
+       "departAt": "2026-12-08T06:30",
+       "arriveAt": "2026-12-08T07:35",
+       "durationMinutes": 185,
+       "legroom": "29 in",
+       "emissionsKg": 143
+      },
+      {
+       "flightNumber": "LH1260",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A320",
+       "from": "FRA",
+       "fromName": "Frankfurt Airport",
+       "to": "SZG",
+       "toName": "Salzburg Airport",
+       "departAt": "2026-12-08T09:05",
+       "arriveAt": "2026-12-08T10:05",
+       "durationMinutes": 60,
+       "legroom": "30 in",
+       "emissionsKg": 59
+      }
+     ],
+     "emissionsKg": 202,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": 39,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIMTdZendlTHpTVWtBRlIxUndCRy0tLS0tLS0tLXZ3eGQyMkFBQUFBR3J4RHRVTlhIOTJBEg1MSDEzMDV8TEgxMjYwGgsIyowDEAIaA0VVUjgccIe6Aw==",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhprEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDRlJBKgJMSDIEMTMwNSIgCgNGUkESCjIwMjYtMTItMDgaA1NaRyoCTEgyBDEyNjBqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNTWkcaJxIKMjAyNi0xMi0xMGoHCAESA1NaR3IHCAESA0lTVHIHCAESA1NBV0ABSAFwAZgBAQ&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-SZG 2026-12-08 2026-12-10",
+     "route": "IST,SAW-SZG-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 3,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 673,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Lufthansa",
+     "airlineCode": "LH",
+     "airlines": [
+      "Lufthansa"
+     ],
+     "airlineCodes": [
+      "LH"
+     ],
+     "flightNumbers": [
+      "LH1305",
+      "LH1262"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "SZG",
+     "destinationName": "Salzburg Airport",
+     "departAt": "2026-12-08T06:30",
+     "arriveAt": "2026-12-08T13:55",
+     "departureDate": "2026-12-08",
+     "departureTime": "06:30",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "13:55",
+     "durationMinutes": 565,
+     "stops": 1,
+     "layovers": [
+      {
+       "airport": "FRA",
+       "airportName": "Frankfurt Airport",
+       "city": "Frankfurt am Main",
+       "durationMinutes": 320,
+       "changesAirport": false
+      }
+     ],
+     "legs": [
+      {
+       "flightNumber": "LH1305",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A320neo",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "FRA",
+       "toName": "Frankfurt Airport",
+       "departAt": "2026-12-08T06:30",
+       "arriveAt": "2026-12-08T07:35",
+       "durationMinutes": 185,
+       "legroom": "29 in",
+       "emissionsKg": 143
+      },
+      {
+       "flightNumber": "LH1262",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A320",
+       "from": "FRA",
+       "fromName": "Frankfurt Airport",
+       "to": "SZG",
+       "toName": "Salzburg Airport",
+       "departAt": "2026-12-08T12:55",
+       "arriveAt": "2026-12-08T13:55",
+       "durationMinutes": 60,
+       "legroom": "30 in",
+       "emissionsKg": 59
+      }
+     ],
+     "emissionsKg": 202,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": 39,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIMTdZendlTHpTVWtBRlIxUndCRy0tLS0tLS0tLXZ3eGQyMkFBQUFBR3J4RHRVTlhIOTJBEg1MSDEzMDV8TEgxMjYyGgsImo0EEAIaA0VVUjgccLfJBA==",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhprEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDRlJBKgJMSDIEMTMwNSIgCgNGUkESCjIwMjYtMTItMDgaA1NaRyoCTEgyBDEyNjJqBwgBEgNJU1RqBwgBEgNTQVdyBwgBEgNTWkcaJxIKMjAyNi0xMi0xMGoHCAESA1NaR3IHCAESA0lTVHIHCAESA1NBV0ABSAFwAZgBAQ&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-SZG 2026-12-08 2026-12-10",
+     "route": "IST,SAW-SZG-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 4,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 695,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines"
+     ],
+     "airlineCodes": [
+      "TK"
+     ],
+     "flightNumbers": [
+      "TK1381"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "SZG",
+     "destinationName": "Salzburg Airport",
+     "departAt": "2026-12-08T08:00",
+     "arriveAt": "2026-12-08T08:40",
+     "departureDate": "2026-12-08",
+     "departureTime": "08:00",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "08:40",
+     "durationMinutes": 160,
+     "stops": 0,
+     "layovers": [],
+     "legs": [
+      {
+       "flightNumber": "TK1381",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Boeing 737MAX 8 Passenger",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "SZG",
+       "toName": "Salzburg Airport",
+       "departAt": "2026-12-08T08:00",
+       "arriveAt": "2026-12-08T08:40",
+       "durationMinutes": 160,
+       "legroom": "30 in",
+       "emissionsKg": 132
+      }
+     ],
+     "emissionsKg": 132,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": -9,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIMTdZendlTHpTVWtBRlIxUndCRy0tLS0tLS0tLXZ3eGQyMkFBQUFBR3J4RHRVTlhIOTJBEgZUSzEzODEaCwibngQQAhoDRVVSOBxwstwE",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhpJEgoyMDI2LTEyLTA4IiAKA0lTVBIKMjAyNi0xMi0wOBoDU1pHKgJUSzIEMTM4MWoHCAESA0lTVGoHCAESA1NBV3IHCAESA1NaRxonEgoyMDI2LTEyLTEwagcIARIDU1pHcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    },
+    {
+     "recordType": "flight",
+     "input": "IST,SAW-SZG 2026-12-08 2026-12-10",
+     "route": "IST,SAW-SZG-IST,SAW",
+     "tripType": "round-trip",
+     "section": "departing",
+     "rank": 5,
+     "isBestFlight": false,
+     "isCheapest": false,
+     "price": 1793,
+     "currency": "EUR",
+     "priceLevel": null,
+     "typicalPriceLow": null,
+     "typicalPriceHigh": null,
+     "airline": "Turkish Airlines",
+     "airlineCode": "TK",
+     "airlines": [
+      "Turkish Airlines",
+      "Lufthansa"
+     ],
+     "airlineCodes": [
+      "TK",
+      "LH"
+     ],
+     "flightNumbers": [
+      "TK1271",
+      "LH1363",
+      "LH1262"
+     ],
+     "origin": "IST",
+     "originName": "Istanbul Airport",
+     "destination": "SZG",
+     "destinationName": "Salzburg Airport",
+     "departAt": "2026-12-08T08:00",
+     "arriveAt": "2026-12-08T13:55",
+     "departureDate": "2026-12-08",
+     "departureTime": "08:00",
+     "arrivalDate": "2026-12-08",
+     "arrivalTime": "13:55",
+     "durationMinutes": 475,
+     "stops": 2,
+     "layovers": [
+      {
+       "airport": "KRK",
+       "airportName": "John Paul II Kraków Balice International Airport",
+       "city": "Kraków",
+       "durationMinutes": 110,
+       "changesAirport": false
+      },
+      {
+       "airport": "FRA",
+       "airportName": "Frankfurt Airport",
+       "city": "Frankfurt am Main",
+       "durationMinutes": 65,
+       "changesAirport": false
+      }
+     ],
+     "legs": [
+      {
+       "flightNumber": "TK1271",
+       "airlineCode": "TK",
+       "airline": "Turkish Airlines",
+       "operatedBy": null,
+       "aircraft": "Boeing 737",
+       "from": "IST",
+       "fromName": "Istanbul Airport",
+       "to": "KRK",
+       "toName": "John Paul II Kraków Balice International Airport",
+       "departAt": "2026-12-08T08:00",
+       "arriveAt": "2026-12-08T08:20",
+       "durationMinutes": 140,
+       "legroom": "33 in",
+       "emissionsKg": 139
+      },
+      {
+       "flightNumber": "LH1363",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A319",
+       "from": "KRK",
+       "fromName": "John Paul II Kraków Balice International Airport",
+       "to": "FRA",
+       "toName": "Frankfurt Airport",
+       "departAt": "2026-12-08T10:10",
+       "arriveAt": "2026-12-08T11:50",
+       "durationMinutes": 100,
+       "legroom": "30 in",
+       "emissionsKg": 101
+      },
+      {
+       "flightNumber": "LH1262",
+       "airlineCode": "LH",
+       "airline": "Lufthansa",
+       "operatedBy": null,
+       "aircraft": "Airbus A320",
+       "from": "FRA",
+       "fromName": "Frankfurt Airport",
+       "to": "SZG",
+       "toName": "Salzburg Airport",
+       "departAt": "2026-12-08T12:55",
+       "arriveAt": "2026-12-08T13:55",
+       "durationMinutes": 60,
+       "legroom": "30 in",
+       "emissionsKg": 59
+      }
+     ],
+     "emissionsKg": 299,
+     "typicalEmissionsKg": 145,
+     "emissionsVsTypicalPercent": 106,
+     "cabinClass": "economy",
+     "adults": 1,
+     "children": 0,
+     "infants": 0,
+     "searchDepartureDate": "2026-12-08",
+     "searchReturnDate": "2026-12-10",
+     "outboundFlightNumbers": null,
+     "bookingOptions": null,
+     "bookingToken": "CjRIMTdZendlTHpTVWtBRlIxUndCRy0tLS0tLS0tLXZ3eGQyMkFBQUFBR3J4RHRVTlhIOTJBEhRUSzEyNzF8TEgxMzYzfExIMTI2MhoLCIP4ChACGgNFVVI4HHDKmAw=",
+     "googleFlightsUrl": "https://www.google.com/travel/flights/search?tfs=CBwQAhqNARIKMjAyNi0xMi0wOCIgCgNJU1QSCjIwMjYtMTItMDgaA0tSSyoCVEsyBDEyNzEiIAoDS1JLEgoyMDI2LTEyLTA4GgNGUkEqAkxIMgQxMzYzIiAKA0ZSQRIKMjAyNi0xMi0wOBoDU1pHKgJMSDIEMTI2MmoHCAESA0lTVGoHCAESA1NBV3IHCAESA1NaRxonEgoyMDI2LTEyLTEwagcIARIDU1pHcgcIARIDSVNUcgcIARIDU0FXQAFIAXABmAEB&hl=en&gl=TR&curr=EUR",
+     "scrapedAt": "2026-11-09T00:07:49.755Z"
+    }
+   ]
+  }
+ ],
+ "maliyet": 0.01,
+ "sayac": {
+  "usd": 58.66,
+  "sinir": 75,
+  "donemBasi": "2026-10-28",
+  "donemSonu": "2026-11-27"
+ }
+}
