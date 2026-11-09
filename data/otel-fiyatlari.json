@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-08T17:46:48.609Z",
+ "guncellendi": "2026-11-09T11:38:05.842Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -32,22 +32,17 @@
   "bru-des-galeries": "ChkIqYSqqYq29o6BARoML2cvMXE2OW1faGd6EAE",
   "bru-dixseptieme": "ChgIxZ3Dm8KtypqEARoLL2cvMXRjeTNna3gQAQ",
   "bru-made-in-louise": "ChgIsZ6K0ZqKkt-RARoLL2cvMXZsazBxeTQQAQ",
-  "bru-motel-one": "ChoIzo69m7Xd9_v5ARoNL2cvMTFiNjIwZmwwdBAB",
   "ams-pulitzer": "ChYItsyq5KHvhJpUGgovbS8wYnkwc19jEAE",
   "ams-estherea": "ChcIpNnUo5zgyNGSARoKL20vMDRzeHpoORAB",
   "lux-place-darmes": "ChgI3o2i5rCr5bkUGgwvZy8xMmNwOXpqNHIQAQ",
   "lux-le-royal": "ChcIq97N9M_jxt8dGgsvZy8xd2s3cHQycBAB",
-  "lux-sofitel-grand-ducal": "ChcIhOnBvqn9ocZsGgsvZy8xdGNfazF4eRAB",
   "lux-cravat": "ChcI7-3ejsP8_44sGgsvZy8xdGY2X3dreBAB",
-  "lux-parc-beaux-arts": "ChgI5q-unZ7Z1dehARoLL2cvMXRmOXhidnEQAQ",
   "lux-simoncini": "ChcIg8_x8qLcvvpxGgsvZy8xd3J0YnNfYhAB",
   "lux-vauban": "ChgI6_bRt5HXwaHoARoLL2cvMXRwMXhybHcQAQ",
   "lux-ibis-styles-gare": "ChgI_vuizvKin77DARoLL2cvMXRkZHIzcTQQAQ",
   "ber-adlon": "ChUI2f3tmL_9t_IZGgkvbS8wOG1mdzIQAQ",
-  "ber-ritz-carlton": "ChgIveLHqY3365ykARoLL2cvMTIzMjYwN3gQAQ",
   "ber-waldorf-astoria": "ChcIlb2fkJjIvrVsGgsvbS8wMTEzZmJ6ahAB",
   "ber-oderberger": "ChcI0drKnIvrtYx_GgsvZy8xMjE3NWxrZBAB",
-  "ber-provocateur": "ChkIhsDnuc3p8tcQGg0vZy8xMWoyZm1rZF85EAE",
   "ber-motel-one-hackescher": "ChcIkoW7-aXHse84GgsvZy8xdGRmYjQxNxAB",
   "ber-premier-inn-alex": "ChkI9rmNhYGcxIN6Gg0vZy8xMXN3em1zbTd4EAE",
   "vie-sacher": "ChUIiKX-t_ztvJZOGgkvbS8wN19iOTgQAQ",
@@ -78,13 +73,10 @@
   "rom-hotel-locarno": "ChcIsfiF7P-C2vcUGgsvZy8xdGY1Z3dzdhAB",
   "rom-hotel-campo-de-fiori": "ChkI_oa4gICd58izARoML2cvMTF4bnJjXzIxEAE",
   "rom-hotel-panda": "ChgI7fGD7v7L-u26ARoLL2cvMXg1Y3duX2oQAQ",
-  "vlt-the-phoenicia": "ChoIrvDVwsDQpNrwARoNL2cvMTFieDFidnk2YxAB",
-  "vlt-rosselli": "ChkIvdDQo5eE4aRfGg0vZy8xMWYzdmNsNmdoEAE",
   "vlt-iniala-harbour-house": "ChkI7tHNv4Ss-LZRGg0vZy8xMWgwM2diOTVkEAE",
   "vlt-casa-ellul": "ChkIhfrQ1rvIpdxpGg0vZy8xMWI1eW5tZDdwEAE",
   "vlt-ursulino": "ChoI1ZHKtM70lJzrARoNL2cvMTFieXA4MDNjehAB",
   "vlt-osborne-hotel": "ChcIgdyrqrX0_a0sGgsvZy8xdGQ2XzZoXxAB",
-  "ath-grande-bretagne": "ChcIy6qXuMTLmZOxARoKL20vMDI2eWN5XxAB",
   "ath-electra-metropolis": "ChoIns6eg4eD8ZbsARoNL2cvMTFidzQwODJzZBAB",
   "ath-athenswas": "ChoInd6tjsPlo-SEARoNL2cvMTFiNzc2bDc5dhAB",
   "ath-ava-hotel": "ChcI1r-GoqypnaQ0GgsvZy8xdGt4ajlyOBAB",
@@ -92,7 +84,6 @@
   "ath-herodion": "ChcIvYKjlK_D4NQwGgsvZy8xdHh2N3FxaxAB",
   "ath-phaedra": "ChcIpLKz7pfD2fVLGgsvZy8xdGhscTd4chAB",
   "ath-attalos": "ChgIiLz90J_R-KiTARoLL2cvMXRkOGc5MngQAQ",
-  "sto-grand-hotel": "ChYI5_jTmO_81e2MARoJL20vMGRtXzJyEAE",
   "sto-hotel-diplomat": "ChgIp8KDv5S579dqGgwvZy8xMWR5bGNydmQQAQ",
   "sto-lydmar": "ChkI7tKl0s7Jp8b-ARoML2cvMTFkeWo4cDlnEAE",
   "sto-miss-clara": "ChgI4_jxsuTV-dUnGgwvZy8xcTVncnB3bWIQAQ",
@@ -120,7 +111,6 @@
   "tll-go-hotel-shnelli": "ChkInLCfvZH8k7EwGg0vZy8xMWdjajloX3JnEAE",
   "tll-tallink-express": "ChoImNLlmaWR1-zpARoNL2cvMTFkZjF2c3Z0ZhAB",
   "rix-grand-palace": "ChYI-tj4nOvB8bY4GgovbS8wZHJ3NmdzEAE",
-  "rix-kempinski": "ChcInJjxkdqC6NI_GgsvZy8xdGN2MDNkNhAB",
   "rix-hotel-bergs": "ChcI0fib2sP2__MxGgsvZy8xdGQzcTU5bRAB",
   "rix-neiburgs": "ChkIt-n56JSp3uiTARoML2cvMWhjMjh2OF95EAE",
   "rix-pullman-old-town": "ChoI6b_PruDZ9IqcARoNL2cvMTFjbTE3dDI0dhAB",
@@ -181,7 +171,6 @@
   "sof-art-plaza": "ChkI0OKP857GzpxzGg0vZy8xMWI2Mzg4ZjB4EAE",
   "par-du-cygne": "ChcIp76F8MTBu_tTGgsvZy8xdGRjX18zNBAB",
   "lis-memmo-alfama": "ChgI4--UnavF4akXGgwvZy8xaG01YnJ6NXMQAQ",
-  "rom-hotel-eden": "ChkIm-e-sLTNq9yqARoML2cvMXlsNDlkd2hfEAE",
   "cph-nimb": "ChYI28rkxKGDvskgGgovbS8wNnc5MG5qEAE",
   "cph-ottilia": "ChkIwpf1_urV1cpGGg0vZy8xMWZ6c3h4NTE5EAE",
   "tll-hotel-cru": "ChcI7rzD3bf9hKs1GgsvZy8xdG5jcmtobhAB",
@@ -226,7 +215,17 @@
   "sjj-aziza": "ChkIhY6e18n828sdGg0vZy8xMWRkeDRuZ245EAE",
   "sjj-hecco": "ChcIwbjwhN-958gzGgsvZy8xdGRrcWw2ZBAB",
   "sjj-kovaci": "ChgI98f8mcnTnPoyGgwvZy8xaGM3eHhiODUQAQ",
-  "sjj-stari-grad": "ChoQyZKS4rr-rqLQARoNL2cvMTFudHQ2Y3MzORAC"
+  "sjj-stari-grad": "ChoQyZKS4rr-rqLQARoNL2cvMTFudHQ2Y3MzORAC",
+  "bru-motel-one": "ChoIzo69m7Xd9_v5ARoNL2cvMTFiNjIwZmwwdBAB",
+  "ath-grande-bretagne": "ChcIy6qXuMTLmZOxARoKL20vMDI2eWN5XxAB",
+  "rix-kempinski": "ChcInJjxkdqC6NI_GgsvZy8xdGN2MDNkNhAB",
+  "lux-parc-beaux-arts": "ChgI5q-unZ7Z1dehARoLL2cvMXRmOXhidnEQAQ",
+  "lux-sofitel-grand-ducal": "ChcIhOnBvqn9ocZsGgsvZy8xdGNfazF4eRAB",
+  "rom-hotel-eden": "ChkIm-e-sLTNq9yqARoML2cvMXlsNDlkd2hfEAE",
+  "ber-provocateur": "ChkIhsDnuc3p8tcQGg0vZy8xMWoyZm1rZF85EAE",
+  "vlt-rosselli": "ChkIvdDQo5eE4aRfGg0vZy8xMWYzdmNsNmdoEAE",
+  "sto-grand-hotel": "ChYI5_jTmO_81e2MARoJL20vMGRtXzJyEAE",
+  "vlt-the-phoenicia": "ChoIrvDVwsDQpNrwARoNL2cvMTFieDFidnk2YxAB"
  },
  "konum": {
   "dub-shelbourne": [
@@ -1124,30 +1123,30 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 26.69
+  "usd": 31.99
  },
  "sonCalisma": {
-  "tarih": "2026-11-08T17:46:48.609Z",
-  "mod": "hepsi",
-  "hafta_sonu": 13,
-  "kontrol": 2919,
-  "fiyatli": 2569,
-  "dogrulanamadi": 78,
-  "supheli": 66,
+  "tarih": "2026-11-09T11:38:05.842Z",
+  "mod": "takvim",
+  "hafta_sonu": 8,
+  "kontrol": 1792,
+  "fiyatli": 1483,
+  "dogrulanamadi": 68,
+  "supheli": 55,
   "vergi": {
-   "dahil": 98,
-   "eklendi": 2448,
-   "bilinmiyor": 167
+   "dahil": 50,
+   "eklendi": 1440,
+   "bilinmiyor": 116
   },
-  "tahminiMaliyetUsd": 8.7,
+  "tahminiMaliyetUsd": 5.3,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 55.93,
+  "usd": 64.29,
   "sinir": 75,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-08T17:46:48.609Z"
+  "kontrol": "2026-11-09T11:38:05.842Z"
  },
  "olcumler": [
   {
@@ -1212,6 +1211,13 @@
    "sorgu": 2899,
    "usd": 8.34,
    "sorguBasi": 0.00288
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-09T11:38:05.842Z",
+   "sorgu": 1767,
+   "usd": 4.99,
+   "sorguBasi": 0.00282
   }
  ],
  "sehirler": {
@@ -1242,6 +1248,15 @@
   "Bükreş": "data/fiyatlar/bukres.json",
   "Sofya": "data/fiyatlar/sofya.json",
   "Belgrad": "data/fiyatlar/belgrad.json",
-  "Saraybosna": "data/fiyatlar/saraybosna.json"
+  "Saraybosna": "data/fiyatlar/saraybosna.json",
+  "Londra": "data/fiyatlar/londra.json",
+  "Bern": "data/fiyatlar/bern.json",
+  "Oslo": "data/fiyatlar/oslo.json",
+  "Reykjavik": "data/fiyatlar/reykjavik.json",
+  "Kişinev": "data/fiyatlar/kisinev.json",
+  "Podgorica": "data/fiyatlar/podgorica.json",
+  "Üsküp": "data/fiyatlar/uskup.json",
+  "Tiran": "data/fiyatlar/tiran.json",
+  "Priştine": "data/fiyatlar/pristine.json"
  }
 }
