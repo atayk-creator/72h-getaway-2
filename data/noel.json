@@ -17,8 +17,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.1,
-  "zorla": true
+  "son_maliyet_usd": 0.13
  },
  "kaynaklar": [
   {
@@ -340,7 +339,7 @@
      "ad": "Louis Hotel",
      "kategori": "pahali",
      "arama": "Louis Hotel Munich Viktualienmarkt",
-     "toplam": 1528
+     "toplam": 1463
     },
     {
      "ad": "Hotel Torbräu",
@@ -505,7 +504,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 257,
      "transfer": 29,
      "otel": 530,
      "ulasim": 12,
@@ -513,7 +512,7 @@
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 257,
      "transfer": 29,
      "otel": 144,
      "ulasim": 12,
@@ -526,10 +525,48 @@
     "ucuz": "ibis München City"
    },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
-    "seviye": "normal",
-    "normal_aralik": ""
+    "oneri": {
+     "fiyat": 257,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Münih (MUC)",
+     "gidis": "Cuma SAW 08:40 → MUC 09:25 (PC1019)",
+     "donus": "Pazar MUC 18:00 → SAW 22:40"
+    },
+    "secenekler": [
+     {
+      "fiyat": 257,
+      "havayolu": "Pegasus",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 10:45 dönüş"
+     },
+     {
+      "fiyat": 257,
+      "havayolu": "AJet gidiş + Pegasus dönüş",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 10:45 dönüş"
+     },
+     {
+      "fiyat": 274,
+      "havayolu": "Pegasus gidiş + AJet dönüş",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 13:40 dönüş"
+     },
+     {
+      "fiyat": 275,
+      "havayolu": "AJet",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 13:40 dönüş"
+     },
+     {
+      "fiyat": 300,
+      "havayolu": "THY",
+      "havalimani": "Münih",
+      "not": "Cuma IST 10:30 → MUC 11:15"
+     }
+    ],
+    "seviye": "yuksek",
+    "normal_aralik": "120–255 €"
    },
    "foto": "/img/sehir/munih-noel.jpg",
    "foto_alt": "Münih, Marienplatz'taki Noel pazarı, gece",
@@ -853,7 +890,7 @@
      "ad": "Original Sokos Hotel Vaakuna",
      "kategori": "konforlu",
      "arama": "Original Sokos Hotel Vaakuna Rovaniemi",
-     "toplam": 1290
+     "toplam": 1269
     },
     {
      "ad": "Scandic Rovaniemi City",
@@ -1289,7 +1326,7 @@
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 261,
+     "ucus": 250,
      "transfer": 9,
      "otel": 76,
      "ulasim": 6,
@@ -1312,7 +1349,7 @@
     },
     "secenekler": [
      {
-      "fiyat": 261,
+      "fiyat": 250,
       "havayolu": "THY gidiş + LOT dönüş",
       "havalimani": "Krakov",
       "not": "Cuma IST 08:00 → KRK 08:20, Pazar 06:40 dönüş"
