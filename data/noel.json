@@ -558,7 +558,7 @@
     "seviye": "dusuk",
     "normal_aralik": "125–230 €"
    },
-   "foto": null,
+   "foto": "/img/sehir/dresden-noel.jpg",
    "havalimani_tercih": "BER",
    "ucus_saat": "5-12",
    "trenler": [
@@ -698,7 +698,9 @@
       "fiyat": 29.99
      }
     }
-   ]
+   ],
+   "foto_alt": "Dresden eski şehir, Frauenkirche'ye uzanan sokak",
+   "foto_kaynak": "Unsplash · Ruben Hanssen"
   },
   {
    "id": "salzburg",
@@ -937,7 +939,9 @@
     "seviye": "normal",
     "normal_aralik": "210–350 €"
    },
-   "foto": null
+   "foto": "/img/sehir/salzburg-noel.jpg",
+   "foto_alt": "Salzburg, Hohensalzburg Kalesi ve eski şehir",
+   "foto_kaynak": "Unsplash · Erik Odiin"
   },
   {
    "id": "gdansk",
@@ -1182,7 +1186,9 @@
     "seviye": "normal",
     "normal_aralik": "175–255 €"
    },
-   "foto": null
+   "foto": "/img/sehir/gdansk-noel.jpg",
+   "foto_alt": "Gdańsk eski şehir ve St. Mary Kilisesi, kuşbakışı",
+   "foto_kaynak": "Unsplash · Sebastian Huber"
   },
   {
    "id": "munih",
@@ -2249,7 +2255,9 @@
     "seviye": "yuksek",
     "normal_aralik": "165–240 €"
    },
-   "foto": null
+   "foto": "/img/sehir/krakov-noel.jpg",
+   "foto_alt": "Krakov Ana Meydan ve Kumaş Hali, gün batımı",
+   "foto_kaynak": "Unsplash · Lucas Albuquerque"
   },
   {
    "id": "brugge",
@@ -2497,7 +2505,9 @@
     "seviye": "normal",
     "normal_aralik": "150–250 €"
    },
-   "foto": null
+   "foto": "/img/sehir/brugge-noel.jpg",
+   "foto_alt": "Brugge'de kanal ve tuğla evler",
+   "foto_kaynak": "Unsplash · Suhail Kazi"
   },
   {
    "id": "edinburgh",
@@ -2743,7 +2753,9 @@
     "seviye": "normal",
     "normal_aralik": "225–375 €"
    },
-   "foto": null
+   "foto": "/img/sehir/edinburgh-noel.jpg",
+   "foto_alt": "Edinburgh Old Town ve Scott Anıtı",
+   "foto_kaynak": "Unsplash · Vishnu Prasad"
   }
  ]
 }

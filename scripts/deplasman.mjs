@@ -227,9 +227,10 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 .mac h4 { margin: 0 0 4px; font-size: 0.98rem; }
 .banner { position: relative; border-radius: 18px; overflow: hidden; min-height: 230px; display: flex; align-items: flex-end; background: #0F2A43; color: #FBF6EC; }
 .banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 25%, rgba(10,31,51,0.92)); }
+.banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(10,31,51,0) 0, rgba(10,31,51,0.15) 70px, rgba(10,31,51,0.78) 130px, rgba(10,31,51,0.94)); }
 .banner.cizgi { background: repeating-linear-gradient(90deg, var(--tk-a) 0 34px, var(--tk-b) 34px 68px) top / 100% 45% no-repeat, var(--tk-b); }
-.bn { position: relative; z-index: 1; padding: 16px 18px; }
+.bn { position: relative; z-index: 1; padding: 104px 18px 16px; text-shadow: 0 1px 3px rgba(0,0,0,0.45); }
+.banner.cizgi .bn { padding-top: 16px; }
 .bn .eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.14em; color: var(--tk-ink); }
 .bn h2 { font-size: clamp(1.4rem, 5vw, 2rem); margin: 4px 0; line-height: 1.1; }
 .bn p { margin: 0; color: #D5DEE8; font-size: 0.92rem; }
