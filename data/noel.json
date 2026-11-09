@@ -17,8 +17,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.13,
-  "zorla": true
+  "son_maliyet_usd": 0.24
  },
  "kaynaklar": [
   {
@@ -347,43 +346,46 @@
      "ad": "Hotel Taschenbergpalais Kempinski",
      "kategori": "ikonik",
      "arama": "Hotel Taschenbergpalais Kempinski Dresden",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Gewandhaus Dresden",
      "kategori": "pahali",
      "arama": "Hotel Gewandhaus Dresden Autograph Collection",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hyperion Hotel Dresden am Schloss",
      "kategori": "konforlu",
      "arama": "Hyperion Hotel Dresden am Schloss",
-     "toplam": null
+     "toplam": 578
     },
     {
      "ad": "NH Collection Dresden Altmarkt",
      "kategori": "konforlu",
      "arama": "NH Collection Dresden Altmarkt",
-     "toplam": null
+     "toplam": 727
     },
     {
      "ad": "Innside by Meliá Dresden",
      "kategori": "konforlu",
      "arama": "Innside by Melia Dresden",
-     "toplam": null
+     "toplam": 772
     },
     {
      "ad": "Motel One Dresden am Zwinger",
      "kategori": "ucuz",
      "arama": "Motel One Dresden am Zwinger",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "ibis Dresden Zentrum",
      "kategori": "ucuz",
      "arama": "ibis Dresden Zentrum",
-     "toplam": null
+     "toplam": 471
     }
    ],
    "havalimani_ulasim": {
@@ -516,7 +518,7 @@
     "konforlu": {
      "ucus": 0,
      "transfer": 7,
-     "otel": 0,
+     "otel": 289,
      "ulasim": 8,
      "yemek": 100,
      "gezi": 20
@@ -524,13 +526,16 @@
     "ucuz": {
      "ucus": 0,
      "transfer": 7,
-     "otel": 0,
+     "otel": 236,
      "ulasim": 8,
      "yemek": 70,
      "gezi": 10
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Hyperion Hotel Dresden am Schloss",
+    "ucuz": "ibis Dresden Zentrum"
+   },
    "ucus": {
     "oneri": null,
     "secenekler": [],
@@ -565,43 +570,47 @@
      "ad": "Hotel Sacher Salzburg",
      "kategori": "ikonik",
      "arama": "Hotel Sacher Salzburg",
-     "toplam": null
+     "toplam": 7369
     },
     {
      "ad": "Hotel Goldener Hirsch",
      "kategori": "pahali",
      "arama": "Hotel Goldener Hirsch Salzburg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Elefant",
      "kategori": "konforlu",
      "arama": "Hotel Elefant Salzburg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Stein",
      "kategori": "konforlu",
      "arama": "Hotel Stein Salzburg",
-     "toplam": null
+     "toplam": 1344
     },
     {
      "ad": "Arthotel Blaue Gans",
      "kategori": "konforlu",
      "arama": "Arthotel Blaue Gans Salzburg",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Motel One Salzburg-Mirabell",
      "kategori": "ucuz",
      "arama": "Motel One Salzburg-Mirabell",
-     "toplam": null
+     "toplam": 501
     },
     {
      "ad": "ibis Salzburg City",
      "kategori": "ucuz",
      "arama": "ibis Salzburg City",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     }
    ],
    "havalimani_ulasim": {
@@ -732,28 +741,45 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 248,
      "transfer": 6,
-     "otel": 0,
+     "otel": 672,
      "ulasim": 6,
      "yemek": 110,
      "gezi": 35
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 248,
      "transfer": 6,
-     "otel": 0,
+     "otel": 251,
      "ulasim": 6,
      "yemek": 80,
      "gezi": 15
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Hotel Stein",
+    "ucuz": "Motel One Salzburg-Mirabell"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 248,
+     "havayolu": "THY",
+     "aktarma": 0,
+     "havalimani": "Salzburg (SZG)",
+     "gidis": "Cuma IST 17:45 → SZG 18:15 (TK1383)",
+     "donus": "Pazar SZG 19:10 → IST 23:40"
+    },
+    "secenekler": [
+     {
+      "fiyat": 248,
+      "havayolu": "THY",
+      "havalimani": "Salzburg",
+      "not": "Cuma IST 17:45 → SZG 18:15, Pazar 19:10 dönüş"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "210–350 €"
    },
    "foto": null
   },
@@ -782,43 +808,48 @@
      "ad": "Hotel Gdańsk Boutique",
      "kategori": "ikonik",
      "arama": "Hotel Gdansk Boutique",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hotel Podewils",
      "kategori": "pahali",
      "arama": "Hotel Podewils Gdansk",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Hilton Gdańsk",
      "kategori": "pahali",
      "arama": "Hilton Gdansk",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "Puro Gdańsk Stare Miasto",
      "kategori": "konforlu",
      "arama": "PURO Gdansk Stare Miasto",
-     "toplam": null
+     "toplam": 645
     },
     {
      "ad": "Mercure Gdańsk Stare Miasto",
      "kategori": "konforlu",
      "arama": "Mercure Gdansk Stare Miasto",
-     "toplam": null
+     "toplam": 312
     },
     {
      "ad": "Hotel Hanza",
      "kategori": "konforlu",
      "arama": "Hotel Hanza Gdansk",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "ibis Gdańsk Stare Miasto",
      "kategori": "ucuz",
      "arama": "ibis Gdansk Stare Miasto",
-     "toplam": null
+     "toplam": null,
+     "eski": true
     }
    ],
    "havalimani_ulasim": {
@@ -954,26 +985,43 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 261,
      "transfer": 4,
-     "otel": 0,
+     "otel": 156,
      "ulasim": 4,
      "yemek": 70,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 261,
      "transfer": 4,
-     "otel": 0,
+     "otel": 156,
      "ulasim": 4,
      "yemek": 50,
      "gezi": 8
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Mercure Gdańsk Stare Miasto",
+    "ucuz": "Mercure Gdańsk Stare Miasto"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 261,
+     "havayolu": "LOT",
+     "aktarma": 0,
+     "havalimani": "Gdańsk (GDN)",
+     "gidis": "Cuma IST 12:50 → GDN 13:40 (LO2302)",
+     "donus": null
+    },
+    "secenekler": [
+     {
+      "fiyat": 261,
+      "havayolu": "LOT",
+      "havalimani": "Gdańsk",
+      "not": "Cuma IST 12:50 → GDN 13:40"
+     }
+    ],
     "seviye": "normal",
     "normal_aralik": ""
    },
@@ -1299,7 +1347,7 @@
      "ad": "Hôtel Gutenberg",
      "kategori": "konforlu",
      "arama": "Hotel Gutenberg Strasbourg",
-     "toplam": 1023
+     "toplam": 929
     },
     {
      "ad": "Hôtel Cathédrale",
@@ -1841,7 +1889,7 @@
      "ad": "Hotel Saski",
      "kategori": "konforlu",
      "arama": "Hotel Saski Krakow",
-     "toplam": 484
+     "toplam": 483
     },
     {
      "ad": "Mercure Kraków Stare Miasto",
@@ -2072,43 +2120,43 @@
      "ad": "Hotel Dukes' Palace",
      "kategori": "ikonik",
      "arama": "Hotel Dukes Palace Brugge",
-     "toplam": null
+     "toplam": 924
     },
     {
      "ad": "Hotel Heritage",
      "kategori": "pahali",
      "arama": "Hotel Heritage Bruges",
-     "toplam": null
+     "toplam": 1092
     },
     {
      "ad": "Hotel Navarra",
      "kategori": "konforlu",
      "arama": "Hotel Navarra Brugge",
-     "toplam": null
+     "toplam": 577
     },
     {
      "ad": "NH Brugge",
      "kategori": "konforlu",
      "arama": "NH Brugge",
-     "toplam": null
+     "toplam": 449
     },
     {
      "ad": "Martin's Brugge",
      "kategori": "konforlu",
      "arama": "Martin's Brugge",
-     "toplam": null
+     "toplam": 402
     },
     {
      "ad": "ibis Brugge Centrum",
      "kategori": "ucuz",
      "arama": "ibis Brugge Centrum",
-     "toplam": null
+     "toplam": 350
     },
     {
      "ad": "Hotel Montanus",
      "kategori": "pahali",
      "arama": "Hotel Montanus Brugge",
-     "toplam": null
+     "toplam": 518
     }
    ],
    "havalimani_ulasim": {
@@ -2246,7 +2294,7 @@
     "konforlu": {
      "ucus": 0,
      "transfer": 42,
-     "otel": 0,
+     "otel": 201,
      "ulasim": 5,
      "yemek": 115,
      "gezi": 30
@@ -2254,13 +2302,16 @@
     "ucuz": {
      "ucus": 0,
      "transfer": 42,
-     "otel": 0,
+     "otel": 175,
      "ulasim": 5,
      "yemek": 85,
      "gezi": 15
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Martin's Brugge",
+    "ucuz": "ibis Brugge Centrum"
+   },
    "ucus": {
     "oneri": null,
     "secenekler": [],
@@ -2295,43 +2346,43 @@
      "ad": "The Balmoral",
      "kategori": "ikonik",
      "arama": "The Balmoral Hotel Edinburgh",
-     "toplam": null
+     "toplam": 1812
     },
     {
      "ad": "Kimpton Charlotte Square",
      "kategori": "pahali",
      "arama": "Kimpton Charlotte Square Hotel Edinburgh",
-     "toplam": null
+     "toplam": 755
     },
     {
      "ad": "Hotel Indigo Edinburgh Princes Street",
      "kategori": "konforlu",
      "arama": "Hotel Indigo Edinburgh Princes Street",
-     "toplam": null
+     "toplam": 515
     },
     {
      "ad": "Radisson Blu Hotel Edinburgh",
      "kategori": "konforlu",
      "arama": "Radisson Blu Hotel Edinburgh Royal Mile",
-     "toplam": null
+     "toplam": 679
     },
     {
      "ad": "Motel One Edinburgh-Royal",
      "kategori": "konforlu",
      "arama": "Motel One Edinburgh-Royal",
-     "toplam": null
+     "toplam": 406
     },
     {
      "ad": "ibis Edinburgh Centre South Bridge",
      "kategori": "ucuz",
      "arama": "ibis Edinburgh Centre South Bridge Royal Mile",
-     "toplam": null
+     "toplam": 355
     },
     {
      "ad": "Motel One Edinburgh-Princes",
      "kategori": "ucuz",
      "arama": "Motel One Edinburgh-Princes",
-     "toplam": null
+     "toplam": 395
     }
    ],
    "havalimani_ulasim": {
@@ -2467,28 +2518,51 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 0,
+     "ucus": 316,
      "transfer": 15,
-     "otel": 0,
+     "otel": 203,
      "ulasim": 6,
      "yemek": 125,
      "gezi": 40
     },
     "ucuz": {
-     "ucus": 0,
+     "ucus": 316,
      "transfer": 15,
-     "otel": 0,
+     "otel": 178,
      "ulasim": 6,
      "yemek": 90,
      "gezi": 15
     }
    },
-   "secim": {},
+   "secim": {
+    "konforlu": "Motel One Edinburgh-Royal",
+    "ucuz": "ibis Edinburgh Centre South Bridge"
+   },
    "ucus": {
-    "oneri": null,
-    "secenekler": [],
+    "oneri": {
+     "fiyat": 316,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Edinburgh (EDI)",
+     "gidis": "Cuma SAW 09:25 → EDI 10:55 (PC1187)",
+     "donus": "Pazar EDI 12:00 → SAW 19:20"
+    },
+    "secenekler": [
+     {
+      "fiyat": 316,
+      "havayolu": "Pegasus",
+      "havalimani": "Edinburgh",
+      "not": "Cuma SAW 09:25 → EDI 10:55, Pazar 12:00 dönüş"
+     },
+     {
+      "fiyat": 410,
+      "havayolu": "THY",
+      "havalimani": "Edinburgh",
+      "not": "Cuma IST 08:10 → EDI 09:40"
+     }
+    ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "225–375 €"
    },
    "foto": null
   }
