@@ -14,8 +14,12 @@ for (let i = 0; i < S.length; i += 6) {
       { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 120 }).catch((e) => { console.log("hata", e.message); return []; });
     const fl = rows.filter((r) => r.recordType === "flight");
     console.log(part[0], "…", "deneme", k, "uçuş", fl.length);
-    if (fl.length) { for (const r of rows) (out[r.searchQuery || r.search || r.query || "?"] ||= []).push(r); break; }
+    if (fl.length) {
+      if (i === 0) console.log("ANAHTARLAR", Object.keys(fl[0]).join(","));
+      for (const r of fl) console.log("ROW " + JSON.stringify({ q: r.searchQuery || r.search || r.query || r.searchId || null, gd: r.departureDate, s: r.section, a: r.airline, st: r.stops, p: r.price, t: r.departureTime, v: r.arrivalTime, o: r.origin, d: r.destination, n: r.flightNumbers, ob: r.outboundFlightNumbers, du: r.durationMinutes || r.duration }));
+      break;
+    }
     await sleep(60000);
   }
 }
-await writeFile("hollanda.json", JSON.stringify(out));
+

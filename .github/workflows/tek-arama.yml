@@ -20,8 +20,3 @@ jobs:
       - env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: node scripts/tek-arama.mjs
-      - uses: actions/upload-artifact@v4
-        with:
-          name: sonuc
-          path: hollanda.json
-          retention-days: 1
