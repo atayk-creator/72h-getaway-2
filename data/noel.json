@@ -17,8 +17,7 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.15,
-  "zorla": true
+  "son_maliyet_usd": 0.24
  },
  "kaynaklar": [
   {
@@ -513,16 +512,16 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 796,
-     "transfer": 60,
+     "ucus": 146,
+     "transfer": 114,
      "otel": 289,
      "ulasim": 8,
      "yemek": 100,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 465,
-     "transfer": 60,
+     "ucus": 146,
+     "transfer": 114,
      "otel": 236,
      "ulasim": 8,
      "yemek": 70,
@@ -535,47 +534,29 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 796,
-     "havayolu": "Lufthansa",
-     "aktarma": 2,
-     "havalimani": "Dresden (DRS)",
-     "gidis": "Cuma IST 06:30 → DRS 19:45 (LH1305, LH116, LH2128)",
-     "donus": "Pazar DRS 19:05 → IST 18:10"
+     "fiyat": 146,
+     "havayolu": "Pegasus",
+     "aktarma": 0,
+     "havalimani": "Berlin (BER)",
+     "gidis": "Cuma SAW 07:00 → BER 07:55 (PC981)",
+     "donus": "Pazar BER 19:10 → SAW 00:05"
     },
     "secenekler": [
      {
-      "fiyat": 465,
-      "havayolu": "Lufthansa",
-      "havalimani": "Dresden",
-      "not": "Cuma IST 06:30 → DRS 19:45, Pazar 11:00 dönüş · 2 aktarma"
-     },
-     {
-      "fiyat": 1389,
-      "havayolu": "LOT",
-      "havalimani": "Dresden",
-      "not": "Cuma IST 15:00 → DRS 22:10 · 2 aktarma"
-     },
-     {
-      "fiyat": 1910,
+      "fiyat": 146,
       "havayolu": "Pegasus",
-      "havalimani": "Dresden",
-      "not": "Cuma SAW 14:05 → DRS 22:10 · 3 aktarma"
+      "havalimani": "Berlin",
+      "not": "Cuma SAW 07:00 → BER 07:55, Pazar 19:10 dönüş"
      },
      {
-      "fiyat": 2293,
-      "havayolu": "Aegean",
-      "havalimani": "Dresden",
-      "not": "Cuma IST 11:30 → DRS 19:45 · 2 aktarma"
-     },
-     {
-      "fiyat": 2566,
-      "havayolu": "Azerbaijan Airlines",
-      "havalimani": "Dresden",
-      "not": "Cuma SAW 10:50 → DRS 22:10 · 2 aktarma"
+      "fiyat": 148,
+      "havayolu": "AJet",
+      "havalimani": "Berlin",
+      "not": "Cuma SAW 11:35 → BER 12:40, Pazar 17:05 dönüş"
      }
     ],
-    "seviye": "yuksek",
-    "normal_aralik": "250–445 €"
+    "seviye": "dusuk",
+    "normal_aralik": "125–230 €"
    },
    "foto": null,
    "havalimani_tercih": "BER",
@@ -588,8 +569,66 @@
      "nereye": "Dresden Hbf",
      "tarih": "2026-12-04",
      "saat": "13:00",
-     "fiyat": 30,
-     "not": "Fiyat ilk aramaya kadar tahmini (~30 €)."
+     "fiyat": 57.99,
+     "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
+     "secenekler": [
+      {
+       "kalkis": "13:01",
+       "varis": "16:34",
+       "sure_dk": 213,
+       "aktarma": 2,
+       "tren": "FEX + ICE 691 + RE50",
+       "fiyat": 57.99
+      },
+      {
+       "kalkis": "13:31",
+       "varis": "16:50",
+       "sure_dk": 199,
+       "aktarma": 2,
+       "tren": "RE20 + ICE 1205 + IC 2441",
+       "fiyat": 57.99
+      },
+      {
+       "kalkis": "14:16",
+       "varis": "17:07",
+       "sure_dk": 171,
+       "aktarma": 1,
+       "tren": "FEX + RJ 177",
+       "fiyat": 61.99
+      },
+      {
+       "kalkis": "14:23",
+       "varis": "17:07",
+       "sure_dk": 164,
+       "aktarma": 2,
+       "tren": "RB22 + RB33 + RJ 177",
+       "fiyat": 54.99
+      },
+      {
+       "kalkis": "15:01",
+       "varis": "18:07",
+       "sure_dk": 186,
+       "aktarma": 2,
+       "tren": "FEX + ICE 693 + IC 1933",
+       "fiyat": 64.99
+      },
+      {
+       "kalkis": "15:16",
+       "varis": "18:50",
+       "sure_dk": 214,
+       "aktarma": 2,
+       "tren": "FEX + ICE 1601 + IC 2049",
+       "fiyat": 57.99
+      }
+     ],
+     "secili": {
+      "kalkis": "13:01",
+      "varis": "16:34",
+      "sure_dk": 213,
+      "aktarma": 2,
+      "tren": "FEX + ICE 691 + RE50",
+      "fiyat": 57.99
+     }
     },
     {
      "ad": "Dresden → Berlin Havalimanı (BER)",
@@ -598,8 +637,66 @@
      "nereye": "Flughafen BER",
      "tarih": "2026-12-06",
      "saat": "12:00",
-     "fiyat": 30,
-     "not": "Fiyat ilk aramaya kadar tahmini (~30 €)."
+     "fiyat": 55.99,
+     "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
+     "secenekler": [
+      {
+       "kalkis": "12:53",
+       "varis": "14:43",
+       "sure_dk": 110,
+       "aktarma": 1,
+       "tren": "RJ 382 + FEX",
+       "fiyat": 55.99
+      },
+      {
+       "kalkis": "13:34",
+       "varis": "15:45",
+       "sure_dk": 131,
+       "aktarma": 1,
+       "tren": "IC 2586 + FEX",
+       "fiyat": 40.99
+      },
+      {
+       "kalkis": "14:53",
+       "varis": "16:43",
+       "sure_dk": 110,
+       "aktarma": 1,
+       "tren": "RJ 176 + FEX",
+       "fiyat": 62.99
+      },
+      {
+       "kalkis": "15:35",
+       "varis": "17:04",
+       "sure_dk": 89,
+       "aktarma": 0,
+       "tren": "IC 2174",
+       "fiyat": 29.99
+      },
+      {
+       "kalkis": "16:53",
+       "varis": "18:43",
+       "sure_dk": 110,
+       "aktarma": 1,
+       "tren": "RJ 174 + FEX",
+       "fiyat": 55.99
+      },
+      {
+       "kalkis": "17:35",
+       "varis": "19:05",
+       "sure_dk": 90,
+       "aktarma": 0,
+       "tren": "IC 2172",
+       "fiyat": 26.99
+      }
+     ],
+     "secili": {
+      "kalkis": "12:53",
+      "varis": "14:43",
+      "sure_dk": 110,
+      "aktarma": 1,
+      "tren": "RJ 382 + FEX",
+      "fiyat": 55.99
+     }
     }
    ]
   },
@@ -668,8 +765,7 @@
      "ad": "ibis Salzburg City",
      "kategori": "ucuz",
      "arama": "ibis Salzburg City",
-     "toplam": null,
-     "eski": true
+     "toplam": 298
     }
    ],
    "havalimani_ulasim": {
@@ -1083,7 +1179,7 @@
      }
     ],
     "seviye": "normal",
-    "normal_aralik": ""
+    "normal_aralik": "175–255 €"
    },
    "foto": null
   },
@@ -1126,13 +1222,13 @@
      "ad": "Louis Hotel",
      "kategori": "pahali",
      "arama": "Louis Hotel Munich Viktualienmarkt",
-     "toplam": 1463
+     "toplam": 1502
     },
     {
      "ad": "Hotel Torbräu",
      "kategori": "konforlu",
      "arama": "Hotel Torbräu Munich",
-     "toplam": 1060
+     "toplam": 1052
     },
     {
      "ad": "Mercure Hotel München Altstadt",
@@ -1293,7 +1389,7 @@
     "konforlu": {
      "ucus": 257,
      "transfer": 29,
-     "otel": 530,
+     "otel": 526,
      "ulasim": 12,
      "yemek": 120,
      "gezi": 15
@@ -2188,7 +2284,7 @@
      "ad": "Hotel Heritage",
      "kategori": "pahali",
      "arama": "Hotel Heritage Bruges",
-     "toplam": 1092
+     "toplam": 1020
     },
     {
      "ad": "Hotel Navarra",
