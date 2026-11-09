@@ -1,13 +1,14 @@
 {
  "aciklama": "Noel 'şehri' (/sehir/noel/): Aralık hafta sonlarında Noel pazarı şehirleri. Yapı data/fenerbahce.json ile aynı; tur=tema (maç yerine etkinlik, maç bileti yok).",
- "takim": "Noel",
+ "takim": "Noel Tatili",
  "slug": "noel",
  "tur": "tema",
  "etiket": "Noel",
  "turnuva": "Aralık 2026 hafta sonları · Noel pazarı şehirleri",
  "renk": {
   "a": "#C8102E",
-  "b": "#0F3D2E"
+  "b": "#0F3D2E",
+  "ink": "#F6C453"
  },
  "guncellendi": "2026-11-09",
  "robot": {

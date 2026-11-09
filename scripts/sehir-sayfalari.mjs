@@ -602,7 +602,7 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   const eurTry = (d.kur && d.kur.eurTry) || 0;
   for (const t of teams) {
     out[`sehir/${t.slug}/index.html`] = renderTeamPage(t, { today, eurTry, esc, para, fmtTl, fmtEur, head, foot, SITE });
-    out[`deplasman/${t.slug}/index.html`] = renderRedirect(t, SITE);
+    if (t.tur !== "tema") out[`deplasman/${t.slug}/index.html`] = renderRedirect(t, SITE);
   }
   out["sehir/index.html"] = renderIndexPage(models, today, teams.map((t) => teamCard(t, today, { esc, para, eurTry })));
   const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", ...teams.map((t) => `/sehir/${t.slug}/`), ...models.map((m) => `/sehir/${m.slug}/`)];

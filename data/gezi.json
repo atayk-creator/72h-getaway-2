@@ -9217,6 +9217,626 @@
      ]
     }
    ]
+  },
+  "Münih": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 4.0,
+     "aciklama": "MVV tek bilet (M bölgesi), tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 14,
+     "sure_dk": 40,
+     "aciklama": "Havalimanı → Marienplatz S1/S8 ~40 dk, MVV M–5 tek bilet, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "marienplatz",
+     "ad": "Marienplatz Noel pazarı",
+     "arama": "Christkindlmarkt Marienplatz München",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 50,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Yeni Belediye Sarayı önünde dev Noel ağacı; Münih'in ana pazarı.",
+     "kaynak": null,
+     "konum": [
+      48.1374,
+      11.5755
+     ]
+    },
+    {
+     "id": "residenz",
+     "ad": "Residenz avlu pazarı",
+     "arama": "Weihnachtsdorf im Kaiserhof der Residenz",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Saray avlusunda masal köyü gibi kurulan pazar.",
+     "kaynak": null,
+     "konum": [
+      48.141,
+      11.5786
+     ]
+    },
+    {
+     "id": "frauenkirche",
+     "ad": "Frauenkirche",
+     "arama": "Frauenkirche München",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 25,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Soğan kubbeli iki kulesiyle şehrin simgesi.",
+     "kaynak": null,
+     "konum": [
+      48.1386,
+      11.5736
+     ]
+    },
+    {
+     "id": "stpeter",
+     "ad": "St. Peter kulesi",
+     "arama": "St. Peter Kirche Alter Peter München",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "299 basamakla Marienplatz'a tepeden bakış.",
+     "kaynak": null,
+     "konum": [
+      48.1365,
+      11.5761
+     ]
+    },
+    {
+     "id": "viktualienmarkt",
+     "ad": "Viktualienmarkt",
+     "arama": "Viktualienmarkt München",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Açık hava gıda pazarı.",
+     "kaynak": null,
+     "konum": [
+      48.1351,
+      11.5763
+     ]
+    },
+    {
+     "id": "chinaturm",
+     "ad": "Chinesischer Turm Noel pazarı",
+     "arama": "Weihnachtsmarkt am Chinesischen Turm",
+     "tur": "Pazar",
+     "bolge": "bahce",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Englischer Garten'daki ahşap pagodanın altında.",
+     "kaynak": null,
+     "konum": [
+      48.1527,
+      11.592
+     ]
+    }
+   ]
+  },
+  "Nürnberg": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 3.9,
+     "aciklama": "VGN A bölgesi tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 4,
+     "sure_dk": 12,
+     "aciklama": "Havalimanı → Hauptbahnhof U2 ~12 dk, VGN A bölgesi, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "hauptmarkt",
+     "ad": "Christkindlesmarkt",
+     "arama": "Nürnberger Christkindlesmarkt Hauptmarkt",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Dünyanın en ünlü Noel pazarı; yaklaşık 180 stant.",
+     "kaynak": null,
+     "konum": [
+      49.4539,
+      11.0775
+     ]
+    },
+    {
+     "id": "partner",
+     "ad": "Kardeş şehirler pazarı",
+     "arama": "Markt der Partnerstädte Nürnberg",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Nürnberg'in kardeş şehirlerinin stantları.",
+     "kaynak": null,
+     "konum": [
+      49.4544,
+      11.0782
+     ]
+    },
+    {
+     "id": "kaiserburg",
+     "ad": "Kaiserburg",
+     "arama": "Kaiserburg Nürnberg",
+     "tur": "Kale",
+     "bolge": "kale",
+     "sure_dk": 75,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "İmparatorluk kalesi; surlardan şehir manzarası.",
+     "kaynak": null,
+     "konum": [
+      49.4577,
+      11.0758
+     ]
+    },
+    {
+     "id": "durer",
+     "ad": "Albrecht Dürer Evi",
+     "arama": "Albrecht-Dürer-Haus Nürnberg",
+     "tur": "Müze",
+     "bolge": "kale",
+     "sure_dk": 50,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Rönesans ressamının yaşadığı ev.",
+     "kaynak": null,
+     "konum": [
+      49.4572,
+      11.0731
+     ]
+    },
+    {
+     "id": "weissgerber",
+     "ad": "Weißgerbergasse",
+     "arama": "Weißgerbergasse Nürnberg",
+     "tur": "Yürüyüş",
+     "bolge": "altstadt",
+     "sure_dk": 25,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Ahşap çatkılı evleriyle en güzel sokak.",
+     "kaynak": null,
+     "konum": [
+      49.4547,
+      11.0716
+     ]
+    },
+    {
+     "id": "henkersteg",
+     "ad": "Henkersteg ve Weinstadel",
+     "arama": "Henkersteg Nürnberg",
+     "tur": "Manzara",
+     "bolge": "altstadt",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Pegnitz üzerindeki üstü kapalı köprü.",
+     "kaynak": null,
+     "konum": [
+      49.4527,
+      11.0737
+     ]
+    }
+   ]
+  },
+  "Strazburg": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.1,
+     "aciklama": "CTS tramvay tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 29,
+     "sure_dk": 90,
+     "aciklama": "EuroAirport → 11 nolu otobüs Saint-Louis (3 €) + TER Strazburg, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "broglie",
+     "ad": "Christkindelsmärik, Place Broglie",
+     "arama": "Christkindelsmärik Place Broglie Strasbourg",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 50,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "1570'ten beri kurulan, Fransa'nın en eski Noel pazarı.",
+     "kaynak": null,
+     "konum": [
+      48.5846,
+      7.7497
+     ]
+    },
+    {
+     "id": "katedral",
+     "ad": "Strazburg Katedrali",
+     "arama": "Cathédrale Notre-Dame de Strasbourg",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Gotik katedral ve önündeki pazar; kule ayrı ücretli.",
+     "kaynak": null,
+     "konum": [
+      48.5818,
+      7.7509
+     ]
+    },
+    {
+     "id": "kleber",
+     "ad": "Place Kléber Noel ağacı",
+     "arama": "Grand Sapin Place Kléber Strasbourg",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehrin dev Noel ağacı.",
+     "kaynak": null,
+     "konum": [
+      48.5834,
+      7.7458
+     ]
+    },
+    {
+     "id": "petitefrance",
+     "ad": "Petite France",
+     "arama": "Petite France Strasbourg",
+     "tur": "Yürüyüş",
+     "bolge": "petite",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kanallar ve ahşap çatkılı evler.",
+     "kaynak": null,
+     "konum": [
+      48.5808,
+      7.741
+     ]
+    },
+    {
+     "id": "vauban",
+     "ad": "Barrage Vauban",
+     "arama": "Barrage Vauban Strasbourg",
+     "tur": "Manzara",
+     "bolge": "petite",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Terasından Petite France manzarası.",
+     "kaynak": null,
+     "konum": [
+      48.579,
+      7.7388
+     ]
+    },
+    {
+     "id": "colmar",
+     "ad": "Colmar ve Petite Venise",
+     "arama": "Petite Venise Colmar",
+     "tur": "Gezi",
+     "bolge": "colmar",
+     "sure_dk": 240,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Trenle 30 dk; altı Noel pazarıyla masal köyü.",
+     "kaynak": null,
+     "konum": [
+      48.0736,
+      7.3583
+     ]
+    }
+   ]
+  },
+  "Rovaniemi": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 4.0,
+     "aciklama": "Şehir otobüsü tek bilet, tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 8,
+     "sure_dk": 15,
+     "aciklama": "Havalimanı → merkez Airport Express, bilet otobüste, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "santa",
+     "ad": "Noel Baba Köyü",
+     "arama": "Santa Claus Village Rovaniemi",
+     "tur": "Gezi",
+     "bolge": "kutup",
+     "sure_dk": 180,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kuzey Kutup Dairesi çizgisi, Noel Baba ve postanesi.",
+     "kaynak": null,
+     "konum": [
+      66.5436,
+      25.8472
+     ]
+    },
+    {
+     "id": "santapark",
+     "ad": "SantaPark",
+     "arama": "SantaPark Rovaniemi",
+     "tur": "Eğlence",
+     "bolge": "kutup",
+     "sure_dk": 120,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Mağara içinde Noel temalı park.",
+     "kaynak": null,
+     "konum": [
+      66.532,
+      25.832
+     ]
+    },
+    {
+     "id": "arktikum",
+     "ad": "Arktikum",
+     "arama": "Arktikum Rovaniemi",
+     "tur": "Müze",
+     "bolge": "merkez",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Laponya ve kuzey ışıkları müzesi.",
+     "kaynak": null,
+     "konum": [
+      66.5079,
+      25.7297
+     ]
+    },
+    {
+     "id": "ounasvaara",
+     "ad": "Ounasvaara tepesi",
+     "arama": "Ounasvaara Rovaniemi",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kuzey ışıklarını izlemek için şehre en yakın tepe.",
+     "kaynak": null,
+     "konum": [
+      66.4985,
+      25.774
+     ]
+    },
+    {
+     "id": "kopru",
+     "ad": "Jätkänkynttilä Köprüsü",
+     "arama": "Jätkänkynttilä Bridge Rovaniemi",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Kemijoki üzerinde ışıklı köprü.",
+     "kaynak": null,
+     "konum": [
+      66.4987,
+      25.7155
+     ]
+    },
+    {
+     "id": "kirkko",
+     "ad": "Rovaniemi Kilisesi",
+     "arama": "Rovaniemi Church",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Savaş sonrası yeniden yapılan kilise ve fresk.",
+     "kaynak": null,
+     "konum": [
+      66.4963,
+      25.7313
+     ]
+    }
+   ]
+  },
+  "Krakov": {
+   "para": "EUR",
+   "mac_sehri": true,
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 1.5,
+     "aciklama": "MPK tramvay tek bilet (20 dk), tahmini",
+     "kaynak": null
+    },
+    "gunluk": null,
+    "cok_gunluk": null,
+    "havalimani": {
+     "fiyat": 4.5,
+     "sure_dk": 20,
+     "aciklama": "Havalimanı → Kraków Główny banliyö treni, tahmini",
+     "kaynak": null
+    },
+    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+   },
+   "yerler": [
+    {
+     "id": "rynek",
+     "ad": "Noel pazarı, Rynek Główny",
+     "arama": "Kraków Christmas Market Main Square",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Avrupa'nın en geniş Orta Çağ meydanında Noel pazarı.",
+     "kaynak": null,
+     "konum": [
+      50.0617,
+      19.9373
+     ]
+    },
+    {
+     "id": "mariacki",
+     "ad": "St. Mary Bazilikası",
+     "arama": "St. Mary's Basilica Kraków",
+     "tur": "Kilise",
+     "bolge": "merkez",
+     "sure_dk": 40,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Saat başı kuleden borazan çalınır.",
+     "kaynak": null,
+     "konum": [
+      50.0617,
+      19.9393
+     ]
+    },
+    {
+     "id": "sukiennice",
+     "ad": "Kumaş Hali",
+     "arama": "Sukiennice Kraków",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Meydanın ortasındaki Rönesans çarşısı.",
+     "kaynak": null,
+     "konum": [
+      50.0617,
+      19.9373
+     ]
+    },
+    {
+     "id": "wawel",
+     "ad": "Wawel Tepesi",
+     "arama": "Wawel Royal Castle",
+     "tur": "Kale",
+     "bolge": "wawel",
+     "sure_dk": 90,
+     "fiyat": null,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretli",
+     "bilgi": "Kale ve katedral; avlu ücretsiz, salonlar ücretli.",
+     "kaynak": null,
+     "konum": [
+      50.054,
+      19.9354
+     ]
+    },
+    {
+     "id": "kazimierz",
+     "ad": "Kazimierz",
+     "arama": "Kazimierz Kraków",
+     "tur": "Yürüyüş",
+     "bolge": "kazimierz",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski Yahudi mahallesi, Plac Nowy.",
+     "kaynak": null,
+     "konum": [
+      50.051,
+      19.945
+     ]
+    },
+    {
+     "id": "barbakan",
+     "ad": "Planty ve Barbakan",
+     "arama": "Barbakan Kraków",
+     "tur": "Yürüyüş",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Eski şehir surları ve yeşil kuşak.",
+     "kaynak": null,
+     "konum": [
+      50.0655,
+      19.9417
+     ]
+    }
+   ]
   }
  },
  "harcama": {
