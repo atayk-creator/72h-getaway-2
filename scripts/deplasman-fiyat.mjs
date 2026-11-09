@@ -146,7 +146,8 @@ export function donusDoldur(m, rows) {
   const c = fl.filter((r) => tr(r.airline) === hy && !r.stops && ok(r)).sort((a, b) => a.departureTime.localeCompare(b.departureTime))[0]
     || fl.filter((r) => tr(r.airline) === hy && ok(r))[0];
   if (!c) return false;
-  m.ucus.oneri.donus = `${gun(c.departureDate)} ${c.origin} ${c.departureTime} → ${c.destination} ${c.arrivalTime}${c.flightNumbers ? " (" + c.flightNumbers.join(", ") + ")" : ""}`;
+  const ertesi = c.arrivalTime < c.departureTime ? " (ertesi gün)" : "";
+  m.ucus.oneri.donus = `${gun(c.departureDate)} ${c.origin} ${c.departureTime} → ${c.destination} ${c.arrivalTime}${ertesi}${c.flightNumbers ? " (" + c.flightNumbers.join(", ") + ")" : ""}${c.stops ? " · aktarmalı" : ""}`;
   return true;
 }
 

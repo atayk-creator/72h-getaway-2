@@ -1092,7 +1092,7 @@
    "tarih": "2026-12-05",
    "gidis": "2026-12-04",
    "donus": "2026-12-06",
-   "plan": "Cuma gidiş, Pazar akşam dönüş; 2 gece Gdańsk, Ana Şehir'de (Główne Miasto).",
+   "plan": "Cuma LOT direkt uçuşla gidiş, Pazar aktarmalı dönüş (Varşova'da gece); 2 gece Gdańsk, Ana Şehir'de.",
    "vize": "Schengen vizesi gerekir.",
    "arama_ucus": [
     "IST,SAW-GDN 2026-12-04 2026-12-06"
@@ -1321,7 +1321,7 @@
      "aktarma": 0,
      "havalimani": "Gdańsk (GDN)",
      "gidis": "Cuma IST 12:50 → GDN 13:40 (LO2302)",
-     "donus": "Pazar GDN 14:45 → IST 14:00 (LO3838, LO133)"
+     "donus": "Pazar GDN 14:45 → IST 14:00 (ertesi gün) (LO3838, LO133) · Varşova'da gece aktarmalı"
     },
     "secenekler": [
      {
@@ -1340,7 +1340,8 @@
    "uygun_plan": false,
    "uyarilar": [
     "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 312 €) otelinden pahalı"
-   ]
+   ],
+   "dikkat": "6 Aralık Pazar günü Gdańsk'tan İstanbul'a direkt sefer yok (LOT direkt seferi haftada 4 gün). Pazar dönüşü aktarmalı: LOT 14:45 kalkış, Varşova'da gece aktarma, Pazartesi 14:00 İstanbul; ya da Lufthansa 06:10 kalkış, aynı gün 22:45 İstanbul. Pazartesi için izin gerekebilir."
   },
   {
    "id": "munih",
