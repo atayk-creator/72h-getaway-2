@@ -152,10 +152,15 @@ async function runTeam(slug, token) {
   const flightsOf = {};
   for (const m of list) {
     const lines = m.arama_ucus || []; if (!lines.length) continue;
+    // Apify uçuş aracı art arda aramalarda ara sıra FAILED veriyor: 2 kez bekleyip yeniden dene
+    for (let deneme = 1; deneme <= 3; deneme++) {
     flightsOf[m.id] = await runActor({ searches: lines, adults: 1, cabinClass: "economy", currency: "EUR", market: "TR", language: "en", sortBy: "price",
       maxResultsPerSearch: 30, maxItems: lines.length * 30 + 20, includePriceInsights: true, includeSearchSummary: true, returnFlightsTop: 4, maxConcurrency: 3,
       ...(m.ucus_saat ? { departureTimeRange: m.ucus_saat } : {}) },
       { token, actor: "eiv~google-flights-scraper", sleep, maxPolls: 80 }).catch((e) => { console.log(m.sehir, "uçak hatası:", e.message); return []; });
+    if (flightsOf[m.id].some((r) => r && r.recordType === "flight") || deneme === 3) break;
+    console.log(m.sehir, `uçuş yok, ${deneme + 1}. deneme`); await sleep(20000);
+    }
   }
   const H = (names, g, c, who) => runActor({ hotels: names, checkInDate: g, checkOutDate: c, adults: 2, currency: "EUR", country: "tr", language: "en", maxConcurrency: 8 },
     { token, sleep, maxPolls: 60 }).catch((e) => { console.log(who, "otel hatası:", e.message); return []; });
