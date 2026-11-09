@@ -1,0 +1,526 @@
+{
+ "aciklama": "Beşiktaş deplasman sayfası (/sehir/besiktas/). Yapı data/fenerbahce.json ile aynı.",
+ "takim": "Beşiktaş",
+ "slug": "besiktas",
+ "turnuva": "UEFA Avrupa Ligi 2026-27 · lig aşaması",
+ "renk": {
+  "a": "#FFFFFF",
+  "b": "#111111"
+ },
+ "guncellendi": "2026-11-09",
+ "bilet": {
+  "fiyat": 50,
+  "yazi": "Deplasman tribünü biletleri kulüp üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde fiyatlar çok daha yüksek ve deplasman tribününe giriş garanti değil.",
+  "kaynak": "https://www.cityam.com/?p=2255750"
+ },
+ "robot": {
+  "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
+  "her_kac_gun": 2,
+  "son_arama": null,
+  "butce_payi_usd": 5
+ },
+ "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Beşiktaş Jimnastik Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
+ "maclar": [
+  {
+   "id": "leverkusen",
+   "hafta": 6,
+   "rakip": "Bayer Leverkusen",
+   "sehir": "Köln",
+   "mac_sehri": "Leverkusen",
+   "ulke": "Almanya",
+   "stat": "BayArena",
+   "stat_not": "Leverkusen'de; konaklama 15 dk ötedeki Köln'de.",
+   "tarih": "2026-12-10",
+   "saat_tsi": "23:00",
+   "saat_yerel": "21:00",
+   "gidis": "2026-12-09",
+   "donus": "2026-12-11",
+   "plan": "Konaklama Köln'de (2 gece), maça trenle Leverkusen'e; ulaşım tren.",
+   "foto": null,
+   "vize": "Schengen vizesi gerekir.",
+   "arama_ucus": [
+    "IST,SAW-CGN 2026-12-09 2026-12-11",
+    "IST,SAW-DUS 2026-12-09 2026-12-11"
+   ],
+   "ucus": {
+    "oneri": {
+     "fiyat": null,
+     "havayolu": "",
+     "aktarma": 0,
+     "havalimani": "",
+     "gidis": "",
+     "donus": ""
+    },
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "oteller": [
+    {
+     "ad": "Excelsior Hotel Ernst",
+     "kategori": "ikonik",
+     "arama": "Excelsior Hotel Ernst Köln",
+     "toplam": null
+    },
+    {
+     "ad": "Hyatt Regency Köln",
+     "kategori": "pahali",
+     "arama": "Hyatt Regency Köln",
+     "toplam": null
+    },
+    {
+     "ad": "Dorint Hotel am Heumarkt",
+     "kategori": "pahali",
+     "arama": "Dorint Hotel am Heumarkt Köln",
+     "toplam": null
+    },
+    {
+     "ad": "Hotel Mondial am Dom",
+     "kategori": "konforlu",
+     "arama": "Hotel Mondial am Dom Köln MGallery",
+     "toplam": null
+    },
+    {
+     "ad": "25hours Hotel The Circle",
+     "kategori": "konforlu",
+     "arama": "25hours Hotel The Circle Köln",
+     "toplam": null
+    },
+    {
+     "ad": "NH Collection Köln Mediapark",
+     "kategori": "konforlu",
+     "arama": "NH Collection Köln Mediapark",
+     "toplam": null
+    },
+    {
+     "ad": "Motel One Köln-Altstadt",
+     "kategori": "ucuz",
+     "arama": "Motel One Köln-Altstadt",
+     "toplam": null
+    },
+    {
+     "ad": "ibis Köln Centrum",
+     "kategori": "ucuz",
+     "arama": "ibis Köln Centrum",
+     "toplam": null
+    }
+   ],
+   "trenler": [
+    {
+     "ad": "Köln/Bonn Havalimanı → Köln Hbf",
+     "aktor": "db",
+     "nereden": "Köln/Bonn Flughafen",
+     "nereye": "Köln Hbf",
+     "tarih": "2026-12-09",
+     "saat": "12:00",
+     "fiyat": null,
+     "not": "S-Bahn/RE, ~15 dk. Düsseldorf'a inersen S-Bahn/RE ile Köln ~40 dk."
+    },
+    {
+     "ad": "Köln → Leverkusen (maça)",
+     "aktor": "db",
+     "nereden": "Köln Hbf",
+     "nereye": "Leverkusen Mitte",
+     "tarih": "2026-12-10",
+     "saat": "19:00",
+     "fiyat": null,
+     "not": "VRS 2b bölgesi; tek bilet 5,10 €. Leverkusen Mitte'den stada ~15 dk yürüme."
+    },
+    {
+     "ad": "Leverkusen → Köln (dönüş)",
+     "aktor": "db",
+     "nereden": "Leverkusen Mitte",
+     "nereye": "Köln Hbf",
+     "tarih": "2026-12-10",
+     "saat": "23:15",
+     "fiyat": null,
+     "not": "Maç sonrası; trenler kalabalık."
+    },
+    {
+     "ad": "Köln Hbf → Köln/Bonn Havalimanı",
+     "aktor": "db",
+     "nereden": "Köln Hbf",
+     "nereye": "Köln/Bonn Flughafen",
+     "tarih": "2026-12-11",
+     "saat": "12:00",
+     "fiyat": null,
+     "not": "~15 dk."
+    }
+   ],
+   "sehir_ulasim": {
+    "fiyat": 8,
+    "yazi": "Köln içinde VRS tek bilet 3,80 € (1b), 24 saatlik bilet 9,20 €."
+   },
+   "stada": "Köln Hbf'den S-Bahn/RE ile Leverkusen Mitte ~15 dk, oradan BayArena'ya ~15 dk yürüme. Maç günü trenler sık ve kalabalık.",
+   "akis": [
+    {
+     "gun": "Çarşamba 9 Aralık · Köln",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Köln/Bonn",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Trenle Köln Hbf",
+       "~15 dk"
+      ],
+      [
+       "",
+       "Kölner Dom",
+       "Katedral ücretsiz"
+      ],
+      [
+       "17:00",
+       "Dom önündeki Noel pazarı",
+       "Köln'ün en ünlü Noel pazarı"
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Altstadt'ta brauhaus: Kölsch ve yerel yemekler"
+      ]
+     ]
+    },
+    {
+     "gun": "Perşembe 10 Aralık · maç günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Ren kıyısı ve Hohenzollern Köprüsü",
+       ""
+      ],
+      [
+       "11:30",
+       "Çikolata Müzesi",
+       "Ücretli"
+      ],
+      [
+       "13:30",
+       "Öğle yemeği",
+       "Alter Markt Noel pazarı"
+      ],
+      [
+       "16:00",
+       "Otelde dinlen",
+       ""
+      ],
+      [
+       "19:00",
+       "Tren Köln → Leverkusen Mitte",
+       "~15 dk"
+      ],
+      [
+       "21:00",
+       "Bayer Leverkusen – Beşiktaş",
+       "BayArena · TSİ 23:00"
+      ],
+      [
+       "23:15",
+       "Trenle Köln'e dönüş",
+       ""
+      ]
+     ]
+    },
+    {
+     "gun": "Cuma 11 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Belçika Mahallesi",
+       ""
+      ],
+      [
+       "12:00",
+       "Trenle havalimanına",
+       ""
+      ],
+      [
+       "",
+       "Köln → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Brauhaus (Früh / Gaffel): şnitzel + Kölsch",
+     "Akşam",
+     "~25 €"
+    ],
+    [
+     "Noel pazarı (sıcak şarap + atıştırmalık)",
+     "Ara",
+     "~10 €"
+    ],
+    [
+     "Döner (Köln'de çok)",
+     "Öğle",
+     "~8 €"
+    ],
+    [
+     "Stat çevresinde sosis-sandviç",
+     "Maç",
+     "~6 €"
+    ]
+   ],
+   "gezi": [
+    "Kölner Dom (ücretsiz)",
+    "Noel pazarları: Dom, Alter Markt, Heumarkt (ücretsiz)",
+    "Hohenzollern Köprüsü (ücretsiz)",
+    "Çikolata Müzesi (ücretli)",
+    "Ren kıyısı Altstadt (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 0,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 8,
+     "yemek": 120,
+     "gezi": 20
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 0,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 8,
+     "yemek": 85,
+     "gezi": 5
+    }
+   }
+  },
+  {
+   "id": "lefkosa",
+   "hafta": 8,
+   "rakip": "Omonia",
+   "sehir": "Lefkoşa",
+   "ulke": "Güney Kıbrıs",
+   "stat": "Neo GSP Stadyumu",
+   "stat_not": "Lefkoşa'nın güneyinde (Strovolos).",
+   "tarih": "2027-01-28",
+   "saat_tsi": "23:00",
+   "saat_yerel": "22:00",
+   "gidis": "2027-01-27",
+   "donus": "2027-01-29",
+   "plan": "Larnaka'ya uçuş, 2 gece Lefkoşa (güney).",
+   "foto": null,
+   "vize": "Kıbrıs Cumhuriyeti vizesi gerekir (Schengen vizesi yetmeyebilir); Kuzey'den güneye geçişte de bu vize istenir.",
+   "dikkat": "İstanbul'dan Larnaka'ya direkt uçuş yok, aktarmalı uçmak gerekir. Bu maçta deplasman seyircisine izin ve güvenlik kararı henüz netleşmedi; bilet ve seyahat kararından önce kulübün ve UEFA'nın duyurusunu bekle.",
+   "arama_ucus": [
+    "IST,SAW-LCA 2027-01-27 2027-01-29"
+   ],
+   "ucus": {
+    "oneri": {
+     "fiyat": null,
+     "havayolu": "",
+     "aktarma": 0,
+     "havalimani": "",
+     "gidis": "",
+     "donus": ""
+    },
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "oteller": [
+    {
+     "ad": "Hilton Nicosia",
+     "kategori": "pahali",
+     "arama": "Hilton Nicosia",
+     "toplam": null
+    },
+    {
+     "ad": "Cleopatra Hotel",
+     "kategori": "konforlu",
+     "arama": "Cleopatra Hotel Nicosia",
+     "toplam": null
+    },
+    {
+     "ad": "Classic Hotel",
+     "kategori": "konforlu",
+     "arama": "Classic Hotel Nicosia",
+     "toplam": null
+    },
+    {
+     "ad": "Centrum Hotel",
+     "kategori": "konforlu",
+     "arama": "Centrum Hotel Nicosia",
+     "toplam": null
+    },
+    {
+     "ad": "Asty Hotel",
+     "kategori": "ucuz",
+     "arama": "Asty Hotel Nicosia",
+     "toplam": null
+    },
+    {
+     "ad": "Castelli Hotel",
+     "kategori": "ucuz",
+     "arama": "Castelli Hotel Nicosia",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 16,
+    "yazi": "Larnaka Havalimanı → Lefkoşa: Kapnos Airport Shuttle 8 € (tek yön, ~40 dk). Gidiş-dönüş kişi başı 16 €.",
+    "kaynak": "https://www.myguidecyprus.com/usefulinfo/kapnos-airport-shuttle"
+   },
+   "sehir_ulasim": {
+    "fiyat": 20,
+    "yazi": "Merkez yürünebilir; stada taksi ~15–20 € (gidiş-dönüş paylaşımlı kişi başı ~20 €)."
+   },
+   "stada": "Merkezden taksiyle ~15 dk. Toplu taşıma maç saatinde sınırlı.",
+   "akis": [
+    {
+     "gun": "Çarşamba 27 Ocak · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Larnaka (aktarmalı)",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Kapnos Shuttle → Lefkoşa",
+       "~40 dk · 8 €"
+      ],
+      [
+       "",
+       "Ledra Caddesi ve surlar içi",
+       ""
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Laiki Geitonia"
+      ]
+     ]
+    },
+    {
+     "gun": "Perşembe 28 Ocak · maç günü",
+     "adimlar": [
+      [
+       "10:00",
+       "Kıbrıs Müzesi",
+       "Ücretli"
+      ],
+      [
+       "12:00",
+       "Venedik surları ve Eleftheria Meydanı",
+       ""
+      ],
+      [
+       "13:30",
+       "Öğle yemeği",
+       ""
+      ],
+      [
+       "16:00",
+       "Otelde dinlen",
+       ""
+      ],
+      [
+       "20:30",
+       "Taksiyle stada",
+       ""
+      ],
+      [
+       "22:00",
+       "Omonia – Beşiktaş",
+       "Neo GSP · TSİ 23:00"
+      ]
+     ]
+    },
+    {
+     "gun": "Cuma 29 Ocak · dönüş",
+     "adimlar": [
+      [
+       "",
+       "Kapnos Shuttle → Larnaka",
+       "~40 dk · 8 €"
+      ],
+      [
+       "",
+       "Larnaka → İstanbul (aktarmalı)",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Meze (taverna)",
+     "Akşam",
+     "~25 €"
+    ],
+    [
+     "Souvlaki / pita",
+     "Öğle",
+     "~8 €"
+    ],
+    [
+     "Kafe (Kıbrıs kahvesi + tatlı)",
+     "Ara",
+     "~7 €"
+    ]
+   ],
+   "gezi": [
+    "Ledra Caddesi (ücretsiz)",
+    "Kıbrıs Müzesi (ücretli)",
+    "Venedik surları ve Eleftheria Meydanı (ücretsiz)",
+    "Laiki Geitonia (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 16,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 20,
+     "yemek": 100,
+     "gezi": 10
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 16,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 20,
+     "yemek": 75,
+     "gezi": 5
+    }
+   }
+  }
+ ],
+ "kaynaklar": [
+  {
+   "ad": "Beşiktaş Avrupa Ligi fikstürü (GZT)",
+   "url": "https://www.gzt.com/spor/besiktas-uefa-avrupa-ligi-fiksturu-besiktasin-avrupa-maci-ne-zaman-saat-kacta-bjk-avrupa-ligi-mac-takvimi-4259486"
+  },
+  {
+   "ad": "Omonia – Beşiktaş maç bilgisi (Sporx)",
+   "url": "https://www.sporx.com/omonia-nicosia-besiktas-maci-canli-6112345"
+  },
+  {
+   "ad": "VRS bilet fiyatları 2026",
+   "url": "https://www.vrs.de/fileadmin/01_Tickets/Downloads_und_Informationen/VRS_Flyer_Tickets_2026_neutral_RZ_web.pdf"
+  },
+  {
+   "ad": "Kıbrıs vizesi (EntryBrief)",
+   "url": "https://entrybrief.com/tr-passport/cy/"
+  },
+  {
+   "ad": "Kapnos Airport Shuttle",
+   "url": "https://www.myguidecyprus.com/usefulinfo/kapnos-airport-shuttle"
+  },
+  {
+   "ad": "UEFA deplasman bileti tavanı (City AM)",
+   "url": "https://www.cityam.com/?p=2255750"
+  }
+ ]
+}

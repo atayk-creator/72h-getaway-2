@@ -1203,5 +1203,9 @@
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5
  },
- "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır."
+ "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
+ "renk": {
+  "a": "#F4D30B",
+  "b": "#0F2A43"
+ }
 }

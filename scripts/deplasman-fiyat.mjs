@@ -7,10 +7,11 @@ import { fileURLToPath } from "node:url";
 import { runActor, apifyUsage, istanbulToday } from "./otel-fiyatlari.mjs";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const FILE = root + "data/fenerbahce.json";
+// Takımlar: data/takimlar.json → data/<slug>.json (fenerbahce, galatasaray, besiktas …)
+const TEAMS_FILE = root + "data/takimlar.json";
 const TRUSTED = /booking|expedia|hotels\.com|agoda|trip\.com|priceline/i;
 const AD = { IST: "İstanbul", SAW: "Sabiha Gökçen" };
-const HAV = { LHR: "Heathrow", LGW: "Gatwick", STN: "Stansted", LTN: "Luton", LCY: "London City", VIE: "Viyana", MAD: "Madrid" };
+const HAV = { LHR: "Heathrow", LGW: "Gatwick", STN: "Stansted", LTN: "Luton", LCY: "London City", VIE: "Viyana", MAD: "Madrid", ATH: "Atina", CDG: "Charles de Gaulle", ORY: "Orly", CGN: "Köln/Bonn", DUS: "Düsseldorf", LCA: "Larnaka" };
 const r0 = (n) => Math.round(n);
 const num = (x) => typeof x === "number" && Number.isFinite(x) && x > 0;
 const GUN = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
@@ -38,15 +39,18 @@ export function hotelTotal(r) {
  *  Dönüşü bilinmeyen gidiş de aday olur (dönüş bilgisi boş). */
 export function flightOptions(rows) {
   const fl = rows.filter((r) => r && r.recordType === "flight" && num(r.price));
-  const dep = fl.filter((r) => r.section !== "returning" && r.stops === 0);
-  const ret = fl.filter((r) => r.section === "returning" && r.stops === 0);
+  // Aktarmasız uçuş yoksa (ör. İstanbul–Larnaka) aktarmalılar da aday olur
+  const direkt = fl.some((r) => r.section !== "returning" && r.stops === 0);
+  const ok = (r) => (direkt ? r.stops === 0 : true);
+  const dep = fl.filter((r) => r.section !== "returning" && ok(r));
+  const ret = fl.filter((r) => r.section === "returning" && ok(r));
   const tr = (a) => (a === "Turkish Airlines" ? "THY" : a);
   const make = (r, back) => {
     const ayni = !back || back.airline === r.airline;
     return {
       fiyat: r0(back ? back.price : r.price), havayolu: ayni ? tr(r.airline) : `${tr(r.airline)} gidiş + ${tr(back.airline)} dönüş`,
-      havalimani: HAV[r.destination] || r.destination, kod: r.destination, ayni,
-      not: `${gun(r.departureDate)} ${r.origin} ${r.departureTime} → ${r.destination} ${r.arrivalTime}` + (back ? `, ${gun(back.departureDate)} ${back.departureTime} dönüş` : ""),
+      havalimani: HAV[r.destination] || r.destination, kod: r.destination, ayni, aktarma: Math.max(r.stops || 0, back ? back.stops || 0 : 0),
+      not: `${gun(r.departureDate)} ${r.origin} ${r.departureTime} → ${r.destination} ${r.arrivalTime}` + (back ? `, ${gun(back.departureDate)} ${back.departureTime} dönüş` : "") + (r.stops ? ` · ${r.stops} aktarma` : ""),
       gidis: `${gun(r.departureDate)} ${r.origin} ${r.departureTime} → ${r.destination} ${r.arrivalTime}${r.flightNumbers ? " (" + r.flightNumbers.join(", ") + ")" : ""}`,
       donus: back ? `${gun(back.departureDate)} ${back.origin} ${back.departureTime} → ${back.destination} ${back.arrivalTime}` : null,
       donusSaat: back ? back.departureTime : null,
@@ -69,7 +73,7 @@ export function applyMatch(m, flightRows, hotelRows) {
     const top = uniq.slice(0, 8).map(({ fiyat, havayolu, havalimani, not }) => ({ fiyat, havayolu, havalimani, not }));
     m.ucus.secenekler = top;
     const tekHavayolu = opts.find((o) => o.ayni && (!m.donus_min || (o.donusSaat && o.donusSaat >= m.donus_min))) || opts.find((o) => o.ayni) || opts[0];
-    m.ucus.oneri = { fiyat: tekHavayolu.fiyat, havayolu: tekHavayolu.havayolu, aktarma: 0, havalimani: `${tekHavayolu.havalimani} (${tekHavayolu.kod})`, gidis: tekHavayolu.gidis, donus: tekHavayolu.donus || m.ucus.oneri.donus };
+    m.ucus.oneri = { fiyat: tekHavayolu.fiyat, havayolu: tekHavayolu.havayolu, aktarma: tekHavayolu.aktarma || 0, havalimani: `${tekHavayolu.havalimani} (${tekHavayolu.kod})`, gidis: tekHavayolu.gidis, donus: tekHavayolu.donus || m.ucus.oneri.donus };
     const sum = (flightRows || []).filter((r) => r && r.recordType === "search-summary");
     const lv = sum.map((s) => s.priceLevel).find(Boolean);
     if (lv) m.ucus.seviye = lv === "high" ? "yuksek" : lv === "low" ? "dusuk" : "normal";
@@ -87,6 +91,13 @@ export function applyMatch(m, flightRows, hotelRows) {
     if (t) { h.toplam = t; n++; delete h.eski; } else h.eski = true;
   }
   // Bütçe oteli: secim'de adı verilen otel (yoksa kategorinin en ucuzu); konaklamada gecelerin toplamı
+  // secim yoksa ilk fiyatlı aramada kendiliğinden seçilir: kategorinin en uygunu (konforlu yoksa lüks)
+  for (const { seg } of segs) {
+    const cheapest = (k) => seg.oteller.filter((h) => h.kategori === k && num(h.toplam)).sort((a, b) => a.toplam - b.toplam)[0];
+    seg.secim = seg.secim || {};
+    if (!seg.secim.konforlu) { const h = cheapest("konforlu") || cheapest("pahali"); if (h) seg.secim.konforlu = h.ad; }
+    if (!seg.secim.ucuz) { const h = cheapest("ucuz") || cheapest("konforlu"); if (h) seg.secim.ucuz = h.ad; }
+  }
   const pick = (seg, k) => { const s = seg.secim && seg.secim[k] && seg.oteller.find((h) => h.ad === seg.secim[k]); if (s) return s.toplam;
     const l = seg.oteller.filter((h) => h.kategori === k && !h.eski).map((h) => h.toplam); return l.length ? Math.min(...l) : null; };
   for (const kat of ["konforlu", "ucuz"]) {
@@ -115,6 +126,12 @@ export function applyTrain(t, rows) {
 
 async function main() {
   const token = process.env.APIFY_TOKEN;
+  const slugs = JSON.parse(await readFile(TEAMS_FILE, "utf8")).takimlar || [];
+  for (const slug of slugs) { console.log("== " + slug); await runTeam(slug, token); }
+}
+
+async function runTeam(slug, token) {
+  const FILE = root + `data/${slug}.json`;
   const team = JSON.parse(await readFile(FILE, "utf8"));
   const today = process.env.BUGUN || istanbulToday();
   const list = upcoming(team, today);
@@ -146,8 +163,8 @@ async function main() {
     if (Array.isArray(m.trenler) && m.trenler.length) {
       let ok = 0;
       for (const t of m.trenler) {
-        const rows = await runActor({ from: t.nereden, to: t.nereye, date: t.tarih, time: t.arama_saat || t.saat, adults: 1, sortBy: "DEPARTURE", maxResults: 8 },
-          { token, actor: "jindrich.bar~oebb-ticket-scraper", sleep, maxPolls: 60 }).catch((e) => { console.log("tren hatası:", e.message); return []; });
+        const rows = await runActor(t.aktor === "db" ? { from: t.nereden, to: t.nereye, date: t.tarih, time: t.arama_saat || t.saat, maxResults: 8 } : { from: t.nereden, to: t.nereye, date: t.tarih, time: t.arama_saat || t.saat, adults: 1, sortBy: "DEPARTURE", maxResults: 8 },
+          { token, actor: t.aktor === "db" ? "jindrich.bar~deutsche-bahn-ticket-scraper" : "jindrich.bar~oebb-ticket-scraper", sleep, maxPolls: 60 }).catch((e) => { console.log("tren hatası:", e.message); return []; });
         if (applyTrain(t, rows)) ok++;
       }
       const tr = m.trenler.reduce((a, t) => a + (num(t.fiyat) ? t.fiyat : 0), 0);

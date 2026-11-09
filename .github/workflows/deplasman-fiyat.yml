@@ -4,6 +4,9 @@ name: Deplasman fiyat robotu (Fenerbahçe)
 on:
   schedule:
     - cron: "11 5 * * *" # 08:11 İstanbul
+  push:
+    branches: [main]
+    paths: [data/takimlar.json, scripts/deplasman-fiyat.mjs]
   workflow_dispatch:
     inputs:
       zorla:
@@ -37,7 +40,7 @@ jobs:
         run: |
           git config user.name "otel-fiyat-robotu"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/fenerbahce.json
+          git add $(node -e "console.log(require('./data/takimlar.json').takimlar.map(s=>'data/'+s+'.json').join(' '))")
           git diff --cached --quiet && exit 0
           git commit -m "Deplasman fiyatları güncellendi"
           git pull --rebase --autostash

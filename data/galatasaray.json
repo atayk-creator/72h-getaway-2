@@ -1,0 +1,506 @@
+{
+ "aciklama": "Galatasaray deplasman sayfası (/sehir/galatasaray/). Yapı data/fenerbahce.json ile aynı.",
+ "takim": "Galatasaray",
+ "slug": "galatasaray",
+ "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
+ "renk": {
+  "a": "#FDB912",
+  "b": "#A90432"
+ },
+ "guncellendi": "2026-11-09",
+ "bilet": {
+  "fiyat": 50,
+  "yazi": "Deplasman tribünü biletleri kulüp üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde fiyatlar çok daha yüksek ve deplasman tribününe giriş garanti değil.",
+  "kaynak": "https://www.cityam.com/?p=2255750"
+ },
+ "robot": {
+  "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
+  "her_kac_gun": 2,
+  "son_arama": null,
+  "butce_payi_usd": 5
+ },
+ "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Galatasaray Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
+ "maclar": [
+  {
+   "id": "atina",
+   "hafta": 6,
+   "rakip": "AEK",
+   "sehir": "Atina",
+   "ulke": "Yunanistan",
+   "stat": "OPAP Arena",
+   "stat_not": "Nea Filadelfeia'da, Syntagma'ya ~8 km.",
+   "tarih": "2026-12-08",
+   "saat_tsi": "23:00",
+   "saat_yerel": "22:00",
+   "gidis": "2026-12-07",
+   "donus": "2026-12-09",
+   "plan": "Maçtan bir gün önce gidiş, ertesi gün dönüş; 2 gece Atina.",
+   "foto": "/img/sehir/atina-2.jpg",
+   "foto_alt": "Atina, Akropolis'teki Parthenon",
+   "foto_kaynak": "Pexels",
+   "vize": "Schengen vizesi gerekir (Yunan adalarındaki kapıda vize Atina için geçerli değil).",
+   "arama_ucus": [
+    "IST,SAW-ATH 2026-12-07 2026-12-09"
+   ],
+   "ucus": {
+    "oneri": {
+     "fiyat": null,
+     "havayolu": "",
+     "aktarma": 0,
+     "havalimani": "",
+     "gidis": "",
+     "donus": ""
+    },
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "oteller": [
+    {
+     "ad": "Hotel Grande Bretagne",
+     "kategori": "ikonik",
+     "arama": "Hotel Grande Bretagne Athens",
+     "toplam": null
+    },
+    {
+     "ad": "Electra Metropolis",
+     "kategori": "pahali",
+     "arama": "Electra Metropolis Athens",
+     "toplam": null
+    },
+    {
+     "ad": "AthensWas Hotel",
+     "kategori": "pahali",
+     "arama": "AthensWas Hotel Athens",
+     "toplam": null
+    },
+    {
+     "ad": "AVA Hotel & Suites",
+     "kategori": "konforlu",
+     "arama": "AVA Hotel and Suites Athens Plaka",
+     "toplam": null
+    },
+    {
+     "ad": "The Modernist Athens",
+     "kategori": "konforlu",
+     "arama": "The Modernist Athens Kolonaki",
+     "toplam": null
+    },
+    {
+     "ad": "Herodion Hotel",
+     "kategori": "konforlu",
+     "arama": "Herodion Hotel Athens",
+     "toplam": null
+    },
+    {
+     "ad": "Phaedra Hotel",
+     "kategori": "ucuz",
+     "arama": "Phaedra Hotel Plaka Athens",
+     "toplam": null
+    },
+    {
+     "ad": "Attalos Hotel",
+     "kategori": "ucuz",
+     "arama": "Attalos Hotel Athens Monastiraki",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 11,
+    "yazi": "Havalimanı → Syntagma: X95 ekspres otobüs 5,50 € (~1 saat) ya da metro (havalimanı bileti, ~40 dk). Gidiş-dönüş kişi başı ~11 € (otobüs)."
+   },
+   "sehir_ulasim": {
+    "fiyat": 8,
+    "yazi": "Atina'da 90 dakikalık bilet 1,20 €, 24 saatlik bilet 4,10 €."
+   },
+   "stada": "Metro 1. hat (yeşil) ile Perissos istasyonu, oradan yürüyerek ya da yerel otobüsle stada. Merkezden taksiyle 25–40 dk; maç öncesi trafik yoğun.",
+   "akis": [
+    {
+     "gun": "Pazartesi 7 Aralık · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Atina",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "Otele yerleş",
+       "Plaka / Monastiraki çevresi"
+      ],
+      [
+       "",
+       "Plaka ve Anafiotika",
+       "Akşam yürüyüşü"
+      ],
+      [
+       "20:30",
+       "Akşam yemeği",
+       "Psiri'de meyhane (taverna)"
+      ]
+     ]
+    },
+    {
+     "gun": "Salı 8 Aralık · maç günü",
+     "adimlar": [
+      [
+       "09:00",
+       "Akropolis",
+       "Erken git, kalabalık az"
+      ],
+      [
+       "11:30",
+       "Akropolis Müzesi",
+       ""
+      ],
+      [
+       "13:30",
+       "Monastiraki",
+       "Öğle: souvlaki"
+      ],
+      [
+       "15:00",
+       "Syntagma ve nöbet değişimi",
+       ""
+      ],
+      [
+       "16:30",
+       "Otelde dinlen",
+       ""
+      ],
+      [
+       "19:00",
+       "Metro 1. hat → Perissos",
+       "Stada yürüme / otobüs"
+      ],
+      [
+       "22:00",
+       "AEK – Galatasaray",
+       "OPAP Arena · TSİ 23:00"
+      ]
+     ]
+    },
+    {
+     "gun": "Çarşamba 9 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı, Likavitos ya da Panatinaiko",
+       ""
+      ],
+      [
+       "",
+       "Havalimanına",
+       "X95 otobüs ~1 saat"
+      ],
+      [
+       "",
+       "Atina → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Monastiraki'de souvlaki/gyros",
+     "Öğle",
+     "~6 €"
+    ],
+    [
+     "Psiri'de taverna",
+     "Akşam",
+     "~22 €"
+    ],
+    [
+     "Plaka'da kafe (Yunan kahvesi + tatlı)",
+     "Ara",
+     "~8 €"
+    ],
+    [
+     "Varvakios Pazarı çevresi",
+     "Öğle",
+     "~12 €"
+    ]
+   ],
+   "gezi": [
+    "Akropolis (giriş ücretli)",
+    "Akropolis Müzesi",
+    "Plaka ve Anafiotika (ücretsiz)",
+    "Monastiraki (ücretsiz)",
+    "Syntagma nöbet değişimi (ücretsiz)",
+    "Likavitos Tepesi"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 11,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 8,
+     "yemek": 110,
+     "gezi": 35
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 11,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 8,
+     "yemek": 80,
+     "gezi": 20
+    }
+   }
+  },
+  {
+   "id": "paris",
+   "hafta": 8,
+   "rakip": "PSG",
+   "sehir": "Paris",
+   "ulke": "Fransa",
+   "stat": "Parc des Princes",
+   "stat_not": "Paris'in batısında, 16. bölge.",
+   "tarih": "2027-01-27",
+   "saat_tsi": "23:00",
+   "saat_yerel": "21:00",
+   "gidis": "2027-01-26",
+   "donus": "2027-01-28",
+   "plan": "Maçtan bir gün önce gidiş, ertesi gün dönüş; 2 gece Paris.",
+   "foto": "/img/sehir/paris-1.jpg",
+   "foto_alt": "Paris, Sen nehri üzerinde gün batımı",
+   "foto_kaynak": "Pexels",
+   "vize": "Schengen vizesi gerekir.",
+   "arama_ucus": [
+    "IST,SAW-CDG 2027-01-26 2027-01-28",
+    "IST,SAW-ORY 2027-01-26 2027-01-28"
+   ],
+   "ucus": {
+    "oneri": {
+     "fiyat": null,
+     "havayolu": "",
+     "aktarma": 0,
+     "havalimani": "",
+     "gidis": "",
+     "donus": ""
+    },
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "oteller": [
+    {
+     "ad": "Mandarin Oriental Lutetia",
+     "kategori": "ikonik",
+     "arama": "Mandarin Oriental Lutetia Paris",
+     "toplam": null
+    },
+    {
+     "ad": "Le Meurice",
+     "kategori": "pahali",
+     "arama": "Hotel Le Meurice Paris",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Regina Louvre",
+     "kategori": "pahali",
+     "arama": "Hotel Regina Louvre Paris",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Le Walt",
+     "kategori": "konforlu",
+     "arama": "Hotel Le Walt Paris",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Bachaumont",
+     "kategori": "konforlu",
+     "arama": "Hotel Bachaumont Paris",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Fabric",
+     "kategori": "konforlu",
+     "arama": "Hotel Fabric Paris",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel du Cygne",
+     "kategori": "ucuz",
+     "arama": "Hôtel du Cygne Paris",
+     "toplam": null
+    },
+    {
+     "ad": "Hôtel Chopin",
+     "kategori": "ucuz",
+     "arama": "Hotel Chopin Paris Passage Jouffroy",
+     "toplam": null
+    }
+   ],
+   "havalimani_ulasim": {
+    "fiyat": 28,
+    "yazi": "CDG → merkez RER B ~35 dk, havalimanı bileti 14 €; Orly'den Orlyval/metro. Gidiş-dönüş kişi başı ~28 €."
+   },
+   "sehir_ulasim": {
+    "fiyat": 15,
+    "yazi": "Metro tek bilet 2,55 €, Navigo Jour günlük 12,30 €."
+   },
+   "stada": "Metro 9. hat Porte de Saint-Cloud ya da 10. hat Porte d'Auteuil, stada 5–10 dk yürüme. Paris'te deplasman seyircisi için polis güzergâhı uygulanabilir; kulübün duyurusunu takip et.",
+   "akis": [
+    {
+     "gun": "Salı 26 Ocak · varış",
+     "adimlar": [
+      [
+       "—",
+       "İstanbul → Paris",
+       "Uçuş saatini robot günceller"
+      ],
+      [
+       "",
+       "RER B ile merkeze",
+       ""
+      ],
+      [
+       "",
+       "Le Marais",
+       "Öğleden sonra yürüyüş"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Marché des Enfants Rouges çevresi"
+      ]
+     ]
+    },
+    {
+     "gun": "Çarşamba 27 Ocak · maç günü",
+     "adimlar": [
+      [
+       "09:30",
+       "Louvre (dışarıdan) ve Tuileries",
+       ""
+      ],
+      [
+       "11:30",
+       "Notre-Dame ve Sainte-Chapelle",
+       ""
+      ],
+      [
+       "13:30",
+       "Öğle yemeği",
+       "Saint-Germain'de bistro"
+      ],
+      [
+       "15:00",
+       "Eyfel Kulesi ve Trocadéro",
+       ""
+      ],
+      [
+       "17:00",
+       "Otelde dinlen",
+       ""
+      ],
+      [
+       "19:30",
+       "Metro 9 / 10 → Parc des Princes",
+       ""
+      ],
+      [
+       "21:00",
+       "PSG – Galatasaray",
+       "Parc des Princes · TSİ 23:00"
+      ]
+     ]
+    },
+    {
+     "gun": "Perşembe 28 Ocak · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Montmartre ve Sacré-Cœur",
+       ""
+      ],
+      [
+       "",
+       "Havalimanına",
+       "RER B"
+      ],
+      [
+       "",
+       "Paris → İstanbul",
+       "Uçuş saatini robot günceller"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Marché des Enfants Rouges",
+     "Öğle",
+     "~15 €"
+    ],
+    [
+     "Saint-Germain'de bistro",
+     "Akşam",
+     "~30 €"
+    ],
+    [
+     "Fırından kruvasan + kahve",
+     "Kahvaltı",
+     "~7 €"
+    ],
+    [
+     "Crêpe (sokak)",
+     "Ara",
+     "~6 €"
+    ]
+   ],
+   "gezi": [
+    "Eyfel Kulesi (çıkış ücretli)",
+    "Louvre (ücretli)",
+    "Notre-Dame (ücretsiz)",
+    "Sainte-Chapelle (ücretli)",
+    "Montmartre ve Sacré-Cœur (ücretsiz)",
+    "Le Marais (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 0,
+     "transfer": 28,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 15,
+     "yemek": 140,
+     "gezi": 40
+    },
+    "ucuz": {
+     "ucus": 0,
+     "transfer": 28,
+     "otel": 0,
+     "bilet": 50,
+     "ulasim": 15,
+     "yemek": 100,
+     "gezi": 15
+    }
+   }
+  }
+ ],
+ "kaynaklar": [
+  {
+   "ad": "Galatasaray Şampiyonlar Ligi fikstürü (Fotomaç)",
+   "url": "https://www.fotomac.com.tr/galatasaray/2026/10/08/galatasaray-sampiyonlar-ligi-maclari-ne-zaman"
+  },
+  {
+   "ad": "AEK – Galatasaray maç bilgisi (Sporx)",
+   "url": "https://www.sporx.com/aek-athens-galatasaray-maci-canli-6106403"
+  },
+  {
+   "ad": "PSG – Galatasaray saat ve stat (Sortir à Paris)",
+   "url": "https://www.sortiraparis.com/en/what-to-do-in-paris/sport-wellness/articles/340177-champions-league-paris-saint-germain-vs-galatasaray-which-channel-is-it-on-and-what-time-does-it-start"
+  },
+  {
+   "ad": "UEFA deplasman bileti tavanı (City AM)",
+   "url": "https://www.cityam.com/?p=2255750"
+  }
+ ]
+}
