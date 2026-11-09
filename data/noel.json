@@ -8,7 +8,8 @@
  "renk": {
   "a": "#C8102E",
   "b": "#0F3D2E",
-  "ink": "#F6C453"
+  "ink": "#F6C453",
+  "mk": "#FFFFFF"
  },
  "guncellendi": "2026-11-09",
  "robot": {
@@ -55,13 +56,13 @@
    "pazar_bit": "2026-12-24",
    "pazar_yazi": "27 Kasım – 24 Aralık",
    "pazar_saat": "10:00–21:00",
-   "tarih": "2026-12-05",
-   "gidis": "2026-12-04",
-   "donus": "2026-12-06",
+   "tarih": "2026-12-12",
+   "gidis": "2026-12-11",
+   "donus": "2026-12-13",
    "plan": "Cuma sabah gidiş, Pazar akşam dönüş; 2 gece Nürnberg, surların içinde.",
    "vize": "Schengen vizesi gerekir.",
    "arama_ucus": [
-    "IST,SAW-NUE 2026-12-04 2026-12-06"
+    "IST,SAW-NUE 2026-12-11 2026-12-13"
    ],
    "ucus_saat": "5-14",
    "donus_min": "15:00",
@@ -71,49 +72,43 @@
      "ad": "Le Méridien Grand Hotel Nürnberg",
      "kategori": "ikonik",
      "arama": "Le Meridien Grand Hotel Nuremberg",
-     "toplam": null,
-     "eski": true
+     "toplam": 580
     },
     {
      "ad": "Sorat Hotel Saxx",
      "kategori": "pahali",
      "arama": "Sorat Hotel Saxx Nürnberg Hauptmarkt",
-     "toplam": null,
-     "eski": true
+     "toplam": 693
     },
     {
      "ad": "Hotel Drei Raben",
      "kategori": "konforlu",
      "arama": "Hotel Drei Raben Nuremberg",
-     "toplam": null,
-     "eski": true
+     "toplam": 1354
     },
     {
      "ad": "Hotel Victoria",
      "kategori": "konforlu",
      "arama": "Hotel Victoria Nürnberg",
-     "toplam": null,
-     "eski": true
+     "toplam": 644
     },
     {
      "ad": "NH Collection Nürnberg City",
      "kategori": "konforlu",
      "arama": "NH Collection Nürnberg City",
-     "toplam": 601
+     "toplam": 485
     },
     {
      "ad": "Motel One Nürnberg-Plärrer",
      "kategori": "ucuz",
      "arama": "Motel One Nürnberg-Plärrer",
-     "toplam": null,
-     "eski": true
+     "toplam": 390
     },
     {
      "ad": "ibis Nürnberg Altstadt",
      "kategori": "ucuz",
      "arama": "ibis Nürnberg Altstadt",
-     "toplam": null,
-     "eski": true
+     "toplam": 439
     },
     {
      "ad": "B&B Hotel Nürnberg-City",
@@ -133,7 +128,7 @@
    "pazara": "Hauptmarkt şehrin tam ortasında; Hauptbahnhof'tan Königstraße boyunca 10 dk yürüme. Yanında çocuklara özel Kinderweihnacht ve kardeş şehirler pazarı var.",
    "akis": [
     {
-     "gun": "Cuma 4 Aralık · varış",
+     "gun": "Cuma 11 Aralık · varış",
      "adimlar": [
       [
        "—",
@@ -163,7 +158,7 @@
      ]
     },
     {
-     "gun": "Cumartesi 5 Aralık · pazar günü",
+     "gun": "Cumartesi 12 Aralık · pazar günü",
      "adimlar": [
       [
        "10:00",
@@ -198,7 +193,7 @@
      ]
     },
     {
-     "gun": "Pazar 6 Aralık · dönüş",
+     "gun": "Pazar 13 Aralık · dönüş",
      "adimlar": [
       [
        "10:00",
@@ -252,7 +247,7 @@
     "konforlu": {
      "ucus": 277,
      "transfer": 8,
-     "otel": 301,
+     "otel": 243,
      "ulasim": 8,
      "yemek": 105,
      "gezi": 20
@@ -260,7 +255,7 @@
     "ucuz": {
      "ucus": 277,
      "transfer": 8,
-     "otel": 240,
+     "otel": 195,
      "ulasim": 8,
      "yemek": 75,
      "gezi": 10
@@ -268,7 +263,7 @@
    },
    "secim": {
     "konforlu": "NH Collection Nürnberg City",
-    "ucuz": "B&B Hotel Nürnberg-City"
+    "ucuz": "Motel One Nürnberg-Plärrer"
    },
    "ucus": {
     "oneri": {
@@ -308,7 +303,7 @@
    "yer": "Marienplatz",
    "pazar_bas": "2026-11-20",
    "pazar_bit": "2026-12-24",
-   "pazar_yazi": "20 Kasım – 211 Aralık",
+   "pazar_yazi": "20 Kasım – 24 Aralık",
    "pazar_saat": "10:00–21:00 (Pazar 20:00)",
    "tarih": "2026-12-12",
    "gidis": "2026-12-11",
@@ -1116,65 +1111,67 @@
    "pazar_bit": "2027-01-03",
    "pazar_yazi": "27 Kasım – 3 Ocak",
    "pazar_saat": "10:00–21:00",
-   "tarih": "2026-12-27",
-   "gidis": "2026-12-26",
-   "donus": "2026-12-28",
-   "plan": "Noel'in ertesi günü Cumartesi gidiş, Pazartesi akşam dönüş; 2 gece Krakov, Ana Meydan çevresi. Pazartesi için izin gerekir.",
+   "tarih": "2026-12-26",
+   "gidis": "2026-12-25",
+   "donus": "2026-12-27",
+   "plan": "Noel günü sabah gidiş, Pazar sabah dönüş; 2 gece Krakov, Ana Meydan çevresi. Cuma ve Cumartesi tam gün.",
    "vize": "Schengen vizesi gerekir.",
-   "dikkat": "25–26 Aralık Polonya'da resmî tatil: 26'sında müzelerin çoğu kapalı ya da kısa saatli, Noel pazarı açık. Pazar dönüşleri sabah 06:40–09:15'te olduğu için plan Cumartesi–Pazartesi; dönüş Varşova aktarmalı.",
+   "dikkat": "25–26 Aralık Polonya'da resmî tatil: Noel pazarı açık ama müzelerin ve dükkanların çoğu kapalı ya da kısa saatli. Krakov'dan Pazar dönüşleri sabah: THY 09:15, daha uygun planda LOT 06:40.",
    "arama_ucus": [
-    "IST,SAW-KRK 2026-12-26 2026-12-28"
+    "IST,SAW-KRK 2026-12-25 2026-12-27"
    ],
-   "donus_min": "15:00",
-   "ozet": "Noel'den sonra da açık tek büyük pazar: Avrupa'nın en geniş Orta Çağ meydanında, en uygun fiyatlı Noel hafta sonu.",
+   "ucus_saat": "5-14",
+   "donus_min": "06:00",
+   "ozet": "Noel'den sonra da açık tek büyük pazar: Avrupa'nın en geniş Orta Çağ meydanında, uygun planda listenin en hesaplı Noel hafta sonu.",
    "oteller": [
     {
      "ad": "Hotel Copernicus",
      "kategori": "ikonik",
      "arama": "Hotel Copernicus Krakow",
-     "toplam": 434
+     "toplam": 398
     },
     {
      "ad": "Hotel Stary",
      "kategori": "pahali",
      "arama": "Hotel Stary Krakow",
-     "toplam": 342
+     "toplam": 304
     },
     {
      "ad": "Hotel Wentzl",
      "kategori": "pahali",
      "arama": "Hotel Wentzl Krakow",
-     "toplam": 366
+     "toplam": 441
     },
     {
      "ad": "Hotel Saski",
      "kategori": "konforlu",
      "arama": "Hotel Saski Krakow",
-     "toplam": 625
+     "toplam": 484
     },
     {
      "ad": "Mercure Kraków Stare Miasto",
      "kategori": "konforlu",
      "arama": "Mercure Krakow Stare Miasto",
-     "toplam": 268
+     "toplam": 263
     },
     {
      "ad": "Hotel Pod Wawelem",
      "kategori": "konforlu",
      "arama": "Hotel Pod Wawelem Krakow",
-     "toplam": 245
+     "toplam": 233
     },
     {
      "ad": "Puro Kraków Stare Miasto",
      "kategori": "ucuz",
-     "arama": "PURO Kraków Stare Miasto",
-     "toplam": 247
+     "arama": "Puro Krakow Stare Miasto",
+     "toplam": null,
+     "eski": true
     },
     {
      "ad": "ibis Kraków Stare Miasto",
      "kategori": "ucuz",
      "arama": "ibis Krakow Stare Miasto",
-     "toplam": 169
+     "toplam": 152
     }
    ],
    "havalimani_ulasim": {
@@ -1188,7 +1185,7 @@
    "pazara": "Pazar Ana Meydan'ın (Rynek Główny) ortasında, Kumaş Hali'nin iki yanında; eski şehrin her yerinden 5 dk.",
    "akis": [
     {
-     "gun": "Cumartesi 26 Aralık · varış",
+     "gun": "Cuma 25 Aralık · Noel günü varış",
      "adimlar": [
       [
        "—",
@@ -1223,12 +1220,12 @@
      ]
     },
     {
-     "gun": "Pazar 27 Aralık · pazar günü",
+     "gun": "Cumartesi 26 Aralık · pazar günü",
      "adimlar": [
       [
        "10:00",
        "Wawel Tepesi",
-       "Kale ve katedral"
+       "Kale ve katedral (tatil saatlerini kontrol et)"
       ],
       [
        "12:30",
@@ -1249,31 +1246,26 @@
        "19:30",
        "Akşam yemeği",
        "Eski şehir"
+      ],
+      [
+       "22:00",
+       "Erken yat",
+       "Sabah uçuşu"
       ]
      ]
     },
     {
-     "gun": "Pazartesi 28 Aralık · dönüş",
+     "gun": "Pazar 27 Aralık · dönüş",
      "adimlar": [
       [
-       "10:00",
-       "Kahvaltı, Planty parkı ve Barbakan",
-       "Sur yürüyüşü"
-      ],
-      [
-       "12:00",
-       "Son tur: Kumaş Hali",
-       "Hediyelik"
-      ],
-      [
-       "",
+       "06:30",
        "Havalimanına",
        "Tren ~20 dk"
       ],
       [
        "",
        "Krakov → İstanbul",
-       "Uçuş saatini robot günceller"
+       "THY 09:15 (uygun planda LOT 06:40)"
       ]
      ]
     }
@@ -1310,17 +1302,17 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 253,
+     "ucus": 521,
      "transfer": 9,
-     "otel": 123,
+     "otel": 117,
      "ulasim": 6,
      "yemek": 70,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 239,
+     "ucus": 261,
      "transfer": 9,
-     "otel": 85,
+     "otel": 76,
      "ulasim": 6,
      "yemek": 50,
      "gezi": 8
@@ -1332,62 +1324,31 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 253,
-     "havayolu": "LOT",
-     "aktarma": 1,
+     "fiyat": 521,
+     "havayolu": "THY",
+     "aktarma": 0,
      "havalimani": "Krakov (KRK)",
-     "gidis": "Cumartesi IST 12:10 → KRK 12:25 (LO2102)",
-     "donus": "Pazartesi KRK 18:10 → IST 14:00"
+     "gidis": "Cuma IST 08:00 → KRK 08:20 (TK1271)",
+     "donus": "Pazar KRK 09:15 → IST 13:50"
     },
     "secenekler": [
      {
-      "fiyat": 239,
-      "havayolu": "LOT",
-      "havalimani": "Krakov",
-      "not": "Cumartesi IST 12:10 → KRK 12:25, Pazartesi 05:35 dönüş"
-     },
-     {
-      "fiyat": 271,
+      "fiyat": 261,
       "havayolu": "THY gidiş + LOT dönüş",
       "havalimani": "Krakov",
-      "not": "Cumartesi IST 18:15 → KRK 18:30, Pazartesi 05:35 dönüş"
+      "not": "Cuma IST 08:00 → KRK 08:20, Pazar 06:40 dönüş"
      },
      {
-      "fiyat": 323,
-      "havayolu": "LOT gidiş + THY dönüş",
-      "havalimani": "Krakov",
-      "not": "Cumartesi IST 12:10 → KRK 12:25, Pazartesi 19:25 dönüş"
-     },
-     {
-      "fiyat": 344,
-      "havayolu": "Air Serbia",
-      "havalimani": "Krakov",
-      "not": "Cumartesi IST 17:45 → KRK 19:30 · 1 aktarma"
-     },
-     {
-      "fiyat": 355,
+      "fiyat": 521,
       "havayolu": "THY",
       "havalimani": "Krakov",
-      "not": "Cumartesi IST 18:15 → KRK 18:30, Pazartesi 19:25 dönüş"
-     },
-     {
-      "fiyat": 367,
-      "havayolu": "Lufthansa",
-      "havalimani": "Krakov",
-      "not": "Cumartesi IST 19:05 → KRK 23:05 · 1 aktarma"
-     },
-     {
-      "fiyat": 562,
-      "havayolu": "Pegasus",
-      "havalimani": "Krakov",
-      "not": "Cumartesi SAW 18:45 → KRK 08:20 · 1 aktarma"
+      "not": "Cuma IST 08:00 → KRK 08:20, Pazar 09:15 dönüş"
      }
     ],
-    "seviye": "normal",
+    "seviye": "yuksek",
     "normal_aralik": "165–240 €"
    },
-   "foto": null,
-   "aktarma_ok": true
+   "foto": null
   }
  ]
 }

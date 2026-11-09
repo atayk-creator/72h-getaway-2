@@ -212,7 +212,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 .fbbar { height: 8px; background: repeating-linear-gradient(90deg, var(--tk-a) 0 28px, var(--tk-b) 28px 56px); }
 .mks { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 1fr); gap: 10px; overflow-x: auto; margin: 18px -16px 0; padding: 0 16px 6px; scroll-snap-type: x mandatory; }
 .mk { scroll-snap-align: start; display: grid; gap: 2px; text-decoration: none; color: #FBF6EC; background: rgba(251,246,236,0.07); border: 1.5px solid rgba(251,246,236,0.18); border-radius: 16px; padding: 12px 14px; }
-.mk.ilk { background: var(--tk-a); color: var(--tk-b); border-color: var(--tk-a); }
+.mk.ilk { background: var(--tk-a); color: ${rk.mk || "var(--tk-b)"}; border-color: var(--tk-a); }
 .mk:hover { border-color: var(--tk-a); }
 .mk-eb { font: 700 0.68rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.12em; opacity: .85; }
 .mk-s { font-size: 1.35rem; letter-spacing: -0.01em; }
