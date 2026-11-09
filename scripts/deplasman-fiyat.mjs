@@ -34,33 +34,30 @@ export function hotelTotal(r) {
   return r0(b.totalStayPrice * k);
 }
 
-/** Uçuş satırlarından seçenek listesi: havayolu + havalimanı başına en ucuz aktarmasız gidiş-dönüş, dönüş saatiyle. */
+/** Uçuş satırlarından tüm aktarmasız gidiş-dönüş adayları (gidiş × o gidişin dönüşleri), ucuzdan pahalıya.
+ *  Dönüşü bilinmeyen gidiş de aday olur (dönüş bilgisi boş). */
 export function flightOptions(rows) {
   const fl = rows.filter((r) => r && r.recordType === "flight" && num(r.price));
   const dep = fl.filter((r) => r.section !== "returning" && r.stops === 0);
   const ret = fl.filter((r) => r.section === "returning" && r.stops === 0);
-  const best = {};
   const tr = (a) => (a === "Turkish Airlines" ? "THY" : a);
-  const add = (r, back) => {
-    const price = back ? back.price : r.price, ayni = !back || back.airline === r.airline;
-    const key = (ayni ? r.airline : r.airline + "+" + back.airline) + "|" + r.destination;
-    if (best[key] && best[key].fiyat <= price) return;
-    best[key] = {
-      fiyat: r0(price), havayolu: ayni ? tr(r.airline) : `${tr(r.airline)} gidiş + ${tr(back.airline)} dönüş`,
+  const make = (r, back) => {
+    const ayni = !back || back.airline === r.airline;
+    return {
+      fiyat: r0(back ? back.price : r.price), havayolu: ayni ? tr(r.airline) : `${tr(r.airline)} gidiş + ${tr(back.airline)} dönüş`,
       havalimani: HAV[r.destination] || r.destination, kod: r.destination, ayni,
       not: `${gun(r.departureDate)} ${r.origin} ${r.departureTime} → ${r.destination} ${r.arrivalTime}` + (back ? `, ${gun(back.departureDate)} ${back.departureTime} dönüş` : ""),
       gidis: `${gun(r.departureDate)} ${r.origin} ${r.departureTime} → ${r.destination} ${r.arrivalTime}${r.flightNumbers ? " (" + r.flightNumbers.join(", ") + ")" : ""}`,
       donus: back ? `${gun(back.departureDate)} ${back.origin} ${back.departureTime} → ${back.destination} ${back.arrivalTime}` : null,
+      donusSaat: back ? back.departureTime : null,
     };
   };
+  const all = [];
   for (const r of dep) {
-    const backs = ret.filter((x) => Array.isArray(x.outboundFlightNumbers) && String(x.outboundFlightNumbers) === String(r.flightNumbers)).sort((a, b) => a.price - b.price);
-    if (!backs.length) { add(r, null); continue; }
-    add(r, backs[0]);
-    const same = backs.find((x) => x.airline === r.airline);
-    if (same && same !== backs[0]) add(r, same);
+    const backs = ret.filter((x) => Array.isArray(x.outboundFlightNumbers) && String(x.outboundFlightNumbers) === String(r.flightNumbers));
+    if (!backs.length) all.push(make(r, null)); else for (const b of backs) all.push(make(r, b));
   }
-  return Object.values(best).sort((a, b) => a.fiyat - b.fiyat);
+  return all.sort((x, y) => x.fiyat - y.fiyat);
 }
 
 /** Maçı yeni fiyatlarla günceller; bulunamayan fiyat eskisini korur. Değişen kalemleri döndürür. */
@@ -68,9 +65,10 @@ export function applyMatch(m, flightRows, hotelRows) {
   const log = [];
   const opts = flightOptions(flightRows || []);
   if (opts.length) {
-    const top = opts.slice(0, 8).map(({ fiyat, havayolu, havalimani, not }) => ({ fiyat, havayolu, havalimani, not }));
+    const uniq = []; for (const o of opts) if (!uniq.some((u) => u.havayolu === o.havayolu && u.havalimani === o.havalimani)) uniq.push(o);
+    const top = uniq.slice(0, 8).map(({ fiyat, havayolu, havalimani, not }) => ({ fiyat, havayolu, havalimani, not }));
     m.ucus.secenekler = top;
-    const tekHavayolu = opts.find((o) => o.ayni) || opts[0];
+    const tekHavayolu = opts.find((o) => o.ayni && (!m.donus_min || (o.donusSaat && o.donusSaat >= m.donus_min))) || opts.find((o) => o.ayni) || opts[0];
     m.ucus.oneri = { fiyat: tekHavayolu.fiyat, havayolu: tekHavayolu.havayolu, aktarma: 0, havalimani: `${tekHavayolu.havalimani} (${tekHavayolu.kod})`, gidis: tekHavayolu.gidis, donus: tekHavayolu.donus || m.ucus.oneri.donus };
     const sum = (flightRows || []).filter((r) => r && r.recordType === "search-summary");
     const lv = sum.map((s) => s.priceLevel).find(Boolean);
@@ -86,8 +84,10 @@ export function applyMatch(m, flightRows, hotelRows) {
     const t = hotelTotal(r);
     if (t) { h.toplam = t; n++; delete h.eski; } else h.eski = true;
   }
-  const min = (k) => { const l = m.oteller.filter((h) => h.kategori === k && !h.eski).map((h) => h.toplam); return l.length ? Math.min(...l) : null; };
-  const k = min("konforlu"), u = min("ucuz");
+  // Bütçe oteli: secim'de adı verilen otel (yoksa kategorinin en ucuzu)
+  const pick = (k) => { const s = m.secim && m.secim[k] && m.oteller.find((h) => h.ad === m.secim[k]); if (s) return s.toplam;
+    const l = m.oteller.filter((h) => h.kategori === k && !h.eski).map((h) => h.toplam); return l.length ? Math.min(...l) : null; };
+  const k = pick("konforlu"), u = pick("ucuz");
   if (k) m.butce.konforlu.otel = r0(k / 2);
   if (u) m.butce.ucuz.otel = r0(u / 2);
   log.push(`otel ${n}/${m.oteller.length}`);

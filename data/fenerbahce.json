@@ -161,7 +161,162 @@
     "IST,SAW-LTN 2026-11-25 2026-11-27"
    ],
    "plan": "Maç günü sabah uçuş, en geç 12:00'de Londra'da; 2 gece (çarşamba + perşembe), cuma dönüş.",
-   "ucus_saat": "0-11"
+   "ucus_saat": "0-11",
+   "secim": {
+    "konforlu": "Premier Inn County Hall",
+    "ucuz": "The Z Hotel Piccadilly"
+   },
+   "otel_not": "Premier Inn County Hall Big Ben'in karşısında; Westminster'dan District hattı stada aktarmasız gider.",
+   "akis": [
+    {
+     "gun": "Çarşamba 25 Kasım · maç günü",
+     "adimlar": [
+      [
+       "08:20",
+       "Sabiha Gökçen",
+       "Uçuştan 2 saat önce havalimanında ol"
+      ],
+      [
+       "10:20",
+       "AJet → Stansted",
+       "Londra saatiyle 11:30 iniş"
+      ],
+      [
+       "12:00",
+       "Stansted Express",
+       "Liverpool Street'e 47 dk"
+      ],
+      [
+       "13:00",
+       "Spitalfields'ta öğle yemeği",
+       "Fish & chips ya da sokak lezzetleri"
+      ],
+      [
+       "14:30",
+       "Otele yerleş",
+       "Premier Inn County Hall"
+      ],
+      [
+       "15:00",
+       "Westminster Köprüsü ve Big Ben",
+       "Kısa yürüyüş, fotoğraf molası"
+      ],
+      [
+       "17:15",
+       "District hattı → Fulham Broadway",
+       "Westminster'dan ~25 dk"
+      ],
+      [
+       "17:45",
+       "Maç öncesi yemek",
+       "Fulham Broadway çevresi"
+      ],
+      [
+       "20:00",
+       "Shakhtar – Fenerbahçe",
+       "Stamford Bridge · TSİ 23:00"
+      ]
+     ]
+    },
+    {
+     "gun": "Perşembe 26 Kasım",
+     "adimlar": [
+      [
+       "09:00",
+       "Regency Café",
+       "Klasik İngiliz kahvaltısı"
+      ],
+      [
+       "10:00",
+       "Westminster Abbey",
+       "İsteğe bağlı, 32 £"
+      ],
+      [
+       "11:30",
+       "St James's Park → Buckingham",
+       "Yürüyerek"
+      ],
+      [
+       "12:30",
+       "National Gallery ve Trafalgar",
+       "Ücretsiz"
+      ],
+      [
+       "14:00",
+       "Borough Market",
+       "Öğle yemeği"
+      ],
+      [
+       "15:30",
+       "Tate Modern ve Millennium Köprüsü",
+       "St Paul's manzarası"
+      ],
+      [
+       "18:00",
+       "Covent Garden",
+       "Noel ışıkları"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Dishoom ya da Green Lanes'te ocakbaşı"
+      ]
+     ]
+    },
+    {
+     "gun": "Cuma 27 Kasım · dönüş",
+     "adimlar": [
+      [
+       "08:30",
+       "Kahvaltı ve otelden çıkış",
+       ""
+      ],
+      [
+       "09:45",
+       "Liverpool Street → Stansted",
+       "Stansted Express"
+      ],
+      [
+       "12:30",
+       "AJet → Sabiha Gökçen",
+       "TSİ 19:25 iniş"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Spitalfields Market / fish & chips",
+     "Öğle",
+     "~20 £"
+    ],
+    [
+     "Fulham Broadway çevresi (burger, pizza, pub)",
+     "Maç öncesi",
+     "~18 £"
+    ],
+    [
+     "Regency Café",
+     "Kahvaltı",
+     "~12 £"
+    ],
+    [
+     "Borough Market",
+     "Öğle",
+     "~15 £"
+    ],
+    [
+     "Dishoom Covent Garden (Hint)",
+     "Akşam",
+     "~35 £"
+    ],
+    [
+     "Green Lanes ocakbaşı (Türk mahallesi)",
+     "Akşam (alternatif)",
+     "~25 £"
+    ]
+   ],
+   "uyari": "AJet'in en ucuz biletinde genelde sadece kabin çantası var; bavul eklersen fiyat artar."
   },
   {
    "id": "linz",
@@ -177,17 +332,16 @@
    "saat_yerel": "21:00",
    "gidis": "2026-12-08",
    "donus": "2026-12-10",
-   "foto": "/img/sehir/viyana-1.jpg",
-   "foto_alt": "Viyana; Linz'e Viyana'dan arabayla gidiliyor",
+   "foto": null,
    "vize": "Schengen vizesi yeterli.",
    "ucus": {
     "oneri": {
-     "fiyat": 118,
+     "fiyat": 120,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Viyana (VIE)",
      "gidis": "Salı SAW 08:45 → VIE 09:05 (PC901)",
-     "donus": "Perşembe VIE 10:05 → SAW 14:20 (akşam 19:55 dönüşüyle 120 €)"
+     "donus": "Perşembe VIE 19:55 → SAW 00:10"
     },
     "secenekler": [
      {
@@ -294,14 +448,14 @@
     "konforlu": {
      "ucus": 120,
      "transfer": 85,
-     "otel": 200,
+     "otel": 201,
      "bilet": 50,
      "ulasim": 7,
      "yemek": 135,
      "gezi": 30
     },
     "ucuz": {
-     "ucus": 118,
+     "ucus": 120,
      "transfer": 85,
      "otel": 102,
      "bilet": 50,
@@ -312,7 +466,153 @@
    },
    "arama_ucus": [
     "IST,SAW-VIE 2026-12-08 2026-12-10"
-   ]
+   ],
+   "secim": {
+    "konforlu": "Hotel am Domplatz",
+    "ucuz": "Hotel Schwarzer Bär"
+   },
+   "otel_not": "Hotel am Domplatz yeni katedralin (Mariendom) yanında, Noel pazarına yürüme mesafesinde.",
+   "donus_min": "15:00",
+   "akis": [
+    {
+     "gun": "Salı 8 Aralık",
+     "adimlar": [
+      [
+       "06:45",
+       "Sabiha Gökçen",
+       ""
+      ],
+      [
+       "08:45",
+       "Pegasus → Viyana",
+       "Yerel saatle 09:05 iniş"
+      ],
+      [
+       "10:00",
+       "Kiralık arabayı al",
+       "Viyana Havalimanı"
+      ],
+      [
+       "12:30",
+       "Linz",
+       "A1 otoyolu ~2 saat; otele yerleş"
+      ],
+      [
+       "13:30",
+       "Öğle yemeği",
+       "Altstadt'ta Avusturya mutfağı"
+      ],
+      [
+       "15:00",
+       "Hauptplatz Noel pazarı",
+       "8 Aralık resmî tatil, şehir bayram havasında"
+      ],
+      [
+       "16:30",
+       "Pöstlingberg dağ tramvayı",
+       "Gün batımında şehir manzarası"
+      ],
+      [
+       "19:30",
+       "Akşam yemeği",
+       "Klosterhof bira bahçesi"
+      ]
+     ]
+    },
+    {
+     "gun": "Çarşamba 9 Aralık · maç günü",
+     "adimlar": [
+      [
+       "09:30",
+       "Café Jindrak",
+       "Linzer Torte ve kahve"
+      ],
+      [
+       "10:30",
+       "Mariendom ve Landstraße",
+       "Katedral ücretsiz"
+      ],
+      [
+       "12:00",
+       "Ars Electronica Center",
+       "Tuna kıyısında; fiyatı teyit et"
+      ],
+      [
+       "14:00",
+       "Öğle yemeği",
+       ""
+      ],
+      [
+       "15:30",
+       "Otelde dinlen",
+       ""
+      ],
+      [
+       "19:00",
+       "Otobüsle stada",
+       "Maç bileti şehir içi ulaşımı ücretsiz yapar"
+      ],
+      [
+       "21:00",
+       "LASK – Fenerbahçe",
+       "Raiffeisen Arena · TSİ 23:00"
+      ]
+     ]
+    },
+    {
+     "gun": "Perşembe 10 Aralık · dönüş",
+     "adimlar": [
+      [
+       "10:00",
+       "Kahvaltı ve Volksgarten Noel pazarı",
+       ""
+      ],
+      [
+       "13:00",
+       "Arabayla Viyana'ya",
+       "~2 saat"
+      ],
+      [
+       "15:30",
+       "Arabayı teslim et",
+       "Viyana Havalimanı"
+      ],
+      [
+       "19:55",
+       "Pegasus → Sabiha Gökçen",
+       "TSİ 00:10 iniş"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Café Jindrak (Linzer Torte)",
+     "Kahvaltı / tatlı",
+     "~6 €"
+    ],
+    [
+     "Klosterhof (Avusturya bira bahçesi)",
+     "Akşam",
+     "~22 €"
+    ],
+    [
+     "Noel pazarı (sıcak şarap + atıştırmalık)",
+     "Ara öğün",
+     "~10 €"
+    ],
+    [
+     "Altstadt'ta şnitzel",
+     "Öğle",
+     "~18 €"
+    ],
+    [
+     "Stat çevresinde sosis-sandviç",
+     "Maç",
+     "~6 €"
+    ]
+   ],
+   "uyari": "Arabayı maça götürme; otelde bırak, maç biletiyle otobüs ücretsiz."
   },
   {
    "id": "madrid",
@@ -456,7 +756,122 @@
    },
    "arama_ucus": [
     "IST,SAW-MAD 2027-01-26 2027-01-28"
-   ]
+   ],
+   "secim": {
+    "konforlu": "Catalonia Las Cortes",
+    "ucuz": "Hotel Europa"
+   },
+   "otel_not": "Catalonia Las Cortes Puerta del Sol'a 5 dk; Sol'dan stada metro ~35 dk.",
+   "akis": [
+    {
+     "gun": "Salı 26 Ocak",
+     "adimlar": [
+      [
+       "14:45",
+       "İstanbul Havalimanı",
+       ""
+      ],
+      [
+       "16:45",
+       "Air Europa → Madrid",
+       "Yerel saatle 19:00 iniş"
+      ],
+      [
+       "20:00",
+       "Metroyla merkeze",
+       "Turist kartı havalimanı dahil"
+      ],
+      [
+       "21:30",
+       "Akşam yemeği",
+       "Madrid'de akşam yemeği geç yenir: tapas"
+      ]
+     ]
+    },
+    {
+     "gun": "Çarşamba 27 Ocak · maç günü",
+     "adimlar": [
+      [
+       "09:30",
+       "Chocolatería San Ginés",
+       "Churros ve sıcak çikolata"
+      ],
+      [
+       "10:30",
+       "Kraliyet Sarayı",
+       "18 €"
+      ],
+      [
+       "12:30",
+       "Plaza Mayor ve San Miguel Pazarı",
+       "Öğle: tapas"
+      ],
+      [
+       "15:00",
+       "Retiro Parkı",
+       ""
+      ],
+      [
+       "16:30",
+       "Otelde dinlen",
+       ""
+      ],
+      [
+       "19:00",
+       "Metro L7 → Estadio Metropolitano",
+       "Sol'dan ~35 dk"
+      ],
+      [
+       "21:00",
+       "Atlético Madrid – Fenerbahçe",
+       "Metropolitano · TSİ 23:00"
+      ]
+     ]
+    },
+    {
+     "gun": "Perşembe 28 Ocak · dönüş",
+     "adimlar": [
+      [
+       "07:00",
+       "Otelden çıkış",
+       "Metroyla havalimanına ~40 dk"
+      ],
+      [
+       "09:10",
+       "Air Europa → İstanbul",
+       "TSİ 14:55 iniş"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Chocolatería San Ginés",
+     "Kahvaltı",
+     "~6 €"
+    ],
+    [
+     "Mercado de San Miguel",
+     "Öğle (tapas)",
+     "~20 €"
+    ],
+    [
+     "Bar La Campana (kalamar sandviç)",
+     "Atıştırmalık",
+     "~6 €"
+    ],
+    [
+     "Casa Labra (bacalao)",
+     "Akşam (tapas)",
+     "~15 €"
+    ],
+    [
+     "Sobrino de Botín (dünyanın en eski restoranı)",
+     "Özel akşam",
+     "~50 €"
+    ]
+   ],
+   "uyari": "Dönüş uçağı maç ertesi sabah 09:10; maçtan sonra az uyku. Daha geç dönüş: THY 14:20 (386 €)."
   }
  ],
  "kaynaklar": [

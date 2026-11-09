@@ -23,7 +23,7 @@ const rows = [
 ];
 t("uçak: karışık ve tek havayolu seçenekleri, aktarmalı yok", () => {
   const o = flightOptions(rows);
-  assert.deepEqual(o.map((x) => [x.fiyat, x.havayolu]), [[190, "Pegasus gidiş + AJet dönüş"], [210, "Pegasus"]]);
+  assert.deepEqual(o.map((x) => [x.fiyat, x.havayolu, x.donusSaat]), [[190, "Pegasus gidiş + AJet dönüş", "10:00"], [210, "Pegasus", "10:00"]]);
 });
 t("maç güncelleme: bütçe, eski fiyat korunur", () => {
   const m = { ucus: { oneri: { donus: "x" } }, butce: { konforlu: { ucus: 1, otel: 1 }, ucuz: { ucus: 1, otel: 1 } },
@@ -34,3 +34,14 @@ t("maç güncelleme: bütçe, eski fiyat korunur", () => {
   applyMatch(m, [], []); assert.equal(m.butce.ucuz.ucus, 190);
 });
 console.log(`\n${n} test geçti`);
+t("seçili otel ve geç dönüş tercihi", () => {
+  const G = (o) => F({ section: "departing", airline: "Pegasus", flightNumbers: ["PC5"], ...o });
+  const R = (p, h) => F({ section: "returning", airline: "Pegasus", price: p, outboundFlightNumbers: ["PC5"], departureTime: h, departureDate: "2026-12-10" });
+  const m = { donus_min: "15:00", secim: { konforlu: "Pahalı", ucuz: "Ucuz" }, ucus: { oneri: {} }, butce: { konforlu: {}, ucuz: {} },
+    oteller: [{ ad: "Ucuz", arama: "U", kategori: "konforlu", toplam: 100 }, { ad: "Pahalı", arama: "P", kategori: "konforlu", toplam: 400 }] };
+  applyMatch(m, [G({ price: 118 }), R(118, "10:05"), R(120, "19:55")], []);
+  assert.equal(m.ucus.oneri.fiyat, 120); assert.equal(m.butce.konforlu.ucus, 120); assert.equal(m.butce.ucuz.ucus, 118);
+  assert.equal(m.butce.konforlu.otel, 200);
+  assert.equal(m.ucus.secenekler.length, 1);
+});
+console.log(`${n} test geçti (toplam)`);
