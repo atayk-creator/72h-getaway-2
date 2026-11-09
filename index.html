@@ -2315,9 +2315,9 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     });
   }
   // ---- Takım (Fenerbahçe) yardımcıları: maçlar hafta sonu gibi; ölçü = 2 kişi uçak + 2 gece konforlu otel (EUR)
-  function teamList(T) { var t = todayIst(); return T && Array.isArray(T.maclar) ? T.maclar.filter(function (m) { return m.tarih >= t; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; }) : []; }
+  function teamList(T) { var t = todayIst(); return T && Array.isArray(T.maclar) ? T.maclar.filter(function (m) { return m.tarih >= t && m.ucus && m.ucus.oneri; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; }) : []; }
   function teamNext(T) { return teamList(T)[0] || null; }
-  function fbList() { var t = todayIst(); return FBD && Array.isArray(FBD.maclar) ? FBD.maclar.filter(function (m) { return m.tarih >= t; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; }) : []; }
+  function fbList() { var t = todayIst(); return FBD && Array.isArray(FBD.maclar) ? FBD.maclar.filter(function (m) { return m.tarih >= t && m.ucus && m.ucus.oneri; }).sort(function (a, b) { return a.tarih < b.tarih ? -1 : 1; }) : []; }
   function fbNext() { return fbList()[0] || null; }
   function fbUO(m) { var k = m.butce && m.butce.konforlu || {}; return 2 * ((k.ucus || 0) + (k.otel || 0)); }
   function renderTeam() {

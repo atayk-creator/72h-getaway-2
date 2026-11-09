@@ -17,7 +17,8 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.24
+  "son_maliyet_usd": 0.24,
+  "zorla": true
  },
  "kaynaklar": [
   {
@@ -403,7 +404,7 @@
        "Uçuş saatini robot günceller"
       ],
       [
-       "13:00",
+       "09:30",
        "Tren: BER → Dresden Hbf",
        "~2 saat"
       ],
@@ -468,7 +469,7 @@
        "Dresdner Christstollen"
       ],
       [
-       "12:00",
+       "14:00",
        "Tren: Dresden Hbf → BER",
        "~2 saat"
       ],
@@ -568,7 +569,7 @@
      "nereden": "Flughafen BER",
      "nereye": "Dresden Hbf",
      "tarih": "2026-12-04",
-     "saat": "13:00",
+     "saat": "09:30",
      "fiyat": 57.99,
      "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
      "secenekler": [
@@ -636,7 +637,7 @@
      "nereden": "Dresden Hbf",
      "nereye": "Flughafen BER",
      "tarih": "2026-12-06",
-     "saat": "12:00",
+     "saat": "14:00",
      "fiyat": 55.99,
      "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
      "secenekler": [
