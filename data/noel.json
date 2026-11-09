@@ -17,7 +17,8 @@
   "her_kac_gun": 2,
   "son_arama": "2026-11-09",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.15
+  "son_maliyet_usd": 0.15,
+  "zorla": true
  },
  "kaynaklar": [
   {
@@ -333,13 +334,13 @@
    "tarih": "2026-12-05",
    "gidis": "2026-12-04",
    "donus": "2026-12-06",
-   "plan": "Cuma gidiş, Pazar akşam dönüş; 2 gece Dresden, Altstadt'ta.",
+   "plan": "Cuma sabah Berlin'e (BER) uçuş, trenle Dresden (~2 saat); 2 gece Dresden, Pazar trenle Berlin'e dönüp akşam uçuşu.",
    "vize": "Schengen vizesi gerekir.",
-   "dikkat": "İstanbul–Dresden arasında her gün direkt uçuş olmayabilir; robot o hafta sonu için aktarmalı dahil en uygun uçuşu seçer.",
+   "dikkat": "İstanbul'dan Dresden'e direkt uçuş yok: en yakın direkt uçuşlu havalimanı Berlin Brandenburg (BER). Havalimanından Dresden Hbf'ye trenle ~2 saat; tren fiyatı robotla Deutsche Bahn'dan çekilir (erken alınan bilet ucuzlar).",
    "arama_ucus": [
-    "IST,SAW-DRS 2026-12-04 2026-12-06"
+    "IST,SAW-BER 2026-12-04 2026-12-06"
    ],
-   "donus_min": "14:00",
+   "donus_min": "16:00",
    "ozet": "Almanya'nın en eski Noel pazarı (1434): dev ahşap piramit, Stollen ve barok Elbe kıyısı.",
    "oteller": [
     {
@@ -388,10 +389,6 @@
      "toplam": 471
     }
    ],
-   "havalimani_ulasim": {
-    "fiyat": 7,
-    "yazi": "Havalimanı → Hauptbahnhof/Neustadt: S2 treni ~20 dk; gidiş-dönüş kişi başı ~7 € (tahmini, VVO'dan teyit et)."
-   },
    "sehir_ulasim": {
     "fiyat": 8,
     "yazi": "Altstadt yürünür; Neustadt için tramvay günlük bileti."
@@ -403,13 +400,13 @@
      "adimlar": [
       [
        "—",
-       "İstanbul → Dresden",
+       "İstanbul → Berlin (BER)",
        "Uçuş saatini robot günceller"
       ],
       [
-       "",
-       "S2 ile merkez",
-       "~20 dk"
+       "13:00",
+       "Tren: BER → Dresden Hbf",
+       "~2 saat"
       ],
       [
        "",
@@ -467,18 +464,18 @@
      "gun": "Pazar 6 Aralık · dönüş",
      "adimlar": [
       [
-       "10:00",
+       "09:30",
        "Kahvaltı, Stollen tadımı",
        "Dresdner Christstollen"
       ],
       [
-       "",
-       "Havalimanına",
-       "S2"
+       "12:00",
+       "Tren: Dresden Hbf → BER",
+       "~2 saat"
       ],
       [
        "",
-       "Dresden → İstanbul",
+       "Berlin → İstanbul",
        "Uçuş saatini robot günceller"
       ]
      ]
@@ -517,7 +514,7 @@
    "butce": {
     "konforlu": {
      "ucus": 796,
-     "transfer": 7,
+     "transfer": 60,
      "otel": 289,
      "ulasim": 8,
      "yemek": 100,
@@ -525,7 +522,7 @@
     },
     "ucuz": {
      "ucus": 465,
-     "transfer": 7,
+     "transfer": 60,
      "otel": 236,
      "ulasim": 8,
      "yemek": 70,
@@ -580,7 +577,31 @@
     "seviye": "yuksek",
     "normal_aralik": "250–445 €"
    },
-   "foto": null
+   "foto": null,
+   "havalimani_tercih": "BER",
+   "ucus_saat": "5-12",
+   "trenler": [
+    {
+     "ad": "Berlin Havalimanı (BER) → Dresden",
+     "aktor": "db",
+     "nereden": "Flughafen BER",
+     "nereye": "Dresden Hbf",
+     "tarih": "2026-12-04",
+     "saat": "13:00",
+     "fiyat": 30,
+     "not": "Fiyat ilk aramaya kadar tahmini (~30 €)."
+    },
+    {
+     "ad": "Dresden → Berlin Havalimanı (BER)",
+     "aktor": "db",
+     "nereden": "Dresden Hbf",
+     "nereye": "Flughafen BER",
+     "tarih": "2026-12-06",
+     "saat": "12:00",
+     "fiyat": 30,
+     "not": "Fiyat ilk aramaya kadar tahmini (~30 €)."
+    }
+   ]
   },
   {
    "id": "salzburg",
@@ -2148,9 +2169,10 @@
    "donus": "2026-12-27",
    "plan": "Noel günü Brüksel'e uçuş, trenle Brugge; 2 gece Brugge, Pazar akşam dönüş.",
    "vize": "Schengen vizesi gerekir.",
-   "dikkat": "Brugge'nin havalimanı yok: Brüksel Havalimanı'na inip trenle ~1,5 saat (Brüksel'de aktarma). 25 Aralık'ta tren seferleri azalabilir, saatleri SNCB'den kontrol et.",
+   "dikkat": "Brugge'nin havalimanı yok: en yakın direkt uçuşlu havalimanı Brüksel (BRU); oradan trenle ~1,5 saat (Brüksel'de aktarma). Brüksel'e uçuş yoksa Charleroi (CRL) de aranır (otobüs + tren ~2,5 saat). 25 Aralık'ta tren seferleri azalabilir, SNCB'den kontrol et.",
    "arama_ucus": [
-    "IST,SAW-BRU 2026-12-25 2026-12-27"
+    "IST,SAW-BRU 2026-12-25 2026-12-27",
+    "IST,SAW-CRL 2026-12-25 2026-12-27"
    ],
    "donus_min": "15:00",
    "havalimani_tercih": "BRU",

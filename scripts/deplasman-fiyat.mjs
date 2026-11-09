@@ -11,7 +11,7 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 const TEAMS_FILE = root + "data/takimlar.json";
 const TRUSTED = /booking|expedia|hotels\.com|agoda|trip\.com|priceline/i;
 const AD = { IST: "İstanbul", SAW: "Sabiha Gökçen" };
-const HAV = { LHR: "Heathrow", LGW: "Gatwick", STN: "Stansted", LTN: "Luton", LCY: "London City", VIE: "Viyana", MAD: "Madrid", ATH: "Atina", CDG: "Charles de Gaulle", ORY: "Orly", CGN: "Köln/Bonn", DUS: "Düsseldorf", LCA: "Larnaka", MUC: "Münih", NUE: "Nürnberg", KRK: "Krakov", BSL: "Basel-Mulhouse", SXB: "Strazburg", RVN: "Rovaniemi", HEL: "Helsinki", FRA: "Frankfurt", DRS: "Dresden", SZG: "Salzburg", GDN: "Gdańsk", BRU: "Brüksel", CRL: "Charleroi", EDI: "Edinburgh" };
+const HAV = { BER: "Berlin", LHR: "Heathrow", LGW: "Gatwick", STN: "Stansted", LTN: "Luton", LCY: "London City", VIE: "Viyana", MAD: "Madrid", ATH: "Atina", CDG: "Charles de Gaulle", ORY: "Orly", CGN: "Köln/Bonn", DUS: "Düsseldorf", LCA: "Larnaka", MUC: "Münih", NUE: "Nürnberg", KRK: "Krakov", BSL: "Basel-Mulhouse", SXB: "Strazburg", RVN: "Rovaniemi", HEL: "Helsinki", FRA: "Frankfurt", DRS: "Dresden", SZG: "Salzburg", GDN: "Gdańsk", BRU: "Brüksel", CRL: "Charleroi", EDI: "Edinburgh" };
 const r0 = (n) => Math.round(n);
 const num = (x) => typeof x === "number" && Number.isFinite(x) && x > 0;
 const GUN = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
