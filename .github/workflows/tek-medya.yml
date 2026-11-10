@@ -1,0 +1,26 @@
+name: Tek medya (geçici)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/tek-medya.yml]
+permissions:
+  contents: write
+jobs:
+  m:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmp-medya
+          curl -sfL -o tmp-medya/0-londra.png "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_163346_89976627-7a06-4ad4-bc80-d2fb881387b2.png"
+          curl -sfL -o tmp-medya/1-linz.png "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_163345_3dc57683-7df9-4f80-9ac7-def34cc809bc.png"
+          curl -sfL -o tmp-medya/2-madrid.png "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_163347_4e8cde00-f3d9-42dd-a310-82748caed962.png"
+          curl -sfL -o tmp-medya/3-atina.png "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_163346_0b96d385-20b8-4492-8b4d-7e240cdc0ee9.png"
+          curl -sfL -o tmp-medya/4-paris.png "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_163347_ed3156a2-1f48-424b-b9eb-66b2468d6ee1.png"
+          curl -sfL -o tmp-medya/5-koln.png "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_163346_42405a56-e942-4126-a4b1-16181dee8883.png"
+          curl -sfL -o tmp-medya/6-lefkosa.png "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_163345_becb93f0-c452-4a81-8e2d-1206d8c561df.png"
+          ls -la tmp-medya
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp-medya && git commit -m "geçici medya"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
