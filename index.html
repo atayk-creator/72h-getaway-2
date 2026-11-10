@@ -443,7 +443,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 /* ---------- Şehir ekranı (M3 takvim + öneriler) ---------- */
 .cv-top { position: relative; height: clamp(200px, 34vh, 300px); background: #0F2A43; color: #FBF6EC; }
 .cv-ph, .cv-ph img, .cv-ph .fb { position: absolute; inset: 0; width: 100%; height: 100%; }
-.cv-ph img { object-fit: cover; object-position: center 40%; }
+.cv-ph img, .cv-ph video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; }
 .cv-ph .fb { background: radial-gradient(circle, rgba(244,166,42,0.35) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
 .cv-strip { position: absolute; left: 0; right: 0; bottom: 0; background: rgba(15,42,67,0.9); padding: 12px max(16px, calc((100% - 1040px) / 2 + 16px)); display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
 .cv-strip h2 { margin: 0; font-size: clamp(1.7rem, 6vw, 2.3rem); line-height: 1; letter-spacing: -0.01em; }
@@ -2339,7 +2339,9 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   function fbUO(m) { var k = m.butce && m.butce.konforlu || {}; return 2 * ((k.ucus || 0) + (k.otel || 0)); }
   function renderTeam() {
     var o = lastO || inputs(), r = function (eur) { return tl(eur * o.rate); };
-    var ph = $("cvPh"), f0 = (fbList()[0] || {}).foto, key = (f0 || "fbt") + (FBD ? FBD.slug : "");
+    var m0 = fbList()[0] || {}, ph = $("cvPh"), f0 = m0.foto, hv = m0.hikaye_video && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches), key = (hv ? m0.hikaye_video : f0 || "fbt") + (FBD ? FBD.slug : "");
+    // Takım / tema sayfasının üst görseli: sıradaki şehrin hikâye döngüsü (yapay zekâ), yoksa fotoğraf
+    if (ph.dataset.src !== key && hv) { ph.dataset.src = key; ph.innerHTML = '<video src="' + escH(m0.hikaye_video) + '" poster="' + escH(m0.hikaye_poster || f0 || "") + '" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>'; }
     if (ph.dataset.src !== key) { ph.dataset.src = key; ph.innerHTML = f0 ? '<img src="' + escH(f0.replace(/\.jpg$/, "-640.jpg")) + '" srcset="' + escH(f0.replace(/\.jpg$/, "-640.jpg")) + " 640w, " + escH(f0) + ' 1600w" sizes="100vw" alt="">' : '<span class="fb fbt" style="' + teamBg(FBD) + '"></span>'; }
     $("cvName").textContent = FBD ? FBD.takim : "Deplasman";
     var tema = isTema(FBD);

@@ -106,7 +106,10 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 .mac h3 .muted { font-weight: 500; font-size: 0.85rem; }
 .mac h4 { margin: 0 0 4px; font-size: 0.98rem; }
 .banner { position: relative; border-radius: 18px; overflow: hidden; min-height: 230px; display: flex; align-items: flex-end; background: #0F2A43; color: #FBF6EC; }
-.banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.banner img, .banner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.banner video { opacity: 0; transition: opacity .5s; }
+.banner video.on { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .banner video { display: none; } }
 .banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(10,31,51,0) 0, rgba(10,31,51,0.15) 70px, rgba(10,31,51,0.78) 130px, rgba(10,31,51,0.94)); }
 .banner.cizgi { background: repeating-linear-gradient(90deg, var(--tk-a) 0 34px, var(--tk-b) 34px 68px) top / 100% 45% no-repeat, var(--tk-b); }
 .bn { position: relative; z-index: 1; padding: 104px 18px 16px; text-shadow: 0 1px 3px rgba(0,0,0,0.45); }
@@ -225,13 +228,13 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
   
   <section id="londra" class="mac">
     <div class="banner">
-      <img src="/img/sehir/londra-1.jpg" alt="Londra, gece Big Ben" loading="eager" decoding="async">
+      <img src="/img/hikaye/fenerbahce-londra.jpg" alt="Londra, gece Big Ben" loading="eager" decoding="async"><video data-src="/img/hikaye/fenerbahce-londra.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <div class="bn">
         <span class="eb">5. HAFTA · LONDRA · 72 SAAT</span>
         <h2>Shakhtar Donetsk – Fenerbahçe</h2>
         <p>25 Kasım 2026 Çarşamba · 23:00 TSİ (yerel 20:00) · Stamford Bridge</p>
       </div>
-      <span class="cr">Görüntü: Unsplash · David W. Meyer</span>
+      <span class="cr">Görüntü: yapay zekâ ile üretildi, temsilîdir</span>
     </div>
 
     <div class="ozet">
@@ -284,13 +287,13 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
   </section>
   <section id="linz" class="mac">
     <div class="banner">
-      <img src="/img/sehir/linz-1.jpg" alt="Linz, Tuna kıyısı" loading="eager" decoding="async">
+      <img src="/img/hikaye/fenerbahce-linz.jpg" alt="Linz, Tuna kıyısı" loading="lazy" decoding="async"><video data-src="/img/hikaye/fenerbahce-linz.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <div class="bn">
         <span class="eb">6. HAFTA · LİNZ · 72 SAAT</span>
         <h2>LASK – Fenerbahçe</h2>
         <p>9 Aralık 2026 Çarşamba · 23:00 TSİ (yerel 21:00) · Raiffeisen Arena</p>
       </div>
-      <span class="cr">Görüntü: Unsplash · Leonhard Niederwimmer</span>
+      <span class="cr">Görüntü: yapay zekâ ile üretildi, temsilîdir</span>
     </div>
 
     <div class="ozet">
@@ -343,13 +346,13 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
   </section>
   <section id="madrid" class="mac">
     <div class="banner">
-      <img src="/img/sehir/madrid-1.jpg" alt="Madrid" loading="eager" decoding="async">
+      <img src="/img/hikaye/fenerbahce-madrid.jpg" alt="Madrid" loading="lazy" decoding="async"><video data-src="/img/hikaye/fenerbahce-madrid.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       <div class="bn">
         <span class="eb">8. HAFTA · MADRİD · 72 SAAT</span>
         <h2>Atlético Madrid – Fenerbahçe</h2>
         <p>27 Ocak 2027 Çarşamba · 23:00 TSİ (yerel 21:00) · Metropolitano</p>
       </div>
-      <span class="cr">Görüntü: Pexels</span>
+      <span class="cr">Görüntü: yapay zekâ ile üretildi, temsilîdir</span>
     </div>
 
     <div class="ozet">
@@ -400,9 +403,10 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
     <h3>Maçtan önce gez</h3>
     <ul class="gez"><li>Puerta del Sol → Plaza Mayor → San Miguel Pazarı</li><li>Kraliyet Sarayı (18 €)</li><li>Gün batımında Debod Tapınağı (ücretsiz)</li><li>Prado Müzesi (15 €; salı akşamı 18–20 ücretsiz)</li><li>Retiro Parkı</li></ul>
   </section>
-  <div class="note">Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA&#39;nın deplasman bileti tavanı 2025-26&#39;da 50 €&#39;du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €&#39;dan başlıyor ve deplasman tribününe giriş garanti değil. Uçak ve otel fiyatları 9 Kasım 2026 Pazartesi günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, araba ve gezi tahminidir. TL tutarları 1 € = 56,32 TL kuruyla. Tren fiyatları ÖBB'nin bilet verisinden. Oynanan maç sayfadan kendiliğinden kalkar. Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır. Fotoğraflar: Unsplash ve Pexels (ücretsiz lisans).
+  <div class="note">Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA&#39;nın deplasman bileti tavanı 2025-26&#39;da 50 €&#39;du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €&#39;dan başlıyor ve deplasman tribününe giriş garanti değil. Uçak ve otel fiyatları 9 Kasım 2026 Pazartesi günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, araba ve gezi tahminidir. TL tutarları 1 € = 56,32 TL kuruyla. Tren fiyatları ÖBB'nin bilet verisinden. Oynanan maç sayfadan kendiliğinden kalkar. Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır. Fotoğraflar: Unsplash ve Pexels (ücretsiz lisans); hareketli şehir görüntüleri yapay zekâ ile üretildi, temsilîdir.
   <br>Kaynaklar: <a href="https://www.milligazete.com.tr/fenerbahcenin-avrupa-maclari-2026-2027-sampiyonlar-ligi-fiksturu-rakipler-mac-tarihleri-ve-saatleri" rel="noopener">Fenerbahçe 2026-27 Şampiyonlar Ligi fikstürü (Milli Gazete)</a> · <a href="https://shakhtar.com/en/news/2026/august/21_news/21_shakhtar_stamford_bridge/" rel="noopener">Shakhtar maçları Stamford Bridge&#39;de (resmî)</a> · <a href="https://www.cityam.com/?p=2255750" rel="noopener">UEFA deplasman bileti tavanı (City AM)</a> · <a href="https://footballgroundguide.com/leagues/lask-linz-raiffeisen-arena.html" rel="noopener">Raiffeisen Arena rehberi</a> · <a href="https://apify.com/jindrich.bar/oebb-ticket-scraper" rel="noopener">ÖBB tren fiyatları (ÖBB bilet verisi, Apify ÖBB Ticket Scraper)</a></div>
 </main>
+<script>(function(){var v=document.querySelectorAll(".banner video[data-src]");if(!v.length||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;if(e.isIntersecting){if(!x.src){x.src=x.dataset.src;x.addEventListener("playing",function(){x.classList.add("on")},{once:true});}x.play().catch(function(){});}else if(x.src)x.pause();});},{rootMargin:"200px"});v.forEach(function(x){io.observe(x)});})();</script>
 <footer><div class="wrap">
   <a href="/">Bütçe hesaplayıcı</a><a href="/sehir/">Tüm şehirler</a><a href="/oteller.html">Otel fiyatları</a><a href="/hakkinda.html">Hakkında</a>
   <div>72h Getaway bir seyahat acentesi değildir; fiyatlar bilgi amaçlıdır, rezervasyondan önce ilgili sitede kontrol et.</div>

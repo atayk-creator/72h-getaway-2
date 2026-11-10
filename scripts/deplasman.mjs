@@ -84,7 +84,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     </a>`;
   }).join("");
 
-  const sections = list.map((m) => {
+  const sections = list.map((m, i) => {
     const bk = m.butce.konforlu, bu = m.butce.ucuz, tk = toplam(bk), tu = toplam(bu);
     const o = m.ucus.oneri;
     const G = gruplar(m), adK = secimAd(m, "konforlu"), adU = secimAd(m, "ucuz");
@@ -120,13 +120,13 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     return `
   <section id="${esc(m.id)}" class="mac">
     <div class="banner${m.foto ? "" : " cizgi"}">
-      ${m.foto ? `<img src="${esc(m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="eager" decoding="async">` : ""}
+      ${m.hikaye_video ? `<img src="${esc(m.hikaye_poster || m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="${i ? "lazy" : "eager"}" decoding="async"><video data-src="${esc(m.hikaye_video)}" muted loop playsinline preload="none" aria-hidden="true"></video>` : m.foto ? `<img src="${esc(m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="eager" decoding="async">` : ""}
       <div class="bn">
         <span class="eb">${T ? esc(aralikTr(m.gidis, m.donus).toLocaleUpperCase("tr")) : esc(m.hafta) + ". HAFTA"} · ${esc(m.sehir.toLocaleUpperCase("tr"))} · 72 SAAT</span>
         <h2>${T ? `${esc(m.sehir)}: ${esc(m.etkinlik)}` : `${esc(m.rakip)} – ${esc(team.takim)}`}</h2>
         <p>${T ? `${esc(m.yer)}${m.pazar_yazi ? ` · pazar ${esc(m.pazar_yazi)}, ${esc(m.pazar_saat)}` : ""}${m.ozet ? `<br>${esc(m.ozet)}` : ""}` : `${esc(tarihUzun(m.tarih))} · ${esc(m.saat_tsi)} TSİ (yerel ${esc(m.saat_yerel)}) · ${esc(m.stat)}${m.mac_sehri ? ", " + esc(m.mac_sehri) : ""}`}</p>
       </div>
-      ${m.foto ? `<span class="cr">Görüntü: ${esc(m.foto_kaynak || "Pexels")}</span>` : ""}
+      ${m.hikaye_video ? `<span class="cr">Görüntü: yapay zekâ ile üretildi, temsilîdir</span>` : m.foto ? `<span class="cr">Görüntü: ${esc(m.foto_kaynak || "Pexels")}</span>` : ""}
     </div>
 
     <div class="ozet">
@@ -248,7 +248,10 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
 .mac h3 .muted { font-weight: 500; font-size: 0.85rem; }
 .mac h4 { margin: 0 0 4px; font-size: 0.98rem; }
 .banner { position: relative; border-radius: 18px; overflow: hidden; min-height: 230px; display: flex; align-items: flex-end; background: #0F2A43; color: #FBF6EC; }
-.banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.banner img, .banner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.banner video { opacity: 0; transition: opacity .5s; }
+.banner video.on { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .banner video { display: none; } }
 .banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(10,31,51,0) 0, rgba(10,31,51,0.15) 70px, rgba(10,31,51,0.78) 130px, rgba(10,31,51,0.94)); }
 .banner.cizgi { background: repeating-linear-gradient(90deg, var(--tk-a) 0 34px, var(--tk-b) 34px 68px) top / 100% 45% no-repeat, var(--tk-b); }
 .bn { position: relative; z-index: 1; padding: 104px 18px 16px; text-shadow: 0 1px 3px rgba(0,0,0,0.45); }
@@ -314,9 +317,10 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   ${T ? "" : `<p class="bagimsiz">${esc(team.bagimsiz || `Bağımsız bir seyahat planlayıcısıyız; ${team.takim} ile resmî bir bağımız yoktur.`)}</p>`}
   ${standart}
   ${sections || `<p class="empty">${T ? "Yaklaşan hafta sonu yok." : "Yaklaşan deplasman maçı yok."}</p>`}
-  <div class="note">${team.bilet ? esc(team.bilet.yazi) + " " : ""}${team.not_fiyat ? esc(team.not_fiyat) : `Uçak ve otel fiyatları ${esc(tarihUzun(team.guncellendi))} günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, ${T ? "havalimanı ulaşımı" : "araba"} ve gezi tahminidir.`} ${eurTry ? `TL tutarları 1 € = ${esc(String(eurTry).replace(".", ","))} TL kuruyla.` : ""} ${T ? "Geçen hafta sonu sayfadan kendiliğinden kalkar." : "Tren fiyatları ÖBB'nin bilet verisinden. Oynanan maç sayfadan kendiliğinden kalkar."} ${esc(team.bagimsiz || "")} Fotoğraflar: Unsplash ve Pexels (ücretsiz lisans).
+  <div class="note">${team.bilet ? esc(team.bilet.yazi) + " " : ""}${team.not_fiyat ? esc(team.not_fiyat) : `Uçak ve otel fiyatları ${esc(tarihUzun(team.guncellendi))} günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, ${T ? "havalimanı ulaşımı" : "araba"} ve gezi tahminidir.`} ${eurTry ? `TL tutarları 1 € = ${esc(String(eurTry).replace(".", ","))} TL kuruyla.` : ""} ${T ? "Geçen hafta sonu sayfadan kendiliğinden kalkar." : "Tren fiyatları ÖBB'nin bilet verisinden. Oynanan maç sayfadan kendiliğinden kalkar."} ${esc(team.bagimsiz || "")} Fotoğraflar: Unsplash ve Pexels (ücretsiz lisans); hareketli şehir görüntüleri yapay zekâ ile üretildi, temsilîdir.
   <br>Kaynaklar: ${(team.kaynaklar || []).map((k) => `<a href="${esc(k.url)}" rel="noopener">${esc(k.ad)}</a>`).join(" · ")}</div>
 </main>
+<script>(function(){var v=document.querySelectorAll(".banner video[data-src]");if(!v.length||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;if(e.isIntersecting){if(!x.src){x.src=x.dataset.src;x.addEventListener("playing",function(){x.classList.add("on")},{once:true});}x.play().catch(function(){});}else if(x.src)x.pause();});},{rootMargin:"200px"});v.forEach(function(x){io.observe(x)});})();</script>
 ` + foot();
 }
 
