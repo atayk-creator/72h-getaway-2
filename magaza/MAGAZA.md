@@ -77,7 +77,7 @@ Where to find the app-specific features:
 5. Noel / football plans: in Takvim, "Şehri değiştir" lists "Noel Tatili" and the club plans; each row is one weekend with flight + hotel total. The football plans are independent travel-budget information: the app has no official relationship with any club, uses no club logos and does not sell match tickets. City images marked "yapay zekâ ile üretildi" are AI-generated illustrations.
 6. External booking links (Booking.com, Google Flights, Google Maps) open in the in-app browser (SFSafariViewController).
 
-The app does not sell anything, has no in-app purchases, no ads, no tracking and no analytics. Contact: merhaba@72hgetaway.com
+The app does not sell anything, has no in-app purchases, no ads, no tracking and no analytics. Contact: a.kurt@72hgetaway.com
 
 ## Veri güvenliği / Gizlilik formları
 - Toplanan veri: **Yok.** Hesap yok, konum yok, kişisel bilgi yok.
@@ -95,7 +95,7 @@ The app does not sell anything, has no in-app purchases, no ads, no tracking and
 - Hazır dosyalar: `magaza/ekran/android/` (Google Play, 1080×2400, 5 adet) ve `magaza/ekran/ios/` (App Store 6,9", 5 adet)
 
 ## Göndermeden önce kontrol listesi
-- [ ] merhaba@72hgetaway.com açık ve gelen kutusu çalışıyor (Hakkında'da ve inceleme notunda yazıyor; Apple yazarsa geri dönmemeli)
+- [ ] a.kurt@72hgetaway.com açık ve gelen kutusu çalışıyor (Hakkında'da ve inceleme notunda yazıyor; Apple yazarsa geri dönmemeli)
 - [ ] Gerçek bir iPhone'da TestFlight ile: uçak modunda açılış, hikâye videosu, paylaşma menüsü, PDF, Turlarım
 - [ ] Öneriler bölümü: boş şehirlerde uygulamada gizli (yer tutucu içerik yok); dolu şehirlerde görünür
 - [ ] Ekran görüntüleri gerçek uygulamadan, açıklamadaki özelliklerle aynı

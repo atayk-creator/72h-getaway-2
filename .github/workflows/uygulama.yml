@@ -6,7 +6,7 @@ name: Telefon uygulaması (Android + iOS)
 on:
   push:
     branches: [main]
-    paths: ["app/**", "scripts/build-app.mjs", ".github/workflows/uygulama.yml", ".github/scripts/**"]
+    paths: ["app/**", "hakkinda.html", "scripts/build-app.mjs", ".github/workflows/uygulama.yml", ".github/scripts/**"]
   workflow_dispatch:
 permissions:
   contents: write
