@@ -935,15 +935,13 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     ["Nürnberg","Almanya","Noel",120,45,6,12,"est","Noel pazarı şehri (Aralık)."],
     ["Strazburg","Fransa","Noel",140,48,6,12,"est","Noel pazarı şehri (Aralık)."],
     ["Krakov","Polonya","Noel",85,30,4,10,"est","Noel pazarı şehri (Aralık)."],
-    ["Selanik","Yunanistan","Ata",95,45,4,8,"est","Atamızın İzinden: Atatürk'ün doğduğu şehir."],
-    ["Dedeağaç","Yunanistan","Ata",80,40,3,5,"est","Atamızın İzinden: Selanik dönüşü bir gece."],
     ["Dresden","Almanya","Noel",115,45,6,12,"est","Noel pazarı şehri (Aralık)."],
     ["Salzburg","Avusturya","Noel",150,50,6,15,"est","Noel pazarı şehri (Aralık)."],
     ["Gdańsk","Polonya","Noel",85,30,3,10,"est","Noel pazarı şehri (Aralık)."],
     ["Brugge","Belçika","Noel",140,55,4,15,"est","Noel pazarı şehri (Aralık)."]
   ].map(function (a) {
     return { n:a[0], c:a[1], r:a[2], h:a[3], f:a[4], t:a[5], a:a[6], s:a[7] || "est", note:a[8] || "",
-             hotels:a[9] || null, restos:a[10] || null, places:a[11] || null, mac: a[2] === "Deplasman" || a[2] === "Noel" || a[2] === "Ata" };
+             hotels:a[9] || null, restos:a[10] || null, places:a[11] || null, mac: a[2] === "Deplasman" || a[2] === "Noel" };
   });
   var QUICK = ["Budapeşte","Prag","Atina","Lizbon","Sofya","Belgrad","Roma","Viyana","Paris","Londra","Berlin","Madrid","Amsterdam","Varşova"];
   var TNAME = ["", "uygun", "orta", "pahalı", "çok pahalı"];
@@ -1082,7 +1080,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   var MAC = null;
   // Tema "şehirleri" (data/noel.json, tur: "tema"): maç yerine etkinlik (Noel pazarı), maç bileti yok
   function isTema(T) { return !!(T && T.tur === "tema"); }
-  // Kara yolu planı (ör. Atamızın İzinden): uçak yerine otobüs; sayfa metinleri T.sayfa'dan
+  // Kara yolu planı : uçak yerine otobüs; sayfa metinleri T.sayfa'dan
   function otobusMu() { return !!(MAC && MAC.ulasim_turu === "otobus"); }
   function yolAd() { return otobusMu() ? "Otobüs" : "Uçak"; }
   function tMetin(T, k, d) { return T && T.sayfa && T.sayfa[k] != null ? T.sayfa[k] : d; }
@@ -2133,7 +2131,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var panel = r.t;
     if (r.t === "takvim" || (r.t === "sehirler" && r.slug)) {
       panel = "sehir";
-      TEAM = r.slug && (TEAMS[r.slug] || /^(fenerbahce|galatasaray|besiktas|noel|ataturkun-izinden)$/.test(r.slug)) ? r.slug : false;
+      TEAM = r.slug && (TEAMS[r.slug] || /^(fenerbahce|galatasaray|besiktas|noel)$/.test(r.slug)) ? r.slug : false;
       if (TEAM && TEAMS[TEAM]) FBD = TEAMS[TEAM];
       if (r.slug && !TEAM) { var ci = cityFromParam(r.slug); if (ci >= 0) selectCity(ci); }
     } else TEAM = false;

@@ -19,7 +19,6 @@ on:
       - "data/galatasaray.json"
       - "data/besiktas.json"
       - "data/noel.json"
-      - "data/ataturkun-izinden.json"
       - "data/takimlar.json"
       - "img/sehir/fotolar.json"
   workflow_run:

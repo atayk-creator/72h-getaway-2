@@ -1,1 +1,1 @@
-{"aciklama": "Deplasman sayfası olan takımlar ve tema 'şehirleri' (data/<slug>.json, ör. noel). Robot, sayfa üreticisi ve site bu listeyi kullanır.", "takimlar": ["fenerbahce", "galatasaray", "besiktas", "noel", "ataturkun-izinden"]}
+{"aciklama": "Deplasman sayfası olan takımlar ve tema 'şehirleri' (data/<slug>.json, ör. noel). Robot, sayfa üreticisi ve site bu listeyi kullanır.", "takimlar": ["fenerbahce", "galatasaray", "besiktas", "noel"]}
