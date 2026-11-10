@@ -323,7 +323,10 @@
    "transfer_yazi": {
     "konforlu": "Stansted Express treni",
     "ucuz": "National Express otobüsü"
-   }
+   },
+   "hikaye_poster": "/img/hikaye/fenerbahce-londra.jpg",
+   "hikaye_video": "/img/hikaye/fenerbahce-londra.mp4",
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
   },
   {
    "id": "linz",
@@ -913,7 +916,10 @@
    "havalimani_ulasim": {
     "fiyat": 5.3,
     "yazi": "Viyana Havalimanı'ndan Wien Hbf'ye tren 5,30 € (14–20 dk, her 15 dk)."
-   }
+   },
+   "hikaye_poster": "/img/hikaye/fenerbahce-linz.jpg",
+   "hikaye_video": "/img/hikaye/fenerbahce-linz.mp4",
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
   },
   {
    "id": "madrid",
@@ -1173,7 +1179,10 @@
     ]
    ],
    "uyari": "Dönüş uçağı maç ertesi sabah 09:10; maçtan sonra az uyku. Daha geç dönüş: THY 14:20 (386 €).",
-   "foto_kaynak": "Pexels"
+   "foto_kaynak": "Pexels",
+   "hikaye_poster": "/img/hikaye/fenerbahce-madrid.jpg",
+   "hikaye_video": "/img/hikaye/fenerbahce-madrid.mp4",
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
   }
  ],
  "kaynaklar": [

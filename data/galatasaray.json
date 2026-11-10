@@ -286,7 +286,10 @@
    "secim": {
     "konforlu": "Herodion Hotel",
     "ucuz": "Phaedra Hotel"
-   }
+   },
+   "hikaye_poster": "/img/hikaye/galatasaray-atina.jpg",
+   "hikaye_video": "/img/hikaye/galatasaray-atina.mp4",
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
   },
   {
    "id": "paris",
@@ -547,7 +550,10 @@
    "secim": {
     "konforlu": "Hôtel Le Walt",
     "ucuz": "Hôtel du Cygne"
-   }
+   },
+   "hikaye_poster": "/img/hikaye/galatasaray-paris.jpg",
+   "hikaye_video": "/img/hikaye/galatasaray-paris.mp4",
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
   }
  ],
  "kaynaklar": [

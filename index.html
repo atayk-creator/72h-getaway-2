@@ -2194,7 +2194,11 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   function stTeam(x) {
     var m = x.m, o = m.ucus && m.ucus.oneri;
-    $("stPh").innerHTML = m.foto ? '<img src="' + escH(m.foto) + '" alt="" decoding="async">' : '<span class="fb fbt" style="' + teamBg(x.team) + '"></span>';
+    // Hikâye videosu (şehir + takım renklerinde dalgalanan bayraklar, yapay zekâ ile üretildi); hareketi azaltanlara poster
+    var azHareket = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    $("stPh").innerHTML = m.hikaye_video && !azHareket
+      ? '<video src="' + escH(m.hikaye_video) + '" poster="' + escH(m.hikaye_poster || m.foto || "") + '" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>'
+      : m.hikaye_poster || m.foto ? '<img src="' + escH(m.hikaye_poster || m.foto) + '" alt="" decoding="async">' : '<span class="fb fbt" style="' + teamBg(x.team) + '"></span>';
     var tema = isTema(x.team);
     var chips = tema ? [weekendText(m.gidis, m.donus), m.etkinlik + " · " + m.yer] : [dTr(m.tarih) + " · " + m.saat_tsi + " TSİ", m.rakip + " – " + x.n + " · " + m.stat];
     if (o) chips.push(o.havayolu + " " + tl(Math.round(o.fiyat * DATA.eurTry / 100) * 100) + "'den, " + (o.aktarma === 0 ? "aktarmasız" : "aktarmalı"));

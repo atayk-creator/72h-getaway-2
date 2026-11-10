@@ -380,7 +380,10 @@
     "ucuz": "ibis Köln Centrum"
    },
    "donus_min": "09:00",
-   "havalimani_tercih": "CGN"
+   "havalimani_tercih": "CGN",
+   "hikaye_poster": "/img/hikaye/besiktas-leverkusen.jpg",
+   "hikaye_video": "/img/hikaye/besiktas-leverkusen.mp4",
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
   },
   {
    "id": "lefkosa",
@@ -623,7 +626,10 @@
    "secim": {
     "konforlu": "Centrum Hotel",
     "ucuz": "Asty Hotel"
-   }
+   },
+   "hikaye_poster": "/img/hikaye/besiktas-lefkosa.jpg",
+   "hikaye_video": "/img/hikaye/besiktas-lefkosa.mp4",
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
   }
  ],
  "kaynaklar": [
