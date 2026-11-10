@@ -6,7 +6,7 @@ name: Telefon uygulaması (Android + iOS)
 on:
   push:
     branches: [main]
-    paths: ["app/**", "scripts/build-app.mjs", ".github/workflows/uygulama.yml", ".github/scripts/ios-ekran.sh", ".github/scripts/android-ekran.sh"]
+    paths: ["app/**", "scripts/build-app.mjs", ".github/workflows/uygulama.yml", ".github/scripts/**"]
   workflow_dispatch:
 permissions:
   contents: write
@@ -28,16 +28,8 @@ jobs:
         with:
           distribution: temurin
           java-version: 21
-      - name: Bağımlılıklar ve web içeriği
-        working-directory: app
-        run: |
-          npm install --no-audit --no-fund
-          npm run www
-          npx cap add android
-          python3 ../.github/scripts/android-tema.py android/app/src/main/res
-          npx capacitor-assets generate --android --iconBackgroundColor "#0F2A43" --iconBackgroundColorDark "#0F2A43" --splashBackgroundColor "#0F2A43" --splashBackgroundColorDark "#0F2A43"
-          npx cap sync android
-          npx cap --version
+      - name: Android projesini hazırla
+        run: bash .github/scripts/android-hazirla.sh
       - name: APK derle
         working-directory: app/android
         run: ./gradlew assembleDebug --no-daemon --stacktrace
@@ -80,33 +72,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Bağımlılıklar ve web içeriği
-        working-directory: app
-        run: |
-          npm install --no-audit --no-fund
-          npm run www
-          npx cap add ios
-          npx capacitor-assets generate --ios --iconBackgroundColor "#0F2A43" --splashBackgroundColor "#0F2A43" --splashBackgroundColorDark "#0F2A43"
-          npx cap sync ios
-          xcodebuild -version
-      - name: App Store ayarları (gizlilik bildirimi, şifreleme beyanı, dil, iPhone + dikey)
-        working-directory: app
-        run: |
-          cp ios-ek/PrivacyInfo.xcprivacy ios/App/App/PrivacyInfo.xcprivacy
-          gem list -i xcodeproj >/dev/null || sudo gem install xcodeproj --no-document
-          ruby ios-ek/ayarla.rb ios/App/App.xcodeproj
-          P=ios/App/App/Info.plist; PB=/usr/libexec/PlistBuddy
-          $PB -c "Delete :ITSAppUsesNonExemptEncryption" $P 2>/dev/null || true
-          $PB -c "Add :ITSAppUsesNonExemptEncryption bool false" $P
-          $PB -c "Set :CFBundleDevelopmentRegion tr" $P 2>/dev/null || $PB -c "Add :CFBundleDevelopmentRegion string tr" $P
-          $PB -c "Delete :CFBundleLocalizations" $P 2>/dev/null || true
-          $PB -c "Add :CFBundleLocalizations array" $P && $PB -c "Add :CFBundleLocalizations:0 string tr" $P
-          $PB -c "Set :CFBundleDisplayName 72h Getaway" $P 2>/dev/null || $PB -c "Add :CFBundleDisplayName string 72h Getaway" $P
-          $PB -c "Delete :UISupportedInterfaceOrientations" $P 2>/dev/null || true
-          $PB -c "Add :UISupportedInterfaceOrientations array" $P && $PB -c "Add :UISupportedInterfaceOrientations:0 string UIInterfaceOrientationPortrait" $P
-          $PB -c "Delete :UISupportedInterfaceOrientations~ipad" $P 2>/dev/null || true
-          plutil -lint $P ios/App/App/PrivacyInfo.xcprivacy
-          plutil -p $P | grep -E "Encryption|Region|Localizations|DisplayName|Orientation" -A2
+      - name: iOS projesini hazırla (App Store ayarlarıyla)
+        run: bash .github/scripts/ios-hazirla.sh
       - name: Simülatör için derle
         working-directory: app/ios/App
         run: |

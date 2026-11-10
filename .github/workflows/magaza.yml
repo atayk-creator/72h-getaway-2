@@ -1,0 +1,216 @@
+name: Mağaza sürümü (Android AAB + iOS TestFlight)
+# Elle çalıştırılır: Actions > "Mağaza sürümü" > Run workflow.
+#
+# ANDROID: imzalı mağaza paketi (AAB) üretir, "android-magaza" adıyla indirilebilir dosya olarak koyar.
+#   İmza anahtarı (upload key) ve şifresi YALNIZCA GitHub Secrets'tan okunur, depoya hiç girmez:
+#     ANDROID_KEYSTORE_BASE64, ANDROID_KEYSTORE_PASSWORD, ANDROID_KEY_ALIAS, ANDROID_KEY_PASSWORD
+#   Bu sırlar yoksa: tek kullanımlık DENEME anahtarıyla derler (yalnızca derlemenin çalıştığını gösterir; mağazaya YÜKLENMEZ).
+#   İsteğe bağlı: PLAY_SERVICE_ACCOUNT_JSON varsa ve "Play'e yükle" seçiliyse seçilen kanala taslak olarak yükler.
+#   (Google'da ilk AAB elle yüklenir; otomatik yükleme ikinci sürümden itibaren çalışır.)
+#
+# iOS: App Store Connect API anahtarıyla imzalar ve TestFlight'a yükler.
+#   Sırlar: APPSTORE_API_KEY_ID, APPSTORE_API_ISSUER_ID, APPSTORE_API_PRIVATE_KEY (.p8 dosyasının içeriği), APPLE_TEAM_ID
+#   Bu sırlar yoksa: imzasız Release arşivi derler (derlemenin çalıştığını gösterir), yüklemez.
+#
+# Ayrıntılı kurulum: magaza/KURULUM.md
+on:
+  # Bu dosya ya da derleme betikleri değişince otomatik DENEME derlemesi (gerçek anahtarlar kullanılmaz, hiçbir şey yüklenmez)
+  push:
+    branches: [main]
+    paths: [".github/workflows/magaza.yml", ".github/scripts/android-hazirla.sh", ".github/scripts/ios-hazirla.sh"]
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Hangi mağaza"
+        type: choice
+        options: [ikisi, android, ios]
+        default: ikisi
+      play_kanal:
+        description: "Google Play kanalı (otomatik yüklemede): alpha = kapalı test, internal = dahili test"
+        type: choice
+        options: [alpha, internal, production]
+        default: alpha
+      play_yukle:
+        description: "AAB'yi Google Play'e otomatik yükle (PLAY_SERVICE_ACCOUNT_JSON gerekir; ilk sürüm elle yüklenir)"
+        type: boolean
+        default: false
+      surum_no:
+        description: "Sürüm kodu/derleme numarası (boş = otomatik: 100 + çalıştırma sayısı). Her yüklemede öncekinden büyük olmalı."
+        type: string
+        default: ""
+permissions:
+  contents: read
+concurrency:
+  group: magaza
+  cancel-in-progress: false
+env:
+  APP_ID: com.getaway72h.app
+
+jobs:
+  android:
+    if: inputs.platform != 'ios'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      KS_B64: ${{ github.event_name == 'workflow_dispatch' && secrets.ANDROID_KEYSTORE_BASE64 || '' }}
+      PLAY_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Sürüm bilgisi
+        id: v
+        env:
+          SURUM_NO: ${{ inputs.surum_no }}
+        run: |
+          N="$SURUM_NO"; [ -n "$N" ] || N=$((100 + GITHUB_RUN_NUMBER))
+          V=$(node -p "require('./app/package.json').version")
+          echo "kod=$N" >> "$GITHUB_OUTPUT"; echo "ad=$V" >> "$GITHUB_OUTPUT"
+          echo "Sürüm adı $V, sürüm kodu $N"
+      - name: Android projesini hazırla
+        run: bash .github/scripts/android-hazirla.sh
+      - name: İmza anahtarını hazırla (Secrets'tan; yoksa tek kullanımlık deneme anahtarı)
+        id: k
+        env:
+          KS_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASS: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          KS="$RUNNER_TEMP/imza.jks"
+          if [ -n "$KS_B64" ]; then
+            echo "$KS_B64" | base64 -d > "$KS"
+            echo "::add-mask::$KS_PASS"; echo "::add-mask::$KEY_PASS"
+            { echo "ANDROID_KEYSTORE_PATH=$KS"; echo "ANDROID_KEYSTORE_PASSWORD=$KS_PASS"; echo "ANDROID_KEY_ALIAS=$KEY_ALIAS"; echo "ANDROID_KEY_PASSWORD=${KEY_PASS:-$KS_PASS}"; } >> "$GITHUB_ENV"
+            echo "tur=gercek" >> "$GITHUB_OUTPUT"; echo "Gerçek yükleme anahtarı kullanılıyor."
+          else
+            P=$(openssl rand -hex 16); echo "::add-mask::$P"
+            keytool -genkeypair -keystore "$KS" -storetype PKCS12 -storepass "$P" -keypass "$P" -alias deneme -keyalg RSA -keysize 2048 -validity 1 -dname "CN=DENEME - magazaya yuklenmez" >/dev/null
+            { echo "ANDROID_KEYSTORE_PATH=$KS"; echo "ANDROID_KEYSTORE_PASSWORD=$P"; echo "ANDROID_KEY_ALIAS=deneme"; echo "ANDROID_KEY_PASSWORD=$P"; } >> "$GITHUB_ENV"
+            echo "tur=deneme" >> "$GITHUB_OUTPUT"
+            echo "::warning::ANDROID_KEYSTORE_BASE64 sırrı yok: DENEME anahtarıyla derleniyor. Bu AAB mağazaya yüklenmez."
+          fi
+      - name: Mağaza imzasını ve sürüm numarasını derlemeye ekle
+        run: |
+          cat >> app/android/app/build.gradle <<'GRADLE'
+
+          // 72h Getaway: mağaza imzası ve sürüm numarası (yalnızca CI'da eklenir; anahtar ve şifreler ortam değişkeninden okunur)
+          android {
+              defaultConfig {
+                  versionCode Integer.parseInt(System.getenv("VERSION_CODE") ?: "1")
+                  versionName System.getenv("VERSION_NAME") ?: "1.0.0"
+              }
+              signingConfigs {
+                  magaza {
+                      storeFile file(System.getenv("ANDROID_KEYSTORE_PATH"))
+                      storePassword System.getenv("ANDROID_KEYSTORE_PASSWORD")
+                      keyAlias System.getenv("ANDROID_KEY_ALIAS")
+                      keyPassword System.getenv("ANDROID_KEY_PASSWORD")
+                  }
+              }
+              buildTypes {
+                  release {
+                      signingConfig signingConfigs.magaza
+                  }
+              }
+          }
+          GRADLE
+          grep -E "compileSdk|targetSdk|minSdk" app/android/variables.gradle || true
+      - name: İmzalı AAB derle
+        working-directory: app/android
+        env:
+          VERSION_CODE: ${{ steps.v.outputs.kod }}
+          VERSION_NAME: ${{ steps.v.outputs.ad }}
+        run: ./gradlew bundleRelease --no-daemon --stacktrace
+      - name: İmzayı doğrula ve dosyayı adlandır
+        run: |
+          AAB=app/android/app/build/outputs/bundle/release/app-release.aab
+          test -f "$AAB"
+          jarsigner -verify "$AAB" | tail -n 2
+          keytool -printcert -jarfile "$AAB" | grep -E "Owner|SHA256" | head -n 3
+          mkdir -p cikti
+          if [ "${{ steps.k.outputs.tur }}" = gercek ]; then
+            F="72h-getaway-${{ steps.v.outputs.ad }}-${{ steps.v.outputs.kod }}.aab"
+          else
+            F="DENEME-YUKLEMEYIN-72h-getaway-${{ steps.v.outputs.kod }}.aab"
+          fi
+          cp "$AAB" "cikti/$F"; ls -la cikti
+          echo "### Android: \`$F\` (sürüm ${{ steps.v.outputs.ad }}, kod ${{ steps.v.outputs.kod }}, imza: ${{ steps.k.outputs.tur }})" >> "$GITHUB_STEP_SUMMARY"
+          rm -f "$ANDROID_KEYSTORE_PATH"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android-magaza
+          path: cikti/*.aab
+          retention-days: 30
+      - name: Google Play'e yükle (isteğe bağlı)
+        if: inputs.play_yukle && steps.k.outputs.tur == 'gercek' && env.PLAY_JSON != ''
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: com.getaway72h.app
+          releaseFiles: cikti/*.aab
+          track: ${{ inputs.play_kanal }}
+          status: draft
+
+  ios:
+    if: inputs.platform != 'android'
+    runs-on: macos-latest
+    timeout-minutes: 60
+    env:
+      ASC_KEY_ID: ${{ github.event_name == 'workflow_dispatch' && secrets.APPSTORE_API_KEY_ID || '' }}
+      ASC_ISSUER: ${{ secrets.APPSTORE_API_ISSUER_ID }}
+      ASC_KEY: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+      TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Sürüm bilgisi
+        id: v
+        env:
+          SURUM_NO: ${{ inputs.surum_no }}
+        run: |
+          N="$SURUM_NO"; [ -n "$N" ] || N=$((100 + GITHUB_RUN_NUMBER))
+          V=$(node -p "require('./app/package.json').version")
+          echo "kod=$N" >> "$GITHUB_OUTPUT"; echo "ad=$V" >> "$GITHUB_OUTPUT"
+          echo "Sürüm $V, derleme $N"
+      - name: iOS projesini hazırla (App Store ayarlarıyla)
+        run: bash .github/scripts/ios-hazirla.sh
+      - name: Arşivle ve TestFlight'a yükle
+        working-directory: app/ios/App
+        run: |
+          if [ -d App.xcworkspace ]; then P="-workspace App.xcworkspace"; else P="-project App.xcodeproj"; fi
+          V="MARKETING_VERSION=${{ steps.v.outputs.ad }} CURRENT_PROJECT_VERSION=${{ steps.v.outputs.kod }}"
+          if [ -z "$ASC_KEY_ID" ] || [ -z "$ASC_ISSUER" ] || [ -z "$ASC_KEY" ] || [ -z "$TEAM_ID" ]; then
+            echo "::warning::App Store Connect API sırları eksik: imzasız Release arşivi derleniyor (yükleme yok)."
+            xcodebuild $P -scheme App -configuration Release -destination "generic/platform=iOS" \
+              -archivePath "$RUNNER_TEMP/App.xcarchive" $V CODE_SIGNING_ALLOWED=NO archive | tail -n 25
+            test -d "$RUNNER_TEMP/App.xcarchive"
+            echo "### iOS: imzasız deneme arşivi derlendi (sürüm ${{ steps.v.outputs.ad }}, derleme ${{ steps.v.outputs.kod }}); API sırları eklenince TestFlight'a yüklenecek." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          K="$RUNNER_TEMP/AuthKey_${ASC_KEY_ID}.p8"; printf '%s\n' "$ASC_KEY" > "$K"
+          A="-allowProvisioningUpdates -authenticationKeyPath $K -authenticationKeyID $ASC_KEY_ID -authenticationKeyIssuerID $ASC_ISSUER"
+          xcodebuild $P -scheme App -configuration Release -destination "generic/platform=iOS" \
+            -archivePath "$RUNNER_TEMP/App.xcarchive" $A $V DEVELOPMENT_TEAM="$TEAM_ID" CODE_SIGN_STYLE=Automatic archive | tail -n 30
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict>
+            <key>method</key><string>app-store-connect</string>
+            <key>destination</key><string>upload</string>
+            <key>teamID</key><string>${TEAM_ID}</string>
+            <key>signingStyle</key><string>automatic</string>
+            <key>uploadSymbols</key><true/>
+            <key>manageAppVersionAndBuildNumber</key><false/>
+          </dict></plist>
+          PLIST
+          xcodebuild -exportArchive -archivePath "$RUNNER_TEMP/App.xcarchive" -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" \
+            -exportPath "$RUNNER_TEMP/export" $A | tail -n 30
+          rm -f "$K"
+          echo "### iOS: sürüm ${{ steps.v.outputs.ad }} (derleme ${{ steps.v.outputs.kod }}) App Store Connect'e yüklendi; 10-30 dk içinde TestFlight'ta görünür." >> "$GITHUB_STEP_SUMMARY"

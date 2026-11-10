@@ -286,6 +286,14 @@
 
     store.get("72h-turlar").then(function (v) { try { trips = JSON.parse(v || "[]") || []; } catch (e) { trips = []; } badge(); });
     store.get("72h-tanitim").then(function (v) { if (!v && page === "hesapla") intro(); });
+    // Mağaza ekran görüntüsü robotu (.github/scripts/ios-ekran.sh) açılışta hangi ekranın gösterileceğini buraya yazar; tek seferlik.
+    // Normal kullanımda bu anahtar hiç olmaz.
+    store.get("72h-ekran").then(function (v) {
+      if (!v || page !== "hesapla" || !/^#[a-z0-9\/-]+$/.test(v)) return;
+      store.set("72h-ekran", "");
+      location.hash = v;
+      if (v === "#biletim") setTimeout(function () { var r = $("resultSec"); if (r) r.scrollIntoView({ block: "start" }); }, 1500);
+    });
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build); else build();
   window.APP = { native: native, webUrl: webUrl, state: state, shareFile: native ? shareFile : null };
