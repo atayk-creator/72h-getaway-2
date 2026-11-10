@@ -245,6 +245,8 @@
     if (page === "hesapla") {
       window.addEventListener("hashchange", function () { setTimeout(syncTitle, 0); });
       setTimeout(syncTitle, 400);
+      // Başlık sonradan değişirse (ör. tema verisi geç gelince "Deplasman" yerine "Noel Tatili") üst çubuk da güncellenir
+      try { var tt = document.querySelector("title"); if (tt && window.MutationObserver) new MutationObserver(function () { syncTitle(); }).observe(tt, { childList: true, characterData: true, subtree: true }); } catch (e) {}
       if (location.hash === "#turlarim") { history.replaceState(null, "", location.pathname + location.search + "#biletim"); openSheet(); }
     }
 

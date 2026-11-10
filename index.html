@@ -2156,6 +2156,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     if (p === "kesfet") renderStory();
     else if (p === "sehirler") renderCities();
     else if (p === "sehir") { if (TEAM) renderTeam(); else renderCity(+$("city").value, TAB.split("|")[2]); }
+    else if (p === "karsilastir" && $("swDeck").querySelector(".sw-empty")) swOpen(); // fiyatlar açılıştan sonra geldiyse kartları çiz
   }
 
   // ---- Ana sayfa hikâyesi: 6 şehir, haftada 3 kez (pazartesi, çarşamba, cuma) değişir
@@ -3087,7 +3088,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     jget(window.TEAMS_URL).then(function (l) { return Promise.all(((l && l.takimlar) || []).map(function (sl) { return jget("data/" + sl + ".json"); })); }).then(function (ds) {
       ds.forEach(function (d) { if (d && d.slug && Array.isArray(d.maclar)) { TEAMS[d.slug] = d; TORDER.push(d.slug); } });
       if (TEAM && TEAMS[TEAM]) FBD = TEAMS[TEAM];
-      if (TORDER.length) { render(); if (TEAM) renderTeam(); if (TAB && TAB.indexOf("sehirler") === 0) renderCities(); }
+      if (TORDER.length) { render(); if (TEAM) { renderTeam(); if (FBD && FBD.slug === TEAM) document.title = FBD.takim + " · 72h Getaway"; } if (TAB && TAB.indexOf("sehirler") === 0) renderCities(); }
     }).catch(function () {});
   }
   if (window.GEZI_URL && window.fetch) {
