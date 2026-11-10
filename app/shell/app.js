@@ -296,6 +296,8 @@
       if (m[1] === "#biletim") setTimeout(function () { var r = $("resultSec"); if (r) r.scrollIntoView({ block: "start" }); }, 1200);
       else window.scrollTo(0, 0);
     };
+    // Mağaza ekran görüntüsü robotu açılış ekranını "72h-ekran" ayarına da yazabilir (tek seferlik; normal kullanımda bu ayar olmaz)
+    store.get("72h-ekran").then(function (v) { if (v) { store.set("72h-ekran", ""); acAdres("getaway72h://ac" + v); } });
     if (A) { A.addListener("appUrlOpen", function (e) { acAdres(e && e.url); }); if (A.getLaunchUrl) A.getLaunchUrl().then(function (r) { if (r) acAdres(r.url); }).catch(function () {}); }
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", build); else build();

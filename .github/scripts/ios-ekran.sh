@@ -2,7 +2,7 @@
 # Sanal iPhone'da (6,9 inç Pro Max) uygulamayı kurar, açar ve ekran görüntüleri alır (ekran/ klasörüne).
 #  - ios-1-tanitim.png: ilk açılış (tanıtım)
 #  - ios-magaza-1..5-*.png: App Store için 6,9 inç (1320x2868 ya da 1290x2796) mağaza sahneleri
-# Sahne seçimi: getaway72h://ac#<ekran> adresi (app/shell/app.js > acAdres).
+# Sahne seçimi: uygulamanın "72h-ekran" ayarı (app/shell/app.js > acAdres). getaway72h:// adresi iOS onay kutusu açtığı için robotta kullanılmaz.
 set -u
 APP="$1"; mkdir -p ekran
 UDID=$(xcrun simctl list devices available -j | python3 -c '
@@ -24,20 +24,24 @@ xcrun simctl status_bar "$UDID" override --time 9:41 --dataNetwork wifi --wifiMo
 xcrun simctl install "$UDID" "$APP"
 xcrun simctl launch "$UDID" "$APP_ID"; sleep 25
 xcrun simctl io "$UDID" screenshot ekran/ios-1-tanitim.png
-xcrun simctl spawn "$UDID" defaults write "$APP_ID" "CapacitorStorage.72h-tanitim" -string 1
-
-# Uygulamayı bir kez aç; sahneleri getaway72h:// adresiyle değiştir (app/shell/app.js > acAdres)
+# Ayarlar uygulamanın kendi kabındaki dosyaya yazılır (Capacitor Preferences = UserDefaults, "CapacitorStorage." önekiyle)
+PREF="$(xcrun simctl get_app_container "$UDID" "$APP_ID" data)/Library/Preferences/$APP_ID"
+ayar() { xcrun simctl spawn "$UDID" defaults write "$PREF" "CapacitorStorage.$1" -string "$2"; }
 xcrun simctl terminate "$UDID" "$APP_ID" 2>/dev/null || true
-xcrun simctl launch "$UDID" "$APP_ID"; sleep 25
-sahne() { # sahne <dosya> <adres> <bekleme sn>
-  xcrun simctl openurl "$UDID" "getaway72h://ac$2"; sleep "$3"
+ayar 72h-tanitim 1
+
+sahne() { # sahne <dosya> <ekran> <bekleme sn>: uygulamayı kapat, açılış ekranını yaz, aç, görüntü al
+  xcrun simctl terminate "$UDID" "$APP_ID" 2>/dev/null || true
+  ayar 72h-ekran "$2"
+  { echo "== $1"; xcrun simctl spawn "$UDID" defaults read "$PREF" 2>&1; } >> ekran/ios-ayar.txt
+  xcrun simctl launch "$UDID" "$APP_ID"; sleep "$3"
   xcrun simctl io "$UDID" screenshot "ekran/$1.png"
 }
-sahne ios-magaza-2-takvim "#takvim/paris" 8
-sahne ios-magaza-3-biletim "#biletim" 10
-sahne ios-magaza-4-karsilastir "#karsilastir" 8
-sahne ios-magaza-5-noel "#takvim/noel" 10
-sahne ios-magaza-1-kesfet "#kesfet" 10
+sahne ios-magaza-1-kesfet "#kesfet" 22
+sahne ios-magaza-2-takvim "#takvim/paris" 20
+sahne ios-magaza-3-biletim "#biletim" 22
+sahne ios-magaza-4-karsilastir "#karsilastir" 20
+sahne ios-magaza-5-noel "#takvim/noel" 20
 cp ekran/ios-magaza-1-kesfet.png ekran/ios-2-kesfet.png
 
 # Boyut kontrolü: App Store 6,9 inç = 1320x2868 ya da 1290x2796
