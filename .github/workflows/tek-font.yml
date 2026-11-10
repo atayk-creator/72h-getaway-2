@@ -1,0 +1,24 @@
+name: Tek font (geçici)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/tek-font.yml]
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmp-fonts
+          curl -sfL -o tmp-fonts/Fraunces.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/Fraunces%5BSOFT,WONK,opsz,wght%5D.ttf"
+          curl -sfL -o tmp-fonts/Fraunces-Italic.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/Fraunces-Italic%5BSOFT,WONK,opsz,wght%5D.ttf"
+          curl -sfL -o tmp-fonts/Caveat.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/caveat/Caveat%5Bwght%5D.ttf"
+          curl -sfL -o tmp-fonts/SpaceMono-Regular.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/spacemono/SpaceMono-Regular.ttf"
+          curl -sfL -o tmp-fonts/SpaceMono-Bold.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/spacemono/SpaceMono-Bold.ttf"
+          ls -la tmp-fonts
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp-fonts && git commit -m "geçici fontlar"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
