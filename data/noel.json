@@ -312,7 +312,10 @@
    "foto_alt": "Nürnberg eski şehir ve St. Sebald kilisesi",
    "foto_kaynak": "Unsplash · Markus Spiske",
    "uygun_plan": true,
-   "uyarilar": []
+   "uyarilar": [],
+   "hikaye_poster": "/img/hikaye/noel-nurnberg.jpg",
+   "hikaye_video": "/img/hikaye/noel-nurnberg.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   },
   {
    "id": "dresden",
@@ -696,7 +699,10 @@
    "foto_alt": "Dresden eski şehir, Frauenkirche'ye uzanan sokak",
    "foto_kaynak": "Unsplash · Ruben Hanssen",
    "uygun_plan": true,
-   "uyarilar": []
+   "uyarilar": [],
+   "hikaye_poster": "/img/hikaye/noel-dresden.jpg",
+   "hikaye_video": "/img/hikaye/noel-dresden.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   },
   {
    "id": "salzburg",
@@ -1077,7 +1083,10 @@
     }
    ],
    "uygun_plan": true,
-   "uyarilar": []
+   "uyarilar": [],
+   "hikaye_poster": "/img/hikaye/noel-salzburg.jpg",
+   "hikaye_video": "/img/hikaye/noel-salzburg.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   },
   {
    "id": "gdansk",
@@ -1341,7 +1350,10 @@
    "uyarilar": [
     "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 312 €) otelinden pahalı"
    ],
-   "dikkat": "6 Aralık Pazar günü Gdańsk'tan İstanbul'a direkt sefer yok (LOT direkt seferi haftada 4 gün). Pazar dönüşü aktarmalı: LOT 14:45 kalkış, Varşova'da gece aktarma, Pazartesi 14:00 İstanbul; ya da Lufthansa 06:10 kalkış, aynı gün 22:45 İstanbul. Pazartesi için izin gerekebilir."
+   "dikkat": "6 Aralık Pazar günü Gdańsk'tan İstanbul'a direkt sefer yok (LOT direkt seferi haftada 4 gün). Pazar dönüşü aktarmalı: LOT 14:45 kalkış, Varşova'da gece aktarma, Pazartesi 14:00 İstanbul; ya da Lufthansa 06:10 kalkış, aynı gün 22:45 İstanbul. Pazartesi için izin gerekebilir.",
+   "hikaye_poster": "/img/hikaye/noel-gdansk.jpg",
+   "hikaye_video": "/img/hikaye/noel-gdansk.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   },
   {
    "id": "munih",
@@ -1617,7 +1629,10 @@
    "uygun_plan": true,
    "uyarilar": [
     "Louis Hotel (Lüks, 1463 €) üst sınıftaki Hotel Bayerischer Hof (İkonik, 1090 €) otelinden pahalı"
-   ]
+   ],
+   "hikaye_poster": "/img/hikaye/noel-munih.jpg",
+   "hikaye_video": "/img/hikaye/noel-munih.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   },
   {
    "id": "strazburg",
@@ -1906,7 +1921,10 @@
    "uyarilar": [
     "ibis Styles Strasbourg Centre Gare (Uygun, 707 €) üst sınıftaki Hôtel Cathédrale (Konforlu, 630 €) otelinden pahalı",
     "Hôtel du Dragon (Uygun, 896 €) üst sınıftaki Hôtel Cathédrale (Konforlu, 630 €) otelinden pahalı"
-   ]
+   ],
+   "hikaye_poster": "/img/hikaye/noel-strazburg.jpg",
+   "hikaye_video": "/img/hikaye/noel-strazburg.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   },
   {
    "id": "krakov",
@@ -2164,7 +2182,10 @@
     "Hotel Saski (Konforlu, 483 €) üst sınıftaki Hotel Copernicus (İkonik, 397 €) otelinden pahalı",
     "Hotel Saski (Konforlu, 483 €) üst sınıftaki Hotel Stary (Lüks, 304 €) otelinden pahalı",
     "Hotel Saski (Konforlu, 483 €) üst sınıftaki Hotel Wentzl (Lüks, 440 €) otelinden pahalı"
-   ]
+   ],
+   "hikaye_poster": "/img/hikaye/noel-krakov.jpg",
+   "hikaye_video": "/img/hikaye/noel-krakov.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   },
   {
    "id": "brugge",
@@ -2418,7 +2439,10 @@
    "uygun_plan": true,
    "uyarilar": [
     "Hotel Heritage (Lüks, 1090 €) üst sınıftaki Hotel Dukes' Palace (İkonik, 926 €) otelinden pahalı"
-   ]
+   ],
+   "hikaye_poster": "/img/hikaye/noel-brugge.jpg",
+   "hikaye_video": "/img/hikaye/noel-brugge.mp4",
+   "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir."
   }
  ]
 }

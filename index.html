@@ -421,7 +421,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 .st-chips span { background: rgba(251,246,236,0.16); border: 1px solid rgba(251,246,236,0.28); border-radius: 999px; padding: 5px 10px; font-size: 0.8rem; font-weight: 600; }
 .st-cta { display: block; text-align: center; min-height: 50px; line-height: 50px; border-radius: 14px; background: #F4A62A; color: #0F2A43; font-weight: 800; border: 0; font-size: 1rem; cursor: pointer; width: 100%; font-family: inherit; }
 .st-ph .fbt { background: repeating-linear-gradient(90deg, rgba(244,211,11,0.95) 0 34px, #0F2A43 34px 68px) top / 100% 38% no-repeat, radial-gradient(circle, rgba(244,211,11,0.28) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
-.story.takim .st-cta { background: var(--tk-a, #F4D30B); color: var(--tk-b, #0F2A43); text-decoration: none; }
+.story.takim .st-cta { background: var(--tk-a, #F4D30B); color: var(--tk-c, var(--tk-b, #0F2A43)); text-decoration: none; }
 .st-cr { font-size: 0.68rem; color: rgba(251,246,236,0.65); text-align: right; margin-top: -4px; }
 /* ---------- Şehirler listesi ---------- */
 .cgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 10px; }
@@ -2208,7 +2208,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       '<div class="st-pr"><b>~' + tl(Math.round(x.t * 2 / 100) * 100) + "</b><span>2 kişi toplam · kişi başı ~" + tl(Math.round(x.t / 100) * 100) + (tema ? " · " + tMetin(x.team, "kalem", "uçak + otel + yemek + gezi") : " · uçak + otel + maç bileti + yemek") + "</span></div>" +
       '<div class="st-chips">' + chips.map(function (c) { return "<span>" + escH(c) + "</span>"; }).join("") + "</div>" +
       '<a class="st-cta" id="stCta" href="#takvim/' + escH(x.team.slug) + '">' + escH(x.n) + (tema ? tMetin(x.team, "hikaye_link", " hafta sonları ve planı") + "</a>" : " maç takvimi ve planı</a>") +
-      (m.foto ? '<span class="st-cr">Görüntü: ' + escH(m.foto_kaynak || "Pexels") + "</span>" : "");
+      (m.hikaye_video || m.hikaye_poster ? '<span class="st-cr">Görüntü: yapay zekâ ile üretildi, temsilîdir</span>' : m.foto ? '<span class="st-cr">Görüntü: ' + escH(m.foto_kaynak || "Pexels") + "</span>" : "");
   }
   function dTr(s) { var d = parseD(s), ay = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"], g = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]; return d.getUTCDate() + " " + ay[d.getUTCMonth()] + " " + g[d.getUTCDay()]; }
   function renderStory() {
@@ -2230,7 +2230,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var n = ST.list.length; ST.k = ((k % n) + n) % n;
     var x = ST.list[ST.k];
     $("story").classList.toggle("takim", !!x.takim);
-    if (x.takim) { var sc = $("story").style; sc.setProperty("--tk-a", x.team.renk ? x.team.renk.a : "#F4D30B"); sc.setProperty("--tk-b", x.team.renk ? x.team.renk.b : "#0F2A43"); }
+    if (x.takim) { var sc = $("story").style; sc.setProperty("--tk-a", x.team.renk ? x.team.renk.a : "#F4D30B"); sc.setProperty("--tk-b", x.team.renk ? x.team.renk.b : "#0F2A43"); if (isTema(x.team) && x.team.renk && x.team.renk.mk) sc.setProperty("--tk-c", x.team.renk.mk); else sc.removeProperty("--tk-c"); }
     if (x.takim) {
       var bt = $("stBars").children;
       for (var q = 0; q < bt.length; q++) bt[q].className = q < ST.k ? "done" : "";
