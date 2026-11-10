@@ -2,7 +2,7 @@
 # Sanal iPhone'da (6,9 inç Pro Max) uygulamayı kurar, açar ve ekran görüntüleri alır (ekran/ klasörüne).
 #  - ios-1-tanitim.png: ilk açılış (tanıtım)
 #  - ios-magaza-1..5-*.png: App Store için 6,9 inç (1320x2868 ya da 1290x2796) mağaza sahneleri
-# Sahne seçimi: uygulamanın kabuğu (app/shell/app.js) açılışta "72h-ekran" anahtarındaki adrese gider (tek seferlik).
+# Sahne seçimi: getaway72h://ac#<ekran> adresi (app/shell/app.js > acAdres).
 set -u
 APP="$1"; mkdir -p ekran
 UDID=$(xcrun simctl list devices available -j | python3 -c '
@@ -26,17 +26,18 @@ xcrun simctl launch "$UDID" "$APP_ID"; sleep 25
 xcrun simctl io "$UDID" screenshot ekran/ios-1-tanitim.png
 xcrun simctl spawn "$UDID" defaults write "$APP_ID" "CapacitorStorage.72h-tanitim" -string 1
 
+# Uygulamayı bir kez aç; sahneleri getaway72h:// adresiyle değiştir (app/shell/app.js > acAdres)
+xcrun simctl terminate "$UDID" "$APP_ID" 2>/dev/null || true
+xcrun simctl launch "$UDID" "$APP_ID"; sleep 25
 sahne() { # sahne <dosya> <adres> <bekleme sn>
-  xcrun simctl terminate "$UDID" "$APP_ID" 2>/dev/null || true
-  xcrun simctl spawn "$UDID" defaults write "$APP_ID" "CapacitorStorage.72h-ekran" -string "$2"
-  xcrun simctl launch "$UDID" "$APP_ID"; sleep "$3"
+  xcrun simctl openurl "$UDID" "getaway72h://ac$2"; sleep "$3"
   xcrun simctl io "$UDID" screenshot "ekran/$1.png"
 }
-sahne ios-magaza-1-kesfet "#kesfet" 22
-sahne ios-magaza-2-takvim "#takvim/paris" 18
-sahne ios-magaza-3-biletim "#biletim" 20
-sahne ios-magaza-4-karsilastir "#karsilastir" 18
-sahne ios-magaza-5-noel "#takvim/noel" 18
+sahne ios-magaza-2-takvim "#takvim/paris" 8
+sahne ios-magaza-3-biletim "#biletim" 10
+sahne ios-magaza-4-karsilastir "#karsilastir" 8
+sahne ios-magaza-5-noel "#takvim/noel" 10
+sahne ios-magaza-1-kesfet "#kesfet" 10
 cp ekran/ios-magaza-1-kesfet.png ekran/ios-2-kesfet.png
 
 # Boyut kontrolü: App Store 6,9 inç = 1320x2868 ya da 1290x2796
