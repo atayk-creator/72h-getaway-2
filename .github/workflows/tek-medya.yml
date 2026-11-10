@@ -1,0 +1,27 @@
+name: Tek medya (geçici)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/tek-medya.yml]
+permissions:
+  contents: write
+jobs:
+  m:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmp-medya
+          curl -sfL -o tmp-medya/nurnberg.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165707_0974ad96-53b7-4510-835f-9a63cb1c49ee.mp4"
+          curl -sfL -o tmp-medya/dresden.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165708_d84a178a-76ba-4308-b018-5cf72e29c2a5.mp4"
+          curl -sfL -o tmp-medya/salzburg.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165707_f2002ed9-91f0-4e11-bc17-b9feb2a437b4.mp4"
+          curl -sfL -o tmp-medya/gdansk.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165707_b83af38b-8659-48e5-a3ed-d5c786984685.mp4"
+          curl -sfL -o tmp-medya/munih.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165708_80b8f499-bf6b-4375-95c3-2006b32bfb91.mp4"
+          curl -sfL -o tmp-medya/strazburg.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165707_5341f063-c19d-45e2-8fc4-4f9823e1edf5.mp4"
+          curl -sfL -o tmp-medya/krakov.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165709_d81044fa-6520-4ece-a152-fe7d5faefe69.mp4"
+          curl -sfL -o tmp-medya/brugge.mp4 "https://d8j0ntlcm91z4.cloudfront.net/user_3LmFwKLlCAL9Pu1UYo5IVfvl4cN/hf_20261110_165708_ac434da4-dea6-4433-9bd9-35e50e0c2a02.mp4"
+          ls -la tmp-medya
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp-medya && git commit -m "geçici medya (Noel video)"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
