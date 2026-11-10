@@ -1,0 +1,398 @@
+{
+ "aciklama": "Atamızın İzinden (/sehir/ataturkun-izinden/): Selanik + Dedeağaç hafta sonu, kara yolu (otobüs; araba alternatif). Yapı data/noel.json ile aynı; ulasim_turu=otobus, uçuş araması yok, otelleri robot günceller.",
+ "takim": "Atamızın İzinden",
+ "slug": "ataturkun-izinden",
+ "tur": "tema",
+ "etiket": "Atamızın İzinden",
+ "turnuva": "13–15 Kasım 2026 · Selanik ve Dedeağaç",
+ "renk": {
+  "a": "#B3121B",
+  "b": "#F7F3EA",
+  "ink": "#FFFFFF",
+  "mk": "#FFFFFF"
+ },
+ "guncellendi": "2026-11-10",
+ "robot": {
+  "aciklama": "scripts/deplasman-fiyat.mjs: otel fiyatlarını 2 günde bir günceller (uçuş araması yok).",
+  "her_kac_gun": 2,
+  "son_arama": null,
+  "butce_payi_usd": 5,
+  "zorla": true
+ },
+ "sayfa": {
+  "baslik": "Atamızın İzinden: Selanik ve Dedeağaç hafta sonu kaça patlar? (TL) | 72h Getaway",
+  "aciklama_ek": "Atatürk Evi, gençlik yıllarının Selanik'i ve Dedeağaç; otobüs + otel + yemek + gezi, 2 kişi toplam ~{TL}.",
+  "h1": "Atamızın İzinden: Selanik",
+  "giris": "Atatürk'ün doğduğu şehirde bir hafta sonu: Atatürk Evi, Koca Kasım Paşa mahallesi, gençlik yıllarının Selanik'i ve dönüşte Dedeağaç. Otobüsle ya da kendi arabanızla; gerçek otel fiyatları, 2 kişi için.",
+  "takvim_lead": "13–15 Kasım hafta sonu",
+  "akis_lead": "Gün gün akış, otobüs ve araba seçenekleri, oteller ve yemek.",
+  "ulasim_baslik": "İstanbul'dan otobüsle ya da arabayla",
+  "ulasim_lead": "Kişi başı tüm otobüs yolculuğu; araba seçeneği plan bölümünde.",
+  "alt_baslik": "13–15 Kasım · otobüs + otel · 2 kişi · 2 gece",
+  "takvim_not": "Bu hafta sonuna özel plan: Cuma gecesi Selanik, Cumartesi gecesi Dedeağaç. Dokununca yemek, ulaşım ve gezi dahil tam bütçe Biletim'de hesaplanır.",
+  "hikaye_baslik": "Atamızın izinden: ",
+  "kalem": "otobüs + otel + yemek + gezi",
+  "hikaye_link": " planı"
+ },
+ "not_fiyat": "Otel fiyatları robotla Google'dan alınır ve 2 günde bir yenilenir; otobüs fiyatları obilet ve firmaların sitesinden, yemek ve gezi tahminidir. Hafta sonu geçince plan sayfadan kendiliğinden kalkar.",
+ "kaynaklar": [
+  {
+   "ad": "Anadolu Ajansı – Atatürk Selanik'te doğduğu evde törenle anıldı (10 Kasım 2026)",
+   "url": "https://www.aa.com.tr/tr/dunya/ataturk-selanikte-dogdugu-evde-torenle-anildi/4118419"
+  },
+  {
+   "ad": "Kültür ve Turizm Bakanlığı – Selânik Atatürk Evi",
+   "url": "https://dosim.ktb.gov.tr/TR-317206/selanik-ataturk-evi.html"
+  },
+  {
+   "ad": "Selanik Belediyesi – Türk anıtları",
+   "url": "https://thessaloniki.gr/wp-content/uploads/2019/11/Monuments-TURKEY.pdf"
+  },
+  {
+   "ad": "obilet – İstanbul–Selanik otobüsleri",
+   "url": "https://www.obilet.com/otobus-bileti/istanbul-selanik"
+  }
+ ],
+ "maclar": [
+  {
+   "id": "selanik-13-kasim",
+   "sehir": "Selanik",
+   "ulke": "Yunanistan",
+   "etkinlik": "Atatürk Evi",
+   "yer": "Selanik ve Dedeağaç",
+   "tarih": "2026-11-14",
+   "gidis": "2026-11-13",
+   "donus": "2026-11-15",
+   "ulasim_turu": "otobus",
+   "plan": "Perşembe 22:00 Esenler'den otobüs, Cuma sabah Selanik. Cuma gecesi Selanik, Cumartesi öğleden sonra Dedeağaç'a geçiş ve gece orada, Pazar sabah dönüş.",
+   "vize": "Schengen vizesi gerekir (Yunan adalarındaki kapıda vize Selanik'te geçmez).",
+   "dikkat": "İkinizin de pasaportunda geçerli Schengen vizesi olmalı. Atatürk Evi Pazartesi kapalı, diğer günler 10:00–17:00, giriş ücretsiz; Başkonsolosluk bahçesinde olduğu için pasaportunuzu yanınızda bulundurun. Yurt dışı çıkış harcı kişi başı 1.250 TL ayrıca ödenir.",
+   "ozet": "Atatürk'ün 1881'de doğduğu evden gençlik yıllarının Selanik'ine, dönüşte Batı Trakya'da Dedeağaç.",
+   "ucus": {
+    "oneri": {
+     "fiyat": 60,
+     "havayolu": "Otobüs: Express Turizm + KTEL Evrou + Dedeağaç–İstanbul hattı",
+     "havalimani": "Esenler Otogarı",
+     "gidis": "Perşembe IST 22:00 → SKG 07:20 (Esenler → Selanik tren garı)",
+     "donus": "Pazar Dedeağaç → İstanbul (biniş saatini firmadan teyit et)",
+     "aktarma": 0,
+     "not": "Otobüs"
+    },
+    "secenekler": [],
+    "seviye": "normal",
+    "normal_aralik": ""
+   },
+   "otobus": [
+    [
+     "Perşembe 22:00 Esenler → Cuma 07:20 Selanik",
+     "Express Turizm, Selanik tren garına (OSE) iner; aynı hatta Lüks Tempo, Alpar ve Arda Tur da var",
+     "~1.400 TL"
+    ],
+    [
+     "Cumartesi Selanik → Dedeağaç",
+     "KTEL Evrou, Makedonia otogarından ~3 saat 45 dk; sefer saatleri ktelevrou.gr / 25510-26479",
+     "13–31 €"
+    ],
+    [
+     "Pazar Dedeağaç → İstanbul",
+     "Selanik–İstanbul hattı Dedeağaç'tan geçer (Crazy Holidays, Arda Tur); biniş saatini firmadan teyit et",
+     "~15 €"
+    ]
+   ],
+   "alternatif": {
+    "baslik": "Kendi arabanızla",
+    "alt": "2 kişi, tahmini",
+    "yazi": "Cuma 05:30 İstanbul'dan çıkış, ~14:00 Selanik (otele uğramadan Atatürk Evi, 17:00'de kapanıyor). Cumartesi öğleden sonra Egnatia otoyoluyla Dedeağaç (~300 km, ~3 saat), Pazar sabah 40 km ötedeki İpsala'dan sakin dönüş.",
+    "satirlar": [
+     [
+      "Benzin",
+      "~1.220 km, 100 km'de 7 litre; depoyu Türkiye'de doldurun (Yunanistan'da litre ~2,13 €)",
+      "~6.500 TL"
+     ],
+     [
+      "Yunan otoyolu (Egnatia)",
+      "2026 tarifesi km başına 0,04 € + KDV; bizim hesabımız",
+      "~30 €"
+     ],
+     [
+      "Kınalı–Malkara otoyolu",
+      "ücretli, tutarı doğrulanamadı; D-110 ücretsiz alternatif",
+      "—"
+     ],
+     [
+      "Yeşil kart",
+      "zorunlu; teslim 3 iş gününü bulabilir, hemen sigortacınızla görüşün",
+      "sigortacıya sorun"
+     ],
+     [
+      "Belgeler",
+      "ruhsat, çipli ehliyet; araç sizin değilse noter vekâleti",
+      "—"
+     ]
+    ]
+   },
+   "konaklama": [
+    {
+     "gece": "2026-11-13",
+     "sehir": "Selanik",
+     "secim": {
+      "konforlu": "Capsis Hotel",
+      "ucuz": "Pella Hotel"
+     },
+     "not": "Capsis tren garının karşısında: otobüsün indiği ve bindiği yer.",
+     "oteller": [
+      {
+       "ad": "Electra Palace",
+       "kategori": "ikonik",
+       "arama": "Electra Palace Hotel Thessaloniki",
+       "toplam": 406
+      },
+      {
+       "ad": "Holiday Inn Thessaloniki",
+       "kategori": "pahali",
+       "arama": "Holiday Inn Thessaloniki",
+       "toplam": 285
+      },
+      {
+       "ad": "Capsis Hotel",
+       "kategori": "konforlu",
+       "arama": "Capsis Hotel Thessaloniki",
+       "toplam": 129
+      },
+      {
+       "ad": "Mandrino Hotel",
+       "kategori": "konforlu",
+       "arama": "Mandrino Hotel Thessaloniki",
+       "toplam": 144
+      },
+      {
+       "ad": "Colors Ladadika Central",
+       "kategori": "konforlu",
+       "arama": "Colors Ladadika Central",
+       "toplam": null
+      },
+      {
+       "ad": "Pella Hotel",
+       "kategori": "ucuz",
+       "arama": "Hotel Pella Thessaloniki",
+       "toplam": 85
+      },
+      {
+       "ad": "Aegeon Hotel",
+       "kategori": "ucuz",
+       "arama": "Hotel Aegeon Thessaloniki",
+       "toplam": 179
+      }
+     ]
+    },
+    {
+     "gece": "2026-11-14",
+     "sehir": "Dedeağaç",
+     "secim": {
+      "konforlu": "Grecotel Astir Palace",
+      "ucuz": "Plaza Hotel"
+     },
+     "not": "Dedeağaç İpsala sınırına 40 km: Pazar sabah sakin dönüş.",
+     "oteller": [
+      {
+       "ad": "Alexander Beach Hotel & Spa",
+       "kategori": "pahali",
+       "arama": "Alexander Beach Hotel Alexandroupoli",
+       "toplam": 137
+      },
+      {
+       "ad": "Hotel Erika",
+       "kategori": "pahali",
+       "arama": "Erika Hotel Alexandroupoli",
+       "toplam": 187
+      },
+      {
+       "ad": "Grecotel Astir Palace",
+       "kategori": "konforlu",
+       "arama": "Astir Egnatia Alexandroupolis",
+       "toplam": 112
+      },
+      {
+       "ad": "Grecotel Egnatia",
+       "kategori": "konforlu",
+       "arama": "Grand Hotel Egnatia Alexandroupoli",
+       "toplam": 129
+      },
+      {
+       "ad": "Plaza Hotel",
+       "kategori": "ucuz",
+       "arama": "Plaza Hotel Alexandroupoli",
+       "toplam": 77
+      }
+     ]
+    }
+   ],
+   "sehir_ulasim": {
+    "fiyat": 6,
+    "yazi": "Selanik merkezi yürünür; Ano Poli yokuşu için şehir otobüsü ya da taksi. Dedeağaç'ta her şey yürüme mesafesinde."
+   },
+   "pazara": "Atatürk Evi (Apostolou Pavlou 17) Aristoteles Meydanı'ndan ~20 dk yürüme, yokuş yukarı; Agios Dimitrios Kilisesi'nin hemen üstünde.",
+   "akis": [
+    {
+     "gun": "Cuma 13 Kasım · Doğduğu ev",
+     "adimlar": [
+      [
+       "07:20",
+       "Selanik'e varış",
+       "Perşembe 22:00 Esenler'den otobüs"
+      ],
+      [
+       "",
+       "Bavullar otele, bugatsa ile kahvaltı",
+       "Capsis, garın karşısı"
+      ],
+      [
+       "10:00",
+       "Atatürk Evi – Apostolou Pavlou 17",
+       "1881'de doğduğu, 1888'e kadar yaşadığı ev; ücretsiz"
+      ],
+      [
+       "11:30",
+       "Agios Dimitrios Kilisesi",
+       "Osmanlı'da Kasımiye Camii; Koca Kasım Paşa mahallesi"
+      ],
+      [
+       "13:00",
+       "Öğle: Kapani ve Modiano çarşıları",
+       ""
+      ],
+      [
+       "14:30",
+       "Hamza Bey Camii, Bey Hamamı, Bedesten",
+       "Osmanlı Selanik'i"
+      ],
+      [
+       "16:00",
+       "51. İlkokul önü",
+       "Hürriyet'e göre eski Şemsi Efendi Mektebi; dışarıdan"
+      ],
+      [
+       "17:00",
+       "Aristoteles Meydanı → Beyaz Kule",
+       "Gün batımında sahil"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Ladadika"
+      ]
+     ]
+    },
+    {
+     "gun": "Cumartesi 14 Kasım · Gençlik yılları, Dedeağaç",
+     "adimlar": [
+      [
+       "09:00",
+       "Ano Poli (Yukarı Şehir) ve surlar",
+       "Trigoniou Kulesi, Musa Baba Türbesi"
+      ],
+      [
+       "11:00",
+       "Yeni Cami (1902) ve 3. Ordu Karargâhı",
+       "İkisi de dışarıdan; Mustafa Kemal 1907'de 3. Ordu'ya atanmıştı"
+      ],
+      [
+       "12:30",
+       "Öğle",
+       ""
+      ],
+      [
+       "14:00",
+       "KTEL ile Dedeağaç'a",
+       "Makedonia otogarı, ~3 saat 45 dk"
+      ],
+      [
+       "18:00",
+       "Dimokratias Caddesi ve deniz feneri (1880)",
+       "Akşamları trafiğe kapalı"
+      ],
+      [
+       "20:00",
+       "Akşam yemeği",
+       "Sahilde balık"
+      ]
+     ]
+    },
+    {
+     "gun": "Pazar 15 Kasım · Dönüş",
+     "adimlar": [
+      [
+       "09:00",
+       "Kahvaltı, Dedeağaç Camii (1895)",
+       "Faik Hüseyin Paşa türbesi yanında"
+      ],
+      [
+       "",
+       "Dedeağaç → İstanbul",
+       "Otobüs saatini firmadan teyit et"
+      ]
+     ]
+    }
+   ],
+   "yemek": [
+    [
+     "Bugatsa (Selanik böreği)",
+     "Kahvaltı",
+     "~4 €"
+    ],
+    [
+     "Kapani'de meze ve ızgara",
+     "Öğle",
+     "~15 €"
+    ],
+    [
+     "Ladadika'da taverna",
+     "Akşam",
+     "~25 €"
+    ],
+    [
+     "Dedeağaç'ta balık",
+     "Akşam",
+     "~25 €"
+    ],
+    [
+     "Trigona Panoramatos",
+     "Tatlı",
+     "~3 €"
+    ]
+   ],
+   "gezi": [
+    "Atatürk Evi (ücretsiz)",
+    "Agios Dimitrios Kilisesi (ücretsiz)",
+    "Hamza Bey Camii ve Bey Hamamı (dışarıdan)",
+    "51. İlkokul (dışarıdan)",
+    "Ano Poli ve surlar (ücretsiz)",
+    "Beyaz Kule (ücretli)",
+    "Dedeağaç deniz feneri (ücretsiz)",
+    "Dedeağaç Camii (ücretsiz)"
+   ],
+   "butce": {
+    "konforlu": {
+     "ucus": 60,
+     "transfer": 0,
+     "otel": 121,
+     "ulasim": 6,
+     "yemek": 90,
+     "gezi": 5,
+     "harc": 22.3
+    },
+    "ucuz": {
+     "ucus": 60,
+     "transfer": 0,
+     "otel": 81,
+     "ulasim": 6,
+     "yemek": 70,
+     "gezi": 5,
+     "harc": 22.3
+    }
+   },
+   "secim": {},
+   "foto": null
+  }
+ ]
+}
