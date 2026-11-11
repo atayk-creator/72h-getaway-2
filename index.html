@@ -2325,7 +2325,9 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     // Takımlar bir şehir gibi: her takımın kartı alfabetik yerine
     TORDER.forEach(function (sl) {
       var T = TEAMS[sl], tm = teamNext(T); if (!tm) return;
-      var card = '<a class="ccard" href="#sehirler/' + escH(T.slug) + '"><span class="fb fbt" style="' + teamBg(T) + '"></span><span class="tk" style="background:' + escH(T.renk ? T.renk.a : "#F4D30B") + ";color:" + escH(T.renk ? T.renk.b : "#0F2A43") + '">' + escH(T.etiket || "Deplasman") + "</span>" +
+      // Kart görseli ana sayfa hikâyesiyle aynı: sıradaki şehrin bayraklı/Noel görseli; yoksa takım renkli şerit
+      var tf = tm.hikaye_poster || tm.foto;
+      var card = '<a class="ccard" href="#sehirler/' + escH(T.slug) + '">' + (tf ? '<img src="' + escH(tf) + '" alt="" loading="lazy" decoding="async">' : '<span class="fb fbt" style="' + teamBg(T) + '"></span>') + '<span class="tk" style="background:' + escH(T.renk ? T.renk.a : "#F4D30B") + ";color:" + escH(T.renk ? T.renk.b : "#0F2A43") + '">' + escH(T.etiket || "Deplasman") + "</span>" +
         '<span class="bt"><b>' + escH(T.takim) + "</b><span>sıradaki " + escH(weekendText(tm.gidis, tm.donus)) + " · " + escH(tm.mac_sehri || tm.sehir) + (fbUO(tm) ? " · ~" + tl(fbUO(tm) * o.rate) + " 2 kişi" : "") + "</span></span></a>";
       var cards = g.querySelectorAll(".ccard"), at = null;
       for (var q = 0; q < cards.length; q++) { var nm = cards[q].querySelector("b").textContent; if (nm.localeCompare(T.takim, "tr") > 0) { at = cards[q]; break; } }
