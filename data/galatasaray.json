@@ -7,7 +7,7 @@
   "a": "#FDB912",
   "b": "#A90432"
  },
- "guncellendi": "2026-11-09",
+ "guncellendi": "2026-11-11",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri kulüp üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde fiyatlar çok daha yüksek ve deplasman tribününe giriş garanti değil.",
@@ -16,9 +16,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-09",
+  "son_arama": "2026-11-11",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.09
+  "son_maliyet_usd": 0.14
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Galatasaray Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -45,43 +45,43 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 149,
-     "havayolu": "Aegean",
+     "fiyat": 123,
+     "havayolu": "SKY express",
      "aktarma": 0,
      "havalimani": "Atina (ATH)",
-     "gidis": "Pazartesi IST 16:45 → ATH 17:15 (A3993)",
-     "donus": ""
+     "gidis": "Pazartesi IST 10:30 → ATH 10:55 (GQ671)",
+     "donus": "Çarşamba ATH 07:00 → IST 09:30"
     },
     "secenekler": [
      {
-      "fiyat": 149,
-      "havayolu": "Aegean gidiş + SKY express dönüş",
-      "havalimani": "Atina",
-      "not": "Pazartesi IST 11:30 → ATH 12:00, Çarşamba 07:00 dönüş"
-     },
-     {
-      "fiyat": 149,
-      "havayolu": "Aegean",
-      "havalimani": "Atina",
-      "not": "Pazartesi IST 16:45 → ATH 17:15"
-     },
-     {
-      "fiyat": 160,
+      "fiyat": 123,
       "havayolu": "SKY express",
       "havalimani": "Atina",
-      "not": "Pazartesi IST 10:30 → ATH 10:55"
+      "not": "Pazartesi IST 10:30 → ATH 10:55, Çarşamba 07:00 dönüş"
      },
      {
-      "fiyat": 235,
-      "havayolu": "THY",
+      "fiyat": 172,
+      "havayolu": "Aegean",
       "havalimani": "Atina",
-      "not": "Pazartesi IST 20:30 → ATH 21:00"
+      "not": "Pazartesi IST 11:30 → ATH 12:00, Çarşamba 08:00 dönüş"
      },
      {
-      "fiyat": 268,
+      "fiyat": 221,
       "havayolu": "Pegasus",
       "havalimani": "Atina",
       "not": "Pazartesi SAW 07:40 → ATH 08:05"
+     },
+     {
+      "fiyat": 275,
+      "havayolu": "Aegean gidiş + THY dönüş",
+      "havalimani": "Atina",
+      "not": "Pazartesi IST 11:30 → ATH 12:00, Çarşamba 11:35 dönüş"
+     },
+     {
+      "fiyat": 291,
+      "havayolu": "THY",
+      "havalimani": "Atina",
+      "not": "Pazartesi IST 20:30 → ATH 21:00"
      }
     ],
     "seviye": "normal",
@@ -92,31 +92,31 @@
      "ad": "Hotel Grande Bretagne",
      "kategori": "ikonik",
      "arama": "Hotel Grande Bretagne Athens",
-     "toplam": 886
+     "toplam": 889
     },
     {
      "ad": "Electra Metropolis",
      "kategori": "pahali",
      "arama": "Electra Metropolis Athens",
-     "toplam": 548
+     "toplam": 546
     },
     {
      "ad": "AthensWas Hotel",
      "kategori": "pahali",
      "arama": "AthensWas Hotel Athens",
-     "toplam": 590
+     "toplam": 627
     },
     {
      "ad": "AVA Hotel & Suites",
      "kategori": "konforlu",
      "arama": "AVA Hotel and Suites Athens Plaka",
-     "toplam": 564
+     "toplam": 424
     },
     {
      "ad": "The Modernist Athens",
      "kategori": "konforlu",
      "arama": "The Modernist Athens Kolonaki",
-     "toplam": 341
+     "toplam": 325
     },
     {
      "ad": "Herodion Hotel",
@@ -128,13 +128,13 @@
      "ad": "Phaedra Hotel",
      "kategori": "ucuz",
      "arama": "Phaedra Hotel Plaka Athens",
-     "toplam": 107
+     "toplam": 100
     },
     {
      "ad": "Attalos Hotel",
      "kategori": "ucuz",
      "arama": "Attalos Hotel Athens Monastiraki",
-     "toplam": 156
+     "toplam": 135
     }
    ],
    "havalimani_ulasim": {
@@ -265,7 +265,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 149,
+     "ucus": 123,
      "transfer": 11,
      "otel": 107,
      "bilet": 50,
@@ -274,9 +274,9 @@
      "gezi": 35
     },
     "ucuz": {
-     "ucus": 149,
+     "ucus": 123,
      "transfer": 11,
-     "otel": 54,
+     "otel": 50,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 80,
@@ -289,7 +289,9 @@
    },
    "hikaye_poster": "/img/hikaye/galatasaray-atina.jpg",
    "hikaye_video": "/img/hikaye/galatasaray-atina.mp4",
-   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
+   "uygun_plan": true,
+   "uyarilar": []
   },
   {
    "id": "paris",
@@ -315,37 +317,25 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 239,
-     "havayolu": "Air France",
+     "fiyat": 254,
+     "havayolu": "Transavia",
      "aktarma": 0,
-     "havalimani": "Charles de Gaulle (CDG)",
-     "gidis": "Salı IST 07:15 → CDG 09:00 (AF1391)",
-     "donus": ""
+     "havalimani": "Orly (ORY)",
+     "gidis": "Salı IST 13:50 → ORY 15:40 (TO3281)",
+     "donus": "Perşembe ORY 07:00 → IST 12:45 (TO3280)"
     },
     "secenekler": [
-     {
-      "fiyat": 239,
-      "havayolu": "Air France",
-      "havalimani": "Charles de Gaulle",
-      "not": "Salı IST 07:15 → CDG 09:00"
-     },
      {
       "fiyat": 254,
       "havayolu": "Transavia",
       "havalimani": "Orly",
-      "not": "Salı IST 13:50 → ORY 15:40, Perşembe 07:00 dönüş"
+      "not": "Salı IST 13:50 → ORY 15:40"
      },
      {
-      "fiyat": 310,
+      "fiyat": 313,
       "havayolu": "Pegasus",
       "havalimani": "Orly",
-      "not": "Salı SAW 12:55 → ORY 14:40, Perşembe 15:45 dönüş"
-     },
-     {
-      "fiyat": 344,
-      "havayolu": "THY",
-      "havalimani": "Charles de Gaulle",
-      "not": "Salı IST 20:50 → CDG 22:35"
+      "not": "Salı SAW 12:55 → ORY 14:40"
      }
     ],
     "seviye": "normal",
@@ -356,49 +346,53 @@
      "ad": "Mandarin Oriental Lutetia",
      "kategori": "ikonik",
      "arama": "Mandarin Oriental Lutetia Paris",
-     "toplam": 3434
+     "toplam": null,
+     "eski": true,
+     "kontrol": "3572 € bulundu, diğer otellerin ortancasının 6.3 katı: süit/özel oda olabilir, gösterilmiyor"
     },
     {
      "ad": "Le Meurice",
      "kategori": "pahali",
      "arama": "Hotel Le Meurice Paris",
-     "toplam": 4934
+     "toplam": null,
+     "eski": true,
+     "kontrol": "4955 € bulundu, diğer otellerin ortancasının 8.7 katı: süit/özel oda olabilir, gösterilmiyor"
     },
     {
      "ad": "Hôtel Regina Louvre",
      "kategori": "pahali",
      "arama": "Hotel Regina Louvre Paris",
-     "toplam": 1136
+     "toplam": 1144
     },
     {
      "ad": "Hôtel Le Walt",
      "kategori": "konforlu",
      "arama": "Hotel Le Walt Paris",
-     "toplam": 533
+     "toplam": 506
     },
     {
      "ad": "Hôtel Bachaumont",
      "kategori": "konforlu",
      "arama": "Hotel Bachaumont Paris",
-     "toplam": 589
+     "toplam": 569
     },
     {
      "ad": "Hôtel Fabric",
      "kategori": "konforlu",
      "arama": "Hotel Fabric Paris",
-     "toplam": 580
+     "toplam": 579
     },
     {
      "ad": "Hôtel du Cygne",
      "kategori": "ucuz",
      "arama": "Hôtel du Cygne Paris",
-     "toplam": 293
+     "toplam": 271
     },
     {
      "ad": "Hôtel Chopin",
      "kategori": "ucuz",
      "arama": "Hotel Chopin Paris Passage Jouffroy",
-     "toplam": 332
+     "toplam": 305
     }
    ],
    "havalimani_ulasim": {
@@ -529,18 +523,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 239,
+     "ucus": 254,
      "transfer": 28,
-     "otel": 267,
+     "otel": 253,
      "bilet": 50,
      "ulasim": 15,
      "yemek": 140,
      "gezi": 40
     },
     "ucuz": {
-     "ucus": 239,
+     "ucus": 254,
      "transfer": 28,
-     "otel": 147,
+     "otel": 136,
      "bilet": 50,
      "ulasim": 15,
      "yemek": 100,
@@ -553,7 +547,9 @@
    },
    "hikaye_poster": "/img/hikaye/galatasaray-paris.jpg",
    "hikaye_video": "/img/hikaye/galatasaray-paris.mp4",
-   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz."
+   "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
+   "uygun_plan": true,
+   "uyarilar": []
   }
  ],
  "kaynaklar": [
