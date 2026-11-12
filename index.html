@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="İstanbul'dan 28 Avrupa başkentine hafta sonu kaçamağı: gerçek otel, uçak, restoran ve gezi fiyatlarıyla bütçe hesapla, tur planını çıkar.">
+<meta name="description" content="İstanbul'dan Avrupa şehirlerine hafta sonu kaçamağı: gerçek otel, uçak, restoran ve gezi fiyatlarıyla bütçe hesapla, tur planını çıkar.">
 <meta name="theme-color" content="#0F2A43">
 <link rel="canonical" href="https://72hgetaway.com/">
 <meta property="og:url" content="https://72hgetaway.com/">
@@ -17,7 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="72h Getaway">
 <meta property="og:title" content="72h Getaway · Kendi Turunu Kur">
-<meta property="og:description" content="İstanbul'dan Avrupa'ya hafta sonu bütçesi: 28 başkentte gerçek otel, uçak ve restoran fiyatları.">
+<meta property="og:description" content="İstanbul'dan Avrupa'ya hafta sonu bütçesi: gerçek otel, uçak ve restoran fiyatları.">
 <meta property="og:image" content="https://72hgetaway.com/img/paylas.png?v=2">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -538,6 +538,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   a { text-decoration: none; }
 }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://72hgetaway.com/#org","name":"72h Getaway","url":"https://72hgetaway.com/","logo":"https://72hgetaway.com/img/icon-512.png","email":"a.kurt@72hgetaway.com"},{"@type":"WebSite","@id":"https://72hgetaway.com/#site","url":"https://72hgetaway.com/","name":"72h Getaway","inLanguage":"tr","publisher":{"@id":"https://72hgetaway.com/#org"},"description":"İstanbul'dan Avrupa şehirlerine hafta sonu kaçamağı: gerçek otel, uçak, restoran ve gezi fiyatlarıyla bütçe hesaplayıcı."}]}</script>
 </head>
 <body>
 <a class="skip" href="#icerik">İçeriğe geç</a>
@@ -569,7 +570,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       </svg>
     </div>
     <h1>Hafta sonu kaçamağın kaça patlar?</h1>
-    <p>Gör, planla, yola çık. Bir başkent seç; İstanbul çıkışlı uçak ve otel fiyatlarını robotumuz cuma sabah gidiş, pazar akşam dönüş (2 gece) için düzenli olarak kontrol ediyor, sen otelini, yemeğini ve gezini seç, toplamı gör.</p>
+    <p>Gör, planla, yola çık. Bir şehir seç; İstanbul çıkışlı uçak ve otel fiyatlarını robotumuz cuma sabah gidiş, pazar akşam dönüş (2 gece) için düzenli olarak kontrol ediyor, sen otelini, yemeğini ve gezini seç, toplamı gör.</p>
     <ol class="steps" aria-label="Nasıl kullanılır">
       <li><b>1</b> Şehir ve tarih seç</li>
       <li><b>2</b> Uçağı ekle</li>
@@ -591,7 +592,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 <div id="icerik" tabindex="-1"></div>
 <div class="tab" id="tab-kesfet" data-tab="kesfet">
 <h2 class="sr">Keşfet</h2>
-<div class="storywrap"><section class="story" id="story" aria-roledescription="hikâye" aria-label="Bu haftanın 6 şehri" tabindex="0" hidden>
+<div class="storywrap"><section class="story" id="story" aria-roledescription="hikâye" aria-label="Bu haftanın hikâyesi" tabindex="0" hidden>
   <div class="st-ph" id="stPh"></div>
   <div class="st-bars" id="stBars" aria-hidden="true"></div>
   <div class="st-top">
@@ -618,10 +619,10 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 
 <div class="tab" id="tab-sehirler" data-tab="sehirler" hidden>
   <div class="wrap pad">
-    <div class="tabhead"><h2>Şehirler</h2><span>28 başkent · hafta sonu takvimi</span></div>
+    <div class="tabhead"><h2>Şehirler</h2><span>Avrupa şehirleri · hafta sonu takvimi</span></div>
     <div class="cgrid" id="cgrid"></div>
     <section class="cother" id="cother" aria-labelledby="h-cother" hidden>
-      <h3 id="h-cother">Diğer başkentler</h3>
+      <h3 id="h-cother">Diğer şehirler</h3>
       <p>Bu şehirlerde robot henüz hafta sonu fiyatı takip etmiyor; bütçe tahmini fiyatlarla hesaplanır.</p>
       <div id="cotherList"></div>
     </section>
@@ -678,7 +679,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
         <div class="chips" id="chips" role="group" aria-labelledby="lc"></div>
         <p class="cleg" id="cleg" title="Kısayollardaki ve kayan banttaki rakamlar uçak hariç toplamdır: aynı tarih, kişi sayısı ve otel seviyesiyle hesaplanır."></p>
         <div class="cityrow">
-          <select id="city" aria-label="Tüm başkentler"></select>
+          <select id="city" aria-label="Tüm şehirler"></select>
           <button type="button" class="btn" id="dice"><svg width="1.05em" height="1.05em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="ic"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.2" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.2" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.2" fill="currentColor"/></svg> Beni şaşırt</button>
         </div>
       </div>
@@ -817,7 +818,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   </section>
 
   <footer>
-    Fiyatlar euro cinsinden, iki kişilik oda başına gecelik hesaplanır. Şehir vergisi, bagaj ücreti, vize ve seyahat sigortası dahil değildir. Şehir kısayollarının renkleri ve rakamları (uçak hariç), seçtiğin tura göre 37 başkent arasındaki sıralamadan gelir. Otel ve uçak fiyatları robotla cuma giriş, pazar çıkış (2 gece) için kontrol edilir. Gezi planındaki mesafeler yer koordinatlarından tahmin edilir: yürüyüşe yaklaşık %30 dolambaç payı eklenir, taksi süresi şehir içi ortalama hızla hesaplanır, gerçek süre trafiğe ve rotaya göre değişir. Güvenlik ve seyahat uyarıları nedeniyle Kiev, Moskova ve Minsk listeye eklenmedi. Bu araç bilgi amaçlıdır, rezervasyondan ve gezi saatlerinden önce güncel bilgilere bak.
+    Fiyatlar euro cinsinden, iki kişilik oda başına gecelik hesaplanır. Şehir vergisi, bagaj ücreti, vize ve seyahat sigortası dahil değildir. Şehir kısayollarının renkleri ve rakamları (uçak hariç), seçtiğin tura göre tüm şehirler arasındaki sıralamadan gelir. Otel ve uçak fiyatları robotla cuma giriş, pazar çıkış (2 gece) için kontrol edilir. Gezi planındaki mesafeler yer koordinatlarından tahmin edilir: yürüyüşe yaklaşık %30 dolambaç payı eklenir, taksi süresi şehir içi ortalama hızla hesaplanır, gerçek süre trafiğe ve rotaya göre değişir. Güvenlik ve seyahat uyarıları nedeniyle Kiev, Moskova ve Minsk listeye eklenmedi. Bu araç bilgi amaçlıdır, rezervasyondan ve gezi saatlerinden önce güncel bilgilere bak.
     <p style="margin-top:10px"><a href="hakkinda.html">Hakkında, fiyat uyarısı ve gizlilik</a> · <a href="oteller.html">Hafta sonu otel fiyatları</a></p>
   </footer>
 </div>
@@ -1020,7 +1021,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   function ensureLiveCity(c) {
     if (!liveCity(c) || LIVE.files[c.n] || !window.fetch) return;
     LIVE.files[c.n] = "yukleniyor";
-    fetch(liveFileUrl(c) + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+    fetch(liveFileUrl(c), { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) { LIVE.files[c.n] = d && d.haftaSonlari ? d : "yok"; render(); })
       .catch(function () { LIVE.files[c.n] = "yok"; render(); });
   }
@@ -1180,7 +1181,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   }
   function fixHotelIdx(hs) { if (hDefault || hIdx >= hs.length) hIdx = defaultIdx(hs); }
   /* ====================== GEZİ YERLERİ VE ULAŞIM ====================== */
-  // data/gezi.json: 28 başkentte 10'ar gezi yeri (süre, resmî bilet fiyatı, bilgi, Google Maps konumu) ve toplu taşıma fiyatları.
+  // data/gezi.json: şehir başına 10'ar gezi yeri (süre, resmî bilet fiyatı, bilgi, Google Maps konumu) ve toplu taşıma fiyatları.
   // Fiyatlar yerel para biriminde; euroya data.json'daki günlük ECB kuruyla çevrilir.
   var GEZI = null, FX_FALLBACK = { EUR: 1, CZK: 24.4, PLN: 4.25, SEK: 11, DKK: 7.46, RON: 5.05 };
   function fxOf(cur) {
@@ -1449,7 +1450,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     $("rateHint").textContent = "(" + dataDateText() + " itibarıyla, güncelleyebilirsin)";
     var age = dataAgeDays(), n = $("datanote"), old = age !== null && age > 14;
     n.className = "datanote" + (old ? " old" : "");
-    n.textContent = "Kurlar " + dataDateText() + " itibarıyla, kaynak: " + String(DATA.source || "").replace(/[()]/g, "") + ". " + (LIVE.doc ? "Otel, uçak ve restoran fiyatları " + LIVE.doc.sehirler.length + " başkentte robotla kontrol ediliyor; ulaşım ve gezi biletleri resmî fiyatlardan, günlük yemek tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
+    n.textContent = "Kurlar " + dataDateText() + " itibarıyla, kaynak: " + String(DATA.source || "").replace(/[()]/g, "") + ". " + (LIVE.doc ? "Otel, uçak ve restoran fiyatları " + LIVE.doc.sehirler.length + " şehirde robotla kontrol ediliyor; ulaşım ve gezi biletleri resmî fiyatlardan, günlük yemek tahmini." : "Otel ve yemek fiyatları tahmin, yalnızca Budapeşte araştırıldı.") +
       (old ? " Bu veri " + age + " gündür güncellenmedi, rakamlar eski olabilir." : "");
   }
   function mapsUrl(q) { return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q); }
@@ -2205,7 +2206,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     if (o) chips.push(o.havayolu + " " + tl(Math.round(o.fiyat * DATA.eurTry / 100) * 100) + "'den, " + (o.aktarma === 0 ? "aktarmasız" : "aktarmalı"));
     if (x.kalan > 1) chips.push(tema ? (x.kalan - 1) + " şehir daha" : x.kalan + " deplasman kaldı");
     var ms = m.mac_sehri || m.sehir;
-    $("story").setAttribute("aria-label", "Bu haftanın 6 şehri, " + (ST.k + 1) + ". kart: " + x.n + (tema ? ", " : " deplasmanı, ") + ms);
+    $("story").setAttribute("aria-label", "Bu haftanın hikâyesi, " + (ST.k + 1) + ". kart: " + x.n + (tema ? ", " : " deplasmanı, ") + ms);
     $("stBot").innerHTML = '<span class="st-eb">' + escH(upTr(x.n) + (tema ? " · " : " DEPLASMANI · ") + upTr(ms) + " · 72 SAAT") + "</span>" +
       '<h2 class="st-h">' + escH((tema ? tMetin(x.team, "hikaye_baslik", "Sıradaki Noel şehri: ") : "Sıradaki deplasman: ") + ms) + "</h2>" +
       '<div class="st-pr"><b>~' + tl(Math.round(x.t * 2 / 100) * 100) + "</b><span>2 kişi toplam · kişi başı ~" + tl(Math.round(x.t / 100) * 100) + (tema ? " · " + tMetin(x.team, "kalem", "uçak + otel + yemek + gezi") : " · uçak + otel + maç bileti + yemek") + "</span></div>" +
@@ -2254,7 +2255,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     if (e && e !== "normal" && typeof x.h.fark === "number") chips.push("ortalamadan %" + Math.abs(x.h.fark) + (x.h.fark > 0 ? " pahalı" : " uygun"));
     var eu = x.c.enUcuz;
     if (eu && eu.g && eu.g !== ST.g && eu.g >= todayIst()) chips.push("en uygunu " + weekendText(eu.g, addDays(eu.g, 2)));
-    $("story").setAttribute("aria-label", "Bu haftanın 6 şehri, " + (ST.k + 1) + ". şehir: " + x.n);
+    $("story").setAttribute("aria-label", "Bu haftanın hikâyesi, " + (ST.k + 1) + ". kart: " + x.n);
     $("stBot").innerHTML = '<span class="st-eb">' + escH(upTr(x.n) + " · 72 SAAT · " + upTr(weekendText(ST.g, x.h.cikis))) + "</span>" +
       '<h2 class="st-h">' + escH(title) + "</h2>" +
       '<div class="st-pr"><b>~' + tl(x.t * 2) + "</b><span>2 kişi toplam · kişi başı ~" + tl(x.t) + " · uçak + konforlu otel</span></div>" +
@@ -2663,7 +2664,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     x.fillStyle = NAVY; x.font = "800 34px " + SANS; spaced("72 SAAT. GERÇEK FİYAT.", cl, fy + 8, 2, "left");
     x.font = "700 30px " + MONO; x.textAlign = "right"; x.fillText("72hgetaway.com", cr, fy + 8);
     x.fillStyle = CREAM; x.font = "800 46px " + SANS; x.textAlign = "center"; x.fillText("Senin hafta sonun kaça patlar?", W / 2, T + CH + 110);
-    x.fillStyle = CREAM; x.font = "500 32px " + SANS; x.fillText("İstanbul'dan 28 başkent · gerçek fiyatlar", W / 2, T + CH + 162);
+    x.fillStyle = CREAM; x.font = "500 32px " + SANS; x.fillText("İstanbul'dan Avrupa · gerçek fiyatlar", W / 2, T + CH + 162);
     if (b.photo) { x.fillStyle = "rgba(251,246,236,0.6)"; x.font = "500 22px " + SANS; x.fillText("Fotoğraf: Pexels", W / 2, H - 28); }
     return new Promise(function (res) { cv.toBlob(function (bl) { res(bl); }, "image/png"); });
   }
@@ -2813,7 +2814,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     var body = $("tripBody");
     var s1 = trKeep && $("plist") ? $("plist").scrollLeft : 0, s2 = trKeep && $("pscroll") ? $("pscroll").scrollLeft : 0; trKeep = true;
     if (!c.places) {
-      body.innerHTML = '<p class="empty">Gezi planı şimdilik <b>' + (GEZI ? Object.keys(GEZI.sehirler).length + " başkent" : "Budapeşte") + '</b> için hazır. ' + c.n + ' için gezilecek yerleri henüz eklemedik. Şimdilik ' +
+      body.innerHTML = '<p class="empty">Gezi planı şimdilik <b>' + (GEZI ? Object.keys(GEZI.sehirler).length + " şehir" : "Budapeşte") + '</b> için hazır. ' + c.n + ' için gezilecek yerleri henüz eklemedik. Şimdilik ' +
         '<a href="' + mapsUrl("tourist attractions in " + c.n + " " + c.c) + '" target="_blank" rel="noopener noreferrer">haritada gezilecek yerlere bak ↗</a></p>';
       return;
     }
@@ -3062,35 +3063,35 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
   render();
   route(true);
   if (window.STVIDEO_URL && window.fetch) {
-    fetch(window.STVIDEO_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.STVIDEO_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { STV = d; if (ST.list) stGo(ST.k); }
     }).catch(function () {});
   }
   if (window.ONERI_URL && window.fetch) {
-    fetch(window.ONERI_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.ONERI_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { ONERI = d; refreshViews(); }
     }).catch(function () {});
   }
   // Kendi sitende barındırılan sürümde (window.DATA_URL tanımlı) güncel kur dosyasını oku. claude.ai'da bu satır çalışmaz.
   if (window.PRICES_URL && window.fetch) {
-    fetch(window.PRICES_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.PRICES_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.items && typeof d.items === "object") { PRICES = d; applyPrices(); render(); }
     }).catch(function () {});
-    if (window.PRICE_STATUS_URL) fetch(window.PRICE_STATUS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.lastRun) { PRICE_STATUS = d; render(); } }).catch(function () {});
+    if (window.PRICE_STATUS_URL) fetch(window.PRICE_STATUS_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.lastRun) { PRICE_STATUS = d; render(); } }).catch(function () {});
   }
   if (window.HOTELS_URL && window.fetch) {
-    var getJ = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }); };
+    var getJ = function (u) { return fetch(u, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }); };
     Promise.all([getJ(window.HOTELS_URL), getJ(window.HOTEL_META_URL).catch(function () { return null; })]).then(function (r) {
       if (r[0] && Array.isArray(r[0].sehirler)) { var bugun = new Date(Date.now() + 3 * 36e5).toISOString().slice(0, 10); r[0].sehirler = r[0].sehirler.filter(function (c) { return !c.baslangic || c.baslangic <= bugun; }); /* başlangıç günü gelmeyen şehir otel fiyatı gelene kadar tahminle gösterilir */ LIVE.doc = r[0]; LIVE.meta = r[1]; applyData(); render(); }
     }).catch(function () {});
   }
   if (window.VITRIN_URL && window.fetch) {
-    fetch(window.VITRIN_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.VITRIN_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { VITRIN = d; render(); }
     }).catch(function () {});
   }
   if (window.TEAMS_URL && window.fetch) {
-    var jget = function (u) { return fetch(u + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
+    var jget = function (u) { return fetch(u, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); };
     jget(window.TEAMS_URL).then(function (l) { return Promise.all(((l && l.takimlar) || []).map(function (sl) { return jget("data/" + sl + ".json"); })); }).then(function (ds) {
       ds.forEach(function (d) { if (d && d.slug && Array.isArray(d.maclar)) { TEAMS[d.slug] = d; TORDER.push(d.slug); } });
       if (TEAM && TEAMS[TEAM]) FBD = TEAMS[TEAM];
@@ -3098,22 +3099,22 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
     }).catch(function () {});
   }
   if (window.GEZI_URL && window.fetch) {
-    fetch(window.GEZI_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.GEZI_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { GEZI = d; applyGezi(); render(); }
     }).catch(function () {});
   }
   if (window.RESTOS_URL && window.fetch) {
-    fetch(window.RESTOS_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.RESTOS_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.sehirler) { RESTO = d; render(); }
     }).catch(function () {});
   }
   if (window.FLIGHTS_URL && window.fetch) {
-    fetch(window.FLIGHTS_URL + "?t=" + Date.now(), { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.FLIGHTS_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && d.haftaSonlari) { FLY = d; render(); }
     }).catch(function () {});
   }
   if (window.DATA_URL && window.fetch) {
-    fetch(window.DATA_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+    fetch(window.DATA_URL, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (d && typeof d.eurTry === "number" && typeof d.eurHuf === "number" && d.updated) { DATA = d; applyData(); applyGezi(); render(); }
     }).catch(function () {});
   }

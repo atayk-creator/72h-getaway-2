@@ -49,7 +49,7 @@
     var next = function () {
       if (i >= bases.length || state.offline) return local();
       var b = bases[i++];
-      return withTimeout(origFetch(b + path, { cache: "no-store", mode: "cors" }), 8000).then(function (r) {
+      return withTimeout(origFetch(b + path, { cache: "no-cache", mode: "cors" }), 8000).then(function (r) {
         if (!r.ok) return next();
         if (goodBase !== b) { goodBase = b; try { sessionStorage.setItem("72h-veri-adresi", b); } catch (e) {} }
         state.liveOk = true; return r;

@@ -116,7 +116,7 @@ test("model: geçmiş hafta sonu atlanır, şüpheli fiyat kullanılmaz", () => 
 test("şehir sayfası: başlık, canonical, CTA, kaçış, JSON-LD", () => {
   const m = buildCity(fixture(), "Paris", TODAY);
   const html = renderCityPage(m);
-  assert.ok(html.includes("<title>Paris hafta sonu bütçesi: otel, uçak, restoran (TL) | 72h Getaway</title>"));
+  assert.ok(html.includes("<title>Paris hafta sonu bütçesi: otel, uçak, yemek | 72h Getaway</title>"));
   assert.ok(html.includes('<link rel="canonical" href="https://72hgetaway.com/sehir/paris/">'));
   assert.ok(html.includes('<html lang="tr">'));
   assert.ok(html.includes("Kendi bütçeni hesapla"));

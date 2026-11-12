@@ -40,7 +40,7 @@ export function upcoming(team, today) {
 export const tema = (team) => team && team.tur === "tema";
 /** Tema sayfası metinleri: data/<slug>.json "sayfa" alanı; yoksa Noel metinleri. */
 const NOEL_METIN = {
-  baslik: (t) => `${t.takim} kaça patlar? Noel pazarı şehirleri, otel ve uçak (TL) | 72h Getaway`,
+  baslik: (t) => `${t.takim}: Noel pazarları, otel ve uçak | 72h Getaway`,
   aciklama_ek: "Uçak + otel + yemek + gezi; 2 kişi toplam ~{TL}'den başlayan 72 saatlik Noel planları.",
   h1: (t) => `${t.takim} bütçesi`,
   giris: (t) => `İstanbul'dan Noel pazarı şehirlerine 72 saatlik kaçamak: ${t.turnuva}. Robotun bulduğu gerçek otel ve uçak fiyatları, yemek, ulaşım ve gezi. 2 kişi için.`,
@@ -63,7 +63,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   const list = upcoming(team, today).filter((m) => m.ucus && m.ucus.oneri);
   const T = tema(team);
   const tl = (eur) => fmtTl(eur, eurTry) || fmtEur(eur);
-  const title = T ? metin(team, "baslik") : `${team.takim} deplasmanı kaça patlar? Otel, uçak, maç bileti (TL) | 72h Getaway`;
+  const title = T ? metin(team, "baslik") : `${team.takim} deplasman bütçesi: otel, uçak, maç bileti | 72h Getaway`;
   const description = !list.length ? `${team.takim} planları.` : T
     ? `${team.turnuva}: ${list.map((m) => `${m.sehir} (${aralikTr(m.gidis, m.donus)})`).join(", ")}. ${metin(team, "aciklama_ek").replace("{TL}", tl(toplam(list[0].butce.konforlu) * 2))}`
     : `${ilgi(team.takim)} ${team.turnuva} deplasmanları: ${list.map((m) => `${m.sehir} (${tarihKisa(m.tarih)})`).join(", ")}. Uçak + otel + maç bileti + yemek; 2 kişi toplam ~${tl(toplam(list[0].butce.konforlu) * 2)}'den başlayan 72 saatlik planlar.`;
@@ -377,7 +377,7 @@ export function renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, fo
 </article>`;
   };
   const url = `${SITE}/deplasman/`;
-  const title = "Deplasman planları: Fenerbahçe, Galatasaray, Beşiktaş · 72h Getaway";
+  const title = "Deplasman planları: uçak, otel, maç bileti · 72h Getaway";
   const description = "Takımını desteklemeye Avrupa'ya: uçak, otel, maç bileti, yemek; 2 kişilik gerçek toplam fiyatla deplasman planları. En yakın maç en üstte.";
   const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Deplasman planları", url, description, inLanguage: "tr",
     mainEntity: { "@type": "ItemList", itemListElement: kulup.map((x, i) => ({ "@type": "ListItem", position: i + 1, name: `${x.t.takim} deplasman bütçesi`, url: `${SITE}/sehir/${x.t.slug}/` })) } };

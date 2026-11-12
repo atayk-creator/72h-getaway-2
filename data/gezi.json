@@ -1,6 +1,6 @@
 {
  "aciklama": "Şehir turu ve ulaşım verisi. Fiyatlar yerel para biriminde (para), yetişkin. Konumlar Google Maps'ten (scripts/gezi-konum.mjs). Fiyatı null olan yerlerin fiyatı henüz doğrulanmadı.",
- "guncellendi": "2026-10-31",
+ "guncellendi": "2026-11-12",
  "sehirler": {
   "Dublin": {
    "para": "EUR",

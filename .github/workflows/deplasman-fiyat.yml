@@ -1,4 +1,4 @@
-name: Deplasman fiyat robotu (Fenerbahçe)
+name: Deplasman fiyat robotu (takımlar ve Noel)
 # Her sabah kontrol eder; fiyatları robot.her_kac_gun günde bir arar (~0,15–0,25 $). Oynanmış maça bakmaz.
 # Bitince "Şehir sayfaları" görevi (workflow_run) /deplasman/fenerbahce/ sayfasını yeniden üretir.
 on:
@@ -23,10 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: main
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Testler
