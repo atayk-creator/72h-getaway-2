@@ -1,0 +1,37 @@
+name: Apify harcama raporu
+# Bu ayın Apify harcamasını, sınırı ve robotlara göre dağılımı yazar: data/apify-rapor.json + yonetim/apify-rapor.md
+# Pazartesi sabahları ve elle; rapor betiği değişince de çalışır. Apify'a yalnızca okuma isteği atar (para harcamaz).
+on:
+  schedule:
+    - cron: "37 4 * * 1" # Pazartesi 07:37 İstanbul
+  push:
+    branches: [main]
+    paths: [scripts/apify-rapor.mjs, .github/workflows/apify-rapor.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  rapor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Raporu üret
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/apify-rapor.mjs
+      - name: Depoya kaydet
+        run: |
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/apify-rapor.json yonetim/apify-rapor.md
+          git diff --cached --quiet && exit 0
+          git commit -m "Apify harcama raporu"
+          for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
