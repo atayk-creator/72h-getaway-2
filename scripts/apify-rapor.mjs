@@ -25,17 +25,20 @@ async function github(path) {
 async function main() {
   if (!token) throw new Error("APIFY_TOKEN yok");
   const lim = await apify("/users/me/limits");
+  console.log(`::notice::Apify: ${lim.current && lim.current.monthlyUsageUsd} / ${lim.limits && lim.limits.maxMonthlyUsageUsd} $`);
   const cyc = lim.monthlyUsageCycle || {}, bas = cyc.startAt, son = cyc.endAt;
   const harcanan = lim.current && lim.current.monthlyUsageUsd, sinir = lim.limits && lim.limits.maxMonthlyUsageUsd;
 
   // Bu dönemin Apify çalıştırmaları (yeniden eskiye)
   const runs = [];
+  try {
   for (let off = 0; off < 20000; off += 1000) {
     const d = await apify(`/actor-runs?desc=1&limit=1000&offset=${off}`);
     const items = d.items || [];
     runs.push(...items.filter((x) => !bas || x.startedAt >= bas));
     if (items.length < 1000 || (bas && items.length && items[items.length - 1].startedAt < bas)) break;
   }
+  } catch (e) { console.log(`::warning::Apify çalıştırma listesi okunamadı: ${gizle(e.message)}`); }
   const aktorAd = {};
   for (const id of new Set(runs.map((x) => x.actId))) {
     try { const a = await apify(`/acts/${id}`); aktorAd[id] = `${a.username}~${a.name}`; } catch { aktorAd[id] = id; }
@@ -43,14 +46,14 @@ async function main() {
 
   // GitHub iş akışı çalıştırmaları (aynı dönem): pencere = başlangıç → son güncelleme
   const wf = [];
-  if (gh) {
+  if (gh) try {
     const tarih = (bas || new Date(Date.now() - 31 * 864e5).toISOString()).slice(0, 10);
     for (let page = 1; page <= 30; page++) {
-      const j = await github(`/actions/runs?per_page=100&page=${page}&created=>=${tarih}`);
+      const j = await github(`/actions/runs?per_page=100&page=${page}&created=${encodeURIComponent(">=" + tarih)}`);
       wf.push(...(j.workflow_runs || []).map((w) => ({ ad: w.name, bas: w.run_started_at || w.created_at, son: w.updated_at })));
       if (!j.workflow_runs || j.workflow_runs.length < 100) break;
     }
-  }
+  } catch (e) { console.log(`::warning::GitHub çalıştırmaları okunamadı (robot eşleşmesi yapılamadı): ${gizle(e.message)}`); }
   const robotu = (t) => {
     const c = wf.filter((w) => w.bas <= t && t <= w.son).sort((a, b) => (Date.parse(a.son) - Date.parse(a.bas)) - (Date.parse(b.son) - Date.parse(b.bas)));
     return c.length ? c[0].ad : "Eşleşmedi (elle ya da başka yerden)";
@@ -109,4 +112,4 @@ Not: Robot eşleşmesi zamana göredir; Apify çalıştırması hangi GitHub rob
   console.log(md);
 }
 
-main().catch((e) => { console.error("HATA:", gizle(e.message)); process.exit(1); });
+main().catch((e) => { const m = gizle(e.message); console.error("HATA:", m); console.log(`::error::Apify raporu: ${m}`); process.exit(1); });
