@@ -37,7 +37,7 @@
    "gidis": "2026-12-09",
    "donus": "2026-12-11",
    "plan": "Konaklama Köln'de (2 gece), Köln/Bonn Havalimanı; maça trenle Leverkusen'e. Ulaşım tren.",
-   "foto": null,
+   "foto": "/img/sehir/koln-1.jpg",
    "vize": "Schengen vizesi gerekir.",
    "arama_ucus": [
     "IST,SAW-CGN 2026-12-09 2026-12-11",
@@ -351,7 +351,10 @@
    "uygun_plan": true,
    "uyarilar": [
     "25hours Hotel The Circle (Konforlu, 437 €) üst sınıftaki Dorint Hotel am Heumarkt (Lüks, 424 €) otelinden pahalı"
-   ]
+   ],
+   "foto_kaynak": "Unsplash · Florian Schmetz",
+   "foto_alt": "Köln Katedrali ve Hohenzollern Köprüsü, Ren kıyısı",
+   "foto_url": "https://unsplash.com/photos/BB2S2ZwOVpM"
   },
   {
    "id": "lefkosa",
@@ -367,7 +370,7 @@
    "gidis": "2027-01-27",
    "donus": "2027-01-29",
    "plan": "Larnaka'ya uçuş, 2 gece Lefkoşa (güney).",
-   "foto": null,
+   "foto": "/img/sehir/lefkosa-1.jpg",
    "vize": "Kıbrıs Cumhuriyeti vizesi gerekir (Schengen vizesi yetmeyebilir); Kuzey'den güneye geçişte de bu vize istenir.",
    "dikkat": "İstanbul'dan Larnaka'ya direkt uçuş yok, aktarmalı uçmak gerekir. Bu maçta deplasman seyircisine izin ve güvenlik kararı henüz netleşmedi; bilet ve seyahat kararından önce kulübün ve UEFA'nın duyurusunu bekle.",
    "arama_ucus": [
@@ -595,7 +598,10 @@
    "uygun_plan": true,
    "uyarilar": [
     "Cleopatra Hotel (Konforlu, 334 €) üst sınıftaki Hilton Nicosia (Lüks, 329 €) otelinden pahalı"
-   ]
+   ],
+   "foto_kaynak": "Unsplash · Maria Krasnova",
+   "foto_alt": "Lefkoşa eski şehirde bir sokak",
+   "foto_url": "https://unsplash.com/photos/VABDpI77JI0"
   }
  ],
  "kaynaklar": [

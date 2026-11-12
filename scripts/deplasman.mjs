@@ -126,13 +126,13 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     return `
   <section id="${esc(m.id)}" class="mac">
     <div class="banner${m.foto ? "" : " cizgi"}">
-      ${m.hikaye_video ? `<img src="${esc(m.hikaye_poster || m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="${i ? "lazy" : "eager"}" decoding="async"><video data-src="${esc(m.hikaye_video)}" muted loop playsinline preload="none" aria-hidden="true"></video>` : m.foto ? `<img src="${esc(m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="eager" decoding="async">` : ""}
+      ${m.foto ? `<img src="${esc(m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="${i ? "lazy" : "eager"}" decoding="async">` : ""}
       <div class="bn">
         <span class="eb">${T ? esc(aralikTr(m.gidis, m.donus).toLocaleUpperCase("tr")) : esc(m.hafta) + ". HAFTA"} · ${esc(m.sehir.toLocaleUpperCase("tr"))} · 72 SAAT</span>
         <h2>${T ? `${esc(m.sehir)}: ${esc(m.etkinlik)}` : `${esc(m.rakip)} – ${esc(team.takim)}`}</h2>
         <p>${T ? `${esc(m.yer)}${m.pazar_yazi ? ` · pazar ${esc(m.pazar_yazi)}, ${esc(m.pazar_saat)}` : ""}${m.ozet ? `<br>${esc(m.ozet)}` : ""}` : `${esc(tarihUzun(m.tarih))} · ${esc(m.saat_tsi)} TSİ (yerel ${esc(m.saat_yerel)}) · ${esc(m.stat)}${m.mac_sehri ? ", " + esc(m.mac_sehri) : ""}`}</p>
       </div>
-      ${m.hikaye_video ? `<span class="cr">Görüntü: yapay zekâ ile üretildi, temsilîdir</span>` : m.foto ? `<span class="cr">Görüntü: ${esc(m.foto_kaynak || "Pexels")}</span>` : ""}
+      ${m.foto ? `<span class="cr">Fotoğraf: ${esc(m.foto_kaynak || "Pexels")}</span>` : ""}
     </div>
 
     <div class="ozet">
@@ -323,7 +323,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   ${T ? "" : `<p class="bagimsiz">${esc(team.bagimsiz || `Bağımsız bir seyahat planlayıcısıyız; ${team.takim} ile resmî bir bağımız yoktur.`)}</p>`}
   ${standart}
   ${sections || `<p class="empty">${T ? "Yaklaşan hafta sonu yok." : "Yaklaşan deplasman maçı yok."}</p>`}
-  <div class="note">${team.bilet ? esc(team.bilet.yazi) + " " : ""}${team.not_fiyat ? esc(team.not_fiyat) : `Uçak ve otel fiyatları ${esc(tarihUzun(team.guncellendi))} günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, ${T ? "havalimanı ulaşımı" : "araba"} ve gezi tahminidir.`} ${eurTry ? `TL tutarları 1 € = ${esc(String(eurTry).replace(".", ","))} TL kuruyla.` : ""} ${T ? "Geçen hafta sonu sayfadan kendiliğinden kalkar." : "Tren fiyatları ÖBB'nin bilet verisinden. Oynanan maç sayfadan kendiliğinden kalkar."} ${esc(team.bagimsiz || "")} Fotoğraflar: Unsplash ve Pexels (ücretsiz lisans); hareketli şehir görüntüleri yapay zekâ ile üretildi, temsilîdir.
+  <div class="note">${team.bilet ? esc(team.bilet.yazi) + " " : ""}${team.not_fiyat ? esc(team.not_fiyat) : `Uçak ve otel fiyatları ${esc(tarihUzun(team.guncellendi))} günü Google'dan alındı ve robot tarafından 2 günde bir yenilenir; yemek, ${T ? "havalimanı ulaşımı" : "araba"} ve gezi tahminidir.`} ${eurTry ? `TL tutarları 1 € = ${esc(String(eurTry).replace(".", ","))} TL kuruyla.` : ""} ${T ? "Geçen hafta sonu sayfadan kendiliğinden kalkar." : "Tren fiyatları ÖBB'nin bilet verisinden. Oynanan maç sayfadan kendiliğinden kalkar."} ${esc(team.bagimsiz || "")} Fotoğraflar: Unsplash ve Pexels (ücretsiz lisans), kaynakları görsellerin üzerinde yazılı.
   <br>Kaynaklar: ${(team.kaynaklar || []).map((k) => `<a href="${esc(k.url)}" rel="noopener">${esc(k.ad)}</a>`).join(" · ")}</div>
 </main>
 <script>(function(){var v=document.querySelectorAll(".banner video[data-src]");if(!v.length||!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches)return;var io=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;if(e.isIntersecting){if(!x.src){x.src=x.dataset.src;x.addEventListener("playing",function(){x.classList.add("on")},{once:true});}x.play().catch(function(){});}else if(x.src)x.pause();});},{rootMargin:"200px"});v.forEach(function(x){io.observe(x)});})();</script>
@@ -361,6 +361,7 @@ export function renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, fo
     const vize = (m.vize || "").replace(/\s*Maça \d+ gün var;?[^.]*\./, "").trim(); // veride kalan eski "gün var" sayısı burada gösterilmez
     return `<article class="dk" id="${esc(t.slug)}" style="--a:${esc(c.a)};--b:${esc(c.b)}">
   <div class="dk-serit" aria-hidden="true"></div>
+  ${m.foto ? `<figure class="dk-foto"><img src="${esc(m.foto.replace(/\.jpg$/, "-640.jpg"))}" srcset="${esc(m.foto.replace(/\.jpg$/, "-640.jpg"))} 640w, ${esc(m.foto)} 1600w" sizes="(max-width: 720px) 100vw, 720px" alt="${esc(m.foto_alt || m.mac_sehri || m.sehir)}" loading="lazy" decoding="async"><figcaption>Fotoğraf: ${esc(m.foto_kaynak || "Pexels")}</figcaption></figure>` : ""}
   <div class="dk-ust">
     <div class="dk-eb">${esc(t.takim.toLocaleUpperCase("tr"))} · SIRADAKİ MAÇ${k >= 0 && k <= 60 ? ` · ${k === 0 ? "BUGÜN" : `${k} GÜN KALDI`}` : ""}</div>
     <h2>${esc(m.rakip)} – ${esc(t.takim)}</h2>
@@ -386,6 +387,9 @@ export function renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, fo
 .dk { background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px; overflow: hidden; scroll-margin-top: 12px; }
 .dk-serit { height: 6px; background: linear-gradient(90deg, var(--a) 0 50%, var(--b) 50% 100%); border-bottom: 1px solid var(--line); }
 .dk-ust { padding: 16px 18px 14px; }
+.dk-foto { position: relative; margin: 0; aspect-ratio: 16 / 7; background: #153552; overflow: hidden; }
+.dk-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dk-foto figcaption { position: absolute; right: 8px; bottom: 8px; font-size: 0.7rem; color: #FBF6EC; background: rgba(10,31,51,0.7); padding: 2px 8px; border-radius: 999px; }
 .dk-eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.12em; color: var(--muted); }
 .dk h2 { margin: 6px 0 12px; font-size: 1.35rem; line-height: 1.15; }
 .dk-rota { display: flex; align-items: flex-end; gap: 12px; }
@@ -394,11 +398,12 @@ export function renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, fo
 .dk-rota b { font-size: 1.15rem; }
 .dk-rota .ok { font-size: 1.2rem; color: var(--muted); padding-bottom: 2px; }
 .dk-t { margin: 10px 0 0; font-size: 0.95rem; }
-.dk-alt { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 2px dashed var(--line); position: relative; }
+.dk-alt { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 2px dashed var(--line); position: relative; }
 .dk-alt::before, .dk-alt::after { content: ""; position: absolute; top: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--line); }
 .dk-alt::before { left: -9px; } .dk-alt::after { right: -9px; }
 .dk-alt small { display: block; color: var(--muted); font-size: 0.8rem; }
-.dk-p { display: block; font-size: 1.6rem; letter-spacing: -0.01em; margin: 2px 0; }
+.dk-p { display: block; font-size: 1.6rem; letter-spacing: -0.01em; margin: 2px 0; white-space: nowrap; }
+.dk-p .eur { font-size: 0.85rem; }
 .dk-btn { flex: none; display: inline-block; padding: 11px 18px; border-radius: 999px; background: var(--accent); color: #0F2A43; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .dk-vize { margin: 0; padding: 10px 18px; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); }
 .dk-diger { padding: 4px 18px 14px; border-top: 1px solid var(--line); }

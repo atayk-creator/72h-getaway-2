@@ -92,6 +92,9 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 .dk { background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px; overflow: hidden; scroll-margin-top: 12px; }
 .dk-serit { height: 6px; background: linear-gradient(90deg, var(--a) 0 50%, var(--b) 50% 100%); border-bottom: 1px solid var(--line); }
 .dk-ust { padding: 16px 18px 14px; }
+.dk-foto { position: relative; margin: 0; aspect-ratio: 16 / 7; background: #153552; overflow: hidden; }
+.dk-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.dk-foto figcaption { position: absolute; right: 8px; bottom: 8px; font-size: 0.7rem; color: #FBF6EC; background: rgba(10,31,51,0.7); padding: 2px 8px; border-radius: 999px; }
 .dk-eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.12em; color: var(--muted); }
 .dk h2 { margin: 6px 0 12px; font-size: 1.35rem; line-height: 1.15; }
 .dk-rota { display: flex; align-items: flex-end; gap: 12px; }
@@ -100,11 +103,12 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 .dk-rota b { font-size: 1.15rem; }
 .dk-rota .ok { font-size: 1.2rem; color: var(--muted); padding-bottom: 2px; }
 .dk-t { margin: 10px 0 0; font-size: 0.95rem; }
-.dk-alt { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 2px dashed var(--line); position: relative; }
+.dk-alt { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 2px dashed var(--line); position: relative; }
 .dk-alt::before, .dk-alt::after { content: ""; position: absolute; top: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--line); }
 .dk-alt::before { left: -9px; } .dk-alt::after { right: -9px; }
 .dk-alt small { display: block; color: var(--muted); font-size: 0.8rem; }
-.dk-p { display: block; font-size: 1.6rem; letter-spacing: -0.01em; margin: 2px 0; }
+.dk-p { display: block; font-size: 1.6rem; letter-spacing: -0.01em; margin: 2px 0; white-space: nowrap; }
+.dk-p .eur { font-size: 0.85rem; }
 .dk-btn { flex: none; display: inline-block; padding: 11px 18px; border-radius: 999px; background: var(--accent); color: #0F2A43; font-weight: 700; text-decoration: none; white-space: nowrap; }
 .dk-vize { margin: 0; padding: 10px 18px; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); }
 .dk-diger { padding: 4px 18px 14px; border-top: 1px solid var(--line); }
@@ -129,6 +133,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 <main class="wrap">
   <div class="dk-list"><article class="dk" id="fenerbahce" style="--a:#F4D30B;--b:#0F2A43">
   <div class="dk-serit" aria-hidden="true"></div>
+  <figure class="dk-foto"><img src="/img/sehir/londra-1-640.jpg" srcset="/img/sehir/londra-1-640.jpg 640w, /img/sehir/londra-1.jpg 1600w" sizes="(max-width: 720px) 100vw, 720px" alt="Londra, gece Big Ben" loading="lazy" decoding="async"><figcaption>Fotoğraf: Unsplash · David W. Meyer</figcaption></figure>
   <div class="dk-ust">
     <div class="dk-eb">FENERBAHÇE · SIRADAKİ MAÇ · 13 GÜN KALDI</div>
     <h2>Shakhtar Donetsk – Fenerbahçe</h2>
@@ -144,6 +149,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 </article>
 <article class="dk" id="galatasaray" style="--a:#FDB912;--b:#A90432">
   <div class="dk-serit" aria-hidden="true"></div>
+  <figure class="dk-foto"><img src="/img/sehir/atina-2-640.jpg" srcset="/img/sehir/atina-2-640.jpg 640w, /img/sehir/atina-2.jpg 1600w" sizes="(max-width: 720px) 100vw, 720px" alt="Atina, Akropolis&#39;teki Parthenon" loading="lazy" decoding="async"><figcaption>Fotoğraf: Pexels</figcaption></figure>
   <div class="dk-ust">
     <div class="dk-eb">GALATASARAY · SIRADAKİ MAÇ · 26 GÜN KALDI</div>
     <h2>AEK – Galatasaray</h2>
@@ -159,6 +165,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; margin-r
 </article>
 <article class="dk" id="besiktas" style="--a:#FFFFFF;--b:#111111">
   <div class="dk-serit" aria-hidden="true"></div>
+  <figure class="dk-foto"><img src="/img/sehir/koln-1-640.jpg" srcset="/img/sehir/koln-1-640.jpg 640w, /img/sehir/koln-1.jpg 1600w" sizes="(max-width: 720px) 100vw, 720px" alt="Köln Katedrali ve Hohenzollern Köprüsü, Ren kıyısı" loading="lazy" decoding="async"><figcaption>Fotoğraf: Unsplash · Florian Schmetz</figcaption></figure>
   <div class="dk-ust">
     <div class="dk-eb">BEŞİKTAŞ · SIRADAKİ MAÇ · 28 GÜN KALDI</div>
     <h2>Bayer Leverkusen – Beşiktaş</h2>
