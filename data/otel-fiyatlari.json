@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-09T11:38:05.842Z",
+ "guncellendi": "2026-11-12T20:53:46.511Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -142,7 +142,6 @@
   "bts-arcadia": "ChkIq_LTmv_arJeZARoML2cvMTFoMW00ZzU3EAE",
   "bts-elisabeth": "ChoIzvDWvNjwuN-LARoNL2cvMTFjc3JjMzNmahAB",
   "lju-grand-union": "ChcItdS_wsngkLiqARoKL20vMDN5MGR6aBAB",
-  "lju-intercontinental": "ChoIwrO_2cD-q7KUARoNL2cvMTFjNV90NTFiehAB",
   "lju-vander-urbani": "ChgItJWC38_G0cx1GgwvZy8xamt5Yl9sdjMQAQ",
   "lju-cubo": "ChgInuPIiai4zqWxARoLL2cvMXRrNnRxMjIQAQ",
   "lju-zlata-ladjica": "ChkI2LX3nYOC7vdLGg0vZy8xMW5uM3B0eXE1EAE",
@@ -225,7 +224,10 @@
   "ber-provocateur": "ChkIhsDnuc3p8tcQGg0vZy8xMWoyZm1rZF85EAE",
   "vlt-rosselli": "ChkIvdDQo5eE4aRfGg0vZy8xMWYzdmNsNmdoEAE",
   "sto-grand-hotel": "ChYI5_jTmO_81e2MARoJL20vMGRtXzJyEAE",
-  "vlt-the-phoenicia": "ChoIrvDVwsDQpNrwARoNL2cvMTFieDFidnk2YxAB"
+  "vlt-the-phoenicia": "ChoIrvDVwsDQpNrwARoNL2cvMTFieDFidnk2YxAB",
+  "ber-ritz-carlton": "ChgIveLHqY3365ykARoLL2cvMTIzMjYwN3gQAQ",
+  "beg-metropol": "ChcIgtybhJStg5jcARoKL20vMDJxYzk3NBAB",
+  "lju-intercontinental": "ChoIwrO_2cD-q7KUARoNL2cvMTFjNV90NTFiehAB"
  },
  "konum": {
   "dub-shelbourne": [
@@ -1119,34 +1121,38 @@
   "sjj-stari-grad": [
    43.85828,
    18.42631
+  ],
+  "beg-metropol": [
+   44.806830000000005,
+   20.473869999999998
   ]
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 31.99
+  "usd": 34.67
  },
  "sonCalisma": {
-  "tarih": "2026-11-09T11:38:05.842Z",
+  "tarih": "2026-11-12T20:53:46.511Z",
   "mod": "takvim",
-  "hafta_sonu": 8,
-  "kontrol": 1792,
-  "fiyatli": 1483,
-  "dogrulanamadi": 68,
-  "supheli": 55,
+  "hafta_sonu": 4,
+  "kontrol": 896,
+  "fiyatli": 749,
+  "dogrulanamadi": 32,
+  "supheli": 27,
   "vergi": {
-   "dahil": 50,
-   "eklendi": 1440,
-   "bilinmiyor": 116
+   "dahil": 33,
+   "eklendi": 726,
+   "bilinmiyor": 48
   },
-  "tahminiMaliyetUsd": 5.3,
+  "tahminiMaliyetUsd": 2.69,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 64.29,
-  "sinir": 75,
+  "usd": 73.45,
+  "sinir": 100,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-09T11:38:05.842Z"
+  "kontrol": "2026-11-12T20:53:46.511Z"
  },
  "olcumler": [
   {
@@ -1218,6 +1224,13 @@
    "sorgu": 1767,
    "usd": 4.99,
    "sorguBasi": 0.00282
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-12T20:53:46.511Z",
+   "sorgu": 895,
+   "usd": 2.51,
+   "sorguBasi": 0.0028
   }
  ],
  "sehirler": {
@@ -1257,6 +1270,7 @@
   "Podgorica": "data/fiyatlar/podgorica.json",
   "Üsküp": "data/fiyatlar/uskup.json",
   "Tiran": "data/fiyatlar/tiran.json",
-  "Priştine": "data/fiyatlar/pristine.json"
+  "Priştine": "data/fiyatlar/pristine.json",
+  "Milano": "data/fiyatlar/milano.json"
  }
 }
