@@ -1,0 +1,66 @@
+name: Medya senkron (medya/ → medya-yayin dalı)
+# Sosyal medya ofisi videoları eskisi gibi main dalındaki medya/ klasörüne koyar.
+# 1) Her yeni dosya birkaç dakika içinde medya-yayin dalına da kopyalanır; Metricool için kalıcı adres:
+#    https://raw.githubusercontent.com/atayk-creator/72h-getaway-2/medya-yayin/<dosya-adı>
+# 2) medya/ klasöründe 3 günden eski olan ve medya-yayin dalında kopyası bulunan dosyalar main'den silinir.
+#    Metricool dosyayı planlarken kendi sunucusuna kopyaladığı için planlanmış gönderiler etkilenmez; böylece site
+#    yayını her güncellemede yüzlerce MB video taşımaz. Dosyalar medya-yayin dalında ve git geçmişinde kalır.
+on:
+  push:
+    branches: [main]
+    paths: ["medya/**"]
+  schedule:
+    - cron: "17 3 * * *" # her gece 06:17 İstanbul: eski dosyaları temizle
+  workflow_dispatch:
+    inputs:
+      gun:
+        description: "Kaç günden eski dosyalar main'den silinsin"
+        type: string
+        default: "3"
+permissions:
+  contents: write
+concurrency:
+  group: medya-senkron
+  cancel-in-progress: false
+jobs:
+  senkron:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+          filter: blob:none
+      - name: medya-yayin dalına kopyala ve eski dosyaları main'den çıkar
+        env:
+          GUN: ${{ inputs.gun || '3' }}
+        run: |
+          set -euo pipefail
+          git config user.name "medya-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch -q origin medya-yayin --depth=1
+          git worktree add -q /tmp/yayin origin/medya-yayin
+          kopyalanan=0
+          for f in medya/*; do
+            n=$(basename "$f"); [ "$n" = README.md ] && continue; [ -f "$f" ] || continue
+            if [ ! -f "/tmp/yayin/$n" ] || ! cmp -s "$f" "/tmp/yayin/$n"; then cp "$f" "/tmp/yayin/$n"; kopyalanan=$((kopyalanan+1)); fi
+          done
+          if [ "$kopyalanan" -gt 0 ]; then
+            cd /tmp/yayin && git add -A && git commit -qm "Yayın medyası: $kopyalanan dosya (medya/ senkron)"
+            for i in 1 2 3 4 5; do git push -q origin HEAD:medya-yayin && break; git fetch -q origin medya-yayin --depth=1 && git rebase -q origin/medya-yayin; sleep 5; done
+            cd - >/dev/null
+          fi
+          echo "medya-yayin dalına kopyalanan: $kopyalanan" | tee -a "$GITHUB_STEP_SUMMARY"
+          sinir=$(( $(date +%s) - GUN * 86400 )); silinen=0
+          for f in medya/*; do
+            n=$(basename "$f"); [ "$n" = README.md ] && continue; [ -f "$f" ] || continue
+            eklendi=$(git log --diff-filter=A --format=%ct -1 -- "$f" || echo 0)
+            if [ -n "$eklendi" ] && [ "$eklendi" -lt "$sinir" ] && cmp -s "$f" "/tmp/yayin/$n"; then git rm -q "$f"; silinen=$((silinen+1)); fi
+          done
+          if [ "$silinen" -gt 0 ]; then
+            git commit -qm "medya/: ${GUN} günden eski $silinen dosya main'den çıkarıldı (medya-yayin dalında duruyor)"
+            for i in 1 2 3 4 5; do git pull -q --rebase && git push -q && break; sleep 10; done
+          fi
+          echo "main'den çıkarılan (>${GUN} gün): $silinen" | tee -a "$GITHUB_STEP_SUMMARY"
+          du -sh medya | tee -a "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,11 @@
+# GitHub Pages (Jekyll) yayın ayarı: aşağıdakiler depoda kalır ama 72hgetaway.com'da yayınlanmaz.
+# İç belgeler (kurul notları, kurulum rehberleri), robot kodu ve uygulama kaynağı sitenin parçası değildir.
+exclude:
+  - yonetim
+  - magaza
+  - scripts
+  - app
+  - README.md
+  - data/apify-rapor.json
+  - node_modules
+  - "**/__pycache__"
