@@ -204,6 +204,9 @@ test("deplasman ana sayfası: takımlar en yakın maça göre, zorunlu notlar, l
   assert.ok(h.includes("Maç biletini kulüp satar; bilet fiyatı tahmindir, garanti değil."));
   assert.ok(h.includes("İngiltere vizesi") && h.includes("Schengen"));
   assert.ok(h.includes(" TSİ"));
+  const ap = h.replace(/&#39;|&#x27;/g, "'");
+  assert.ok(ap.includes("Galatasaray'ın diğer") && ap.includes("Beşiktaş'ın diğer") && ap.includes("Fenerbahçe'nin diğer"), "ilgi eki ünlü uyumuna uyar");
+  assert.ok(!/(Galatasaray|Beşiktaş)'nin/.test(ap));
   assert.ok(!/logo|arma/i.test(h.replace(/<style>[\s\S]*?<\/style>/g, "")), "logo/arma yok");
   const gorunur = h.replace(/<(style|script)[^>]*>[\s\S]*?<\/\1>/g, "").replace(/<[^>]+>/g, " ");
   assert.ok(!/ucuz/i.test(gorunur), "görünür metinde 'ucuz' yok");

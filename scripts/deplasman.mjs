@@ -49,6 +49,12 @@ const NOEL_METIN = {
 };
 const metin = (team, k) => { const v = (team.sayfa || {})[k]; return v != null ? v : typeof NOEL_METIN[k] === "function" ? NOEL_METIN[k](team) : NOEL_METIN[k]; };
 const otobus = (m) => m && m.ulasim_turu === "otobus";
+/** İlgi eki (ünlü uyumuyla): Fenerbahçe'nin, Galatasaray'ın, Beşiktaş'ın. */
+export function ilgi(ad) {
+  const s = String(ad || "").trim(), k = s.toLocaleLowerCase("tr"), u = k.match(/[aeıioöuü]/g), son = u ? u[u.length - 1] : "e";
+  const ek = "aı".includes(son) ? "ın" : "ei".includes(son) ? "in" : "ou".includes(son) ? "un" : "ün";
+  return `${s}'${/[aeıioöuü]$/.test(k) ? "n" : ""}${ek}`;
+}
 const olay = (m, team) => (tema(team) ? m.etkinlik : `${m.rakip} – ${team.takim}`);
 const aktarmaYazi = (o) => (o && o.aktarma ? "aktarmalı" : "aktarmasız");
 
@@ -60,7 +66,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
   const title = T ? metin(team, "baslik") : `${team.takim} deplasmanı kaça patlar? Otel, uçak, maç bileti (TL) | 72h Getaway`;
   const description = !list.length ? `${team.takim} planları.` : T
     ? `${team.turnuva}: ${list.map((m) => `${m.sehir} (${aralikTr(m.gidis, m.donus)})`).join(", ")}. ${metin(team, "aciklama_ek").replace("{TL}", tl(toplam(list[0].butce.konforlu) * 2))}`
-    : `${team.takim}'nin ${team.turnuva} deplasmanları: ${list.map((m) => `${m.sehir} (${tarihKisa(m.tarih)})`).join(", ")}. Uçak + otel + maç bileti + yemek; 2 kişi toplam ~${tl(toplam(list[0].butce.konforlu) * 2)}'den başlayan 72 saatlik planlar.`;
+    : `${ilgi(team.takim)} ${team.turnuva} deplasmanları: ${list.map((m) => `${m.sehir} (${tarihKisa(m.tarih)})`).join(", ")}. Uçak + otel + maç bileti + yemek; 2 kişi toplam ~${tl(toplam(list[0].butce.konforlu) * 2)}'den başlayan 72 saatlik planlar.`;
   const ld = {
     "@context": "https://schema.org",
     "@graph": [
@@ -366,7 +372,7 @@ export function renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, fo
     <a class="dk-btn" href="/sehir/${esc(t.slug)}/#${esc(m.id)}">Planı gör</a>
   </div>
   ${vize ? `<p class="dk-vize">${esc(vize)}</p>` : ""}
-  ${diger ? `<div class="dk-diger"><h3>${esc(t.takim)}'nin diğer deplasmanları</h3><ul class="dk-dl">${diger}</ul></div>` : ""}
+  ${diger ? `<div class="dk-diger"><h3>${esc(ilgi(t.takim))} diğer deplasmanları</h3><ul class="dk-dl">${diger}</ul></div>` : ""}
 </article>`;
   };
   const url = `${SITE}/deplasman/`;

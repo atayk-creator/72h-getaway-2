@@ -1,6 +1,6 @@
 // Deplasman fiyat robotu testleri (ağ yok). Çalıştır: node scripts/test-deplasman-fiyat.mjs
 import assert from "node:assert/strict";
-import { donusDoldur, due, upcoming, hotelTotal, flightOptions, applyMatch, applyTrain } from "./deplasman-fiyat.mjs";
+import { macAranacak, macPayi, donusDoldur, due, upcoming, hotelTotal, flightOptions, applyMatch, applyTrain } from "./deplasman-fiyat.mjs";
 import { upcoming as pageUpcoming } from "./deplasman.mjs";
 let n = 0; const t = (name, f) => { f(); n++; console.log("ok", name); };
 const team = { robot: { son_arama: "2026-11-09", her_kac_gun: 2 }, maclar: [{ tarih: "2026-11-25" }, { tarih: "2026-12-09" }] };
@@ -84,3 +84,14 @@ t("uygun otel konforludan ucuz olmalı; tek yön dönüş", () => {
   assert.match(m.ucus.oneri.donus, /GDN 15:10 → IST/);
 });
 console.log(`${n} test geçti (uygun ve dönüş)`);
+
+t("maç takvimi: yakın 2 günde, Aralık haftada, Ocak 15 Aralık'a kadar bekler", () => {
+  const T = { robot: { her_kac_gun: 2, son_arama: "2026-11-11" } };
+  const lon = { tarih: "2026-11-25" }, ara = { tarih: "2026-12-08" }, oca = { tarih: "2027-01-26" };
+  assert.equal(macAranacak(lon, T, "2026-11-12"), false); assert.equal(macAranacak(lon, T, "2026-11-13"), true);
+  assert.equal(macAranacak(ara, T, "2026-11-13"), false); assert.equal(macAranacak(ara, T, "2026-11-18"), true);
+  assert.equal(macAranacak(oca, T, "2026-12-14"), false); assert.equal(macAranacak(oca, T, "2026-12-15"), true);
+  assert.equal(macAranacak({ ...ara, robot_son_arama: "2026-11-18" }, T, "2026-11-20"), false);
+  assert.equal(macAranacak(oca, T, "2026-11-13", true), true);
+  assert.equal(macPayi(lon, T, "2026-11-13"), 1); assert.equal(macPayi(ara, T, "2026-11-13"), 5);
+});

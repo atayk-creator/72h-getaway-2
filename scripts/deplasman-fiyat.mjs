@@ -26,6 +26,28 @@ export function due(team, today, force = false) {
 }
 export const upcoming = (team, today) => (team.maclar || []).filter((m) => m.tarih >= today);
 
+/**
+ * Maç başına arama takvimi (yönetim kurulu, 12 Kasım: önce en yakın maç, Aralık maçları haftada bir, Ocak maçları 15 Aralık'a kadar bekler):
+ *  - maça robot.uzak_gun (42) günden fazla varsa aranmaz (Ocak sonu maçları ~15 Aralık'ta başlar)
+ *  - robot.yakin_gun (14) gün ve daha yakınsa robot.her_kac_gun (2) günde bir
+ *  - arada kalanlar robot.uzak_aralik (7) günde bir
+ * Son arama maç başına m.robot_son_arama'da tutulur (yoksa takımın son araması).
+ */
+export function macAranacak(m, team, today, force = false) {
+  const r = team.robot || {};
+  if (force || r.zorla) return true;
+  const k = daysBetween(today, m.tarih || m.gidis);
+  if (k > (r.uzak_gun ?? 42)) return false;
+  const aralik = k <= (r.yakin_gun ?? 14) ? (r.her_kac_gun || 2) : (r.uzak_aralik ?? 7);
+  const son = m.robot_son_arama || r.son_arama;
+  return !son || daysBetween(son, today) >= aralik;
+}
+/** Maç için bırakılacak Apify bütçe payı ($): yakın maç küçük payla da aranır, uzak maç büyük pay ister. */
+export function macPayi(m, team, today) {
+  const r = team.robot || {};
+  return daysBetween(today, m.tarih || m.gidis) <= (r.yakin_gun ?? 14) ? (r.butce_payi_yakin_usd ?? 1) : (r.butce_payi_usd ?? 5);
+}
+
 /** Otel satırından vergili toplam: tanınmış site ya da otelin kendi sitesi; yoksa Google'ın gösterdiği toplam. */
 export function hotelTotal(r) {
   if (!r || !num(r.totalPrice)) return null;
@@ -184,20 +206,32 @@ export function applyTrain(t, rows) {
 async function main() {
   const token = process.env.APIFY_TOKEN;
   const slugs = JSON.parse(await readFile(TEAMS_FILE, "utf8")).takimlar || [];
-  for (const slug of slugs) { console.log("== " + slug); await runTeam(slug, token); }
+  // En yakın maçı olan takım önce aranır (bütçe azken önce o maç tamamlansın)
+  const today = process.env.BUGUN || istanbulToday();
+  const ilk = {};
+  for (const slug of slugs) { try { const t = JSON.parse(await readFile(root + `data/${slug}.json`, "utf8")); ilk[slug] = (upcoming(t, today)[0] || {}).tarih || "9999"; } catch { ilk[slug] = "9999"; } }
+  for (const slug of slugs.slice().sort((a, b) => (ilk[a] < ilk[b] ? -1 : ilk[a] > ilk[b] ? 1 : 0))) { console.log("== " + slug); await runTeam(slug, token); }
 }
 
 async function runTeam(slug, token) {
   const FILE = root + `data/${slug}.json`;
   const team = JSON.parse(await readFile(FILE, "utf8"));
   const today = process.env.BUGUN || istanbulToday();
-  const list = upcoming(team, today);
-  if (!list.length) return console.log("Yaklaşan maç yok.");
+  const tum = upcoming(team, today);
+  if (!tum.length) return console.log("Yaklaşan maç yok.");
   team.robot = team.robot || {};
-  if (!due(team, today, process.env.ZORLA === "1")) return console.log(`Son arama ${team.robot.son_arama}; ${team.robot.her_kac_gun} günde bir aranıyor, bugün atlandı.`);
+  const zorla = process.env.ZORLA === "1";
+  for (const m of tum) if (!macAranacak(m, team, today, zorla)) console.log(`${m.sehir} (${m.tarih || m.gidis}): bugün sırası değil (son arama ${m.robot_son_arama || team.robot.son_arama || "yok"}).`);
+  let list = tum.filter((m) => macAranacak(m, team, today, zorla));
+  if (!list.length) return console.log("Bugün aranacak maç yok.");
   if (!token) throw new Error("APIFY_TOKEN yok");
   const use = await apifyUsage({ token });
-  if (use && use.sinir && use.usd > use.sinir - (team.robot.butce_payi_usd || 5)) return console.log(`Apify kullanımı ${use.usd}/${use.sinir} $: bütçe payı korunuyor, arama yapılmadı.`);
+  if (use && use.sinir) {
+    const kalan = use.sinir - use.usd;
+    for (const m of list) if (kalan <= macPayi(m, team, today)) console.log(`${m.sehir}: Apify kullanımı ${use.usd}/${use.sinir} $, bütçe payı korunuyor, aranmadı.`);
+    list = list.filter((m) => kalan > macPayi(m, team, today));
+    if (!list.length) return console.log(`Apify kullanımı ${use.usd}/${use.sinir} $: bütçe payı korunuyor, arama yapılmadı.`);
+  }
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   // Maç başına ayrı uçuş araması: her maçın kendi kalkış saati aralığı olabilir (ucus_saat, ör. "0-11")
   const flightsOf = {};
@@ -243,6 +277,7 @@ async function runTeam(slug, token) {
       m.butce.konforlu.transfer = r0(tr); m.butce.ucuz.transfer = r0(tr);
       log.push(`tren ${ok}/${m.trenler.filter((x) => !x.sabit).length}`);
     }
+    m.robot_son_arama = today;
     console.log(m.sehir + ":", log.join(", "));
     const uy = log.filter((x) => x.startsWith("UYARI"));
     if (uy.length && process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `### ${team.takim} · ${m.sehir}\n${uy.map((x) => "- " + x).join("\n")}\n`).catch(() => {});
