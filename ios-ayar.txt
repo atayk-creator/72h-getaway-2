@@ -1,0 +1,25 @@
+== ios-magaza-1-kesfet
+{
+    "CapacitorStorage.72h-ekran" = "#kesfet";
+    "CapacitorStorage.72h-tanitim" = 1;
+}
+== ios-magaza-2-takvim
+{
+    "CapacitorStorage.72h-ekran" = "#takvim/paris";
+    "CapacitorStorage.72h-tanitim" = 1;
+}
+== ios-magaza-3-biletim
+{
+    "CapacitorStorage.72h-ekran" = "#biletim";
+    "CapacitorStorage.72h-tanitim" = 1;
+}
+== ios-magaza-4-karsilastir
+{
+    "CapacitorStorage.72h-ekran" = "#karsilastir";
+    "CapacitorStorage.72h-tanitim" = 1;
+}
+== ios-magaza-5-noel
+{
+    "CapacitorStorage.72h-ekran" = "#takvim/noel";
+    "CapacitorStorage.72h-tanitim" = 1;
+}

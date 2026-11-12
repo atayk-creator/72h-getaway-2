@@ -1,0 +1,65 @@
+2026-11-12 20:34:57.563 Df App[16003:c8f7] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-12 20:34:57.617 Df App[16003:c8cc] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-12 20:34:58.672 Df App[16003:c8cc] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-12 20:34:58.675 Df App[16003:c8cc] [com.apple.xpc:connection] [0x134f26080] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:34:59.056 Df App[16003:c8f4] [com.apple.xpc:connection] [0x134f78780] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-12 20:34:59.793 Df App[16003:c8cc] [com.apple.xpc:connection] [0x134f79a40] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:35:01.333 E  App[16003:c8cc] [com.apple.WebKit:ResourceLoadStatistics] Failed to request known fingerprinting scripts from WebPrivacy: Error Domain=WebPrivacyErrorDomain Code=1001 "List data not found" UserInfo={NSLocalizedDescription=List data not found}
+2026-11-12 20:35:01.697 Df App[16003:c8f6] [com.apple.AppSSO:SOClient] configurationWithCompletion: success = YES, error = (null)
+2026-11-12 20:35:02.016 E  App[16003:c8f6] [com.apple.TextInputUI:CandidateGeneration] Attempted to update accumulator from source type: 0, after completion has already been called for token:[5F330063]. This is an error and will be ignored.
+2026-11-12 20:35:07.767 Df App[16003:c8cc] [com.apple.xpc:connection] [0x134e78140] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:35:08.194 Df App[16003:c8cc] [com.apple.WebKit:Loading] 0x1062d5518 - [pageProxyID=7, webPageID=8, PID=16036] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:35:08.195 Df App[16003:c8cc] [com.apple.WebKit:Loading] 0x1062d5518 - [pageProxyID=7, webPageID=8, PID=16036] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:35:40.469 Df App[17443:d793] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-12 20:35:40.612 Df App[17443:d73e] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-12 20:35:41.850 Df App[17443:d73e] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-12 20:35:41.864 Df App[17443:d73e] [com.apple.xpc:connection] [0x131f161c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:35:42.445 E  App[17443:d793] [com.apple.TextInputUI:CandidateGeneration] Attempted to update accumulator from source type: 0, after completion has already been called for token:[E1C0AFC9]. This is an error and will be ignored.
+2026-11-12 20:35:42.562 Df App[17443:d793] [com.apple.xpc:connection] [0x131f6cdc0] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-12 20:35:42.758 Df App[17443:d73e] [com.apple.xpc:connection] [0x131f6d680] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:35:45.983 Df App[17443:d73e] [com.apple.xpc:connection] [0x131e657c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:35:46.298 Df App[17443:d73e] [com.apple.WebKit:Loading] 0x1022e9518 - [pageProxyID=7, webPageID=8, PID=17486] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:35:46.301 Df App[17443:d73e] [com.apple.WebKit:Loading] 0x1022e9518 - [pageProxyID=7, webPageID=8, PID=17486] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:36:09.762 Df App[18862:e51d] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-12 20:36:09.821 Df App[18862:e4d1] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-12 20:36:10.163 Df App[18862:e4d1] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-12 20:36:10.164 Df App[18862:e4d1] [com.apple.xpc:connection] [0x134326440] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:36:10.485 Df App[18862:e521] [com.apple.xpc:connection] [0x13439abc0] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-12 20:36:10.576 Df App[18862:e4d1] [com.apple.xpc:connection] [0x13439b480] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:36:10.773 E  App[18862:e51d] [com.apple.TextInputUI:CandidateGeneration] Attempted to update accumulator from source type: 0, after completion has already been called for token:[A056A1A9]. This is an error and will be ignored.
+2026-11-12 20:36:12.831 Df App[18862:e4d1] [com.apple.xpc:connection] [0x134264280] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:36:12.899 Df App[18862:e4d1] [com.apple.WebKit:Loading] 0x1046e5518 - [pageProxyID=7, webPageID=8, PID=18913] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:36:12.900 Df App[18862:e4d1] [com.apple.WebKit:Loading] 0x1046e5518 - [pageProxyID=7, webPageID=8, PID=18913] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:36:12.992 Df App[18862:e4d1] [com.apple.WebKit:Loading] 0x1046e5518 - [pageProxyID=7, webPageID=8, PID=18913] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=3
+2026-11-12 20:36:13.003 Df App[18862:e4d1] [com.apple.WebKit:Loading] 0x1046e5518 - [pageProxyID=7, webPageID=8, PID=18913] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:37:33.564 Df App[20309:f66b] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-12 20:37:33.698 Df App[20309:f64f] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-12 20:37:34.738 Df App[20309:f64f] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-12 20:37:34.740 Df App[20309:f64f] [com.apple.xpc:connection] [0x13231de00] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:37:35.389 Df App[20309:f670] [com.apple.xpc:connection] [0x132398140] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-12 20:37:35.741 Df App[20309:f64f] [com.apple.xpc:connection] [0x13239bd40] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:37:35.999 Df App[20309:f64f] [com.apple.xpc:connection] [0x132278280] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:37:36.247 Df App[20309:f64f] [com.apple.WebKit:Loading] 0x1026e9518 - [pageProxyID=7, webPageID=8, PID=20319] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:37:36.247 Df App[20309:f64f] [com.apple.WebKit:Loading] 0x1026e9518 - [pageProxyID=7, webPageID=8, PID=20319] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:37:36.367 Df App[20309:f64f] [com.apple.WebKit:Loading] 0x1026e9518 - [pageProxyID=7, webPageID=8, PID=20319] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=3
+2026-11-12 20:38:03.064 Df App[21227:1001e] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-12 20:38:03.154 Df App[21227:fff3] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-12 20:38:03.536 Df App[21227:fff3] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-12 20:38:03.537 Df App[21227:fff3] [com.apple.xpc:connection] [0x131b21e00] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:38:04.456 Df App[21227:10024] [com.apple.xpc:connection] [0x131a60280] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-12 20:38:04.536 Df App[21227:fff3] [com.apple.xpc:connection] [0x131a60a00] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:38:04.694 Df App[21227:fff3] [com.apple.xpc:connection] [0x131a608c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:38:04.793 Df App[21227:fff3] [com.apple.WebKit:Loading] 0x101ec5518 - [pageProxyID=7, webPageID=8, PID=21257] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:38:04.793 Df App[21227:fff3] [com.apple.WebKit:Loading] 0x101ec5518 - [pageProxyID=7, webPageID=8, PID=21257] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:38:04.905 Df App[21227:fff3] [com.apple.WebKit:Loading] 0x101ec5518 - [pageProxyID=7, webPageID=8, PID=21257] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=3
+2026-11-12 20:38:28.015 Df App[22371:10b54] [com.apple.BoardServices:XPCErrors] [C:1] Alloc com.apple.frontboard.systemappservices
+2026-11-12 20:38:28.089 Df App[22371:10ae4] [com.apple.BoardServices:XPCErrors] [C:2] Alloc com.apple.backboard.hid-services.xpc
+2026-11-12 20:38:28.693 Df App[22371:10ae4] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-11-12 20:38:28.695 Df App[22371:10ae4] [com.apple.xpc:connection] [0x13431dcc0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:38:28.925 Df App[22371:10b5a] [com.apple.xpc:connection] [0x1343a83c0] Re-initialization successful; calling out to event handler with XPC_ERROR_CONNECTION_INTERRUPTED
+2026-11-12 20:38:29.008 Df App[22371:10ae4] [com.apple.xpc:connection] [0x1343abe80] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:38:29.115 E  App[22371:10b58] [com.apple.TextInputUI:CandidateGeneration] Attempted to update accumulator from source type: 0, after completion has already been called for token:[DDB93B88]. This is an error and will be ignored.
+2026-11-12 20:38:29.245 Df App[22371:10ae4] [com.apple.xpc:connection] [0x13427c140] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-11-12 20:38:29.323 Df App[22371:10ae4] [com.apple.WebKit:Loading] 0x1046e9518 - [pageProxyID=7, webPageID=8, PID=22435] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:38:29.324 Df App[22371:10ae4] [com.apple.WebKit:Loading] 0x1046e9518 - [pageProxyID=7, webPageID=8, PID=22435] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=2
+2026-11-12 20:38:29.393 Df App[22371:10ae4] [com.apple.WebKit:Loading] 0x1046e9518 - [pageProxyID=7, webPageID=8, PID=22435] WebPageProxy::didSameDocumentNavigationForFrameViaJS: frameID=8589934593, isMainFrame=1, type=3
