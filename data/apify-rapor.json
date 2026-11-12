@@ -1,0 +1,183 @@
+{
+ "olusturuldu": "2026-11-12T20:51:19.575Z",
+ "donem": {
+  "baslangic": "2026-10-28T00:00:00.000Z",
+  "bitis": "2026-11-27T23:59:59.999Z"
+ },
+ "harcanan_usd": 70.94,
+ "sinir_usd": 100,
+ "kalan_usd": 29.06,
+ "calismalar_usd": 70.9,
+ "depolama_ve_diger_usd": 0.04,
+ "calisma_sayisi": 1158,
+ "robotlar": [
+  {
+   "ad": "Otel fiyat robotu (Cuma-Pazar fiyatları)",
+   "usd": 19.17,
+   "calisma": 33,
+   "aktorler": {
+    "eiv~google-hotels-scraper": 19.19
+   }
+  },
+  {
+   "ad": "Uçak fiyat robotu (İstanbul çıkışlı, Cuma-Pazar)",
+   "usd": 13.38,
+   "calisma": 478,
+   "aktorler": {
+    "dz_omar~google-flights-scraper": 14.34
+   }
+  },
+  {
+   "ad": "pages build and deployment",
+   "usd": 10.86,
+   "calisma": 135,
+   "aktorler": {
+    "s-r~airbnb-scraper": 0.1,
+    "eiv~google-hotels-scraper": 5.46,
+    "eiv~google-flights-scraper": 2.15,
+    "jindrich.bar~deutsche-bahn-ticket-scraper": 0,
+    "jindrich.bar~oebb-ticket-scraper": 0,
+    "compass~crawler-google-places": 2.39,
+    "dz_omar~google-flights-scraper": 0.78
+   }
+  },
+  {
+   "ad": "Restoran robotu (Google Maps)",
+   "usd": 8.71,
+   "calisma": 48,
+   "aktorler": {
+    "compass~crawler-google-places": 8.7
+   }
+  },
+  {
+   "ad": "Toplu yenileme (tüm robotlar sırayla)",
+   "usd": 8.62,
+   "calisma": 47,
+   "aktorler": {
+    "compass~crawler-google-places": 0.96,
+    "eiv~google-flights-scraper": 1.19,
+    "eiv~google-hotels-scraper": 6.48
+   }
+  },
+  {
+   "ad": "Uçak fiyat robotu (İstanbul çıkışlı, Cuma sabah - Pazar akşam)",
+   "usd": 3.99,
+   "calisma": 141,
+   "aktorler": {
+    "eiv~google-flights-scraper": 1.34,
+    "dz_omar~google-flights-scraper": 2.82
+   }
+  },
+  {
+   "ad": "Deplasman fiyat robotu (Fenerbahçe)",
+   "usd": 3.28,
+   "calisma": 188,
+   "aktorler": {
+    "eiv~google-hotels-scraper": 1.5,
+    "eiv~google-flights-scraper": 1.76,
+    "jindrich.bar~oebb-ticket-scraper": 0,
+    "jindrich.bar~deutsche-bahn-ticket-scraper": 0
+   }
+  },
+  {
+   "ad": "Tek arama (geçici)",
+   "usd": 0.84,
+   "calisma": 19,
+   "aktorler": {
+    "eiv~google-hotels-scraper": 0.16,
+    "s-r~airbnb-scraper": 0.15,
+    "eiv~google-flights-scraper": 0.54
+   }
+  },
+  {
+   "ad": "Şehir sayfaları (sehir/ ve sitemap.xml)",
+   "usd": 0.79,
+   "calisma": 22,
+   "aktorler": {
+    "eiv~google-flights-scraper": 0.52,
+    "compass~crawler-google-places": 0.17,
+    "eiv~google-hotels-scraper": 0.12
+   }
+  },
+  {
+   "ad": "Gezi yerleri konum robotu (Google Maps)",
+   "usd": 0.73,
+   "calisma": 26,
+   "aktorler": {
+    "compass~crawler-google-places": 0.72
+   }
+  },
+  {
+   "ad": "Noel deneme (tek seferlik)",
+   "usd": 0.26,
+   "calisma": 9,
+   "aktorler": {
+    "eiv~google-flights-scraper": 0.28
+   }
+  },
+  {
+   "ad": "Tek seferlik arama",
+   "usd": 0.19,
+   "calisma": 8,
+   "aktorler": {
+    "jindrich.bar~oebb-ticket-scraper": 0,
+    "eiv~google-hotels-scraper": 0.08,
+    "eiv~google-flights-scraper": 0.1
+   }
+  },
+  {
+   "ad": "Maç gezisi fiyatları (tek seferlik)",
+   "usd": 0.07,
+   "calisma": 3,
+   "aktorler": {
+    "eiv~google-flights-scraper": 0.05,
+    "eiv~google-hotels-scraper": 0.02
+   }
+  },
+  {
+   "ad": "Kur güncelle (Euro/TL, Euro/Forint)",
+   "usd": 0,
+   "calisma": 1,
+   "aktorler": {
+    "eiv~google-flights-scraper": 0
+   }
+  }
+ ],
+ "aktorler": [
+  {
+   "ad": "eiv~google-hotels-scraper",
+   "usd": 33.04,
+   "calisma": 189
+  },
+  {
+   "ad": "dz_omar~google-flights-scraper",
+   "usd": 16.75,
+   "calisma": 599
+  },
+  {
+   "ad": "compass~crawler-google-places",
+   "usd": 12.95,
+   "calisma": 101
+  },
+  {
+   "ad": "eiv~google-flights-scraper",
+   "usd": 7.84,
+   "calisma": 236
+  },
+  {
+   "ad": "s-r~airbnb-scraper",
+   "usd": 0.26,
+   "calisma": 5
+  },
+  {
+   "ad": "jindrich.bar~deutsche-bahn-ticket-scraper",
+   "usd": 0.05,
+   "calisma": 18
+  },
+  {
+   "ad": "jindrich.bar~oebb-ticket-scraper",
+   "usd": 0.02,
+   "calisma": 10
+  }
+ ]
+}
