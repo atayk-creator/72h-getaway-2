@@ -55,6 +55,7 @@
     {"sehir":"Podgorica","havalimani":["TGD"],"baslangic":"2026-11-28"},
     {"sehir":"Üsküp","havalimani":["SKP"],"baslangic":"2026-11-28"},
     {"sehir":"Tiran","havalimani":["TIA"],"baslangic":"2026-11-28"},
-    {"sehir":"Priştine","havalimani":["PRN"],"baslangic":"2026-11-28"}
+    {"sehir":"Priştine","havalimani":["PRN"],"baslangic":"2026-11-28"},
+    {"sehir":"Milano","havalimani":["MXP","BGY","LIN"],"baslangic":"2026-11-28"}
   ]
 }

@@ -10209,6 +10209,246 @@
      ]
     }
    ]
+  },
+  "Milano": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.2,
+     "aciklama": "ATM tek bilet, 90 dakika geçerli; metro, tramvay, otobüs ve Passante aktarmalı (Mi1–Mi3)",
+     "kaynak": "https://www.milanofree.it/milano/trasporti/metropolitana-di-milano-linee-orari-e-biglietti-2026.html"
+    },
+    "gunluk": {
+     "fiyat": 7.6,
+     "aciklama": "ATM 24 saatlik bilet, ilk doğrulamadan itibaren",
+     "kaynak": "https://www.milanofree.it/milano/trasporti/metropolitana-di-milano-linee-orari-e-biglietti-2026.html"
+    },
+    "cok_gunluk": {
+     "fiyat": 15.5,
+     "gun": 3,
+     "aciklama": "ATM 3 günlük bilet, üçüncü günün 03:45'ine kadar",
+     "kaynak": "https://www.milanofree.it/milano/trasporti/metropolitana-di-milano-linee-orari-e-biglietti-2026.html"
+    },
+    "havalimani": {
+     "fiyat": 15,
+     "sure_dk": 52,
+     "aciklama": "Malpensa (MXP) → Milano Centrale/Cadorna Malpensa Express treni, tek yön 15 € (Cadorna ~37 dk). Bergamo (BGY) → Centrale otobüsle 5–10 €, ~50 dk; Linate (LIN) → San Babila M4 metrosu 2,20 €, ~12 dk.",
+     "kaynak": "https://thebettervacation.com/milan/milan-airport-to-city-centre/"
+    },
+    "not": "Tarihi merkez (Duomo, Galleria, Scala, Brera) yürünür; Navigli ve Porta Nuova'ya metro hızlı. Pegasus ve AJet genelde Bergamo'ya (BGY) iner, uçuş saatine göre havalimanı otobüsünü önceden kontrol et."
+   },
+   "yerler": [
+    {
+     "id": "duomo",
+     "ad": "Duomo di Milano",
+     "arama": "Duomo di Milano",
+     "tur": "Katedral",
+     "bolge": "merkez",
+     "sure_dk": 120,
+     "fiyat": 22,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Katedral ücretsiz (saatli hızlı giriş 5 €); teras + müze Duomo Pass merdivenle 22 €, asansörle 26 €",
+     "bilgi": "Gotik katedral ve çatı terasları; terastan şehir ve havası açıksa Alpler görünür. Sabah 08:00–09:00 arası kuyruk kısa. Omuz ve dizler kapalı olmalı, büyük sırt çantası alınmaz.",
+     "kaynak": "https://www.artvisitguide.com/milan-duomo-tickets-guide/",
+     "konum": [
+      45.46421,
+      9.19161
+     ],
+     "googleAd": "Duomo di Milano",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Duomo%20di%20Milano"
+    },
+    {
+     "id": "galleria",
+     "ad": "Galleria Vittorio Emanuele II",
+     "arama": "Galleria Vittorio Emanuele II Milano",
+     "tur": "Pasaj",
+     "bolge": "merkez",
+     "sure_dk": 30,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Duomo ile Scala'yı bağlayan 19. yüzyıl cam kubbeli pasaj. Yerdeki boğa mozaiğinde topuk üstünde dönmek gelenek.",
+     "kaynak": "https://www.yesmilano.it/",
+     "konum": [
+      45.4659,
+      9.19
+     ],
+     "googleAd": "Galleria Vittorio Emanuele II",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Galleria%20Vittorio%20Emanuele%20II%20Milano"
+    },
+    {
+     "id": "scala",
+     "ad": "Teatro alla Scala",
+     "arama": "Teatro alla Scala Milano",
+     "tur": "Opera",
+     "bolge": "merkez",
+     "sure_dk": 20,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Dışarıdan görmek ücretsiz; müze ve gösteri biletleri ayrı",
+     "bilgi": "Dünyanın en ünlü opera binalarından. Sezon her yıl 7 Aralık'ta (Sant'Ambrogio) açılır; gösteri biletleri hızlı tükenir.",
+     "kaynak": "https://www.teatroallascala.org/",
+     "konum": [
+      45.46742,
+      9.18949
+     ],
+     "googleAd": "Teatro alla Scala",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Teatro%20alla%20Scala%20Milano"
+    },
+    {
+     "id": "noel-pazari",
+     "ad": "Piazza Duomo Noel Pazarı",
+     "arama": "Piazza del Duomo Milano",
+     "tur": "Noel pazarı",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz, yiyecek ve içecek ayrı",
+     "bilgi": "Duomo'nun önünde 60'tan fazla ahşap tezgâh; 1 Aralık–6 Ocak, her gün 09:00–21:00. Büyük ağacın ışıkları Aralık başında, Sant'Ambrogio'yla yakılır.",
+     "kaynak": "https://tg24.sky.it/lifestyle/2026/11/06/mercatini-natale-milano-2026",
+     "konum": [
+      45.46411,
+      9.18999
+     ],
+     "googleAd": "Piazza Duomo Noel Pazarı",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Piazza%20del%20Duomo%20Milano"
+    },
+    {
+     "id": "sforzesco",
+     "ad": "Sforzesco Şatosu",
+     "arama": "Castello Sforzesco Milano",
+     "tur": "Şato",
+     "bolge": "castello",
+     "sure_dk": 90,
+     "fiyat": 10,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Avlular ücretsiz; şato müzeleri 10 € (ayın ilk pazarı ücretsiz)",
+     "bilgi": "Visconti ve Sforza ailelerinin şatosu; Michelangelo'nun son heykeli Rondanini Pietà burada. 5–8 Aralık'ta çevresinde Oh Bej! Oh Bej! panayırı kurulur.",
+     "kaynak": "https://www.mentelocale.it/milano/120830-musei-civici-di-milano-aumenta-il-prezzo-dei-biglietti-ecco-quanto-coster-l-ingresso-dal-10-maggio-2026.htm",
+     "konum": [
+      45.47048,
+      9.1793
+     ],
+     "googleAd": "Sforzesco Şatosu",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Castello%20Sforzesco%20Milano"
+    },
+    {
+     "id": "sempione",
+     "ad": "Sempione Parkı ve Barış Takı",
+     "arama": "Parco Sempione Milano",
+     "tur": "Park",
+     "bolge": "castello",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şatonun arkasındaki büyük park; sonunda Arco della Pace. Kısa bir yürüyüş ve dinlenme molası için.",
+     "kaynak": "https://www.yesmilano.it/",
+     "konum": [
+      45.4729,
+      9.1744
+     ],
+     "googleAd": "Sempione Parkı ve Barış Takı",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Parco%20Sempione%20Milano"
+    },
+    {
+     "id": "cenacolo",
+     "ad": "Son Akşam Yemeği (Cenacolo Vinciano)",
+     "arama": "Cenacolo Vinciano Milano",
+     "tur": "Müze",
+     "bolge": "magenta",
+     "sure_dk": 30,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 15 €, sadece önceden saatli bilet; ziyaret 15 dakika",
+     "bilgi": "Leonardo da Vinci'nin freski, Santa Maria delle Grazie'nin yemekhanesinde. Biletler üç aylık dönemler hâlinde aylar önce satışa çıkar ve birkaç saatte tükenir; kapıda bilet umma.",
+     "kaynak": "https://thebettervacation.com/it/milan/leonardo-last-supper/",
+     "konum": [
+      45.46598,
+      9.17096
+     ],
+     "googleAd": "Son Akşam Yemeği (Cenacolo Vinciano)",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Cenacolo%20Vinciano%20Milano"
+    },
+    {
+     "id": "brera",
+     "ad": "Pinacoteca di Brera",
+     "arama": "Pinacoteca di Brera Milano",
+     "tur": "Müze",
+     "bolge": "brera",
+     "sure_dk": 120,
+     "fiyat": 15,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yetişkin 15 € (ayın ilk pazarı ücretsiz, rezervasyonla); pazartesi kapalı",
+     "bilgi": "Raffaello, Caravaggio, Mantegna'nın Ölü İsa'sı. Çıkışta Brera'nın dar sokaklarında kahve ve aperitivo.",
+     "kaynak": "https://thebettervacation.com/it/Milano/pinacoteca-di-brera/",
+     "konum": [
+      45.47194,
+      9.18789
+     ],
+     "googleAd": "Pinacoteca di Brera",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Pinacoteca%20di%20Brera%20Milano"
+    },
+    {
+     "id": "navigli",
+     "ad": "Navigli Kanalları",
+     "arama": "Naviglio Grande Milano",
+     "tur": "Semt",
+     "bolge": "navigli",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Darsena'dan başlayan kanal boyu; akşamüstü aperitivo için şehrin en sevilen semti. Ayın son pazarı Naviglio Grande'de antika pazarı kurulur.",
+     "kaynak": "https://www.yesmilano.it/",
+     "konum": [
+      45.45193,
+      9.17582
+     ],
+     "googleAd": "Navigli Kanalları",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Naviglio%20Grande%20Milano"
+    },
+    {
+     "id": "porta-nuova",
+     "ad": "Porta Nuova ve Bosco Verticale",
+     "arama": "Piazza Gae Aulenti Milano",
+     "tur": "Modern mimari",
+     "bolge": "porta-nuova",
+     "sure_dk": 40,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Piazza Gae Aulenti'nin gökdelenleri ve ağaçlarla kaplı Bosco Verticale kuleleri; Milano'nun yeni yüzü. Garibaldi istasyonunun hemen yanında.",
+     "kaynak": "https://www.yesmilano.it/",
+     "konum": [
+      45.48398,
+      9.18998
+     ],
+     "googleAd": "Porta Nuova ve Bosco Verticale",
+     "puan": null,
+     "yorum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Piazza%20Gae%20Aulenti%20Milano"
+    }
+   ]
   }
  },
  "harcama": {

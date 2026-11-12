@@ -504,6 +504,32 @@
     "lisans": "Pexels lisansı (ücretsiz, ticari kullanım serbest)",
     "klip": "72hsj_08_sebil_guvercin.mp4"
    }
+  ],
+  "milano": [
+   {
+    "dosya": "/img/sehir/milano-1.jpg",
+    "kucuk": "/img/sehir/milano-1-640.jpg",
+    "alt": "Milano, gece Duomo ve Galleria Vittorio Emanuele II",
+    "kaynak": "Unsplash · Tom Podmore",
+    "lisans": "Unsplash lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://unsplash.com/photos/ST28XacKXyU"
+   },
+   {
+    "dosya": "/img/sehir/milano-2.jpg",
+    "kucuk": "/img/sehir/milano-2-640.jpg",
+    "alt": "Milano, akşam Navigli kanalı",
+    "kaynak": "Unsplash · Daniel Kirby",
+    "lisans": "Unsplash lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://unsplash.com/photos/smCqxgrMeNY"
+   },
+   {
+    "dosya": "/img/sehir/milano-3.jpg",
+    "kucuk": "/img/sehir/milano-3-640.jpg",
+    "alt": "Milano, Galleria Vittorio Emanuele II girişi",
+    "kaynak": "Unsplash · Maxim Klimashin",
+    "lisans": "Unsplash lisansı (ücretsiz, ticari kullanım serbest)",
+    "url": "https://unsplash.com/photos/wG599SZfgVY"
+   }
   ]
  }
 }

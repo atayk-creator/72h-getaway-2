@@ -545,6 +545,21 @@
         {"id":"prn-prima","ad":"Hotel Prima","arama":"Hotel Prima Pristina","kategori":"ucuz","not":"Ana Tereza Meydanı yakınında, puanı çok yüksek küçük ekonomik otel (asansör yok)"},
         {"id":"prn-begolli","ad":"Hotel Begolli","arama":"Hotel Begolli Pristina","kategori":"ucuz","not":"Merkeze yürüme mesafesinde, fiyatına göre çok beğenilen aile işletmesi otel"}
       ]
+    },
+    {
+      "sehir": "Milano",
+      "ulke": "İtalya",
+      "baslangic": "2026-11-28",
+      "oteller": [
+        {"id":"mil-park-hyatt","ad":"Park Hyatt Milano","arama":"Park Hyatt Milan","kategori":"ikonik","not":"Galleria Vittorio Emanuele'nin hemen yanında, Duomo'ya 2 dakika; şehrin en bilinen lüks oteli"},
+        {"id":"mil-grand-hotel-et-de-milan","ad":"Grand Hotel et de Milan","arama":"Grand Hotel et de Milan","kategori":"pahali","not":"Via Manzoni'de, Verdi'nin yaşadığı 1863'ten kalma tarihi otel; Scala'ya 3 dakika"},
+        {"id":"mil-principe-di-savoia","ad":"Hotel Principe di Savoia","arama":"Hotel Principe di Savoia Milan","kategori":"pahali","not":"Piazza della Repubblica'da klasik 5 yıldızlı; Porta Nuova ve Brera'ya yürüme mesafesi"},
+        {"id":"mil-room-mate-giulia","ad":"Room Mate Giulia","arama":"Room Mate Giulia Milan","kategori":"konforlu","not":"Galleria'nın arkasında, Duomo'ya 1 dakika; renkli tasarım otel"},
+        {"id":"mil-spadari-al-duomo","ad":"Hotel Spadari al Duomo","arama":"Hotel Spadari al Duomo Milan","kategori":"konforlu","not":"Duomo'nun arka sokağında küçük butik otel; merkezde sessiz"},
+        {"id":"mil-starhotels-rosa-grand","ad":"Starhotels Rosa Grand","arama":"Starhotels Rosa Grand Milano","kategori":"konforlu","not":"Piazza Fontana'da, Duomo'ya 3 dakika; geniş odalar"},
+        {"id":"mil-ibis-centro","ad":"ibis Milano Centro","arama":"ibis Milano Centro","kategori":"ucuz","not":"Centrale ve Repubblica arasında; Malpensa Express ve Bergamo otobüsüne yakın"},
+        {"id":"mil-hotel-berna","ad":"Hotel Berna","arama":"Hotel Berna Milan","kategori":"ucuz","not":"Milano Centrale istasyonuna 2 dakika; havalimanı aktarması için pratik"}
+      ]
     }
   ]
 }

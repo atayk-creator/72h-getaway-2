@@ -183,7 +183,7 @@ export function nameScore(ours, theirs) {
 }
 
 // Google'ın döndürdüğü otel bizim otelimiz mi? Bizim adımızdaki ayırt edici kelimelerin çoğu onun adında geçmeli.
-const CITY_WORDS = new Set("dublin paris brussels bruxelles amsterdam luxembourg berlin vienna wien madrid lisbon lisboa rome roma valletta malta floriana athens stockholm copenhagen helsinki tallinn riga vilnius warsaw warszawa prague praha bratislava budapest ljubljana zagreb bucharest sofia city centre center centrum old town".split(" "));
+const CITY_WORDS = new Set("milan milano dublin paris brussels bruxelles amsterdam luxembourg berlin vienna wien madrid lisbon lisboa rome roma valletta malta floriana athens stockholm copenhagen helsinki tallinn riga vilnius warsaw warszawa prague praha bratislava budapest ljubljana zagreb bucharest sofia city centre center centrum old town".split(" "));
 export function nameOk(h, googleName) {
   const strip = (s) => new Set([...tokens(s)].filter((t) => !CITY_WORDS.has(t)));
   const theirs = strip(googleName);
