@@ -4,7 +4,8 @@
 // - Diğer dosyalar (ikon, manifest...): önce önbellek, arkada tazele (stale-while-revalidate).
 // Önbellek anahtarı adresin sorgu kısmı (?t=..., ?sehir=...) atılmış hâlidir: her yol için tek kayıt,
 // böylece ?t= zaman damgalı veri istekleri önbelleği sınırsız büyütmez.
-const CACHE = "72h-v12";
+const CACHE = "72h-v13";
+const SINIR = 150; // önbellekte en fazla bu kadar dosya: en eski kayıtlar silinir (görseller sınırsız birikmesin)
 const SHELL = ["/", "/oteller.html", "/hakkinda.html", "/404.html", "/manifest.webmanifest", "/favicon.ico", "/js/olcum.js", "/img/icon-192.png", "/img/icon-512.png"];
 
 function key(input) {
@@ -18,7 +19,13 @@ function isPage(req, u) { return req.mode === "navigate" || /\.html$/i.test(u.pa
 async function store(req, res) {
   // Yönlendirilmiş ya da başarısız yanıtlar saklanmaz (yönlendirilmiş yanıt sayfa açılışında kullanılamaz)
   if (!res || !res.ok || res.redirected || res.type !== "basic") return;
-  try { const c = await caches.open(CACHE); await c.put(key(req), res); } catch (e) { /* kota dolu vb. */ }
+  try {
+    const c = await caches.open(CACHE); await c.put(key(req), res);
+    const ks = await c.keys();
+    // Cache API kayıtları ekleniş sırasıyla döner; sınır aşılınca en eskiler silinir (uygulama kabuğu korunur)
+    const kabuk = new Set(SHELL.map((p) => key(p)));
+    for (let i = 0, fazla = ks.length - SINIR; i < ks.length && fazla > 0; i++) if (!kabuk.has(ks[i].url)) { await c.delete(ks[i]); fazla--; }
+  } catch (e) { /* kota dolu vb. */ }
 }
 async function fromCache(req) {
   const c = await caches.open(CACHE);

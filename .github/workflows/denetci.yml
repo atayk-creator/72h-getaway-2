@@ -43,12 +43,23 @@ jobs:
           set -euo pipefail
           num=$(gh issue list --label denetci --state open --limit 1 --json number --jq '.[0].number // empty')
           if [ "$SORUN" = "1" ]; then
+            # Yalnız "Sorunlar" bölümündeki madde satırları karşılaştırılır; yeni bir sorun çıktıysa yorum yazılır.
+            # Yorumdaki bahsetme depo sahibine e-posta / GitHub mobil bildirimi gönderir (gövdeyi düzenlemek bildirim göndermez).
+            sorunlar() { awk '/^## Sorunlar/{f=1;next} /^## /{f=0} f && /^ *- /' | sed 's/([^)]*UTC)//; s/[0-9]\{4\}-[0-9-]\{5\} [0-9:]\{5\}//g' | sort -u; }
             if [ -n "$num" ]; then
+              gh issue view "$num" --json body --jq .body | sorunlar > "$RUNNER_TEMP/eski.txt" || true
               gh issue edit "$num" --body-file "$RAPOR"
               echo "Issue #$num güncellendi."
             else
+              : > "$RUNNER_TEMP/eski.txt"
               gh label create denetci --color B60205 --description "Denetçi'nin bulduğu sorunlar" --force
-              gh issue create --title "Denetçi: sorun var" --label denetci --body-file "$RAPOR"
+              num=$(gh issue create --title "Denetçi: sorun var" --label denetci --body-file "$RAPOR" | grep -o '[0-9]*$')
+            fi
+            sorunlar < "$RAPOR" > "$RUNNER_TEMP/yeni.txt"
+            comm -13 "$RUNNER_TEMP/eski.txt" "$RUNNER_TEMP/yeni.txt" > "$RUNNER_TEMP/fark.txt" || true
+            if [ -s "$RUNNER_TEMP/fark.txt" ]; then
+              { echo "@${{ github.repository_owner }} Denetçi yeni sorun buldu:"; echo; cat "$RUNNER_TEMP/fark.txt"; echo; echo "Ayrıntılar kaydın açıklamasında."; } > "$RUNNER_TEMP/yorum.md"
+              gh issue comment "$num" --body-file "$RUNNER_TEMP/yorum.md"
             fi
           elif [ -n "$num" ]; then
             gh issue comment "$num" --body "Denetçi $(date -u '+%Y-%m-%d %H:%M') UTC kontrolünde sorun bulmadı, kayıt kapatılıyor."
