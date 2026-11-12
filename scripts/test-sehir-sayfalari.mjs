@@ -181,13 +181,32 @@ test("renderVitrin: fotoğraf yolu süzülür, sayılar yuvarlanır", () => {
 
 test("generate: tüm sayfalar, dizin ve sitemap", () => {
   const { files } = generate({ data: fixture(), today: TODAY, write: false });
-  assert.deepEqual(Object.keys(files).sort(), ["data/vitrin.json", "sehir/budapeste/index.html", "sehir/index.html", "sehir/paris/index.html", "sitemap.xml"]);
+  assert.deepEqual(Object.keys(files).sort(), ["data/vitrin.json", "deplasman/index.html", "sehir/budapeste/index.html", "sehir/index.html", "sehir/paris/index.html", "sitemap.xml"]);
   const v = JSON.parse(files["data/vitrin.json"]);
   assert.ok(v.sehirler.Paris && Array.isArray(v.sehirler.Paris.haftalar));
   assert.ok(files["sehir/index.html"].includes('href="/sehir/paris/"'));
   assert.ok(files["sehir/index.html"].includes('href="/sehir/budapeste/"'));
   assert.ok(files["sitemap.xml"].includes("<loc>https://72hgetaway.com/sehir/budapeste/</loc><lastmod>2026-10-31</lastmod>"));
   assert.ok(files["sitemap.xml"].includes("<loc>https://72hgetaway.com/hakkinda.html</loc>"));
+  assert.ok(files["sitemap.xml"].includes("<loc>https://72hgetaway.com/deplasman/</loc>"));
+});
+
+test("deplasman ana sayfası: takımlar en yakın maça göre, zorunlu notlar, logo yok", () => {
+  const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+  const { files } = generate({ root, today: "2026-11-12", write: false });
+  const h = files["deplasman/index.html"];
+  assert.ok(h, "deplasman/index.html üretilmeli");
+  const sira = [...h.matchAll(/<article class="dk" id="([a-z]+)"/g)].map((x) => x[1]);
+  assert.equal(sira.length, 3);
+  assert.equal(sira[0], "fenerbahce"); // 25 Kasım Londra en yakın
+  for (const t of sira) assert.ok(h.includes(`href="/sehir/${t}/#`), "Planı gör bağlantısı");
+  assert.ok(h.includes("kulüplerle resmî bağımız yoktur"));
+  assert.ok(h.includes("Maç biletini kulüp satar; bilet fiyatı tahmindir, garanti değil."));
+  assert.ok(h.includes("İngiltere vizesi") && h.includes("Schengen"));
+  assert.ok(h.includes(" TSİ"));
+  assert.ok(!/logo|arma/i.test(h.replace(/<style>[\s\S]*?<\/style>/g, "")), "logo/arma yok");
+  const gorunur = h.replace(/<(style|script)[^>]*>[\s\S]*?<\/\1>/g, "").replace(/<[^>]+>/g, " ");
+  assert.ok(!/ucuz/i.test(gorunur), "görünür metinde 'ucuz' yok");
 });
 
 test("gerçek veriyle 28 şehir üretilir", () => {

@@ -334,5 +334,97 @@ export function teamCard(team, today, { esc, para, eurTry }) {
   const l = upcoming(team, today), m = l[0];
   const T = tema(team);
   const body = m ? `<div class="muted">sıradaki ${esc(aralikTr(m.gidis, m.donus))} · ${esc(m.sehir)} · 2 kişi otel + ${otobus(m) ? "otobüs" : "uçak"}</div><div class="card-p"><b>~${para(ucakOtel(m), eurTry)}</b></div>` : `<div class="muted">${T ? "Yaklaşan hafta sonu yok" : "Yaklaşan deplasman yok"}</div>`;
-  return `<li><a href="/sehir/${esc(team.slug)}/"><b>${esc(team.takim)}</b> <span class="muted">${esc(team.etiket || "Deplasman")}</span>${body}</a></li>`;
+  return `<li><a href="${T ? `/sehir/${esc(team.slug)}/` : `/deplasman/#${esc(team.slug)}`}"><b>${esc(team.takim)}</b> <span class="muted">${esc(team.etiket || "Deplasman")}</span>${body}</a></li>`;
+}
+
+/** Uygun plan 2 kişi toplam (€): ayrı uygun plan varsa onun, yoksa önerilen planın toplamı. */
+export function planFiyat(m) {
+  const adK = secimAd(m, "konforlu"), adU = secimAd(m, "ucuz");
+  const uygunVar = m.uygun_plan !== undefined ? m.uygun_plan : !!adU && (adU !== adK || gruplar(m).some((g) => g.secim.sabit));
+  const b = uygunVar && m.butce.ucuz ? m.butce.ucuz : m.butce.konforlu;
+  return { eur: toplam(b) * 2, uygun: !!(uygunVar && m.butce.ucuz) };
+}
+
+/** /deplasman/ ana sayfası: üç takımın sıradaki maçı, uygun plan fiyatı ve diğer deplasmanları; en yakın maç en üstte. */
+export function renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, foot, SITE }) {
+  const kulup = teams.filter((t) => !tema(t)).map((t) => ({ t, l: upcoming(t, today) })).filter((x) => x.l.length);
+  kulup.sort((a, b) => (a.l[0].tarih < b.l[0].tarih ? -1 : a.l[0].tarih > b.l[0].tarih ? 1 : 0));
+  const kart = ({ t, l }) => {
+    const m = l[0], f = planFiyat(m), c = t.renk || { a: "#F4D30B", b: "#0F2A43" }, k = kalan(today, m.tarih);
+    const diger = l.slice(1).map((x) => `<li><a href="/sehir/${esc(t.slug)}/#${esc(x.id)}"><span><b>${esc(x.mac_sehri || x.sehir)}</b> · ${esc(tarihKisa(x.tarih))} ${esc(gunAd(x.tarih))}<small>${esc(x.rakip)} – ${esc(t.takim)} · ${esc(x.saat_tsi)} TSİ</small></span><span class="r">~${para(planFiyat(x).eur, eurTry)}<small>2 kişi</small></span></a></li>`).join("");
+    const vize = (m.vize || "").replace(/\s*Maça \d+ gün var;?[^.]*\./, "").trim(); // veride kalan eski "gün var" sayısı burada gösterilmez
+    return `<article class="dk" id="${esc(t.slug)}" style="--a:${esc(c.a)};--b:${esc(c.b)}">
+  <div class="dk-serit" aria-hidden="true"></div>
+  <div class="dk-ust">
+    <div class="dk-eb">${esc(t.takim.toLocaleUpperCase("tr"))} · SIRADAKİ MAÇ${k >= 0 && k <= 60 ? ` · ${k === 0 ? "BUGÜN" : `${k} GÜN KALDI`}` : ""}</div>
+    <h2>${esc(m.rakip)} – ${esc(t.takim)}</h2>
+    <div class="dk-rota"><span><small>NEREDEN</small><b>İstanbul</b></span><span class="ok" aria-hidden="true">→</span><span><small>MAÇ ŞEHRİ</small><b>${esc(m.mac_sehri || m.sehir)}</b></span></div>
+    <p class="dk-t">${esc(tarihUzun(m.tarih))} · <b>${esc(m.saat_tsi)} TSİ</b>${m.stadyum ? ` · ${esc(m.stadyum)}` : ""}</p>
+  </div>
+  <div class="dk-alt">
+    <div><small>${f.uygun ? "Uygun plan" : "Plan"} · 2 kişi toplam</small><b class="dk-p">~${para(f.eur, eurTry)}</b><small>uçak + otel + maç bileti + yemek · ${esc(aralikTr(m.gidis, m.donus))}</small></div>
+    <a class="dk-btn" href="/sehir/${esc(t.slug)}/#${esc(m.id)}">Planı gör</a>
+  </div>
+  ${vize ? `<p class="dk-vize">${esc(vize)}</p>` : ""}
+  ${diger ? `<div class="dk-diger"><h3>${esc(t.takim)}'nin diğer deplasmanları</h3><ul class="dk-dl">${diger}</ul></div>` : ""}
+</article>`;
+  };
+  const url = `${SITE}/deplasman/`;
+  const title = "Deplasman planları: Fenerbahçe, Galatasaray, Beşiktaş · 72h Getaway";
+  const description = "Takımını desteklemeye Avrupa'ya: uçak, otel, maç bileti, yemek; 2 kişilik gerçek toplam fiyatla deplasman planları. En yakın maç en üstte.";
+  const ld = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Deplasman planları", url, description, inLanguage: "tr",
+    mainEntity: { "@type": "ItemList", itemListElement: kulup.map((x, i) => ({ "@type": "ListItem", position: i + 1, name: `${x.t.takim} deplasman bütçesi`, url: `${SITE}/sehir/${x.t.slug}/` })) } };
+  const guncel = kulup.map((x) => x.t.guncellendi).filter(Boolean).sort().pop();
+  const css = `<style>
+.dk-list { display: grid; gap: 18px; margin: 4px 0 22px; }
+.dk { background: var(--surface); border: 1.5px solid var(--line); border-radius: 18px; overflow: hidden; scroll-margin-top: 12px; }
+.dk-serit { height: 6px; background: linear-gradient(90deg, var(--a) 0 50%, var(--b) 50% 100%); border-bottom: 1px solid var(--line); }
+.dk-ust { padding: 16px 18px 14px; }
+.dk-eb { font: 700 0.72rem/1.3 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.12em; color: var(--muted); }
+.dk h2 { margin: 6px 0 12px; font-size: 1.35rem; line-height: 1.15; }
+.dk-rota { display: flex; align-items: flex-end; gap: 12px; }
+.dk-rota span { display: flex; flex-direction: column; }
+.dk-rota small { font: 600 0.66rem/1.2 "IBM Plex Mono", Consolas, monospace; letter-spacing: 0.12em; color: var(--muted); }
+.dk-rota b { font-size: 1.15rem; }
+.dk-rota .ok { font-size: 1.2rem; color: var(--muted); padding-bottom: 2px; }
+.dk-t { margin: 10px 0 0; font-size: 0.95rem; }
+.dk-alt { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-top: 2px dashed var(--line); position: relative; }
+.dk-alt::before, .dk-alt::after { content: ""; position: absolute; top: -9px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 1.5px solid var(--line); }
+.dk-alt::before { left: -9px; } .dk-alt::after { right: -9px; }
+.dk-alt small { display: block; color: var(--muted); font-size: 0.8rem; }
+.dk-p { display: block; font-size: 1.6rem; letter-spacing: -0.01em; margin: 2px 0; }
+.dk-btn { flex: none; display: inline-block; padding: 11px 18px; border-radius: 999px; background: var(--accent); color: #0F2A43; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.dk-vize { margin: 0; padding: 10px 18px; font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); }
+.dk-diger { padding: 4px 18px 14px; border-top: 1px solid var(--line); }
+.dk-diger h3 { font-size: 0.95rem; margin: 12px 0 4px; }
+.dk-dl { list-style: none; margin: 0; padding: 0; }
+.dk-dl li + li { border-top: 1px solid var(--line); }
+.dk-dl a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; color: inherit; text-decoration: none; }
+.dk-dl small { display: block; color: var(--muted); font-size: 0.8rem; margin-top: 2px; }
+.dk-dl .r { text-align: right; font-weight: 700; white-space: nowrap; }
+.dk-dl b { text-decoration: underline; text-underline-offset: 3px; }
+.notlar { margin: 0 0 18px; padding: 14px 16px; border-radius: 14px; background: var(--surface); border: 1.5px dashed var(--line); font-size: 0.9rem; }
+.notlar ul { margin: 0; padding-left: 18px; } .notlar li { margin: 4px 0; }
+</style>`;
+  return head({ title, description, canonical: url, ogTitle: "Takımını desteklemeye Avrupa'ya: deplasman planları", ogDescription: description, ld }).replace("</head>", css + "</head>") + `
+<body>
+<header>
+  <div class="wrap">
+    <nav aria-label="Konum"><ol class="crumbs"><li><a href="/">72h Getaway</a></li><li><span aria-current="page">Deplasman</span></li></ol></nav>
+    <h1>Takımını desteklemeye Avrupa'ya: deplasman planları</h1>
+    <p>Uçak, otel, maç bileti, yemek; 2 kişilik gerçek toplam fiyat.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="dk-list">${kulup.map(kart).join("\n") || `<p class="empty">Yaklaşan deplasman maçı yok.</p>`}</div>
+  <div class="notlar">
+    <ul>
+      <li><b>Bağımsız seyahat planlayıcısıyız; kulüplerle resmî bağımız yoktur.</b></li>
+      <li><b>Maç biletini kulüp satar; bilet fiyatı tahmindir, garanti değil.</b> Bileti kulübün resmî kanallarından al.</li>
+      <li><b>Vize:</b> Avrupa Birliği'ndeki maçlar için Schengen vizesi gerekir. Londra için ayrı bir İngiltere vizesi gerekir; Schengen vizesi geçmez. Kıbrıs Cumhuriyeti (Lefkoşa) için de ayrı vize gerekir.</li>
+      <li>Fiyatlar 2 kişi toplamdır, ${guncel ? `${esc(tarihUzun(guncel))} tarihli` : "son"} robot kontrolüne göre hesaplanır ve değişebilir; rezervasyondan önce ilgili sitede kontrol et. Saatler Türkiye saatidir (TSİ).</li>
+    </ul>
+  </div>
+</main>
+` + foot();
 }

@@ -422,6 +422,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
 .st-cta { display: block; text-align: center; min-height: 50px; line-height: 50px; border-radius: 14px; background: #F4A62A; color: #0F2A43; font-weight: 800; border: 0; font-size: 1rem; cursor: pointer; width: 100%; font-family: inherit; }
 .st-ph .fbt { background: repeating-linear-gradient(90deg, rgba(244,211,11,0.95) 0 34px, #0F2A43 34px 68px) top / 100% 38% no-repeat, radial-gradient(circle, rgba(244,211,11,0.28) 1.5px, transparent 1.6px) 0 0 / 16px 16px, #0F2A43; }
 .story.takim .st-cta { background: var(--tk-a, #F4D30B); color: var(--tk-c, var(--tk-b, #0F2A43)); text-decoration: none; }
+.st-all { display: block; text-align: center; margin-top: 8px; color: #FBF6EC; font-weight: 700; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 3px; }
 .st-cr { font-size: 0.68rem; color: rgba(251,246,236,0.65); text-align: right; margin-top: -4px; }
 /* ---------- Şehirler listesi ---------- */
 .cgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 160px), 1fr)); gap: 10px; }
@@ -2209,6 +2210,7 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       '<div class="st-pr"><b>~' + tl(Math.round(x.t * 2 / 100) * 100) + "</b><span>2 kişi toplam · kişi başı ~" + tl(Math.round(x.t / 100) * 100) + (tema ? " · " + tMetin(x.team, "kalem", "uçak + otel + yemek + gezi") : " · uçak + otel + maç bileti + yemek") + "</span></div>" +
       '<div class="st-chips">' + chips.map(function (c) { return "<span>" + escH(c) + "</span>"; }).join("") + "</div>" +
       '<a class="st-cta" id="stCta" href="#takvim/' + escH(x.team.slug) + '">' + escH(x.n) + (tema ? tMetin(x.team, "hikaye_link", " hafta sonları ve planı") + "</a>" : " maç takvimi ve planı</a>") +
+      (tema ? "" : '<a class="st-all" href="/deplasman/">Tüm deplasman planları →</a>') +
       (m.hikaye_video || m.hikaye_poster ? '<span class="st-cr">Görüntü: yapay zekâ ile üretildi, temsilîdir</span>' : m.foto ? '<span class="st-cr">Görüntü: ' + escH(m.foto_kaynak || "Pexels") + "</span>" : "");
   }
   function dTr(s) { var d = parseD(s), ay = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"], g = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"]; return d.getUTCDate() + " " + ay[d.getUTCMonth()] + " " + g[d.getUTCDay()]; }
@@ -2327,7 +2329,8 @@ header h1 { font-size: 1rem; font-weight: 600; margin: 0; color: #D5DEE8; letter
       var T = TEAMS[sl], tm = teamNext(T); if (!tm) return;
       // Kart görseli ana sayfa hikâyesiyle aynı: sıradaki şehrin bayraklı/Noel görseli; yoksa takım renkli şerit
       var tf = tm.hikaye_poster || tm.foto;
-      var card = '<a class="ccard" href="#sehirler/' + escH(T.slug) + '">' + (tf ? '<img src="' + escH(tf) + '" alt="" loading="lazy" decoding="async">' : '<span class="fb fbt" style="' + teamBg(T) + '"></span>') + '<span class="tk" style="background:' + escH(T.renk ? T.renk.a : "#F4D30B") + ";color:" + escH(T.renk ? T.renk.b : "#0F2A43") + '">' + escH(T.etiket || "Deplasman") + "</span>" +
+      // Kulüp kartları deplasman ana sayfasına (/deplasman/#takım) gider; Noel gibi temalar uygulama içi sayfasına
+      var card = '<a class="ccard" href="' + (T.tur === "tema" ? "#sehirler/" + escH(T.slug) : "/deplasman/#" + escH(T.slug)) + '">' + (tf ? '<img src="' + escH(tf) + '" alt="" loading="lazy" decoding="async">' : '<span class="fb fbt" style="' + teamBg(T) + '"></span>') + '<span class="tk" style="background:' + escH(T.renk ? T.renk.a : "#F4D30B") + ";color:" + escH(T.renk ? T.renk.b : "#0F2A43") + '">' + escH(T.etiket || "Deplasman") + "</span>" +
         '<span class="bt"><b>' + escH(T.takim) + "</b><span>sıradaki " + escH(weekendText(tm.gidis, tm.donus)) + " · " + escH(tm.mac_sehri || tm.sehir) + (fbUO(tm) ? " · ~" + tl(fbUO(tm) * o.rate) + " 2 kişi" : "") + "</span></span></a>";
       var cards = g.querySelectorAll(".ccard"), at = null;
       for (var q = 0; q < cards.length; q++) { var nm = cards[q].querySelector("b").textContent; if (nm.localeCompare(T.takim, "tr") > 0) { at = cards[q]; break; } }
