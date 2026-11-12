@@ -126,7 +126,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     return `
   <section id="${esc(m.id)}" class="mac">
     <div class="banner${m.foto ? "" : " cizgi"}">
-      ${m.foto ? `<img src="${esc(m.foto)}" alt="${esc(m.foto_alt || m.sehir)}" loading="${i ? "lazy" : "eager"}" decoding="async">` : ""}
+      ${m.foto ? `<img src="${esc(m.foto)}"${/\.jpg$/.test(m.foto) ? ` srcset="${esc(m.foto.replace(/\.jpg$/, "-640.jpg"))} 640w, ${esc(m.foto)} 1600w" sizes="(max-width: 760px) 100vw, 760px"` : ""} alt="${esc(m.foto_alt || m.sehir)}" loading="${i ? "lazy" : "eager"}" decoding="async">` : ""}
       <div class="bn">
         <span class="eb">${T ? esc(aralikTr(m.gidis, m.donus).toLocaleUpperCase("tr")) : esc(m.hafta) + ". HAFTA"} · ${esc(m.sehir.toLocaleUpperCase("tr"))} · 72 SAAT</span>
         <h2>${T ? `${esc(m.sehir)}: ${esc(m.etkinlik)}` : `${esc(m.rakip)} – ${esc(team.takim)}`}</h2>
