@@ -6,7 +6,10 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 
 | Dosya | Ne işe yarar |
 | --- | --- |
-| `index.html` | Hesaplayıcı uygulamanın kendisi (site bu) |
+| `index.html` | Ana sayfanın iskeleti (HTML). Stiller `css/site.css`, uygulama kodu `js/site.js` içinde |
+| `css/site.css`, `js/site.js` | Ana sayfanın stilleri ve kodu. Değişince `?v=` sürüm etiketi otomatik yenilenir (`scripts/surum.mjs`, iş akışı "Ana sayfa dosya sürümü"); elle de `node scripts/surum.mjs` |
+| `scripts/site-kontrol.mjs` | Site duman testi: tüm sayfaları gerçek tarayıcıda açar (her güncellemede GitHub'da çalışır) |
+| `_config.yml` | Sitede yayınlanmayacak klasörler (iç belgeler, robot kodu, uygulama kaynağı) |
 | `oteller.html` | Seçilmiş otellerin Cuma–Pazar fiyatları ve en ucuz hafta sonları |
 | `data/hotels.json` | Otel fiyat robotunun listesi ve kontrol takvimi. Otel eklemek/çıkarmak için bunu değiştir |
 | `data/otel-fiyatlari.json`, `data/fiyatlar/` | Robotun bulduğu fiyatlar (robot yazar, elle değiştirme) |
@@ -99,7 +102,7 @@ Bu klasörün **tamamı** GitHub deposuna yüklenir. Hiçbir dosyayı silme ya d
 ## Şehir turu ve ulaşım (data/gezi.json)
 
 - 26 başkent: toplu taşıma fiyatları (tek bilet, günlük, 72 saatlik kart, havalimanı) ve 25 şehirde 10'ar gezi yeri
-  (Budapeşte'nin yerleri `index.html` içinde). Fiyatlar yerel para biriminde, resmî sayfalardan; `fiyat: null` = henüz doğrulanmadı.
+  (Budapeşte'nin yerleri `js/site.js` içinde). Fiyatlar yerel para biriminde, resmî sayfalardan; `fiyat: null` = henüz doğrulanmadı.
 - Konumlar Google Maps'ten: Actions > "Gezi yerleri konum robotu" (sadece konumu olmayanları arar, ~0,003 $/yer).
 - `kapali`: Google Maps yeri geçici (`"gecici"`) ya da kalıcı (`"kalici"`) kapalı gösteriyorsa robot yazar (örnek: Marché des Enfants Rouges,
   sezon dışındaki Noel pazarları). Haftalık kapalı gün ya da "geçici sergi" kapanma sayılmaz.

@@ -36,6 +36,11 @@ const sm = await readFile(join(root, "sitemap.xml"), "utf8");
 const sayfalar = [...new Set([...sm.matchAll(/<loc>https?:\/\/[^/]+(\/[^<]*)<\/loc>/g)].map((m) => m[1])).add("/#sehirler").add("/#biletim").add("/#takvim").add("/#karsilastir")];
 
 const sorun = [], bilgi = [];
+{ // ana sayfa dosyalarının ?v= sürümü içerikle uyumlu mu
+  const { yenile } = await import("./surum.mjs");
+  const ih = await readFile(join(root, "index.html"), "utf8");
+  if (yenile(ih) !== ih) sorun.push("index.html: css/site.css ya da js/site.js sürüm etiketi (?v=) güncel değil; node scripts/surum.mjs");
+}
 const b = await chromium.launch();
 for (const u of sayfalar) {
   const ctx = await b.newContext({ ...devices["iPhone SE"], serviceWorkers: "block" });

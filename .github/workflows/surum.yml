@@ -1,0 +1,31 @@
+name: Ana sayfa dosya sürümü
+# css/site.css ya da js/site.js değişince index.html'deki ?v= etiketini içerik özetine göre yeniler ve kaydeder.
+on:
+  push:
+    branches: [main]
+    paths: ["css/site.css", "js/site.js", "index.html", "scripts/surum.mjs"]
+permissions:
+  contents: write
+concurrency:
+  group: surum
+  cancel-in-progress: false
+jobs:
+  surum:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          sparse-checkout: |
+            /*
+            !/medya/
+          sparse-checkout-cone-mode: false
+      - name: Sürümü yenile
+        run: |
+          node scripts/surum.mjs
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Ana sayfa dosya sürümü yenilendi"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 5; done
