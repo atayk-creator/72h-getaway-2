@@ -12,9 +12,9 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           mkdir -p tmp-foto
-          for x in koln-a:od3SmFMCAR4 koln-b:BB2S2ZwOVpM lefkosa-a:u0E6aDpddEM lefkosa-b:VABDpI77JI0; do
+          for x in koln-a:photo-1647956331844-6554eb7c629c koln-b:photo-1596969832010-09f775202118 lefkosa-a:photo-1685451024235-62d45a7e405d lefkosa-b:photo-1596993869045-024b958fbe7a; do
             n=${x%%:*}; id=${x##*:}
-            curl -sfL -A "Mozilla/5.0" -o tmp-foto/$n.jpg "https://unsplash.com/photos/$id/download?force=true&w=2000" || echo "$n indirilemedi"
+            curl -sfL -o tmp-foto/$n.jpg "https://images.unsplash.com/$id?fm=jpg&q=85&w=2000&fit=max" || echo "$n indirilemedi"
           done
           ls -la tmp-foto
           git config user.name "otel-fiyat-robotu"
