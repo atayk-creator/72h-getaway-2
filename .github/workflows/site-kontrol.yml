@@ -1,0 +1,37 @@
+name: Site duman testi
+# Sitenin her güncellemesinden sonra tüm sayfaları gerçek tarayıcıda (320 px telefon) açar:
+# JavaScript hatası, kırık iç bağlantı, eksik dosya, taşma, başlık/açıklama, yasak ifadeler ("ucuz", "28 başkent"), kulüp notu.
+# Başarısız olursa Denetçi ertesi kontrolde sahibine bildirim gönderir.
+on:
+  push:
+    branches: [main]
+    paths: ["**.html", "js/**", "fonts/**", "sw.js", "sitemap.xml", "scripts/site-kontrol.mjs", ".github/workflows/site-kontrol.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: site-kontrol
+  cancel-in-progress: true
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          sparse-checkout: |
+            /*
+            !/medya/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Tarayıcıyı kur
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i --no-audit --no-fund playwright@1
+          npx playwright install --with-deps chromium
+      - name: Sayfaları dolaş
+        env:
+          NODE_PATH: /tmp/pw/node_modules
+        run: node scripts/site-kontrol.mjs
