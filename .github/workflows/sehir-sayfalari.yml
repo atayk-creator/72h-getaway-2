@@ -24,7 +24,7 @@ on:
   workflow_run:
     workflows:
       - "Otel fiyat robotu (Cuma-Pazar fiyatları)"
-      - "Uçak fiyat robotu (İstanbul çıkışlı, Cuma-Pazar)"
+      - "Uçak fiyat robotu (İstanbul çıkışlı, Cuma sabah - Pazar akşam)"
       - "Restoran robotu (Google Maps)"
       - "Kur güncelle (Euro/TL, Euro/Forint)"
       - "Tablo aktarımı (Google E-Tablolar)"
