@@ -1,0 +1,22 @@
+name: Tek foto indirme (geçici)
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/tek-foto.yml]
+permissions:
+  contents: write
+jobs:
+  f:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p tmp-foto
+          for x in duomo-a:photo-1758145025686-f155a7e42ca2 duomo-b:photo-1645211710746-9629755e6814 galleria:photo-1660334337883-1f7169b41d41 navigli:photo-1668784290849-aa5acd24edcd; do
+            n=${x%%:*}; id=${x##*:}
+            curl -sfL -o tmp-foto/$n.jpg "https://images.unsplash.com/$id?fm=jpg&q=85&w=2000&fit=max" || echo "$n indirilemedi"
+          done
+          ls -la tmp-foto
+          git config user.name "otel-fiyat-robotu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tmp-foto && git commit -m "geçici foto adayları (Milano)" && for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
