@@ -3305,7 +3305,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 542,
+   "normal": 561,
    "enUcuz": {
     "g": "2026-12-11",
     "toplam": 451
@@ -3316,15 +3316,15 @@
      "cikis": "2026-11-15",
      "toplam": 637,
      "etiket": "pahali",
-     "fark": 18,
+     "fark": 14,
      "otelDolu": false
     },
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
      "toplam": 597,
-     "etiket": "pahali",
-     "fark": 10,
+     "etiket": "normal",
+     "fark": 7,
      "otelDolu": false
     },
     {
@@ -3332,15 +3332,15 @@
      "cikis": "2026-11-29",
      "toplam": 617,
      "etiket": "pahali",
-     "fark": 14,
+     "fark": 10,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 487,
-     "etiket": "ucuz",
-     "fark": -10,
+     "toplam": 525,
+     "etiket": "normal",
+     "fark": -6,
      "otelDolu": false
     },
     {
@@ -3348,7 +3348,7 @@
      "cikis": "2026-12-13",
      "toplam": 451,
      "etiket": "ucuz",
-     "fark": -17,
+     "fark": -19,
      "otelDolu": false
     },
     {
@@ -3356,7 +3356,7 @@
      "cikis": "2026-12-20",
      "toplam": 627,
      "etiket": "pahali",
-     "fark": 16,
+     "fark": 12,
      "otelDolu": false
     },
     {
@@ -3364,7 +3364,7 @@
      "cikis": "2026-12-27",
      "toplam": 623,
      "etiket": "pahali",
-     "fark": 15,
+     "fark": 11,
      "otelDolu": false
     },
     {
@@ -3372,15 +3372,15 @@
      "cikis": "2027-01-03",
      "toplam": 482,
      "etiket": "ucuz",
-     "fark": -11,
+     "fark": -14,
      "otelDolu": false
     },
     {
      "g": "2027-01-08",
      "cikis": "2027-01-10",
      "toplam": 597,
-     "etiket": "pahali",
-     "fark": 10,
+     "etiket": "normal",
+     "fark": 6,
      "otelDolu": false
     },
     {
@@ -3388,7 +3388,7 @@
      "cikis": "2027-01-17",
      "toplam": 468,
      "etiket": "ucuz",
-     "fark": -14,
+     "fark": -17,
      "otelDolu": false
     },
     {
@@ -3405,7 +3405,7 @@
      "cikis": "2027-01-31",
      "toplam": 477,
      "etiket": "ucuz",
-     "fark": -12,
+     "fark": -15,
      "otelDolu": false
     },
     {
@@ -3413,7 +3413,7 @@
      "cikis": "2027-02-07",
      "toplam": 481,
      "etiket": "ucuz",
-     "fark": -11,
+     "fark": -14,
      "otelDolu": false
     }
    ]
@@ -3644,7 +3644,7 @@
      "toplam": null,
      "etiket": null,
      "fark": null,
-     "otelDolu": true,
+     "otelDolu": false,
      "dogrulaniyor": true
     },
     {
