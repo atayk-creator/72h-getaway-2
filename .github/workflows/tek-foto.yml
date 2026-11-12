@@ -12,28 +12,11 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           mkdir -p tmp-foto
-          python3 - <<'PY'
-          import json, urllib.request, urllib.parse
-          Q = {"koln": "cologne cathedral rhine", "koln2": "cologne old town", "lefkosa": "nicosia cyprus", "lefkosa2": "nicosia old city"}
-          out = {}
-          for k, q in Q.items():
-              u = "https://unsplash.com/napi/search/photos?per_page=20&query=" + urllib.parse.quote(q)
-              try:
-                  d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0"}), timeout=30))
-              except Exception as e:
-                  print(k, "HATA", e); continue
-              res = [r for r in d.get("results", []) if not r.get("premium") and not r.get("plus")]
-              out[k] = []
-              for i, r in enumerate(res[:6]):
-                  f = f"tmp-foto/{k}-{i}.jpg"
-                  try:
-                      urllib.request.urlretrieve(r["urls"]["raw"] + "&w=1600&q=80&fm=jpg&fit=max", f)
-                  except Exception as e:
-                      print(f, e); continue
-                  out[k].append({"dosya": f, "id": r["id"], "alt": r.get("alt_description"), "foto": r["user"]["name"], "url": r["links"]["html"], "w": r["width"], "h": r["height"]})
-          json.dump(out, open("tmp-foto/sonuc.json", "w"), ensure_ascii=False, indent=1)
-          print(json.dumps(out, ensure_ascii=False)[:3000])
-          PY
+          for x in koln-a:od3SmFMCAR4 koln-b:BB2S2ZwOVpM lefkosa-a:u0E6aDpddEM lefkosa-b:VABDpI77JI0; do
+            n=${x%%:*}; id=${x##*:}
+            curl -sfL -A "Mozilla/5.0" -o tmp-foto/$n.jpg "https://unsplash.com/photos/$id/download?force=true&w=2000" || echo "$n indirilemedi"
+          done
+          ls -la tmp-foto
           git config user.name "otel-fiyat-robotu"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tmp-foto && git commit -m "geçici foto adayları" && for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
+          git add tmp-foto && git commit -m "geçici foto adayları (Köln, Lefkoşa)" && for i in 1 2 3 4 5; do git pull --rebase --autostash && git push && break; sleep 10; done
