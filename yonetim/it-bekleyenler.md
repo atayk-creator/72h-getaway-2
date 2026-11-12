@@ -2,7 +2,9 @@
 
 Bir sonraki IT notuna girecek konular. Yapılınca buradan silinir ve durum notunda raporlanır.
 
-## 1. `medya/` klasörünü `medya-yayin` dalına taşı (yönetim kurulu, 10 Kasım)
+## 1. `medya/` klasörünü `medya-yayin` dalına taşı (yönetim kurulu, 10 Kasım) — YAPILDI 12 Kasım
+
+Otomatik senkron kuruldu (`.github/workflows/medya-senkron.yml`): yeni dosyalar medya-yayin dalına kopyalanır, 3 günden eskiler main'den silinir. İlk çalışmada 19 dosya çıkarıldı (475 → 308 MB). Kalan iş: sosyal medya ofisinin Metricool'a raw.githubusercontent adresini vermesi (medya/README.md).
 
 **Sorun**
 - `medya/` klasörü 352 MB (10 Kasım). İçinde 50 video ve kapak var; her gün yaklaşık 15 dosya ekleniyor.
