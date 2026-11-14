@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-13",
+ "guncellendi": "2026-11-14",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -28,48 +28,48 @@
    "vize": "İngiltere vizesi gerekir (Schengen geçmez). Maça 16 gün var; vizen yoksa öncelikli başvuruya bak.",
    "ucus": {
     "oneri": {
-     "fiyat": 200,
+     "fiyat": 196,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Stansted (STN)",
      "gidis": "Çarşamba SAW 11:10 → STN 12:10 (PC1161)",
-     "donus": "Cuma STN 12:30 → SAW 19:25"
+     "donus": "Cuma STN 15:40 → SAW 22:25"
     },
     "secenekler": [
      {
-      "fiyat": 200,
+      "fiyat": 196,
       "havayolu": "Pegasus",
       "havalimani": "Stansted",
-      "not": "Çarşamba SAW 11:10 → STN 12:10"
+      "not": "Çarşamba SAW 11:10 → STN 12:10, Cuma 15:40 dönüş"
      },
      {
-      "fiyat": 204,
+      "fiyat": 219,
       "havayolu": "AJet",
       "havalimani": "Stansted",
-      "not": "Çarşamba SAW 10:20 → STN 11:30"
+      "not": "Çarşamba SAW 10:20 → STN 11:30, Cuma 12:30 dönüş"
      },
      {
-      "fiyat": 312,
+      "fiyat": 292,
+      "havayolu": "Pegasus",
+      "havalimani": "Gatwick",
+      "not": "Çarşamba SAW 09:50 → LGW 11:10, Cuma 12:15 dönüş"
+     },
+     {
+      "fiyat": 330,
       "havayolu": "British Airways",
       "havalimani": "Heathrow",
-      "not": "Çarşamba IST 07:40 → LHR 09:05"
+      "not": "Çarşamba IST 07:40 → LHR 09:05, Cuma 07:00 dönüş"
      },
      {
-      "fiyat": 558,
+      "fiyat": 634,
       "havayolu": "THY",
       "havalimani": "Stansted",
       "not": "Çarşamba IST 08:50 → STN 09:55"
-     },
-     {
-      "fiyat": 988,
-      "havayolu": "THY",
-      "havalimani": "Heathrow",
-      "not": "Çarşamba IST 11:40 → LHR 12:45"
      }
     ],
     "yok": "Maç günü sabahı Heathrow ve Gatwick aramaları Google'da hata verdi; Luton'a aktarmasız uçuş yok.",
     "seviye": "normal",
-    "normal_aralik": "160–360 €"
+    "normal_aralik": "140–375 €"
    },
    "havalimani_ulasim": {
     "fiyat": 40,
@@ -85,49 +85,50 @@
     {
      "ad": "The Savoy",
      "kategori": "ikonik",
-     "toplam": 2196,
+     "toplam": 2199,
      "arama": "The Savoy London"
     },
     {
      "ad": "The Ned",
      "kategori": "pahali",
-     "toplam": 1333,
+     "toplam": 1335,
      "arama": "The Ned London"
     },
     {
      "ad": "The Langham",
      "kategori": "pahali",
-     "toplam": 1769,
+     "toplam": 2110,
      "arama": "The Langham London"
     },
     {
      "ad": "Native Fulham Broadway",
      "kategori": "konforlu",
      "toplam": null,
-     "arama": "Native Fulham Broadway London"
+     "arama": "Native Fulham Broadway London",
+     "eski": true
     },
     {
      "ad": "Strand Palace",
      "kategori": "konforlu",
-     "toplam": 798,
+     "toplam": 801,
      "arama": "Strand Palace Hotel London"
     },
     {
      "ad": "The Hoxton, Holborn",
      "kategori": "konforlu",
-     "toplam": 913,
+     "toplam": 915,
      "arama": "The Hoxton Holborn London"
     },
     {
      "ad": "Park Plaza Westminster Bridge",
      "kategori": "konforlu",
-     "toplam": 946,
+     "toplam": 971,
      "arama": "Park Plaza Westminster Bridge London"
     },
     {
      "ad": "The Z Hotel Piccadilly",
      "kategori": "ucuz",
-     "toplam": 559,
+     "toplam": 614,
      "arama": "The Z Hotel Piccadilly London"
     }
    ],
@@ -142,7 +143,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 200,
+     "ucus": 196,
      "transfer": 40,
      "otel": 315,
      "bilet": 50,
@@ -151,7 +152,7 @@
      "gezi": 38
     },
     "ucuz": {
-     "ucus": 200,
+     "ucus": 196,
      "transfer": 25,
      "otel": 315,
      "bilet": 50,
@@ -335,7 +336,7 @@
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
    "uyarilar": [],
-   "robot_son_arama": "2026-11-13"
+   "robot_son_arama": "2026-11-14"
   },
   {
    "id": "linz",
@@ -355,7 +356,7 @@
    "vize": "Schengen vizesi yeterli.",
    "ucus": {
     "oneri": {
-     "fiyat": 131,
+     "fiyat": 171,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Viyana (VIE)",
@@ -364,19 +365,19 @@
     },
     "secenekler": [
      {
-      "fiyat": 131,
+      "fiyat": 164,
       "havayolu": "Pegasus",
       "havalimani": "Viyana",
-      "not": "Salı SAW 08:45 → VIE 09:05, Perşembe 18:15 dönüş"
+      "not": "Salı SAW 13:30 → VIE 13:50"
      },
      {
-      "fiyat": 219,
+      "fiyat": 206,
       "havayolu": "AJet",
       "havalimani": "Viyana",
       "not": "Salı SAW 12:30 → VIE 13:00"
      },
      {
-      "fiyat": 222,
+      "fiyat": 254,
       "havayolu": "THY",
       "havalimani": "Viyana",
       "not": "Salı IST 17:40 → VIE 18:00"
@@ -384,7 +385,7 @@
     ],
     "yok": "Linz'e doğrudan uçuş yok (Lufthansa aktarmalı 393 €'dan başlıyor).",
     "seviye": "normal",
-    "normal_aralik": "85–215 €"
+    "normal_aralik": "90–215 €"
    },
    "sehir_ulasim": {
     "fiyat": 10,
@@ -402,18 +403,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 131,
+     "ucus": 171,
      "transfer": 30,
-     "otel": 268,
+     "otel": 278,
      "bilet": 50,
      "ulasim": 10,
      "yemek": 140,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 131,
+     "ucus": 164,
      "transfer": 30,
-     "otel": 130,
+     "otel": 136,
      "bilet": 50,
      "ulasim": 10,
      "yemek": 105,
@@ -806,7 +807,7 @@
       {
        "ad": "Hotel Sacher Wien",
        "kategori": "ikonik",
-       "toplam": 1266,
+       "toplam": 1259,
        "arama": "Hotel Sacher Vienna"
       },
       {
@@ -818,31 +819,31 @@
       {
        "ad": "The Ritz-Carlton Vienna",
        "kategori": "pahali",
-       "toplam": 932,
+       "toplam": 693,
        "arama": "The Ritz-Carlton Vienna"
       },
       {
        "ad": "Hotel Kaiserhof Wien",
        "kategori": "konforlu",
-       "toplam": 373,
+       "toplam": 363,
        "arama": "Hotel Kaiserhof Wien"
       },
       {
        "ad": "Hotel MOTTO",
        "kategori": "konforlu",
-       "toplam": 336,
+       "toplam": 375,
        "arama": "Hotel MOTTO Vienna Mariahilfer Strasse"
       },
       {
        "ad": "Altstadt Vienna",
        "kategori": "konforlu",
-       "toplam": 461,
+       "toplam": 470,
        "arama": "Altstadt Vienna Hotel Neubau"
       },
       {
        "ad": "Motel One Wien-Westbahnhof",
        "kategori": "ucuz",
-       "toplam": 133,
+       "toplam": 132,
        "arama": "Motel One Wien-Westbahnhof"
       },
       {
@@ -865,44 +866,43 @@
       {
        "ad": "Hotel am Domplatz",
        "kategori": "konforlu",
-       "toplam": 200,
+       "toplam": 180,
        "arama": "Hotel am Domplatz Linz"
       },
       {
        "ad": "Park Inn by Radisson Linz",
        "kategori": "konforlu",
-       "toplam": 263,
+       "toplam": 234,
        "arama": "Park Inn by Radisson Linz"
       },
       {
        "ad": "Hotel Schillerpark (Radisson)",
        "kategori": "konforlu",
-       "toplam": 184,
+       "toplam": 161,
        "arama": "Austria Trend Hotel Schillerpark Linz"
       },
       {
        "ad": "Austria Classic Hotel Wolfinger",
        "kategori": "konforlu",
-       "toplam": 276,
-       "arama": "Hotel Wolfinger Linz",
-       "eski": true
+       "toplam": 166,
+       "arama": "Hotel Wolfinger Linz"
       },
       {
        "ad": "Hotel Schwarzer Bär",
        "kategori": "ucuz",
-       "toplam": 126,
+       "toplam": 140,
        "arama": "Hotel Schwarzer Bär Linz"
       },
       {
        "ad": "ARCOTEL Nike",
        "kategori": "ucuz",
-       "toplam": 158,
+       "toplam": 156,
        "arama": "Arcotel Nike Linz"
       },
       {
        "ad": "AMEDIA Hotel Linz",
        "kategori": "ucuz",
-       "toplam": 100,
+       "toplam": 108,
        "arama": "AMEDIA Hotel Linz"
       }
      ]
@@ -918,7 +918,8 @@
    "hikaye_video": "/img/hikaye/fenerbahce-linz.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": []
+   "uyarilar": [],
+   "robot_son_arama": "2026-11-14"
   },
   {
    "id": "madrid",
@@ -938,7 +939,7 @@
    "vize": "Schengen vizesi yeterli.",
    "ucus": {
     "oneri": {
-     "fiyat": 298,
+     "fiyat": 332,
      "havayolu": "Air Europa",
      "aktarma": 0,
      "havalimani": "Madrid (MAD)",
@@ -947,26 +948,20 @@
     },
     "secenekler": [
      {
-      "fiyat": 298,
+      "fiyat": 332,
       "havayolu": "Air Europa",
       "havalimani": "Madrid",
-      "not": "Salı IST 16:45 → MAD 19:00, Perşembe 09:10 dönüş"
+      "not": "Salı IST 16:45 → MAD 19:00"
      },
      {
-      "fiyat": 348,
+      "fiyat": 355,
       "havayolu": "Pegasus",
       "havalimani": "Madrid",
-      "not": "Salı SAW 09:15 → MAD 11:40"
-     },
-     {
-      "fiyat": 386,
-      "havayolu": "Air Europa gidiş + THY dönüş",
-      "havalimani": "Madrid",
-      "not": "Salı IST 16:45 → MAD 19:00, Perşembe 06:15 dönüş"
+      "not": "Salı SAW 11:30 → MAD 14:00"
      }
     ],
-    "seviye": "yuksek",
-    "normal_aralik": "140–215 €"
+    "seviye": "normal",
+    "normal_aralik": "140–225 €"
    },
    "havalimani_ulasim": {
     "fiyat": 0,
@@ -981,13 +976,13 @@
     {
      "ad": "The Palace",
      "kategori": "ikonik",
-     "toplam": 978,
+     "toplam": 1001,
      "arama": "The Palace a Luxury Collection Hotel Madrid"
     },
     {
      "ad": "Gran Hotel Inglés",
      "kategori": "pahali",
-     "toplam": 831,
+     "toplam": 734,
      "arama": "Gran Hotel Ingles Madrid"
     },
     {
@@ -996,12 +991,12 @@
      "toplam": null,
      "arama": "Rosewood Villa Magna Madrid",
      "eski": true,
-     "kontrol": "3002 € bulundu, diğer otellerin ortancasının 9.8 katı: süit/özel oda olabilir, gösterilmiyor"
+     "kontrol": "2160 € bulundu, diğer otellerin ortancasının 5.6 katı: süit/özel oda olabilir, gösterilmiyor"
     },
     {
      "ad": "Catalonia Las Cortes",
      "kategori": "konforlu",
-     "toplam": 427,
+     "toplam": 389,
      "arama": "Catalonia Las Cortes Madrid"
     },
     {
@@ -1013,9 +1008,8 @@
     {
      "ad": "Only YOU Boutique Hotel",
      "kategori": "konforlu",
-     "toplam": 487,
-     "arama": "Only YOU Boutique Hotel Madrid Chueca",
-     "eski": true
+     "toplam": 486,
+     "arama": "Only YOU Boutique Hotel Madrid Chueca"
     },
     {
      "ad": "ibis Styles Madrid Prado",
@@ -1039,16 +1033,16 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 298,
+     "ucus": 332,
      "transfer": 0,
-     "otel": 214,
+     "otel": 195,
      "bilet": 50,
      "ulasim": 23,
      "yemek": 150,
      "gezi": 33
     },
     "ucuz": {
-     "ucus": 298,
+     "ucus": 332,
      "transfer": 0,
      "otel": 97,
      "bilet": 50,
@@ -1180,7 +1174,8 @@
    "hikaye_video": "/img/hikaye/fenerbahce-madrid.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": []
+   "uyarilar": [],
+   "robot_son_arama": "2026-11-14"
   }
  ],
  "kaynaklar": [
@@ -1208,9 +1203,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-13",
+  "son_arama": "2026-11-14",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0
+  "son_maliyet_usd": 0.16
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "renk": {

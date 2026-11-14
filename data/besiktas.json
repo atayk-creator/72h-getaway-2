@@ -7,7 +7,7 @@
   "a": "#FFFFFF",
   "b": "#111111"
  },
- "guncellendi": "2026-11-11",
+ "guncellendi": "2026-11-14",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri kulüp üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde fiyatlar çok daha yüksek ve deplasman tribününe giriş garanti değil.",
@@ -16,9 +16,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-11",
+  "son_arama": "2026-11-14",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.11
+  "son_maliyet_usd": 0.13
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Beşiktaş Jimnastik Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -45,30 +45,42 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 130,
-     "havayolu": "AJet",
+     "fiyat": 145,
+     "havayolu": "Pegasus",
      "aktarma": 0,
-     "havalimani": "Köln/Bonn (CGN)",
-     "gidis": "Çarşamba SAW 13:20 → CGN 14:55 (VF89)",
-     "donus": "Cuma CGN 15:55 → SAW 21:10"
+     "havalimani": "Düsseldorf (DUS)",
+     "gidis": "Çarşamba SAW 07:45 → DUS 09:00 (PC1007)",
+     "donus": "Cuma DUS 15:45 → SAW 21:00"
     },
     "secenekler": [
      {
-      "fiyat": 130,
+      "fiyat": 145,
+      "havayolu": "Pegasus",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba SAW 07:45 → DUS 09:00, Cuma 15:45 dönüş"
+     },
+     {
+      "fiyat": 166,
       "havayolu": "AJet",
-      "havalimani": "Köln/Bonn",
-      "not": "Çarşamba SAW 13:20 → CGN 14:55, Cuma 15:55 dönüş"
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba SAW 11:00 → DUS 12:30"
+     },
+     {
+      "fiyat": 303,
+      "havayolu": "THY",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba IST 08:00 → DUS 09:20"
      }
     ],
     "seviye": "normal",
-    "normal_aralik": "70–230 €"
+    "normal_aralik": "85–220 €"
    },
    "oteller": [
     {
      "ad": "Excelsior Hotel Ernst",
      "kategori": "ikonik",
      "arama": "Excelsior Hotel Ernst Köln",
-     "toplam": 1370
+     "toplam": 1381
     },
     {
      "ad": "Hyatt Regency Köln",
@@ -80,7 +92,7 @@
      "ad": "Dorint Hotel am Heumarkt",
      "kategori": "pahali",
      "arama": "Dorint Hotel am Heumarkt Köln",
-     "toplam": 424
+     "toplam": 479
     },
     {
      "ad": "Hotel Mondial am Dom",
@@ -93,13 +105,13 @@
      "ad": "25hours Hotel The Circle",
      "kategori": "konforlu",
      "arama": "25hours Hotel The Circle Köln",
-     "toplam": 437
+     "toplam": 361
     },
     {
      "ad": "NH Collection Köln Mediapark",
      "kategori": "konforlu",
      "arama": "NH Collection Köln Mediapark",
-     "toplam": 384
+     "toplam": 388
     },
     {
      "ad": "Motel One Köln-Altstadt",
@@ -112,7 +124,7 @@
      "ad": "ibis Köln Centrum",
      "kategori": "ucuz",
      "arama": "ibis Köln Centrum",
-     "toplam": 260
+     "toplam": 296
     }
    ],
    "trenler": [
@@ -321,18 +333,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 130,
+     "ucus": 145,
      "transfer": 18,
-     "otel": 192,
+     "otel": 194,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 120,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 130,
+     "ucus": 145,
      "transfer": 18,
-     "otel": 130,
+     "otel": 148,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 85,
@@ -349,12 +361,11 @@
    "hikaye_video": "/img/hikaye/besiktas-leverkusen.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": [
-    "25hours Hotel The Circle (Konforlu, 437 €) üst sınıftaki Dorint Hotel am Heumarkt (Lüks, 424 €) otelinden pahalı"
-   ],
+   "uyarilar": [],
    "foto_kaynak": "Unsplash · Florian Schmetz",
    "foto_alt": "Köln Katedrali ve Hohenzollern Köprüsü, Ren kıyısı",
-   "foto_url": "https://unsplash.com/photos/BB2S2ZwOVpM"
+   "foto_url": "https://unsplash.com/photos/BB2S2ZwOVpM",
+   "robot_son_arama": "2026-11-14"
   },
   {
    "id": "lefkosa",
@@ -378,7 +389,7 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 227,
+     "fiyat": 228,
      "havayolu": "Air Serbia",
      "aktarma": 1,
      "havalimani": "Larnaka (LCA)",
@@ -387,45 +398,45 @@
     },
     "secenekler": [
      {
-      "fiyat": 227,
+      "fiyat": 228,
       "havayolu": "Air Serbia",
       "havalimani": "Larnaka",
       "not": "Çarşamba IST 16:40 → LCA 16:50, Cuma 03:30 dönüş · 1 aktarma"
      },
      {
-      "fiyat": 354,
+      "fiyat": 353,
       "havayolu": "SKY express",
       "havalimani": "Larnaka",
       "not": "Çarşamba IST 10:30 → LCA 19:10, Cuma 21:15 dönüş · 1 aktarma"
      },
      {
-      "fiyat": 355,
+      "fiyat": 357,
       "havayolu": "THY",
       "havalimani": "Larnaka",
       "not": "Çarşamba IST 14:55 → LCA 16:50 · 1 aktarma"
      },
      {
-      "fiyat": 386,
+      "fiyat": 413,
       "havayolu": "Aegean",
       "havalimani": "Larnaka",
       "not": "Çarşamba IST 11:30 → LCA 14:50 · 1 aktarma"
      },
      {
-      "fiyat": 474,
+      "fiyat": 478,
       "havayolu": "Royal Jordanian",
       "havalimani": "Larnaka",
       "not": "Çarşamba IST 22:10 → LCA 20:35 · 1 aktarma"
      }
     ],
     "seviye": "dusuk",
-    "normal_aralik": "245–340 €"
+    "normal_aralik": "245–360 €"
    },
    "oteller": [
     {
      "ad": "Hilton Nicosia",
      "kategori": "pahali",
      "arama": "Hilton Nicosia",
-     "toplam": 329
+     "toplam": 360
     },
     {
      "ad": "Cleopatra Hotel",
@@ -437,7 +448,7 @@
      "ad": "Classic Hotel",
      "kategori": "konforlu",
      "arama": "Classic Hotel Nicosia",
-     "toplam": 308
+     "toplam": 305
     },
     {
      "ad": "Centrum Hotel",
@@ -570,7 +581,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 227,
+     "ucus": 228,
      "transfer": 16,
      "otel": 114,
      "bilet": 50,
@@ -579,7 +590,7 @@
      "gezi": 10
     },
     "ucuz": {
-     "ucus": 227,
+     "ucus": 228,
      "transfer": 16,
      "otel": 70,
      "bilet": 50,
@@ -596,12 +607,11 @@
    "hikaye_video": "/img/hikaye/besiktas-lefkosa.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": [
-    "Cleopatra Hotel (Konforlu, 334 €) üst sınıftaki Hilton Nicosia (Lüks, 329 €) otelinden pahalı"
-   ],
+   "uyarilar": [],
    "foto_kaynak": "Unsplash · Maria Krasnova",
    "foto_alt": "Lefkoşa eski şehirde bir sokak",
-   "foto_url": "https://unsplash.com/photos/VABDpI77JI0"
+   "foto_url": "https://unsplash.com/photos/VABDpI77JI0",
+   "robot_son_arama": "2026-11-14"
   }
  ],
  "kaynaklar": [
