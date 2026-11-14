@@ -1,0 +1,16 @@
+{
+  "aciklama": "Plan sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş, otel ve bütçe takım/şehir dosyasından (robot) gelir. gezi_url: ücretli yerlerin resmî bilet sitesi.",
+  "bilet": {
+    "url": "https://www.galatasaray.org"
+  },
+  "yemek_link": {
+    "site": "opentable.fr",
+    "alan": "Paris"
+  },
+  "gezi_url": {
+    "Eyfel Kulesi": "https://www.toureiffel.paris/",
+    "Louvre": "https://www.louvre.fr/",
+    "Sainte-Chapelle": "https://www.sainte-chapelle.fr/",
+    "Notre-Dame": "https://www.notredamedeparis.fr/"
+  }
+}

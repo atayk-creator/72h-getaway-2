@@ -15,6 +15,10 @@ on:
       - "data/hotels.json"
       - "scripts/sehir-sayfalari.mjs"
       - "scripts/deplasman.mjs"
+      - "scripts/plan-sayfalari.mjs"
+      - "data/plan/**"
+      - "js/plan.js"
+      - "css/plan.css"
       - "data/fenerbahce.json"
       - "data/galatasaray.json"
       - "data/besiktas.json"
@@ -59,7 +63,7 @@ jobs:
         run: |
           git config user.name "72h-robot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A sehir/ deplasman/ sitemap.xml data/vitrin.json
+          git add -A sehir/ deplasman/ noel/ sitemap.xml data/vitrin.json
           if git diff --cached --quiet; then echo "Değişiklik yok."; exit 0; fi
           git commit -m "Şehir sayfaları güncellendi ($(TZ=Europe/Istanbul date '+%Y-%m-%d %H:%M'))"
           git pull --rebase origin main

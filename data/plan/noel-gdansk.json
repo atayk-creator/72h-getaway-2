@@ -1,0 +1,10 @@
+{
+  "aciklama": "Plan sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş, otel ve bütçe takım/şehir dosyasından (robot) gelir. gezi_url: ücretli yerlerin resmî bilet sitesi.",
+  "yemek_link": {
+    "alan": "Gdańsk Stare Miasto"
+  },
+  "gezi_url": {
+    "Avrupa Dayanışma Merkezi": "https://ecs.gda.pl/",
+    "Żuraw": "https://nmm.pl/"
+  }
+}

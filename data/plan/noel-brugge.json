@@ -1,0 +1,11 @@
+{
+  "aciklama": "Plan sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş, otel ve bütçe takım/şehir dosyasından (robot) gelir. gezi_url: ücretli yerlerin resmî bilet sitesi.",
+  "yemek_link": {
+    "alan": "Brugge centrum"
+  },
+  "gezi_url": {
+    "Winter Glow pazarları": "https://www.visitbruges.be/",
+    "Belfort kulesi": "https://www.museabrugge.be/",
+    "Kanal turu": "https://www.visitbruges.be/"
+  }
+}

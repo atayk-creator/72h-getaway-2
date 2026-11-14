@@ -1,0 +1,11 @@
+{
+  "aciklama": "Plan sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş, otel ve bütçe takım/şehir dosyasından (robot) gelir. gezi_url: ücretli yerlerin resmî bilet sitesi.",
+  "yemek_link": {
+    "alan": "Salzburg Altstadt"
+  },
+  "gezi_url": {
+    "Christkindlmarkt": "https://www.christkindlmarkt.co.at/",
+    "Hohensalzburg Kalesi": "https://www.festung-hohensalzburg.at/",
+    "Mozart'ın doğduğu ev": "https://mozarteum.at/museums/mozarts-geburtshaus"
+  }
+}

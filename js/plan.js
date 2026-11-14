@@ -29,7 +29,7 @@
     if (y.site) return "https://www." + y.site + "/s?dateTime=" + aksam + "T19%3A00&covers=" + K + "&term=" + encodeURIComponent(y.alan || V.sehir);
     return "https://www.google.com/maps/search/" + encodeURIComponent((y.alan || V.sehir) + " restoran");
   }
-  function ucusLink(u) { return u.url || gf(u.kalkis || "IST", u.ap || V.sehir); }
+  function ucusLink(u) { return u.url || (u.q ? gf(u.q[0], u.q[1]) : gf(u.kalkis || "IST", u.ap || V.sehir)); }
   function chip(k) { return k === "live" ? '<span class="chip c-live">Canlı fiyat</span>' : k === "off" ? '<span class="chip c-off">Resmî fiyat</span>' : k === "free" ? '<span class="chip c-free">Ücretsiz</span>' : '<span class="chip c-est">Tahmini</span>'; }
 
   /* paket kurallarını o hafta sonunun fiyatlarına göre seçime çevir */
@@ -38,12 +38,21 @@
     var ap = u && u.ap, uy = (V.transfer || []).filter(function (t) { return !t.ap || !ap || t.ap === ap; });
     return find(uy, tercih) || uy[0] || null;
   }
+/* Otel: pakette adı yazan otel (fiyatı varsa), yoksa kategorisinin en uygunu. Paketler fiyatça sıralı kalır:
+     Uygun hiçbir zaman Konforlu'dan, Konforlu hiçbir zaman Lüks'ten pahalı otel seçmez. */
+  function otelSec(ad) {
+    var P = V.paket[ad], h = H(), kat = P.kat || ad, sabit = find(h.otel, P.otel);
+    if (sabit && sabit.tot != null) return sabit;
+    var taban = ad === "konforlu" ? otelSec("uygun") : ad === "luks" ? otelSec("konforlu") : null, min = taban && taban.tot != null ? taban.tot : 0;
+    var o = enUygun(h.otel, function (x) { return x.kat === kat && x.tot >= min; }, "tot");
+    if (ad === "uygun") { var en = enUygun(h.otel, null, "tot"); if (!o || (en && en.tot < o.tot)) o = en; }
+    if (!o && ad === "luks") h.otel.forEach(function (x) { if (x.tot != null && x.tot >= min && (!o || x.tot > o.tot)) o = x; });
+    return o || enUygun(h.otel, function (x) { return x.tot >= min; }, "tot") || taban || sabit || h.otel[0] || null;
+  }
   function coz(ad) {
     var P = V.paket[ad], h = H();
     var u = (P.ucus === "tam" && enUygun(h.ucus, function (x) { return x.tam; }, "pp")) || enUygun(h.ucus, null, "pp") || h.ucus[0] || null;
-    var o = null, sabit = find(h.otel, P.otel);
-    if (sabit && sabit.tot != null) o = sabit;
-    if (!o) o = enUygun(h.otel, function (x) { return x.kat === (P.kat || ad); }, "tot") || enUygun(h.otel, null, "tot") || sabit || h.otel[0] || null;
+    var o = otelSec(ad);
     var t = secT(P.transfer, u), g = {};
     (P.gezi || []).forEach(function (id) { if (find(V.gezi, id)) g[id] = 1; });
     return { u: u ? u.id : "", o: o ? o.id : "", t: t ? t.id : "", y: find(V.yemek, P.yemek) ? P.yemek : (V.yemek[0] || {}).id, g: g, bilet: V.bilet ? 1 : 0, sehir: V.sehirIci ? 1 : 0 };

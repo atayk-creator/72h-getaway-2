@@ -1,0 +1,12 @@
+{
+  "aciklama": "Plan sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş, otel ve bütçe takım/şehir dosyasından (robot) gelir. gezi_url: ücretli yerlerin resmî bilet sitesi.",
+  "yemek_link": {
+    "site": "opentable.de",
+    "alan": "Nürnberg Altstadt"
+  },
+  "gezi_url": {
+    "Christkindlesmarkt": "https://www.christkindlesmarkt.de/",
+    "Kaiserburg": "https://www.kaiserburg-nuernberg.de/",
+    "Albrecht Dürer Evi": "https://museen.nuernberg.de/duererhaus/"
+  }
+}

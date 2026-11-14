@@ -1,0 +1,131 @@
+{
+  "aciklama": "Amsterdam şehir sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş ve otel fiyatları robotlardan, gezi ve ulaşım data/gezi.json'dan gelir.",
+  "vize": "Schengen vizesi gerekir",
+  "uyari": {
+    "baslik": "Schengen vizesi gerekir.",
+    "yazi": "Van Gogh Müzesi ve Anne Frank Evi biletleri yalnızca online satılır ve hafta sonları günler önceden tükenir; önce onları al."
+  },
+  "bilgiler": [
+    [
+      "Ülke",
+      "HOLLANDA"
+    ],
+    [
+      "Kaçamak",
+      "CUMA – PAZAR · 2 GECE"
+    ],
+    [
+      "Havalimanı",
+      "SCHIPHOL (AMS)"
+    ],
+    [
+      "Merkeze",
+      "TRENLE 17 DK"
+    ]
+  ],
+  "yemek": {
+    "uygun": 90,
+    "konforlu": 140,
+    "keyif": 230,
+    "uygun_dt": "Patates kızartması, stroopwafel, pazar, kafe"
+  },
+  "yemek_link": {
+    "site": "opentable.nl",
+    "alan": "Amsterdam Centrum"
+  },
+  "gezi_url": {
+    "rijksmuseum": "https://www.rijksmuseum.nl/en/tickets",
+    "van-gogh-muzesi": "https://www.vangoghmuseum.nl/en/visit/tickets-and-ticket-prices",
+    "anne-frank-evi": "https://www.annefrank.org/en/museum/tickets/",
+    "a-dam-lookout": "https://www.adamlookout.com/"
+  },
+  "plan_not": "Örnek akış; müze saatlerini aldığın bilete göre kaydır.",
+  "plan": [
+    {
+      "gun": "Cuma · varış",
+      "duraklar": [
+        [
+          "Sabah",
+          "İstanbul → Schiphol",
+          "Uçuş saatini seçtiğin uçuşa göre ayarla"
+        ],
+        [
+          "",
+          "Trenle Amsterdam Centraal",
+          "17 dk, temassız kartla giriş-çıkış"
+        ],
+        [
+          "14:00",
+          "Otele yerleş, Dam Meydanı",
+          "Kraliyet Sarayı ve Nieuwe Kerk çevresi"
+        ],
+        [
+          "16:00",
+          "Jordaan ve Dokuz Sokak",
+          "Kanal kıyısında yürüyüş, kafeler"
+        ],
+        [
+          "19:30",
+          "Akşam yemeği",
+          "Jordaan'da kahverengi kafe ya da Endonezya mutfağı"
+        ]
+      ]
+    },
+    {
+      "gun": "Cumartesi · müze günü",
+      "duraklar": [
+        [
+          "09:00",
+          "Rijksmuseum",
+          "Gece Devriyesi; sabah ilk saat daha sakin"
+        ],
+        [
+          "12:30",
+          "Öğle: Albert Cuyp Pazarı",
+          "Taze stroopwafel, patates kızartması"
+        ],
+        [
+          "14:30",
+          "Van Gogh Müzesi",
+          "Saatli bilet; kapıda satılmaz"
+        ],
+        [
+          "17:00",
+          "Vondelpark",
+          "Kısa yürüyüş"
+        ],
+        [
+          "19:00",
+          "Kanal kuşağı, akşam ışıkları",
+          "Reguliersgracht köprüleri"
+        ]
+      ]
+    },
+    {
+      "gun": "Pazar · dönüş",
+      "duraklar": [
+        [
+          "09:30",
+          "Anne Frank Evi",
+          "Bileti haftalar önce annefrank.org'dan al"
+        ],
+        [
+          "11:30",
+          "Noordermarkt ve Begijnhof",
+          "Pazar sabahı sakin sokaklar"
+        ],
+        [
+          "13:30",
+          "Feribotla Noord, A'DAM Lookout",
+          "Feribot ücretsiz; manzara"
+        ],
+        [
+          "Akşam",
+          "Schiphol → İstanbul",
+          "Havalimanında 2 saat önce ol"
+        ]
+      ]
+    }
+  ],
+  "haric": "vize hariç"
+}

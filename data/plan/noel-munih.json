@@ -1,0 +1,10 @@
+{
+  "aciklama": "Plan sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş, otel ve bütçe takım/şehir dosyasından (robot) gelir. gezi_url: ücretli yerlerin resmî bilet sitesi.",
+  "yemek_link": {
+    "site": "opentable.de",
+    "alan": "München Altstadt"
+  },
+  "gezi_url": {
+    "Marienplatz Noel pazarı": "https://www.muenchen.de/veranstaltungen/events/weihnachtsmaerkte"
+  }
+}
