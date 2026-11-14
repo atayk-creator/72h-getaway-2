@@ -8,4 +8,6 @@ exclude:
   - README.md
   - data/apify-rapor.json
   - node_modules
+  - data/plan
+  - pdf-cikti
   - "**/__pycache__"

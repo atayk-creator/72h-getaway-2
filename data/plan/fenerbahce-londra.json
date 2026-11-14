@@ -1,0 +1,160 @@
+{
+  "aciklama": "Fenerbahçe Londra plan sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş ve otel fiyatları data/fenerbahce.json'dan (robot) gelir. pp = kişi başı EUR (gidiş-dönüş ya da 3 gün). k: live = canlı, off = resmî fiyat, est = tahmini.",
+  "giris": "Shakhtar Donetsk – Fenerbahçe, UEFA Şampiyonlar Ligi lig aşaması 5. hafta. Shakhtar bu sezon iç saha maçlarını Londra'da, Stamford Bridge'de oynuyor. Hazır paketlerden birini seç ya da kendi kaçamağını kur; her kalemin yanında onu alabileceğin site var.",
+  "uyari": {
+    "baslik": "İngiltere vizesi gerekir,",
+    "yazi": "Schengen geçmez. Kişi başı £135; karar genelde 3 hafta sürer. Vizen yoksa önce resmî siteye bak:",
+    "link": "https://www.gov.uk/standard-visitor",
+    "linkAd": "gov.uk"
+  },
+  "otel_not": {
+    "Native Fulham Broadway": "mutfaklı daire-otel · stada 5 dk yürüme · metro yanında",
+    "The Z Hotel Piccadilly": "merkez, küçük odalar",
+    "Strand Palace": "Covent Garden yanı",
+    "The Hoxton, Holborn": "tasarım otel",
+    "Park Plaza Westminster Bridge": "Thames kıyısı, Big Ben karşısı",
+    "The Ned": "City of London",
+    "The Langham": "Regent Street",
+    "The Savoy": "ikonik, Strand"
+  },
+  "transfer": [
+    {
+      "id": "nx",
+      "ap": "STN",
+      "ad": "National Express otobüsü",
+      "dt": "Stansted ↔ merkez · 1–1,5 saat",
+      "pp": 25,
+      "k": "est",
+      "url": "https://www.nationalexpress.com/en/airports/stansted"
+    },
+    {
+      "id": "sx",
+      "ap": "STN",
+      "ad": "Stansted Express treni",
+      "dt": "Liverpool Street'e 47 dk · 2 kişilik Duo bilet",
+      "pp": 40,
+      "k": "off",
+      "url": "https://www.stanstedexpress.com"
+    },
+    {
+      "id": "gx",
+      "ap": "LGW",
+      "ad": "Gatwick ↔ merkez treni",
+      "dt": "Thameslink ya da Southern · London Bridge / Victoria'ya ~35 dk",
+      "pp": 35,
+      "k": "est",
+      "url": "https://www.thameslinkrailway.com/destinations/gatwick-airport"
+    },
+    {
+      "id": "el",
+      "ap": "LHR",
+      "ad": "Heathrow ↔ merkez treni",
+      "dt": "Elizabeth line ya da Heathrow Express",
+      "pp": 40,
+      "k": "est",
+      "url": "https://tfl.gov.uk/modes/elizabeth-line/"
+    }
+  ],
+  "sehir_ici": {
+    "ad": "Metro + otobüs · 3 gün",
+    "kisa": "metro",
+    "dt": "Temassız kart, günlük tavan 8,90 £",
+    "pp": 25,
+    "k": "est",
+    "url": "https://tfl.gov.uk/fares/how-to-pay-and-where-to-buy-tickets-and-oyster"
+  },
+  "bilet": {
+    "url": "https://www.fenerbahce.org"
+  },
+  "yemek": {
+    "uygun": 110,
+    "konforlu": 150,
+    "keyif": 250,
+    "uygun_dt": "Fırın, pub, sokak lezzetleri"
+  },
+  "yemek_link": {
+    "site": "opentable.co.uk",
+    "alan": "Covent Garden"
+  },
+  "gezi": [
+    {
+      "id": "abbey",
+      "ad": "Westminster Abbey",
+      "dt": "32 £ · online saatli bilet",
+      "pp": 38,
+      "url": "https://www.westminster-abbey.org/visit-us"
+    },
+    {
+      "id": "ww",
+      "ad": "Hyde Park Winter Wonderland",
+      "dt": "19 Kas – 3 Oca · online tarihli bilet",
+      "pp": null,
+      "url": "https://hydeparkwinterwonderland.com"
+    },
+    {
+      "id": "eye",
+      "ad": "London Eye",
+      "dt": "Thames kıyısı · online bilet",
+      "pp": null,
+      "url": "https://www.londoneye.com"
+    },
+    {
+      "id": "tower",
+      "ad": "Tower of London",
+      "dt": "Online bilet",
+      "pp": null,
+      "url": "https://www.hrp.org.uk/tower-of-london/"
+    },
+    {
+      "id": "sky",
+      "ad": "Sky Garden",
+      "dt": "Ücretsiz · online yer ayırtılır",
+      "pp": 0,
+      "url": "https://skygarden.london"
+    },
+    {
+      "id": "ng",
+      "ad": "National Gallery",
+      "dt": "Ücretsiz",
+      "pp": 0,
+      "url": "https://www.nationalgallery.org.uk"
+    },
+    {
+      "id": "tate",
+      "ad": "Tate Modern",
+      "dt": "Ücretsiz",
+      "pp": 0,
+      "url": "https://www.tate.org.uk/visit/tate-modern"
+    }
+  ],
+  "paketler": {
+    "uygun": {
+      "otel": "Native Fulham Broadway",
+      "transfer": "nx",
+      "gezi": [
+        "ng",
+        "tate"
+      ]
+    },
+    "konforlu": {
+      "otel": "Strand Palace",
+      "transfer": "sx",
+      "gezi": [
+        "abbey",
+        "ng",
+        "tate",
+        "ww"
+      ]
+    },
+    "luks": {
+      "otel": "The Langham",
+      "transfer": "el",
+      "gezi": [
+        "abbey",
+        "eye",
+        "ww",
+        "ng"
+      ]
+    }
+  }
+}

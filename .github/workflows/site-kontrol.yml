@@ -5,7 +5,7 @@ name: Site duman testi
 on:
   push:
     branches: [main]
-    paths: ["**.html", "js/**", "fonts/**", "sw.js", "sitemap.xml", "scripts/site-kontrol.mjs", ".github/workflows/site-kontrol.yml"]
+    paths: ["**.html", "js/**", "css/**", "fonts/**", "sw.js", "sitemap.xml", "scripts/site-kontrol.mjs", ".github/workflows/site-kontrol.yml"]
   workflow_dispatch:
 permissions:
   contents: read

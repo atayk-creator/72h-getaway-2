@@ -6,6 +6,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderTeamPage, renderRedirect, teamCard, renderDeplasmanIndex } from "./deplasman.mjs";
+import { planDosyalari } from "./plan-sayfalari.mjs";
 
 export const SITE = "https://72hgetaway.com";
 const KAT_SIRA = ["ucuz", "konforlu", "pahali", "ikonik"];
@@ -608,13 +609,17 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   // Takım deplasman sayfaları (data/fenerbahce.json …): takım bir şehir gibi
   const teams = data ? data.takimlar || [] : (readJson(join(root, "data/takimlar.json"), { takimlar: ["fenerbahce"] }).takimlar || []).map((s) => readJson(join(root, `data/${s}.json`), null)).filter((t) => t && (t.maclar || []).some((m) => m.butce && m.butce.konforlu && m.butce.konforlu.ucus));
   const eurTry = (d.kur && d.kur.eurTry) || 0;
+  // Yeni kalıp: plan dosyası (data/plan/<takim>-<mac>.json) olan maçların kendi sayfası
+  const plan = planDosyalari({ root: root || ".", teams, today, eurTry, esc, jsonLd, SITE, slugify });
+  Object.assign(out, plan.dosyalar);
+  for (const t of teams) for (const m of t.maclar || []) { const pl = plan.liste.find((x) => x.takim === t.slug && x.mac === m.id); if (pl) m.plan_yol = pl.yol; }
   for (const t of teams) {
     out[`sehir/${t.slug}/index.html`] = renderTeamPage(t, { today, eurTry, esc, para, fmtTl, fmtEur, head, foot, SITE });
     if (t.tur !== "tema") out[`deplasman/${t.slug}/index.html`] = renderRedirect(t, SITE);
   }
   out["deplasman/index.html"] = renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, foot, SITE });
   out["sehir/index.html"] = renderIndexPage(models, today, teams.map((t) => teamCard(t, today, { esc, para, eurTry })));
-  const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", "/deplasman/", ...teams.map((t) => `/sehir/${t.slug}/`), ...models.map((m) => `/sehir/${m.slug}/`)];
+  const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", "/deplasman/", ...teams.map((t) => `/sehir/${t.slug}/`), ...plan.yollar, ...models.map((m) => `/sehir/${m.slug}/`)];
   out["sitemap.xml"] = renderSitemap(paths, today);
   out["data/vitrin.json"] = renderVitrin(models, today);
   if (write) {

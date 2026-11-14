@@ -1,0 +1,48 @@
+name: Plan PDF rehberleri
+# Yeni kalıptaki şehir / deplasman sayfalarının hazır paket PDF'lerini (Uygun, Konforlu, Lüks) her sabah üretir
+# ve deponun "rehberler" sürümüne (Releases) üzerine yazarak yükler: link hep aynı kalır, depo büyümez.
+# Sayfadaki "Hazır PDF'i indir" düğmesi bu dosyalara gider.
+on:
+  schedule:
+    - cron: "40 3 * * *" # her gün 06:40 TSİ
+  push:
+    branches: [main]
+    paths: ["js/plan.js", "css/plan.css", "data/plan/**", "scripts/plan-pdf.mjs", "scripts/plan-sayfalari.mjs", ".github/workflows/plan-pdf.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: plan-pdf
+  cancel-in-progress: true
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          sparse-checkout: |
+            /*
+            !/medya/
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Tarayıcıyı kur
+        run: |
+          mkdir -p /tmp/pw && cd /tmp/pw && npm init -y >/dev/null && npm i --no-audit --no-fund playwright@1
+          npx playwright install --with-deps chromium
+      - name: Sayfaları güncel veriyle üret
+        run: node scripts/sehir-sayfalari.mjs
+      - name: PDF'leri üret
+        env:
+          NODE_PATH: /tmp/pw/node_modules
+        run: node scripts/plan-pdf.mjs
+      - name: Rehberler sürümüne yükle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view rehberler >/dev/null 2>&1 || gh release create rehberler --title "PDF rehberler" --notes "Şehir ve deplasman sayfalarının hazır paket PDF rehberleri. Her sabah robot tarafından yenilenir (scripts/plan-pdf.mjs)." --latest=false
+          gh release upload rehberler pdf-cikti/*.pdf --clobber
+          echo "$(ls pdf-cikti | wc -l) PDF yüklendi." >> "$GITHUB_STEP_SUMMARY"

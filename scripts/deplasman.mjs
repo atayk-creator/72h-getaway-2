@@ -134,6 +134,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
       </div>
       ${m.foto ? `<span class="cr">Fotoğraf: ${esc(m.foto_kaynak || "Pexels")}</span>` : ""}
     </div>
+    ${m.plan_yol ? `<a href="${esc(m.plan_yol)}" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin:12px 0 0;padding:14px 16px;border-radius:12px;background:#F4A62A;color:#0F2A43;font-weight:800;text-decoration:none"><span>3 hazır paket: Uygun, Konforlu, Lüks<br><small style="font-weight:600">Tarihli linkler, kendin oluştur, PDF rehber</small></span><span aria-hidden="true">→</span></a>` : ""}
 
     <div class="ozet">
       <div class="ust">
@@ -370,7 +371,7 @@ export function renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, fo
   </div>
   <div class="dk-alt">
     <div><small>${f.uygun ? "Uygun plan" : "Plan"} · 2 kişi toplam</small><b class="dk-p">~${para(f.eur, eurTry)}</b><small>uçak + otel + maç bileti + yemek · ${esc(aralikTr(m.gidis, m.donus))}</small></div>
-    <a class="dk-btn" href="/sehir/${esc(t.slug)}/#${esc(m.id)}">Planı gör</a>
+    <a class="dk-btn" href="${m.plan_yol ? esc(m.plan_yol) : `/sehir/${esc(t.slug)}/#${esc(m.id)}`}">${m.plan_yol ? "Paketleri gör" : "Planı gör"}</a>
   </div>
   ${vize ? `<p class="dk-vize">${esc(vize)}</p>` : ""}
   ${diger ? `<div class="dk-diger"><h3>${esc(ilgi(t.takim))} diğer deplasmanları</h3><ul class="dk-dl">${diger}</ul></div>` : ""}

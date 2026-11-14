@@ -186,16 +186,16 @@
       ],
       [
        "10:20",
-       "AJet → Stansted",
-       "Londra saatiyle 11:30 iniş"
+       "Sabah uçuşu → Stansted",
+       "AJet 10:20 ya da Pegasus 11:10; Londra saatiyle öğlen iniş"
       ],
       [
-       "12:00",
+       "12:30",
        "Stansted Express",
        "Liverpool Street'e 47 dk"
       ],
       [
-       "13:00",
+       "13:30",
        "Spitalfields'ta öğle yemeği",
        "Fish & chips ya da sokak lezzetleri"
       ],
@@ -286,8 +286,8 @@
       ],
       [
        "12:30",
-       "AJet → Sabiha Gökçen",
-       "TSİ 19:25 iniş"
+       "Stansted → Sabiha Gökçen",
+       "AJet 12:30 ya da Pegasus 15:40"
       ]
      ]
     }
