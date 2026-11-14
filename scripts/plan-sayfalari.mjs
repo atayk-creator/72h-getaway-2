@@ -1,8 +1,9 @@
 // Yeni şehir / deplasman sayfası (yönetim kurulu iş emri, 14 Kasım 2026): 3 hazır paket (Uygun, Konforlu, Lüks),
 // her kalemde tarihli derin link, "kendin oluştur", linkte yaşayan plan ve PDF rehber.
 // Kalıp: css/plan.css + js/plan.js. Veri: takım dosyasındaki maç (data/<takim>.json) + elle bilgiler (data/plan/<slug>.json).
-// Sayfa yalnızca data/plan/<slug>.json dosyası olan maçlar için üretilir; scripts/sehir-sayfalari.mjs çağırır.
-import { readFileSync, existsSync } from "node:fs";
+// Bütün şehirler, deplasman maçları ve Noel şehirleri bu kalıpla üretilir; data/plan/<slug>.json isteğe bağlı elle bilgidir.
+// scripts/sehir-sayfalari.mjs çağırır.
+import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 
@@ -20,6 +21,39 @@ const IATA = { "stansted": "STN", "heathrow": "LHR", "gatwick": "LGW", "luton": 
 const KAT = { ucuz: "uygun", konforlu: "konforlu", pahali: "luks", ikonik: "luks" };
 const KAT_AD = { uygun: "Uygun", konforlu: "Konforlu", luks: "Lüks" };
 
+const HY_AD = { "Turkish Airlines": "THY", "Pegasus Airlines": "Pegasus", "AJet Airlines": "AJet" };
+const hyAd = (h) => String(h || "").split(", ").map((x) => HY_AD[x] || x).join(" + ");
+const KULUP = { fenerbahce: "https://www.fenerbahce.org", galatasaray: "https://www.galatasaray.org", besiktas: "https://www.bjk.com.tr" };
+const SCHENGEN = new Set(["Fransa", "Belçika", "Hollanda", "Lüksemburg", "Almanya", "Avusturya", "İspanya", "Portekiz", "İtalya", "Malta", "Yunanistan", "İsveç", "Danimarka", "Finlandiya", "Estonya", "Letonya", "Litvanya", "Polonya", "Çekya", "Slovakya", "Macaristan", "Slovenya", "Hırvatistan", "Romanya", "Bulgaristan", "İsviçre", "Norveç", "İzlanda"]);
+const VIZESIZ = new Set(["Sırbistan", "Bosna-Hersek", "Karadağ", "Kuzey Makedonya", "Arnavutluk", "Kosova", "Moldova"]);
+/** Ülkeye göre vize notu (umuma mahsus pasaport). Resmî kaynaktan teyit edilmesi yazılır. */
+export function vizeNotu(ulke) {
+  if (SCHENGEN.has(ulke)) return { baslik: "Schengen vizesi gerekir.", yazi: "Randevu ve sonuç haftalar sürebilir; tarihini seçmeden önce vizeni kontrol et.", haric: "vize hariç" };
+  if (ulke === "Birleşik Krallık") return { baslik: "İngiltere vizesi gerekir,", yazi: "Schengen geçmez. Vizen yoksa önce resmî siteye bak:", link: "https://www.gov.uk/standard-visitor", linkAd: "gov.uk", haric: "vize hariç" };
+  if (ulke === "İrlanda") return { baslik: "İrlanda vizesi gerekir,", yazi: "Schengen ve İngiltere vizesi geçmez. Başvuru:", link: "https://www.irishimmigration.ie/coming-to-visit-ireland/", linkAd: "irishimmigration.ie", haric: "vize hariç" };
+  if (VIZESIZ.has(ulke)) return { baslik: "Vize gerekmez:", yazi: `Türkiye Cumhuriyeti pasaportuyla ${ulke} için kısa süreli gezilerde vize istenmiyor. Gitmeden önce Dışişleri Bakanlığı'nın sayfasından teyit et.`, link: "https://www.mfa.gov.tr/turk-vatandaslarinin-tabi-oldugu-vize-uygulamalari.tr.mfa", linkAd: "mfa.gov.tr", haric: "" };
+  return null;
+}
+/** Şehir için örnek 72 saat akışı: gezi.json'daki yerler (popülerlik sırası) ve restoranlardan. */
+function ornekPlan(sehir, yerler, rest) {
+  const y = (i) => yerler[i], d = (saat, x) => (x ? [saat, x.ad, kes(x.fiyat_yazi || x.tur || "", 50)] : null);
+  const r = (sev) => (rest || []).find((x) => x.seviye === sev) || (rest || [])[0];
+  const yemek = (saat, ad, x) => [saat, ad, x ? `${x.ad}${x.mutfak ? " · " + x.mutfak : ""}` : ""];
+  if (yerler.length < 3) return [];
+  return [
+    { gun: "Cuma · varış", duraklar: [["Sabah", `İstanbul → ${sehir}`, "Saatler seçtiğin uçuşa göre"], ["Öğlen", "Otele yerleş", "Eşyaları bırak, kısa mola"], d("15:00", y(3)), d("17:00", y(4)), yemek("20:00", "Akşam yemeği", r("Konforlu"))].filter(Boolean) },
+    { gun: "Cumartesi · şehir günü", duraklar: [d("09:30", y(0)), yemek("12:30", "Öğle yemeği", r("Uygun")), d("14:00", y(1)), d("16:30", y(2)), yemek("20:00", "Akşam yemeği", r("Pahalı") || r("Konforlu"))].filter(Boolean) },
+    { gun: "Pazar · dönüş", duraklar: [d("10:00", y(5)), d("12:00", y(6)), ["Akşam", `${sehir} → İstanbul`, "Havalimanında 2 saat önce ol"]].filter(Boolean) },
+  ];
+}
+
+// Havayolunun kendi tarihli arama sayfası. 14 Kasım 2026'da denendi: Pegasus tarihleri kabul ediyor; AJet ve THY'nin
+// adresleri tarih almıyor (ana sayfaya ya da hata sayfasına düşüyor), o yüzden onlarda yalnızca Google Flights var.
+export function havayoluLink(u, gidis, donus) {
+  if (/^pegasus$/i.test(String(u.hy0 || "").trim()) && /^[A-Z]{3}$/.test(u.kalkis || "") && /^[A-Z]{3}$/.test(u.ap || ""))
+    return { hy: `https://web.flypgs.com/booking?language=tr&adultCount=2&arrivalPort=${u.ap}&departurePort=${u.kalkis}&currency=EUR&dateOption=1&departureDate=${gidis}&returnDate=${donus}`, hyAd: "Pegasus sitesi" };
+  return {};
+}
 const readJson = (p, fb) => { try { return JSON.parse(readFileSync(p, "utf8")); } catch { return fb; } };
 const ozet = (root, rel) => { try { return createHash("sha1").update(readFileSync(join(root, rel))).digest("hex").slice(0, 10); } catch { return "0"; } };
 const kes = (s, n = 90) => { s = String(s || "").replace(/\s+/g, " ").trim(); return s.length > n ? s.slice(0, n - 1).replace(/[\s,;:·]+\S*$/, "") + "…" : s; };
@@ -53,12 +87,23 @@ export function macPlan(team, m, ek, { eurTry, today, SITE, slugify }) {
     if (i > -1) { if (on.aktarma === 0 && !/aktarmasız/.test(ucus[i].dt)) ucus[i].dt += " · aktarmasız"; } else ucus.unshift(o);
   }
   ucus = ucus.filter((u, i) => ucus.findIndex((x) => x.id === u.id) === i).sort((a, b) => (a.pp ?? 1e9) - (b.pp ?? 1e9));
+  ucus = ucus.map((u) => ({ ...u, ...havayoluLink({ ...u, hy0: u.ad.split(" · ")[0] }, m.gidis, m.donus) }));
   if (!ucus.length) ucus = [{ id: "ara", ad: `İstanbul → ${m.sehir}`, dt: "Fiyatı Google Flights'ta gör", pp: null, ap: "", kalkis: "", k: "est", kay: "Google Flights", tam: 1, url: null }];
   const otelNot = ek.otel_not || {};
-  const otel = (m.oteller || []).map((o) => ({
+  let otel = (m.oteller || []).map((o) => ({
     id: slugify(o.ad), ad: o.ad, kat: KAT[o.kategori] || "konforlu", tot: typeof o.toplam === "number" ? o.toplam : null, q: o.arama || `${o.ad} ${m.sehir}`, kay: kayO,
     dt: KAT_AD[KAT[o.kategori] || "konforlu"] + (otelNot[o.ad] ? ` · ${otelNot[o.ad]}` : ""),
-  })).sort((a, b) => (a.tot ?? 1e9) - (b.tot ?? 1e9));
+  }));
+  // Gece gece farklı şehir (ör. Viyana + Linz): her seviye için iki otelin toplamı tek seçenek olur
+  if (!otel.length && Array.isArray(m.konaklama) && m.konaklama.length) {
+    const sec = (g, kats, ad) => (g.oteller || []).find((o) => o.ad === ad && typeof o.toplam === "number") || (g.oteller || []).filter((o) => kats.includes(o.kategori) && typeof o.toplam === "number").sort((a, b) => a.toplam - b.toplam)[0];
+    otel = [["uygun", ["ucuz"], "ucuz"], ["konforlu", ["konforlu"], "konforlu"], ["luks", ["pahali", "ikonik"], null]].map(([kat, kats, sk]) => {
+      const l = m.konaklama.map((g) => sec(g, kats, sk && (g.secim || {})[sk]));
+      if (l.some((x) => !x)) return null;
+      return { id: kat, ad: l.map((x) => x.ad).join(" + "), kat, tot: l.reduce((a, x) => a + x.toplam, 0), q: l[0].arama || l[0].ad, kay: kayO, dt: `${KAT_AD[kat]} · ` + m.konaklama.map((g, i) => `${i + 1}. gece ${g.sehir}`).join(", ") + " · link ilk otelin sayfasını açar" };
+    }).filter(Boolean);
+  }
+  otel.sort((a, b) => (a.tot ?? 1e9) - (b.tot ?? 1e9));
   const B = m.butce || {}, bk = B.konforlu || {}, bu = B.ucuz || bk;
   const transfer = ek.transfer ? [...ek.transfer] : (m.havalimani_ulasim && m.havalimani_ulasim.fiyat ? [{ id: "hv", ad: "Havalimanı ↔ merkez", dt: kes(m.havalimani_ulasim.yazi), pp: m.havalimani_ulasim.fiyat, k: "est", url: m.havalimani_ulasim.kaynak || `https://www.google.com/maps/dir/${encodeURIComponent(m.sehir + " airport")}/${encodeURIComponent(m.sehir + " city centre")}` }] : []);
   if (!transfer.length && bk.transfer > 0) {
@@ -82,7 +127,7 @@ export function macPlan(team, m, ek, { eurTry, today, SITE, slugify }) {
   });
   const bilet = tema ? null : {
     ad: "Maç bileti · deplasman tribünü", kisa: "Maç bileti", grup: "Maç ve şehir içi", dt: "kulüp üzerinden satılır · garanti değil", pp: bk.bilet || (team.bilet && team.bilet.fiyat) || 50, k: "est",
-    kay: "geçen sezon UEFA tavanı", btn: "Kulüp sitesi", url: (ek.bilet && ek.bilet.url) || "", ...(ek.bilet || {}),
+    kay: "geçen sezon UEFA tavanı", btn: "Kulüp sitesi", url: KULUP[team.slug] || "", ...(ek.bilet || {}),
   };
   const ucretsiz = gezi.filter((g) => g.pp === 0).map((g) => g.id), tum = gezi.map((g) => g.id);
   const P = ek.paketler || {};
@@ -91,7 +136,7 @@ export function macPlan(team, m, ek, { eurTry, today, SITE, slugify }) {
     konforlu: { ad: "Konforlu", kat: "konforlu", ucus: "enuygun", otel: (m.secim || {}).konforlu, transfer: (transfer[1] || transfer[0] || {}).id, yemek: "konforlu", gezi: tum.slice(0, 4), ...(P.konforlu || {}) },
     luks: { ad: "Lüks", kat: "luks", ucus: "tam", otel: null, transfer: (transfer[1] || transfer[0] || {}).id, yemek: "keyif", gezi: tum.slice(0, 5), ...(P.luks || {}) },
   };
-  for (const p of Object.values(paket)) p.otel = p.otel ? slugify(p.otel) : "";
+  for (const [k, p] of Object.entries(paket)) p.otel = m.konaklama && !(m.oteller || []).length ? k : p.otel ? slugify(p.otel) : "";
   const vize = (m.vize || "").replace(/\s*Maça \d+ gün var;?[^.]*\./, "").trim(); // veride kalan eski "gün var" sayısı gösterilmez
   const uyari = ek.uyari || (vize ? { baslik: vize.split(/[.(]/)[0].trim() + ".", yazi: vize.slice(vize.split(/[.(]/)[0].length).replace(/^[.\s]+/, ""), link: "" } : null);
   const bilgiler = ek.bilgiler || (tema
@@ -128,7 +173,7 @@ export function macPlan(team, m, ek, { eurTry, today, SITE, slugify }) {
 }
 
 /** Bir şehir (hafta sonu kaçamağı) için sayfa verisi: önümüzdeki 4 hafta sonu, her biri kendi uçuş ve otel fiyatıyla. */
-export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHotel, toEur }) {
+export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHotel, usableFlight, toEur }) {
   const sehir = model.sehir, slug = model.slug, yol = `/sehir/${slug}/`;
   const city = (d.hotels.sehirler || []).find((c) => c.sehir === sehir) || { oteller: [] };
   const F = d.fiyatlar[sehir] || {}, G = ((d.gezi || {}).sehirler || {})[sehir] || {};
@@ -141,13 +186,23 @@ export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHo
       const kat = KAT[o.kategori] || "konforlu";
       return { id: o.id, ad: o.ad, kat, tot: tot != null ? Math.round(tot) : null, q: o.arama || `${o.ad} ${sehir}`, kay: `Google Hotels · ${model.otelGuncel || ""}`.replace(/ \d{4}$/, ""), dt: KAT_AD[kat] + (otelNot[o.ad] || o.not ? ` · ${kes(otelNot[o.ad] || o.not, 70)}` : "") + (s && s.durum === "dolu" ? " · bu tarihte dolu görünüyor" : "") };
     }).sort((a, b) => (a.tot ?? 1e9) - (b.tot ?? 1e9));
-    const u = (model.ucuslar || []).find((x) => x.g === h.g && typeof x.fiyat === "number");
     const q = ["Istanbul", ek.sehir_en || sehir];
-    const ucus = u ? [{ id: slugify(u.havayolu || "ucus"), ad: `${u.havayolu || "En uygun uçuş"} · İstanbul → ${sehir}`, dt: `Cuma ${u.saat ? u.saat.slice(11, 16) + " kalkış" : "sabah"} · ${u.aktarma ? u.aktarma + " aktarma" : "aktarmasız"} · Pazar akşam dönüş`, pp: u.fiyat, ap: "", kalkis: "", q, k: "live", kay: `Google Flights · ${model.ucusGuncel || ""}`.replace(/ \d{4}$/, ""), tam: EKONOMIK.test(u.havayolu || "") ? 0 : 1 }]
-      : [{ id: "ara", ad: `İstanbul → ${sehir}`, dt: "Bu hafta sonu için fiyat ölçülemedi; Google Flights'ta gör", pp: null, ap: "", kalkis: "", q, k: "est", kay: "Google Flights", tam: 1 }];
+    const us = ((((d.ucuslar || {}).haftaSonlari || {})[h.g] || {}).sehirler || {})[sehir];
+    const son = us && usableFlight(us.son) ? us.son : null;
+    const aday = son ? (son.secenekler && son.secenekler.length ? son.secenekler : [son, son.aktarmasiz]).filter((x) => x && typeof x.fiyat === "number" && x.fiyat > 0) : [];
+    let ucus = aday.map((u) => ({
+      id: slugify(`${hyAd(u.havayolu) || "ucus"}-${u.kalkis || "ist"}-${u.aktarma ? "a" : "d"}`), ad: `${hyAd(u.havayolu) || "En uygun uçuş"} · ${u.kalkis || "İstanbul"} → ${sehir}`,
+      dt: `Cuma ${u.ucusSaati ? u.ucusSaati.slice(11, 16) + " kalkış" : "sabah"} · ${u.aktarma ? u.aktarma + " aktarma" : "aktarmasız"} · Pazar akşam dönüş`, pp: Math.round(u.fiyat), ap: u.varis || "", kalkis: u.kalkis || "", q,
+      k: "live", kay: `Google Flights · ${model.ucusGuncel || ""}`.replace(/ \d{4}$/, ""), tam: EKONOMIK.test(u.havayolu || "") ? 0 : 1,
+    }));
+    ucus = ucus.filter((u, i) => ucus.findIndex((x) => x.id === u.id) === i).sort((a, b) => a.pp - b.pp);
+    ucus = ucus.map((u) => ({ ...u, ...havayoluLink({ ...u, hy0: u.ad.split(" · ")[0] }, h.g, h.cikis) }));
+    if (!ucus.length) ucus = [{ id: "ara", ad: `İstanbul → ${sehir}`, dt: "Bu hafta sonu için fiyat ölçülemedi; Google Flights'ta gör", pp: null, ap: "", kalkis: "", q, k: "est", kay: "Google Flights", tam: 1 }];
     return { id: h.g, gidis: h.g, donus: h.cikis, gece: gece(h.g, h.cikis), etiket: kisaAralik(h.g, h.cikis), ek: h.etiket === "ucuz" ? "fırsat" : "", ucus, otel };
   });
-  const U = G.ulasim || {};
+  const U = JSON.parse(JSON.stringify(G.ulasim || {}));
+  const gEur = (n) => (typeof n === "number" && G.para && G.para !== "EUR" ? toEur(n, G.para, d.kur) : n); // gezi.json yerel para biriminde olabilir (ör. HUF)
+  for (const k of Object.keys(U)) if (U[k] && typeof U[k].fiyat === "number") U[k].fiyat = gEur(U[k].fiyat);
   const transfer = ek.transfer || (U.havalimani && U.havalimani.fiyat ? [{ id: "hv", ad: "Havalimanı ↔ merkez", dt: kes(U.havalimani.aciklama, 80), pp: Math.round(U.havalimani.fiyat * 2), k: "est", url: U.havalimani.kaynak || "" }] : []);
   const cg = U.cok_gunluk, gn = U.gunluk;
   const sehirIci = ek.sehir_ici || (cg && cg.fiyat ? { ad: `Toplu taşıma · ${cg.gun || 3} gün`, kisa: "toplu taşıma", dt: kes(cg.aciklama, 80), pp: Math.round(cg.fiyat), k: "est", url: cg.kaynak || "" } : gn && gn.fiyat ? { ad: "Toplu taşıma · 3 gün", kisa: "toplu taşıma", dt: kes(gn.aciklama, 80), pp: Math.round(gn.fiyat * 3), k: "est", url: gn.kaynak || "" } : null);
@@ -158,7 +213,7 @@ export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHo
     { id: "keyif", ad: "Keyif", dt: ym.keyif_dt || "Her akşam restoran", pp: ym.keyif || Math.round((yk * 1.65) / 5) * 5 },
   ];
   const gu = ek.gezi_url || {};
-  const gezi = ek.gezi || (G.yerler || []).slice(0, ek.gezi_sayisi || 8).map((y) => ({ id: y.id, ad: y.ad, dt: kes(y.fiyat_yazi || y.tur || "", 60), pp: typeof y.fiyat === "number" ? y.fiyat : null, url: gu[y.id] || y.harita || `https://www.google.com/maps/search/${encodeURIComponent(y.arama || y.ad)}` }));
+  const gezi = ek.gezi || (G.yerler || []).slice(0, ek.gezi_sayisi || 8).map((y) => ({ id: y.id, ad: y.ad, dt: kes(y.fiyat_yazi || y.tur || "", 60), pp: typeof y.fiyat === "number" ? Math.round(gEur(y.fiyat) * 10) / 10 : null, url: gu[y.id] || y.harita || `https://www.google.com/maps/search/${encodeURIComponent(y.arama || y.ad)}` }));
   const ucretsiz = gezi.filter((g) => g.pp === 0).map((g) => g.id), tum = gezi.map((g) => g.id), P = ek.paketler || {};
   const paket = {
     uygun: { ad: "Uygun", kat: "uygun", ucus: "enuygun", otel: "", transfer: (transfer[0] || {}).id, yemek: "uygun", gezi: ucretsiz.length ? ucretsiz.slice(0, 3) : tum.slice(0, 1), ...(P.uygun || {}) },
@@ -167,16 +222,17 @@ export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHo
   };
   for (const p of Object.values(paket)) if (p.otel) p.otel = ((city.oteller || []).find((o) => o.ad === p.otel) || {}).id || p.otel;
   const foto = (model.fotolar || [])[0] || {};
+  const vz = vizeNotu(model.ulke);
   return {
     yol, slug, url: SITE + yol, tur: "sehir", ad: sehir, ust: `${sehir} · hafta sonu kaçamağı`, sehir, kisi: 2, kur: Math.round(eurTry * 100) / 100, gun: 3,
     baslik: ek.baslik || `${sehir}, 72 saatte`, giris: ek.giris || `İstanbul'dan ${sehir} hafta sonu: cuma sabah gidiş, pazar akşam dönüş, 2 gece. Hazır paketlerden birini seç ya da kendi kaçamağını kur; her kalemin yanında onu alabileceğin site var.`,
     foto: foto.dosya || "", fotoAlt: foto.alt || sehir, fotoKaynak: foto.kaynak || "", haftalar, transfer, sehirIci, bilet: null, yemek, yemekLink: ek.yemek_link || {}, gezi, paket,
-    uyari: ek.uyari || null, bilgiler: ek.bilgiler || [["Ülke", (model.ulke || "").toLocaleUpperCase("tr")], ["Kaçamak", "CUMA – PAZAR · 2 GECE"], ["Uçuş", "İSTANBUL'DAN"], ["Kişi", "2 KİŞİ"]],
-    plan: ek.plan || [], planNot: ek.plan_not || "", haric: ek.haric || "",
+    uyari: ek.uyari || (vz ? { baslik: vz.baslik, yazi: vz.yazi, link: vz.link || "", linkAd: vz.linkAd || "" } : null), bilgiler: ek.bilgiler || [["Ülke", (model.ulke || "").toLocaleUpperCase("tr")], ["Kaçamak", "CUMA – PAZAR · 2 GECE"], ["Uçuş", "İSTANBUL'DAN"], ["Kişi", "2 KİŞİ"]],
+    plan: ek.plan || ornekPlan(sehir, G.yerler || [], model.restoranlar), planNot: ek.plan_not || "Örnek akış: yerler popülerliğe göre sıralı; saatleri uçuşuna ve aldığın biletlere göre kaydır.", haric: ek.haric != null ? ek.haric : vz ? vz.haric : "",
     not: ek.not || `Uçuş ve otel fiyatları robotun ölçümü (otel ${model.otelGuncel || "–"}, uçuş ${model.ucusGuncel || "–"}); yemek ve ulaşım tahmini. Fiyatı gördüğün gün o sitede yeniden kontrol et.`,
     fiyatNot: `Otel fiyatları ${model.otelGuncel || "–"}, uçuş fiyatları ${model.ucusGuncel || "–"} tarihinde Google Hotels ve Google Flights'ta ölçüldü; 1 € = ${String(Math.round(eurTry * 100) / 100).replace(".", ",")} TL.`,
     yasal: "Bağımsız seyahat planlayıcısıyız. Rezervasyon yapmıyor, komisyon almıyoruz; seni doğrudan sağlayıcının sitesine yönlendiriyoruz.",
-    kontrol: ek.kontrol || ["Pasaport: dönüş tarihinden sonra en az 6 ay geçerli olsun", ek.vize || "Vize durumunu kontrol et", "Uçuş: bagaj hakkına bak, online check-in yap", "Otel: rezervasyon onayını ve iptal koşulunu kaydet", "Müze ve etkinlik biletleri: saatli biletleri önceden al", "Seyahat sağlık sigortası", "Yurt dışı çıkış harcı", "Telefon: yurt dışı paketi ya da eSIM", "Temassız banka kartı ve biraz nakit", "Priz adaptörü ve şarj aleti"],
+    kontrol: ek.kontrol || ["Pasaport: dönüş tarihinden sonra en az 6 ay geçerli olsun", ek.vize || (vz ? (vz.baslik + " " + vz.yazi).replace(/[:,]\s*$/, "").replace(/, Schengen/, "; Schengen") : "Vize durumunu kontrol et"), "Uçuş: bagaj hakkına bak, online check-in yap", "Otel: rezervasyon onayını ve iptal koşulunu kaydet", "Müze ve etkinlik biletleri: saatli biletleri önceden al", "Seyahat sağlık sigortası", "Yurt dışı çıkış harcı", "Telefon: yurt dışı paketi ya da eSIM", "Temassız banka kartı ve biraz nakit", "Priz adaptörü ve şarj aleti"],
     pdf: ek.pdf === false ? "" : `${RELEASE}/${slug}-{paket}{hafta}.pdf`, ustLink: { ad: "Şehirler", yol: "/sehir/" }, takimYol: "/sehir/", takim: "",
     title: ek.title || `${sehir} hafta sonu: 3 hazır paket, uçak + otel bütçesi | 72h Getaway`,
     description: ek.description || `${sehir} hafta sonu kaçamağı için 3 hazır paket (Uygun, Konforlu, Lüks): uçuş, otel, yemek, gezi; her kalemde tarihli link. Planını kur, arkadaşına gönder, PDF al.`,
@@ -296,7 +352,7 @@ ${V.plan.length ? `<section id="plan">
     ${gunler}
   </div>` : `<section id="plan">`}
   <p class="legal">${esc(V.yasal)} ${esc(V.fiyatNot)}</p>
-  <div class="site-foot">${V.tur === "sehir" ? "" : `<a href="${esc(V.takimYol)}">${esc(V.tur === "noel" ? "Tüm Noel şehirleri" : V.takim + " deplasmanları")}</a>`}<a href="/sehir/">Tüm şehirler</a><a href="/">Bütçe hesaplayıcı</a><a href="/hakkinda.html">Hakkında</a></div>
+  <div class="site-foot">${V.tur === "sehir" ? "" : `<a href="${esc(V.takimYol)}">${esc(V.tur === "noel" ? "Tüm Noel şehirleri" : V.takim + " deplasmanları")}</a>`}<a href="/sehir/">Tüm şehirler</a><a href="/oteller.html">Otel fiyat takvimi</a><a href="/">Bütçe hesaplayıcı</a><a href="/hakkinda.html">Hakkında</a></div>
 </section>
 </main>
 
@@ -334,13 +390,13 @@ ${V.plan.length ? `<section id="plan">
 }
 
 /** Plan dosyası olan bütün maçların sayfaları: { dosyalar: {yol: html}, yollar: ["/deplasman/…/"], liste: [V] } */
-export function planDosyalari({ root, teams, models = [], d = null, today, eurTry, esc, jsonLd, SITE, slugify, usableHotel, toEur }) {
+export function planDosyalari({ root, teams, models = [], d = null, today, eurTry, esc, jsonLd, SITE, slugify, usableHotel, usableFlight, toEur }) {
   const surum = { css: ozet(root, "css/plan.css"), js: ozet(root, "js/plan.js") };
   const dosyalar = {}, yollar = [], liste = [];
   for (const t of teams) {
     for (const m of t.maclar || []) {
       const p = join(root, `data/plan/${t.slug}-${m.id}.json`);
-      if (!existsSync(p) || !m.gidis || !m.donus || m.donus < today) continue;
+      if (!m.gidis || !m.donus || m.donus < today || !(m.butce && m.butce.konforlu)) continue;
       const V = macPlan(t, m, readJson(p, {}), { eurTry, today, SITE, slugify });
       dosyalar[`${V.yol.slice(1)}index.html`] = renderPlanPage(V, { esc, jsonLd, SITE, surum });
       yollar.push(V.yol); liste.push({ yol: V.yol, slug: V.slug, takim: t.slug, mac: m.id });
@@ -348,8 +404,7 @@ export function planDosyalari({ root, teams, models = [], d = null, today, eurTr
   }
   for (const model of d ? models : []) {
     const p = join(root, `data/plan/${model.slug}.json`);
-    if (!existsSync(p)) continue;
-    const V = sehirPlan(d, model, readJson(p, {}), { eurTry, today, SITE, slugify, usableHotel, toEur });
+    const V = sehirPlan(d, model, readJson(p, {}), { eurTry, today, SITE, slugify, usableHotel, usableFlight, toEur });
     if (!V.haftalar.length) continue;
     dosyalar[`${V.yol.slice(1)}index.html`] = renderPlanPage(V, { esc, jsonLd, SITE, surum });
     liste.push({ yol: V.yol, slug: V.slug, sehir: model.sehir });

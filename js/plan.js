@@ -184,7 +184,7 @@
   }
   function openSheet(s, ad, paket) {
     var hz = $("pdf-hazir");
-    if (V.pdf && paket) { hz.href = V.pdf.replace("{paket}", paket).replace("{hafta}", V.haftalar.length > 1 ? "-" + H().id : ""); hz.hidden = false; } else hz.hidden = true;
+    if (V.pdf && paket && hi < 2) { hz.href = V.pdf.replace("{paket}", paket).replace("{hafta}", V.haftalar.length > 1 ? "-" + H().id : ""); hz.hidden = false; } else hz.hidden = true;
     var r = baskiDoldur(s, ad), L = r.L, T = r.T;
     $("sh-ad").textContent = (V.ust + " · " + ad).toLocaleUpperCase("tr");
     $("sh-total").textContent = tl(T);

@@ -64,6 +64,18 @@ export function inWindow(iso, win) {
 const winText = (w) => { const m = /^(\d{1,2})-(\d{1,2})$/.exec(String(w || "")); return m ? `${m[1].padStart(2, "0")}:00–${m[2].padStart(2, "0")}:00` : null; };
 export const saatAraligi = (cfg) => (cfg.gidis_saat || cfg.donus_saat ? { gidis: winText(cfg.gidis_saat), donus: winText(cfg.donus_saat) } : null);
 
+// Plan sayfasındaki "kendin oluştur" için: fiyat sırasıyla, havayolu + kalkış + aktarma durumu farklı ilk 4 uçuş (bağlantısız, dosya büyümesin)
+export function secenekSec(list, n = 4) {
+  const gor = new Set(), out = [];
+  for (const u of list) {
+    const k = `${u.havayolu}|${u.kalkis}|${u.aktarma ? 1 : 0}`;
+    if (gor.has(k)) continue;
+    gor.add(k); out.push({ fiyat: u.fiyat, havayolu: u.havayolu, aktarma: u.aktarma, kalkis: u.kalkis, varis: u.varis, ucusSaati: u.ucusSaati });
+    if (out.length >= n) break;
+  }
+  return out;
+}
+
 // Robotun satırlarından en ucuz ve en ucuz aktarmasız uçuşu seçer (saatli aramada gidiş saati aralık dışındaysa elenir)
 export function toFlightRecord(rows, cfg, city, { saatli = false } = {}) {
   const ok = (rows || []).filter((r) => r && (r.rowType || r.type || "flight") === "flight" && num(r.price) && r.price > 0
@@ -78,6 +90,7 @@ export function toFlightRecord(rows, cfg, city, { saatli = false } = {}) {
   return {
     durum: "fiyat", ...pick(sorted[0]),
     aktarmasiz: direct ? pick(direct) : null,
+    secenekler: secenekSec(sorted.map(pick)),
     tipikFiyat: ins && num(ins.typicalPrice) ? ins.typicalPrice : null, fiyatSeviyesi: ins ? ins.priceLevel || null : null,
   };
 }
@@ -116,7 +129,7 @@ export function eivRecord(rows, cfg, city) {
   if (!aktarmasiz && num(sum.cheapestNonstopPrice)) aktarmasiz = { fiyat: r2(sum.cheapestNonstopPrice), havayolu: null, aktarma: 0, aktarmaYazi: "Aktarmasız", kalkis: null, varis: null, ucusSaati: null, sureDk: null, link: trLink(sum.googleFlightsUrl || fl[0].googleFlightsUrl || null) };
   const lvl = sum.priceLevel || fl[0].priceLevel || null;
   return {
-    durum: "fiyat", ...pickEiv(fl[0]), aktarmasiz,
+    durum: "fiyat", ...pickEiv(fl[0]), aktarmasiz, secenekler: secenekSec(fl.map(pickEiv)),
     tipikFiyat: num(sum.typicalPrice) ? sum.typicalPrice : null,
     tipikAralik: num(sum.typicalPriceLow ?? fl[0].typicalPriceLow) && num(sum.typicalPriceHigh ?? fl[0].typicalPriceHigh) ? [sum.typicalPriceLow ?? fl[0].typicalPriceLow, sum.typicalPriceHigh ?? fl[0].typicalPriceHigh] : null,
     fiyatSeviyesi: lvl ? LEVEL[lvl] || lvl : null, bulunanUcus: num(sum.flightsFound) ? sum.flightsFound : null,

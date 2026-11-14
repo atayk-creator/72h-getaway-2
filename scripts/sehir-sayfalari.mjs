@@ -610,7 +610,7 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   const teams = data ? data.takimlar || [] : (readJson(join(root, "data/takimlar.json"), { takimlar: ["fenerbahce"] }).takimlar || []).map((s) => readJson(join(root, `data/${s}.json`), null)).filter((t) => t && (t.maclar || []).some((m) => m.butce && m.butce.konforlu && m.butce.konforlu.ucus));
   const eurTry = (d.kur && d.kur.eurTry) || 0;
   // Yeni kalıp: plan dosyası (data/plan/<takim>-<mac>.json) olan maçların kendi sayfası
-  const plan = planDosyalari({ root: root || ".", teams, models, d: data ? null : d, today, eurTry, esc, jsonLd, SITE, slugify, usableHotel, toEur });
+  const plan = planDosyalari({ root: root || ".", teams, models, d: data ? null : d, today, eurTry, esc, jsonLd, SITE, slugify, usableHotel, usableFlight, toEur });
   Object.assign(out, plan.dosyalar);
   for (const t of teams) for (const m of t.maclar || []) { const pl = plan.liste.find((x) => x.takim === t.slug && x.mac === m.id); if (pl) m.plan_yol = pl.yol; }
   for (const t of teams) {

@@ -1,5 +1,6 @@
 // Plan sayfalarının hazır paket PDF'lerini üretir (Uygun, Konforlu, Lüks): sayfanın baskı görünümünü (?pdf=<paket>)
 // gerçek tarayıcıda açıp A4 PDF'e çevirir. Çıktı: pdf-cikti/<slug>-<paket>.pdf (iş akışı bunları "rehberler" sürümüne yükler).
+// Şehir sayfalarında yalnızca en yakın 2 hafta sonu için üretilir (diğerlerinde sayfadaki "PDF olarak kaydet" kullanılır).
 // Kullanım: node scripts/plan-pdf.mjs   (playwright NODE_PATH'ten gelir, site-kontrol.mjs ile aynı)
 import { createServer } from "node:http";
 import { readFile, stat, mkdir } from "node:fs/promises";
@@ -29,7 +30,7 @@ const b = await chromium.launch();
 let n = 0; const hata = [];
 for (const y of yollar) {
   const V = JSON.parse(/<script type="application\/json" id="plan-veri">([\s\S]*?)<\/script>/.exec(readFileSync(join(root, y, "index.html"), "utf8"))[1]);
-  for (const h of V.haftalar) for (const paket of ["uygun", "konforlu", "luks"]) {
+  for (const h of V.haftalar.slice(0, 2)) for (const paket of ["uygun", "konforlu", "luks"]) {
     const ctx = await b.newContext({ viewport: { width: 794, height: 1123 }, serviceWorkers: "block" });
     const p = await ctx.newPage();
     await p.route((u) => !u.href.startsWith(BASE), (r) => r.abort());

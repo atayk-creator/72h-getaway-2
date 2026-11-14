@@ -8,7 +8,7 @@
     "linkAd": "gov.uk"
   },
   "otel_not": {
-    "Native Fulham Broadway": "mutfaklı daire-otel · stada 5 dk yürüme · metro yanında",
+    "Native Fulham Broadway": "stada 5 dk yürüme · bu tarihlerde Booking'de müsait görünmüyor",
     "The Z Hotel Piccadilly": "merkez, küçük odalar",
     "Strand Palace": "Covent Garden yanı",
     "The Hoxton, Holborn": "tasarım otel",
@@ -129,7 +129,6 @@
   ],
   "paketler": {
     "uygun": {
-      "otel": "Native Fulham Broadway",
       "transfer": "nx",
       "gezi": [
         "ng",

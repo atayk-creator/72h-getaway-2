@@ -29,3 +29,21 @@
 - Şehir sayfalarında 72 saat planı yalnızca elle yazılanlarda var (Amsterdam yazıldı).
 
 **Bilinen durum:** Native Fulham Broadway (Londra) için robot fiyat bulamadı; Booking'de 25–27 Kasım için "müsait değil" görünüyor. Sayfada seçenek olarak duruyor ("fiyat sitede"); Uygun paket fiyatı olan en uygun oteli (The Z Hotel Piccadilly) kullanıyor.
+
+## Teslim 2 — 14 Kasım 2026 akşam (28 Kasım kapsamı, erken)
+
+**Yayında:** bütün şehir sayfaları (`/sehir/<şehir>/`, 28 şehir; 28 Kasım'da açılacak 10 şehir de açıldığı gün bu kalıpla gelir), bütün deplasmanlar (`/deplasman/fenerbahce-linz/`, `fenerbahce-madrid`, `galatasaray-atina`, `besiktas-leverkusen`, `besiktas-lefkosa`) ve Noel şehirleri.
+
+**Yapılanlar:**
+- Sayfa üretimi artık plan dosyası şartı aramıyor: her şehir ve her maç kalıptan üretilir; `data/plan/<sayfa>.json` yalnızca elle eklemek istenen bilgiler içindir.
+- Şehirlerde gezi ve ulaşım `data/gezi.json`'dan, örnek 72 saat akışı gezilecek yerler ve restoranlardan üretilir; vize notu ülkeye göre yazılır.
+- Şehirlerde uçuş seçenekleri: en uygun + en uygun aktarmasız. Uçak robotu bundan sonra hafta sonu başına 4 farklı uçuşu saklıyor (ek maliyet yok); ilk çalışmasından sonra seçenek sayısı artar.
+- Viyana + Linz gibi gece gece farklı şehirli maçlarda iki otelin toplamı tek seçenek.
+- Havayolu linkleri denendi: **Pegasus** tarihli arama sayfası çalışıyor, Pegasus uçuşlarında "Pegasus sitesi" linki var. **AJet** adresi tarihi almıyor (ana sayfaya düşüyor), **THY** adresi hata sayfası veriyor; bu ikisinde yalnızca Google Flights var.
+- Londra: Native Fulham Broadway 25–27 Kasım için müsait görünmediğinden öneri Strand Palace / The Z Hotel Piccadilly'ye çekildi, 72 saat planı merkezdeki otele göre yazıldı; Native listede "fiyat sitede" olarak duruyor.
+- Hazır PDF'ler: maç ve Noel sayfalarında 3 paket; şehir sayfalarında en yakın 2 hafta sonu × 3 paket.
+
+**Açık kalan:**
+- Kişisel PDF'in tek dokunuşla indirilmesi: PDF kütüphanesi IT ortamından indirilemedi (ağ kısıtı). Şu an "PDF olarak kaydet" yazdırma penceresiyle çalışıyor.
+- Paris ve Noel sayfalarında ücretli gezi yerlerinin fiyatı "sitede" (toplama eklenmiyor).
+- Budapeşte'de gezi listesi boş (`data/gezi.json`'da yer yok), bu yüzden 72 saat planı da yok.
