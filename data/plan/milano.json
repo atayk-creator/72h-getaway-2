@@ -1,0 +1,52 @@
+{
+ "aciklama": "Milano şehir sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş ve otel fiyatları robotlardan (28 Kasım 2026'dan itibaren), gezi ve ulaşım data/gezi.json'dan gelir.",
+ "iata": "MXP",
+ "sehir_en": "Milan",
+ "bilgiler": [
+  [
+   "Ülke",
+   "İTALYA"
+  ],
+  [
+   "Kaçamak",
+   "CUMA – PAZAR · 2 GECE"
+  ],
+  [
+   "Havalimanı",
+   "MXP · BGY · LIN"
+  ],
+  [
+   "Bergamo'dan",
+   "OTOBÜSLE ~1 SAAT"
+  ]
+ ],
+ "transfer": [
+  {
+   "id": "mx",
+   "ap": "MXP",
+   "ad": "Malpensa Express treni",
+   "dt": "Malpensa ↔ Centrale / Cadorna · 37–52 dk",
+   "pp": 30,
+   "k": "est",
+   "url": "https://thebettervacation.com/milan/milan-airport-to-city-centre/"
+  },
+  {
+   "id": "bg",
+   "ap": "BGY",
+   "ad": "Bergamo ↔ Milano otobüsü",
+   "dt": "Orio al Serio ↔ Milano Centrale · yaklaşık 1 saat",
+   "pp": 20,
+   "k": "est",
+   "url": "https://thebettervacation.com/milan/milan-airport-to-city-centre/"
+  },
+  {
+   "id": "ln",
+   "ap": "LIN",
+   "ad": "Linate ↔ merkez metrosu",
+   "dt": "M4 hattı · San Babila'ya ~12 dk",
+   "pp": 5,
+   "k": "est",
+   "url": "https://thebettervacation.com/milan/milan-airport-to-city-centre/"
+  }
+ ]
+}

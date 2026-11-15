@@ -23,7 +23,7 @@ const IKON = {
 };
 const ETIKET_KOD = { ucuz: "u", normal: "n", pahali: "p" };
 // İstanbul'dan aktarmasız uçuş süresi (dakika, yaklaşık tarife süresi): "Biraz uzak, değer" rafı için (3 saatten uzun)
-const UCUS_DK = { Dublin: 270, Paris: 225, "Brüksel": 210, Amsterdam: 215, "Lüksemburg": 195, Berlin: 170, Viyana: 140, Lizbon: 290, Roma: 155, Valletta: 150, Madrid: 255, Atina: 85, Stokholm: 205, Kopenhag: 195, Helsinki: 205, Tallinn: 195, Vilnius: 165, "Varşova": 145, Prag: 155, Bratislava: 135, "Budapeşte": 120, Zagreb: 125, Sofya: 80, "Bükreş": 75, Ljubljana: 135, Riga: 180, Belgrad: 100, Saraybosna: 105, Londra: 240, Milano: 175 };
+const UCUS_DK = { Londra: 245, Milano: 175, Barselona: 220, "Münih": 165, Dublin: 270, Paris: 225, "Brüksel": 210, Amsterdam: 215, "Lüksemburg": 195, Berlin: 170, Viyana: 140, Lizbon: 290, Roma: 155, Valletta: 150, Madrid: 255, Atina: 85, Stokholm: 205, Kopenhag: 195, Helsinki: 205, Tallinn: 195, Vilnius: 165, "Varşova": 145, Prag: 155, Bratislava: 135, "Budapeşte": 120, Zagreb: 125, Sofya: 80, "Bükreş": 75, Ljubljana: 135, Riga: 180, Belgrad: 100, Saraybosna: 105, Londra: 240, Milano: 175 };
 const ucusDk = (sehir) => UCUS_DK[sehir] || 0;
 /** Var olan (eski kalıp) sayfalara alt sekme çubuğu eklemek için: stil + çubuk, </body> öncesine konur. */
 export function sekmeEki(aktif) {
@@ -43,13 +43,14 @@ export function vitrinVerisi(models, d, today, eurTry) {
   const cikis = (g) => { for (const m of models) { const h = m.zaman.haftalar.find((x) => x.g === g); if (h) return h.cikis; } return g; };
   const haftalar = gunler.map((g, i) => ({ g, kisa: aralik(g, cikis(g)), ad: haftaAd(i) }));
   const iata = (sehir) => { for (const g of gunler) { const v = (((((d.ucuslar || {}).haftaSonlari || {})[g] || {}).sehirler || {})[sehir] || {}).son; if (v && v.varis) return v.varis; } return sehir.slice(0, 3).toLocaleUpperCase("tr"); };
+  const yakinda = (sehir) => { const c = ((d.hotels || {}).sehirler || []).find((x) => x.sehir === sehir); return !!(c && c.baslangic && c.baslangic > today); }; // fiyat robotu henüz başlamamış şehir
   const sehirler = models.map((m) => {
     const f = (m.fotolar || [])[0] || {};
     const hs = gunler.map((g) => m.zaman.haftalar.find((h) => h.g === g));
     return { ad: m.sehir, slug: m.slug, ulke: m.ulke, iata: iata(m.sehir), foto: f.kucuk || f.dosya || "", alt: f.alt || m.sehir,
       // e: hafta sonu etiketi tek harf (u = uygun hafta, n = normal fiyat, p = normalden pahalı), f: olağan fiyata göre % fark
       t: hs.map((h) => (h && h.toplam != null ? Math.round(h.toplam * eurTry) : null)), e: hs.map((h) => (h ? ETIKET_KOD[h.etiket] || "" : "")), f: hs.map((h) => (h && h.fark != null ? h.fark : null)),
-      v: (vizeNotu(m.ulke) || {}).haric === "" ? 1 : 0, dk: ucusDk(m.sehir) };
+      v: (vizeNotu(m.ulke) || {}).haric === "" ? 1 : 0, dk: ucusDk(m.sehir), ...(yakinda(m.sehir) ? { yk: 1 } : {}) };
   });
   return { haftalar, sehirler };
 }

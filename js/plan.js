@@ -43,6 +43,10 @@
   function otelSec(ad) {
     var P = V.paket[ad], h = H(), kat = P.kat || ad, sabit = find(h.otel, P.otel);
     if (sabit && sabit.tot != null) return sabit;
+    if (!h.otel.some(function (x) { return x.tot != null; })) { // hiç fiyat yok ("fiyat yakında"): kategoriye göre seç
+      var k = null; h.otel.forEach(function (x) { if (!k && x.kat === kat) k = x; });
+      return sabit || k || h.otel[0] || null;
+    }
     var taban = ad === "konforlu" ? otelSec("uygun") : ad === "luks" ? otelSec("konforlu") : null, min = taban && taban.tot != null ? taban.tot : 0;
     var o = enUygun(h.otel, function (x) { return x.kat === kat && x.tot >= min; }, "tot");
     if (ad === "uygun") { var en = enUygun(h.otel, null, "tot"); if (!o || (en && en.tot < o.tot)) o = en; }
@@ -94,8 +98,8 @@
     }).join("");
     var secili = w.querySelector('[aria-pressed="true"]');
     if (secili) w.scrollLeft = Math.max(0, secili.offsetLeft - w.offsetLeft - 14);
-    var h = H(), f = h.f, yorum = h.vt == null ? "Bu hafta sonu için uçak + otel fiyatı henüz ölçülmedi; aşağıdaki linklerden bakabilirsin." : f == null || Math.abs(f) < 1 ? "Bu şehrin olağan hafta sonu fiyatında" : f < 0 ? "Bu şehrin olağan fiyatından %" + Math.abs(f) + " uygun" : "Bu şehrin olağan fiyatından %" + f + " pahalı";
-    $("tk-secili").innerHTML = '<div class="stub"><span>SEÇİLİ</span></div><div class="govde"><span class="mono">' + esc(aralik(h).toLocaleUpperCase("tr")) + " · " + K + ' KİŞİ · UÇAK + OTEL</span><b>' + (h.vt == null ? "kontrol ediliyor" : tl(h.vt)) + '</b><span class="yorum ' + (h.vt == null ? "" : f < 0 ? "iyi" : f > 10 ? "pah" : "") + '">' + yorum + "</span></div>";
+    var h = H(), f = h.f, yorum = h.vt == null && V.yakinda ? "Uçak ve otel fiyatları " + V.yakinda + "'dan itibaren burada olacak. Yemek, ulaşım ve gezi tahminleri hazır; uçuş ve otele aşağıdaki linklerden bakabilirsin." : h.vt == null ? "Bu hafta sonu için uçak + otel fiyatı henüz ölçülmedi; aşağıdaki linklerden bakabilirsin." : f == null || Math.abs(f) < 1 ? "Bu şehrin olağan hafta sonu fiyatında" : f < 0 ? "Bu şehrin olağan fiyatından %" + Math.abs(f) + " uygun" : "Bu şehrin olağan fiyatından %" + f + " pahalı";
+    $("tk-secili").innerHTML = '<div class="stub"><span>SEÇİLİ</span></div><div class="govde"><span class="mono">' + esc(aralik(h).toLocaleUpperCase("tr")) + " · " + K + ' KİŞİ · UÇAK + OTEL</span><b>' + (h.vt == null ? (V.yakinda ? "Fiyat yakında" : "kontrol ediliyor") : tl(h.vt)) + '</b><span class="yorum ' + (h.vt == null ? "" : f < 0 ? "iyi" : f > 10 ? "pah" : "") + '">' + yorum + "</span></div>";
   }
   function renderPaket() {
     PAKETLER.forEach(function (p) {
@@ -104,8 +108,9 @@
     });
     var s = coz(cur), L = lines(s), T = sum(L);
     $("pk-route").textContent = rota(s);
-    $("pk-total").textContent = tl(T);
-    $("pk-pp").textContent = V.paket[cur].ad + " paket · " + ppYazi(L, T);
+    var yk = V.yakinda && H().vt == null;
+    $("pk-total").textContent = yk ? "Fiyat yakında" : tl(T);
+    $("pk-pp").textContent = yk ? "Uçak ve otel fiyatı " + V.yakinda + "'da · yemek, ulaşım ve gezi " + tl(T) : V.paket[cur].ad + " paket · " + ppYazi(L, T);
     $("pk-split").innerHTML = L.map(function (l) { return '<span style="flex:' + Math.max(1, Math.round(l.tl)) + ";background:" + COL[l.g] + '"></span>'; }).join("");
     $("pk-legend").innerHTML = L.filter(function (l) { return l.tl > 0; }).map(function (l) { return '<span><i style="background:' + COL[l.g] + '"></i>' + LBL[l.g] + " %" + Math.round(l.tl / T * 100) + "</span>"; }).join("");
     $("pk-items").innerHTML = L.map(row).join("") + '<div class="tot"><div><div style="font-weight:700">TOPLAM · ' + K + " kişi, " + H().gece + " gece</div><span>" + ppYazi(L, T) + "</span></div><b>" + tl(T) + "</b></div>";

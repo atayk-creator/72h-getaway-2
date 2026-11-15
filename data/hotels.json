@@ -415,6 +415,7 @@
       "sehir": "Londra",
       "ulke": "Birleşik Krallık",
       "baslangic": "2026-11-28",
+      "erken_sayfa": true,
       "oteller": [
         {"id":"lon-savoy","ad":"The Savoy","arama":"The Savoy London","kategori":"ikonik","not":"1889'dan beri Strand'de, Thames kıyısında efsanevi otel; Covent Garden ve Trafalgar'a yürüme mesafesi"},
         {"id":"lon-langham","ad":"The Langham, London","arama":"The Langham London","kategori":"pahali","not":"Regent Street'in başında, Oxford Circus ve Marylebone'a birkaç dakika uzaklıkta köklü lüks otel"},
@@ -550,6 +551,7 @@
       "sehir": "Milano",
       "ulke": "İtalya",
       "baslangic": "2026-11-28",
+      "erken_sayfa": true,
       "oteller": [
         {"id":"mil-park-hyatt","ad":"Park Hyatt Milano","arama":"Park Hyatt Milan","kategori":"ikonik","not":"Galleria Vittorio Emanuele'nin hemen yanında, Duomo'ya 2 dakika; şehrin en bilinen lüks oteli"},
         {"id":"mil-grand-hotel-et-de-milan","ad":"Grand Hotel et de Milan","arama":"Grand Hotel et de Milan","kategori":"pahali","not":"Via Manzoni'de, Verdi'nin yaşadığı 1863'ten kalma tarihi otel; Scala'ya 3 dakika"},

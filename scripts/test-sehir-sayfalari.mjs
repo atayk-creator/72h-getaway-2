@@ -1,6 +1,7 @@
 // Şehir sayfaları üreticisinin testleri: node scripts/test-sehir-sayfalari.mjs
 import assert from "node:assert/strict";
-import { resolve, dirname } from "node:path";
+import { resolve, dirname, join } from "node:path";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import {
   slugify, esc, jsonLd, yonelme, mutfakTr, toEur, usableHotel, buildCity, renderCityPage, renderIndexPage, renderSitemap, generate, calcLink, fmtTl,
@@ -212,11 +213,13 @@ test("deplasman ana sayfası: takımlar en yakın maça göre, zorunlu notlar, l
   assert.ok(!/ucuz/i.test(gorunur), "görünür metinde 'ucuz' yok");
 });
 
-test("gerçek veriyle 28 şehir üretilir", () => {
+test("gerçek veriyle robotu çalışan + erken sayfalı şehirler üretilir", () => {
   const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
   const { models, files } = generate({ root, today: TODAY, write: false });
-  assert.equal(models.length, 28);
-  assert.equal(new Set(models.map((m) => m.slug)).size, 28);
+  const beklenen = JSON.parse(readFileSync(join(root, "data/hotels.json"), "utf8")).sehirler.filter((c) => !c.baslangic || c.baslangic <= TODAY || c.erken_sayfa).length;
+  assert.ok(beklenen >= 28);
+  assert.equal(models.length, beklenen);
+  assert.equal(new Set(models.map((m) => m.slug)).size, beklenen);
   for (const m of models) assert.match(m.slug, /^[a-z0-9-]+$/);
   for (const [k, v] of Object.entries(files)) if (k.endsWith(".html")) assert.ok(!v.includes("undefined") && !v.includes("NaN"), k);
 });

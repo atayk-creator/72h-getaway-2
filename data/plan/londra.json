@@ -1,0 +1,61 @@
+{
+ "aciklama": "Londra şehir sayfasının elle girilen bilgileri (scripts/plan-sayfalari.mjs). Uçuş ve otel fiyatları robotlardan (28 Kasım 2026'dan itibaren), gezi ve ulaşım data/gezi.json'dan gelir.",
+ "iata": "LHR",
+ "sehir_en": "London",
+ "bilgiler": [
+  [
+   "Ülke",
+   "BİRLEŞİK KRALLIK"
+  ],
+  [
+   "Kaçamak",
+   "CUMA – PAZAR · 2 GECE"
+  ],
+  [
+   "Havalimanı",
+   "LHR · LGW · STN"
+  ],
+  [
+   "Para",
+   "STERLİN (£)"
+  ]
+ ],
+ "transfer": [
+  {
+   "id": "el",
+   "ap": "LHR",
+   "ad": "Heathrow ↔ merkez treni",
+   "dt": "Elizabeth line ya da Heathrow Express",
+   "pp": 40,
+   "k": "est",
+   "url": "https://tfl.gov.uk/modes/elizabeth-line/"
+  },
+  {
+   "id": "gx",
+   "ap": "LGW",
+   "ad": "Gatwick ↔ merkez treni",
+   "dt": "Thameslink ya da Southern · London Bridge / Victoria'ya ~35 dk",
+   "pp": 35,
+   "k": "est",
+   "url": "https://www.thameslinkrailway.com/destinations/gatwick-airport"
+  },
+  {
+   "id": "nx",
+   "ap": "STN",
+   "ad": "National Express otobüsü",
+   "dt": "Stansted ↔ merkez · 1–1,5 saat",
+   "pp": 25,
+   "k": "est",
+   "url": "https://www.nationalexpress.com/en/airports/stansted"
+  },
+  {
+   "id": "sx",
+   "ap": "STN",
+   "ad": "Stansted Express treni",
+   "dt": "Liverpool Street'e 47 dk · 2 kişilik Duo bilet",
+   "pp": 40,
+   "k": "off",
+   "url": "https://www.stanstedexpress.com"
+  }
+ ]
+}

@@ -31,7 +31,7 @@
       var S = SUZGEC[r[0]], L = sirali(S.f);
       if (!L.length) return "";
       return '<section><div class="raf-bas"><span><h2>' + r[1] + '</h2><span class="alt">' + S.alt + '</span></span><button type="button" data-suz="' + r[0] + '" aria-label="' + r[1] + ': tümünü listele">Tümü</button></div><div class="raf">' +
-        L.map(function (s) { return '<a class="rk c" href="' + yol(s) + '"><img src="' + esc(s.foto) + '" alt="" loading="lazy" width="640" height="427"><div><b>' + esc(s.ad) + "</b>" + (s.t[hi] != null ? "<b>" + tl(s.t[hi]) + "</b>" : '<b class="yok">kontrol ediliyor</b>') + "</div></a>"; }).join("") + "</div></section>";
+        L.map(function (s) { return '<a class="rk c" href="' + yol(s) + '"><img src="' + esc(s.foto) + '" alt="" loading="lazy" width="640" height="427"><div><b>' + esc(s.ad) + "</b>" + (s.t[hi] != null ? "<b>" + tl(s.t[hi]) + "</b>" : '<b class="yok">' + (s.yk ? "fiyat yakında" : "kontrol ediliyor") + "</b>") + "</div></a>"; }).join("") + "</div></section>";
     }).join("");
   }
   function cizListe() {
@@ -42,7 +42,10 @@
     var h = var_.map(function (s, i) {
       return '<a class="sat" href="' + yol(s) + '"><span class="sat-no' + (i === 0 ? " ilk" : "") + '"><span>' + (i < 9 ? "0" : "") + (i + 1) + '</span></span><img src="' + esc(s.foto) + '" alt="" loading="lazy" width="64" height="72"><span class="sat-yazi"><span><b class="ad">' + esc(s.ad) + '</b><b class="fy">' + tl(s.t[hi]) + '</b></span><span><span class="ulke">' + esc(s.ulke) + " · uçak + otel</span>" + durum(s) + "</span></span></a>";
     }).join("");
-    if (yok.length) h += '<div class="bekleyen"><i></i><span>' + yok.map(function (s) { return '<a href="' + yol(s) + '">' + esc(s.ad) + "</a>"; }).join(", ") + ": robot bu hafta sonunu kontrol ediyor</span></div>";
+    var yk = yok.filter(function (s) { return s.yk; }); yok = yok.filter(function (s) { return !s.yk; });
+    var adlar = function (A) { return A.map(function (s) { return '<a href="' + yol(s) + '">' + esc(s.ad) + "</a>"; }).join(", "); };
+    if (yk.length) h += '<div class="bekleyen"><i></i><span>Yeni: ' + adlar(yk) + " · sayfası hazır, fiyatı yakında</span></div>";
+    if (yok.length) h += '<div class="bekleyen"><i></i><span>' + adlar(yok) + ": robot bu hafta sonunu kontrol ediyor</span></div>";
     if (!L.length) h = '<p class="bos">' + (q ? '"' + esc(ara.trim()) + '" için şehir bulunamadı.' : "Bu hafta sonu bu süzgece uyan şehir yok. Başka bir hafta sonu ya da süzgeç seç.") + "</p>";
     $("satirlar").innerHTML = h;
   }

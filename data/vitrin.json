@@ -3458,6 +3458,235 @@
      "dogrulaniyor": true
     }
    ]
+  },
+  "Londra": {
+   "slug": "londra",
+   "ulke": "Birleşik Krallık",
+   "fotolar": [],
+   "normal": null,
+   "enUcuz": null,
+   "haftalar": [
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-02-05",
+     "cikis": "2027-02-07",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    }
+   ]
+  },
+  "Milano": {
+   "slug": "milano",
+   "ulke": "İtalya",
+   "fotolar": [
+    {
+     "dosya": "/img/sehir/milano-1.jpg",
+     "kucuk": "/img/sehir/milano-1-640.jpg",
+     "alt": "Milano, gece Duomo ve Galleria Vittorio Emanuele II",
+     "kaynak": "Unsplash · Tom Podmore"
+    },
+    {
+     "dosya": "/img/sehir/milano-2.jpg",
+     "kucuk": "/img/sehir/milano-2-640.jpg",
+     "alt": "Milano, akşam Navigli kanalı",
+     "kaynak": "Unsplash · Daniel Kirby"
+    },
+    {
+     "dosya": "/img/sehir/milano-3.jpg",
+     "kucuk": "/img/sehir/milano-3-640.jpg",
+     "alt": "Milano, Galleria Vittorio Emanuele II girişi",
+     "kaynak": "Unsplash · Maxim Klimashin"
+    }
+   ],
+   "normal": null,
+   "enUcuz": null,
+   "haftalar": [
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-02-05",
+     "cikis": "2027-02-07",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    }
+   ]
   }
  }
 }
