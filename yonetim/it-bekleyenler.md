@@ -34,3 +34,10 @@ Otomatik senkron kuruldu (`.github/workflows/medya-senkron.yml`): yeni dosyalar 
 - Geçmişi yeniden yazmak önerilmez: paralel çalışan sohbetler ve robotların açık işleri bozulur.
 
 **Kontrol:** Taşımadan sonra bir site güncellemesinin yayın süresini öncekiyle karşılaştır. "pages build and deployment" iş akışının süresine bak.
+
+## (16 Kasım, sosyal medya ofisi · Atay onaylı) Yeni şehir sayfaları + Noel sayfasına 10 şehir
+Ayrıntı: `yonetim/is-emri-yeni-sehirler-ve-noel.md`.
+- Barselona ve Londra şehir sayfası: Cmt 21 Kas. Milano ve Münih: Çar 25 Kas.
+- `data/noel.json`'a Köln, Prag, Zagreb, Berlin (Cmt 22 Kas 18:00), sonra Viyana, Budapeşte, Tallinn, Kopenhag, Dublin, Riga.
+- Strazburg Noel pazarı kapanış tarihini resmî kaynaktan teyit et (şu an 27 Aralık yazıyor; ofisin bilgisi 24 Aralık).
+- Apify bütçesi: 70,33 / 75 $ (dönem 27 Kas). Aşılacaksa önce Atay'a sor.
