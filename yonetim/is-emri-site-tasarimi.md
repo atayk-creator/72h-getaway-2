@@ -108,3 +108,30 @@ Her faz bitince bu dosyanın altına: yapılanlar, canlı linkler, açık kalanl
 - Eski şehir listesi (/sehir/) duruyor; arama motorları için şehir linklerini taşıyor. İstenirse /sehirler/'e yönlendirilir.
 
 **Ekran görüntüleri:** `yonetim/ekran/faz-a-ana-sayfa.jpg`, `faz-a-sehirler-raflar.jpg`, `faz-a-sehirler-liste.jpg`
+
+---
+
+## Teslim notu · Faz B tamamlandı (15 Kas 2026, hedef 21 Kas)
+
+**Canlı örnekler:** https://72hgetaway.com/sehir/amsterdam/ · https://72hgetaway.com/deplasman/fenerbahce-londra/ · https://72hgetaway.com/noel/nurnberg/
+
+**Yapılanlar** (kalıp aynı: `css/plan.css`, `js/plan.js`, `scripts/plan-sayfalari.mjs`)
+1. Üstte tam genişlik şehir fotoğrafı (210 px), sol üstte geri düğmesi (şehirde /sehirler/, maçta /deplasman/, Noel'de /sehir/noel/).
+2. Fotoğrafın üstüne binen biniş kartı: "IST/SAW → {IATA} · {tarih} · 2 KİŞİ", şehir adı, seçili paketin toplamı, "{paket} paket · kişi başı …".
+3. Paket sekmeleri tek kutuda yan yana; seçili lacivert. Adın altında küçük harflerle paket toplamı da yazıyor (tuvalde yoktu; karşılaştırma için bırakıldı).
+4. Fiyat takvimi: 12 hafta sonu, ay ay, 4 sütun. Uygun hafta yeşil (#2E7D5B, beyaz yazı), normal beyaz, pahalı turuncu, fiyatı olmayan kesik çizgili "kontrol"; seçili kutu kalın lacivert çerçeve. Altında seçili hafta sonu kartı: tarih, uçak + otel toplamı, "Bu şehrin olağan fiyatından %X uygun/pahalı".
+5. Kalem satırları tek satır (ad + kısa açıklama + fiyat + düğme); yazıya dokununca uzun açıklama, kaynak etiketi ve diğer linkler açılır.
+6. "Kendin oluştur" grupları açılır-kapanır; kapalıyken yalnız seçili satır ve fiyatı görünür.
+- Maç ve Noel sayfaları aynı üst kısmı kullanıyor; takvim yok, maç bilgisi kutuları ve vize uyarısı kartın altında.
+- Ana sayfa ve Şehirler'den gelen `?h=` hafta sonu takvimde seçili açılıyor.
+- Duman testi 58 sayfa, 320 px: sorun yok. 213 hazır PDF yeni kalıpla üretildi.
+
+**Tasarımdan farklar**
+- Takvim altındaki cümle şehir adını çekimlemiyor ("Amsterdam'ın" yerine "Bu şehrin"); ek hatası riskine karşı.
+- Uçuş/otel/yemek payını gösteren renkli dağılım çubuğu korundu.
+- Sayfa başındaki tanıtım paragrafı en alta, yasal notun üstüne indi.
+- Eski üst menü (Şehirler/Deplasman/Noel/Instagram) kalktı; yerinde geri düğmesi ve sayfa altındaki bağlantılar var.
+
+**Açık kalanlar:** Lighthouse ölçümü; Planım (Faz C, 25 Kas).
+
+**Ekran görüntüsü:** `yonetim/ekran/faz-b-sehir-sayfasi.jpg`
