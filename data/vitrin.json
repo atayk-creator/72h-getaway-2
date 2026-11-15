@@ -3687,6 +3687,216 @@
      "otelDolu": false
     }
    ]
+  },
+  "Barselona": {
+   "slug": "barselona",
+   "ulke": "İspanya",
+   "fotolar": [],
+   "normal": null,
+   "enUcuz": null,
+   "haftalar": [
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-02-05",
+     "cikis": "2027-02-07",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    }
+   ]
+  },
+  "Münih": {
+   "slug": "munih",
+   "ulke": "Almanya",
+   "fotolar": [],
+   "normal": null,
+   "enUcuz": null,
+   "haftalar": [
+    {
+     "g": "2026-11-20",
+     "cikis": "2026-11-22",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-11-27",
+     "cikis": "2026-11-29",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-11",
+     "cikis": "2026-12-13",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-18",
+     "cikis": "2026-12-20",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-25",
+     "cikis": "2026-12-27",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-01",
+     "cikis": "2027-01-03",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-08",
+     "cikis": "2027-01-10",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-15",
+     "cikis": "2027-01-17",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-22",
+     "cikis": "2027-01-24",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-01-29",
+     "cikis": "2027-01-31",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    },
+    {
+     "g": "2027-02-05",
+     "cikis": "2027-02-07",
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false
+    }
+   ]
   }
  }
 }

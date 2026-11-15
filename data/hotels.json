@@ -562,6 +562,38 @@
         {"id":"mil-ibis-centro","ad":"ibis Milano Centro","arama":"ibis Milano Centro","kategori":"ucuz","not":"Centrale ve Repubblica arasında; Malpensa Express ve Bergamo otobüsüne yakın"},
         {"id":"mil-hotel-berna","ad":"Hotel Berna","arama":"Hotel Berna Milan","kategori":"ucuz","not":"Milano Centrale istasyonuna 2 dakika; havalimanı aktarması için pratik"}
       ]
+    },
+    {
+      "sehir": "Barselona",
+      "ulke": "İspanya",
+      "baslangic": "2026-11-28",
+      "erken_sayfa": true,
+      "oteller": [
+        {"id":"bcn-hotel-arts","ad":"Hotel Arts Barcelona","arama":"Hotel Arts Barcelona","kategori":"ikonik","not":"Port Olímpic'te sahilin hemen üstünde kule otel; şehrin en bilinen lüks adresi"},
+        {"id":"bcn-majestic","ad":"Majestic Hotel & Spa Barcelona","arama":"Majestic Hotel & Spa Barcelona","kategori":"pahali","not":"Passeig de Gràcia üzerinde klasik 5 yıldızlı; Casa Batlló'ya 2 dakika"},
+        {"id":"bcn-mandarin-oriental","ad":"Mandarin Oriental, Barcelona","arama":"Mandarin Oriental Barcelona","kategori":"pahali","not":"Passeig de Gràcia'da tasarım oteli; Gaudí evlerine yürüme mesafesi"},
+        {"id":"bcn-h10-madison","ad":"H10 Madison","arama":"H10 Madison Barcelona","kategori":"konforlu","not":"Gotik Mahalle'de, Katedral'in yanında; çatı terası ve havuzu var"},
+        {"id":"bcn-hotel-jazz","ad":"Hotel Jazz","arama":"Hotel Jazz Barcelona","kategori":"konforlu","not":"Plaça Catalunya ve Aerobús durağına 3 dakika; çatı havuzu"},
+        {"id":"bcn-catalonia-placa-catalunya","ad":"Catalonia Plaça Catalunya","arama":"Catalonia Plaza Catalunya Barcelona","kategori":"konforlu","not":"Plaça Catalunya'nın köşesinde; Rambla ve Gotik Mahalle yürünür"},
+        {"id":"bcn-lloret-ramblas","ad":"Hotel Lloret Ramblas","arama":"Hotel Lloret Ramblas Barcelona","kategori":"ucuz","not":"La Rambla'nın başında sade otel; Plaça Catalunya'ya 2 dakika"},
+        {"id":"bcn-travelodge-poblenou","ad":"Travelodge Barcelona Poblenou","arama":"Travelodge Barcelona Poblenou","kategori":"ucuz","not":"Poblenou'da, metroya yakın; sahile yürüme mesafesi"}
+      ]
+    },
+    {
+      "sehir": "Münih",
+      "ulke": "Almanya",
+      "baslangic": "2026-11-28",
+      "erken_sayfa": true,
+      "oteller": [
+        {"id":"muc-bayerischer-hof","ad":"Hotel Bayerischer Hof","arama":"Hotel Bayerischer Hof Munich","kategori":"ikonik","not":"Promenadeplatz'ta 1841'den beri; Marienplatz'a 5 dakika, şehrin en bilinen oteli"},
+        {"id":"muc-mandarin-oriental","ad":"Mandarin Oriental, Munich","arama":"Mandarin Oriental Munich","kategori":"pahali","not":"Hofbräuhaus'un yanında; çatı terasından eski şehir manzarası"},
+        {"id":"muc-vier-jahreszeiten","ad":"Hotel Vier Jahreszeiten Kempinski","arama":"Hotel Vier Jahreszeiten Kempinski Munich","kategori":"pahali","not":"Maximilianstraße üzerinde klasik 5 yıldızlı; Opera ve Residenz'e yürüme mesafesi"},
+        {"id":"muc-platzl","ad":"Platzl Hotel","arama":"Platzl Hotel Munich","kategori":"konforlu","not":"Eski şehrin ortasında, Hofbräuhaus'a 1 dakika; Bavyera tarzı"},
+        {"id":"muc-torbrau","ad":"Hotel Torbräu","arama":"Hotel Torbräu Munich","kategori":"konforlu","not":"Isartor kapısının yanında, şehrin en eski oteli; Marienplatz'a 5 dakika"},
+        {"id":"muc-cortiina","ad":"Cortiina Hotel","arama":"Cortiina Hotel Munich","kategori":"konforlu","not":"Marienplatz ile Maximilianstraße arasında butik otel"},
+        {"id":"muc-motel-one-sendlinger-tor","ad":"Motel One München-Sendlinger Tor","arama":"Motel One München Sendlinger Tor","kategori":"ucuz","not":"Sendlinger Tor'da, metro ve tramvay kapıda; Marienplatz'a 10 dakika yürüyüş"},
+        {"id":"muc-ibis-city","ad":"ibis München City","arama":"ibis München City","kategori":"ucuz","not":"Ana tren garına 5 dakika; havalimanı S-Bahn'ı için pratik"}
+      ]
     }
   ]
 }

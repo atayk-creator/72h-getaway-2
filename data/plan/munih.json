@@ -1,0 +1,24 @@
+{
+ "aciklama": "Münih şehir sayfasının elle girilen bilgileri. Uçuş ve otel fiyatları robotlardan (28 Kasım 2026'dan itibaren), gezi ve ulaşım data/gezi.json'dan gelir. Noel pazarı sayfası ayrı: /noel/munih/.",
+ "iata": "MUC",
+ "sehir_en": "Munich",
+ "gezi_sayisi": 11,
+ "bilgiler": [
+  [
+   "Ülke",
+   "ALMANYA"
+  ],
+  [
+   "Kaçamak",
+   "CUMA – PAZAR · 2 GECE"
+  ],
+  [
+   "Havalimanı",
+   "MÜNİH (MUC)"
+  ],
+  [
+   "Merkeze",
+   "S-BAHN 40 DK"
+  ]
+ ]
+}

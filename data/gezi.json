@@ -9223,21 +9223,202 @@
    "mac_sehri": true,
    "ulasim": {
     "tek_bilet": {
-     "fiyat": 4.0,
-     "aciklama": "MVV tek bilet (M bölgesi), tahmini",
-     "kaynak": null
+     "fiyat": 4.2,
+     "aciklama": "MVV tek bilet, M bölgesi (şehir içi); 1 Ocak 2026 tarifesi",
+     "kaynak": "https://www.muenchen.de/verkehr/aktuell/mvv-tickets-aktuelle-preise-fuer-fahrkarten-muenchen"
     },
-    "gunluk": null,
+    "gunluk": {
+     "fiyat": 10.1,
+     "aciklama": "MVV tek kişilik günlük bilet, M bölgesi",
+     "kaynak": "https://www.muenchen.de/verkehr/aktuell/mvv-tickets-aktuelle-preise-fuer-fahrkarten-muenchen"
+    },
     "cok_gunluk": null,
     "havalimani": {
-     "fiyat": 14,
+     "fiyat": 16.3,
      "sure_dk": 40,
-     "aciklama": "Havalimanı → Marienplatz S1/S8 ~40 dk, MVV M–5 tek bilet, tahmini",
-     "kaynak": null
+     "aciklama": "Havalimanı ↔ merkez S-Bahn (S1 ya da S8), yaklaşık 40 dk. 2 kişi için M–5 bölgesi grup günlük bileti 32,60 € (5 kişiye kadar geçerli, o gün şehir içi de sınırsız); kişi başı 16,30 €.",
+     "kaynak": "https://www.muenchen.de/verkehr/aktuell/mvv-tickets-aktuelle-preise-fuer-fahrkarten-muenchen"
     },
-    "not": "Fiyatlar tahmini; Noel planında bütçe data/noel.json'dan gelir."
+    "not": "Eski şehir (Marienplatz, Viktualienmarkt, Residenz) yürünür. Nymphenburg, BMW Welt ve Olympiapark için U-Bahn ya da tramvay gerekir. Bileti binmeden önce damgalamayı unutma."
    },
    "yerler": [
+    {
+     "id": "marienplatz-sehir",
+     "ad": "Marienplatz ve Yeni Belediye Sarayı",
+     "arama": "Marienplatz München",
+     "tur": "Meydan",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Meydan ücretsiz",
+     "bilgi": "Şehrin kalbi. Belediye sarayının çan oyunu (Glockenspiel) her gün 11:00 ve 12:00'de; kule için ayrı bilet gerekir.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": [
+      48.1374,
+      11.5755
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Marienplatz%20M%C3%BCnchen"
+    },
+    {
+     "id": "viktualienmarkt",
+     "ad": "Viktualienmarkt",
+     "arama": "Viktualienmarkt München",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Eski şehrin açık hava pazarı ve kestane ağaçlarının altındaki bira bahçesi. Pazar günü tezgâhlar kapalı.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": [
+      48.1351,
+      11.5763
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Viktualienmarkt%20M%C3%BCnchen"
+    },
+    {
+     "id": "alter-peter",
+     "ad": "Alter Peter kulesi",
+     "arama": "Alter Peter München",
+     "tur": "Manzara",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 5,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kule 5 €",
+     "bilgi": "Münih'in en eski kilisesi; yaklaşık 300 basamak, asansör yok. Marienplatz ve havası açıksa Alpler görünür.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Alter%20Peter%20M%C3%BCnchen"
+    },
+    {
+     "id": "englischer-garten",
+     "ad": "Englischer Garten ve Eisbach dalgası",
+     "arama": "Eisbachwelle München",
+     "tur": "Park",
+     "bolge": "schwabing",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehir içindeki dev park; Eisbach'ta nehir sörfçüleri, Monopteros tepesi ve Çin Kulesi bira bahçesi.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Eisbachwelle%20M%C3%BCnchen"
+    },
+    {
+     "id": "residenz-sehir",
+     "ad": "Residenz",
+     "arama": "Residenz München",
+     "tur": "Saray",
+     "bolge": "merkez",
+     "sure_dk": 120,
+     "fiyat": 10,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Müze 10 €, hazine dairesi 10 €, ikisi birlikte 15 €",
+     "bilgi": "Bavyera krallarının şehir sarayı; Almanya'nın en büyük şehir içi sarayı. Hofgarten bahçesi ücretsiz.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": [
+      48.141,
+      11.5786
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Residenz%20M%C3%BCnchen"
+    },
+    {
+     "id": "hofbrauhaus",
+     "ad": "Hofbräuhaus",
+     "arama": "Hofbräuhaus München",
+     "tur": "Birahane",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz; yiyecek ve içecek ayrı",
+     "bilgi": "1608'den beri aynı yerde olan birahane. Akşam canlı müzik var, masalar paylaşılır.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Hofbr%C3%A4uhaus%20M%C3%BCnchen"
+    },
+    {
+     "id": "frauenkirche",
+     "ad": "Frauenkirche",
+     "arama": "Frauenkirche München",
+     "tur": "Katedral",
+     "bolge": "merkez",
+     "sure_dk": 45,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Kilise ücretsiz; güney kulesi 7,50 €",
+     "bilgi": "Soğan kubbeli iki kulesiyle şehrin simgesi. Kule bileti yalnızca kapıda satılır, asansör var.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": [
+      48.1386,
+      11.5736
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Frauenkirche%20M%C3%BCnchen"
+    },
+    {
+     "id": "deutsches-museum",
+     "ad": "Deutsches Museum",
+     "arama": "Deutsches Museum München",
+     "tur": "Müze",
+     "bolge": "isar",
+     "sure_dk": 180,
+     "fiyat": 16,
+     "fiyat_hs": null,
+     "fiyat_yazi": "16 €",
+     "bilgi": "Dünyanın en büyük teknik müzelerinden; uçaklar, gemiler, deneyler. Binanın yarısı yenileme nedeniyle kapalı (2028'e kadar).",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Deutsches%20Museum%20M%C3%BCnchen"
+    },
+    {
+     "id": "bmw-welt",
+     "ad": "BMW Welt ve BMW Müzesi",
+     "arama": "BMW Welt München",
+     "tur": "Müze",
+     "bolge": "olympiapark",
+     "sure_dk": 120,
+     "fiyat": 10,
+     "fiyat_hs": null,
+     "fiyat_yazi": "BMW Welt ücretsiz; müze 10 €",
+     "bilgi": "Yeni modellerin sergilendiği BMW Welt'e giriş ücretsiz; müze 1916'dan bugüne tasarım ve teknik. Yanındaki Olympiapark ücretsiz, Olympiaturm kulesi 2027 başına kadar kapalı.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=BMW%20Welt%20M%C3%BCnchen"
+    },
+    {
+     "id": "nymphenburg",
+     "ad": "Nymphenburg Sarayı",
+     "arama": "Schloss Nymphenburg München",
+     "tur": "Saray",
+     "bolge": "nymphenburg",
+     "sure_dk": 150,
+     "fiyat": 10,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Saray 10 €; kışın toplu bilet 16 €; park ücretsiz",
+     "bilgi": "Barok yazlık saray ve geniş parkı. Merkezden 17 numaralı tramvayla yaklaşık 20 dakika.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Schloss%20Nymphenburg%20M%C3%BCnchen"
+    },
+    {
+     "id": "alte-pinakothek",
+     "ad": "Alte Pinakothek",
+     "arama": "Alte Pinakothek München",
+     "tur": "Müze",
+     "bolge": "kunstareal",
+     "sure_dk": 120,
+     "fiyat": 9,
+     "fiyat_hs": null,
+     "fiyat_yazi": "9 €",
+     "bilgi": "Dürer, Rubens, Rembrandt: 18. yüzyıla kadar Avrupa resmi. Sanat bölgesindeki (Kunstareal) diğer müzelere yürüme mesafesi.",
+     "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Alte%20Pinakothek%20M%C3%BCnchen"
+    },
     {
      "id": "marienplatz",
      "ad": "Marienplatz Noel pazarı",
@@ -9273,23 +9454,6 @@
      ]
     },
     {
-     "id": "frauenkirche",
-     "ad": "Frauenkirche",
-     "arama": "Frauenkirche München",
-     "tur": "Kilise",
-     "bolge": "merkez",
-     "sure_dk": 25,
-     "fiyat": 0,
-     "fiyat_hs": null,
-     "fiyat_yazi": "Ücretsiz",
-     "bilgi": "Soğan kubbeli iki kulesiyle şehrin simgesi.",
-     "kaynak": null,
-     "konum": [
-      48.1386,
-      11.5736
-     ]
-    },
-    {
      "id": "stpeter",
      "ad": "St. Peter kulesi",
      "arama": "St. Peter Kirche Alter Peter München",
@@ -9304,23 +9468,6 @@
      "konum": [
       48.1365,
       11.5761
-     ]
-    },
-    {
-     "id": "viktualienmarkt",
-     "ad": "Viktualienmarkt",
-     "arama": "Viktualienmarkt München",
-     "tur": "Pazar",
-     "bolge": "merkez",
-     "sure_dk": 40,
-     "fiyat": 0,
-     "fiyat_hs": null,
-     "fiyat_yazi": "Ücretsiz",
-     "bilgi": "Açık hava gıda pazarı.",
-     "kaynak": null,
-     "konum": [
-      48.1351,
-      11.5763
      ]
     },
     {
@@ -10447,6 +10594,182 @@
      "puan": null,
      "yorum": null,
      "harita": "https://www.google.com/maps/search/?api=1&query=Piazza%20Gae%20Aulenti%20Milano"
+    }
+   ]
+  },
+  "Barselona": {
+   "para": "EUR",
+   "ulasim": {
+    "tek_bilet": {
+     "fiyat": 2.9,
+     "aciklama": "TMB tek bilet (Senzill), 1 bölge, aktarmasız tek yolculuk",
+     "kaynak": "https://www.mapametrobarcelona.com/en-precio-metro-barcelona.php"
+    },
+    "gunluk": null,
+    "cok_gunluk": {
+     "fiyat": 27.3,
+     "gun": 3,
+     "aciklama": "Hola Barcelona 72 saatlik kart: metro, otobüs, tramvay sınırsız; havalimanı metrosu (L9 Sud) dahil",
+     "kaynak": "https://www.mapametrobarcelona.com/en-precio-metro-barcelona.php"
+    },
+    "havalimani": {
+     "fiyat": 6.75,
+     "sure_dk": 35,
+     "aciklama": "Aerobús: havalimanı → Plaça Catalunya, tek yön 6,75 €, yaklaşık 35 dk. Metro L9 Sud havalimanı bileti 5,90 €; normal tek bilet ve T-casual bu hatta geçmez.",
+     "kaynak": "https://thebettervacation.com/barcelona/getting-around-barcelona/"
+    },
+    "not": "Gotik Mahalle, Born ve Rambla yürünür; Sagrada Família ve Park Güell için metro ya da otobüs gerekir. 10 yolculukluk T-casual 13 € (kişiye özel, paylaşılmaz). Kalabalık yerlerde yankesiciliğe dikkat."
+   },
+   "yerler": [
+    {
+     "id": "sagrada-familia",
+     "ad": "Sagrada Família",
+     "arama": "Sagrada Familia Barcelona",
+     "tur": "Bazilika",
+     "bolge": "eixample",
+     "sure_dk": 120,
+     "fiyat": 26,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş 26 €, kulelerle 36 €; yalnızca online saatli bilet",
+     "bilgi": "Gaudí'nin bitmemiş bazilikası; 2026 Gaudí'nin ölümünün 100. yılı. Biletler normalde 2–3 hafta önceden tükenir, tarihini seçer seçmez al.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Sagrada%20Familia%20Barcelona"
+    },
+    {
+     "id": "gotik-mahalle",
+     "ad": "Gotik Mahalle ve Katedral",
+     "arama": "Barri Gotic Barcelona",
+     "tur": "Tarihi merkez",
+     "bolge": "merkez",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Sokaklar ücretsiz",
+     "bilgi": "Dar Orta Çağ sokakları, Plaça Reial ve Plaça Sant Jaume. Sabah erken saatte sakin; akşam barlar ve tapas.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Barri%20Gotic%20Barcelona"
+    },
+    {
+     "id": "park-guell",
+     "ad": "Park Güell",
+     "arama": "Park Güell Barcelona",
+     "tur": "Park",
+     "bolge": "gracia",
+     "sure_dk": 120,
+     "fiyat": 18,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Anıt bölgesi 18 €; saatli bilet",
+     "bilgi": "Gaudí'nin mozaikli parkı ve şehir manzarası. Sabah 10:00'dan önce daha sakin; metrodan yokuş yukarı 15–20 dakika yürünür.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Park%20G%C3%BCell%20Barcelona"
+    },
+    {
+     "id": "la-rambla-boqueria",
+     "ad": "La Rambla ve Boqueria Pazarı",
+     "arama": "Mercat de la Boqueria Barcelona",
+     "tur": "Pazar",
+     "bolge": "merkez",
+     "sure_dk": 75,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Giriş ücretsiz",
+     "bilgi": "Plaça Catalunya'dan limana inen cadde ve şehrin en ünlü pazarı. Pazar günü Boqueria kapalı; öğle saatinde çok kalabalık.",
+     "kaynak": "https://thebettervacation.com/barcelona/getting-around-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mercat%20de%20la%20Boqueria%20Barcelona"
+    },
+    {
+     "id": "casa-batllo",
+     "ad": "Casa Batlló",
+     "arama": "Casa Batlló Barcelona",
+     "tur": "Gaudí evi",
+     "bolge": "eixample",
+     "sure_dk": 75,
+     "fiyat": 35,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Standart 35 €, hızlı girişli Gold 45 €",
+     "bilgi": "Passeig de Gràcia'daki ejderha çatılı ev. Yanındaki Casa Amatller ile birlikte cepheyi dışarıdan ücretsiz görebilirsin.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Batll%C3%B3%20Barcelona"
+    },
+    {
+     "id": "la-pedrera",
+     "ad": "Casa Milà (La Pedrera)",
+     "arama": "Casa Milà La Pedrera Barcelona",
+     "tur": "Gaudí evi",
+     "bolge": "eixample",
+     "sure_dk": 75,
+     "fiyat": 29,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Essential 29 €; 17:30'dan sonra Sunset bileti 25 €",
+     "bilgi": "Dalgalı taş cephe ve bacalı çatı terası. Aynı salonlar gün batımı biletiyle daha uygun.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Mil%C3%A0%20La%20Pedrera%20Barcelona"
+    },
+    {
+     "id": "barceloneta",
+     "ad": "Barceloneta sahili",
+     "arama": "Platja de la Barceloneta",
+     "tur": "Sahil",
+     "bolge": "sahil",
+     "sure_dk": 90,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Ücretsiz",
+     "bilgi": "Şehir merkezine en yakın plaj ve sahil yürüyüş yolu. Kışın denize girilmez ama gün batımı yürüyüşü ve deniz ürünleri için iyi.",
+     "kaynak": "https://thebettervacation.com/barcelona/getting-around-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Platja%20de%20la%20Barceloneta"
+    },
+    {
+     "id": "palau-guell",
+     "ad": "Palau Güell",
+     "arama": "Palau Güell Barcelona",
+     "tur": "Gaudí evi",
+     "bolge": "merkez",
+     "sure_dk": 60,
+     "fiyat": 12,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Yaklaşık 12 €",
+     "bilgi": "La Rambla'nın hemen yanında Gaudí'nin erken dönem sarayı; diğer Gaudí evlerine göre daha sakin ve uygun.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Palau%20G%C3%BCell%20Barcelona"
+    },
+    {
+     "id": "casa-vicens",
+     "ad": "Casa Vicens",
+     "arama": "Casa Vicens Barcelona",
+     "tur": "Gaudí evi",
+     "bolge": "gracia",
+     "sure_dk": 60,
+     "fiyat": 20,
+     "fiyat_hs": null,
+     "fiyat_yazi": "20 €",
+     "bilgi": "Gaudí'nin ilk evi, Gràcia'da. Park Güell'e giderken yol üstü.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Vicens%20Barcelona"
+    },
+    {
+     "id": "montjuic",
+     "ad": "Montjuïc tepesi",
+     "arama": "Montjuïc Barcelona",
+     "tur": "Manzara",
+     "bolge": "montjuic",
+     "sure_dk": 120,
+     "fiyat": 0,
+     "fiyat_hs": null,
+     "fiyat_yazi": "Tepe ve bahçeler ücretsiz",
+     "bilgi": "Plaça d'Espanya'dan MNAC merdivenlerine çıkış, şehir ve liman manzarası. MNAC cumartesi 15:00'ten sonra ücretsiz.",
+     "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
+     "konum": null,
+     "harita": "https://www.google.com/maps/search/?api=1&query=Montju%C3%AFc%20Barcelona"
     }
    ]
   }

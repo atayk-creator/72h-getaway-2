@@ -435,6 +435,26 @@
    "yaricap_km": 1.3,
    "para": "EUR",
    "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Barselona",
+   "merkez": [
+    41.3851,
+    2.1734
+   ],
+   "yaricap_km": 1.3,
+   "para": "EUR",
+   "baslangic": "2026-11-28"
+  },
+  {
+   "sehir": "Münih",
+   "merkez": [
+    48.1374,
+    11.5755
+   ],
+   "yaricap_km": 1.3,
+   "para": "EUR",
+   "baslangic": "2026-11-28"
   }
  ]
 }

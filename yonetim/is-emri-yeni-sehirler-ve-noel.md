@@ -47,3 +47,24 @@ Bu bölüm yukarıdaki tarihlerin ve robot notunun yerine geçer.
 - **Noel sayfası ekleri (Köln, Prag, Zagreb, Berlin, Viyana, Budapeşte, Tallinn, Kopenhag, Dublin, Riga): robotsuz.** Sadece pazar tarihleri (resmî kaynak), yer, kısa plan. Fiyat çekmeyin; Noel kartı şehir sayfasına link versin. Yapılamazsa atlayın, videolar şehir sayfasına link verir.
 - Strazburg tarih teyidi aynen duruyor (robot gerekmez).
 - Bütçe aşımı ihtimalinde yine önce Atay.
+
+---
+
+## İT TESLİM NOTU 1 (16 Kas 2026, gece)
+
+**Yayında (fiyatsız, "fiyat yakında" kipinde):**
+- `/sehir/londra/`, `/sehir/milano/`, `/sehir/barselona/`, `/sehir/munih/`
+- Her sayfada: vize notu, 12 hafta sonu çipi, 3 paket (otel adayları kategoriye göre), havalimanı ulaşımı, şehir içi ulaşım, yemek, gezi listesi, 72 saat planı, tarihli uçuş ve otel linkleri.
+- Uçak ve otel fiyatı alanında "Fiyat yakında · 28 Kasım" yazıyor. Robot çalıştırılmadı, bütçeden harcama yok.
+- Londra: "İngiltere vizesi gerekir, Schengen geçmez" (gov.uk linkiyle). Milano: Bergamo otobüsü (yaklaşık 1 saat) ulaşım seçeneklerinde.
+- Şehirler sayfasında dört şehir "fiyat yakında" olarak listeleniyor; ana sayfadaki fiyatlı kartlara fiyat gelince girecekler.
+
+**Strazburg:** resmî siteye (noel.strasbourg.eu) göre pazar 27 Kasım – 24 Aralık 2026; `data/noel.json` düzeltildi (27 Aralık yazıyordu).
+
+**Açık kalanlar:**
+- Barselona ve Münih'in kapak fotoğrafı yok (sayfa fotoğrafsız, lacivert başlıkla açılıyor). Fotoğraf indirmek için Atay'ın onayı gerekiyor.
+- Münih havalimanı ulaşımı: tek bilet fiyatını resmî kaynakta bulamadım; 2 kişilik M–5 grup günlük bileti (32,60 €, muenchen.de) yazıldı.
+- Barselona ve Münih otel adayları elle seçildi; 28 Kasım'daki ilk ölçümde fiyatı gelmeyen olursa değiştirilecek.
+- 28 Kasım ekonomik robot ayarı (2 hafta sonu, şehir başına en fazla 2 havalimanı, otel haftada 1) henüz yapılmadı; 27 Kasım'a kadar yapılacak.
+- Noel sayfasına 10 şehir: sırada (ilk dördü 22 Kasım).
+- "İT · <şehir> sayfası yayında · 2 kişi toplam … TL" satırı fiyat geldiğinde yazılacak; şu an toplam yok.

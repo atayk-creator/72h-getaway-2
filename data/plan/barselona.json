@@ -1,0 +1,46 @@
+{
+ "aciklama": "Barselona şehir sayfasının elle girilen bilgileri. Uçuş ve otel fiyatları robotlardan (28 Kasım 2026'dan itibaren), gezi ve ulaşım data/gezi.json'dan gelir.",
+ "iata": "BCN",
+ "sehir_en": "Barcelona",
+ "gezi_sayisi": 10,
+ "bilgiler": [
+  [
+   "Ülke",
+   "İSPANYA"
+  ],
+  [
+   "Kaçamak",
+   "CUMA – PAZAR · 2 GECE"
+  ],
+  [
+   "Havalimanı",
+   "EL PRAT (BCN)"
+  ],
+  [
+   "Merkeze",
+   "AEROBÚS 35 DK"
+  ]
+ ],
+ "uyari": {
+  "baslik": "Schengen vizesi gerekir.",
+  "yazi": "Sagrada Família ve Park Güell biletleri yalnızca online ve saatli satılır, hafta sonları haftalar önceden tükenir; önce onları al."
+ },
+ "transfer": [
+  {
+   "id": "ab",
+   "ad": "Aerobús",
+   "dt": "Havalimanı ↔ Plaça Catalunya · yaklaşık 35 dk",
+   "pp": 13.5,
+   "k": "est",
+   "url": "https://thebettervacation.com/barcelona/getting-around-barcelona/"
+  },
+  {
+   "id": "l9",
+   "ad": "Havalimanı metrosu (L9 Sud)",
+   "dt": "Havalimanı bileti tek yön 5,90 €; Hola Barcelona kartına dahil",
+   "pp": 11.8,
+   "k": "est",
+   "url": "https://www.mapametrobarcelona.com/en-precio-metro-barcelona.php"
+  }
+ ]
+}
