@@ -315,7 +315,7 @@ export function renderTeamPage(team, { today, eurTry, esc, para, fmtTl, fmtEur, 
     <nav aria-label="Konum"><ol class="crumbs"><li><a href="/">72h Getaway</a></li><li><a href="/sehir/">Şehirler</a></li><li><span aria-current="page">${esc(team.takim)}</span></li></ol></nav>
     <h1>${T ? esc(metin(team, "h1")) : `${esc(team.takim)} deplasman bütçesi`}</h1>
     <p>${T ? esc(metin(team, "giris")) : `İstanbul'dan ${esc(team.takim)} deplasmanlarına 72 saatlik kaçamak: ${esc(team.turnuva)}. Robotun bulduğu gerçek otel ve uçak fiyatları, maç bileti, yemek ve ulaşım. 2 kişi için.`}</p>
-    <div class="hero"><a class="big" href="/#takvim/${esc(team.slug)}">${T ? "Hafta sonu takvimi" : "Maç takvimi"}</a>${ilk ? `<a class="ghost" href="#${esc(ilk.id)}">${T ? "Sıradaki şehrin planı →" : "Sıradaki maçın planı →"}</a>` : ""}</div>
+    <div class="hero"><a class="big" href="/hesapla.html#takvim/${esc(team.slug)}">${T ? "Hafta sonu takvimi" : "Maç takvimi"}</a>${ilk ? `<a class="ghost" href="#${esc(ilk.id)}">${T ? "Sıradaki şehrin planı →" : "Sıradaki maçın planı →"}</a>` : ""}</div>
     <div class="mks">${kartlar}</div>
   </div>
 </header>

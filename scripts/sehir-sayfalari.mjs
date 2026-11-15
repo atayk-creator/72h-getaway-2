@@ -7,6 +7,7 @@ import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderTeamPage, renderRedirect, teamCard, renderDeplasmanIndex } from "./deplasman.mjs";
 import { planDosyalari } from "./plan-sayfalari.mjs";
+import { renderAnaSayfa, renderPlanimYer } from "./ana-sayfa.mjs";
 
 export const SITE = "https://72hgetaway.com";
 const KAT_SIRA = ["ucuz", "konforlu", "pahali", "ikonik"];
@@ -619,9 +620,14 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   }
   out["deplasman/index.html"] = renderDeplasmanIndex(teams, { today, eurTry, esc, para, head, foot, SITE });
   out["sehir/index.html"] = renderIndexPage(models, today, teams.map((t) => teamCard(t, today, { esc, para, eurTry })));
-  const paths = ["/", "/oteller.html", "/hakkinda.html", "/sehir/", "/deplasman/", ...teams.map((t) => `/sehir/${t.slug}/`), ...plan.yollar, ...models.map((m) => `/sehir/${m.slug}/`)];
+  const paths = ["/", "/hesapla.html", "/oteller.html", "/hakkinda.html", "/sehir/", "/deplasman/", ...teams.map((t) => `/sehir/${t.slug}/`), ...plan.yollar, ...models.map((m) => `/sehir/${m.slug}/`)];
   out["sitemap.xml"] = renderSitemap(paths, today);
   out["data/vitrin.json"] = renderVitrin(models, today);
+  if (!data) { // yeni ana sayfa ve kabuk sayfaları (yalnız gerçek depo üretiminde)
+    out["index.html"] = renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, root: root || "." });
+    out["planim/index.html"] = renderPlanimYer({ esc, SITE, root: root || "." });
+    out["sehirler/index.html"] = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Şehirler | 72h Getaway</title><meta name="robots" content="noindex"><link rel="canonical" href="${SITE}/sehir/"><meta http-equiv="refresh" content="0;url=/sehir/"></head><body><p><a href="/sehir/">Şehirler</a></p></body></html>\n`;
+  }
   if (write) {
     for (const [rel, html] of Object.entries(out)) {
       const p = join(root, rel);

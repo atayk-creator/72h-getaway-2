@@ -118,7 +118,7 @@ ${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="h
   </section>
 
   <footer class="altbilgi">
-    <nav aria-label="Alt bağlantılar"><a href="/sehir/noel/">Noel pazarları</a><a href="/oteller.html">Otel fiyat takvimi</a><a href="/hesapla/">Bütçe hesaplayıcı</a><a href="/hakkinda.html">Hakkında</a><a href="/hakkinda.html#gizlilik">Gizlilik</a><a href="https://instagram.com/72hgetaway" rel="noopener">Instagram</a></nav>
+    <nav aria-label="Alt bağlantılar"><a href="/sehir/noel/">Noel pazarları</a><a href="/oteller.html">Otel fiyat takvimi</a><a href="/hesapla.html">Bütçe hesaplayıcı</a><a href="/hakkinda.html">Hakkında</a><a href="/hakkinda.html#gizlilik">Gizlilik</a><a href="https://instagram.com/72hgetaway" rel="noopener">Instagram</a></nav>
     <p>Fiyatlar ${esc(today.split("-").reverse().join("."))} tarihli ölçümdür; 1 € = ${String(Math.round(eurTry * 100) / 100).replace(".", ",")} TL. Almadan önce sağlayıcının sitesinde kontrol et.</p>
   </footer>
 </main>
@@ -128,6 +128,41 @@ ${sekmeCubugu("kesfet")}
 <script src="/js/ana.js?v=${ozet(root, "js/ana.js")}" defer></script>
 <script src="/js/olcum.js" defer></script>
 <script>if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });</script>
+</body>
+</html>
+`;
+}
+
+/** Planım sayfası için geçici yer tutucu (Faz C, 25 Kasım'da gerçek sayfa gelir). */
+export function renderPlanimYer({ esc, SITE, root }) {
+  return `<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planım | 72h Getaway</title>
+<meta name="description" content="Kaydettiğin kaçamak planları burada duracak.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0F2A43">
+<link rel="canonical" href="${SITE}/planim/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/css/kabuk.css?v=${ozet(root, "css/kabuk.css")}">
+</head>
+<body>
+<header class="bant"><div class="kap">
+  <div class="bant-ust">${logo()}<span class="etiket">Planım</span></div>
+  <h1>Planım</h1>
+</div></header>
+<main class="kap icerik" id="icerik">
+  <p class="bos">Beğendiğin şehir ve maç planlarını kaydedip burada görebileceksin. Bu bölüm hazırlanıyor. Şimdilik bir planı saklamak için şehir sayfasındaki "Arkadaşına gönder" linkini kendine gönderebilirsin.</p>
+  <div class="kutular">
+    <a class="kutu l" href="/"><span>KEŞFET</span><b>Bu hafta sonu nereye?</b></a>
+    <a class="kutu t" href="/sehir/"><span>${esc("ŞEHİRLER")}</span><b>Tüm şehirler</b></a>
+  </div>
+</main>
+${sekmeCubugu("planim")}
+<script src="/js/olcum.js" defer></script>
 </body>
 </html>
 `;

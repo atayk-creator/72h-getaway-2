@@ -32,7 +32,8 @@ export async function build() {
   const d = JSON.parse(await readFile(join(root, "data.json"), "utf8"));
   let commit = null; try { commit = execSync("git rev-parse --short HEAD", { cwd: root }).toString().trim(); } catch {}
   const build = { tarih: new Date().toISOString().slice(0, 10), veri: d.updated || null, commit };
-  for (const p of PAGES) await writeFile(join(out, p), transform(await readFile(join(root, p), "utf8"), build));
+  // Uygulamanın ana sayfası hesaplayıcıdır (sitede hesapla.html; yeni site ana sayfası uygulamaya alınmadı)
+  for (const p of PAGES) await writeFile(join(out, p), transform(await readFile(join(root, p === "index.html" ? "hesapla.html" : p), "utf8"), build));
   for (const c of COPY) if (existsSync(join(root, c))) await cp(join(root, c), join(out, c), { recursive: true });
   for (const c of DATA) await cp(join(root, "data", c), join(out, "data", c), { recursive: true });
   await cp(join(root, "app", "shell"), join(out, "app"), { recursive: true });

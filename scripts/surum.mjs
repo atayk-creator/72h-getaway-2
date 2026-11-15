@@ -1,4 +1,4 @@
-// Ana sayfanın ayrı dosyaları (css/site.css, js/site.js) değişince index.html'deki ?v= sürüm etiketini içerik özetine göre yeniler.
+// Bütçe hesaplayıcının (hesapla.html, eski ana sayfa) ayrı dosyaları (css/site.css, js/site.js) değişince sayfadaki ?v= sürüm etiketini içerik özetine göre yeniler.
 // Böylece tarayıcı ve önbellek eski dosyayı yeni sayfayla karıştırmaz. Kullanım: node scripts/surum.mjs  (--kontrol: sadece denetle)
 import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
@@ -16,9 +16,9 @@ export function yenile(html) {
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const p = join(root, "index.html"), eski = readFileSync(p, "utf8"), yeni = yenile(eski);
+  const p = join(root, "hesapla.html"), eski = readFileSync(p, "utf8"), yeni = yenile(eski);
   if (process.argv.includes("--kontrol")) {
-    if (eski !== yeni) { console.error("index.html'deki ?v= sürümleri güncel değil: node scripts/surum.mjs"); process.exit(1); }
+    if (eski !== yeni) { console.error("hesapla.html'deki ?v= sürümleri güncel değil: node scripts/surum.mjs"); process.exit(1); }
     console.log("Sürümler güncel.");
-  } else if (eski !== yeni) { writeFileSync(p, yeni); console.log("index.html sürümleri yenilendi."); } else console.log("Değişiklik yok.");
+  } else if (eski !== yeni) { writeFileSync(p, yeni); console.log("hesapla.html sürümleri yenilendi."); } else console.log("Değişiklik yok.");
 }

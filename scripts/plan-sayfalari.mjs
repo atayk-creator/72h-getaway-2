@@ -352,7 +352,7 @@ ${V.plan.length ? `<section id="plan">
     ${gunler}
   </div>` : `<section id="plan">`}
   <p class="legal">${esc(V.yasal)} ${esc(V.fiyatNot)}</p>
-  <div class="site-foot">${V.tur === "sehir" ? "" : `<a href="${esc(V.takimYol)}">${esc(V.tur === "noel" ? "Tüm Noel şehirleri" : V.takim + " deplasmanları")}</a>`}<a href="/sehir/">Tüm şehirler</a><a href="/oteller.html">Otel fiyat takvimi</a><a href="/">Bütçe hesaplayıcı</a><a href="/hakkinda.html">Hakkında</a></div>
+  <div class="site-foot">${V.tur === "sehir" ? "" : `<a href="${esc(V.takimYol)}">${esc(V.tur === "noel" ? "Tüm Noel şehirleri" : V.takim + " deplasmanları")}</a>`}<a href="/sehir/">Tüm şehirler</a><a href="/oteller.html">Otel fiyat takvimi</a><a href="/hesapla.html">Bütçe hesaplayıcı</a><a href="/hakkinda.html">Hakkında</a></div>
 </section>
 </main>
 

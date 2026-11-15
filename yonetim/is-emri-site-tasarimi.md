@@ -61,3 +61,23 @@ Telefonda: ana sayfada hafta sonu değiştir → en uygun kart ve raf değişiyo
 
 ## Teslim
 Her faz bitince bu dosyanın altına: yapılanlar, canlı linkler, açık kalanlar, ekran görüntüsü yolu.
+
+---
+
+## Teslim notu · Faz A, 1. adım (15 Kas 2026 akşam): yeni ana sayfa yayında
+
+**Yapılanlar**
+- Ana sayfa (/) A1 · Biniş kartı tasarımıyla yayında: lacivert bant, 4 hafta sonu çipi, büyük biniş kartı, "Bu hafta sonu" rafı (10 şehir), Noel ve Deplasman kutuları, kısa "Nasıl çalışır", alt bilgi, sabit alt sekme çubuğu.
+- Atay'ın kararı (15 Kas 17:28): sayfa açılınca büyük kartta **Amsterdam** çıkar. Koçanda "ÖNE ÇIKAN" yazar (Amsterdam o hafta sonunun en uygun şehri olmadığı için "EN UYGUN" yazılmadı). Bir hafta sonu çipine basılınca kart o hafta sonunun en uygun şehrine döner ve koçan "EN UYGUN" olur. Şehir `data/ana-sayfa.json` → `one_cikan` ile değişir.
+- Fiyat: 2 kişi toplam (uçak + otel), altında kişi başı. Karta ve raf kartlarına basınca şehir sayfası seçili hafta sonuyla açılır (`?h=`).
+- Sayfayı `scripts/ana-sayfa.mjs` üretir (robotlar fiyat güncelleyince yeniden); stil `css/kabuk.css`, davranış `js/ana.js`. Fontlar sitede barındırılıyor, Google'a istek yok.
+- Eski ana sayfa (bütçe hesaplayıcı, hikâyeler, takvim, "Gider miydin?") silinmedi: `/hesapla.html` adresine taşındı, alt bilgiden "Bütçe hesaplayıcı" ile açılıyor. Telefon uygulaması bu sayfayı kullanmaya devam ediyor.
+- Duman testi: 57 sayfa, 320 px, sorun yok.
+
+**Geçici durumlar (Faz A'nın kalanında kapanacak)**
+- Alt çubuktaki "Şehirler" şimdilik eski şehir listesine (/sehir/) yönleniyor; Ş3 raflar + Ş1 liste sayfası (/sehirler/) yapılacak.
+- "Planım" sekmesi yer tutucu sayfa açıyor (Faz C).
+- Alt sekme çubuğu henüz yalnızca ana sayfa ve Planım'da; /deplasman/ ve şehir listesine eklenecek.
+- denetci.yml'e "ucuz" kontrolü ve Lighthouse ölçümü yapılmadı.
+
+**Ekran görüntüsü:** sohbette paylaşıldı (ana-sayfa-amsterdam.png); depoya Faz A tesliminde `yonetim/ekran/` altına konacak.

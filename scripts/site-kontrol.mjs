@@ -33,13 +33,13 @@ const srv = sunucu();
 await new Promise((r) => srv.listen(0, "127.0.0.1", r));
 const BASE = `http://127.0.0.1:${srv.address().port}`;
 const sm = await readFile(join(root, "sitemap.xml"), "utf8");
-const sayfalar = [...new Set([...sm.matchAll(/<loc>https?:\/\/[^/]+(\/[^<]*)<\/loc>/g)].map((m) => m[1])).add("/#sehirler").add("/#biletim").add("/#takvim").add("/#karsilastir")];
+const sayfalar = [...new Set([...sm.matchAll(/<loc>https?:\/\/[^/]+(\/[^<]*)<\/loc>/g)].map((m) => m[1])).add("/hesapla.html").add("/hesapla.html#sehirler").add("/hesapla.html#biletim").add("/hesapla.html#takvim").add("/hesapla.html#karsilastir")];
 
 const sorun = [], bilgi = [];
 { // ana sayfa dosyalarının ?v= sürümü içerikle uyumlu mu
   const { yenile } = await import("./surum.mjs");
-  const ih = await readFile(join(root, "index.html"), "utf8");
-  if (yenile(ih) !== ih) sorun.push("index.html: css/site.css ya da js/site.js sürüm etiketi (?v=) güncel değil; node scripts/surum.mjs");
+  const ih = await readFile(join(root, "hesapla.html"), "utf8");
+  if (yenile(ih) !== ih) sorun.push("hesapla.html: css/site.css ya da js/site.js sürüm etiketi (?v=) güncel değil; node scripts/surum.mjs");
 }
 const b = await chromium.launch();
 for (const u of sayfalar) {
