@@ -35,3 +35,15 @@ Mevcut şehirlerle aynı yapıda tam şehir sayfası: `/sehir/<slug>/`, uçuş (
 
 ## 5 · EK (16 Kas 00:45): Noel sayfasına eklenecek şehirler
 Aylık planda bu şehirlere Noel videosu var ama `data/noel.json` dosyasında yoklar: **Köln, Prag, Zagreb, Berlin** (videolar 24–28 Kas), **Viyana, Budapeşte, Tallinn, Kopenhag** (videolar 30 Kas–3 Ara), **Dublin, Riga** (4 ve 10 Ara). Diğer Noel şehirleriyle aynı yapıda eklenebilirse (pazar tarihleri resmî kaynaktan, uçuş, otel, 2 kişi toplam) Noel videosu doğrudan Noel sayfasına link verir. Önce ilk dört şehir: Cmt 22 Kas 18:00. Eklenemezse video şehir sayfasına link verir; olmayan bilgiyi uydurmayın. Robot bütçesi notu burada da geçerli.
+
+## GÜNCELLEME (Atay 16 Kas 00:52): YENİ ŞEHİRLER YENİ APIFY DÖNEMİYLE, EKONOMİK
+Bu bölüm yukarıdaki tarihlerin ve robot notunun yerine geçer.
+- **27 Kasım'a kadar (bu dönem) yeni şehirler için robot çalıştırmayın.** Sayfa iskeletini (plan, gezi, restoran, otel adayları, vize, ulaşım) hazırlayın: Barselona + Londra Cmt 21 Kas, Milano + Münih Çar 25 Kas. Fiyat alanı "fiyat yakında".
+- **28 Kasım (yeni dönem) ilk fiyat çekimi**, ekonomik ayarla:
+  - Şehir başına tek tarih penceresi (önümüzdeki 2 hafta sonu), 8 hafta değil.
+  - Uçuşta IST + SAW ve şehir başına en fazla 2 havalimanı (Londra: STN + LGW · Milano: BGY + MXP · Barselona: BCN · Münih: MUC).
+  - Otel robotu şehir başına haftada 1 kez; günlük yenileme yok.
+  - Yenileme, video yayınından bir gün önce (ofis tarih verir): Milano 29 Kas · Münih 30 Kas · Barselona 1 Ara · Londra 3 Ara.
+- **Noel sayfası ekleri (Köln, Prag, Zagreb, Berlin, Viyana, Budapeşte, Tallinn, Kopenhag, Dublin, Riga): robotsuz.** Sadece pazar tarihleri (resmî kaynak), yer, kısa plan. Fiyat çekmeyin; Noel kartı şehir sayfasına link versin. Yapılamazsa atlayın, videolar şehir sayfasına link verir.
+- Strazburg tarih teyidi aynen duruyor (robot gerekmez).
+- Bütçe aşımı ihtimalinde yine önce Atay.

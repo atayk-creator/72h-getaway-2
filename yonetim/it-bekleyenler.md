@@ -41,3 +41,5 @@ Ayrıntı: `yonetim/is-emri-yeni-sehirler-ve-noel.md`.
 - `data/noel.json`'a Köln, Prag, Zagreb, Berlin (Cmt 22 Kas 18:00), sonra Viyana, Budapeşte, Tallinn, Kopenhag, Dublin, Riga.
 - Strazburg Noel pazarı kapanış tarihini resmî kaynaktan teyit et (şu an 27 Aralık yazıyor; ofisin bilgisi 24 Aralık).
 - Apify bütçesi: 70,33 / 75 $ (dönem 27 Kas). Aşılacaksa önce Atay'a sor.
+
+- **GÜNCELLEME 16 Kas 00:52:** yeni şehirlerin robot fiyatı 28 Kas yeni dönemde, ekonomik ayarla; Noel ekleri robotsuz. Ayrıntı iş emrinin sonunda.
