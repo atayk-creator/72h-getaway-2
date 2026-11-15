@@ -42,7 +42,12 @@ export function vitrinVerisi(models, d, today, eurTry) {
 
 export function renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, root }) {
   const V = vitrinVerisi(models, d, today, eurTry);
-  const L = V.sehirler.filter((s) => s.t[0] != null).sort((a, b) => a.t[0] - b.t[0]), ilk = L[0], h0 = V.haftalar[0] || { g: today, kisa: "" };
+  const ayar = (() => { try { return JSON.parse(readFileSync(join(root, "data/ana-sayfa.json"), "utf8")); } catch { return {}; } })();
+  const L = V.sehirler.filter((s) => s.t[0] != null).sort((a, b) => a.t[0] - b.t[0]), h0 = V.haftalar[0] || { g: today, kisa: "" };
+  // Sayfa açılışında öne çıkan şehir (data/ana-sayfa.json); o hafta sonu fiyatı yoksa en uygun şehir gösterilir
+  const one = L.find((s) => s.ad === ayar.one_cikan) || null, ilk = one || L[0], kocan = one ? "ÖNE ÇIKAN" : "EN UYGUN";
+  const rafL = L.filter((s) => s !== ilk);
+  V.one = one ? one.slug : "";
   const yol = (s) => `/sehir/${s.slug}/?h=${h0.g}`;
   const title = "72h Getaway · Bu hafta sonu nereye? İstanbul çıkışlı kaçamak bütçesi";
   const desc = `İstanbul'dan ${models.length} Avrupa şehrine hafta sonu kaçamağı: 2 kişi uçak + otel toplamı, hafta sonu hafta sonu. En uygun şehri gör, hazır paketini seç.`;
@@ -92,11 +97,11 @@ ${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="h
 
 <main class="kap icerik" id="icerik">
   <div id="enuygun" aria-live="polite">${ilk
-    ? `<a class="bk" href="${yol(ilk)}"><div class="bk-kocan"><span>EN UYGUN</span></div><div class="bk-govde"><img src="${esc(ilk.foto)}" alt="${esc(ilk.alt)}" width="640" height="427" fetchpriority="high"><div class="bk-yazi"><div class="bk-rota"><span>IST → ${esc(ilk.iata)}</span><span>2 KİŞİ · 2 GECE</span></div><div class="bk-alt"><span class="bk-ad"><b>${esc(ilk.ad)}</b><span>${esc(ilk.ulke)} · uçak + otel</span></span><span class="bk-fiyat"><b>${tl(ilk.t[0])}</b><span>kişi başı ${tl(ilk.t[0] / 2)}</span></span></div></div></div></a>`
+    ? `<a class="bk" href="${yol(ilk)}"><div class="bk-kocan"><span>${kocan}</span></div><div class="bk-govde"><img src="${esc(ilk.foto)}" alt="${esc(ilk.alt)}" width="640" height="427" fetchpriority="high"><div class="bk-yazi"><div class="bk-rota"><span>IST → ${esc(ilk.iata)}</span><span>2 KİŞİ · 2 GECE</span></div><div class="bk-alt"><span class="bk-ad"><b>${esc(ilk.ad)}</b><span>${esc(ilk.ulke)} · uçak + otel</span></span><span class="bk-fiyat"><b>${tl(ilk.t[0])}</b><span>kişi başı ${tl(ilk.t[0] / 2)}</span></span></div></div></div></a>`
     : '<p class="bos">Bu hafta sonu için fiyatlar henüz ölçülmedi; robot kontrol ediyor. Başka bir hafta sonu seç.</p>'}</div>
 
   <div class="raf-bas"><h2 id="raf-baslik">Bu hafta sonu</h2><a href="/sehirler/">${models.length} şehir</a></div>
-  <div class="raf" id="raf">${L.slice(1, 11).map((s) => `<a class="rk" href="${yol(s)}"><img src="${esc(s.foto)}" alt="" loading="lazy" width="640" height="427"><div><b>${esc(s.ad)}</b><b>${tl(s.t[0])}</b></div></a>`).join("")}</div>
+  <div class="raf" id="raf">${rafL.slice(0, 10).map((s) => `<a class="rk" href="${yol(s)}"><img src="${esc(s.foto)}" alt="" loading="lazy" width="640" height="427"><div><b>${esc(s.ad)}</b><b>${tl(s.t[0])}</b></div></a>`).join("")}</div>
 
   <div class="kutular">
     <a class="kutu l" href="/sehir/noel/"><span>ARALIK</span><b>Noel pazarları</b></a>
