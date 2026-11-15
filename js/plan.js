@@ -85,21 +85,15 @@
     return (u && u.kalkis ? u.kalkis : "IST") + " → " + ((u && u.ap) || V.iata || V.sehir.toLocaleUpperCase("tr")) + " · " + (h.etiket || aralik(h)).toLocaleUpperCase("tr") + " · " + K + " KİŞİ";
   }
 
-  /* fiyat takvimi (F): hafta sonları ay ay kutular; yeşil = uygun hafta, beyaz = normal, turuncu = normalden pahalı */
-  var AYB = ["OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN", "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"];
+  /* hafta sonu seçimi: ana sayfadaki çiplerle aynı (Atay, 15 Kas 18:34: renkli takvim kutuları yerine yana kayan çipler) */
   function renderHafta() {
     var w = $("tk");
     if (!w || V.haftalar.length < 2) return;
-    var ay0 = +V.haftalar[0].gidis.slice(5, 7) - 1, gruplar = [];
-    V.haftalar.forEach(function (h, i) {
-      var ay = +h.gidis.slice(5, 7) - 1, g = Math.floor(((ay - ay0 + 12) % 12) / 2);
-      if (!gruplar[g]) gruplar[g] = { aylar: [], k: [] };
-      if (gruplar[g].aylar.indexOf(ay) < 0) gruplar[g].aylar.push(ay);
-      var sinif = h.vt == null ? "yok" : h.e === "u" ? "u" : h.e === "p" ? "p" : "n";
-      var ses = gunAy(h.gidis, 1) + ", " + (h.vt == null ? "fiyat kontrol ediliyor" : tl(h.vt) + (h.e === "u" ? ", uygun hafta" : h.e === "p" ? ", normalden pahalı" : ", normal fiyat"));
-      gruplar[g].k.push('<button class="tkb ' + sinif + '" type="button" data-i="' + i + '" aria-pressed="' + (i === hi) + '" aria-label="' + esc(ses) + '">' + gunAy(h.gidis) + (h.vt == null ? "<small>kontrol</small>" : "<span>" + Math.round(h.vt).toLocaleString("tr-TR") + "</span>") + "</button>");
-    });
-    w.innerHTML = gruplar.filter(Boolean).map(function (g) { return '<div><span class="mono tk-ay">' + g.aylar.map(function (a) { return AYB[a]; }).join(" – ") + '</span><div class="tk-izgara">' + g.k.join("") + "</div></div>"; }).join("");
+    w.innerHTML = V.haftalar.map(function (h, i) {
+      return '<button class="cip" type="button" data-i="' + i + '" aria-pressed="' + (i === hi) + '"><b>' + esc(h.etiket || aralik(h)) + "</b><span>" + (i === 0 ? "Bu hafta" : i === 1 ? "1 hafta sonra" : i + " hafta sonra") + "</span></button>";
+    }).join("");
+    var secili = w.querySelector('[aria-pressed="true"]');
+    if (secili) w.scrollLeft = Math.max(0, secili.offsetLeft - w.offsetLeft - 14);
     var h = H(), f = h.f, yorum = h.vt == null ? "Bu hafta sonu için uçak + otel fiyatı henüz ölçülmedi; aşağıdaki linklerden bakabilirsin." : f == null || Math.abs(f) < 1 ? "Bu şehrin olağan hafta sonu fiyatında" : f < 0 ? "Bu şehrin olağan fiyatından %" + Math.abs(f) + " uygun" : "Bu şehrin olağan fiyatından %" + f + " pahalı";
     $("tk-secili").innerHTML = '<div class="stub"><span>SEÇİLİ</span></div><div class="govde"><span class="mono">' + esc(aralik(h).toLocaleUpperCase("tr")) + " · " + K + ' KİŞİ · UÇAK + OTEL</span><b>' + (h.vt == null ? "kontrol ediliyor" : tl(h.vt)) + '</b><span class="yorum ' + (h.vt == null ? "" : f < 0 ? "iyi" : f > 10 ? "pah" : "") + '">' + yorum + "</span></div>";
   }
@@ -253,7 +247,7 @@
   $("builder").addEventListener("click", function (e) { if (e.target.closest("a")) e.stopPropagation(); });
   document.querySelector(".tabs").addEventListener("click", function (e) { var b = e.target.closest(".tab"); if (!b) return; cur = b.dataset.p; renderPaket(); });
   if ($("tk")) $("tk").addEventListener("click", function (e) {
-    var b = e.target.closest(".tkb"); if (!b) return;
+    var b = e.target.closest(".cip"); if (!b) return;
     dokundu = true; hi = +b.dataset.i; sel = coz(cur); selAd = V.paket[cur].ad + " paketinden";
     renderHafta(); renderPaket(); renderBuilder();
   });

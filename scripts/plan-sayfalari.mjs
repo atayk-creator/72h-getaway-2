@@ -304,9 +304,10 @@ ${V.tur === "sehir" ? "" : `<p class="mono ust-etiket">${esc(V.ust)}</p>
 ${V.uyari ? `<div class="warn">${UYARI_SVG}<span><b>${esc(V.uyari.baslik)}</b> ${esc(V.uyari.yazi)}${V.uyari.link ? ` <a href="${esc(V.uyari.link)}" rel="noopener">${esc(V.uyari.linkAd || "Resmî site")}</a>` : ""}</span></div>` : ""}
 
 ${V.haftalar.length > 1 ? `<section id="takvim" aria-labelledby="h-tk">
-  <div class="tk-bas"><h2 id="h-tk">Hangi hafta sonu?</h2>
-    <div class="tk-lejant" aria-hidden="true"><span><i class="u"></i>uygun</span><span><i class="n"></i>normal</span><span><i class="p"></i>pahalı</span></div></div>
-  <div id="tk" role="group" aria-label="Hafta sonu seç"></div>
+  <div class="tk-bant">
+    <h2 id="h-tk">Hangi hafta sonu?</h2>
+    <div class="cipler" id="tk" role="group" aria-label="Hafta sonu seç"></div>
+  </div>
   <div class="bkart secili" id="tk-secili" aria-live="polite"></div>
 </section>` : ""}
 

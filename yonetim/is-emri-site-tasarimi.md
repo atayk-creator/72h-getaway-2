@@ -135,3 +135,5 @@ Her faz bitince bu dosyanın altına: yapılanlar, canlı linkler, açık kalanl
 **Açık kalanlar:** Lighthouse ölçümü; Planım (Faz C, 25 Kas).
 
 **Ekran görüntüsü:** `yonetim/ekran/faz-b-sehir-sayfasi.jpg`
+
+**Değişiklik (Atay, 15 Kas 2026 18:34):** şehir sayfasındaki renkli fiyat takvimi kutuları (F) kaldırıldı; yerine ana sayfadakiyle aynı hafta sonu çipleri geldi (lacivert bant, yana kayan 12 çip, seçili turuncu). Seçili hafta sonu kartı (tarih, uçak + otel toplamı, olağan fiyata göre fark) çiplerin altında duruyor. Uygun/normal/pahalı renk bilgisi artık yalnızca bu kartta ve Şehirler listesindeki durum etiketinde.

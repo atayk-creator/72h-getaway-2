@@ -280,3 +280,14 @@ main.wrap>.warn{margin-top:12px}
 .facts.acik .fact b{color:var(--ink)}
 .opt .t b,.opt .t span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 .opt .t{min-width:0}
+
+/* hafta sonu seçimi: ana sayfadaki çiplerle aynı görünüm (lacivert bant, seçili turuncu) */
+.tk-bant{background:var(--navy);color:var(--on-navy);border-radius:14px;padding:14px 0 14px 14px;display:flex;flex-direction:column;gap:10px}
+.tk-bant h2{font-size:19px;color:var(--on-navy)}
+#tk.cipler{display:flex;flex-direction:row;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0;padding:2px 14px 2px 0}
+#tk.cipler::-webkit-scrollbar{display:none}
+.cip{flex:none;height:52px;padding:0 14px;border-radius:12px;border:1px solid #2F506D;background:transparent;color:#FBF6EC;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;font-family:var(--f-body);cursor:pointer;text-align:left}
+.cip b{font-size:14px}
+.cip span{font-family:var(--f-mono);font-size:11px;color:#A9B8C7}
+.cip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#0F2A43}
+.cip[aria-pressed="true"] span{color:#0F2A43}
