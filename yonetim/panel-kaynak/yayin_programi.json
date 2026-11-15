@@ -1,0 +1,322 @@
+[
+{
+"gun": "2026-11-15",
+"sira": 0,
+"kod": "V-20",
+"icerik": "Brugge Noel",
+"kim": "",
+"planli": true
+},
+{
+"gun": "2026-11-15",
+"sira": 1,
+"kod": "P-07",
+"icerik": "Vizesiz 72 saat",
+"kim": "",
+"planli": true
+},
+{
+"gun": "2026-11-15",
+"sira": 2,
+"kod": "V-21",
+"icerik": "Kopenhag",
+"kim": "",
+"planli": true
+},
+{
+"gun": "2026-11-15",
+"sira": 3,
+"kod": "P-08",
+"icerik": "Bütçe nereye gidiyor?",
+"kim": "",
+"planli": true
+},
+{
+"gun": "2026-11-15",
+"sira": 4,
+"kod": "V-22",
+"icerik": "Beşiktaş Leverkusen deplasmanı",
+"kim": "",
+"planli": true
+},
+{
+"gun": "2026-11-16",
+"sira": 0,
+"kod": "V-23",
+"icerik": "Strazburg Noel",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-16",
+"sira": 1,
+"kod": "P-09",
+"icerik": "Aralık deplasman takvimi",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-16",
+"sira": 2,
+"kod": "V-31",
+"icerik": "Beşiktaş Lefkoşa deplasmanı",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-16",
+"sira": 3,
+"kod": "P-11",
+"icerik": "Noel pazarında ne yenir",
+"kim": "hazır",
+"planli": true
+},
+{
+"gun": "2026-11-16",
+"sira": 4,
+"kod": "V-28",
+"icerik": "Galatasaray Paris deplasmanı",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-17",
+"sira": 0,
+"kod": "V-26",
+"icerik": "Krakov Noel",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-17",
+"sira": 1,
+"kod": "P-10",
+"icerik": "Kabin çantası rehberi",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-17",
+"sira": 2,
+"kod": "V-27",
+"icerik": "Dublin",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-17",
+"sira": 3,
+"kod": "",
+"icerik": "",
+"kim": "",
+"planli": false
+},
+{
+"gun": "2026-11-17",
+"sira": 4,
+"kod": "V-25",
+"icerik": "Fenerbahçe Linz deplasmanı",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-18",
+"sira": 0,
+"kod": "V-29",
+"icerik": "Münih Noel",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-18",
+"sira": 1,
+"kod": "P-12",
+"icerik": "Schengen kontrol listesi",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-18",
+"sira": 2,
+"kod": "V-30",
+"icerik": "Sofya",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-18",
+"sira": 3,
+"kod": "",
+"icerik": "",
+"kim": "",
+"planli": false
+},
+{
+"gun": "2026-11-18",
+"sira": 4,
+"kod": "V-24",
+"icerik": "Varşova",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-19",
+"sira": 0,
+"kod": "V-32",
+"icerik": "Tallinn",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-19",
+"sira": 1,
+"kod": "P-13",
+"icerik": "En uygun 6 şehir",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-19",
+"sira": 2,
+"kod": "V-33",
+"icerik": "Ljubljana",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-19",
+"sira": 3,
+"kod": "P-14",
+"icerik": "Takipçi soruları",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-19",
+"sira": 4,
+"kod": "V-34",
+"icerik": "Bükreş",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-20",
+"sira": 0,
+"kod": "V-35",
+"icerik": "Brüksel",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-20",
+"sira": 1,
+"kod": "P-15",
+"icerik": "İngiltere vizesi",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-20",
+"sira": 2,
+"kod": "V-36",
+"icerik": "Stokholm",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-20",
+"sira": 3,
+"kod": "",
+"icerik": "",
+"kim": "",
+"planli": false
+},
+{
+"gun": "2026-11-20",
+"sira": 4,
+"kod": "V-37",
+"icerik": "Amsterdam, Işık Festivali",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-21",
+"sira": 0,
+"kod": "V-38",
+"icerik": "Atina",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-21",
+"sira": 1,
+"kod": "P-16",
+"icerik": "72 saatte ne sığar",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-21",
+"sira": 2,
+"kod": "V-39",
+"icerik": "Zagreb",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-21",
+"sira": 3,
+"kod": "P-17",
+"icerik": "Haftanın fiyat değişimi",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-21",
+"sira": 4,
+"kod": "V-40",
+"icerik": "Vilnius",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-22",
+"sira": 0,
+"kod": "V-41",
+"icerik": "Riga",
+"kim": "Ecem",
+"planli": true
+},
+{
+"gun": "2026-11-22",
+"sira": 1,
+"kod": "P-18",
+"icerik": "Ocak deplasman takvimi",
+"kim": "Küçük Alper",
+"planli": true
+},
+{
+"gun": "2026-11-22",
+"sira": 2,
+"kod": "V-42",
+"icerik": "Helsinki",
+"kim": "Alper",
+"planli": true
+},
+{
+"gun": "2026-11-22",
+"sira": 3,
+"kod": "",
+"icerik": "",
+"kim": "",
+"planli": false
+},
+{
+"gun": "2026-11-22",
+"sira": 4,
+"kod": "V-43",
+"icerik": "Fenerbahçe Londra: 3 gün kaldı",
+"kim": "Alper",
+"planli": true
+}
+]

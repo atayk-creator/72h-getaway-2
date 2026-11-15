@@ -1,0 +1,590 @@
+<meta name="dash-one-writer">
+<style>
+.yk{display:flex;flex-direction:column;gap:var(--cds-gap-lg);font-family:var(--font-anthropic-sans);color:var(--color-fg);font-variant-numeric:tabular-nums}
+.yk h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);margin:0}
+.yk h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.yk p{margin:0}
+.yk-lead{font-size:var(--cds-font-size-body);color:var(--color-fg-muted);max-width:70ch}
+.yk-lead b{color:var(--color-fg)}
+.yk-tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;position:sticky;top:0;z-index:3;background:var(--color-bg);padding-top:6px}
+.yk-tab{flex:none;min-height:44px;padding:0 16px;border-radius:99px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg);font:inherit;font-weight:var(--cds-font-weight-medium);cursor:pointer}
+.yk-tab[aria-selected="true"]{background:var(--color-fg);color:var(--color-bg);border-color:var(--color-fg)}
+.yk-page{display:flex;flex-direction:column;gap:var(--cds-gap-lg)}
+.yk-page[hidden]{display:none}
+.yk-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--cds-gap-md)}
+.yk-tile{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-xs)}
+.yk-tile span{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.yk-tile b{font-family:var(--font-anthropic-serif);font-weight:400;font-size:28px;line-height:1.1}
+.yk-tile small{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.yk-head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--cds-gap-md);flex-wrap:wrap}
+.yk-head small{color:var(--color-fg-muted);font-size:var(--cds-font-size-caption)}
+.yk-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--cds-gap-lg)}
+.yk-card{background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-lg);display:flex;flex-direction:column;gap:var(--cds-gap-md);min-width:0}
+.yk-scroll{overflow-x:auto}
+.yk table{width:100%;border-collapse:collapse;font-size:var(--cds-font-size-body)}
+.yk th{text-align:left;font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);padding:6px 8px 6px 0;border-bottom:1px solid var(--color-border-line);white-space:nowrap}
+.yk td{padding:9px 8px 9px 0;border-bottom:1px solid var(--color-border-line);vertical-align:top}
+.yk tr:last-child td{border-bottom:0}
+.yk-min{min-height:180px}
+.yk-chip{display:inline-block;font-size:var(--cds-font-size-caption);font-weight:var(--cds-font-weight-medium);padding:1px 8px;border-radius:99px;border:1px solid var(--color-border-line);white-space:nowrap}
+.yk-ok{color:var(--color-ok);border-color:var(--color-ok)}
+.yk-warn{color:var(--color-warn);border-color:var(--color-warn)}
+.yk-bad{color:var(--color-bad);border-color:var(--color-bad)}
+.yk-mute{color:var(--color-fg-muted)}
+.yk-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.yk-list li{padding:10px 0;border-bottom:1px solid var(--color-border-line);display:flex;flex-direction:column;gap:2px}
+.yk-list li:last-child{border-bottom:0}
+.yk-list .t{display:flex;justify-content:space-between;gap:var(--cds-gap-md);align-items:baseline}
+.yk-list .t b{font-weight:var(--cds-font-weight-medium)}
+.yk-list .d{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.yk-links{display:flex;flex-wrap:wrap;gap:var(--cds-gap-sm)}
+.yk-links a{font-size:var(--cds-font-size-body);padding:10px 14px;border:1px solid var(--color-border-line);border-radius:var(--cds-radius);color:var(--color-fg);text-decoration:none;background:var(--color-bg)}
+.yk-chart{position:relative;min-height:250px}
+.yk-chart.s{min-height:170px}
+.yk-chart svg{display:block;width:100%}
+.yk-chart text{font-size:var(--cds-font-size-caption);fill:var(--cds-text-secondary)}
+.yk-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);box-shadow:var(--cds-shadow-popover);border-radius:var(--cds-radius);padding:8px 10px;font-size:var(--cds-font-size-caption);min-width:150px;z-index:2}
+.yk-tip b{display:block;margin-bottom:4px}
+.yk-tip div{display:flex;justify-content:space-between;gap:12px;color:var(--cds-text-secondary)}
+.yk-leg{display:flex;flex-wrap:wrap;gap:var(--cds-gap-md);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.yk-leg span{display:inline-flex;align-items:center;gap:6px}
+.yk-leg i{width:10px;height:10px;border-radius:2px;display:inline-block}
+.yk-figs{display:flex;flex-wrap:wrap;gap:var(--cds-gap-lg)}
+.yk-figs div{display:flex;flex-direction:column}
+.yk-figs span{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.yk-figs b{font-family:var(--font-anthropic-serif);font-weight:400;font-size:26px;line-height:1.15}
+.yk-bar{height:10px;border-radius:99px;background:var(--color-border-line);overflow:hidden}
+.yk-bar i{display:block;height:100%;border-radius:99px;background:var(--color-ok)}
+.yk-who{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--cds-gap-md)}
+.yk-who div{border:1px solid var(--color-border-line);border-radius:var(--cds-radius);padding:var(--cds-pad-md);display:flex;flex-direction:column;gap:2px}
+.yk-who b{font-weight:var(--cds-font-weight-medium)}
+.yk-who span{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.yk-week td,.yk-week th{text-align:center;padding-right:4px}
+.yk-week td:first-child,.yk-week th:first-child{text-align:left;white-space:nowrap}
+.yk-week td{min-width:112px}
+.yk-plan{font-size:var(--cds-font-size-caption);line-height:1.3;margin-top:3px}
+[data-dash-source-state=refreshing]{opacity:.5}
+</style>
+
+<div class="yk">
+  <header class="yk-page">
+    <h1 id="baslik">72h Yönetici Ekranı</h1>
+    <p class="yk-lead">Bugün <b data-draw="oz-bk" data-source="ozet" data-field="bugunKurulu" data-row="0">—</b> / <b data-draw="oz-bt" data-source="ozet" data-field="bugunToplam" data-row="0">—</b> paylaşım yerinde, yarın <b data-draw="oz-yk" data-source="ozet" data-field="yarinKurulu" data-row="0">—</b> / <b data-draw="oz-yt" data-source="ozet" data-field="yarinToplam" data-row="0">—</b> kurulu. <b data-draw="oz-so" data-source="ozet" data-field="sorun" data-row="0">—</b> gönderide kural sorunu, senden beklenen <b data-draw="oz-ka" data-source="ozet" data-field="karar" data-row="0">—</b> karar var.</p>
+  </header>
+
+  <nav class="yk-tabs" aria-label="Bölümler">
+    <button class="yk-tab" data-tab="ozet-s" aria-selected="true">Özet</button>
+    <button class="yk-tab" data-tab="yayin-s" aria-selected="false">Yayın</button>
+    <button class="yk-tab" data-tab="sosyal-s" aria-selected="false">Sosyal medya</button>
+    <button class="yk-tab" data-tab="karar-s" aria-selected="false">Kararlar</button>
+    <button class="yk-tab" data-tab="ekip-s" aria-selected="false">Ekip</button>
+    <button class="yk-tab" data-tab="site-s" aria-selected="false">Site ve uygulama</button>
+  </nav>
+
+  <!-- ÖZET -->
+  <section class="yk-page" id="ozet-s">
+    <div class="yk-card" id="siradaki">
+      <div class="yk-head"><h2>Şimdi sırada ne var?</h2><small>Önem sırasına göre</small></div>
+      <ul class="yk-list" data-draw="liste-sira" data-source="slotlar notlar"></ul>
+    </div>
+    <div class="yk-tiles" id="kutular">
+      <div class="yk-tile"><span>Instagram takipçi</span><b data-draw="t-ig" data-source="takipozet" data-field="ig" data-row="0">—</b><small>son 7 günde +<span data-draw="t-ig7" data-source="takipozet" data-field="ig7" data-row="0">—</span></small></div>
+      <div class="yk-tile"><span>TikTok takipçi</span><b data-draw="t-tt" data-source="takipozet" data-field="tt" data-row="0">—</b></div>
+      <div class="yk-tile"><span>Etkileşim, son 14 gün</span><b data-draw="t-etk" data-source="etkozet" data-field="etkilesim" data-row="0">—</b></div>
+      <div class="yk-tile"><span>Yarın boş slot</span><b data-draw="t-bos" data-source="ozet" data-field="yarinBos" data-row="0">—</b></div>
+      <div class="yk-tile"><span>Senden beklenen karar</span><b data-draw="t-karar" data-source="ozet" data-field="karar" data-row="0">—</b></div>
+      <div class="yk-tile"><span>Ekipte süren iş</span><b data-draw="t-is" data-source="ozet" data-field="is" data-row="0">—</b></div>
+    </div>
+    <div class="yk-card" id="hedef">
+      <div class="yk-head"><h2>Hedef: Instagram'da 1.000 takipçi</h2><small data-draw="hedef-yuzde" data-source="takipozet">—</small></div>
+      <div class="yk-bar" aria-hidden="true"><i data-draw="hedef-cubuk" data-source="takipozet"></i></div>
+    </div>
+    <div class="yk-two">
+      <div class="yk-card">
+        <div class="yk-head"><h2>Bugün</h2><small data-draw="tarih-bugun">—</small></div>
+        <div class="yk-scroll yk-min">
+          <table data-source="slotlar" data-row-key="anahtar">
+            <thead><tr><th data-field="saat">Saat</th><th data-field="tur">Tür</th><th data-field="gosterilen">İçerik</th><th data-field="kim">Kim</th><th data-field="durum">Durum</th></tr></thead>
+            <tbody data-draw="tablo-bugun"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="yk-card">
+        <div class="yk-head"><h2>Yarın</h2><small data-draw="tarih-yarin">—</small></div>
+        <div class="yk-scroll yk-min">
+          <table data-source="slotlar" data-row-key="anahtar">
+            <thead><tr><th data-field="saat">Saat</th><th data-field="tur">Tür</th><th data-field="gosterilen">İçerik</th><th data-field="kim">Kim</th><th data-field="durum">Durum</th></tr></thead>
+            <tbody data-draw="tablo-yarin"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YAYIN -->
+  <section class="yk-page" id="yayin-s" hidden>
+    <div class="yk-card">
+      <div class="yk-head"><h2>7 günlük yayın programı</h2><small>Program: kurulun yayın programı. Durum: Metricool, canlı. KOPYA taslakları sayılmaz.</small></div>
+      <div class="yk-scroll">
+        <table class="yk-week">
+          <thead><tr><th>Gün</th><th>Sabah video</th><th>Öğle post</th><th>Akşam video</th><th>Akşam post</th><th>21:30 video</th></tr></thead>
+          <tbody data-draw="tablo-hafta" data-source="slotlar"></tbody>
+        </table>
+      </div>
+      <small class="yk-mute">Hafta içi 07:45 · 12:30 · 18:15 · 20:00 · 21:30. Hafta sonu 10:30 · 13:30 · 17:00 · 19:30 · 21:30. Hikâye, gönderiden 5 dakika sonra beklenir.</small>
+    </div>
+    <div class="yk-card">
+      <div class="yk-head"><h2>Bütün slotlar, ayrıntılı</h2><small>Programdaki içerik, yapan kişi, Metricool'daki karşılığı ve kural kontrolü</small></div>
+      <div class="yk-scroll">
+        <table data-source="slotlar" data-row-key="anahtar">
+          <thead><tr><th data-field="gunAd">Gün</th><th data-field="saat">Saat</th><th data-field="tur">Tür</th><th data-field="plan">Programda</th><th data-field="kim">Kim</th><th data-field="icerik">Metricool'da kurulu</th><th data-field="aglar">Nerede</th><th data-field="durum">Durum</th></tr></thead>
+          <tbody data-draw="tablo-tum"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOSYAL MEDYA -->
+  <section class="yk-page" id="sosyal-s" hidden>
+    <div class="yk-card" id="etkilesim">
+      <div class="yk-head"><h2>Etkileşim</h2><small>Son 14 gün · paylaşıldığı güne göre</small></div>
+      <div class="yk-figs">
+        <div><span>Toplam etkileşim</span><b data-draw="e-top" data-source="etkozet" data-field="etkilesim" data-row="0">—</b></div>
+        <div><span>Toplam gösterim</span><b data-draw="e-gos" data-source="etkozet" data-field="gosterim" data-row="0">—</b></div>
+        <div><span>En çok etkileşim alan gün</span><b data-draw="e-gun" data-source="etkozet" data-field="enIyiGun" data-row="0">—</b></div>
+      </div>
+      <div class="yk-leg" aria-hidden="true"><span><i class="yk-sw"></i>Instagram</span><span><i class="yk-sw"></i>TikTok</span><span><i class="yk-sw"></i>Facebook</span><span><i class="yk-sw"></i>YouTube</span></div>
+      <div class="yk-chart" data-draw="grafik" data-source="gunluk"></div>
+      <small class="yk-mute">Etkileşim: beğeni, yorum, kaydetme ve paylaşımların toplamı (Metricool tanımı). Her çubuk, o gün paylaşılan içeriklerin bugüne kadar topladığı etkileşimdir.</small>
+    </div>
+    <div class="yk-card" id="takipci">
+      <div class="yk-head"><h2>Instagram takipçi sayısı</h2><small>Son 14 gün, gün sonu değeri</small></div>
+      <div class="yk-chart s" data-draw="grafik-takipci" data-source="takipci"></div>
+    </div>
+    <div class="yk-card" id="eniyi">
+      <div class="yk-head"><h2>En çok etkileşim alan 8 içerik</h2><small>Son 14 gün</small></div>
+      <div class="yk-scroll">
+        <table data-source="eniyi" data-row-key="link">
+          <thead><tr><th data-field="ag">Ağ</th><th data-field="gun">Tarih</th><th data-field="bicim">Tür</th><th data-field="gosterim">Gösterim</th><th data-field="etkilesim">Etkileşim</th><th>İçerik</th></tr></thead>
+          <tbody data-draw="tablo-eniyi"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- KARARLAR -->
+  <section class="yk-page" id="karar-s" hidden>
+    <div class="yk-two">
+      <div class="yk-card" id="kararlar">
+        <div class="yk-head"><h2>Senden beklenen kararlar</h2><small>Yönetim kurulu notları</small></div>
+        <ul class="yk-list" data-draw="liste-karar" data-source="notlar"></ul>
+        <small class="yk-mute">Bir kararı verdiğinde sohbette yazman yeter; kurul listeden düşürür ve ilgili ekibe iletir.</small>
+      </div>
+      <div class="yk-card" id="uyarilar">
+        <div class="yk-head"><h2>Uyarılar</h2><small>Otomatik kontrol + kurul notları</small></div>
+        <ul class="yk-list" data-draw="liste-uyari" data-source="notlar slotlar"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EKİP -->
+  <section class="yk-page" id="ekip-s" hidden>
+    <div class="yk-card" id="isler">
+      <div class="yk-head"><h2>Ekip işleri</h2><small>Kim, ne, ne zamana</small></div>
+      <div class="yk-scroll">
+        <table>
+          <thead><tr><th>Kim</th><th>İş</th><th>Son saat</th><th>Durum</th></tr></thead>
+          <tbody data-draw="tablo-is" data-source="notlar"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="yk-card" id="kim">
+      <div class="yk-head"><h2>Hangi iş kime yazılır?</h2><small>Her biri ayrı bir sohbet</small></div>
+      <div class="yk-who">
+        <div><b>Yönetim kurulu</b><span>Strateji, kontrol, rapor, iş emirleri. Metricool'a gönderi kurmaz.</span></div>
+        <div><b>Sosyal medya ofisi</b><span>Metricool'a kuran tek ekip. Teslim dosyası, yayın programı.</span></div>
+        <div><b>Ecem</b><span>Videolar: şehir, Noel, deplasman. Fiyat kontrolü yayından önce.</span></div>
+        <div><b>Alper</b><span>Videolar: Ecem'le paylaşır. Görsel işleri.</span></div>
+        <div><b>Küçük Alper</b><span>Postlar ve karuseller.</span></div>
+        <div><b>Topluluk masası</b><span>Yorum ve mesaj cevapları, günde bir kez 07:00.</span></div>
+        <div><b>IT</b><span>Site, robotlar, uygulama, PDF rehber.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SİTE -->
+  <section class="yk-page" id="site-s" hidden>
+    <div class="yk-card" id="it">
+      <div class="yk-head"><h2>Site ve uygulama işleri</h2><small>Teslimler ve açıklar</small></div>
+      <div class="yk-scroll">
+        <table>
+          <thead><tr><th>İş</th><th>Tarih</th><th>Durum</th></tr></thead>
+          <tbody data-draw="tablo-it" data-source="notlar"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="yk-card" id="kisayol">
+      <h2>Kısayollar</h2>
+      <div class="yk-links">
+        <a href="https://72hgetaway.com">Site</a>
+        <a href="https://72hgetaway.com/deplasman/">Deplasman sayfaları</a>
+        <a href="https://72hgetaway.com/deplasman/fenerbahce-londra/">Fenerbahçe Londra</a>
+        <a href="https://app.metricool.com">Metricool</a>
+        <a href="https://www.instagram.com/72hgetaway/">Instagram</a>
+        <a href="https://www.tiktok.com/@72hgetaway">TikTok</a>
+        <a href="https://www.facebook.com/72hgetaway">Facebook</a>
+        <a href="https://claude.ai/artifact/McsNnCq1vLVTjEB9uKqjbx">Tasarım tuvali</a>
+        <a href="https://github.com/atayk-creator/72h-getaway-2/blob/main/yonetim/is-emri-site-tasarimi.md">Site tasarımı iş emri</a>
+        <a href="https://github.com/atayk-creator/72h-getaway-2/blob/main/yonetim/is-emri-sehir-sayfasi-teslim.md">IT teslim notları</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+// Tarihler İstanbul saatine göre
+const IST = 3 * 3600e3;
+const gunStr = (ofs) => new Date(Date.now() + IST + ofs * 864e5).toISOString().slice(0, 10);
+window.ykBugun = gunStr(0); window.ykYarin = gunStr(1);
+dash.setParams({ bas: window.ykBugun, bit: gunStr(6), etkbas: gunStr(-13) });
+const HEDEF = 1000; // Atay'ın takipçi hedefi
+
+// Sekmeler
+const tabs = document.querySelectorAll('.yk-tab');
+const ac = (id) => {
+  tabs.forEach((t) => {
+    const on = t.dataset.tab === id; t.setAttribute('aria-selected', on ? 'true' : 'false');
+    const sec = document.getElementById(t.dataset.tab); if (sec) sec.hidden = !on;
+  });
+  dash.setLink(id);
+};
+tabs.forEach((t) => t.addEventListener('click', () => ac(t.dataset.tab)));
+const ilk = (location.hash || '').slice(1);
+if (ilk && document.getElementById(ilk) && [...tabs].some((t) => t.dataset.tab === ilk)) ac(ilk);
+
+// Yayın kuralı (Atay'ın belirlediği sabit slotlar)
+const SLOT = {
+  haftaici: [['07:45', 'Video'], ['12:30', 'Post'], ['18:15', 'Video'], ['20:00', 'Post'], ['21:30', 'Video']],
+  haftasonu: [['10:30', 'Video'], ['13:30', 'Post'], ['17:00', 'Video'], ['19:30', 'Post'], ['21:30', 'Video']]
+};
+const AG = { instagram: 'IG', tiktok: 'TT', facebook: 'FB', youtube: 'YT' };
+const AGAD = { instagram: 'Instagram', tiktok: 'TikTok', facebook: 'Facebook', youtube: 'YouTube' };
+
+dash.calc('slotlar', {
+  title: 'Slot durumu',
+  description: 'Önümüzdeki 7 günün her yayın slotu: programda ne planlandı, kim yapıyor, Metricool\'da kurulu mu, kurallara uyuyor mu.',
+  inputs: ['yayinlar', 'program'],
+  fn: (yayinlar, program) => {
+    const P = (v) => { if (typeof v === 'string' && /^[\[{]/.test(v)) { try { return JSON.parse(v); } catch (e) { return v; } } return v; };
+    const emoji = /[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}]/u;
+    const posts = yayinlar.map((r) => {
+      const pd = P(r.publicationDate) || {}, ig = P(r.instagramData) || {}, fb = P(r.facebookData) || {}, pr = P(r.providers) || [];
+      const dt = String(pd.dateTime || '');
+      const nets = (Array.isArray(pr) ? pr : []).map((p) => p.network);
+      const story = (ig.type === 'STORY' && nets.includes('instagram')) || (fb.type === 'STORY' && nets.includes('facebook'));
+      return { gun: dt.slice(0, 10), saat: dt.slice(11, 16), text: String(r.text || ''), fc: String(r.firstCommentText || ''), draft: r.draft === true || r.draft === 'true', nets, story };
+    });
+    const now = new Date(Date.now() + 3 * 3600e3).toISOString();
+    const nowGun = now.slice(0, 10), nowSaat = now.slice(11, 16);
+    const gunAdi = new Intl.DateTimeFormat('tr-TR', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+    const out = [];
+    for (let gi = 0; gi < 7; gi++) {
+      const g = new Date(Date.now() + 3 * 3600e3 + gi * 864e5).toISOString().slice(0, 10);
+      const dow = new Date(g + 'T12:00:00Z').getUTCDay();
+      const slots = (dow === 0 || dow === 6) ? SLOT.haftasonu : SLOT.haftaici;
+      const day = posts.filter((p) => p.gun === g && !p.draft);
+      slots.forEach(([saat, tur], si) => {
+        const hit = day.filter((p) => p.saat === saat && !p.story);
+        const [h, m] = saat.split(':').map(Number);
+        const t5 = String(h).padStart(2, '0') + ':' + String(m + 5).padStart(2, '0');
+        const hik = day.some((p) => p.story && p.saat === t5);
+        const nets = [...new Set(hit.flatMap((p) => p.nets))];
+        const ilkP = hit.find((p) => p.nets.includes('instagram')) || hit[0];
+        const sorunlar = [];
+        if (hit.some((p) => emoji.test(p.text) || emoji.test(p.fc))) sorunlar.push('emoji var');
+        if (hit.some((p) => /\bucuz/i.test(p.text) || /\bucuz/i.test(p.fc))) sorunlar.push('"ucuz" geçiyor');
+        const perNet = {}; hit.forEach((p) => p.nets.forEach((n) => { perNet[n] = (perNet[n] || 0) + 1; }));
+        if (Object.values(perNet).some((n) => n > 1)) sorunlar.push('aynı ağa iki gönderi');
+        if (hit.length && !hik) sorunlar.push('hikâye yok');
+        const gecti = gi === 0 && saat < nowSaat;
+        const pl = program.find((p) => p.gun === g && Number(p.sira) === si);
+        const planli = pl ? (pl.planli === true || pl.planli === 'true') : null;
+        const plan = pl && planli ? (pl.kod + ' ' + pl.icerik) : '';
+        const metin = ilkP ? ilkP.text.split('\n')[0].slice(0, 70) : '';
+        out.push({
+          anahtar: g + '-' + saat, gun: g, gunAd: gi === 0 ? 'Bugün' : gi === 1 ? 'Yarın' : gunAdi.format(new Date(g + 'T12:00:00Z')),
+          sira: si, saat, tur,
+          icerik: metin, plan, kim: pl && planli ? pl.kim : '', gosterilen: metin || plan,
+          aglar: nets.map((n) => AG[n] || n).join(' · '),
+          durum: hit.length ? 'Kurulu' : (gecti ? 'Geçti' : (planli === false ? 'Plan yok' : 'Boş')), sorun: sorunlar.join(', ')
+        });
+      });
+    }
+    return out;
+  }
+});
+
+dash.calc('ozet', {
+  title: 'Özet sayılar',
+  description: 'Slot durumu ve kurul notlarından sayımlar.',
+  inputs: ['slotlar', 'notlar'],
+  fn: (slotlar, notlar) => {
+    const s = Array.isArray(slotlar) ? slotlar : [];
+    const bugun = new Date(Date.now() + 3 * 3600e3).toISOString().slice(0, 10);
+    const yarin = new Date(Date.now() + 3 * 3600e3 + 864e5).toISOString().slice(0, 10);
+    const b = s.filter((r) => r.gun === bugun), y = s.filter((r) => r.gun === yarin);
+    return [{
+      bugunKurulu: b.filter((r) => r.durum !== 'Boş' && r.durum !== 'Plan yok').length, bugunToplam: b.filter((r) => r.durum !== 'Plan yok').length,
+      yarinKurulu: y.filter((r) => r.durum === 'Kurulu').length, yarinToplam: y.filter((r) => r.durum !== 'Plan yok').length,
+      yarinBos: y.filter((r) => r.durum === 'Boş').length,
+      sorun: s.filter((r) => r.sorun).length,
+      karar: notlar.filter((n) => n.tip === 'karar' && n.durum !== 'tamam').length,
+      is: notlar.filter((n) => n.tip === 'is' && n.durum !== 'tamam').length
+    }];
+  }
+});
+
+// --- Sosyal medya verisi ---
+dash.loader('etkilesim', {
+  description: 'Metricool satır dizilerini sütun adlarına çevirir; UTC saatini İstanbul gününe taşır. Sayıları değiştirmez.',
+  fn: ({ answer }) => {
+    if (!answer || !Array.isArray(answer.rows)) throw new Error('Metricool beklenen biçimde yanıt vermedi');
+    return answer.rows.map((r) => {
+      const s = String(r[1] || '');
+      const d = new Date(Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8), +s.slice(8, 10), +s.slice(10, 12)) + 3 * 3600e3);
+      return { ag: String(r[0] || '').toLowerCase(), gun: d.toISOString().slice(0, 10), link: String(r[2] || ''), gosterim: r[3] == null ? 0 : Number(r[3]), etkilesim: r[4] == null ? 0 : Number(r[4]), bicim: String(r[5] || '') };
+    });
+  }
+});
+dash.loader('takipci', {
+  description: 'Metricool günlük satırlarını sütun adlarına çevirir ve tarihe göre sıralar. Sayıları değiştirmez.',
+  fn: ({ answer }) => {
+    if (!answer || !Array.isArray(answer.rows)) throw new Error('Metricool beklenen biçimde yanıt vermedi');
+    const num = (v) => (v == null ? null : Number(v));
+    return answer.rows.map((r) => {
+      const s = String(r[4] || '');
+      return { gun: s.slice(0, 4) + '-' + s.slice(4, 6) + '-' + s.slice(6, 8), igTakipci: num(r[0]), igKazanilan: num(r[1]), ttTakipci: num(r[2]), igGoruntulenme: num(r[3]) };
+    }).sort((a, b) => (a.gun < b.gun ? -1 : 1));
+  }
+});
+const AGLAR = ['instagram', 'tiktok', 'facebook', 'youtube'];
+dash.calc('gunluk', {
+  title: 'Günlük etkileşim',
+  description: 'İçeriklerin etkileşimi, paylaşıldığı güne ve ağa göre toplanır (son 14 gün).',
+  inputs: ['etkilesim'],
+  fn: (etkilesim) => {
+    const out = [];
+    for (let i = 13; i >= 0; i--) {
+      const gun = new Date(Date.now() + 3 * 3600e3 - i * 864e5).toISOString().slice(0, 10);
+      const row = { gun, instagram: 0, tiktok: 0, facebook: 0, youtube: 0, toplam: 0, gosterim: 0 };
+      etkilesim.forEach((r) => { if (r.gun === gun && ['instagram', 'tiktok', 'facebook', 'youtube'].includes(r.ag)) { row[r.ag] += r.etkilesim; row.toplam += r.etkilesim; row.gosterim += r.gosterim; } });
+      out.push(row);
+    }
+    return out;
+  }
+});
+dash.calc('etkozet', {
+  title: 'Etkileşim özeti',
+  description: 'Son 14 günün toplam etkileşimi, gösterimi ve en çok etkileşim alan gün.',
+  inputs: ['gunluk'],
+  fn: (gunluk) => {
+    const g = Array.isArray(gunluk) ? gunluk : [];
+    const best = g.reduce((a, b) => (b.toplam > (a ? a.toplam : -1) ? b : a), null);
+    return [{ etkilesim: g.reduce((a, r) => a + r.toplam, 0), gosterim: g.reduce((a, r) => a + r.gosterim, 0), enIyiGun: best && best.toplam > 0 ? best.gun : '' }];
+  }
+});
+dash.calc('eniyi', {
+  title: 'En çok etkileşim alan içerikler',
+  description: 'Son 14 günün içerikleri etkileşime göre sıralanır, ilk 8 alınır (hikâyeler hariç).',
+  inputs: ['etkilesim'],
+  fn: (etkilesim) => etkilesim.filter((r) => r.link && r.bicim !== 'STORY').slice().sort((a, b) => b.etkilesim - a.etkilesim).slice(0, 8)
+});
+dash.calc('takipozet', {
+  title: 'Takipçi özeti',
+  description: 'Son bilinen Instagram ve TikTok takipçi sayısı; Instagram için son 7 günde kazanılan.',
+  inputs: ['takipci'],
+  fn: (takipci) => {
+    const son = (f) => { for (let i = takipci.length - 1; i >= 0; i--) if (takipci[i][f] != null) return takipci[i][f]; return null; };
+    const ig7 = takipci.slice(-7).reduce((a, r) => a + (r.igKazanilan || 0), 0);
+    return [{ ig: son('igTakipci'), tt: son('ttTakipci'), ig7 }];
+  }
+});
+
+// --- Çizimler ---
+const nf = new Intl.NumberFormat('tr-TR');
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const chip = (text, kind) => el('span', 'yk-chip ' + (kind || ''), text);
+const kisaGun = (s) => new Intl.DateTimeFormat('tr-TR', { day: 'numeric', month: 'short', timeZone: 'UTC' }).format(new Date(s + 'T12:00:00Z'));
+const fmtGun = (s) => new Intl.DateTimeFormat('tr-TR', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(s + 'T12:00:00Z'));
+const sayi = (src, field, fmt) => (e) => {
+  const o = dash.data(src); const v = (o.status === 'ok' && o.data && o.data[0]) ? o.data[0][field] : null;
+  e.textContent = (v == null || v === '') ? '—' : (fmt ? fmt(v) : String(v));
+};
+[['oz-bk', 'bugunKurulu'], ['oz-bt', 'bugunToplam'], ['oz-yk', 'yarinKurulu'], ['oz-yt', 'yarinToplam'], ['oz-so', 'sorun'], ['oz-ka', 'karar'],
+ ['t-bos', 'yarinBos'], ['t-karar', 'karar'], ['t-is', 'is']].forEach(([n, f]) => dash.draw(n, sayi('ozet', f)));
+dash.draw('t-ig', sayi('takipozet', 'ig', nf.format)); dash.draw('t-tt', sayi('takipozet', 'tt', nf.format)); dash.draw('t-ig7', sayi('takipozet', 'ig7', nf.format));
+dash.draw('t-etk', sayi('etkozet', 'etkilesim', nf.format)); dash.draw('e-top', sayi('etkozet', 'etkilesim', nf.format)); dash.draw('e-gos', sayi('etkozet', 'gosterim', nf.format));
+dash.draw('e-gun', sayi('etkozet', 'enIyiGun', kisaGun));
+dash.draw('tarih-bugun', (e) => { e.textContent = fmtGun(window.ykBugun); });
+dash.draw('tarih-yarin', (e) => { e.textContent = fmtGun(window.ykYarin); });
+
+dash.draw('hedef-yuzde', (e) => {
+  const o = dash.data('takipozet'); const v = (o.status === 'ok' && o.data && o.data[0]) ? o.data[0].ig : null;
+  e.textContent = v == null ? '—' : (v >= HEDEF ? 'Hedef aşıldı: ' + nf.format(v) + ' takipçi' : nf.format(v) + ' / ' + nf.format(HEDEF) + ' · %' + Math.round(v / HEDEF * 100));
+});
+dash.draw('hedef-cubuk', (e) => {
+  const o = dash.data('takipozet'); const v = (o.status === 'ok' && o.data && o.data[0]) ? o.data[0].ig : null;
+  e.style.width = (v == null ? 0 : Math.min(100, v / HEDEF * 100)) + '%';
+});
+
+const durumKind = (d) => (d === 'Kurulu' ? 'yk-ok' : d === 'Boş' ? 'yk-bad' : 'yk-mute');
+const kisaPlan = (r) => (r.plan ? r.plan.replace(/^[VP]-\d+ /, '') : '');
+const bosSatir = (cols, text) => { const tr = el('tr'); const td = el('td', 'yk-mute', text); td.colSpan = cols; tr.append(td); return tr; };
+const slotVeri = () => { const s = dash.data('slotlar'); return (s.status === 'ok' && Array.isArray(s.data)) ? s.data : null; };
+const durumTd = (r) => { const d = el('td'); d.append(chip(r.durum, durumKind(r.durum))); if (r.sorun) { d.append(document.createTextNode(' ')); d.append(chip(r.sorun, 'yk-warn')); } return d; };
+const gunTablo = (gunFn) => (tb) => {
+  const s = slotVeri(); if (!s) { tb.replaceChildren(bosSatir(5, dash.data('slotlar').status === 'error' ? 'Metricool yüklenemedi' : '—')); return; }
+  tb.replaceChildren(...s.filter((r) => r.gun === gunFn()).map((r) => {
+    const tr = el('tr'); tr.dataset.key = r.anahtar;
+    tr.append(el('td', '', r.saat), el('td', 'yk-mute', r.tur), el('td', r.icerik ? '' : 'yk-mute', r.gosterilen || '—'), el('td', 'yk-mute', r.kim || '—'), durumTd(r)); return tr;
+  }));
+};
+dash.draw('tablo-bugun', gunTablo(() => window.ykBugun));
+dash.draw('tablo-yarin', gunTablo(() => window.ykYarin));
+dash.draw('tablo-tum', (tb) => {
+  const s = slotVeri(); if (!s) { tb.replaceChildren(bosSatir(8, '—')); return; }
+  tb.replaceChildren(...s.map((r) => {
+    const tr = el('tr'); tr.dataset.key = r.anahtar;
+    tr.append(el('td', '', r.gunAd), el('td', '', r.saat), el('td', 'yk-mute', r.tur), el('td', '', r.plan || '—'), el('td', 'yk-mute', r.kim || '—'), el('td', '', r.icerik || '—'), el('td', 'yk-mute', r.aglar || '—'), durumTd(r)); return tr;
+  }));
+});
+dash.draw('tablo-hafta', (tb) => {
+  const s = slotVeri(); if (!s) { tb.replaceChildren(bosSatir(6, '—')); return; }
+  const gunler = [...new Set(s.map((r) => r.gun))];
+  tb.replaceChildren(...gunler.map((g) => {
+    const rows = s.filter((r) => r.gun === g).sort((a, b) => a.sira - b.sira);
+    const tr = el('tr'); tr.append(el('td', '', rows[0].gunAd));
+    rows.forEach((r) => { const td = el('td'); td.append(chip(r.saat + ' ' + r.durum, r.sorun ? 'yk-warn' : durumKind(r.durum))); const p = kisaPlan(r); if (p) { const sm = el('div', 'yk-plan', p); td.append(sm); if (r.kim) td.append(el('div', 'yk-plan yk-mute', r.kim)); } tr.append(td); });
+    return tr;
+  }));
+});
+
+const notSatir = (n) => {
+  const li = el('li'); const t = el('div', 't');
+  t.append(el('b', '', n.baslik), el('span', 'yk-mute', n.son || ''));
+  li.append(t); if (n.detay) li.append(el('span', 'd', n.detay));
+  return li;
+};
+const bosLi = (text) => { const li = el('li'); li.append(el('span', 'yk-mute', text)); return li; };
+const otoUyari = () => {
+  const s = slotVeri(); const items = [];
+  if (s) s.forEach((r) => {
+    if (r.gun > window.ykYarin) return;
+    if (r.durum === 'Boş') items.push({ baslik: r.gunAd + ' ' + r.saat + ' ' + r.tur.toLowerCase() + ' slotu boş', son: 'Metricool', detay: (r.plan ? 'Programda: ' + r.plan + (r.kim ? ' (' + r.kim + ')' : '') + '. ' : 'Programda içerik yok. ') + 'Teslim gelince ofis kurar.' });
+    if (r.sorun) items.push({ baslik: r.gunAd + ' ' + r.saat + ': ' + r.sorun, son: 'Metricool', detay: r.icerik });
+  });
+  return items;
+};
+const notlar = (tip) => { const n = dash.data('notlar'); return n.status === 'ok' ? n.data.filter((r) => r.tip === tip && r.durum !== 'tamam') : null; };
+
+dash.draw('liste-karar', (ul) => {
+  const rows = notlar('karar'); if (!rows) { ul.replaceChildren(bosLi('—')); return; }
+  ul.replaceChildren(...(rows.length ? rows.map(notSatir) : [bosLi('Bekleyen karar yok.')]));
+});
+dash.draw('liste-uyari', (ul) => {
+  const items = otoUyari().concat(notlar('uyari') || []);
+  ul.replaceChildren(...(items.length ? items.map(notSatir) : [bosLi('Uyarı yok.')]));
+});
+dash.draw('liste-sira', (ul) => {
+  const oto = otoUyari(), kar = notlar('karar') || [], items = [];
+  const sorunlu = oto.filter((o) => !/slotu boş$/.test(o.baslik)), bos = oto.filter((o) => /slotu boş$/.test(o.baslik));
+  sorunlu.forEach((o) => items.push({ baslik: 'Kural sorunu: ' + o.baslik, son: 'Ofis düzeltsin', detay: o.detay }));
+  if (bos.length) items.push({ baslik: bos.length + ' slot boş (bugün ve yarın)', son: 'Ofis kursun', detay: bos.map((b) => b.baslik.replace(' slotu boş', '')).join(' · ') });
+  kar.slice(0, 3).forEach((k) => items.push({ baslik: 'Karar: ' + k.baslik, son: k.son, detay: k.detay }));
+  if (kar.length > 3) items.push({ baslik: 've ' + (kar.length - 3) + ' karar daha', son: 'Kararlar sekmesi', detay: '' });
+  ul.replaceChildren(...(items.length ? items.map(notSatir) : [bosLi('Her şey yolunda: bekleyen iş yok.')]));
+});
+
+const durumChip = (d) => chip(d, d === 'tamam' ? 'yk-ok' : (d === 'açık' || d === 'bekliyor') ? 'yk-warn' : 'yk-mute');
+dash.draw('tablo-is', (tb) => {
+  const n = dash.data('notlar'); if (n.status !== 'ok') { tb.replaceChildren(bosSatir(4, '—')); return; }
+  tb.replaceChildren(...n.data.filter((r) => r.tip === 'is').map((r) => {
+    const tr = el('tr'); const d = el('td'); d.append(durumChip(r.durum));
+    tr.append(el('td', '', r.kim), el('td', '', r.baslik), el('td', 'yk-mute', r.son), d); return tr;
+  }));
+});
+dash.draw('tablo-it', (tb) => {
+  const n = dash.data('notlar'); if (n.status !== 'ok') { tb.replaceChildren(bosSatir(3, '—')); return; }
+  tb.replaceChildren(...n.data.filter((r) => r.tip === 'it').map((r) => {
+    const tr = el('tr'); const d = el('td'); d.append(durumChip(r.durum));
+    tr.append(el('td', '', r.baslik), el('td', 'yk-mute', r.son), d); return tr;
+  }));
+});
+dash.draw('tablo-eniyi', (tb) => {
+  const o = dash.data('eniyi'); if (o.status !== 'ok' || !Array.isArray(o.data)) { tb.replaceChildren(bosSatir(6, o.status === 'error' ? 'Yüklenemedi' : '—')); return; }
+  tb.replaceChildren(...o.data.map((r) => {
+    const tr = el('tr'); tr.dataset.key = r.link;
+    const td = el('td'); const a = el('a', '', 'Aç'); a.href = /^https:\/\//.test(r.link) ? r.link : '#'; a.target = '_blank'; a.rel = 'noopener'; td.append(a);
+    tr.append(el('td', '', AGAD[r.ag] || r.ag), el('td', 'yk-mute', kisaGun(r.gun)), el('td', 'yk-mute', r.bicim.toLowerCase()), el('td', '', nf.format(r.gosterim)), el('td', '', nf.format(r.etkilesim)), td);
+    return tr;
+  }));
+});
+
+document.querySelectorAll('.yk-sw').forEach((sw, i) => { sw.style.background = dash.colors[i]; });
+const tipKur = (box) => { const tip = document.createElement('div'); tip.className = 'yk-tip'; tip.hidden = true; return tip; };
+const tipSatir = (ad, deger) => { const r = document.createElement('div'); r.append(el('span', '', ad), el('span', '', deger)); return r; };
+
+dash.draw('grafik', (box) => {
+  const g = dash.data('gunluk');
+  if (g.status !== 'ok' || !Array.isArray(g.data)) { box.replaceChildren(el('p', 'yk-mute', g.status === 'error' ? 'Etkileşim verisi yüklenemedi' : '—')); return; }
+  const data = g.data, W = Math.max(280, box.clientWidth), H = 250, m = { t: 22, r: 8, b: 26, l: 44 };
+  const x = d3.scaleBand().domain(data.map((d) => d.gun)).range([m.l, W - m.r]).padding(0.25);
+  const y = d3.scaleLinear().domain([0, d3.max(data, (d) => d.toplam) || 1]).nice(4).range([H - m.b, m.t]);
+  const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('height', H).attr('role', 'img').attr('aria-label', 'Son 14 günde günlük etkileşim, ağlara göre yığılmış çubuk grafik');
+  svg.append('g').selectAll('line').data(y.ticks(4)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d)).style('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(y.ticks(4)).join('text').attr('x', m.l - 6).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end').text((d) => nf.format(d));
+  const every = x.step() < 44 ? 2 : 1;
+  svg.append('g').selectAll('text').data(data.filter((d, i) => (data.length - 1 - i) % every === 0)).join('text').attr('x', (d) => x(d.gun) + x.bandwidth() / 2).attr('y', H - 8).attr('text-anchor', 'middle').text((d) => kisaGun(d.gun));
+  svg.append('g').selectAll('g').data(d3.stack().keys(AGLAR)(data)).join('g').style('fill', (d, i) => dash.colors[i])
+    .selectAll('rect').data((d) => d).join('rect').attr('x', (d) => x(d.data.gun)).attr('width', x.bandwidth()).attr('y', (d) => y(d[1])).attr('height', (d) => Math.max(0, y(d[0]) - y(d[1])));
+  if (x.bandwidth() >= 22) svg.append('g').selectAll('text').data(data.filter((d) => d.toplam > 0)).join('text').attr('x', (d) => x(d.gun) + x.bandwidth() / 2).attr('y', (d) => y(d.toplam) - 5).attr('text-anchor', 'middle').style('fill', 'var(--color-fg)').text((d) => nf.format(d.toplam));
+  const tip = tipKur(box);
+  const show = (event, d) => {
+    tip.replaceChildren(el('b', '', kisaGun(d.gun) + ' · ' + nf.format(d.toplam) + ' etkileşim'), ...AGLAR.map((k) => tipSatir(AGAD[k], nf.format(d[k]))), tipSatir('Gösterim', nf.format(d.gosterim)));
+    tip.hidden = false;
+    const cx = (x(d.gun) + x.bandwidth() / 2) * (box.clientWidth / W);
+    tip.style.left = Math.min(Math.max(0, cx - 80), Math.max(0, box.clientWidth - 170)) + 'px'; tip.style.top = '4px';
+  };
+  svg.append('g').selectAll('rect').data(data).join('rect').attr('x', (d) => x(d.gun) - x.step() * 0.12).attr('width', x.step()).attr('y', m.t).attr('height', H - m.t - m.b)
+    .style('fill', 'transparent').on('pointerenter pointermove click', show).on('pointerleave', () => { tip.hidden = true; });
+  box.replaceChildren(svg.node(), tip);
+});
+
+dash.draw('grafik-takipci', (box) => {
+  const g = dash.data('takipci');
+  if (g.status !== 'ok' || !Array.isArray(g.data)) { box.replaceChildren(el('p', 'yk-mute', g.status === 'error' ? 'Takipçi verisi yüklenemedi' : '—')); return; }
+  const data = g.data.filter((d) => d.igTakipci != null);
+  if (!data.length) { box.replaceChildren(el('p', 'yk-mute', 'Bu dönem için takipçi verisi yok.')); return; }
+  const W = Math.max(280, box.clientWidth), H = 170, m = { t: 20, r: 46, b: 24, l: 44 };
+  const x = d3.scalePoint().domain(data.map((d) => d.gun)).range([m.l, W - m.r]);
+  const y = d3.scaleLinear().domain([0, d3.max(data, (d) => d.igTakipci) || 1]).nice(3).range([H - m.b, m.t]);
+  const svg = d3.create('svg').attr('viewBox', `0 0 ${W} ${H}`).attr('height', H).attr('role', 'img').attr('aria-label', 'Instagram takipçi sayısının günlere göre çizgi grafiği');
+  svg.append('g').selectAll('line').data(y.ticks(3)).join('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', (d) => y(d)).attr('y2', (d) => y(d)).style('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(y.ticks(3)).join('text').attr('x', m.l - 6).attr('y', (d) => y(d)).attr('dy', '0.32em').attr('text-anchor', 'end').text((d) => nf.format(d));
+  const every = Math.ceil(data.length / Math.max(2, Math.floor((W - m.l - m.r) / 56)));
+  svg.append('g').selectAll('text').data(data.filter((d, i) => (data.length - 1 - i) % every === 0)).join('text').attr('x', (d) => x(d.gun)).attr('y', H - 6).attr('text-anchor', 'middle').text((d) => kisaGun(d.gun));
+  svg.append('path').datum(data).attr('d', d3.line().x((d) => x(d.gun)).y((d) => y(d.igTakipci))).style('fill', 'none').style('stroke', dash.colors[0]).style('stroke-width', 2);
+  svg.append('g').selectAll('circle').data(data).join('circle').attr('cx', (d) => x(d.gun)).attr('cy', (d) => y(d.igTakipci)).attr('r', 3).style('fill', dash.colors[0]);
+  const last = data[data.length - 1];
+  svg.append('text').attr('x', x(last.gun) + 6).attr('y', y(last.igTakipci)).attr('dy', '0.32em').style('fill', 'var(--color-fg)').text(nf.format(last.igTakipci));
+  const tip = tipKur(box);
+  svg.append('g').selectAll('rect').data(data).join('rect').attr('x', (d) => x(d.gun) - x.step() / 2).attr('width', Math.max(8, x.step())).attr('y', m.t).attr('height', H - m.t - m.b).style('fill', 'transparent')
+    .on('pointerenter pointermove click', (event, d) => {
+      tip.replaceChildren(el('b', '', kisaGun(d.gun)), tipSatir('Takipçi', nf.format(d.igTakipci)), tipSatir('O gün kazanılan', d.igKazanilan == null ? '—' : nf.format(d.igKazanilan)), tipSatir('Görüntülenme', d.igGoruntulenme == null ? '—' : nf.format(d.igGoruntulenme)));
+      tip.hidden = false;
+      const cx = x(d.gun) * (box.clientWidth / W);
+      tip.style.left = Math.min(Math.max(0, cx - 80), Math.max(0, box.clientWidth - 170)) + 'px'; tip.style.top = '0px';
+    }).on('pointerleave', () => { tip.hidden = true; });
+  box.replaceChildren(svg.node(), tip);
+});
+</script>
