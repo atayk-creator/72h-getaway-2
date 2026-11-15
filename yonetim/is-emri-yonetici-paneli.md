@@ -68,3 +68,34 @@ Görsel dil: site ile aynı (lacivert/turuncu/krem, Archivo/Figtree/IBM Plex Mon
 2. Gizli pencerede adres açılınca yalnız şifre kutusu görünür; sayfa kaynağında ve depoda düz veri yok (teslimde `grep` çıktısıyla göster: bir takipçi sayısı ve bir karar başlığı aranır, bulunmaz).
 3. İş akışı saatte bir çalışıyor; "Veri:" saati yenileniyor.
 4. Google'da ve sitemap'te /panel/ yok.
+
+---
+
+## Teslim notu · 1 (15 Kas 2026 18:30): depo kontrolü ve şifreleme altyapısı
+
+**İlk iş, depo herkese açık mı: EVET, herkese açık.**
+- GitHub API yanıtı (15 Kas 2026): `atayk-creator/72h-getaway-2` → `private: false`, `visibility: public`.
+- Sonuç: iş emrindeki tasarım (herkese açık depo varsayımı) aynen geçerli. Depodaki her dosya, `yonetim/` klasörü dahil, adresi bilen herkesçe okunabilir (`yonetim/` yalnızca siteden hariç tutulur, depodan değil).
+- **Dikkat (kurulun bilgisine):** bu iş emri dosyası da depoda olduğu için panelin adresi (/panel/) ve mimarisi herkese açık. Güvenlik adresin gizliliğine değil şifrelemeye dayanıyor, yani sorun değil; ama "panel adresi hiçbir herkese açık sayfada geçmez" maddesi depo için sağlanmıyor. İstenirse iş emri depodan çıkarılır (git geçmişinde kalır) ya da depo özel yapılır (GitHub Pages özel depoda ücretli plan ister).
+- `yonetim/panel-kaynak/panel-claude.html` incelendi: yalnızca sayfa kodu, içinde veri yok (takipçi hedefi sabiti 1.000 dışında).
+
+**Bu adımda yapılanlar (düz veri, şifre, anahtar içermez)**
+- `scripts/panel-sifrele.mjs`: içerik gzip + AES-256-GCM; anahtar şifreden PBKDF2-SHA256, 600.000 tur. Çıktı `panel/index.html` = şifre kutusu + şifreli blok + çözücü (WebCrypto). Şifre yalnızca `PANEL_SIFRE` ortam değişkeninden okunur, hiçbir yere yazdırılmaz.
+- `yonetim/panel/tuz.txt`: rastgele tuz (gizli değildir). Sabit tutulur ki telefonda hatırlanan anahtar saatlik yenilemelerde geçerli kalsın. Şifre değişirse eski kayıt kendiliğinden düşer ("Şifre değişmiş; yeniden gir").
+- "Bu cihazda hatırla" (varsayılan açık, localStorage, try/catch) ve "Çıkış" (`window.PANEL_CIKIS()`: anahtarı siler, şifre kutusuna döner).
+- `panel/manifest.webmanifest` (72h Panel, standalone, start_url /panel/, lacivert), apple-touch-icon ve `apple-mobile-web-app-capable` kabukta.
+- `robots.txt`: `Disallow: /panel/`. Kabukta `noindex,nofollow`. sitemap.xml'e eklenmiyor. `sw.js` (v17): /panel/ altındaki hiçbir şey önbelleğe alınmaz.
+- Test: `scripts/test-panel-sifrele.mjs` (şifrele-çöz, yanlış şifre, kabukta düz metin yok). Tarayıcıda denendi: yanlış şifre "Şifre yanlış.", doğru şifreyle açılıyor, yeniden açınca şifre sormuyor, Çıkış'tan sonra soruyor.
+
+**Sıradaki (22 Kas'a kadar)**
+1. `scripts/panel.mjs`: Claude panelinin hesaplarını ve görünümünü gömülü JSON ile çalışan tek dosyaya çevirmek (d3 yerine elle SVG).
+2. `scripts/panel-veri.mjs`: Metricool REST sorguları. Plan API'ye izin vermiyorsa durup buraya yazılacak.
+3. Kurul notları için anahtar çifti ve `notlar.enc` çözümü; kurulun kullanacağı tek satırlık şifreleme komutu.
+4. `.github/workflows/panel.yml`: saatlik; Secrets eksikse panel üretmeden, hata vermeden çıkar.
+
+**Atay'dan beklenen (GitHub → Settings → Secrets and variables → Actions; hiçbiri sohbete yazılmaz)**
+- `PANEL_SIFRE`: en az 16 karakter (çevrimdışı deneme-yanılmaya karşı uzunluk tek savunma).
+- `METRICOOL_TOKEN`, `METRICOOL_USER_ID`.
+- `PANEL_NOT_ANAHTARI`: özel anahtar. IT sohbeti özel anahtarı göremesin diye Atay kendi Mac'inde üretecek; komut 3. adımda verilecek (özel anahtar yalnızca panoya kopyalanır, dosyaya yazılmaz).
+
+**Bilinen sınır:** panel saatte bir commit edilirse depo geçmişi ayda yaklaşık 10–15 MB büyür (şifreli blok her seferinde tamamen değişir). Gerekirse veri değişmediğinde commit atlanır.

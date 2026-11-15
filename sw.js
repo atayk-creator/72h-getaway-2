@@ -4,7 +4,7 @@
 // - Diğer dosyalar (ikon, manifest...): önce önbellek, arkada tazele (stale-while-revalidate).
 // Önbellek anahtarı adresin sorgu kısmı (?t=..., ?sehir=...) atılmış hâlidir: her yol için tek kayıt,
 // böylece ?t= zaman damgalı veri istekleri önbelleği sınırsız büyütmez.
-const CACHE = "72h-v16";
+const CACHE = "72h-v17";
 const SINIR = 150; // önbellekte en fazla bu kadar dosya: en eski kayıtlar silinir (görseller sınırsız birikmesin)
 const SHELL = ["/", "/hesapla.html", "/oteller.html", "/hakkinda.html", "/404.html", "/manifest.webmanifest", "/favicon.ico", "/js/olcum.js", "/img/icon-192.png", "/img/icon-512.png"];
 
@@ -65,6 +65,8 @@ self.addEventListener("fetch", (e) => {
   if (req.method !== "GET") return;
   const u = new URL(req.url);
   if (u.origin !== location.origin) return;
+  // Yönetici paneli hiçbir zaman önbelleğe alınmaz
+  if (u.pathname.startsWith("/panel/")) return;
   // Videolar önbelleğe alınmaz: parça parça (Range) istenir, Safari 206 yanıtı bekler
   if (req.headers.has("range") || /\.(mp4|webm|m4v)$/i.test(u.pathname)) return;
   // Sayfaların kodu ve stili (site.js, plan.js, css) sayfayla aynı sürümde olmalı: önce internet
