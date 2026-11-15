@@ -99,3 +99,22 @@ Görsel dil: site ile aynı (lacivert/turuncu/krem, Archivo/Figtree/IBM Plex Mon
 - `PANEL_NOT_ANAHTARI`: özel anahtar. IT sohbeti özel anahtarı göremesin diye Atay kendi Mac'inde üretecek; komut 3. adımda verilecek (özel anahtar yalnızca panoya kopyalanır, dosyaya yazılmaz).
 
 **Bilinen sınır:** panel saatte bir commit edilirse depo geçmişi ayda yaklaşık 10–15 MB büyür (şifreli blok her seferinde tamamen değişir). Gerekirse veri değişmediğinde commit atlanır.
+
+---
+
+## Teslim notu · 2 (16 Kas 2026 00:15): panel kodu ve saatlik iş akışı
+
+**Yapılanlar (hiçbirinde düz veri, şifre ya da anahtar yok)**
+- `scripts/panel.mjs`: Claude panelinin hesapları (slot durumu ve kural kontrolü, özet sayılar, günlük etkileşim, en iyi 8 içerik, takipçi özeti) ve altı sekmeli görünümü. Grafikler d3'süz, elle SVG. "Veri: saat" başlıkta; 3 saatten eskiyse "Veri eski" uyarısı; panel öne gelince 10 dakikadan eskiyse kendini yeniler; "Çıkış" düğmesi.
+- `scripts/panel-veri.mjs`: Metricool REST sorguları (marka, 7 günlük yayın takvimi, son 14 günün içerik etkileşimleri, takipçi serileri). Bir sorgu başarısızsa yalnız o bölüm "Metricool yüklenemedi" yazar; loga yalnızca bölüm adı düşer.
+- `scripts/panel-not.mjs`: kurul notları için şifreleme (rastgele AES-256-GCM + RSA-OAEP). Kurulun tek satırı: `node scripts/panel-not.mjs sifrele notlar.json` → `yonetim/panel/notlar.enc`. Biçim dosyanın başında yazılı. `notlar.json` depoya konmaz.
+- `scripts/panel-uret.mjs` + `.github/workflows/panel.yml`: saatte bir (her saatin 17. dakikası), elle çalıştırma ve panel kodu değişince. Düz HTML hiç diske yazılmaz; bellekte şifrelenip `panel/index.html`'e yazılır ve yalnız o dosya commit edilir.
+- Testler: `scripts/test-panel.mjs` (hesaplar, Metricool dönüştürücüleri, sahte ağla istemci, not şifreleme, uçtan uca HTML) ve `scripts/test-panel-sifrele.mjs`.
+
+**İş emrinden bilinçli sapma:** `PANEL_SIFRE` yoksa iş akışı sessizce çıkar. Metricool ya da not anahtarı eksikse panel yine üretilir ve o bölümler "girilmedi / henüz yüklenmedi" yazar (kırmızı hata yok). Böylece Atay şifreyi girer girmez paneli telefonda deneyebilir.
+
+**Secrets durumu (16 Kas 00:05):** `PANEL_SIFRE` girildi. `METRICOOL_TOKEN`, `METRICOOL_USER_ID`, `PANEL_NOT_ANAHTARI` bekliyor.
+
+**Doğrulanmamış kısım:** Metricool REST adresleri ve alan adları gerçek anahtarla denenmedi (anahtar IT'de yok, olmamalı). İlk gerçek çalıştırmada bir bölüm boş gelirse iş akışı "tanılama" seçeneğiyle elle çalıştırılır; loga yalnızca sorgu durumu ve alan adları yazılır, değer yazılmaz; alan eşlemesi ona göre düzeltilir. Plan API'ye izin vermiyorsa bu not güncellenecek ve yedek yola (kurulun şifreli veri dosyası) geçilecek.
+
+**Kalan:** açık/özel anahtar çifti (Atay Mac'inde üretecek), kurulun ilk `notlar.enc` dosyası, Metricool doğrulaması, telefonda kabul testi.

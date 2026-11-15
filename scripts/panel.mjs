@@ -99,7 +99,7 @@ const kisaPlan = (r) => (r.plan ? r.plan.replace(/^[VP]-\d+ /, "") : "");
 const adim = (max, n) => { const ham = (max || 1) / n, us = 10 ** Math.floor(Math.log10(ham)), k = [1, 2, 5, 10].find((x) => x * us >= ham) * us; return { k, ust: Math.ceil((max || 1) / k) * k }; };
 
 function grafikEtkilesim(data) {
-  const W = 720, H = 250, m = { t: 22, r: 8, b: 26, l: 44 }, n = data.length, bant = (W - m.l - m.r) / n, bw = bant * 0.75;
+  const W = 440, H = 250, m = { t: 22, r: 6, b: 26, l: 38 }, n = data.length, bant = (W - m.l - m.r) / n, bw = bant * 0.75;
   const { k, ust } = adim(Math.max(...data.map((d) => d.toplam)), 4), y = (v) => H - m.b - (v / ust) * (H - m.t - m.b);
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Son 14 günde günlük etkileşim, ağlara göre yığılmış çubuk grafik">`;
   for (let v = 0; v <= ust; v += k) s += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" class="grid"/><text x="${m.l - 6}" y="${y(v)}" dy="0.32em" text-anchor="end">${nf(v)}</text>`;
@@ -107,7 +107,7 @@ function grafikEtkilesim(data) {
     const x = m.l + i * bant + (bant - bw) / 2; let alt = 0;
     AGLAR.forEach((a, ai) => { if (d[a] > 0) { s += `<rect x="${x.toFixed(1)}" width="${bw.toFixed(1)}" y="${y(alt + d[a]).toFixed(1)}" height="${Math.max(0, y(alt) - y(alt + d[a])).toFixed(1)}" fill="${RENK[ai]}"/>`; alt += d[a]; } });
     if (d.toplam > 0) s += `<text x="${(x + bw / 2).toFixed(1)}" y="${(y(d.toplam) - 5).toFixed(1)}" text-anchor="middle" class="koyu">${nf(d.toplam)}</text>`;
-    if ((n - 1 - i) % 2 === 0) s += `<text x="${(x + bw / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(kisaGun(d.gun))}</text>`;
+    if ((n - 1 - i) % 3 === 0) s += `<text x="${(x + bw / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(kisaGun(d.gun))}</text>`;
     s += `<rect x="${(m.l + i * bant).toFixed(1)}" width="${bant.toFixed(1)}" y="${m.t}" height="${H - m.t - m.b}" fill="transparent" tabindex="0" data-tip="${esc(JSON.stringify([kisaGun(d.gun) + " · " + nf(d.toplam) + " etkileşim", ...AGLAR.map((a) => [AGAD[a], nf(d[a])]), ["Gösterim", nf(d.gosterim)]]))}"/>`;
   });
   return s + "</svg>";
@@ -115,12 +115,12 @@ function grafikEtkilesim(data) {
 function grafikTakipci(tum) {
   const data = tum.filter((d) => d.igTakipci != null);
   if (!data.length) return '<p class="mute">Bu dönem için takipçi verisi yok.</p>';
-  const W = 720, H = 170, m = { t: 20, r: 56, b: 24, l: 44 }, n = data.length, x = (i) => (n === 1 ? (m.l + W - m.r) / 2 : m.l + (i * (W - m.l - m.r)) / (n - 1));
+  const W = 440, H = 190, m = { t: 20, r: 44, b: 24, l: 38 }, n = data.length, x = (i) => (n === 1 ? (m.l + W - m.r) / 2 : m.l + (i * (W - m.l - m.r)) / (n - 1));
   const { k, ust } = adim(Math.max(...data.map((d) => d.igTakipci)), 3), y = (v) => H - m.b - (v / ust) * (H - m.t - m.b);
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Instagram takipçi sayısının günlere göre çizgi grafiği">`;
   for (let v = 0; v <= ust; v += k) s += `<line x1="${m.l}" x2="${W - m.r}" y1="${y(v)}" y2="${y(v)}" class="grid"/><text x="${m.l - 6}" y="${y(v)}" dy="0.32em" text-anchor="end">${nf(v)}</text>`;
   s += `<path d="${data.map((d, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(d.igTakipci).toFixed(1)).join(" ")}" fill="none" stroke="${RENK[0]}" stroke-width="2.5"/>`;
-  const her = Math.ceil(n / 7);
+  const her = Math.ceil(n / 5);
   data.forEach((d, i) => {
     s += `<circle cx="${x(i).toFixed(1)}" cy="${y(d.igTakipci).toFixed(1)}" r="3.5" fill="${RENK[0]}"/>`;
     if ((n - 1 - i) % her === 0) s += `<text x="${x(i).toFixed(1)}" y="${H - 6}" text-anchor="middle">${esc(kisaGun(d.gun))}</text>`;
