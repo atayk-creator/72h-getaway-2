@@ -198,7 +198,8 @@ export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHo
     ucus = ucus.filter((u, i) => ucus.findIndex((x) => x.id === u.id) === i).sort((a, b) => a.pp - b.pp);
     ucus = ucus.map((u) => ({ ...u, ...havayoluLink({ ...u, hy0: u.ad.split(" · ")[0] }, h.g, h.cikis) }));
     if (!ucus.length) ucus = [{ id: "ara", ad: `İstanbul → ${sehir}`, dt: "Bu hafta sonu için fiyat ölçülemedi; Google Flights'ta gör", pp: null, ap: "", kalkis: "", q, k: "est", kay: "Google Flights", tam: 1 }];
-    return { id: h.g, gidis: h.g, donus: h.cikis, gece: gece(h.g, h.cikis), etiket: kisaAralik(h.g, h.cikis), ek: h.etiket === "ucuz" ? "fırsat" : "", ucus, otel };
+    // vt: takvim kutusundaki rakam (2 kişi uçak + konforlu otel, TL), e: u/n/p etiketi, f: olağan fiyata göre % fark
+    return { id: h.g, gidis: h.g, donus: h.cikis, gece: gece(h.g, h.cikis), etiket: kisaAralik(h.g, h.cikis), vt: h.toplam != null ? Math.round(h.toplam * eurTry) : null, e: { ucuz: "u", normal: "n", pahali: "p" }[h.etiket] || "", f: h.fark != null ? h.fark : null, ucus, otel };
   });
   const U = JSON.parse(JSON.stringify(G.ulasim || {}));
   const gEur = (n) => (typeof n === "number" && G.para && G.para !== "EUR" ? toEur(n, G.para, d.kur) : n); // gezi.json yerel para biriminde olabilir (ör. HUF)
@@ -226,6 +227,7 @@ export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHo
   return {
     yol, slug, url: SITE + yol, tur: "sehir", ad: sehir, ust: `${sehir} · hafta sonu kaçamağı`, sehir, kisi: 2, kur: Math.round(eurTry * 100) / 100, gun: 3,
     baslik: ek.baslik || `${sehir}, 72 saatte`, giris: ek.giris || `İstanbul'dan ${sehir} hafta sonu: cuma sabah gidiş, pazar akşam dönüş, 2 gece. Hazır paketlerden birini seç ya da kendi kaçamağını kur; her kalemin yanında onu alabileceğin site var.`,
+    iata: (haftalar.flatMap((h) => h.ucus).find((u) => u.ap) || {}).ap || "",
     foto: foto.dosya || "", fotoAlt: foto.alt || sehir, fotoKaynak: foto.kaynak || "", haftalar, transfer, sehirIci, bilet: null, yemek, yemekLink: ek.yemek_link || {}, gezi, paket,
     uyari: ek.uyari || (vz ? { baslik: vz.baslik, yazi: vz.yazi, link: vz.link || "", linkAd: vz.linkAd || "" } : null), bilgiler: ek.bilgiler || [["Ülke", (model.ulke || "").toLocaleUpperCase("tr")], ["Kaçamak", "CUMA – PAZAR · 2 GECE"], ["Uçuş", "İSTANBUL'DAN"], ["Kişi", "2 KİŞİ"]],
     plan: ek.plan || ornekPlan(sehir, G.yerler || [], model.restoranlar), planNot: ek.plan_not || "Örnek akış: yerler popülerliğe göre sıralı; saatleri uçuşuna ve aldığın biletlere göre kaydır.", haric: ek.haric != null ? ek.haric : vz ? vz.haric : "",
@@ -279,45 +281,44 @@ export function renderPlanPage(V, { esc, jsonLd, SITE, surum }) {
 </head>
 <body>
 
-<header class="bar"><div class="wrap">
-  <a class="logo" href="/" aria-label="72h Getaway ana sayfa"><span class="a">72h</span><span class="b">getaway</span></a>
-  <nav aria-label="Site"><a${V.tur === "sehir" ? ' class="on"' : ""} href="/sehir/">Şehirler</a><a${V.tur === "deplasman" ? ' class="on"' : ""} href="/deplasman/">Deplasman</a><a${V.tur === "noel" ? ' class="on"' : ""} href="/sehir/noel/">Noel</a><a href="https://instagram.com/72hgetaway" rel="noopener">Instagram</a></nav>
-</div></header>
-
-<div class="hero"><div class="wrap">
-  ${V.foto ? `<div class="photo" role="img" aria-label="${esc(V.fotoAlt)}" style="background-image:url(${esc(V.foto)})">${V.fotoKaynak ? `<span>Fotoğraf: ${esc(V.fotoKaynak)}</span>` : ""}</div>` : ""}
-  <div style="display:flex;flex-direction:column;gap:10px">
-    <span class="mono" style="color:var(--accent)">${esc(V.ust)}</span>
-    <h1>${esc(V.baslik)}</h1>
-    <p class="lead">${esc(V.giris)}</p>
-  </div>
-  <div class="facts">
-    ${V.bilgiler.map((b) => `<div class="fact"><span class="mono">${esc(b[0])}</span><b>${esc(b[1])}</b></div>`).join("\n    ")}
-  </div>
-  ${V.uyari ? `<div class="warn">${UYARI_SVG}<span><b>${esc(V.uyari.baslik)}</b> ${esc(V.uyari.yazi)}${V.uyari.link ? ` <a href="${esc(V.uyari.link)}" rel="noopener">${esc(V.uyari.linkAd || "Resmî site")}</a>` : ""}</span></div>` : ""}
-</div></div>
+<header class="ust">
+  ${V.foto ? `<img class="ust-foto" src="${esc(V.foto)}" alt="${esc(V.fotoAlt)}" width="1600" height="1067" fetchpriority="high">` : '<div class="ust-foto"></div>'}
+  <a class="geri" href="${esc(V.tur === "sehir" ? "/sehirler/" : V.ustLink.yol)}" aria-label="Geri: ${esc(V.tur === "sehir" ? "Şehirler" : V.ustLink.ad)}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
+  ${V.fotoKaynak ? `<span class="ust-kaynak">Fotoğraf: ${esc(V.fotoKaynak)}</span>` : ""}
+</header>
 
 <main class="wrap">
+
+<div class="bkart">
+  <div class="stub"><span>72 SAAT</span></div>
+  <div class="govde">
+    <div class="mono rota" id="pk-route">IST → ${esc(V.sehir.toLocaleUpperCase("tr"))}</div>
+    <div class="adfiyat"><h1>${esc(V.kartAd || V.sehir)}</h1><b id="pk-total">–</b></div>
+    <span class="alt" id="pk-pp">${esc(V.ust)}</span>
+  </div>
+</div>
+${V.tur === "sehir" ? "" : `<p class="mono ust-etiket">${esc(V.ust)}</p>
+<div class="facts acik">
+  ${V.bilgiler.map((b) => `<div class="fact"><span class="mono">${esc(b[0])}</span><b>${esc(b[1])}</b></div>`).join("\n  ")}
+</div>`}
+${V.uyari ? `<div class="warn">${UYARI_SVG}<span><b>${esc(V.uyari.baslik)}</b> ${esc(V.uyari.yazi)}${V.uyari.link ? ` <a href="${esc(V.uyari.link)}" rel="noopener">${esc(V.uyari.linkAd || "Resmî site")}</a>` : ""}</span></div>` : ""}
+
+${V.haftalar.length > 1 ? `<section id="takvim" aria-labelledby="h-tk">
+  <div class="tk-bas"><h2 id="h-tk">Hangi hafta sonu?</h2>
+    <div class="tk-lejant" aria-hidden="true"><span><i class="u"></i>uygun</span><span><i class="n"></i>normal</span><span><i class="p"></i>pahalı</span></div></div>
+  <div id="tk" role="group" aria-label="Hafta sonu seç"></div>
+  <div class="bkart secili" id="tk-secili" aria-live="polite"></div>
+</section>` : ""}
 
 <section id="paketler">
   <div class="sh">
     <span class="mono">1 · Hazır paketler</span>
     <h2>Seç, tıkla, al</h2>
-    <p>${V.haftalar.length > 1 ? "Hafta sonunu seç; fiyatlar ve bütün linkler o tarihlere göre değişir. Uçuşa basınca Google Flights o hafta sonunun aramasıyla açılır, otele basınca o tarihlerin otel sayfası." : `Fiyatları bulduğumuz siteye doğrudan gidersin: uçuşa basınca Google Flights ${esc(kisaAralik(h0.gidis, h0.donus))} aramasıyla açılır, otele basınca o tarihlerin otel sayfası.`}</p>
   </div>
-  ${V.haftalar.length > 1 ? '<div class="weeks" id="weeks" role="group" aria-label="Hafta sonu"></div>' : ""}
-  <div class="tabs" role="tablist" aria-label="Paket">
+  <div class="tabs seg" role="tablist" aria-label="Paket">
     <button class="tab" role="tab" id="tab-uygun" data-p="uygun"><b>Uygun</b><span id="tp-uygun"></span></button>
     <button class="tab" role="tab" id="tab-konforlu" data-p="konforlu"><b>Konforlu</b><span id="tp-konforlu"></span></button>
     <button class="tab" role="tab" id="tab-luks" data-p="luks"><b>Lüks</b><span id="tp-luks"></span></button>
-  </div>
-
-  <div class="ticket">
-    <div class="stub"><span>BİNİŞ KARTI</span></div>
-    <div class="main">
-      <div><div class="mono" id="pk-route">İSTANBUL → ${esc(V.sehir.toLocaleUpperCase("tr"))}</div><div class="n" id="pk-total">–</div></div>
-      <small id="pk-pp"></small>
-    </div>
   </div>
 
   <div class="split" id="pk-split" aria-hidden="true"></div>
@@ -351,6 +352,7 @@ ${V.plan.length ? `<section id="plan">
   <div class="days">
     ${gunler}
   </div>` : `<section id="plan">`}
+  <p class="hakkinda">${esc(V.giris)}</p>
   <p class="legal">${esc(V.yasal)} ${esc(V.fiyatNot)}</p>
   <div class="site-foot">${V.tur === "sehir" ? "" : `<a href="${esc(V.takimYol)}">${esc(V.tur === "noel" ? "Tüm Noel şehirleri" : V.takim + " deplasmanları")}</a>`}<a href="/sehir/">Tüm şehirler</a><a href="/oteller.html">Otel fiyat takvimi</a><a href="/hesapla.html">Bütçe hesaplayıcı</a><a href="/hakkinda.html">Hakkında</a></div>
 </section>

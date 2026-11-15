@@ -80,14 +80,28 @@
   function sum(L) { return L.reduce(function (a, l) { return a + Math.round(l.tl); }, 0); }
   function eksik(L) { return L.filter(function (l) { return l.yok; }).map(function (l) { return LBL[l.g].toLowerCase(); }); }
   function ppYazi(L, T) { var e = eksik(L); return "kişi başı " + tl(T / K) + (e.length ? " · " + e.join(" ve ") + " hariç" : "") + (V.haric ? " · " + V.haric : ""); }
-  function rota(s) { var u = find(H().ucus, s.u); return (u && u.kalkis ? u.kalkis + " → " + (u.ap || V.sehir.toUpperCase()) : "İSTANBUL → " + V.sehir.toLocaleUpperCase("tr")) + " · " + K + " KİŞİ · " + H().gece + " GECE"; }
+  function rota(s) {
+    var u = find(H().ucus, s.u), h = H();
+    return (u && u.kalkis ? u.kalkis : "IST") + " → " + ((u && u.ap) || V.iata || V.sehir.toLocaleUpperCase("tr")) + " · " + (h.etiket || aralik(h)).toLocaleUpperCase("tr") + " · " + K + " KİŞİ";
+  }
 
+  /* fiyat takvimi (F): hafta sonları ay ay kutular; yeşil = uygun hafta, beyaz = normal, turuncu = normalden pahalı */
+  var AYB = ["OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN", "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"];
   function renderHafta() {
-    var w = $("weeks");
+    var w = $("tk");
     if (!w || V.haftalar.length < 2) return;
-    w.innerHTML = V.haftalar.map(function (h, i) { return '<button class="week" type="button" data-i="' + i + '" aria-pressed="' + (i === hi) + '">' + esc(h.etiket || aralik(h)) + (h.ek ? "<span>" + esc(h.ek) + "</span>" : "") + "</button>"; }).join("");
-    var secili = w.querySelector('[aria-pressed="true"]'); // seçili hafta sonu görünür olsun (12 çip yana kayar)
-    if (secili) w.scrollLeft = Math.max(0, secili.offsetLeft - w.offsetLeft - 16);
+    var ay0 = +V.haftalar[0].gidis.slice(5, 7) - 1, gruplar = [];
+    V.haftalar.forEach(function (h, i) {
+      var ay = +h.gidis.slice(5, 7) - 1, g = Math.floor(((ay - ay0 + 12) % 12) / 2);
+      if (!gruplar[g]) gruplar[g] = { aylar: [], k: [] };
+      if (gruplar[g].aylar.indexOf(ay) < 0) gruplar[g].aylar.push(ay);
+      var sinif = h.vt == null ? "yok" : h.e === "u" ? "u" : h.e === "p" ? "p" : "n";
+      var ses = gunAy(h.gidis, 1) + ", " + (h.vt == null ? "fiyat kontrol ediliyor" : tl(h.vt) + (h.e === "u" ? ", uygun hafta" : h.e === "p" ? ", normalden pahalı" : ", normal fiyat"));
+      gruplar[g].k.push('<button class="tkb ' + sinif + '" type="button" data-i="' + i + '" aria-pressed="' + (i === hi) + '" aria-label="' + esc(ses) + '">' + gunAy(h.gidis) + (h.vt == null ? "<small>kontrol</small>" : "<span>" + Math.round(h.vt).toLocaleString("tr-TR") + "</span>") + "</button>");
+    });
+    w.innerHTML = gruplar.filter(Boolean).map(function (g) { return '<div><span class="mono tk-ay">' + g.aylar.map(function (a) { return AYB[a]; }).join(" – ") + '</span><div class="tk-izgara">' + g.k.join("") + "</div></div>"; }).join("");
+    var h = H(), f = h.f, yorum = h.vt == null ? "Bu hafta sonu için uçak + otel fiyatı henüz ölçülmedi; aşağıdaki linklerden bakabilirsin." : f == null || Math.abs(f) < 1 ? "Bu şehrin olağan hafta sonu fiyatında" : f < 0 ? "Bu şehrin olağan fiyatından %" + Math.abs(f) + " uygun" : "Bu şehrin olağan fiyatından %" + f + " pahalı";
+    $("tk-secili").innerHTML = '<div class="stub"><span>SEÇİLİ</span></div><div class="govde"><span class="mono">' + esc(aralik(h).toLocaleUpperCase("tr")) + " · " + K + ' KİŞİ · UÇAK + OTEL</span><b>' + (h.vt == null ? "kontrol ediliyor" : tl(h.vt)) + '</b><span class="yorum ' + (h.vt == null ? "" : f < 0 ? "iyi" : f > 10 ? "pah" : "") + '">' + yorum + "</span></div>";
   }
   function renderPaket() {
     PAKETLER.forEach(function (p) {
@@ -97,22 +111,33 @@
     var s = coz(cur), L = lines(s), T = sum(L);
     $("pk-route").textContent = rota(s);
     $("pk-total").textContent = tl(T);
-    $("pk-pp").textContent = ppYazi(L, T);
+    $("pk-pp").textContent = V.paket[cur].ad + " paket · " + ppYazi(L, T);
     $("pk-split").innerHTML = L.map(function (l) { return '<span style="flex:' + Math.max(1, Math.round(l.tl)) + ";background:" + COL[l.g] + '"></span>'; }).join("");
     $("pk-legend").innerHTML = L.filter(function (l) { return l.tl > 0; }).map(function (l) { return '<span><i style="background:' + COL[l.g] + '"></i>' + LBL[l.g] + " %" + Math.round(l.tl / T * 100) + "</span>"; }).join("");
     $("pk-items").innerHTML = L.map(row).join("") + '<div class="tot"><div><div style="font-weight:700">TOPLAM · ' + K + " kişi, " + H().gece + " gece</div><span>" + ppYazi(L, T) + "</span></div><b>" + tl(T) + "</b></div>";
     $("pk-note").textContent = V.not || "";
   }
   function fiyatYazi(l) { return l.yok ? "Sitede" : l.k === "free" ? "Ücretsiz" : tl(l.tl); }
+  /* kalem satırı tek satır: ad + kısa açıklama + fiyat + düğme; yazıya dokununca ayrıntı açılır */
+  var KISA = { ucus: "Uçuş", otel: "Otel", bilet: "Bilet", ulasim: "Bilet", yemek: "Masa", gezi: "Seç" };
+  var acikSatir = {};
   function row(l) {
-    var extra = l.multi && l.multi.length > 1 ? '<div class="src" style="margin-top:8px">' + l.multi.map(function (g) { return '<a class="go alt" target="_blank" rel="noopener" href="' + esc(g.url) + '">' + esc(g.ad) + " " + ARROW + "</a>"; }).join("") + "</div>" : "";
-    return '<div class="it"><div><div class="nm">' + esc(l.nm) + '</div><div class="dt">' + esc(l.dt) + '</div><div class="src">' + chip(l.k) + "<span>" + esc(l.kay) + "</span>" + (l.alt ? '<a target="_blank" rel="noopener" href="' + esc(l.alt) + '" style="font-weight:700">' + esc(l.altAd || "Diğer site") + "</a>" : "") + "</div>" + extra + "</div>" +
-      '<div class="rt"><span class="pr">' + fiyatYazi(l) + "</span>" + (l.multi && l.multi.length > 1 ? "" : '<a class="go" target="_blank" rel="noopener" href="' + esc(l.url) + '">' + l.btn + " " + ARROW + "</a>") + "</div></div>";
+    var cok = l.multi && l.multi.length > 1, ac = !!acikSatir[l.g];
+    var linkler = (cok ? l.multi.map(function (g) { return '<a class="go alt" target="_blank" rel="noopener" href="' + esc(g.url) + '">' + esc(g.ad) + " " + ARROW + "</a>"; }).join("") : "") +
+      (l.alt ? '<a class="go alt" target="_blank" rel="noopener" href="' + esc(l.alt) + '">' + esc(l.altAd || "Diğer site") + " " + ARROW + "</a>" : "");
+    return '<div class="it2' + (ac ? " acik" : "") + '"><div class="it2-ust"><button class="it2-ac" type="button" data-g="' + l.g + '" aria-expanded="' + ac + '"><b>' + esc(l.nm) + "</b><span>" + esc(l.dt) + '</span></button><span class="it2-fy">' + fiyatYazi(l) + "</span>" +
+      (cok ? '<button class="go2" type="button" data-g="' + l.g + '">' + KISA[l.g] + "</button>" : '<a class="go2" target="_blank" rel="noopener" href="' + esc(l.url) + '" aria-label="' + esc(l.btn + ": " + l.nm) + '">' + KISA[l.g] + "</a>") + "</div>" +
+      '<div class="it2-detay"' + (ac ? "" : " hidden") + "><p><b>" + esc(l.nm) + "</b></p><p>" + esc(l.dt) + '</p><div class="src">' + chip(l.k) + "<span>" + esc(l.kay) + "</span></div>" + (linkler ? '<div class="src">' + linkler + "</div>" : "") + "</div></div>";
   }
 
   /* oluşturucu: her seçenek tek satır */
   function opt(type, name, id, checked, title, sub, price, priceSub, url) {
     return '<label class="opt"><input type="' + type + '" name="' + name + '" value="' + esc(id) + '"' + (checked ? " checked" : "") + '><span class="t"><b>' + esc(title) + "</b><span>" + esc(sub) + '</span></span><span class="p">' + price + (priceSub ? "<small>" + esc(priceSub) + "</small>" : "") + '</span><a target="_blank" rel="noopener" href="' + esc(url) + '" aria-label="' + esc(title) + ' sitesine git">' + ARROW + "</a></label>";
+  }
+  var acik = {};
+  function grup(id, baslik, ozet, fiyat, ic) {
+    var ac = !!acik[id];
+    return '<div class="grp kapanir' + (ac ? " acik" : "") + '"><button class="grp-bas" type="button" data-grp="' + id + '" aria-expanded="' + ac + '"><span class="gb-yazi"><b>' + baslik + "</b><span>" + esc(ozet) + '</span></span><span class="gb-fy">' + fiyat + '</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="grp-ic"' + (ac ? "" : " hidden") + ">" + ic + "</div></div>";
   }
   function renderBuilder() {
     var h = H(), u = find(h.ucus, sel.u) || h.ucus[0], ap = u && u.ap;
@@ -120,15 +145,23 @@
     if (!find(h.otel, sel.o) && h.otel[0]) sel.o = h.otel[0].id;
     var tr = (V.transfer || []).filter(function (t) { return !t.ap || !ap || t.ap === ap; });
     if (tr.length && !find(tr, sel.t)) sel.t = tr[0].id;
-    var s = "";
-    if (h.ucus.length) s += '<div class="grp"><h3>Uçuş <span class="mono">' + K + " kişi · gidiş-dönüş</span></h3><p class=\"hint\">Ok, Google Flights'ta " + aralik(h) + " aramasını açar.</p><div class=\"opts\">" + h.ucus.map(function (x) { return opt("radio", "u", x.id, sel.u === x.id, x.ad, x.dt, x.pp != null ? tl(kisiTl(x.pp)) : "Sitede", x.pp != null ? x.pp + " € / kişi" : "toplama eklenmez", ucusLink(x)); }).join("") + "</div></div>";
-    if (h.otel.length) s += '<div class="grp"><h3>Otel <span class="mono">' + h.gece + " gece · " + K + ' kişi</span></h3><p class="hint">Ok, o otelin ' + aralik(h) + ' arama sayfasını açar.</p><div class="opts">' + h.otel.map(function (o) { return opt("radio", "o", o.id, sel.o === o.id, o.ad, o.dt, o.tot != null ? tl(o.tot * KUR) : "Sitede", o.tot != null ? Math.round(o.tot) + " € toplam" : "toplama eklenmez", bk(o.q)); }).join("") + "</div></div>";
-    if (tr.length) s += '<div class="grp"><h3>Havalimanından şehre <span class="mono">' + K + ' kişi · g-d</span></h3><div class="opts">' + tr.map(function (t) { return opt("radio", "t", t.id, sel.t === t.id, t.ad, t.dt, tl(kisiTl(t.pp)), t.k === "off" ? "resmî" : "tahmini", t.url); }).join("") + "</div></div>";
-    if (V.bilet || V.sehirIci) s += '<div class="grp"><h3>' + (V.bilet ? esc(V.bilet.grup || "Bilet ve şehir içi") : "Şehir içi ulaşım") + '</h3><div class="opts">' +
-      (V.bilet ? opt("checkbox", "bilet", "1", !!sel.bilet, V.bilet.ad, V.bilet.dt, tl(kisiTl(V.bilet.pp)), V.bilet.k === "off" ? "resmî" : "tahmini", V.bilet.url) : "") +
-      (V.sehirIci ? opt("checkbox", "sehir", "1", !!sel.sehir, V.sehirIci.ad, V.sehirIci.dt, tl(kisiTl(V.sehirIci.pp)), V.sehirIci.k === "off" ? "resmî" : "tahmini", V.sehirIci.url) : "") + "</div></div>";
-    if (V.yemek.length) s += '<div class="grp"><h3>Yemek <span class="mono">' + V.gun + " gün · " + K + ' kişi</span></h3><p class="hint">' + esc(V.yemekLink && V.yemekLink.site ? "Ok, OpenTable'da " + gunAy(ekGun(h.gidis, h.gece > 1 ? 1 : 0), 1) + " akşamı için " + K + " kişilik masa aramasını açar." : "Ok, haritada şehrin restoranlarını açar.") + '</p><div class="opts">' + V.yemek.map(function (y) { return opt("radio", "y", y.id, sel.y === y.id, y.ad, y.dt, tl(kisiTl(y.pp)), y.pp + " € / kişi", yemekLink()); }).join("") + "</div></div>";
-    if (V.gezi.length) s += '<div class="grp"><h3>Gezi ve etkinlik <span class="mono">istediğin kadar seç</span></h3><div class="opts">' + V.gezi.map(function (g) { return opt("checkbox", "g", g.id, !!sel.g[g.id], g.ad, g.dt, g.pp === null ? "Sitede" : g.pp === 0 ? "Ücretsiz" : tl(kisiTl(g.pp)), g.pp === null ? "toplama eklenmez" : "", g.url); }).join("") + "</div></div>";
+    var o = find(h.otel, sel.o), t = find(tr, sel.t), y = find(V.yemek, sel.y), s = "";
+    if (h.ucus.length) s += grup("u", "Uçuş", u ? u.ad : "", u && u.pp != null ? tl(kisiTl(u.pp)) : "Sitede", "<p class=\"hint\">" + K + " kişi, gidiş-dönüş. Ok, Google Flights'ta " + aralik(h) + " aramasını açar.</p><div class=\"opts\">" + h.ucus.map(function (x) { return opt("radio", "u", x.id, sel.u === x.id, x.ad, x.dt, x.pp != null ? tl(kisiTl(x.pp)) : "Sitede", x.pp != null ? x.pp + " € / kişi" : "toplama eklenmez", ucusLink(x)); }).join("") + "</div>");
+    if (h.otel.length) s += grup("o", "Otel", o ? o.ad : "", o && o.tot != null ? tl(o.tot * KUR) : "Sitede", '<p class="hint">' + h.gece + " gece, " + K + " kişi. Ok, o otelin " + aralik(h) + ' arama sayfasını açar.</p><div class="opts">' + h.otel.map(function (x) { return opt("radio", "o", x.id, sel.o === x.id, x.ad, x.dt, x.tot != null ? tl(x.tot * KUR) : "Sitede", x.tot != null ? Math.round(x.tot) + " € toplam" : "toplama eklenmez", bk(x.q)); }).join("") + "</div>");
+    if (tr.length) s += grup("t", "Havalimanından şehre", t ? t.ad : "", t ? tl(kisiTl(t.pp)) : "", '<div class="opts">' + tr.map(function (x) { return opt("radio", "t", x.id, sel.t === x.id, x.ad, x.dt, tl(kisiTl(x.pp)), x.k === "off" ? "resmî" : "tahmini", x.url); }).join("") + "</div>");
+    if (V.bilet || V.sehirIci) {
+      var sec = [], tp = 0;
+      if (V.bilet && sel.bilet) { sec.push(V.bilet.kisa || "Bilet"); tp += V.bilet.pp; }
+      if (V.sehirIci && sel.sehir) { sec.push(V.sehirIci.kisa || "şehir içi"); tp += V.sehirIci.pp; }
+      s += grup("b", V.bilet ? esc(V.bilet.grup || "Bilet ve şehir içi") : "Şehir içi ulaşım", sec.length ? sec.join(" + ") : "seçilmedi", sec.length ? tl(kisiTl(tp)) : "–", '<div class="opts">' +
+        (V.bilet ? opt("checkbox", "bilet", "1", !!sel.bilet, V.bilet.ad, V.bilet.dt, tl(kisiTl(V.bilet.pp)), V.bilet.k === "off" ? "resmî" : "tahmini", V.bilet.url) : "") +
+        (V.sehirIci ? opt("checkbox", "sehir", "1", !!sel.sehir, V.sehirIci.ad, V.sehirIci.dt, tl(kisiTl(V.sehirIci.pp)), V.sehirIci.k === "off" ? "resmî" : "tahmini", V.sehirIci.url) : "") + "</div>");
+    }
+    if (V.yemek.length) s += grup("y", "Yemek", y ? y.ad + " · " + V.gun + " gün" : "", y ? tl(kisiTl(y.pp)) : "", '<p class="hint">' + esc(V.yemekLink && V.yemekLink.site ? "Ok, OpenTable'da " + gunAy(ekGun(h.gidis, h.gece > 1 ? 1 : 0), 1) + " akşamı için " + K + " kişilik masa aramasını açar." : "Ok, haritada şehrin restoranlarını açar.") + '</p><div class="opts">' + V.yemek.map(function (x) { return opt("radio", "y", x.id, sel.y === x.id, x.ad, x.dt, tl(kisiTl(x.pp)), x.pp + " € / kişi", yemekLink()); }).join("") + "</div>");
+    if (V.gezi.length) {
+      var gs = V.gezi.filter(function (g) { return sel.g[g.id]; }), gp = 0; gs.forEach(function (g) { if (g.pp) gp += g.pp; });
+      s += grup("g", "Gezi ve etkinlik", gs.length ? gs.map(function (g) { return g.ad; }).join(", ") : "seçilmedi", gs.length ? (gp ? tl(kisiTl(gp)) : "Ücretsiz") : "–", '<p class="hint">İstediğin kadar seç.</p><div class="opts">' + V.gezi.map(function (g) { return opt("checkbox", "g", g.id, !!sel.g[g.id], g.ad, g.dt, g.pp === null ? "Sitede" : g.pp === 0 ? "Ücretsiz" : tl(kisiTl(g.pp)), g.pp === null ? "toplama eklenmez" : "", g.url); }).join("") + "</div>");
+    }
     $("builder").innerHTML = s;
     renderSum();
   }
@@ -201,14 +234,26 @@
     var i = e.target; if (!i.name) return;
     dokundu = true;
     if (selAd.indexOf("Kendi") < 0 && selAd.indexOf("paketinden") < 0) selAd = "Kendi kaçamağın";
-    if (i.name === "g") { if (i.checked) sel.g[i.value] = 1; else delete sel.g[i.value]; renderSum(); return; }
-    if (i.name === "bilet" || i.name === "sehir") { sel[i.name] = i.checked ? 1 : 0; renderSum(); return; }
-    sel[i.name] = i.value; if (i.name === "u") renderBuilder(); else renderSum();
+    if (i.name === "g") { if (i.checked) sel.g[i.value] = 1; else delete sel.g[i.value]; }
+    else if (i.name === "bilet" || i.name === "sehir") sel[i.name] = i.checked ? 1 : 0;
+    else sel[i.name] = i.value;
+    var odak = i.name, deger = i.value;
+    renderBuilder(); // grup başlığındaki özet ve fiyat da yenilensin
+    var yeni = $("builder").querySelector('input[name="' + odak + '"][value="' + deger.replace(/"/g, "") + '"]'); if (yeni) yeni.focus({ preventScroll: true });
+  });
+  $("builder").addEventListener("click", function (e) {
+    var b = e.target.closest(".grp-bas"); if (!b) return;
+    acik[b.dataset.grp] = !acik[b.dataset.grp]; renderBuilder();
+    var y = $("builder").querySelector('.grp-bas[data-grp="' + b.dataset.grp + '"]'); if (y) y.focus({ preventScroll: true });
+  });
+  $("pk-items").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-g]"); if (!b) return;
+    acikSatir[b.dataset.g] = !acikSatir[b.dataset.g]; renderPaket();
   });
   $("builder").addEventListener("click", function (e) { if (e.target.closest("a")) e.stopPropagation(); });
   document.querySelector(".tabs").addEventListener("click", function (e) { var b = e.target.closest(".tab"); if (!b) return; cur = b.dataset.p; renderPaket(); });
-  if ($("weeks")) $("weeks").addEventListener("click", function (e) {
-    var b = e.target.closest(".week"); if (!b) return;
+  if ($("tk")) $("tk").addEventListener("click", function (e) {
+    var b = e.target.closest(".tkb"); if (!b) return;
     dokundu = true; hi = +b.dataset.i; sel = coz(cur); selAd = V.paket[cur].ad + " paketinden";
     renderHafta(); renderPaket(); renderBuilder();
   });
