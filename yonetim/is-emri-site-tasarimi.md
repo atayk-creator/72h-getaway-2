@@ -81,3 +81,30 @@ Her faz bitince bu dosyanın altına: yapılanlar, canlı linkler, açık kalanl
 - denetci.yml'e "ucuz" kontrolü ve Lighthouse ölçümü yapılmadı.
 
 **Ekran görüntüsü:** sohbette paylaşıldı (ana-sayfa-amsterdam.png); depoya Faz A tesliminde `yonetim/ekran/` altına konacak.
+
+---
+
+## Teslim notu · Faz A tamamlandı (15 Kas 2026, hedef 18 Kas)
+
+**Canlı linkler**
+- Ana sayfa: https://72hgetaway.com/
+- Şehirler: https://72hgetaway.com/sehirler/ (liste görünümü: https://72hgetaway.com/sehirler/#liste)
+- Eski ana sayfa (bütçe hesaplayıcı): https://72hgetaway.com/hesapla.html
+
+**Yapılanlar**
+- Ana sayfa A1: yukarıdaki 1. adım notuna ek olarak, Atay'ın kararıyla (15 Kas 17:46) hafta sonu çipleri **12 hafta sonu** gösteriyor (iş emrindeki 4 yerine). Şehir sayfalarındaki hafta sonu seçimi de 12'ye çıktı; karta basınca şehir sayfası seçili hafta sonuyla açılıyor.
+- Şehirler (/sehirler/): üstte başlık, 12 hafta sonu çipi, arama kutusu ("28 şehir içinde ara", yazdıkça süzer; ülke adıyla da bulur).
+  - Raflar (Ş3): "40 bin altı", "Bu hafta sonu normal fiyatında" (fark ≤ %10), "Vizesiz", "Biraz uzak, değer" (aktarmasız uçuş 3 saatten uzun). Her rafta "Tümü" o süzgeçle listeyi açar. Boş kalan raf gösterilmez.
+  - Liste (Ş1): sıra no'lu koçan (1. turuncu), fotoğraf, ad, ülke · uçak + otel, toplam, durum çipi ("Uygun hafta" / "Normal fiyat" / "Normalden +%X"). Süzgeç çipleri: En uygun, Vizesiz, 40 bin altı, Normal fiyatında, Biraz uzak. Fiyatı olmayanlar en altta tek satır: "…: robot bu hafta sonunu kontrol ediyor".
+  - Seçilen hafta sonu ana sayfa ile Şehirler arasında taşınır (tarayıcı oturumunda).
+- Alt sekme çubuğu: ana sayfa, Şehirler, Planım, /deplasman/, takım sayfaları, Noel sayfası ve eski şehir listesinde. Şehir ve maç plan sayfalarında iş emrindeki gibi "toplam + Arkadaşına gönder + PDF" çubuğu kalıyor.
+- "ucuz" kontrolü: `scripts/denetci.mjs` → `checkMetin`; her gün ana sayfa, Şehirler, Planım, örnek şehir/deplasman/Noel sayfalarının görünen metninde ve js dosyalarında arar, bulursa Denetçi sorun olarak yazar. Veri içindeki etiketler tek harfe çevrildi (u/n/p).
+- sitemap.xml: /sehirler/ ve /hesapla.html eklendi. Duman testi 58 sayfa, 320 px: sorun yok.
+
+**Açık kalanlar**
+- Lighthouse puanı ölçülmedi (IT ortamında araç yok). Sayfalar hafif: ana sayfa 21 KB HTML + 9 KB CSS, fontlar sitede, raf fotoğrafları tembel yüklenir.
+- "Biraz uzak" rafı için uçuş süreleri robot verisi değil, elle girilmiş yaklaşık aktarmasız süreler (`scripts/ana-sayfa.mjs` → `UCUS_DK`); 28 Kasım'da açılacak yeni şehirlerin süresi eklenmeli.
+- Planım sekmesi yer tutucu (Faz C).
+- Eski şehir listesi (/sehir/) duruyor; arama motorları için şehir linklerini taşıyor. İstenirse /sehirler/'e yönlendirilir.
+
+**Ekran görüntüleri:** `yonetim/ekran/faz-a-ana-sayfa.jpg`, `faz-a-sehirler-raflar.jpg`, `faz-a-sehirler-liste.jpg`

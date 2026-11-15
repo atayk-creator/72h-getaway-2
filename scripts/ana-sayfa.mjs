@@ -4,6 +4,7 @@
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
+import { vizeNotu } from "./plan-sayfalari.mjs";
 
 const AY = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"];
 const D = (s) => new Date(s + "T12:00:00Z");
@@ -20,6 +21,15 @@ const IKON = {
   deplasman: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
   planim: '<path d="M6 3h12v18l-6-4-6 4z"/>',
 };
+const ETIKET_KOD = { ucuz: "u", normal: "n", pahali: "p" };
+// İstanbul'dan aktarmasız uçuş süresi (dakika, yaklaşık tarife süresi): "Biraz uzak, değer" rafı için (3 saatten uzun)
+const UCUS_DK = { Dublin: 270, Paris: 225, "Brüksel": 210, Amsterdam: 215, "Lüksemburg": 195, Berlin: 170, Viyana: 140, Lizbon: 290, Roma: 155, Valletta: 150, Madrid: 255, Atina: 85, Stokholm: 205, Kopenhag: 195, Helsinki: 205, Tallinn: 195, Vilnius: 165, "Varşova": 145, Prag: 155, Bratislava: 135, "Budapeşte": 120, Zagreb: 125, Sofya: 80, "Bükreş": 75, Ljubljana: 135, Riga: 180, Belgrad: 100, Saraybosna: 105, Londra: 240, Milano: 175 };
+const ucusDk = (sehir) => UCUS_DK[sehir] || 0;
+/** Var olan (eski kalıp) sayfalara alt sekme çubuğu eklemek için: stil + çubuk, </body> öncesine konur. */
+export function sekmeEki(aktif) {
+  return `<style>body{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))!important}.sekme{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid #E3DCCB;padding-bottom:env(safe-area-inset-bottom,0px);font-family:Figtree,Arial,sans-serif}.sekme .kap{max-width:720px;margin:0 auto;height:64px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.sekme a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;font-size:11px;font-weight:700;color:#5B6B7C}.sekme a i{width:18px;height:3px;border-radius:99px}.sekme a[aria-current="page"]{color:#0F2A43}.sekme a[aria-current="page"] i{background:#F4A62A}@media print{.sekme{display:none}}</style>\n${sekmeCubugu(aktif)}\n`;
+}
+
 export const logo = () => '<a class="logo" href="/" aria-label="72h Getaway ana sayfa"><span class="a">72h</span><span class="b">getaway</span></a>';
 /** Sabit alt sekme çubuğu. aktif: "kesfet" | "sehirler" | "deplasman" | "planim" */
 export function sekmeCubugu(aktif) {
@@ -37,7 +47,9 @@ export function vitrinVerisi(models, d, today, eurTry) {
     const f = (m.fotolar || [])[0] || {};
     const hs = gunler.map((g) => m.zaman.haftalar.find((h) => h.g === g));
     return { ad: m.sehir, slug: m.slug, ulke: m.ulke, iata: iata(m.sehir), foto: f.kucuk || f.dosya || "", alt: f.alt || m.sehir,
-      t: hs.map((h) => (h && h.toplam != null ? Math.round(h.toplam * eurTry) : null)), e: hs.map((h) => (h ? h.etiket || "" : "")), f: hs.map((h) => (h && h.fark != null ? h.fark : null)) };
+      // e: hafta sonu etiketi tek harf (u = uygun hafta, n = normal fiyat, p = normalden pahalı), f: olağan fiyata göre % fark
+      t: hs.map((h) => (h && h.toplam != null ? Math.round(h.toplam * eurTry) : null)), e: hs.map((h) => (h ? ETIKET_KOD[h.etiket] || "" : "")), f: hs.map((h) => (h && h.fark != null ? h.fark : null)),
+      v: (vizeNotu(m.ulke) || {}).haric === "" ? 1 : 0, dk: ucusDk(m.sehir) };
   });
   return { haftalar, sehirler };
 }
@@ -160,11 +172,75 @@ export function renderPlanimYer({ esc, SITE, root }) {
   <p class="bos">Beğendiğin şehir ve maç planlarını kaydedip burada görebileceksin. Bu bölüm hazırlanıyor. Şimdilik bir planı saklamak için şehir sayfasındaki "Arkadaşına gönder" linkini kendine gönderebilirsin.</p>
   <div class="kutular">
     <a class="kutu l" href="/"><span>KEŞFET</span><b>Bu hafta sonu nereye?</b></a>
-    <a class="kutu t" href="/sehir/"><span>${esc("ŞEHİRLER")}</span><b>Tüm şehirler</b></a>
+    <a class="kutu t" href="/sehirler/"><span>${esc("ŞEHİRLER")}</span><b>Tüm şehirler</b></a>
   </div>
 </main>
 ${sekmeCubugu("planim")}
 <script src="/js/olcum.js" defer></script>
+</body>
+</html>
+`;
+}
+
+/** Şehirler sayfası (/sehirler/): Ş3 konulara göre raflar + Ş1 biniş kartı listesi. İçeriği js/sehirler.js çizer. */
+export function renderSehirler({ models, d, today, eurTry, esc, jsonLd, SITE, root }) {
+  const V = vitrinVerisi(models, d, today, eurTry);
+  const n = models.length;
+  const desc = `İstanbul çıkışlı ${n} Avrupa şehri, hafta sonu hafta sonu: 2 kişi uçak + otel toplamı. 40 bin altı, vizesiz, normal fiyatında olanlar; fiyata göre tam liste.`;
+  return `<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Şehirler: ${n} şehir, hafta sonu uçak + otel fiyatları | 72h Getaway</title>
+<meta name="description" content="${esc(desc)}">
+<meta name="theme-color" content="#0F2A43">
+<link rel="canonical" href="${SITE}/sehirler/">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="72h Getaway">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="${SITE}/sehirler/">
+<meta property="og:title" content="Şehirler · 72h Getaway">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:image" content="${SITE}/img/paylas.png?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/css/kabuk.css?v=${ozet(root, "css/kabuk.css")}">
+</head>
+<body>
+<a class="skip" href="#icerik">İçeriğe geç</a>
+<header class="bant"><div class="kap">
+  <div class="bant-ust">${logo()}<span class="etiket">${n} şehir</span></div>
+  <h1>Şehirler</h1>
+  <div class="cipler" id="cipler" role="group" aria-label="Hafta sonu">
+    ${V.haftalar.map((h, i) => `<button class="cip" type="button" data-i="${i}" aria-pressed="${i === 0}"><b>${esc(h.kisa)}</b><span>${esc(h.ad)}</span></button>`).join("\n    ")}
+  </div>
+  <label class="ara"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="gizli">Şehir ara</span><input id="ara" type="search" placeholder="${n} şehir içinde ara" autocomplete="off" enterkeyhint="search"></label>
+</div></header>
+
+<main class="kap icerik" id="icerik">
+  <div id="raflar"></div>
+  <div id="liste" hidden>
+    <div class="suzgec" id="suzgec" role="group" aria-label="Süzgeç"></div>
+    <div class="satirlar" id="satirlar" aria-live="polite"></div>
+    <button class="tumu geri" id="raflara" type="button">Raflara dön</button>
+  </div>
+  <a class="tumu" id="hepsi" href="#liste">${n} şehrin hepsi, fiyata göre</a>
+  <noscript><ul>${models.map((m) => `<li><a href="/sehir/${esc(m.slug)}/">${esc(m.sehir)}</a></li>`).join("")}</ul></noscript>
+  <footer class="altbilgi">
+    <p>Rakamlar 2 kişi, uçak + otel toplamıdır (yemek dahil değil). "Normal fiyat": o şehrin olağan hafta sonu fiyatına göre. Fiyatlar ${esc(today.split("-").reverse().join("."))} tarihli ölçümdür; 1 € = ${String(Math.round(eurTry * 100) / 100).replace(".", ",")} TL.</p>
+  </footer>
+</main>
+
+${sekmeCubugu("sehirler")}
+<script type="application/json" id="ana-veri">${jsonLd(V)}</script>
+<script src="/js/sehirler.js?v=${ozet(root, "js/sehirler.js")}" defer></script>
+<script src="/js/olcum.js" defer></script>
+<script>if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });</script>
 </body>
 </html>
 `;

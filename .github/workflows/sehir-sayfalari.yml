@@ -19,6 +19,7 @@ on:
       - "scripts/ana-sayfa.mjs"
       - "css/kabuk.css"
       - "js/ana.js"
+      - "js/sehirler.js"
       - "data/ana-sayfa.json"
       - "data/plan/**"
       - "js/plan.js"

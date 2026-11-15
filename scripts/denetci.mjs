@@ -148,6 +148,19 @@ export async function checkSite({ url = SITE, fetchImpl = fetch, timeoutMs = 200
   }
 }
 
+// ---------- arayüz metni ----------
+/** Yönetim kurulu kuralı: arayüzde "ucuz" kelimesi geçmez ("uygun" yazılır). HTML'de görünen metne, js dosyalarında bütün dosyaya bakılır. */
+export function checkMetin(metinler = {}) {
+  const sorunlar = [], re = /(^|[^a-zçğıöşü])ucuz/i;
+  for (const [yol, icerik] of Object.entries(metinler)) {
+    if (typeof icerik !== "string") continue;
+    const metin = /\.html$/.test(yol) ? icerik.replace(/<(script|style)[\s\S]*?<\/\1>/gi, " ").replace(/<[^>]+>/g, " ") : icerik;
+    const m = re.exec(metin);
+    if (m) sorunlar.push(`Arayüz metninde "ucuz" geçiyor: ${yol} ("…${metin.slice(Math.max(0, m.index - 20), m.index + 25).replace(/\s+/g, " ").trim()}…"). Kural: "uygun" yazılır.`);
+  }
+  return { sorunlar, bilgi: Object.keys(metinler).length ? [`Arayüz metni kontrolü: ${Object.keys(metinler).length} dosyada "ucuz" arandı.`] : [] };
+}
+
 // ---------- rapor ----------
 export function toMarkdown({ now, sorunlar, uyarilar, bilgi }) {
   const p = [`# Denetçi raporu`, "", `Kontrol: ${now.toISOString().slice(0, 16).replace("T", " ")} UTC.`, ""];
@@ -163,7 +176,8 @@ export async function run({ now = new Date(), files, fetchImpl = fetch, repo, to
   const d = checkData({ now, ...files });
   const w = await checkWorkflows({ repo, token, fetchImpl });
   const s = await checkSite({ url: site, fetchImpl });
-  const out = { now, sorunlar: [...d.sorunlar, ...w.sorunlar, ...s.sorunlar], uyarilar: d.uyarilar, bilgi: [...d.bilgi, ...w.bilgi, ...s.bilgi] };
+  const mt = checkMetin((files && files.metinler) || {});
+  const out = { now, sorunlar: [...d.sorunlar, ...w.sorunlar, ...s.sorunlar, ...mt.sorunlar], uyarilar: d.uyarilar, bilgi: [...d.bilgi, ...w.bilgi, ...s.bilgi, ...mt.bilgi] };
   return { ...out, markdown: toMarkdown(out) };
 }
 
@@ -179,6 +193,8 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
       rates: await readJson(root + "data.json"), hotelMeta: await readJson(root + "data/otel-fiyatlari.json"), hotelsDoc, cityFiles,
       flights: await readJson(root + "data/ucuslar.json"), restaurants: await readJson(root + "data/restoranlar.json"), tabloRapor: await readJson(root + "data/tablo-rapor.json"),
     };
+    files.metinler = {};
+    for (const y of ["index.html", "sehirler/index.html", "planim/index.html", "sehir/amsterdam/index.html", "deplasman/index.html", "sehir/noel/index.html", "js/ana.js", "js/sehirler.js", "js/plan.js"]) { try { files.metinler[y] = await readFile(root + y, "utf8"); } catch {} }
     const out = await run({ files, repo: process.env.GITHUB_REPOSITORY, token: process.env.GITHUB_TOKEN });
     console.log(out.markdown);
     await writeFile(process.env.DENETCI_RAPOR || "denetci-rapor.md", out.markdown + "\n");
