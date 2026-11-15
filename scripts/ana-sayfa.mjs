@@ -8,7 +8,9 @@ import { join } from "node:path";
 const AY = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"];
 const D = (s) => new Date(s + "T12:00:00Z");
 const aralik = (a, b) => (a.slice(5, 7) === b.slice(5, 7) ? `${D(a).getUTCDate()}–${D(b).getUTCDate()} ${AY[D(b).getUTCMonth()]}` : `${D(a).getUTCDate()} ${AY[D(a).getUTCMonth()]} – ${D(b).getUTCDate()} ${AY[D(b).getUTCMonth()]}`);
-const HAFTA_AD = ["Bu hafta", "1 hafta sonra", "2 hafta", "3 hafta"];
+// Atay (15 Kas): çiplerde önümüzdeki en az 12 hafta sonu görünsün (robot 13 hafta sonu ölçüyor)
+export const HAFTA_SAYISI = 12;
+const haftaAd = (i) => (i === 0 ? "Bu hafta" : i === 1 ? "1 hafta sonra" : `${i} hafta sonra`);
 const ozet = (root, rel) => { try { return createHash("sha1").update(readFileSync(join(root, rel))).digest("hex").slice(0, 10); } catch { return "0"; } };
 const tl = (n) => Math.round(n).toLocaleString("tr-TR") + " TL";
 
@@ -25,11 +27,11 @@ export function sekmeCubugu(aktif) {
   return `<nav class="sekme" aria-label="Ana menü"><div class="kap">${s.map(([k, ad, yol]) => `<a href="${yol}"${k === aktif ? ' aria-current="page"' : ""}><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IKON[k]}</svg>${ad}<i></i></a>`).join("")}</div></nav>`;
 }
 
-/** Ana sayfa ve Şehirler için ortak veri: ilk 4 hafta sonu ve şehir başına TL toplamları. */
+/** Ana sayfa ve Şehirler için ortak veri: önümüzdeki 12 hafta sonu ve şehir başına TL toplamları. */
 export function vitrinVerisi(models, d, today, eurTry) {
-  const gunler = [...new Set(models.flatMap((m) => m.zaman.haftalar.map((h) => h.g)))].filter((g) => g > today).sort().slice(0, 4);
+  const gunler = [...new Set(models.flatMap((m) => m.zaman.haftalar.map((h) => h.g)))].filter((g) => g > today).sort().slice(0, HAFTA_SAYISI);
   const cikis = (g) => { for (const m of models) { const h = m.zaman.haftalar.find((x) => x.g === g); if (h) return h.cikis; } return g; };
-  const haftalar = gunler.map((g, i) => ({ g, kisa: aralik(g, cikis(g)), ad: HAFTA_AD[i] }));
+  const haftalar = gunler.map((g, i) => ({ g, kisa: aralik(g, cikis(g)), ad: haftaAd(i) }));
   const iata = (sehir) => { for (const g of gunler) { const v = (((((d.ucuslar || {}).haftaSonlari || {})[g] || {}).sehirler || {})[sehir] || {}).son; if (v && v.varis) return v.varis; } return sehir.slice(0, 3).toLocaleUpperCase("tr"); };
   const sehirler = models.map((m) => {
     const f = (m.fotolar || [])[0] || {};

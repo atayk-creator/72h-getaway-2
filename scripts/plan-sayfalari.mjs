@@ -172,13 +172,13 @@ export function macPlan(team, m, ek, { eurTry, today, SITE, slugify }) {
   };
 }
 
-/** Bir şehir (hafta sonu kaçamağı) için sayfa verisi: önümüzdeki 4 hafta sonu, her biri kendi uçuş ve otel fiyatıyla. */
+/** Bir şehir (hafta sonu kaçamağı) için sayfa verisi: önümüzdeki 12 hafta sonu (ana sayfadaki çiplerle aynı), her biri kendi uçuş ve otel fiyatıyla. */
 export function sehirPlan(d, model, ek, { eurTry, today, SITE, slugify, usableHotel, usableFlight, toEur }) {
   const sehir = model.sehir, slug = model.slug, yol = `/sehir/${slug}/`;
   const city = (d.hotels.sehirler || []).find((c) => c.sehir === sehir) || { oteller: [] };
   const F = d.fiyatlar[sehir] || {}, G = ((d.gezi || {}).sehirler || {})[sehir] || {};
   const otelNot = ek.otel_not || {};
-  const haftalar = (model.zaman.haftalar || []).filter((h) => h.g > today).slice(0, ek.hafta_sayisi || 4).map((h) => {
+  const haftalar = (model.zaman.haftalar || []).filter((h) => h.g > today).slice(0, ek.hafta_sayisi || 12).map((h) => {
     const w = ((F.haftaSonlari || {})[h.g] || {}).oteller || {};
     const otel = (city.oteller || []).map((o) => {
       const s = (w[o.id] || {}).son, ok = usableHotel(s);

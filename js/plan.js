@@ -86,6 +86,8 @@
     var w = $("weeks");
     if (!w || V.haftalar.length < 2) return;
     w.innerHTML = V.haftalar.map(function (h, i) { return '<button class="week" type="button" data-i="' + i + '" aria-pressed="' + (i === hi) + '">' + esc(h.etiket || aralik(h)) + (h.ek ? "<span>" + esc(h.ek) + "</span>" : "") + "</button>"; }).join("");
+    var secili = w.querySelector('[aria-pressed="true"]'); // seçili hafta sonu görünür olsun (12 çip yana kayar)
+    if (secili) w.scrollLeft = Math.max(0, secili.offsetLeft - w.offsetLeft - 16);
   }
   function renderPaket() {
     PAKETLER.forEach(function (p) {
