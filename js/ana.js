@@ -19,7 +19,7 @@
       ? '<a class="bk" href="' + yol(ilk) + '"><div class="bk-kocan"><span>' + kocan + '</span></div><div class="bk-govde"><img src="' + esc(ilk.foto) + '" alt="' + esc(ilk.alt) + '" width="640" height="427"><div class="bk-yazi"><div class="bk-rota"><span>IST → ' + esc(ilk.iata) + '</span><span>2 KİŞİ · 2 GECE</span></div><div class="bk-alt"><span class="bk-ad"><b>' + esc(ilk.ad) + "</b><span>" + esc(ilk.ulke) + ' · uçak + otel</span></span><span class="bk-fiyat"><b>' + tl(ilk.t[hi]) + "</b><span>kişi başı " + tl(ilk.t[hi] / 2) + "</span></span></div></div></div></a>"
       : '<p class="bos">Bu hafta sonu için fiyatlar henüz ölçülmedi; robot kontrol ediyor. Başka bir hafta sonu seç.</p>';
     $("raf-baslik").textContent = hi === 0 ? "Bu hafta sonu" : h.kisa + " hafta sonu";
-    $("raf").innerHTML = L.slice(0, 10).map(function (s) { return '<a class="rk" href="' + yol(s) + '"><img src="' + esc(s.foto) + '" alt="" loading="lazy" width="640" height="427"><div><b>' + esc(s.ad) + "</b><b>" + tl(s.t[hi]) + "</b></div></a>"; }).join("");
+    $("raf").innerHTML = L.slice(0, 6).map(function (s) { return '<a class="rk" href="' + yol(s) + '"><img src="' + esc(s.foto) + '" alt="" loading="lazy" width="640" height="427"><div><b>' + esc(s.ad) + "</b><b>" + tl(s.t[hi]) + "</b></div></a>"; }).join("");
     var c = document.querySelectorAll(".cip");
     for (var i = 0; i < c.length; i++) c[i].setAttribute("aria-pressed", i === hi ? "true" : "false");
   }

@@ -115,7 +115,7 @@ ${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="h
     : '<p class="bos">Bu hafta sonu için fiyatlar henüz ölçülmedi; robot kontrol ediyor. Başka bir hafta sonu seç.</p>'}</div>
 
   <div class="raf-bas"><h2 id="raf-baslik">Bu hafta sonu</h2><a href="/sehirler/">${models.length} şehir</a></div>
-  <div class="raf" id="raf">${rafL.slice(0, 10).map((s) => `<a class="rk" href="${yol(s)}"><img src="${esc(s.foto)}" alt="" loading="lazy" width="640" height="427"><div><b>${esc(s.ad)}</b><b>${tl(s.t[0])}</b></div></a>`).join("")}</div>
+  <div class="izg" id="raf">${rafL.slice(0, 6).map((s) => `<a class="rk" href="${yol(s)}"><img src="${esc(s.foto)}" alt="" loading="lazy" width="640" height="427"><div><b>${esc(s.ad)}</b><b>${tl(s.t[0])}</b></div></a>`).join("")}</div>
 
   <div class="kutular">
     <a class="kutu l" href="/sehir/noel/"><span>ARALIK</span><b>Noel pazarları</b></a>
