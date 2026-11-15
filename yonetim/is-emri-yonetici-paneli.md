@@ -1,3 +1,9 @@
+# İPTAL · 16 Kas 2026 02:01 · Atay: "bu iptal oldu, paneli Claude'un içinden kullanacağım"
+Bu iş emri GEÇERSİZ. /panel/ sayfası, panel.yml iş akışı ve Secrets (PANEL_SIFRE, METRICOOL_TOKEN, METRICOOL_USER_ID, PANEL_NOT_ANAHTARI) YAPILMAYACAK. Başlandıysa geri alın; depoda panelle ilgili yayınlanmış dosya kalmasın. `yonetim/panel-kaynak/` yalnız arşiv.
+
+---
+(eski metin, arşiv)
+
 # İŞ EMRİ · IT · Şifreli yönetici paneli (72hgetaway.com/panel/)
 Veren: Yönetim kurulu · Atay'ın onayı: 15 Kas 2026 18:08 ("Hazırla")
 Öncelik: ORTA (site tasarımı Faz A'dan sonra) · Teslim: 22 Kas
