@@ -131,3 +131,15 @@ Görsel dil: site ile aynı (lacivert/turuncu/krem, Archivo/Figtree/IBM Plex Mon
 - İleride plan yükseltilirse `METRICOOL_TOKEN` ve `METRICOOL_USER_ID` girilmesi yeter; iş akışı kendiliğinden REST'e döner (REST alan eşlemesi o zaman tanılama modunda doğrulanmalı).
 
 **Artık gereken tek şey anahtar çifti:** Atay Mac'inde üretir; özel anahtar `PANEL_NOT_ANAHTARI` secret'ına, açık anahtar `yonetim/panel/acik-anahtar.pem` dosyasına gider. Açık anahtar depoya konunca kurul ilk dosyayı şifreleyebilir.
+
+---
+
+## İPTAL · 16 Kas 2026 00:17 (Atay'ın kararı)
+
+Atay paneli sitede değil, Claude'un içinde (mevcut Claude paneli) kullanmaya karar verdi ve bu iş için yapılanların geri alınmasını istedi. Sebep: Metricool planı API anahtarı vermiyor; sitedeki panel ancak kurulun elle yenilediği dosyayla çalışabilecekti.
+
+**Geri alınanlar (depodan silindi):** `panel/` (şifreli sayfa ve manifest), `scripts/panel.mjs`, `panel-veri.mjs`, `panel-not.mjs`, `panel-uret.mjs`, `panel-sifrele.mjs`, iki test dosyası, `.github/workflows/panel.yml`, `yonetim/panel/` (tuz). `robots.txt` eski hâline döndü, `sw.js` içindeki /panel/ istisnası kaldırıldı. https://72hgetaway.com/panel/ artık 404 verir.
+
+**Kalanlar:** bu iş emri ve `yonetim/panel-kaynak/` (kurulun dosyaları) duruyor. Yukarıdaki teslim notları kayıt olarak bırakıldı; anlattıkları dosyalar artık depoda yok, git geçmişinde duruyor.
+
+**Atay'ın yapabileceği:** GitHub → Settings → Secrets'taki `PANEL_SIFRE` artık kullanılmıyor, silinebilir. Şifreli panel sayfasının eski sürümleri git geçmişinde kaldığı için o şifre başka hiçbir yerde kullanılmamalı.
