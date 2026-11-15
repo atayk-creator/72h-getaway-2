@@ -5,6 +5,12 @@
 // Kurulun kullanacağı tek satır:  node scripts/panel-not.mjs sifrele notlar.json
 //   notlar.json = { "notlar": [ { "tip": "karar|uyari|is|it", "baslik": "", "son": "", "detay": "", "durum": "", "kim": "" } ],
 //                   "program": [ { "gun": "2026-11-17", "sira": 0, "planli": true, "kod": "V-12", "icerik": "", "kim": "" } ] }
+//   Yedek yol (Metricool planı API'ye izin vermediği için): kurul Metricool verisini de aynı dosyaya koyar:
+//     "veriSaati": "2026-11-16T09:00:00+03:00",
+//     "yayinlar":  Metricool yayın takvimi satırları, olduğu gibi (publicationDate.dateTime İstanbul saati, text, firstCommentText,
+//                  providers[].network, draft, instagramData.type, facebookData.type); bugünden başlayarak 7 gün,
+//     "etkilesim": [ { "ag": "instagram|tiktok|facebook|youtube", "gun": "2026-11-15", "link": "https://…", "gosterim": 0, "etkilesim": 0, "bicim": "REEL" } ]  (son 14 gün),
+//     "takipci":   [ { "gun": "2026-11-15", "igTakipci": 0, "igKazanilan": 0, "ttTakipci": 0, "igGoruntulenme": 0 } ]  (son 14 gün, tarihe göre sıralı)
 //   (notlar.json depoya KONMAZ; komut yalnızca yonetim/panel/notlar.enc dosyasını yazar.)
 import { readFileSync, writeFileSync } from "node:fs";
 import { publicEncrypt, privateDecrypt, randomBytes, createCipheriv, createDecipheriv, constants } from "node:crypto";

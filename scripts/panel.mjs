@@ -159,8 +159,9 @@ export function panelHtml(g) {
   const hafta = S ? [...new Set(S.map((r) => r.gun))].map((gg) => { const rows = S.filter((r) => r.gun === gg).sort((a, b) => a.sira - b.sira); return `<tr><td>${esc(rows[0].gunAd)}</td>${rows.map((r) => `<td>${chip(r.saat + " " + r.durum, r.sorun ? "warn" : durumKind(r.durum))}${kisaPlan(r) ? `<div class="plan">${esc(kisaPlan(r))}</div>${r.kim ? `<div class="plan mute">${esc(r.kim)}</div>` : ""}` : ""}</td>`).join("")}</tr>`; }).join("") : bosSatir(6, metYok);
   const uyarilar = oto.concat(notTip("uyari"));
   const sorunSatiri = [...(H.metricool && H.metricool.length ? [`Metricool'dan alınamayan bölümler: ${H.metricool.join(", ")}.`] : []), ...(H.notlar ? [H.notlar] : [])];
-  const uretim = new Date(now).toISOString();
-  const saatYazi = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Istanbul" }).format(new Date(now));
+  const veriT = g.veriSaati || now; // yedek yolda verinin saati kurulun dosyasından gelir
+  const uretim = new Date(veriT).toISOString();
+  const saatYazi = new Intl.DateTimeFormat("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Istanbul" }).format(new Date(veriT));
   return `<!doctype html>
 <html lang="tr">
 <head>

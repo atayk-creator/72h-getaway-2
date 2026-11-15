@@ -118,3 +118,16 @@ Görsel dil: site ile aynı (lacivert/turuncu/krem, Archivo/Figtree/IBM Plex Mon
 **Doğrulanmamış kısım:** Metricool REST adresleri ve alan adları gerçek anahtarla denenmedi (anahtar IT'de yok, olmamalı). İlk gerçek çalıştırmada bir bölüm boş gelirse iş akışı "tanılama" seçeneğiyle elle çalıştırılır; loga yalnızca sorgu durumu ve alan adları yazılır, değer yazılmaz; alan eşlemesi ona göre düzeltilir. Plan API'ye izin vermiyorsa bu not güncellenecek ve yedek yola (kurulun şifreli veri dosyası) geçilecek.
 
 **Kalan:** açık/özel anahtar çifti (Atay Mac'inde üretecek), kurulun ilk `notlar.enc` dosyası, Metricool doğrulaması, telefonda kabul testi.
+
+---
+
+## Teslim notu · 3 (16 Kas 2026 00:20): Metricool API planı yetmiyor → yedek yol
+
+**Tespit:** Atay'ın Metricool hesabında Hesap ayarları → API sayfası anahtar göstermiyor; "API erişimi - Gelişmiş ve Özel planlar" ve "Planını yükselt" yazıyor (16 Kas 2026, Atay'ın tarayıcısında görüldü). Yani mevcut planla REST anahtarı alınamıyor. İş emrindeki "dur ve yaz" maddesi gereği: **REST yolu durduruldu, yedek yola geçildi.** Plan yükseltme bir satın alma kararıdır; IT yapmaz, karar Atay'ın.
+
+**Yedek yol (kuruldu):** kurul, Metricool verisini de notlarla aynı şifreli dosyaya koyar (`yonetim/panel/notlar.enc`). İş akışı Metricool Secrets yoksa yayın takvimi, etkileşim ve takipçi verisini bu dosyadan okur; paneldeki "Veri:" saati dosyadaki `veriSaati` olur, 3 saatten eskiyse "Veri eski" uyarısı çıkar. Alanlar `scripts/panel-not.mjs` dosyasının başında yazılı (`veriSaati`, `yayinlar`, `etkilesim`, `takipci`, `notlar`, `program`).
+- Kurulun komutu değişmedi: `node scripts/panel-not.mjs sifrele notlar.json` ve yalnız `yonetim/panel/notlar.enc` commit edilir. `notlar.json` depoya konmaz.
+- Panel yine saatte bir yeniden üretilir (bugün/yarın ve "geçti" durumları saate göre değişir), ama Metricool verisi kurul dosyayı yeniledikçe güncellenir.
+- İleride plan yükseltilirse `METRICOOL_TOKEN` ve `METRICOOL_USER_ID` girilmesi yeter; iş akışı kendiliğinden REST'e döner (REST alan eşlemesi o zaman tanılama modunda doğrulanmalı).
+
+**Artık gereken tek şey anahtar çifti:** Atay Mac'inde üretir; özel anahtar `PANEL_NOT_ANAHTARI` secret'ına, açık anahtar `yonetim/panel/acik-anahtar.pem` dosyasına gider. Açık anahtar depoya konunca kurul ilk dosyayı şifreleyebilir.
