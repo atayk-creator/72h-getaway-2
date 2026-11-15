@@ -43,3 +43,6 @@ Ayrıntı: `yonetim/is-emri-yeni-sehirler-ve-noel.md`.
 - Apify bütçesi: 70,33 / 75 $ (dönem 27 Kas). Aşılacaksa önce Atay'a sor.
 
 - **GÜNCELLEME 16 Kas 00:52:** yeni şehirlerin robot fiyatı 28 Kas yeni dönemde, ekonomik ayarla; Noel ekleri robotsuz. Ayrıntı iş emrinin sonunda.
+
+## (16 Kas 01:15) Strateji toplantısı tutanağı
+`yonetim/toplanti-15-16kas-sosyal-medya.md` · İT kendi iş listesini tutanağın sonundaki "İT" bölümüne yazsın; iş emrini Atay verir.
