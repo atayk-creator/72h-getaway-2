@@ -20,7 +20,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 1266,
+   "normal": 1289,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 649
@@ -29,25 +29,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1937,
+     "toplam": 1683,
      "etiket": "pahali",
-     "fark": 53,
+     "fark": 31,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1468,
+     "toplam": 1514,
      "etiket": "pahali",
-     "fark": 16,
+     "fark": 17,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 1271,
+     "toplam": 1317,
      "etiket": "normal",
-     "fark": 0,
+     "fark": 2,
      "otelDolu": false
     },
     {
@@ -55,7 +55,7 @@
      "cikis": "2026-12-13",
      "toplam": 1107,
      "etiket": "ucuz",
-     "fark": -13,
+     "fark": -14,
      "otelDolu": false
     },
     {
@@ -63,7 +63,7 @@
      "cikis": "2026-12-20",
      "toplam": 1714,
      "etiket": "pahali",
-     "fark": 35,
+     "fark": 33,
      "otelDolu": false
     },
     {
@@ -71,7 +71,7 @@
      "cikis": "2026-12-27",
      "toplam": 2054,
      "etiket": "pahali",
-     "fark": 62,
+     "fark": 59,
      "otelDolu": false
     },
     {
@@ -79,7 +79,7 @@
      "cikis": "2027-01-03",
      "toplam": 1262,
      "etiket": "normal",
-     "fark": 0,
+     "fark": -2,
      "otelDolu": false
     },
     {
@@ -87,7 +87,7 @@
      "cikis": "2027-01-10",
      "toplam": 1069,
      "etiket": "ucuz",
-     "fark": -16,
+     "fark": -17,
      "otelDolu": false
     },
     {
@@ -95,7 +95,7 @@
      "cikis": "2027-01-17",
      "toplam": 1078,
      "etiket": "ucuz",
-     "fark": -15,
+     "fark": -16,
      "otelDolu": false
     },
     {
@@ -103,7 +103,7 @@
      "cikis": "2027-01-24",
      "toplam": 649,
      "etiket": "ucuz",
-     "fark": -49,
+     "fark": -50,
      "otelDolu": false
     },
     {
@@ -111,7 +111,7 @@
      "cikis": "2027-01-31",
      "toplam": 1016,
      "etiket": "ucuz",
-     "fark": -20,
+     "fark": -21,
      "otelDolu": false
     },
     {
@@ -119,7 +119,7 @@
      "cikis": "2027-02-07",
      "toplam": 1370,
      "etiket": "normal",
-     "fark": 8,
+     "fark": 6,
      "otelDolu": false
     }
    ]
@@ -150,25 +150,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1109,
-     "etiket": "normal",
-     "fark": 7,
+     "toplam": 1279,
+     "etiket": "pahali",
+     "fark": 23,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1173,
+     "toplam": 1233,
      "etiket": "pahali",
-     "fark": 13,
+     "fark": 19,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 1183,
-     "etiket": "pahali",
-     "fark": 14,
+     "toplam": 1107,
+     "etiket": "normal",
+     "fark": 7,
      "otelDolu": false
     },
     {
@@ -262,7 +262,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 726,
+   "normal": 740,
    "enUcuz": {
     "g": "2027-01-15",
     "toplam": 466
@@ -280,17 +280,18 @@
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 712,
-     "etiket": "normal",
-     "fark": -2,
-     "otelDolu": false
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false,
+     "dogrulaniyor": true
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 878,
+     "toplam": 928,
      "etiket": "pahali",
-     "fark": 21,
+     "fark": 25,
      "otelDolu": false
     },
     {
@@ -298,7 +299,7 @@
      "cikis": "2026-12-13",
      "toplam": 928,
      "etiket": "pahali",
-     "fark": 28,
+     "fark": 25,
      "otelDolu": false
     },
     {
@@ -306,7 +307,7 @@
      "cikis": "2026-12-20",
      "toplam": 740,
      "etiket": "normal",
-     "fark": 2,
+     "fark": 0,
      "otelDolu": false
     },
     {
@@ -314,7 +315,7 @@
      "cikis": "2026-12-27",
      "toplam": 761,
      "etiket": "normal",
-     "fark": 5,
+     "fark": 3,
      "otelDolu": false
     },
     {
@@ -322,7 +323,7 @@
      "cikis": "2027-01-03",
      "toplam": 981,
      "etiket": "pahali",
-     "fark": 35,
+     "fark": 33,
      "otelDolu": false
     },
     {
@@ -330,7 +331,7 @@
      "cikis": "2027-01-10",
      "toplam": 514,
      "etiket": "ucuz",
-     "fark": -29,
+     "fark": -31,
      "otelDolu": false
     },
     {
@@ -338,7 +339,7 @@
      "cikis": "2027-01-17",
      "toplam": 466,
      "etiket": "ucuz",
-     "fark": -36,
+     "fark": -37,
      "otelDolu": false
     },
     {
@@ -355,7 +356,7 @@
      "cikis": "2027-01-31",
      "toplam": 608,
      "etiket": "ucuz",
-     "fark": -16,
+     "fark": -18,
      "otelDolu": false
     },
     {
@@ -363,7 +364,7 @@
      "cikis": "2027-02-07",
      "toplam": 645,
      "etiket": "ucuz",
-     "fark": -11,
+     "fark": -13,
      "otelDolu": false
     }
    ]
@@ -385,7 +386,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 973,
+   "normal": 977,
    "enUcuz": {
     "g": "2027-02-05",
     "toplam": 824
@@ -394,23 +395,23 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1178,
+     "toplam": 1232,
      "etiket": "pahali",
-     "fark": 21,
+     "fark": 26,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1117,
+     "toplam": 1149,
      "etiket": "pahali",
-     "fark": 15,
+     "fark": 18,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 973,
+     "toplam": 977,
      "etiket": "normal",
      "fark": 0,
      "otelDolu": false
@@ -428,7 +429,7 @@
      "cikis": "2026-12-20",
      "toplam": 1156,
      "etiket": "pahali",
-     "fark": 19,
+     "fark": 18,
      "otelDolu": false
     },
     {
@@ -444,7 +445,7 @@
      "cikis": "2027-01-03",
      "toplam": 1302,
      "etiket": "pahali",
-     "fark": 34,
+     "fark": 33,
      "otelDolu": false
     },
     {
@@ -452,7 +453,7 @@
      "cikis": "2027-01-10",
      "toplam": 873,
      "etiket": "ucuz",
-     "fark": -10,
+     "fark": -11,
      "otelDolu": false
     },
     {
@@ -487,7 +488,7 @@
      "cikis": "2027-02-07",
      "toplam": 824,
      "etiket": "ucuz",
-     "fark": -15,
+     "fark": -16,
      "otelDolu": false
     }
    ]
@@ -509,7 +510,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 933,
+   "normal": 947,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 828
@@ -527,25 +528,26 @@
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 916,
+     "toplam": 962,
      "etiket": "normal",
-     "fark": -2,
+     "fark": 2,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 980,
-     "etiket": "normal",
-     "fark": 5,
-     "otelDolu": false
+     "toplam": null,
+     "etiket": null,
+     "fark": null,
+     "otelDolu": false,
+     "dogrulaniyor": true
     },
     {
      "g": "2026-12-11",
      "cikis": "2026-12-13",
      "toplam": 1008,
      "etiket": "normal",
-     "fark": 8,
+     "fark": 6,
      "otelDolu": false
     },
     {
@@ -562,7 +564,7 @@
      "cikis": "2026-12-27",
      "toplam": 853,
      "etiket": "normal",
-     "fark": -9,
+     "fark": -10,
      "otelDolu": false
     },
     {
@@ -570,7 +572,7 @@
      "cikis": "2027-01-03",
      "toplam": 1136,
      "etiket": "pahali",
-     "fark": 22,
+     "fark": 20,
      "otelDolu": false
     },
     {
@@ -578,7 +580,7 @@
      "cikis": "2027-01-10",
      "toplam": 983,
      "etiket": "normal",
-     "fark": 5,
+     "fark": 4,
      "otelDolu": false
     },
     {
@@ -586,7 +588,7 @@
      "cikis": "2027-01-17",
      "toplam": 933,
      "etiket": "normal",
-     "fark": 0,
+     "fark": -2,
      "otelDolu": false
     },
     {
@@ -594,7 +596,7 @@
      "cikis": "2027-01-24",
      "toplam": 828,
      "etiket": "ucuz",
-     "fark": -11,
+     "fark": -13,
      "otelDolu": false
     },
     {
@@ -602,7 +604,7 @@
      "cikis": "2027-01-31",
      "toplam": 899,
      "etiket": "normal",
-     "fark": -4,
+     "fark": -5,
      "otelDolu": false
     },
     {
@@ -642,25 +644,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 592,
+     "toplam": 792,
      "etiket": "pahali",
-     "fark": 14,
+     "fark": 52,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 588,
+     "toplam": 642,
      "etiket": "pahali",
-     "fark": 13,
+     "fark": 23,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 597,
+     "toplam": 583,
      "etiket": "pahali",
-     "fark": 15,
+     "fark": 12,
      "otelDolu": false
     },
     {
@@ -763,9 +765,9 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1546,
+     "toplam": 1606,
      "etiket": "pahali",
-     "fark": 61,
+     "fark": 67,
      "otelDolu": false
     },
     {
@@ -780,9 +782,9 @@
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 1837,
+     "toplam": 1973,
      "etiket": "pahali",
-     "fark": 91,
+     "fark": 105,
      "otelDolu": false
     },
     {
@@ -890,25 +892,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1383,
+     "toplam": 1355,
      "etiket": "pahali",
-     "fark": 44,
+     "fark": 41,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1392,
+     "toplam": 1942,
      "etiket": "pahali",
-     "fark": 45,
+     "fark": 102,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 1198,
+     "toplam": 1208,
      "etiket": "pahali",
-     "fark": 24,
+     "fark": 26,
      "otelDolu": false
     },
     {
@@ -1012,25 +1014,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1262,
+     "toplam": 1012,
      "etiket": "pahali",
-     "fark": 37,
+     "fark": 10,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1027,
+     "toplam": 1055,
      "etiket": "pahali",
-     "fark": 12,
+     "fark": 15,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 867,
+     "toplam": 889,
      "etiket": "normal",
-     "fark": -6,
+     "fark": -3,
      "otelDolu": false
     },
     {
@@ -1133,25 +1135,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1542,
+     "toplam": 1668,
      "etiket": "pahali",
-     "fark": 64,
+     "fark": 78,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1286,
+     "toplam": 1736,
      "etiket": "pahali",
-     "fark": 37,
+     "fark": 85,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 996,
-     "etiket": "normal",
-     "fark": 6,
+     "toplam": 1094,
+     "etiket": "pahali",
+     "fark": 17,
      "otelDolu": false
     },
     {
@@ -1245,7 +1247,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 1008,
+   "normal": 1049,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 570
@@ -1254,25 +1256,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1458,
+     "toplam": 1538,
      "etiket": "pahali",
-     "fark": 45,
+     "fark": 47,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1032,
+     "toplam": 1102,
      "etiket": "normal",
-     "fark": 2,
+     "fark": 5,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 985,
+     "toplam": 997,
      "etiket": "normal",
-     "fark": -2,
+     "fark": -5,
      "otelDolu": false
     },
     {
@@ -1280,7 +1282,7 @@
      "cikis": "2026-12-13",
      "toplam": 963,
      "etiket": "normal",
-     "fark": -5,
+     "fark": -8,
      "otelDolu": false
     },
     {
@@ -1288,7 +1290,7 @@
      "cikis": "2026-12-20",
      "toplam": 1344,
      "etiket": "pahali",
-     "fark": 33,
+     "fark": 28,
      "otelDolu": false
     },
     {
@@ -1296,7 +1298,7 @@
      "cikis": "2026-12-27",
      "toplam": 1207,
      "etiket": "pahali",
-     "fark": 20,
+     "fark": 15,
      "otelDolu": false
     },
     {
@@ -1304,7 +1306,7 @@
      "cikis": "2027-01-03",
      "toplam": 1243,
      "etiket": "pahali",
-     "fark": 23,
+     "fark": 18,
      "otelDolu": false
     },
     {
@@ -1312,7 +1314,7 @@
      "cikis": "2027-01-10",
      "toplam": 1106,
      "etiket": "normal",
-     "fark": 10,
+     "fark": 5,
      "otelDolu": false
     },
     {
@@ -1320,7 +1322,7 @@
      "cikis": "2027-01-17",
      "toplam": 970,
      "etiket": "normal",
-     "fark": -4,
+     "fark": -8,
      "otelDolu": false
     },
     {
@@ -1328,7 +1330,7 @@
      "cikis": "2027-01-24",
      "toplam": 570,
      "etiket": "ucuz",
-     "fark": -43,
+     "fark": -46,
      "otelDolu": false
     },
     {
@@ -1336,7 +1338,7 @@
      "cikis": "2027-01-31",
      "toplam": 852,
      "etiket": "ucuz",
-     "fark": -16,
+     "fark": -19,
      "otelDolu": false
     },
     {
@@ -1344,7 +1346,7 @@
      "cikis": "2027-02-07",
      "toplam": 894,
      "etiket": "ucuz",
-     "fark": -11,
+     "fark": -15,
      "otelDolu": false
     }
    ]
@@ -1366,7 +1368,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 539,
+   "normal": 555,
    "enUcuz": {
     "g": "2027-01-08",
     "toplam": 406
@@ -1375,25 +1377,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 705,
+     "toplam": 831,
      "etiket": "pahali",
-     "fark": 31,
+     "fark": 50,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 644,
+     "toplam": 674,
      "etiket": "pahali",
-     "fark": 19,
+     "fark": 21,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 515,
-     "etiket": "normal",
-     "fark": -4,
+     "toplam": 633,
+     "etiket": "pahali",
+     "fark": 14,
      "otelDolu": false
     },
     {
@@ -1401,7 +1403,7 @@
      "cikis": "2026-12-13",
      "toplam": 630,
      "etiket": "pahali",
-     "fark": 17,
+     "fark": 13,
      "otelDolu": false
     },
     {
@@ -1409,7 +1411,7 @@
      "cikis": "2026-12-20",
      "toplam": 555,
      "etiket": "normal",
-     "fark": 3,
+     "fark": 0,
      "otelDolu": false
     },
     {
@@ -1417,7 +1419,7 @@
      "cikis": "2026-12-27",
      "toplam": 539,
      "etiket": "normal",
-     "fark": 0,
+     "fark": -3,
      "otelDolu": false
     },
     {
@@ -1425,7 +1427,7 @@
      "cikis": "2027-01-03",
      "toplam": 698,
      "etiket": "pahali",
-     "fark": 30,
+     "fark": 26,
      "otelDolu": false
     },
     {
@@ -1433,7 +1435,7 @@
      "cikis": "2027-01-10",
      "toplam": 406,
      "etiket": "ucuz",
-     "fark": -25,
+     "fark": -27,
      "otelDolu": false
     },
     {
@@ -1441,7 +1443,7 @@
      "cikis": "2027-01-17",
      "toplam": 406,
      "etiket": "ucuz",
-     "fark": -25,
+     "fark": -27,
      "otelDolu": false
     },
     {
@@ -1458,7 +1460,7 @@
      "cikis": "2027-01-31",
      "toplam": 427,
      "etiket": "ucuz",
-     "fark": -21,
+     "fark": -23,
      "otelDolu": false
     },
     {
@@ -1466,7 +1468,7 @@
      "cikis": "2027-02-07",
      "toplam": 428,
      "etiket": "ucuz",
-     "fark": -21,
+     "fark": -23,
      "otelDolu": false
     }
    ]
@@ -1506,19 +1508,19 @@
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
+     "toplam": 1347,
+     "etiket": "pahali",
+     "fark": 35,
+     "otelDolu": false
+    },
+    {
+     "g": "2026-12-04",
+     "cikis": "2026-12-06",
      "toplam": null,
      "etiket": null,
      "fark": null,
      "otelDolu": false,
      "dogrulaniyor": true
-    },
-    {
-     "g": "2026-12-04",
-     "cikis": "2026-12-06",
-     "toplam": 1140,
-     "etiket": "pahali",
-     "fark": 15,
-     "otelDolu": false
     },
     {
      "g": "2026-12-11",
@@ -1622,25 +1624,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1292,
+     "toplam": 1532,
      "etiket": "pahali",
-     "fark": 42,
+     "fark": 68,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1887,
+     "toplam": 1783,
      "etiket": "pahali",
-     "fark": 107,
+     "fark": 96,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 984,
+     "toplam": 994,
      "etiket": "normal",
-     "fark": 8,
+     "fark": 9,
      "otelDolu": false
     },
     {
@@ -1737,7 +1739,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 1155,
+   "normal": 1107,
    "enUcuz": {
     "g": "2027-01-15",
     "toplam": 830
@@ -1746,23 +1748,23 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1187,
-     "etiket": "normal",
-     "fark": 3,
+     "toplam": 1243,
+     "etiket": "pahali",
+     "fark": 12,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1329,
+     "toplam": 1459,
      "etiket": "pahali",
-     "fark": 15,
+     "fark": 32,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 1155,
+     "toplam": 1107,
      "etiket": "normal",
      "fark": 0,
      "otelDolu": false
@@ -1771,8 +1773,8 @@
      "g": "2026-12-11",
      "cikis": "2026-12-13",
      "toplam": 1038,
-     "etiket": "ucuz",
-     "fark": -10,
+     "etiket": "normal",
+     "fark": -6,
      "otelDolu": false
     },
     {
@@ -1780,7 +1782,7 @@
      "cikis": "2026-12-20",
      "toplam": 1606,
      "etiket": "pahali",
-     "fark": 39,
+     "fark": 45,
      "otelDolu": false
     },
     {
@@ -1788,7 +1790,7 @@
      "cikis": "2026-12-27",
      "toplam": 1078,
      "etiket": "normal",
-     "fark": -7,
+     "fark": -3,
      "otelDolu": false
     },
     {
@@ -1796,7 +1798,7 @@
      "cikis": "2027-01-03",
      "toplam": 1431,
      "etiket": "pahali",
-     "fark": 24,
+     "fark": 29,
      "otelDolu": false
     },
     {
@@ -1804,7 +1806,7 @@
      "cikis": "2027-01-10",
      "toplam": 1315,
      "etiket": "pahali",
-     "fark": 14,
+     "fark": 19,
      "otelDolu": false
     },
     {
@@ -1812,7 +1814,7 @@
      "cikis": "2027-01-17",
      "toplam": 830,
      "etiket": "ucuz",
-     "fark": -28,
+     "fark": -25,
      "otelDolu": false
     },
     {
@@ -1829,7 +1831,7 @@
      "cikis": "2027-01-31",
      "toplam": 950,
      "etiket": "ucuz",
-     "fark": -18,
+     "fark": -14,
      "otelDolu": false
     },
     {
@@ -1837,7 +1839,7 @@
      "cikis": "2027-02-07",
      "toplam": 954,
      "etiket": "ucuz",
-     "fark": -17,
+     "fark": -14,
      "otelDolu": false
     }
    ]
@@ -1988,7 +1990,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 659,
+   "normal": 696,
    "enUcuz": {
     "g": "2027-01-29",
     "toplam": 516
@@ -2015,18 +2017,17 @@
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": null,
-     "etiket": null,
-     "fark": null,
-     "otelDolu": false,
-     "dogrulaniyor": true
+     "toplam": 1054,
+     "etiket": "pahali",
+     "fark": 51,
+     "otelDolu": false
     },
     {
      "g": "2026-12-11",
      "cikis": "2026-12-13",
      "toplam": 806,
      "etiket": "pahali",
-     "fark": 22,
+     "fark": 16,
      "otelDolu": false
     },
     {
@@ -2052,7 +2053,7 @@
      "cikis": "2027-01-03",
      "toplam": 811,
      "etiket": "pahali",
-     "fark": 23,
+     "fark": 16,
      "otelDolu": false
     },
     {
@@ -2060,7 +2061,7 @@
      "cikis": "2027-01-10",
      "toplam": 696,
      "etiket": "normal",
-     "fark": 6,
+     "fark": 0,
      "otelDolu": false
     },
     {
@@ -2068,7 +2069,7 @@
      "cikis": "2027-01-17",
      "toplam": 522,
      "etiket": "ucuz",
-     "fark": -21,
+     "fark": -25,
      "otelDolu": false
     },
     {
@@ -2085,15 +2086,15 @@
      "cikis": "2027-01-31",
      "toplam": 516,
      "etiket": "ucuz",
-     "fark": -22,
+     "fark": -26,
      "otelDolu": false
     },
     {
      "g": "2027-02-05",
      "cikis": "2027-02-07",
      "toplam": 622,
-     "etiket": "normal",
-     "fark": -6,
+     "etiket": "ucuz",
+     "fark": -11,
      "otelDolu": false
     }
    ]
@@ -2115,7 +2116,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 780,
+   "normal": 791,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 471
@@ -2142,18 +2143,17 @@
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": null,
-     "etiket": null,
-     "fark": null,
-     "otelDolu": false,
-     "dogrulaniyor": true
+     "toplam": 791,
+     "etiket": "normal",
+     "fark": 0,
+     "otelDolu": false
     },
     {
      "g": "2026-12-11",
      "cikis": "2026-12-13",
      "toplam": 950,
      "etiket": "pahali",
-     "fark": 22,
+     "fark": 20,
      "otelDolu": false
     },
     {
@@ -2179,7 +2179,7 @@
      "cikis": "2027-01-03",
      "toplam": 903,
      "etiket": "pahali",
-     "fark": 16,
+     "fark": 14,
      "otelDolu": false
     },
     {
@@ -2187,15 +2187,15 @@
      "cikis": "2027-01-10",
      "toplam": 855,
      "etiket": "normal",
-     "fark": 10,
+     "fark": 8,
      "otelDolu": false
     },
     {
      "g": "2027-01-15",
      "cikis": "2027-01-17",
      "toplam": 705,
-     "etiket": "normal",
-     "fark": -10,
+     "etiket": "ucuz",
+     "fark": -11,
      "otelDolu": false
     },
     {
@@ -2210,8 +2210,8 @@
      "g": "2027-01-29",
      "cikis": "2027-01-31",
      "toplam": 705,
-     "etiket": "normal",
-     "fark": -10,
+     "etiket": "ucuz",
+     "fark": -11,
      "otelDolu": false
     },
     {
@@ -2242,7 +2242,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 1086,
+   "normal": 1091,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 449
@@ -2251,9 +2251,9 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1086,
-     "etiket": "normal",
-     "fark": 0,
+     "toplam": 1222,
+     "etiket": "pahali",
+     "fark": 12,
      "otelDolu": false
     },
     {
@@ -2370,7 +2370,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 1189,
+   "normal": 1179,
    "enUcuz": {
     "g": "2027-02-05",
     "toplam": 551
@@ -2379,34 +2379,33 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1247,
+     "toplam": 1179,
      "etiket": "normal",
-     "fark": 5,
+     "fark": 0,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1372,
+     "toplam": 1516,
      "etiket": "pahali",
-     "fark": 15,
+     "fark": 29,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": null,
-     "etiket": null,
-     "fark": null,
-     "otelDolu": false,
-     "dogrulaniyor": true
+     "toplam": 1899,
+     "etiket": "pahali",
+     "fark": 61,
+     "otelDolu": false
     },
     {
      "g": "2026-12-11",
      "cikis": "2026-12-13",
      "toplam": 1369,
      "etiket": "pahali",
-     "fark": 15,
+     "fark": 16,
      "otelDolu": false
     },
     {
@@ -2414,7 +2413,7 @@
      "cikis": "2026-12-20",
      "toplam": 1131,
      "etiket": "normal",
-     "fark": -5,
+     "fark": -4,
      "otelDolu": false
     },
     {
@@ -2422,7 +2421,7 @@
      "cikis": "2026-12-27",
      "toplam": 1251,
      "etiket": "normal",
-     "fark": 5,
+     "fark": 6,
      "otelDolu": false
     },
     {
@@ -2430,7 +2429,7 @@
      "cikis": "2027-01-03",
      "toplam": 1262,
      "etiket": "normal",
-     "fark": 6,
+     "fark": 7,
      "otelDolu": false
     },
     {
@@ -2438,7 +2437,7 @@
      "cikis": "2027-01-10",
      "toplam": 635,
      "etiket": "ucuz",
-     "fark": -47,
+     "fark": -46,
      "otelDolu": false
     },
     {
@@ -2446,7 +2445,7 @@
      "cikis": "2027-01-17",
      "toplam": 553,
      "etiket": "ucuz",
-     "fark": -54,
+     "fark": -53,
      "otelDolu": false
     },
     {
@@ -2463,7 +2462,7 @@
      "cikis": "2027-01-31",
      "toplam": 553,
      "etiket": "ucuz",
-     "fark": -54,
+     "fark": -53,
      "otelDolu": false
     },
     {
@@ -2471,7 +2470,7 @@
      "cikis": "2027-02-07",
      "toplam": 551,
      "etiket": "ucuz",
-     "fark": -54,
+     "fark": -53,
      "otelDolu": false
     }
    ]
@@ -2493,7 +2492,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 707,
+   "normal": 963,
    "enUcuz": {
     "g": "2027-01-15",
     "toplam": 486
@@ -2502,25 +2501,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 769,
+     "toplam": 987,
      "etiket": "normal",
-     "fark": 9,
+     "fark": 2,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": null,
-     "etiket": null,
-     "fark": null,
+     "toplam": 963,
+     "etiket": "normal",
+     "fark": 0,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 1174,
+     "toplam": 1176,
      "etiket": "pahali",
-     "fark": 66,
+     "fark": 22,
      "otelDolu": false
     },
     {
@@ -2528,15 +2527,15 @@
      "cikis": "2026-12-13",
      "toplam": 1155,
      "etiket": "pahali",
-     "fark": 63,
+     "fark": 20,
      "otelDolu": false
     },
     {
      "g": "2026-12-18",
      "cikis": "2026-12-20",
      "toplam": 645,
-     "etiket": "normal",
-     "fark": -9,
+     "etiket": "ucuz",
+     "fark": -33,
      "otelDolu": false
     },
     {
@@ -2560,7 +2559,7 @@
      "cikis": "2027-01-10",
      "toplam": 597,
      "etiket": "ucuz",
-     "fark": -16,
+     "fark": -38,
      "otelDolu": false
     },
     {
@@ -2568,7 +2567,7 @@
      "cikis": "2027-01-17",
      "toplam": 486,
      "etiket": "ucuz",
-     "fark": -31,
+     "fark": -50,
      "otelDolu": false
     },
     {
@@ -2615,7 +2614,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 952,
+   "normal": 917,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 359
@@ -2624,25 +2623,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1079,
-     "etiket": "pahali",
-     "fark": 13,
+     "toplam": 957,
+     "etiket": "normal",
+     "fark": 4,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 1026,
-     "etiket": "normal",
-     "fark": 8,
+     "toplam": 1084,
+     "etiket": "pahali",
+     "fark": 18,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 1291,
+     "toplam": 1301,
      "etiket": "pahali",
-     "fark": 36,
+     "fark": 42,
      "otelDolu": false
     },
     {
@@ -2650,7 +2649,7 @@
      "cikis": "2026-12-13",
      "toplam": 1101,
      "etiket": "pahali",
-     "fark": 16,
+     "fark": 20,
      "otelDolu": false
     },
     {
@@ -2658,7 +2657,7 @@
      "cikis": "2026-12-20",
      "toplam": 1073,
      "etiket": "pahali",
-     "fark": 13,
+     "fark": 17,
      "otelDolu": false
     },
     {
@@ -2666,7 +2665,7 @@
      "cikis": "2026-12-27",
      "toplam": 877,
      "etiket": "normal",
-     "fark": -8,
+     "fark": -4,
      "otelDolu": false
     },
     {
@@ -2674,7 +2673,7 @@
      "cikis": "2027-01-03",
      "toplam": 1195,
      "etiket": "pahali",
-     "fark": 26,
+     "fark": 30,
      "otelDolu": false
     },
     {
@@ -2682,7 +2681,7 @@
      "cikis": "2027-01-10",
      "toplam": 792,
      "etiket": "ucuz",
-     "fark": -17,
+     "fark": -14,
      "otelDolu": false
     },
     {
@@ -2690,7 +2689,7 @@
      "cikis": "2027-01-17",
      "toplam": 517,
      "etiket": "ucuz",
-     "fark": -46,
+     "fark": -44,
      "otelDolu": false
     },
     {
@@ -2698,7 +2697,7 @@
      "cikis": "2027-01-24",
      "toplam": 359,
      "etiket": "ucuz",
-     "fark": -62,
+     "fark": -61,
      "otelDolu": false
     },
     {
@@ -2706,7 +2705,7 @@
      "cikis": "2027-01-31",
      "toplam": 519,
      "etiket": "ucuz",
-     "fark": -45,
+     "fark": -43,
      "otelDolu": false
     },
     {
@@ -2714,7 +2713,7 @@
      "cikis": "2027-02-07",
      "toplam": 540,
      "etiket": "ucuz",
-     "fark": -43,
+     "fark": -41,
      "otelDolu": false
     }
    ]
@@ -2745,25 +2744,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 780,
-     "etiket": "pahali",
-     "fark": 13,
+     "toplam": 748,
+     "etiket": "normal",
+     "fark": 9,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 722,
+     "toplam": 730,
      "etiket": "normal",
-     "fark": 5,
+     "fark": 6,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 900,
+     "toplam": 912,
      "etiket": "pahali",
-     "fark": 31,
+     "fark": 33,
      "otelDolu": false
     },
     {
@@ -2857,7 +2856,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 679,
+   "normal": 720,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 540
@@ -2866,33 +2865,33 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 696,
+     "toplam": 778,
      "etiket": "normal",
-     "fark": 2,
+     "fark": 8,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 799,
+     "toplam": 905,
      "etiket": "pahali",
-     "fark": 18,
+     "fark": 26,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 822,
+     "toplam": 846,
      "etiket": "pahali",
-     "fark": 21,
+     "fark": 17,
      "otelDolu": false
     },
     {
      "g": "2026-12-11",
      "cikis": "2026-12-13",
      "toplam": 781,
-     "etiket": "pahali",
-     "fark": 15,
+     "etiket": "normal",
+     "fark": 8,
      "otelDolu": false
     },
     {
@@ -2900,7 +2899,7 @@
      "cikis": "2026-12-20",
      "toplam": 830,
      "etiket": "pahali",
-     "fark": 22,
+     "fark": 15,
      "otelDolu": false
     },
     {
@@ -2908,7 +2907,7 @@
      "cikis": "2026-12-27",
      "toplam": 796,
      "etiket": "pahali",
-     "fark": 17,
+     "fark": 11,
      "otelDolu": false
     },
     {
@@ -2916,7 +2915,7 @@
      "cikis": "2027-01-03",
      "toplam": 662,
      "etiket": "normal",
-     "fark": -2,
+     "fark": -8,
      "otelDolu": false
     },
     {
@@ -2924,7 +2923,7 @@
      "cikis": "2027-01-10",
      "toplam": 652,
      "etiket": "normal",
-     "fark": -4,
+     "fark": -9,
      "otelDolu": false
     },
     {
@@ -2932,7 +2931,7 @@
      "cikis": "2027-01-17",
      "toplam": 564,
      "etiket": "ucuz",
-     "fark": -17,
+     "fark": -22,
      "otelDolu": false
     },
     {
@@ -2940,7 +2939,7 @@
      "cikis": "2027-01-24",
      "toplam": 540,
      "etiket": "ucuz",
-     "fark": -21,
+     "fark": -25,
      "otelDolu": false
     },
     {
@@ -2948,7 +2947,7 @@
      "cikis": "2027-01-31",
      "toplam": 546,
      "etiket": "ucuz",
-     "fark": -20,
+     "fark": -24,
      "otelDolu": false
     },
     {
@@ -2956,7 +2955,7 @@
      "cikis": "2027-02-07",
      "toplam": 599,
      "etiket": "ucuz",
-     "fark": -12,
+     "fark": -17,
      "otelDolu": false
     }
    ]
@@ -2978,7 +2977,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 618,
+   "normal": 621,
    "enUcuz": {
     "g": "2027-01-22",
     "toplam": 378
@@ -2987,25 +2986,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 835,
+     "toplam": 887,
      "etiket": "pahali",
-     "fark": 35,
+     "fark": 43,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 621,
-     "etiket": "normal",
-     "fark": 1,
+     "toplam": 799,
+     "etiket": "pahali",
+     "fark": 29,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 624,
-     "etiket": "normal",
-     "fark": 1,
+     "toplam": 710,
+     "etiket": "pahali",
+     "fark": 14,
      "otelDolu": false
     },
     {
@@ -3021,7 +3020,7 @@
      "cikis": "2026-12-20",
      "toplam": 628,
      "etiket": "normal",
-     "fark": 2,
+     "fark": 1,
      "otelDolu": false
     },
     {
@@ -3029,7 +3028,7 @@
      "cikis": "2026-12-27",
      "toplam": 646,
      "etiket": "normal",
-     "fark": 5,
+     "fark": 4,
      "otelDolu": false
     },
     {
@@ -3045,7 +3044,7 @@
      "cikis": "2027-01-10",
      "toplam": 845,
      "etiket": "pahali",
-     "fark": 37,
+     "fark": 36,
      "otelDolu": false
     },
     {
@@ -3077,7 +3076,7 @@
      "cikis": "2027-02-07",
      "toplam": 511,
      "etiket": "ucuz",
-     "fark": -17,
+     "fark": -18,
      "otelDolu": false
     }
    ]
@@ -3099,7 +3098,7 @@
      "kaynak": "Pexels"
     }
    ],
-   "normal": 525,
+   "normal": 522,
    "enUcuz": {
     "g": "2026-12-11",
     "toplam": 451
@@ -3108,25 +3107,25 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 582,
-     "etiket": "pahali",
-     "fark": 11,
+     "toplam": 522,
+     "etiket": "normal",
+     "fark": 0,
      "otelDolu": false
     },
     {
      "g": "2026-11-27",
      "cikis": "2026-11-29",
-     "toplam": 617,
-     "etiket": "pahali",
-     "fark": 18,
+     "toplam": 557,
+     "etiket": "normal",
+     "fark": 7,
      "otelDolu": false
     },
     {
      "g": "2026-12-04",
      "cikis": "2026-12-06",
-     "toplam": 525,
+     "toplam": 527,
      "etiket": "normal",
-     "fark": 0,
+     "fark": 1,
      "otelDolu": false
     },
     {
@@ -3150,7 +3149,7 @@
      "cikis": "2026-12-27",
      "toplam": 625,
      "etiket": "pahali",
-     "fark": 19,
+     "fark": 20,
      "otelDolu": false
     },
     {
@@ -3174,7 +3173,7 @@
      "cikis": "2027-01-17",
      "toplam": 468,
      "etiket": "ucuz",
-     "fark": -11,
+     "fark": -10,
      "otelDolu": false
     },
     {
@@ -3227,7 +3226,7 @@
     {
      "g": "2026-11-20",
      "cikis": "2026-11-22",
-     "toplam": 1317,
+     "toplam": 1045,
      "etiket": null,
      "fark": null,
      "otelDolu": false
