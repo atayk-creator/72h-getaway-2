@@ -1,0 +1,25 @@
+11-15 14:38:44.942  3161  3161 E Capacitor/Console: File:  - Line 6 - Msg: Error injecting safe area CSS: TypeError: Cannot read properties of null (reading 'style')
+11-15 14:38:44.943  3161  3161 E Capacitor/Console: File:  - Line 6 - Msg: Error injecting safe area CSS: TypeError: Cannot read properties of null (reading 'style')
+11-15 14:38:44.944  3161  3161 E Capacitor/Console: File:  - Line 6 - Msg: Error injecting safe area CSS: TypeError: Cannot read properties of null (reading 'style')
+11-15 14:38:46.092  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.094  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.095  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.099  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.100  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.100  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.101  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.102  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.103  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.103  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:46.138  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: {"connected":true,"connectionType":"wifi"}
+11-15 14:38:46.138  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: {"value":null}
+11-15 14:38:46.138  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: {"value":null}
+11-15 14:38:46.192  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: undefined
+11-15 14:38:46.192  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: undefined
+11-15 14:38:46.193  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: {"value":null}
+11-15 14:38:46.216  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: undefined
+11-15 14:38:46.348  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:38:47.050  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: undefined
+11-15 14:39:05.144  3161  3161 I Capacitor/Console: File:  - Line 350 - Msg: [object Object]
+11-15 14:39:05.152  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: undefined
+11-15 14:39:22.330  3161  3161 I Capacitor/Console: File:  - Line 334 - Msg: {"canGoBack":true}
