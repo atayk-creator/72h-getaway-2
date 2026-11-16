@@ -1148,11 +1148,11 @@
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 73.45,
+  "usd": 74.74,
   "sinir": 100,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-12T20:53:46.511Z"
+  "kontrol": "2026-11-16T11:27:11.282Z"
  },
  "olcumler": [
   {
@@ -1271,6 +1271,8 @@
   "Üsküp": "data/fiyatlar/uskup.json",
   "Tiran": "data/fiyatlar/tiran.json",
   "Priştine": "data/fiyatlar/pristine.json",
-  "Milano": "data/fiyatlar/milano.json"
+  "Milano": "data/fiyatlar/milano.json",
+  "Barselona": "data/fiyatlar/barselona.json",
+  "Münih": "data/fiyatlar/munih.json"
  }
 }
