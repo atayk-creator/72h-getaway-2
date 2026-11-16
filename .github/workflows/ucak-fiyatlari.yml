@@ -1,9 +1,9 @@
 name: Uçak fiyat robotu (İstanbul çıkışlı, Cuma sabah - Pazar akşam)
-# Salı sabahı 06:17'de (İstanbul) çalışır. Ayarlar: data/ucus-ayarlari.json, sonuç: data/ucuslar.json.
+# Salı ve cumartesi sabahı 06:17'de (İstanbul) çalışır; cumartesi yalnızca en yakın 4 hafta sonu (Atay'ın kararı, 16 Kas 2026). Ayarlar: data/ucus-ayarlari.json, sonuç: data/ucuslar.json.
 # Ayar dosyası değişince en yakın 4 hafta sonunu hemen yeniden çeker (mod: yakin).
 on:
   schedule:
-    - cron: "17 3 * * 2"
+    - cron: "17 3 * * 2,6"
   push:
     branches: [main]
     paths: [data/ucus-ayarlari.json]

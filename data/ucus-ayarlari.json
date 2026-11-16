@@ -14,7 +14,7 @@
   "toplu_sonuc_sayisi": 8,
   "arama_basi_usd": 0.005,
   "kontrol_takvimi": [
-    {"kademe":"yakin","ilk":1,"son":4,"gunler":["Sal"],"her_n_haftada":1},
+    {"kademe":"yakin","ilk":1,"son":4,"gunler":["Sal","Cmt"],"her_n_haftada":1},
     {"kademe":"orta","ilk":5,"son":8,"gunler":["Sal"],"her_n_haftada":2},
     {"kademe":"uzak","ilk":9,"son":13,"gunler":["Sal"],"her_n_haftada":4,"kaydir":1}
   ],

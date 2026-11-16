@@ -16,13 +16,13 @@ const BUD = cfg.sehirler.find((c) => c.sehir === "Budapeşte");
   for (const c of cfg.sehirler) { assert.ok(c.havalimani.length >= 1); for (const k of c.havalimani) assert.match(k, /^[A-Z]{3}$/); }
   assert.deepEqual(cfg.kalkis, ["IST", "SAW"]); console.log(`ok 0: ${cfg.sehirler.length} şehir, kalkış IST+SAW`); }
 
-// 1) takvim: Salı; 1-4. hafta sonu her hafta, 5-8 iki haftada bir, 9-13 dört haftada bir; özel tarihler her hafta
+// 1) takvim: Salı (hepsi) ve Cumartesi (yalnız 1-4); 1-4. hafta sonu haftada 2 kez, 5-8 iki haftada bir, 9-13 dört haftada bir; özel tarihler her hafta
 { assert.deepEqual(planFor("2026-11-02", cfg), [], "Pazartesi yok");
   assert.equal(cfg.kac_hafta_sonu, 13);
   const plain = { ...cfg, ozel_tarihler: [] }, seen = {}; let days = 0;
   for (let i = 0; i < 28; i++) { const d = new Date(Date.UTC(2026, 10, 2 + i)).toISOString().slice(0, 10); const p = planFor(d, plain); if (p.length) days++; for (const w of p) seen[w.no] = (seen[w.no] || 0) + 1; }
-  assert.equal(days, 4, "sadece Salı");
-  for (let n = 1; n <= 13; n++) assert.equal(seen[n], n <= 4 ? 4 : n <= 8 ? 2 : 1, `${n}. hafta sonu 4 haftada ${seen[n]} kez`);
+  assert.equal(days, 8, "Salı ve Cumartesi");
+  for (let n = 1; n <= 13; n++) assert.equal(seen[n], n <= 4 ? 8 : n <= 8 ? 2 : 1, `${n}. hafta sonu 4 haftada ${seen[n]} kez`);
   assert.deepEqual(planFor("2026-11-03", cfg)[0], { no: 1, giris: "2026-11-06", cikis: "2026-11-08", kademe: "yakin" });
   for (const d of ["2026-11-03", "2026-11-10", "2026-11-17", "2026-11-24"]) for (const g of cfg.ozel_tarihler) assert.ok(planFor(d, cfg).some((w) => w.giris === g), `${d}: özel tarih ${g} her hafta`);
   console.log("ok 1: takvim (13 hafta sonu, özel tarihler)"); }
