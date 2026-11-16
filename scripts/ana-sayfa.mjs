@@ -64,8 +64,10 @@ export function renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, ro
   const rafL = L.filter((s) => s !== ilk);
   V.one = one ? one.slug : "";
   const yol = (s) => `/sehir/${s.slug}/?h=${h0.g}`;
+  // Büyük biniş kartı (kaydırmalı şeritte 6 tane); js/ana.js aynı HTML'i üretir
+  const bkKart = (s, fiyat, href, kocan, ilk) => `<a class="bk" href="${href}"><div class="bk-kocan"><span>${kocan}</span></div><div class="bk-govde"><img src="${esc(s.foto)}" alt="${esc(s.alt)}" width="640" height="427"${ilk ? ' fetchpriority="high"' : ' loading="lazy"'}><div class="bk-yazi"><div class="bk-rota"><span>IST → ${esc(s.iata)}</span><span>2 KİŞİ · 2 GECE</span></div><div class="bk-alt"><span class="bk-ad"><b>${esc(s.ad)}</b><span>${esc(s.ulke)} · uçak + otel</span></span><span class="bk-fiyat"><b>${tl(fiyat)}</b><span>kişi başı ${tl(fiyat / 2)}</span></span></div></div></div></a>`;
   const title = "72h Getaway · Bu hafta sonu nereye? İstanbul çıkışlı kaçamak bütçesi";
-  const desc = `İstanbul'dan ${models.length} Avrupa şehrine hafta sonu kaçamağı: 2 kişi uçak + otel toplamı, hafta sonu hafta sonu. En uygun şehri gör, hazır paketini seç.`;
+  const desc = `İstanbul'dan ${models.length} Avrupa şehrine hafta sonu kaçamağı: 2 kişi uçak + otel toplamı, önümüzdeki 12 hafta sonu için ayrı ayrı. En uygun şehri gör, hazır paketini seç.`;
   const ld = { "@context": "https://schema.org", "@graph": [
     { "@type": "Organization", "@id": SITE + "/#org", name: "72h Getaway", url: SITE + "/", logo: SITE + "/img/icon-512.png", sameAs: ["https://instagram.com/72hgetaway"] },
     { "@type": "WebSite", "@id": SITE + "/#site", url: SITE + "/", name: "72h Getaway", inLanguage: "tr", publisher: { "@id": SITE + "/#org" } },
@@ -111,12 +113,12 @@ ${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="h
 </div></header>
 
 <main class="kap icerik" id="icerik">
-  <div id="enuygun" aria-live="polite">${ilk
-    ? `<a class="bk" href="${yol(ilk)}"><div class="bk-kocan"><span>${kocan}</span></div><div class="bk-govde"><img src="${esc(ilk.foto)}" alt="${esc(ilk.alt)}" width="640" height="427" fetchpriority="high"><div class="bk-yazi"><div class="bk-rota"><span>IST → ${esc(ilk.iata)}</span><span>2 KİŞİ · 2 GECE</span></div><div class="bk-alt"><span class="bk-ad"><b>${esc(ilk.ad)}</b><span>${esc(ilk.ulke)} · uçak + otel</span></span><span class="bk-fiyat"><b>${tl(ilk.t[0])}</b><span>kişi başı ${tl(ilk.t[0] / 2)}</span></span></div></div></div></a>`
+  <div id="enuygun">${ilk
+    ? `<div class="bkd" id="bkd" tabindex="0" role="group" aria-label="Öne çıkan şehirler; yana kaydır">${[ilk, ...rafL.slice(0, 5)].map((s, n) => bkKart(s, s.t[0], yol(s), n === 0 ? kocan : "72 SAAT", n === 0)).join("")}</div><div class="bkn" id="bkn" aria-hidden="true">${[ilk, ...rafL.slice(0, 5)].map((_, n) => `<i${n === 0 ? ' class="a"' : ""}></i>`).join("")}</div>`
     : '<p class="bos">Bu hafta sonu için fiyatlar henüz ölçülmedi; robot kontrol ediyor. Başka bir hafta sonu seç.</p>'}</div>
 
   <div class="raf-bas"><h2 id="raf-baslik">Bu hafta sonu</h2><a href="/sehirler/">${models.length} şehir</a></div>
-  <div class="izg" id="raf">${rafL.slice(0, 6).map((s) => `<a class="rk" href="${yol(s)}"><img src="${esc(s.foto)}" alt="" loading="lazy" width="640" height="427"><div><b>${esc(s.ad)}</b><b>${tl(s.t[0])}</b></div></a>`).join("")}</div>
+  <div class="izg" id="raf">${rafL.slice(5, 11).map((s) => `<a class="rk" href="${yol(s)}"><img src="${esc(s.foto)}" alt="" loading="lazy" width="640" height="427"><div><b>${esc(s.ad)}</b><b>${tl(s.t[0])}</b></div></a>`).join("")}</div>
 
   <div class="kutular">
     <a class="kutu l" href="/sehir/noel/"><span>ARALIK</span><b>Noel pazarları</b></a>
@@ -187,7 +189,7 @@ ${sekmeCubugu("planim")}
 export function renderSehirler({ models, d, today, eurTry, esc, jsonLd, SITE, root }) {
   const V = vitrinVerisi(models, d, today, eurTry);
   const n = models.length;
-  const desc = `İstanbul çıkışlı ${n} Avrupa şehri, hafta sonu hafta sonu: 2 kişi uçak + otel toplamı. 40 bin altı, vizesiz, normal fiyatında olanlar; fiyata göre tam liste.`;
+  const desc = `İstanbul çıkışlı ${n} Avrupa şehri, önümüzdeki 12 hafta sonu için ayrı ayrı: 2 kişi uçak + otel toplamı. 40 bin altı, vizesiz, normal fiyatında olanlar; fiyata göre tam liste.`;
   return `<!doctype html>
 <html lang="tr">
 <head>

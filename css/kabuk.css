@@ -33,6 +33,12 @@ h1,h2,h3,p{margin:0}
 /* en uygun biniş kartı */
 .icerik{padding:0 16px}
 .bk{margin-top:16px;display:flex;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px rgba(15,42,67,.16);text-decoration:none;color:var(--ink)}
+.bkd{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 -16px;padding:0 16px 24px;scroll-padding:0 16px;outline-offset:-2px}
+.bkd::-webkit-scrollbar{display:none}
+.bkd .bk{flex:0 0 100%;scroll-snap-align:start}
+.bkn{display:flex;justify-content:center;gap:6px;margin-top:-10px;height:6px}
+.bkn i{width:6px;height:6px;border-radius:3px;background:var(--line);transition:width .2s,background .2s}
+.bkn i.a{width:18px;background:var(--ink)}
 .bk-kocan{width:44px;flex:none;background:var(--accent);display:flex;align-items:center;justify-content:center}
 .bk-kocan span{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--f-mono);font-weight:700;font-size:11px;letter-spacing:.22em}
 .bk-govde{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-left:2px dashed var(--ink);border-radius:0 18px 18px 0;display:flex;flex-direction:column;overflow:hidden}
