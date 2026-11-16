@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-14",
+ "guncellendi": "2026-11-16",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -28,48 +28,30 @@
    "vize": "İngiltere vizesi gerekir (Schengen geçmez). Maça 16 gün var; vizen yoksa öncelikli başvuruya bak.",
    "ucus": {
     "oneri": {
-     "fiyat": 196,
-     "havayolu": "Pegasus",
+     "fiyat": 331,
+     "havayolu": "British Airways",
      "aktarma": 0,
-     "havalimani": "Stansted (STN)",
-     "gidis": "Çarşamba SAW 11:10 → STN 12:10 (PC1161)",
-     "donus": "Cuma STN 15:40 → SAW 22:25"
+     "havalimani": "Heathrow (LHR)",
+     "gidis": "Çarşamba IST 07:40 → LHR 09:05 (BA681)",
+     "donus": "Cuma LHR 07:00 → IST 13:55"
     },
     "secenekler": [
      {
-      "fiyat": 196,
-      "havayolu": "Pegasus",
-      "havalimani": "Stansted",
-      "not": "Çarşamba SAW 11:10 → STN 12:10, Cuma 15:40 dönüş"
-     },
-     {
-      "fiyat": 219,
-      "havayolu": "AJet",
-      "havalimani": "Stansted",
-      "not": "Çarşamba SAW 10:20 → STN 11:30, Cuma 12:30 dönüş"
-     },
-     {
-      "fiyat": 292,
-      "havayolu": "Pegasus",
-      "havalimani": "Gatwick",
-      "not": "Çarşamba SAW 09:50 → LGW 11:10, Cuma 12:15 dönüş"
-     },
-     {
-      "fiyat": 330,
+      "fiyat": 331,
       "havayolu": "British Airways",
       "havalimani": "Heathrow",
       "not": "Çarşamba IST 07:40 → LHR 09:05, Cuma 07:00 dönüş"
      },
      {
-      "fiyat": 634,
+      "fiyat": 990,
       "havayolu": "THY",
-      "havalimani": "Stansted",
-      "not": "Çarşamba IST 08:50 → STN 09:55"
+      "havalimani": "Heathrow",
+      "not": "Çarşamba IST 11:40 → LHR 12:45"
      }
     ],
     "yok": "Maç günü sabahı Heathrow ve Gatwick aramaları Google'da hata verdi; Luton'a aktarmasız uçuş yok.",
     "seviye": "normal",
-    "normal_aralik": "140–375 €"
+    "normal_aralik": "195–330 €"
    },
    "havalimani_ulasim": {
     "fiyat": 40,
@@ -85,19 +67,19 @@
     {
      "ad": "The Savoy",
      "kategori": "ikonik",
-     "toplam": 2199,
+     "toplam": 2198,
      "arama": "The Savoy London"
     },
     {
      "ad": "The Ned",
      "kategori": "pahali",
-     "toplam": 1335,
+     "toplam": 1286,
      "arama": "The Ned London"
     },
     {
      "ad": "The Langham",
      "kategori": "pahali",
-     "toplam": 2110,
+     "toplam": 1764,
      "arama": "The Langham London"
     },
     {
@@ -110,13 +92,13 @@
     {
      "ad": "Strand Palace",
      "kategori": "konforlu",
-     "toplam": 801,
+     "toplam": 832,
      "arama": "Strand Palace Hotel London"
     },
     {
      "ad": "The Hoxton, Holborn",
      "kategori": "konforlu",
-     "toplam": 915,
+     "toplam": 938,
      "arama": "The Hoxton Holborn London"
     },
     {
@@ -128,7 +110,7 @@
     {
      "ad": "The Z Hotel Piccadilly",
      "kategori": "ucuz",
-     "toplam": 614,
+     "toplam": 591,
      "arama": "The Z Hotel Piccadilly London"
     }
    ],
@@ -143,18 +125,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 196,
+     "ucus": 331,
      "transfer": 40,
-     "otel": 400,
+     "otel": 416,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 150,
      "gezi": 38
     },
     "ucuz": {
-     "ucus": 196,
+     "ucus": 331,
      "transfer": 25,
-     "otel": 307,
+     "otel": 296,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 110,
@@ -335,7 +317,7 @@
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
    "uyarilar": [],
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-16"
   },
   {
    "id": "linz",
@@ -1202,9 +1184,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-14",
+  "son_arama": "2026-11-16",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.16
+  "son_maliyet_usd": 0
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "renk": {
