@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-12T20:53:46.511Z",
+ "guncellendi": "2026-11-18T22:39:54.151Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -214,7 +214,6 @@
   "sjj-aziza": "ChkIhY6e18n828sdGg0vZy8xMWRkeDRuZ245EAE",
   "sjj-hecco": "ChcIwbjwhN-958gzGgsvZy8xdGRrcWw2ZBAB",
   "sjj-kovaci": "ChgI98f8mcnTnPoyGgwvZy8xaGM3eHhiODUQAQ",
-  "sjj-stari-grad": "ChoQyZKS4rr-rqLQARoNL2cvMTFudHQ2Y3MzORAC",
   "bru-motel-one": "ChoIzo69m7Xd9_v5ARoNL2cvMTFiNjIwZmwwdBAB",
   "ath-grande-bretagne": "ChcIy6qXuMTLmZOxARoKL20vMDI2eWN5XxAB",
   "rix-kempinski": "ChcInJjxkdqC6NI_GgsvZy8xdGN2MDNkNhAB",
@@ -227,7 +226,8 @@
   "vlt-the-phoenicia": "ChoIrvDVwsDQpNrwARoNL2cvMTFieDFidnk2YxAB",
   "ber-ritz-carlton": "ChgIveLHqY3365ykARoLL2cvMTIzMjYwN3gQAQ",
   "beg-metropol": "ChcIgtybhJStg5jcARoKL20vMDJxYzk3NBAB",
-  "lju-intercontinental": "ChoIwrO_2cD-q7KUARoNL2cvMTFjNV90NTFiehAB"
+  "lju-intercontinental": "ChoIwrO_2cD-q7KUARoNL2cvMTFjNV90NTFiehAB",
+  "sjj-stari-grad": "ChoQyZKS4rr-rqLQARoNL2cvMTFudHQ2Y3MzORAC"
  },
  "konum": {
   "dub-shelbourne": [
@@ -1129,30 +1129,30 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 34.67
+  "usd": 42.73
  },
  "sonCalisma": {
-  "tarih": "2026-11-12T20:53:46.511Z",
-  "mod": "takvim",
-  "hafta_sonu": 4,
-  "kontrol": 896,
-  "fiyatli": 749,
-  "dogrulanamadi": 32,
-  "supheli": 27,
+  "tarih": "2026-11-18T22:39:54.151Z",
+  "mod": "hepsi",
+  "hafta_sonu": 12,
+  "kontrol": 2912,
+  "fiyatli": 2364,
+  "dogrulanamadi": 70,
+  "supheli": 57,
   "vergi": {
-   "dahil": 33,
-   "eklendi": 726,
-   "bilinmiyor": 48
+   "dahil": 93,
+   "eklendi": 2256,
+   "bilinmiyor": 142
   },
-  "tahminiMaliyetUsd": 2.69,
+  "tahminiMaliyetUsd": 8.06,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 74.74,
+  "usd": 83.5,
   "sinir": 100,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-16T11:27:11.282Z"
+  "kontrol": "2026-11-18T22:39:54.151Z"
  },
  "olcumler": [
   {
@@ -1231,6 +1231,13 @@
    "sorgu": 895,
    "usd": 2.51,
    "sorguBasi": 0.0028
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-18T22:39:54.151Z",
+   "sorgu": 2686,
+   "usd": 8.34,
+   "sorguBasi": 0.0031
   }
  ],
  "sehirler": {
