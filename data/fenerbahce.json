@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-16",
+ "guncellendi": "2026-11-18",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -67,19 +67,19 @@
     {
      "ad": "The Savoy",
      "kategori": "ikonik",
-     "toplam": 2198,
+     "toplam": 2129,
      "arama": "The Savoy London"
     },
     {
      "ad": "The Ned",
      "kategori": "pahali",
-     "toplam": 1286,
+     "toplam": 1287,
      "arama": "The Ned London"
     },
     {
      "ad": "The Langham",
      "kategori": "pahali",
-     "toplam": 1764,
+     "toplam": 2114,
      "arama": "The Langham London"
     },
     {
@@ -92,25 +92,25 @@
     {
      "ad": "Strand Palace",
      "kategori": "konforlu",
-     "toplam": 832,
+     "toplam": 918,
      "arama": "Strand Palace Hotel London"
     },
     {
      "ad": "The Hoxton, Holborn",
      "kategori": "konforlu",
-     "toplam": 938,
+     "toplam": 988,
      "arama": "The Hoxton Holborn London"
     },
     {
      "ad": "Park Plaza Westminster Bridge",
      "kategori": "konforlu",
-     "toplam": 971,
+     "toplam": 996,
      "arama": "Park Plaza Westminster Bridge London"
     },
     {
      "ad": "The Z Hotel Piccadilly",
      "kategori": "ucuz",
-     "toplam": 591,
+     "toplam": 656,
      "arama": "The Z Hotel Piccadilly London"
     }
    ],
@@ -127,7 +127,7 @@
     "konforlu": {
      "ucus": 331,
      "transfer": 40,
-     "otel": 416,
+     "otel": 459,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 150,
@@ -136,7 +136,7 @@
     "ucuz": {
      "ucus": 331,
      "transfer": 25,
-     "otel": 296,
+     "otel": 328,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 110,
@@ -317,7 +317,7 @@
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
    "uyarilar": [],
-   "robot_son_arama": "2026-11-16"
+   "robot_son_arama": "2026-11-18"
   },
   {
    "id": "linz",
@@ -1184,7 +1184,7 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-16",
+  "son_arama": "2026-11-18",
   "butce_payi_usd": 5,
   "son_maliyet_usd": 0
  },
