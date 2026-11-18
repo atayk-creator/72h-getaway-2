@@ -9290,8 +9290,15 @@
      "fiyat_yazi": "Kule 5 €",
      "bilgi": "Münih'in en eski kilisesi; yaklaşık 300 basamak, asansör yok. Marienplatz ve havası açıksa Alpler görünür.",
      "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Alter%20Peter%20M%C3%BCnchen"
+     "konum": [
+      48.13668,
+      11.5756
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=St.%20Peter's%20Church%20%26%20Tower&query_place_id=ChIJWf1sxYp1nkcRZ6zUjjDyka4",
+     "googleAd": "St. Peter's Church & Tower",
+     "puan": 4.7,
+     "yorum": 5598,
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"St. Peter's Church & Tower\" buldu"
     },
     {
      "id": "englischer-garten",
@@ -9305,8 +9312,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehir içindeki dev park; Eisbach'ta nehir sörfçüleri, Monopteros tepesi ve Çin Kulesi bira bahçesi.",
      "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Eisbachwelle%20M%C3%BCnchen"
+     "konum": [
+      48.14348,
+      11.58773
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Eisbachwelle%20(water%20waves)&query_place_id=ChIJb_TEzGN1nkcRl8UxJJjzS5Q",
+     "googleAd": "Eisbachwelle (water waves)",
+     "puan": 4.7,
+     "yorum": 23985
     },
     {
      "id": "residenz-sehir",
@@ -9339,7 +9352,8 @@
      "bilgi": "1608'den beri aynı yerde olan birahane. Akşam canlı müzik var, masalar paylaşılır.",
      "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
      "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Hofbr%C3%A4uhaus%20M%C3%BCnchen"
+     "harita": "https://www.google.com/maps/search/?api=1&query=Hofbr%C3%A4uhaus%20M%C3%BCnchen",
+     "konumNotu": "Google 6483 km uzakta bir yer buldu: Bierhaus NYC"
     },
     {
      "id": "frauenkirche",
@@ -9371,8 +9385,14 @@
      "fiyat_yazi": "16 €",
      "bilgi": "Dünyanın en büyük teknik müzelerinden; uçaklar, gemiler, deneyler. Binanın yarısı yenileme nedeniyle kapalı (2028'e kadar).",
      "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Deutsches%20Museum%20M%C3%BCnchen"
+     "konum": [
+      48.12987,
+      11.58345
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Deutsches%20Museum&query_place_id=ChIJ01CaE2PfnUcRUpb8Ylg-UXo",
+     "googleAd": "Deutsches Museum",
+     "puan": 4.5,
+     "yorum": 44631
     },
     {
      "id": "bmw-welt",
@@ -9386,8 +9406,14 @@
      "fiyat_yazi": "BMW Welt ücretsiz; müze 10 €",
      "bilgi": "Yeni modellerin sergilendiği BMW Welt'e giriş ücretsiz; müze 1916'dan bugüne tasarım ve teknik. Yanındaki Olympiapark ücretsiz, Olympiaturm kulesi 2027 başına kadar kapalı.",
      "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=BMW%20Welt%20M%C3%BCnchen"
+     "konum": [
+      48.1772,
+      11.5563
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=BMW%20Welt&query_place_id=ChIJ0VcAin12nkcReOfzPsk8NaU",
+     "googleAd": "BMW Welt",
+     "puan": 4.7,
+     "yorum": 41503
     },
     {
      "id": "nymphenburg",
@@ -9401,8 +9427,14 @@
      "fiyat_yazi": "Saray 10 €; kışın toplu bilet 16 €; park ücretsiz",
      "bilgi": "Barok yazlık saray ve geniş parkı. Merkezden 17 numaralı tramvayla yaklaşık 20 dakika.",
      "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Schloss%20Nymphenburg%20M%C3%BCnchen"
+     "konum": [
+      48.15827,
+      11.50331
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Nymphenburg%20Palace&query_place_id=ChIJLWiif8x3nkcRZm0epRZWTCc",
+     "googleAd": "Nymphenburg Palace",
+     "puan": 4.6,
+     "yorum": 41047
     },
     {
      "id": "alte-pinakothek",
@@ -9416,8 +9448,14 @@
      "fiyat_yazi": "9 €",
      "bilgi": "Dürer, Rubens, Rembrandt: 18. yüzyıla kadar Avrupa resmi. Sanat bölgesindeki (Kunstareal) diğer müzelere yürüme mesafesi.",
      "kaynak": "https://www.muenchen.de/sehenswuerdigkeiten/die-20-top-sehenswuerdigkeiten-muenchen",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Alte%20Pinakothek%20M%C3%BCnchen"
+     "konum": [
+      48.14833,
+      11.56998
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Alte%20Pinakothek&query_place_id=ChIJ12nAjO51nkcRt8DRlE8kWIE",
+     "googleAd": "Alte Pinakothek",
+     "puan": 4.7,
+     "yorum": 13712
     },
     {
      "id": "marienplatz",
@@ -10633,8 +10671,14 @@
      "fiyat_yazi": "Giriş 26 €, kulelerle 36 €; yalnızca online saatli bilet",
      "bilgi": "Gaudí'nin bitmemiş bazilikası; 2026 Gaudí'nin ölümünün 100. yılı. Biletler normalde 2–3 hafta önceden tükenir, tarihini seçer seçmez al.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Sagrada%20Familia%20Barcelona"
+     "konum": [
+      41.40363,
+      2.17436
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Basilica%20of%20the%20Sagrada%20Familia&query_place_id=ChIJk_s92NyipBIRUMnDG8Kq2Js",
+     "googleAd": "Basilica of the Sagrada Familia",
+     "puan": 4.8,
+     "yorum": 340115
     },
     {
      "id": "gotik-mahalle",
@@ -10648,8 +10692,15 @@
      "fiyat_yazi": "Sokaklar ücretsiz",
      "bilgi": "Dar Orta Çağ sokakları, Plaça Reial ve Plaça Sant Jaume. Sabah erken saatte sakin; akşam barlar ve tapas.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Barri%20Gotic%20Barcelona"
+     "konum": [
+      41.38192,
+      2.17731
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Gothic%20Quarter&query_place_id=ChIJgQYekPiipBIRr6fNOMV-5bc",
+     "googleAd": "Gothic Quarter",
+     "puan": null,
+     "yorum": null,
+     "konumNotu": "Ad uyuşmuyor olabilir: Google \"Gothic Quarter\" buldu"
     },
     {
      "id": "park-guell",
@@ -10663,8 +10714,14 @@
      "fiyat_yazi": "Anıt bölgesi 18 €; saatli bilet",
      "bilgi": "Gaudí'nin mozaikli parkı ve şehir manzarası. Sabah 10:00'dan önce daha sakin; metrodan yokuş yukarı 15–20 dakika yürünür.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Park%20G%C3%BCell%20Barcelona"
+     "konum": [
+      41.41449,
+      2.15269
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Park%20G%C3%BCell&query_place_id=ChIJq0HUUq6ipBIRWM6qGqALmok",
+     "googleAd": "Park Güell",
+     "puan": 4.4,
+     "yorum": 245782
     },
     {
      "id": "la-rambla-boqueria",
@@ -10678,8 +10735,14 @@
      "fiyat_yazi": "Giriş ücretsiz",
      "bilgi": "Plaça Catalunya'dan limana inen cadde ve şehrin en ünlü pazarı. Pazar günü Boqueria kapalı; öğle saatinde çok kalabalık.",
      "kaynak": "https://thebettervacation.com/barcelona/getting-around-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Mercat%20de%20la%20Boqueria%20Barcelona"
+     "konum": [
+      41.38174,
+      2.17159
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Mercat%20de%20la%20Boqueria&query_place_id=ChIJAVoetfeipBIR1a1z3FTGCoY",
+     "googleAd": "Mercat de la Boqueria",
+     "puan": 4.5,
+     "yorum": 218949
     },
     {
      "id": "casa-batllo",
@@ -10693,8 +10756,14 @@
      "fiyat_yazi": "Standart 35 €, hızlı girişli Gold 45 €",
      "bilgi": "Passeig de Gràcia'daki ejderha çatılı ev. Yanındaki Casa Amatller ile birlikte cepheyi dışarıdan ücretsiz görebilirsin.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Batll%C3%B3%20Barcelona"
+     "konum": [
+      41.3917,
+      2.16492
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Batll%C3%B3&query_place_id=ChIJYUFLSe2ipBIRD04uni940kA",
+     "googleAd": "Casa Batlló",
+     "puan": 4.7,
+     "yorum": 224901
     },
     {
      "id": "la-pedrera",
@@ -10708,8 +10777,14 @@
      "fiyat_yazi": "Essential 29 €; 17:30'dan sonra Sunset bileti 25 €",
      "bilgi": "Dalgalı taş cephe ve bacalı çatı terası. Aynı salonlar gün batımı biletiyle daha uygun.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Mil%C3%A0%20La%20Pedrera%20Barcelona"
+     "konum": [
+      41.39522,
+      2.1619
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=La%20Pedrera%20-%20Casa%20Mil%C3%A0&query_place_id=ChIJ1eGKmZOipBIRah43T2Kjn8Q",
+     "googleAd": "La Pedrera - Casa Milà",
+     "puan": 4.6,
+     "yorum": 115933
     },
     {
      "id": "barceloneta",
@@ -10723,8 +10798,14 @@
      "fiyat_yazi": "Ücretsiz",
      "bilgi": "Şehir merkezine en yakın plaj ve sahil yürüyüş yolu. Kışın denize girilmez ama gün batımı yürüyüşü ve deniz ürünleri için iyi.",
      "kaynak": "https://thebettervacation.com/barcelona/getting-around-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Platja%20de%20la%20Barceloneta"
+     "konum": [
+      41.37837,
+      2.19247
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Barceloneta%20Beach&query_place_id=ChIJJ5Y4CaijpBIR-2VJP9cOjh4",
+     "googleAd": "Barceloneta Beach",
+     "puan": 4.4,
+     "yorum": 16907
     },
     {
      "id": "palau-guell",
@@ -10738,8 +10819,14 @@
      "fiyat_yazi": "Yaklaşık 12 €",
      "bilgi": "La Rambla'nın hemen yanında Gaudí'nin erken dönem sarayı; diğer Gaudí evlerine göre daha sakin ve uygun.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Palau%20G%C3%BCell%20Barcelona"
+     "konum": [
+      41.37889,
+      2.17424
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Palau%20G%C3%BCell&query_place_id=ChIJ3fHTIFiipBIRpKXCn_E_oJY",
+     "googleAd": "Palau Güell",
+     "puan": 4.6,
+     "yorum": 24156
     },
     {
      "id": "casa-vicens",
@@ -10753,8 +10840,14 @@
      "fiyat_yazi": "20 €",
      "bilgi": "Gaudí'nin ilk evi, Gràcia'da. Park Güell'e giderken yol üstü.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Vicens%20Barcelona"
+     "konum": [
+      41.4035,
+      2.15065
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Casa%20Vicens%20Gaud%C3%AD&query_place_id=ChIJoYA0MqKipBIRRwJG2R8H8s4",
+     "googleAd": "Casa Vicens Gaudí",
+     "puan": 4.7,
+     "yorum": 23669
     },
     {
      "id": "montjuic",
@@ -10768,22 +10861,28 @@
      "fiyat_yazi": "Tepe ve bahçeler ücretsiz",
      "bilgi": "Plaça d'Espanya'dan MNAC merdivenlerine çıkış, şehir ve liman manzarası. MNAC cumartesi 15:00'ten sonra ücretsiz.",
      "kaynak": "https://www.artvisitguide.com/gaudi-year-2026-barcelona/",
-     "konum": null,
-     "harita": "https://www.google.com/maps/search/?api=1&query=Montju%C3%AFc%20Barcelona"
+     "konum": [
+      41.364,
+      2.16749
+     ],
+     "harita": "https://www.google.com/maps/search/?api=1&query=Montju%C3%AFc&query_place_id=ChIJva7iMEKipBIRUEv5vj7GFgE",
+     "googleAd": "Montjuïc",
+     "puan": 4.7,
+     "yorum": 5937
     }
    ]
   }
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 1.66
+  "usd": 1.75
  },
  "apifyKullanim": {
-  "usd": 58.57,
-  "sinir": 75,
+  "usd": 84.65,
+  "sinir": 100,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-08T20:47:12.316Z"
+  "kontrol": "2026-11-18T23:11:26.526Z"
  },
  "olcumler": [
   {
@@ -10820,6 +10919,13 @@
    "sorgu": 90,
    "usd": 0.27,
    "sorguBasi": 0.003
+  },
+  {
+   "robot": "gezi-konum",
+   "t": "2026-11-18T23:11:26.526Z",
+   "sorgu": 21,
+   "usd": 0.07,
+   "sorguBasi": 0.00333
   }
  ]
 }
