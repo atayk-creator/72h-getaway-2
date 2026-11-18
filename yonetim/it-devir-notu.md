@@ -21,10 +21,12 @@ Depo herkese açık: bu dosyaya şifre, anahtar, kişisel bilgi yazılmaz.
 - Strazburg Noel pazarı: 27 Kasım – 24 Aralık (resmî site), düzeltildi.
 - Kur günde 1 kez 09:53; uçak fiyatları en yakın 4 hafta sonu için Salı + Cumartesi.
 - Robot sınırı 75 $ → 100 $.
-- 19 Kas 01:40: toplu yenileme başlatıldı (otel + uçak, 13 hafta sonu). Sonucu kontrol edilecek: "Otel fiyatları yenilendi (toplu)" ve "Uçak fiyatları yenilendi (toplu)" commit'leri, `yonetim/apify-rapor.md`.
+- 19 Kas 01:40–02:14: toplu yenileme bitti (35 dk, tüm adımlar başarılı). Gerçek maliyet 9,49 $ ≈ 478 TL (otel 8,34 $, uçak 1,08 $, gezi konumu 0,07 $; Apify sayacı 75,16 $ → 84,65 $). Dönem (28 Eki–27 Kas): 84,65 $ / 100 $, kalan 15,35 $. Atay'a bildirildi.
+  - Apify 502 arızası: otelde 22 Ocak hafta sonu, uçakta 20 Kas ve 18 Ara hafta sonları alınamadı (+~46 tek tek Google hatası). Uçakta eski fiyatlar korundu.
+  - HATA DÜZELTİLDİ (591c006): otel robotu hata alınca son geçerli fiyatı siliyordu; 22 Ocak'ta 218 otelin fiyatı silinmişti. Artık uçak robotu gibi `sonHata` notu düşüp eski kaydı koruyor (test eklendi); silinen kayıtlar f178ffe'den geri yüklendi.
 
 ## Açık işler (sırayla)
-1. Toplu yenilemenin sonucunu Atay'a TL olarak bildir (tahmin 11–14 $; 13 Kas dolar ≈ 50,4 TL).
+1. ~~Toplu yenilemenin sonucunu Atay'a TL olarak bildir~~ (19 Kas 02:30, yapıldı; yukarıya bak). Dönem sonuna kadar kalan 15,35 $ ile yeni toplu iş yapılmaz.
 2. Noel sayfasına Köln, Prag, Zagreb, Berlin (22 Kas); sonra Viyana, Budapeşte, Tallinn, Kopenhag, Dublin, Riga (29 Kas). Robotsuz; tarihler resmî kaynaktan.
 3. 28 Kas robot ayarı: 4 yeni şehir açılacak. Daha önce eklenen 8 şehir (Bern, Oslo, Reykjavik, Kişinev, Podgorica, Üsküp, Tiran, Priştine) için Atay'ın kararı bekleniyor (öneri: beklet).
 4. Tasarruf önerileri Atay'ın onayında: toplu yenileme yapmamak; restoranları 3 ayda bir; uzak hafta sonu otel ölçümünü seyreltmek.
