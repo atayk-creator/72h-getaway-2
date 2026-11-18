@@ -179,6 +179,16 @@ console.log("ok 5: fatura dönemi");
   assert.equal(o.gecmis.length, 60); assert.equal(o.son.fiyat, 164); assert.equal(o.son.konum, undefined, "konum her kayıtta tekrarlanmaz"); assert.deepEqual(st.konum[hs[0].id], [1, 2]);
   mergeWeekend(st, w, hs, { [hs[0].id]: { durum: "bulunamadi" }, [hs[1].id]: { durum: "dolu" } }, "t", { [hs[0].id]: "P1" });
   assert.equal(st.googleKimlik[hs[0].id], undefined, "bozuk kimlik unutulur");
+  { const s = emptyState(), ww = { giris: "2027-01-22", cikis: "2027-01-24" };
+    mergeWeekend(s, ww, hs, { [hs[0].id]: { durum: "fiyat", fiyat: 200 }, [hs[1].id]: { durum: "dolu" } }, "t1");
+    mergeWeekend(s, ww, hs, { [hs[0].id]: { durum: "hata", not: "Apify HTTP 502" }, [hs[1].id]: { durum: "hata", not: "Apify HTTP 502" } }, "t2");
+    const a = s.haftaSonlari["2027-01-22"].oteller[hs[0].id], b = s.haftaSonlari["2027-01-22"].oteller[hs[1].id];
+    assert.equal(a.son.fiyat, 200, "hata son geçerli fiyatı silmez"); assert.equal(a.son.kontrol, "t1"); assert.equal(a.sonHata.not, "Apify HTTP 502"); assert.equal(a.gecmis.length, 2);
+    assert.equal(b.son.durum, "dolu", "hata 'dolu' bilgisini de silmez");
+    mergeWeekend(s, ww, hs, { [hs[0].id]: { durum: "fiyat", fiyat: 210 } }, "t3");
+    assert.equal(a.son.fiyat, 210); assert.ok(!a.sonHata, "yeni sonuç gelince hata notu kalkar");
+    const s2 = emptyState(); mergeWeekend(s2, ww, hs, { [hs[0].id]: { durum: "hata", not: "x" } }, "t");
+    assert.equal(s2.haftaSonlari["2027-01-22"].oteller[hs[0].id].son.durum, "hata", "önceki kayıt yoksa hata yazılır"); }
   const ar = { haftaSonlari: {} }; mergeWeekend(st, { giris: "2026-11-06", cikis: "2026-11-08" }, hs, { [hs[0].id]: { durum: "dolu" }, [hs[1].id]: { durum: "dolu" } }, "t");
   assert.equal(archivePast(st, ar, "2026-11-02"), 1); assert.ok(!st.haftaSonlari["2026-10-30"]);
   assert.equal(ar.haftaSonlari["2026-10-30"].oteller[hs[0].id].son.link, undefined, "arşivde bağlantı tutulmaz");

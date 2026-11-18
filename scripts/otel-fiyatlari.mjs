@@ -369,7 +369,9 @@ export function mergeWeekend(state, w, hotels, records, checkedAt, usedIds = {})
     if (!rec) continue;
     const { konum, ...keep } = rec;
     const o = (slot.oteller[h.id] ||= { son: null, gecmis: [] });
-    o.son = { ...keep, kontrol: checkedAt };
+    // Apify/Google hatasında son geçerli sonuç (fiyat, dolu...) silinmez; hata ayrıca not edilir (uçak robotundaki gibi)
+    if (rec.durum === "hata" && o.son && o.son.durum !== "hata") o.sonHata = { t: checkedAt, not: rec.not || null };
+    else { o.son = { ...keep, kontrol: checkedAt }; delete o.sonHata; }
     o.gecmis.push(historyEntry(checkedAt, rec));
     if (o.gecmis.length > HISTORY_MAX) o.gecmis.splice(0, o.gecmis.length - HISTORY_MAX);
     if (konum) state.konum[h.id] = konum;
