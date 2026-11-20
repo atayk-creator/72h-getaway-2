@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-18",
+ "guncellendi": "2026-11-20",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -67,19 +67,19 @@
     {
      "ad": "The Savoy",
      "kategori": "ikonik",
-     "toplam": 2129,
+     "toplam": 2107,
      "arama": "The Savoy London"
     },
     {
      "ad": "The Ned",
      "kategori": "pahali",
-     "toplam": 1287,
+     "toplam": 1189,
      "arama": "The Ned London"
     },
     {
      "ad": "The Langham",
      "kategori": "pahali",
-     "toplam": 2114,
+     "toplam": 2126,
      "arama": "The Langham London"
     },
     {
@@ -92,25 +92,25 @@
     {
      "ad": "Strand Palace",
      "kategori": "konforlu",
-     "toplam": 918,
+     "toplam": 949,
      "arama": "Strand Palace Hotel London"
     },
     {
      "ad": "The Hoxton, Holborn",
      "kategori": "konforlu",
-     "toplam": 988,
+     "toplam": 972,
      "arama": "The Hoxton Holborn London"
     },
     {
      "ad": "Park Plaza Westminster Bridge",
      "kategori": "konforlu",
-     "toplam": 996,
+     "toplam": 1009,
      "arama": "Park Plaza Westminster Bridge London"
     },
     {
      "ad": "The Z Hotel Piccadilly",
      "kategori": "ucuz",
-     "toplam": 656,
+     "toplam": 665,
      "arama": "The Z Hotel Piccadilly London"
     }
    ],
@@ -127,7 +127,7 @@
     "konforlu": {
      "ucus": 331,
      "transfer": 40,
-     "otel": 459,
+     "otel": 475,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 150,
@@ -136,7 +136,7 @@
     "ucuz": {
      "ucus": 331,
      "transfer": 25,
-     "otel": 328,
+     "otel": 333,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 110,
@@ -316,8 +316,10 @@
    "hikaye_video": "/img/hikaye/fenerbahce-londra.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": [],
-   "robot_son_arama": "2026-11-18"
+   "uyarilar": [
+    "The Langham (Lüks, 2126 €) üst sınıftaki The Savoy (İkonik, 2107 €) otelinden pahalı"
+   ],
+   "robot_son_arama": "2026-11-20"
   },
   {
    "id": "linz",
@@ -1184,7 +1186,7 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-18",
+  "son_arama": "2026-11-20",
   "butce_payi_usd": 5,
   "son_maliyet_usd": 0
  },
