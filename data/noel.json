@@ -11,13 +11,13 @@
   "ink": "#F6C453",
   "mk": "#FFFFFF"
  },
- "guncellendi": "2026-11-14",
+ "guncellendi": "2026-11-21",
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan hafta sonlarının uçak + otel fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-14",
+  "son_arama": "2026-11-21",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.44
+  "son_maliyet_usd": 0.37
  },
  "kaynaklar": [
   {
@@ -83,8 +83,7 @@
      "ad": "Le Méridien Grand Hotel Nürnberg",
      "kategori": "ikonik",
      "arama": "Le Meridien Grand Hotel Nuremberg",
-     "toplam": null,
-     "eski": true
+     "toplam": 844
     },
     {
      "ad": "Sorat Hotel Saxx",
@@ -118,7 +117,7 @@
      "ad": "Motel One Nürnberg-Plärrer",
      "kategori": "ucuz",
      "arama": "Motel One Nürnberg-Plärrer",
-     "toplam": 450
+     "toplam": 439
     },
     {
      "ad": "ibis Nürnberg Altstadt",
@@ -131,7 +130,7 @@
      "ad": "B&B Hotel Nürnberg-City",
      "kategori": "ucuz",
      "arama": "B&B Hotel Nürnberg-City",
-     "toplam": 469
+     "toplam": 502
     }
    ],
    "havalimani_ulasim": {
@@ -262,7 +261,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 248,
+     "ucus": 136,
      "transfer": 8,
      "otel": 301,
      "ulasim": 8,
@@ -270,9 +269,9 @@
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 248,
+     "ucus": 136,
      "transfer": 8,
-     "otel": 235,
+     "otel": 251,
      "ulasim": 8,
      "yemek": 75,
      "gezi": 10
@@ -284,7 +283,7 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 248,
+     "fiyat": 136,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Nürnberg (NUE)",
@@ -293,20 +292,20 @@
     },
     "secenekler": [
      {
-      "fiyat": 248,
+      "fiyat": 136,
       "havayolu": "Pegasus",
       "havalimani": "Nürnberg",
       "not": "Cuma SAW 23:25 → NUE 00:20, Pazar 14:00 dönüş"
      },
      {
-      "fiyat": 302,
+      "fiyat": 357,
       "havayolu": "THY",
       "havalimani": "Nürnberg",
       "not": "Cuma IST 08:50 → NUE 09:45"
      }
     ],
-    "seviye": "normal",
-    "normal_aralik": "140–300 €"
+    "seviye": "dusuk",
+    "normal_aralik": "160–290 €"
    },
    "foto": "/img/sehir/nurnberg-noel.jpg",
    "foto_alt": "Nürnberg eski şehir ve St. Sebald kilisesi",
@@ -316,7 +315,7 @@
    "hikaye_poster": "/img/hikaye/noel-nurnberg.jpg",
    "hikaye_video": "/img/hikaye/noel-nurnberg.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "dresden",
@@ -344,45 +343,44 @@
      "ad": "Hotel Taschenbergpalais Kempinski",
      "kategori": "ikonik",
      "arama": "Hotel Taschenbergpalais Kempinski Dresden",
-     "toplam": null,
-     "eski": true
+     "toplam": 1161
     },
     {
      "ad": "Hotel Gewandhaus Dresden",
      "kategori": "pahali",
      "arama": "Hotel Gewandhaus Dresden Autograph Collection",
-     "toplam": 975
+     "toplam": 866
     },
     {
      "ad": "Hyperion Hotel Dresden am Schloss",
      "kategori": "konforlu",
      "arama": "Hyperion Hotel Dresden am Schloss",
-     "toplam": 585
+     "toplam": 731
     },
     {
      "ad": "NH Collection Dresden Altmarkt",
      "kategori": "konforlu",
      "arama": "NH Collection Dresden Altmarkt",
-     "toplam": 648,
-     "eski": true
+     "toplam": 610
     },
     {
      "ad": "Innside by Meliá Dresden",
      "kategori": "konforlu",
      "arama": "Innside by Melia Dresden",
-     "toplam": 865
+     "toplam": 865,
+     "eski": true
     },
     {
      "ad": "Motel One Dresden am Zwinger",
      "kategori": "ucuz",
      "arama": "Motel One Dresden am Zwinger",
-     "toplam": 517
+     "toplam": 464
     },
     {
      "ad": "ibis Dresden Zentrum",
      "kategori": "ucuz",
      "arama": "ibis Dresden Zentrum",
-     "toplam": 474
+     "toplam": 444
     }
    ],
    "sehir_ulasim": {
@@ -509,17 +507,17 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 137,
-     "transfer": 95,
-     "otel": 293,
+     "ucus": 146,
+     "transfer": 106,
+     "otel": 366,
      "ulasim": 8,
      "yemek": 100,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 128,
-     "transfer": 95,
-     "otel": 237,
+     "ucus": 146,
+     "transfer": 106,
+     "otel": 222,
      "ulasim": 8,
      "yemek": 70,
      "gezi": 10
@@ -531,41 +529,29 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 137,
+     "fiyat": 146,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Berlin (BER)",
-     "gidis": "Cuma SAW 07:00 → BER 07:55 (PC981)",
+     "gidis": "Cuma SAW 09:50 → BER 10:45 (PC977)",
      "donus": "Pazar BER 19:10 → SAW 00:05"
     },
     "secenekler": [
      {
-      "fiyat": 128,
-      "havayolu": "AJet gidiş + Pegasus dönüş",
-      "havalimani": "Berlin",
-      "not": "Cuma SAW 11:35 → BER 12:40, Pazar 19:10 dönüş"
-     },
-     {
-      "fiyat": 137,
+      "fiyat": 146,
       "havayolu": "Pegasus",
       "havalimani": "Berlin",
-      "not": "Cuma SAW 07:00 → BER 07:55, Pazar 19:10 dönüş"
+      "not": "Cuma SAW 09:50 → BER 10:45, Pazar 19:10 dönüş"
      },
      {
-      "fiyat": 149,
+      "fiyat": 176,
       "havayolu": "AJet",
       "havalimani": "Berlin",
       "not": "Cuma SAW 11:35 → BER 12:40, Pazar 17:05 dönüş"
-     },
-     {
-      "fiyat": 154,
-      "havayolu": "Pegasus gidiş + AJet dönüş",
-      "havalimani": "Berlin",
-      "not": "Cuma SAW 07:00 → BER 07:55, Pazar 17:05 dönüş"
      }
     ],
     "seviye": "dusuk",
-    "normal_aralik": "130–230 €"
+    "normal_aralik": "125–225 €"
    },
    "foto": "/img/sehir/dresden-noel.jpg",
    "havalimani_tercih": "BER",
@@ -578,7 +564,7 @@
      "nereye": "Dresden Hbf",
      "tarih": "2026-12-04",
      "saat": "09:30",
-     "fiyat": 64.99,
+     "fiyat": 77.99,
      "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
      "secenekler": [
       {
@@ -587,7 +573,7 @@
        "sure_dk": 199,
        "aktarma": 2,
        "tren": "RE20 + ICE 91 + IC 2445",
-       "fiyat": 64.99
+       "fiyat": 77.99
       },
       {
        "kalkis": "10:46",
@@ -595,7 +581,7 @@
        "sure_dk": 141,
        "aktarma": 1,
        "tren": "FEX + RJ 175",
-       "fiyat": 51.99
+       "fiyat": 40.99
       },
       {
        "kalkis": "11:01",
@@ -603,7 +589,7 @@
        "sure_dk": 213,
        "aktarma": 2,
        "tren": "FEX + ICE 599 + RE50",
-       "fiyat": 64.99
+       "fiyat": 60.99
       },
       {
        "kalkis": "11:16",
@@ -611,7 +597,7 @@
        "sure_dk": 214,
        "aktarma": 2,
        "tren": "FEX + ICE 1507 + IC 2443",
-       "fiyat": 71.99
+       "fiyat": 104.1
       },
       {
        "kalkis": "12:46",
@@ -619,7 +605,7 @@
        "sure_dk": 141,
        "aktarma": 1,
        "tren": "FEX + RJ 383",
-       "fiyat": 51.99
+       "fiyat": 38.99
       },
       {
        "kalkis": "13:01",
@@ -627,7 +613,7 @@
        "sure_dk": 213,
        "aktarma": 2,
        "tren": "FEX + ICE 691 + RE50",
-       "fiyat": 64.99
+       "fiyat": 51.99
       }
      ],
      "secili": {
@@ -636,7 +622,7 @@
       "sure_dk": 199,
       "aktarma": 2,
       "tren": "RE20 + ICE 91 + IC 2445",
-      "fiyat": 64.99
+      "fiyat": 77.99
      }
     },
     {
@@ -646,7 +632,7 @@
      "nereye": "Flughafen BER",
      "tarih": "2026-12-06",
      "saat": "14:00",
-     "fiyat": 29.99,
+     "fiyat": 27.99,
      "not": "Fiyat ilk aramaya kadar tahmini (~30 €).",
      "secenekler": [
       {
@@ -655,7 +641,7 @@
        "sure_dk": 110,
        "aktarma": 1,
        "tren": "RJ 176 + FEX",
-       "fiyat": 62.99
+       "fiyat": 47.99
       },
       {
        "kalkis": "15:35",
@@ -663,7 +649,7 @@
        "sure_dk": 89,
        "aktarma": 0,
        "tren": "IC 2174",
-       "fiyat": 29.99
+       "fiyat": 27.99
       },
       {
        "kalkis": "16:53",
@@ -679,7 +665,7 @@
        "sure_dk": 90,
        "aktarma": 0,
        "tren": "IC 2172",
-       "fiyat": 26.99
+       "fiyat": 27.99
       },
       {
        "kalkis": "18:53",
@@ -687,7 +673,7 @@
        "sure_dk": 110,
        "aktarma": 1,
        "tren": "RJ 172 + FEX",
-       "fiyat": 50.99
+       "fiyat": 45.99
       },
       {
        "kalkis": "19:00",
@@ -695,7 +681,7 @@
        "sure_dk": 209,
        "aktarma": 2,
        "tren": "IC 2448 + ICE 702 + FEX",
-       "fiyat": 50.99
+       "fiyat": 61.99
       }
      ],
      "secili": {
@@ -704,7 +690,7 @@
       "sure_dk": 89,
       "aktarma": 0,
       "tren": "IC 2174",
-      "fiyat": 29.99
+      "fiyat": 27.99
      }
     }
    ],
@@ -715,7 +701,7 @@
    "hikaye_poster": "/img/hikaye/noel-dresden.jpg",
    "hikaye_video": "/img/hikaye/noel-dresden.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "salzburg",
@@ -751,7 +737,8 @@
      "ad": "Hotel Goldener Hirsch",
      "kategori": "pahali",
      "arama": "Hotel Goldener Hirsch Salzburg",
-     "toplam": 2434
+     "toplam": 2434,
+     "eski": true
     },
     {
      "ad": "Hotel Elefant",
@@ -764,7 +751,8 @@
      "ad": "Hotel Stein",
      "kategori": "konforlu",
      "arama": "Hotel Stein Salzburg",
-     "toplam": 1344
+     "toplam": 1344,
+     "eski": true
     },
     {
      "ad": "Arthotel Blaue Gans",
@@ -912,7 +900,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 185,
+     "ucus": 218,
      "transfer": 89,
      "otel": 672,
      "ulasim": 6,
@@ -920,7 +908,7 @@
      "gezi": 35
     },
     "ucuz": {
-     "ucus": 185,
+     "ucus": 208,
      "transfer": 89,
      "otel": 251,
      "ulasim": 6,
@@ -934,23 +922,29 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 185,
+     "fiyat": 218,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Münih (MUC)",
-     "gidis": "Cuma SAW 12:45 → MUC 13:30 (PC1021)",
+     "gidis": "Cuma SAW 08:40 → MUC 09:25 (PC1019)",
      "donus": "Pazar MUC 18:00 → SAW 22:40"
     },
     "secenekler": [
      {
-      "fiyat": 185,
+      "fiyat": 208,
+      "havayolu": "AJet gidiş + Pegasus dönüş",
+      "havalimani": "Münih",
+      "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 18:00 dönüş"
+     },
+     {
+      "fiyat": 218,
       "havayolu": "Pegasus",
       "havalimani": "Münih",
-      "not": "Cuma SAW 12:45 → MUC 13:30, Pazar 18:00 dönüş"
+      "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 18:00 dönüş"
      }
     ],
     "seviye": "normal",
-    "normal_aralik": "125–260 €"
+    "normal_aralik": "130–260 €"
    },
    "foto": "/img/sehir/salzburg-noel.jpg",
    "foto_alt": "Salzburg, Hohensalzburg Kalesi ve eski şehir",
@@ -982,7 +976,7 @@
        "sure_dk": 155,
        "aktarma": 1,
        "tren": "S8 + ICE 117",
-       "fiyat": 42.99
+       "fiyat": 45.99
       },
       {
        "kalkis": "12:04",
@@ -998,7 +992,7 @@
        "sure_dk": 154,
        "aktarma": 1,
        "tren": "S8 + RJX 67",
-       "fiyat": 55.99
+       "fiyat": 62.99
       },
       {
        "kalkis": "13:04",
@@ -1058,7 +1052,7 @@
        "sure_dk": 155,
        "aktarma": 1,
        "tren": "RJX 62 + S8",
-       "fiyat": 49.99
+       "fiyat": 61.99
       },
       {
        "kalkis": "15:05",
@@ -1100,7 +1094,7 @@
    "hikaye_poster": "/img/hikaye/noel-salzburg.jpg",
    "hikaye_video": "/img/hikaye/noel-salzburg.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "gdansk",
@@ -1127,7 +1121,8 @@
      "ad": "Hotel Gdańsk Boutique",
      "kategori": "ikonik",
      "arama": "Hotel Gdansk Boutique",
-     "toplam": 402
+     "toplam": 402,
+     "eski": true
     },
     {
      "ad": "Hotel Podewils",
@@ -1154,7 +1149,7 @@
      "ad": "Mercure Gdańsk Stare Miasto",
      "kategori": "konforlu",
      "arama": "Mercure Gdansk Stare Miasto",
-     "toplam": 323
+     "toplam": 317
     },
     {
      "ad": "Hotel Hanza",
@@ -1167,8 +1162,7 @@
      "ad": "ibis Gdańsk Stare Miasto",
      "kategori": "ucuz",
      "arama": "ibis Gdansk Stare Miasto",
-     "toplam": null,
-     "eski": true
+     "toplam": 334
     },
     {
      "ad": "Hotel Wolne Miasto",
@@ -1318,17 +1312,17 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 264,
+     "ucus": 289,
      "transfer": 4,
-     "otel": 162,
+     "otel": 159,
      "ulasim": 4,
      "yemek": 70,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 264,
+     "ucus": 289,
      "transfer": 4,
-     "otel": 298,
+     "otel": 167,
      "ulasim": 4,
      "yemek": 50,
      "gezi": 8
@@ -1339,7 +1333,7 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 264,
+     "fiyat": 289,
      "havayolu": "LOT",
      "aktarma": 0,
      "havalimani": "Gdańsk (GDN)",
@@ -1348,14 +1342,14 @@
     },
     "secenekler": [
      {
-      "fiyat": 264,
+      "fiyat": 289,
       "havayolu": "LOT",
       "havalimani": "Gdańsk",
       "not": "Cuma IST 12:50 → GDN 13:40"
      }
     ],
-    "seviye": "normal",
-    "normal_aralik": "180–265 €"
+    "seviye": "yuksek",
+    "normal_aralik": "180–270 €"
    },
    "foto": "/img/sehir/gdansk-noel.jpg",
    "foto_alt": "Gdańsk eski şehir ve St. Mary Kilisesi, kuşbakışı",
@@ -1363,14 +1357,15 @@
    "uygun_plan": false,
    "uyarilar": [
     "Puro Gdańsk Stare Miasto (Konforlu, 645 €) üst sınıftaki Hotel Gdańsk Boutique (İkonik, 402 €) otelinden pahalı",
+    "ibis Gdańsk Stare Miasto (Uygun, 334 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 317 €) otelinden pahalı",
     "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Hotel Gdańsk Boutique (İkonik, 402 €) otelinden pahalı",
-    "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 323 €) otelinden pahalı"
+    "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 317 €) otelinden pahalı"
    ],
    "dikkat": "6 Aralık Pazar günü Gdańsk'tan İstanbul'a direkt sefer yok (LOT direkt seferi haftada 4 gün). Pazar dönüşü aktarmalı: LOT 14:45 kalkış, Varşova'da gece aktarma, Pazartesi 14:00 İstanbul; ya da Lufthansa 06:10 kalkış, aynı gün 22:45 İstanbul. Pazartesi için izin gerekebilir.",
    "hikaye_poster": "/img/hikaye/noel-gdansk.jpg",
    "hikaye_video": "/img/hikaye/noel-gdansk.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "munih",
@@ -1398,26 +1393,25 @@
      "ad": "Hotel Bayerischer Hof",
      "kategori": "ikonik",
      "arama": "Hotel Bayerischer Hof Munich",
-     "toplam": 1152
+     "toplam": 1521
     },
     {
      "ad": "Platzl Hotel",
      "kategori": "pahali",
      "arama": "Platzl Hotel Munich",
-     "toplam": null,
-     "eski": true
+     "toplam": 769
     },
     {
      "ad": "Louis Hotel",
      "kategori": "pahali",
      "arama": "Louis Hotel Munich Viktualienmarkt",
-     "toplam": 1405
+     "toplam": 1305
     },
     {
      "ad": "Hotel Torbräu",
      "kategori": "konforlu",
      "arama": "Hotel Torbräu Munich",
-     "toplam": 1073
+     "toplam": 1189
     },
     {
      "ad": "Mercure Hotel München Altstadt",
@@ -1437,19 +1431,19 @@
      "ad": "Motel One München-Sendlinger Tor",
      "kategori": "ucuz",
      "arama": "Motel One München-Sendlinger Tor",
-     "toplam": 418
+     "toplam": 475
     },
     {
      "ad": "Motel One München-Deutsches Museum",
      "kategori": "ucuz",
      "arama": "Motel One München-Deutsches Museum",
-     "toplam": 321
+     "toplam": 276
     },
     {
      "ad": "ibis München City",
      "kategori": "ucuz",
      "arama": "ibis München City",
-     "toplam": 306
+     "toplam": 340
     }
    ],
    "havalimani_ulasim": {
@@ -1575,17 +1569,17 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 266,
+     "ucus": 272,
      "transfer": 29,
-     "otel": 537,
+     "otel": 595,
      "ulasim": 12,
      "yemek": 120,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 266,
+     "ucus": 272,
      "transfer": 29,
-     "otel": 153,
+     "otel": 170,
      "ulasim": 12,
      "yemek": 85,
      "gezi": 8
@@ -1597,7 +1591,7 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 266,
+     "fiyat": 272,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Münih (MUC)",
@@ -1606,50 +1600,50 @@
     },
     "secenekler": [
      {
-      "fiyat": 266,
+      "fiyat": 272,
       "havayolu": "Pegasus",
       "havalimani": "Münih",
       "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 18:00 dönüş"
      },
      {
-      "fiyat": 267,
+      "fiyat": 273,
       "havayolu": "AJet gidiş + Pegasus dönüş",
       "havalimani": "Münih",
       "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 18:00 dönüş"
      },
      {
-      "fiyat": 275,
+      "fiyat": 305,
       "havayolu": "Pegasus gidiş + AJet dönüş",
       "havalimani": "Münih",
       "not": "Cuma SAW 08:40 → MUC 09:25, Pazar 13:40 dönüş"
      },
      {
-      "fiyat": 277,
+      "fiyat": 306,
       "havayolu": "AJet",
       "havalimani": "Münih",
       "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 13:40 dönüş"
      },
      {
-      "fiyat": 365,
+      "fiyat": 471,
       "havayolu": "THY",
       "havalimani": "Münih",
       "not": "Cuma IST 10:30 → MUC 11:15"
      }
     ],
     "seviye": "yuksek",
-    "normal_aralik": "125–260 €"
+    "normal_aralik": "130–260 €"
    },
    "foto": "/img/sehir/munih-noel.jpg",
    "foto_alt": "Münih, Marienplatz'taki Noel pazarı, gece",
    "foto_kaynak": "Unsplash · Daniel Seßler",
    "uygun_plan": true,
    "uyarilar": [
-    "Louis Hotel (Lüks, 1405 €) üst sınıftaki Hotel Bayerischer Hof (İkonik, 1152 €) otelinden pahalı"
+    "Hotel Torbräu (Konforlu, 1189 €) üst sınıftaki Platzl Hotel (Lüks, 769 €) otelinden pahalı"
    ],
    "hikaye_poster": "/img/hikaye/noel-munih.jpg",
    "hikaye_video": "/img/hikaye/noel-munih.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "strazburg",
@@ -1693,31 +1687,33 @@
      "ad": "Hôtel Régent Petite France",
      "kategori": "pahali",
      "arama": "Hotel Regent Petite France Strasbourg",
-     "toplam": 2704
+     "toplam": 2704,
+     "eski": true
     },
     {
      "ad": "Hôtel Gutenberg",
      "kategori": "konforlu",
      "arama": "Hotel Gutenberg Strasbourg",
-     "toplam": 1000
+     "toplam": 1056
     },
     {
      "ad": "Hôtel Cathédrale",
      "kategori": "konforlu",
      "arama": "Hotel Cathedrale Strasbourg",
-     "toplam": 632
+     "toplam": 966
     },
     {
      "ad": "Mercure Strasbourg Centre Petite France",
      "kategori": "konforlu",
      "arama": "Mercure Strasbourg Centre Petite France",
-     "toplam": 904
+     "toplam": 770
     },
     {
      "ad": "ibis Strasbourg Centre Petite France",
      "kategori": "ucuz",
      "arama": "ibis Strasbourg Centre Petite France",
-     "toplam": 633
+     "toplam": 633,
+     "eski": true
     },
     {
      "ad": "Hôtel Le Kléber",
@@ -1730,19 +1726,19 @@
      "ad": "ibis Styles Strasbourg Centre Gare",
      "kategori": "ucuz",
      "arama": "ibis Styles Strasbourg Centre Gare",
-     "toplam": 725
+     "toplam": 825
     },
     {
      "ad": "B&B Hotel Strasbourg Centre Gare",
      "kategori": "ucuz",
      "arama": "B&B Hotel Strasbourg Centre Gare",
-     "toplam": 358
+     "toplam": 363
     },
     {
      "ad": "Hôtel du Dragon",
      "kategori": "ucuz",
      "arama": "Hotel du Dragon Strasbourg",
-     "toplam": 900
+     "toplam": 1765
     }
    ],
    "havalimani_ulasim": {
@@ -1883,17 +1879,17 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 295,
+     "ucus": 240,
      "transfer": 58,
-     "otel": 316,
+     "otel": 483,
      "ulasim": 30,
      "yemek": 115,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 295,
+     "ucus": 240,
      "transfer": 58,
-     "otel": 179,
+     "otel": 182,
      "ulasim": 30,
      "yemek": 80,
      "gezi": 8
@@ -1905,43 +1901,39 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 295,
+     "fiyat": 240,
      "havayolu": "Pegasus",
      "aktarma": 0,
      "havalimani": "Basel-Mulhouse (BSL)",
      "gidis": "Cuma SAW 10:10 → BSL 11:15 (PC939)",
-     "donus": "Pazar BSL 15:05 → SAW 20:05"
+     "donus": "Pazar BSL 16:45 → SAW 21:45"
     },
     "secenekler": [
      {
-      "fiyat": 295,
+      "fiyat": 240,
       "havayolu": "Pegasus",
       "havalimani": "Basel-Mulhouse",
-      "not": "Cuma SAW 10:10 → BSL 11:15, Pazar 15:05 dönüş"
-     },
-     {
-      "fiyat": 416,
-      "havayolu": "THY",
-      "havalimani": "Basel-Mulhouse",
-      "not": "Cuma IST 08:40 → BSL 09:50, Pazar 18:25 dönüş"
+      "not": "Cuma SAW 10:10 → BSL 11:15, Pazar 16:45 dönüş"
      }
     ],
     "seviye": "normal",
-    "normal_aralik": "155–285 €"
+    "normal_aralik": "165–285 €"
    },
    "foto": "/img/sehir/strazburg-noel.jpg",
    "foto_alt": "Strazburg Katedrali ve eski şehir, gün batımı",
    "foto_kaynak": "Unsplash · Thomas Dorgler",
    "uygun_plan": true,
    "uyarilar": [
-    "ibis Strasbourg Centre Petite France (Uygun, 633 €) üst sınıftaki Hôtel Cathédrale (Konforlu, 632 €) otelinden pahalı",
-    "ibis Styles Strasbourg Centre Gare (Uygun, 725 €) üst sınıftaki Hôtel Cathédrale (Konforlu, 632 €) otelinden pahalı",
-    "Hôtel du Dragon (Uygun, 900 €) üst sınıftaki Hôtel Cathédrale (Konforlu, 632 €) otelinden pahalı"
+    "ibis Styles Strasbourg Centre Gare (Uygun, 825 €) üst sınıftaki Mercure Strasbourg Centre Petite France (Konforlu, 770 €) otelinden pahalı",
+    "Hôtel du Dragon (Uygun, 1765 €) üst sınıftaki Hôtel Cour du Corbeau (Lüks, 1509 €) otelinden pahalı",
+    "Hôtel du Dragon (Uygun, 1765 €) üst sınıftaki Hôtel Gutenberg (Konforlu, 1056 €) otelinden pahalı",
+    "Hôtel du Dragon (Uygun, 1765 €) üst sınıftaki Hôtel Cathédrale (Konforlu, 966 €) otelinden pahalı",
+    "Hôtel du Dragon (Uygun, 1765 €) üst sınıftaki Mercure Strasbourg Centre Petite France (Konforlu, 770 €) otelinden pahalı"
    ],
    "hikaye_poster": "/img/hikaye/noel-strazburg.jpg",
    "hikaye_video": "/img/hikaye/noel-strazburg.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "krakov",
@@ -1970,37 +1962,37 @@
      "ad": "Hotel Copernicus",
      "kategori": "ikonik",
      "arama": "Hotel Copernicus Krakow",
-     "toplam": 405
+     "toplam": 368
     },
     {
      "ad": "Hotel Stary",
      "kategori": "pahali",
      "arama": "Hotel Stary Krakow",
-     "toplam": 303
+     "toplam": 299
     },
     {
      "ad": "Hotel Wentzl",
      "kategori": "pahali",
      "arama": "Hotel Wentzl Krakow",
-     "toplam": 483
+     "toplam": 412
     },
     {
      "ad": "Hotel Saski",
      "kategori": "konforlu",
      "arama": "Hotel Saski Krakow",
-     "toplam": 439
+     "toplam": 443
     },
     {
      "ad": "Mercure Kraków Stare Miasto",
      "kategori": "konforlu",
      "arama": "Mercure Krakow Stare Miasto",
-     "toplam": 234
+     "toplam": 238
     },
     {
      "ad": "Hotel Pod Wawelem",
      "kategori": "konforlu",
      "arama": "Hotel Pod Wawelem Krakow",
-     "toplam": 238
+     "toplam": 95
     },
     {
      "ad": "Puro Kraków Stare Miasto",
@@ -2013,7 +2005,7 @@
      "ad": "ibis Kraków Stare Miasto",
      "kategori": "ucuz",
      "arama": "ibis Krakow Stare Miasto",
-     "toplam": 124
+     "toplam": 116
     }
    ],
    "havalimani_ulasim": {
@@ -2144,29 +2136,28 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 569,
+     "ucus": 559,
      "transfer": 9,
-     "otel": 119,
+     "otel": 48,
      "ulasim": 6,
      "yemek": 70,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 252,
+     "ucus": 217,
      "transfer": 9,
-     "otel": 62,
+     "otel": 58,
      "ulasim": 6,
      "yemek": 50,
      "gezi": 8
     }
    },
    "secim": {
-    "konforlu": "Hotel Pod Wawelem",
-    "ucuz": "ibis Kraków Stare Miasto"
+    "konforlu": "Hotel Pod Wawelem"
    },
    "ucus": {
     "oneri": {
-     "fiyat": 569,
+     "fiyat": 559,
      "havayolu": "THY",
      "aktarma": 0,
      "havalimani": "Krakov (KRK)",
@@ -2175,34 +2166,36 @@
     },
     "secenekler": [
      {
-      "fiyat": 252,
+      "fiyat": 217,
       "havayolu": "THY gidiş + LOT dönüş",
       "havalimani": "Krakov",
       "not": "Cuma IST 08:00 → KRK 08:20, Pazar 06:40 dönüş"
      },
      {
-      "fiyat": 569,
+      "fiyat": 559,
       "havayolu": "THY",
       "havalimani": "Krakov",
       "not": "Cuma IST 08:00 → KRK 08:20, Pazar 09:15 dönüş"
      }
     ],
-    "seviye": "yuksek",
-    "normal_aralik": "165–245 €"
+    "seviye": "normal",
+    "normal_aralik": "170–250 €"
    },
    "foto": "/img/sehir/krakov-noel.jpg",
    "foto_alt": "Krakov Ana Meydan ve Kumaş Hali, gün batımı",
    "foto_kaynak": "Unsplash · Lucas Albuquerque",
-   "uygun_plan": true,
+   "uygun_plan": false,
    "uyarilar": [
-    "Hotel Wentzl (Lüks, 483 €) üst sınıftaki Hotel Copernicus (İkonik, 405 €) otelinden pahalı",
-    "Hotel Saski (Konforlu, 439 €) üst sınıftaki Hotel Copernicus (İkonik, 405 €) otelinden pahalı",
-    "Hotel Saski (Konforlu, 439 €) üst sınıftaki Hotel Stary (Lüks, 303 €) otelinden pahalı"
+    "Hotel Wentzl (Lüks, 412 €) üst sınıftaki Hotel Copernicus (İkonik, 368 €) otelinden pahalı",
+    "Hotel Saski (Konforlu, 443 €) üst sınıftaki Hotel Copernicus (İkonik, 368 €) otelinden pahalı",
+    "Hotel Saski (Konforlu, 443 €) üst sınıftaki Hotel Stary (Lüks, 299 €) otelinden pahalı",
+    "Hotel Saski (Konforlu, 443 €) üst sınıftaki Hotel Wentzl (Lüks, 412 €) otelinden pahalı",
+    "ibis Kraków Stare Miasto (Uygun, 116 €) üst sınıftaki Hotel Pod Wawelem (Konforlu, 95 €) otelinden pahalı"
    ],
    "hikaye_poster": "/img/hikaye/noel-krakov.jpg",
    "hikaye_video": "/img/hikaye/noel-krakov.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "brugge",
@@ -2232,31 +2225,32 @@
      "ad": "Hotel Dukes' Palace",
      "kategori": "ikonik",
      "arama": "Hotel Dukes Palace Brugge",
-     "toplam": 939
+     "toplam": 1178
     },
     {
      "ad": "Hotel Heritage",
      "kategori": "pahali",
      "arama": "Hotel Heritage Bruges",
-     "toplam": 970
+     "toplam": 1106
     },
     {
      "ad": "Hotel Navarra",
      "kategori": "konforlu",
      "arama": "Hotel Navarra Brugge",
-     "toplam": 577
+     "toplam": 540
     },
     {
      "ad": "NH Brugge",
      "kategori": "konforlu",
      "arama": "NH Brugge",
-     "toplam": 508
+     "toplam": 499
     },
     {
      "ad": "Martin's Brugge",
      "kategori": "konforlu",
      "arama": "Martin's Brugge",
-     "toplam": 420
+     "toplam": 420,
+     "eski": true
     },
     {
      "ad": "ibis Brugge Centrum",
@@ -2268,7 +2262,7 @@
      "ad": "Hotel Montanus",
      "kategori": "pahali",
      "arama": "Hotel Montanus Brugge",
-     "toplam": 800
+     "toplam": 644
     }
    ],
    "havalimani_ulasim": {
@@ -2404,7 +2398,7 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 172,
+     "ucus": 215,
      "transfer": 42,
      "otel": 210,
      "ulasim": 5,
@@ -2412,7 +2406,7 @@
      "gezi": 30
     },
     "ucuz": {
-     "ucus": 172,
+     "ucus": 215,
      "transfer": 42,
      "otel": 175,
      "ulasim": 5,
@@ -2426,19 +2420,19 @@
    },
    "ucus": {
     "oneri": {
-     "fiyat": 172,
+     "fiyat": 215,
      "havayolu": "AJet",
      "aktarma": 0,
      "havalimani": "Brüksel (BRU)",
-     "gidis": "Cuma SAW 14:05 → BRU 15:45 (VF67)",
+     "gidis": "Cuma SAW 11:10 → BRU 12:50 (VF65)",
      "donus": "Pazar BRU 16:50 → SAW 22:20"
     },
     "secenekler": [
      {
-      "fiyat": 172,
+      "fiyat": 215,
       "havayolu": "AJet",
       "havalimani": "Brüksel",
-      "not": "Cuma SAW 14:05 → BRU 15:45, Pazar 16:50 dönüş"
+      "not": "Cuma SAW 11:10 → BRU 12:50, Pazar 16:50 dönüş"
      }
     ],
     "seviye": "normal",
@@ -2448,13 +2442,11 @@
    "foto_alt": "Brugge'de kanal ve tuğla evler",
    "foto_kaynak": "Unsplash · Suhail Kazi",
    "uygun_plan": true,
-   "uyarilar": [
-    "Hotel Heritage (Lüks, 970 €) üst sınıftaki Hotel Dukes' Palace (İkonik, 939 €) otelinden pahalı"
-   ],
+   "uyarilar": [],
    "hikaye_poster": "/img/hikaye/noel-brugge.jpg",
    "hikaye_video": "/img/hikaye/noel-brugge.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   }
  ]
 }

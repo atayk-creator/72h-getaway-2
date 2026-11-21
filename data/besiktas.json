@@ -7,7 +7,7 @@
   "a": "#FFFFFF",
   "b": "#111111"
  },
- "guncellendi": "2026-11-14",
+ "guncellendi": "2026-11-21",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri kulüp üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde fiyatlar çok daha yüksek ve deplasman tribününe giriş garanti değil.",
@@ -16,9 +16,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-14",
+  "son_arama": "2026-11-21",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.13
+  "son_maliyet_usd": 0.06
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Beşiktaş Jimnastik Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -45,42 +45,42 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 145,
-     "havayolu": "Pegasus",
+     "fiyat": 128,
+     "havayolu": "AJet",
      "aktarma": 0,
      "havalimani": "Düsseldorf (DUS)",
-     "gidis": "Çarşamba SAW 07:45 → DUS 09:00 (PC1007)",
-     "donus": "Cuma DUS 15:45 → SAW 21:00"
+     "gidis": "Çarşamba SAW 11:00 → DUS 12:30 (VF25)",
+     "donus": "Cuma DUS 10:55 → SAW 16:20"
     },
     "secenekler": [
      {
-      "fiyat": 145,
-      "havayolu": "Pegasus",
-      "havalimani": "Düsseldorf",
-      "not": "Çarşamba SAW 07:45 → DUS 09:00, Cuma 15:45 dönüş"
-     },
-     {
-      "fiyat": 166,
+      "fiyat": 128,
       "havayolu": "AJet",
       "havalimani": "Düsseldorf",
-      "not": "Çarşamba SAW 11:00 → DUS 12:30"
+      "not": "Çarşamba SAW 11:00 → DUS 12:30, Cuma 10:55 dönüş"
      },
      {
-      "fiyat": 303,
+      "fiyat": 138,
+      "havayolu": "Pegasus",
+      "havalimani": "Düsseldorf",
+      "not": "Çarşamba SAW 07:45 → DUS 09:00, Cuma 07:30 dönüş"
+     },
+     {
+      "fiyat": 253,
       "havayolu": "THY",
       "havalimani": "Düsseldorf",
-      "not": "Çarşamba IST 08:00 → DUS 09:20"
+      "not": "Çarşamba IST 21:10 → DUS 22:30"
      }
     ],
     "seviye": "normal",
-    "normal_aralik": "85–220 €"
+    "normal_aralik": "100–225 €"
    },
    "oteller": [
     {
      "ad": "Excelsior Hotel Ernst",
      "kategori": "ikonik",
      "arama": "Excelsior Hotel Ernst Köln",
-     "toplam": 1381
+     "toplam": 1367
     },
     {
      "ad": "Hyatt Regency Köln",
@@ -92,7 +92,7 @@
      "ad": "Dorint Hotel am Heumarkt",
      "kategori": "pahali",
      "arama": "Dorint Hotel am Heumarkt Köln",
-     "toplam": 479
+     "toplam": 1402
     },
     {
      "ad": "Hotel Mondial am Dom",
@@ -105,13 +105,13 @@
      "ad": "25hours Hotel The Circle",
      "kategori": "konforlu",
      "arama": "25hours Hotel The Circle Köln",
-     "toplam": 361
+     "toplam": 539
     },
     {
      "ad": "NH Collection Köln Mediapark",
      "kategori": "konforlu",
      "arama": "NH Collection Köln Mediapark",
-     "toplam": 388
+     "toplam": 443
     },
     {
      "ad": "Motel One Köln-Altstadt",
@@ -124,7 +124,7 @@
      "ad": "ibis Köln Centrum",
      "kategori": "ucuz",
      "arama": "ibis Köln Centrum",
-     "toplam": 296
+     "toplam": 323
     }
    ],
    "trenler": [
@@ -333,18 +333,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 145,
+     "ucus": 128,
      "transfer": 18,
-     "otel": 194,
+     "otel": 222,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 120,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 145,
+     "ucus": 128,
      "transfer": 18,
-     "otel": 148,
+     "otel": 162,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 85,
@@ -361,11 +361,13 @@
    "hikaye_video": "/img/hikaye/besiktas-leverkusen.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": [],
+   "uyarilar": [
+    "Dorint Hotel am Heumarkt (Lüks, 1402 €) üst sınıftaki Excelsior Hotel Ernst (İkonik, 1367 €) otelinden pahalı"
+   ],
    "foto_kaynak": "Unsplash · Florian Schmetz",
    "foto_alt": "Köln Katedrali ve Hohenzollern Köprüsü, Ren kıyısı",
    "foto_url": "https://unsplash.com/photos/BB2S2ZwOVpM",
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "lefkosa",

@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-20",
+ "guncellendi": "2026-11-21",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -339,28 +339,40 @@
    "vize": "Schengen vizesi yeterli.",
    "ucus": {
     "oneri": {
-     "fiyat": 171,
-     "havayolu": "Pegasus",
+     "fiyat": 169,
+     "havayolu": "AJet",
      "aktarma": 0,
      "havalimani": "Viyana (VIE)",
-     "gidis": "Salı SAW 08:45 → VIE 09:05 (PC901)",
-     "donus": "Perşembe VIE 18:15 → SAW 22:30"
+     "gidis": "Salı SAW 15:15 → VIE 15:45 (VF19)",
+     "donus": "Perşembe VIE 16:45 → SAW 21:10"
     },
     "secenekler": [
      {
-      "fiyat": 164,
-      "havayolu": "Pegasus",
+      "fiyat": 163,
+      "havayolu": "Pegasus gidiş + AJet dönüş",
       "havalimani": "Viyana",
-      "not": "Salı SAW 13:30 → VIE 13:50"
+      "not": "Salı SAW 16:55 → VIE 17:15, Perşembe 16:45 dönüş"
      },
      {
-      "fiyat": 206,
+      "fiyat": 169,
       "havayolu": "AJet",
       "havalimani": "Viyana",
-      "not": "Salı SAW 12:30 → VIE 13:00"
+      "not": "Salı SAW 15:15 → VIE 15:45, Perşembe 16:45 dönüş"
      },
      {
-      "fiyat": 254,
+      "fiyat": 171,
+      "havayolu": "Pegasus",
+      "havalimani": "Viyana",
+      "not": "Salı SAW 16:55 → VIE 17:15, Perşembe 19:55 dönüş"
+     },
+     {
+      "fiyat": 174,
+      "havayolu": "AJet gidiş + Pegasus dönüş",
+      "havalimani": "Viyana",
+      "not": "Salı SAW 15:15 → VIE 15:45, Perşembe 19:55 dönüş"
+     },
+     {
+      "fiyat": 249,
       "havayolu": "THY",
       "havalimani": "Viyana",
       "not": "Salı IST 17:40 → VIE 18:00"
@@ -368,7 +380,7 @@
     ],
     "yok": "Linz'e doğrudan uçuş yok (Lufthansa aktarmalı 393 €'dan başlıyor).",
     "seviye": "normal",
-    "normal_aralik": "90–215 €"
+    "normal_aralik": "105–220 €"
    },
    "sehir_ulasim": {
     "fiyat": 10,
@@ -386,18 +398,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 171,
+     "ucus": 169,
      "transfer": 30,
-     "otel": 278,
+     "otel": 328,
      "bilet": 50,
      "ulasim": 10,
      "yemek": 140,
      "gezi": 15
     },
     "ucuz": {
-     "ucus": 164,
+     "ucus": 163,
      "transfer": 30,
-     "otel": 136,
+     "otel": 138,
      "bilet": 50,
      "ulasim": 10,
      "yemek": 105,
@@ -790,49 +802,49 @@
       {
        "ad": "Hotel Sacher Wien",
        "kategori": "ikonik",
-       "toplam": 1259,
+       "toplam": 1218,
        "arama": "Hotel Sacher Vienna"
       },
       {
        "ad": "Park Hyatt Vienna",
        "kategori": "pahali",
-       "toplam": 850,
+       "toplam": 1106,
        "arama": "Park Hyatt Vienna"
       },
       {
        "ad": "The Ritz-Carlton Vienna",
        "kategori": "pahali",
-       "toplam": 693,
+       "toplam": 728,
        "arama": "The Ritz-Carlton Vienna"
       },
       {
        "ad": "Hotel Kaiserhof Wien",
        "kategori": "konforlu",
-       "toplam": 363,
+       "toplam": 256,
        "arama": "Hotel Kaiserhof Wien"
       },
       {
        "ad": "Hotel MOTTO",
        "kategori": "konforlu",
-       "toplam": 375,
+       "toplam": 455,
        "arama": "Hotel MOTTO Vienna Mariahilfer Strasse"
       },
       {
        "ad": "Altstadt Vienna",
        "kategori": "konforlu",
-       "toplam": 470,
+       "toplam": 452,
        "arama": "Altstadt Vienna Hotel Neubau"
       },
       {
        "ad": "Motel One Wien-Westbahnhof",
        "kategori": "ucuz",
-       "toplam": 132,
+       "toplam": 120,
        "arama": "Motel One Wien-Westbahnhof"
       },
       {
        "ad": "Hotel Zipser",
        "kategori": "ucuz",
-       "toplam": 234,
+       "toplam": 214,
        "arama": "Hotel Zipser Vienna Josefstadt"
       }
      ]
@@ -849,43 +861,43 @@
       {
        "ad": "Hotel am Domplatz",
        "kategori": "konforlu",
-       "toplam": 180,
+       "toplam": 200,
        "arama": "Hotel am Domplatz Linz"
       },
       {
        "ad": "Park Inn by Radisson Linz",
        "kategori": "konforlu",
-       "toplam": 234,
+       "toplam": 238,
        "arama": "Park Inn by Radisson Linz"
       },
       {
        "ad": "Hotel Schillerpark (Radisson)",
        "kategori": "konforlu",
-       "toplam": 161,
+       "toplam": 189,
        "arama": "Austria Trend Hotel Schillerpark Linz"
       },
       {
        "ad": "Austria Classic Hotel Wolfinger",
        "kategori": "konforlu",
-       "toplam": 166,
+       "toplam": 154,
        "arama": "Hotel Wolfinger Linz"
       },
       {
        "ad": "Hotel Schwarzer Bär",
        "kategori": "ucuz",
-       "toplam": 140,
+       "toplam": 156,
        "arama": "Hotel Schwarzer Bär Linz"
       },
       {
        "ad": "ARCOTEL Nike",
        "kategori": "ucuz",
-       "toplam": 156,
+       "toplam": 165,
        "arama": "Arcotel Nike Linz"
       },
       {
        "ad": "AMEDIA Hotel Linz",
        "kategori": "ucuz",
-       "toplam": 108,
+       "toplam": 96,
        "arama": "AMEDIA Hotel Linz"
       }
      ]
@@ -901,8 +913,11 @@
    "hikaye_video": "/img/hikaye/fenerbahce-linz.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": [],
-   "robot_son_arama": "2026-11-14"
+   "uyarilar": [
+    "Hotel Schwarzer Bär (Uygun, 156 €) üst sınıftaki Austria Classic Hotel Wolfinger (Konforlu, 154 €) otelinden pahalı",
+    "ARCOTEL Nike (Uygun, 165 €) üst sınıftaki Austria Classic Hotel Wolfinger (Konforlu, 154 €) otelinden pahalı"
+   ],
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "madrid",
@@ -1186,9 +1201,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-20",
+  "son_arama": "2026-11-21",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0
+  "son_maliyet_usd": 0.04
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "renk": {

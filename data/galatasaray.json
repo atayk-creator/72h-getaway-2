@@ -7,7 +7,7 @@
   "a": "#FDB912",
   "b": "#A90432"
  },
- "guncellendi": "2026-11-14",
+ "guncellendi": "2026-11-21",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri kulüp üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde fiyatlar çok daha yüksek ve deplasman tribününe giriş garanti değil.",
@@ -16,9 +16,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-14",
+  "son_arama": "2026-11-21",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.16
+  "son_maliyet_usd": 0.1
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Galatasaray Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -45,102 +45,84 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 158,
-     "havayolu": "SKY express",
+     "fiyat": 214,
+     "havayolu": "Aegean",
      "aktarma": 0,
      "havalimani": "Atina (ATH)",
-     "gidis": "Pazartesi IST 10:30 → ATH 10:55 (GQ671)",
-     "donus": "Çarşamba ATH 07:00 → IST 09:30"
+     "gidis": "Pazartesi IST 11:30 → ATH 12:00 (A3991)",
+     "donus": "Çarşamba ATH 08:00 → IST 10:35"
     },
     "secenekler": [
      {
-      "fiyat": 150,
+      "fiyat": 206,
       "havayolu": "Aegean gidiş + SKY express dönüş",
       "havalimani": "Atina",
       "not": "Pazartesi IST 11:30 → ATH 12:00, Çarşamba 07:00 dönüş"
      },
      {
-      "fiyat": 158,
-      "havayolu": "SKY express",
-      "havalimani": "Atina",
-      "not": "Pazartesi IST 10:30 → ATH 10:55, Çarşamba 07:00 dönüş"
-     },
-     {
-      "fiyat": 167,
+      "fiyat": 214,
       "havayolu": "Aegean",
       "havalimani": "Atina",
-      "not": "Pazartesi IST 16:45 → ATH 17:15"
+      "not": "Pazartesi IST 11:30 → ATH 12:00, Çarşamba 08:00 dönüş"
      },
      {
-      "fiyat": 179,
-      "havayolu": "SKY express gidiş + Aegean dönüş",
+      "fiyat": 236,
+      "havayolu": "SKY express",
       "havalimani": "Atina",
-      "not": "Pazartesi IST 10:30 → ATH 10:55, Çarşamba 08:00 dönüş"
+      "not": "Pazartesi IST 10:30 → ATH 10:55"
      },
      {
-      "fiyat": 219,
+      "fiyat": 299,
       "havayolu": "Pegasus",
       "havalimani": "Atina",
       "not": "Pazartesi SAW 07:40 → ATH 08:05"
      },
      {
-      "fiyat": 254,
+      "fiyat": 323,
       "havayolu": "THY",
       "havalimani": "Atina",
       "not": "Pazartesi IST 20:30 → ATH 21:00"
-     },
-     {
-      "fiyat": 307,
-      "havayolu": "Aegean gidiş + THY dönüş",
-      "havalimani": "Atina",
-      "not": "Pazartesi IST 11:30 → ATH 12:00, Çarşamba 10:10 dönüş"
-     },
-     {
-      "fiyat": 315,
-      "havayolu": "SKY express gidiş + THY dönüş",
-      "havalimani": "Atina",
-      "not": "Pazartesi IST 10:30 → ATH 10:55, Çarşamba 10:10 dönüş"
      }
     ],
-    "seviye": "normal",
-    "normal_aralik": "85–155 €"
+    "seviye": "yuksek",
+    "normal_aralik": "85–160 €"
    },
    "oteller": [
     {
      "ad": "Hotel Grande Bretagne",
      "kategori": "ikonik",
      "arama": "Hotel Grande Bretagne Athens",
-     "toplam": 868
+     "toplam": 923
     },
     {
      "ad": "Electra Metropolis",
      "kategori": "pahali",
      "arama": "Electra Metropolis Athens",
-     "toplam": 525
+     "toplam": 511
     },
     {
      "ad": "AthensWas Hotel",
      "kategori": "pahali",
      "arama": "AthensWas Hotel Athens",
-     "toplam": 628
+     "toplam": 618
     },
     {
      "ad": "AVA Hotel & Suites",
      "kategori": "konforlu",
      "arama": "AVA Hotel and Suites Athens Plaka",
-     "toplam": 527
+     "toplam": 523
     },
     {
      "ad": "The Modernist Athens",
      "kategori": "konforlu",
      "arama": "The Modernist Athens Kolonaki",
-     "toplam": 295
+     "toplam": 286
     },
     {
      "ad": "Herodion Hotel",
      "kategori": "konforlu",
      "arama": "Herodion Hotel Athens",
-     "toplam": 250
+     "toplam": 220
     },
     {
      "ad": "Phaedra Hotel",
@@ -152,7 +134,7 @@
      "ad": "Attalos Hotel",
      "kategori": "ucuz",
      "arama": "Attalos Hotel Athens Monastiraki",
-     "toplam": 143
+     "toplam": 142
     }
    ],
    "havalimani_ulasim": {
@@ -283,16 +265,16 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 158,
+     "ucus": 214,
      "transfer": 11,
-     "otel": 125,
+     "otel": 110,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 110,
      "gezi": 35
     },
     "ucuz": {
-     "ucus": 150,
+     "ucus": 206,
      "transfer": 11,
      "otel": 50,
      "bilet": 50,
@@ -310,9 +292,9 @@
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
    "uyarilar": [
-    "AVA Hotel & Suites (Konforlu, 527 €) üst sınıftaki Electra Metropolis (Lüks, 525 €) otelinden pahalı"
+    "AVA Hotel & Suites (Konforlu, 523 €) üst sınıftaki Electra Metropolis (Lüks, 511 €) otelinden pahalı"
    ],
-   "robot_son_arama": "2026-11-14"
+   "robot_son_arama": "2026-11-21"
   },
   {
    "id": "paris",
