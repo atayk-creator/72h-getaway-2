@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-21",
+ "guncellendi": "2026-11-22",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -28,30 +28,48 @@
    "vize": "İngiltere vizesi gerekir (Schengen geçmez). Maça 16 gün var; vizen yoksa öncelikli başvuruya bak.",
    "ucus": {
     "oneri": {
-     "fiyat": 331,
-     "havayolu": "British Airways",
+     "fiyat": 286,
+     "havayolu": "Pegasus",
      "aktarma": 0,
-     "havalimani": "Heathrow (LHR)",
-     "gidis": "Çarşamba IST 07:40 → LHR 09:05 (BA681)",
+     "havalimani": "Stansted (STN)",
+     "gidis": "Çarşamba SAW 11:10 → STN 12:10 (PC1161)",
      "donus": "Cuma LHR 07:00 → IST 13:55"
     },
     "secenekler": [
      {
-      "fiyat": 331,
-      "havayolu": "British Airways",
-      "havalimani": "Heathrow",
-      "not": "Çarşamba IST 07:40 → LHR 09:05, Cuma 07:00 dönüş"
+      "fiyat": 286,
+      "havayolu": "Pegasus",
+      "havalimani": "Stansted",
+      "not": "Çarşamba SAW 11:10 → STN 12:10"
      },
      {
-      "fiyat": 990,
+      "fiyat": 357,
+      "havayolu": "AJet",
+      "havalimani": "Stansted",
+      "not": "Çarşamba SAW 10:20 → STN 11:30"
+     },
+     {
+      "fiyat": 756,
+      "havayolu": "British Airways",
+      "havalimani": "Heathrow",
+      "not": "Çarşamba IST 07:40 → LHR 09:05"
+     },
+     {
+      "fiyat": 881,
+      "havayolu": "THY",
+      "havalimani": "Stansted",
+      "not": "Çarşamba IST 08:50 → STN 09:55"
+     },
+     {
+      "fiyat": 1006,
       "havayolu": "THY",
       "havalimani": "Heathrow",
-      "not": "Çarşamba IST 11:40 → LHR 12:45"
+      "not": "Çarşamba IST 08:40 → LHR 09:45"
      }
     ],
     "yok": "Maç günü sabahı Heathrow ve Gatwick aramaları Google'da hata verdi; Luton'a aktarmasız uçuş yok.",
     "seviye": "normal",
-    "normal_aralik": "195–330 €"
+    "normal_aralik": "140–330 €"
    },
    "havalimani_ulasim": {
     "fiyat": 40,
@@ -67,19 +85,19 @@
     {
      "ad": "The Savoy",
      "kategori": "ikonik",
-     "toplam": 2107,
+     "toplam": 2118,
      "arama": "The Savoy London"
     },
     {
      "ad": "The Ned",
      "kategori": "pahali",
-     "toplam": 1189,
+     "toplam": 1146,
      "arama": "The Ned London"
     },
     {
      "ad": "The Langham",
      "kategori": "pahali",
-     "toplam": 2126,
+     "toplam": 2254,
      "arama": "The Langham London"
     },
     {
@@ -92,25 +110,25 @@
     {
      "ad": "Strand Palace",
      "kategori": "konforlu",
-     "toplam": 949,
+     "toplam": 966,
      "arama": "Strand Palace Hotel London"
     },
     {
      "ad": "The Hoxton, Holborn",
      "kategori": "konforlu",
-     "toplam": 972,
+     "toplam": 958,
      "arama": "The Hoxton Holborn London"
     },
     {
      "ad": "Park Plaza Westminster Bridge",
      "kategori": "konforlu",
-     "toplam": 1009,
+     "toplam": 1008,
      "arama": "Park Plaza Westminster Bridge London"
     },
     {
      "ad": "The Z Hotel Piccadilly",
      "kategori": "ucuz",
-     "toplam": 665,
+     "toplam": 752,
      "arama": "The Z Hotel Piccadilly London"
     }
    ],
@@ -125,18 +143,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 331,
+     "ucus": 286,
      "transfer": 40,
-     "otel": 475,
+     "otel": 483,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 150,
      "gezi": 38
     },
     "ucuz": {
-     "ucus": 331,
+     "ucus": 286,
      "transfer": 25,
-     "otel": 333,
+     "otel": 376,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 110,
@@ -317,9 +335,9 @@
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
    "uyarilar": [
-    "The Langham (Lüks, 2126 €) üst sınıftaki The Savoy (İkonik, 2107 €) otelinden pahalı"
+    "The Langham (Lüks, 2254 €) üst sınıftaki The Savoy (İkonik, 2118 €) otelinden pahalı"
    ],
-   "robot_son_arama": "2026-11-20"
+   "robot_son_arama": "2026-11-22"
   },
   {
    "id": "linz",
@@ -1201,9 +1219,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-21",
+  "son_arama": "2026-11-22",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.04
+  "son_maliyet_usd": 0.03
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "renk": {
