@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 import { renderTeamPage, renderRedirect, teamCard, renderDeplasmanIndex } from "./deplasman.mjs";
 import { planDosyalari } from "./plan-sayfalari.mjs";
 import { renderAnaSayfa, renderPlanimYer, renderSehirler, sekmeEki } from "./ana-sayfa.mjs";
+import { haritaVerisi } from "./harita.mjs";
 
 export const SITE = "https://72hgetaway.com";
 const KAT_SIRA = ["ucuz", "konforlu", "pahali", "ikonik"];
@@ -624,7 +625,10 @@ export function generate({ root, today = process.env.BUGUN || todayIstanbul(), d
   out["sitemap.xml"] = renderSitemap(paths, today);
   out["data/vitrin.json"] = renderVitrin(models, today);
   if (!data) { // yeni ana sayfa ve kabuk sayfaları (yalnız gerçek depo üretiminde)
-    out["index.html"] = renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, root: root || "." });
+    // data/ana-sayfa.json > "harita": false yazılırsa ana sayfadaki harita kalkar
+    const hrt = readJson(join(root || ".", "data/ana-sayfa.json"), {}).harita === false ? null : haritaVerisi(models, d.gezi, plan.liste);
+    if (hrt) out["sehirler/harita.json"] = JSON.stringify(hrt.durak);
+    out["index.html"] = renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, root: root || ".", harita: hrt && hrt.nokta });
     out["planim/index.html"] = renderPlanimYer({ esc, SITE, root: root || "." });
     out["sehirler/index.html"] = renderSehirler({ models, d, today, eurTry, esc, jsonLd, SITE, root: root || "." });
     // Eski kalıptaki liste sayfalarına alt sekme çubuğu

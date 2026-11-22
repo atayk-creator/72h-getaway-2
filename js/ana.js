@@ -24,6 +24,7 @@
     $("raf").innerHTML = L.slice(5, 11).map(function (s) { return '<a class="rk" href="' + yol(s) + '"><img src="' + esc(s.foto) + '" alt="" loading="lazy" width="640" height="427"><div><b>' + esc(s.ad) + "</b><b>" + tl(s.t[hi]) + "</b></div></a>"; }).join("");
     var c = document.querySelectorAll(".cip");
     for (var i = 0; i < c.length; i++) c[i].setAttribute("aria-pressed", i === hi ? "true" : "false");
+    try { document.dispatchEvent(new CustomEvent("72h-hafta", { detail: hi })); } catch (err) {} // js/harita.js dinler
   }
   // Büyük kart şeridi: 6 şehir; parmakla ya da okla kayar, dokunulmadıkça 5 saniyede bir kendiliğinden ilerler
   var zaman = null, dokundu = false;

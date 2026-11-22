@@ -412,7 +412,7 @@ export function planDosyalari({ root, teams, models = [], d = null, today, eurTr
     const V = sehirPlan(d, model, readJson(p, {}), { eurTry, today, SITE, slugify, usableHotel, usableFlight, toEur });
     if (!V.haftalar.length) continue;
     dosyalar[`${V.yol.slice(1)}index.html`] = renderPlanPage(V, { esc, jsonLd, SITE, surum });
-    liste.push({ yol: V.yol, slug: V.slug, sehir: model.sehir });
+    liste.push({ yol: V.yol, slug: V.slug, sehir: model.sehir, plan: V.plan });
   }
   return { dosyalar, yollar, liste };
 }

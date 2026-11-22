@@ -5,6 +5,7 @@ import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { vizeNotu } from "./plan-sayfalari.mjs";
+import { haritaBolumu, haritaCss, haritaJs } from "./harita.mjs";
 
 const AY = ["Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"];
 const D = (s) => new Date(s + "T12:00:00Z");
@@ -55,7 +56,7 @@ export function vitrinVerisi(models, d, today, eurTry) {
   return { haftalar, sehirler };
 }
 
-export function renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, root }) {
+export function renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, root, harita = null }) {
   const V = vitrinVerisi(models, d, today, eurTry);
   const ayar = (() => { try { return JSON.parse(readFileSync(join(root, "data/ana-sayfa.json"), "utf8")); } catch { return {}; } })();
   const L = V.sehirler.filter((s) => s.t[0] != null).sort((a, b) => a.t[0] - b.t[0]), h0 = V.haftalar[0] || { g: today, kisa: "" };
@@ -99,7 +100,7 @@ export function renderAnaSayfa({ models, d, today, eurTry, esc, jsonLd, SITE, ro
 <link rel="preload" as="font" type="font/woff2" href="/fonts/archivo-latin-800-normal.woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
 <link rel="stylesheet" href="/css/kabuk.css?v=${ozet(root, "css/kabuk.css")}">
-${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="high">` : ""}
+${harita ? haritaCss(root) + "\n" : ""}${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="high">` : ""}
 <script type="application/ld+json">${jsonLd(ld)}</script>
 </head>
 <body>
@@ -120,7 +121,7 @@ ${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="h
   <div class="raf-bas"><h2 id="raf-baslik">Bu hafta sonu</h2><a href="/sehirler/">${models.length} şehir</a></div>
   <div class="izg" id="raf">${rafL.slice(5, 11).map((s) => `<a class="rk" href="${yol(s)}"><img src="${esc(s.foto)}" alt="" loading="lazy" width="640" height="427"><div><b>${esc(s.ad)}</b><b>${tl(s.t[0])}</b></div></a>`).join("")}</div>
 
-  <div class="kutular">
+${harita ? "  " + haritaBolumu(harita, { jsonLd, root }) + "\n\n" : ""}  <div class="kutular">
     <a class="kutu l" href="/sehir/noel/"><span>ARALIK</span><b>Noel pazarları</b></a>
     <a class="kutu t" href="/deplasman/"><span>MAÇ + 72 SAAT</span><b>Deplasman</b></a>
   </div>
@@ -143,7 +144,7 @@ ${ilk ? `<link rel="preload" as="image" href="${esc(ilk.foto)}" fetchpriority="h
 ${sekmeCubugu("kesfet")}
 <script type="application/json" id="ana-veri">${jsonLd(V)}</script>
 <script src="/js/ana.js?v=${ozet(root, "js/ana.js")}" defer></script>
-<script src="/js/olcum.js" defer></script>
+${harita ? haritaJs(root) + "\n" : ""}<script src="/js/olcum.js" defer></script>
 <script>if ("serviceWorker" in navigator) addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });</script>
 </body>
 </html>

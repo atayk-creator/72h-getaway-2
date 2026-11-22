@@ -1,4 +1,6 @@
 {
   "aciklama": "Ana sayfa ayarları (scripts/ana-sayfa.mjs). one_cikan: sayfa ilk açıldığında büyük biniş kartında gösterilen şehir (boş bırakılırsa o hafta sonunun en uygun şehri çıkar). Hafta sonu çipine basılınca kart o hafta sonunun en uygun şehrine döner.",
+  "harita_aciklama": "Ana sayfadaki uçuş haritası. false yazılırsa kalkar; sayfalar kendiliğinden yeniden üretilir.",
+  "harita": true,
   "one_cikan": "Amsterdam"
 }
