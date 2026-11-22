@@ -31,12 +31,17 @@
     function acik(e, slug) { return bos(e) && !nokta.some(function (o) { return o.s !== slug && e[0] < o.e[2] && e[2] > o.e[0] && e[1] < o.e[3] && e[3] > o.e[1]; }); }
     P.forEach(function (p) {
       var x = p.x * k, y = p.y * k, on = p.s.slug === sec, yaz = p.t == null ? (on ? "fiyat yok" : "") : tl(p.t).replace(" TL", ""), gen = Math.max(p.s.ad.length * 7.2, yaz.length * 7.2) + 14, et = "";
-      if (yaz) [[x - gen / 2, y - 44], [x - gen / 2, y + 9], [x + 10, y - 18], [x - 10 - gen, y - 18], [x - gen + 6, y + 9], [x - 6, y + 9], [x - gen + 6, y - 44], [x - 6, y - 44]].some(function (c) {
-        var e = [c[0], c[1], c[0] + gen, c[1] + 35];
-        if (on) { e[0] = Math.min(Math.max(2, e[0]), w - gen - 2); e[2] = e[0] + gen; }
-        if (!(on ? bos(e) : acik(e, p.s.slug))) return false;
-        yer.push(e); et = '<span class="hr-et" style="left:' + (e[0] - x).toFixed(1) + "px;top:" + (e[1] - y).toFixed(1) + "px;width:" + gen.toFixed(0) + 'px"><b>' + esc(p.s.ad) + "</b><i>" + yaz + "</i></span>"; return true;
-      });
+      var yerler = [[x - gen / 2, y - 44], [x - gen / 2, y + 9], [x + 10, y - 18], [x - 10 - gen, y - 18], [x - gen + 6, y + 9], [x - 6, y + 9], [x - gen + 6, y - 44], [x - 6, y - 44]];
+      // seçili şehrin etiketi de önce başka noktaları kapatmayan yeri dener; hiç yoksa yalnız boş yere bakar
+      function koy(siki) {
+        return yerler.some(function (c) {
+          var e = [c[0], c[1], c[0] + gen, c[1] + 35];
+          if (on) { e[0] = Math.min(Math.max(2, e[0]), w - gen - 2); e[2] = e[0] + gen; }
+          if (!(siki ? acik(e, p.s.slug) : bos(e))) return false;
+          yer.push(e); et = '<span class="hr-et" style="left:' + (e[0] - x).toFixed(1) + "px;top:" + (e[1] - y).toFixed(1) + "px;width:" + gen.toFixed(0) + 'px"><b>' + esc(p.s.ad) + "</b><i>" + yaz + "</i></span>"; return true;
+        });
+      }
+      if (yaz && !koy(true) && on) koy(false);
       h += '<button type="button" class="hr-p' + (p.t == null ? " yok" : "") + (on ? " on" : "") + '" data-slug="' + esc(p.s.slug) + '" aria-pressed="' + on + '" aria-label="' + esc(p.s.ad + ", " + (p.t == null ? "fiyat henüz yok" : "2 kişi " + tl(p.t))) + '" style="left:' + (p.x / 4.4).toFixed(2) + "%;top:" + (p.y / 4.3).toFixed(2) + '%"><em></em>' + et + "</button>";
     });
     $("hr-pin").innerHTML = h + '<span class="hr-ist" style="left:' + (X(IST[1]) / 4.4).toFixed(2) + "%;top:" + (Y(IST[0]) / 4.3).toFixed(2) + '%"><em></em><b>İSTANBUL</b></span>';
@@ -103,9 +108,11 @@
   kutu.addEventListener("click", function (e) {
     if (mod === "sehir") { var n = e.target.closest("[data-d]"); if (n) { durak = +n.getAttribute("data-d"); ciz(); odak('.hr-n[data-d="' + durak + '"]'); } return; }
     if (e.detail === 0) { var p = e.target.closest(".hr-p"); if (p) { var sl = p.getAttribute("data-slug"); sehirSec(sl); odak('.hr-p[data-slug="' + sl + '"]'); } return; }
-    var et = e.target.closest(".hr-et"); if (et) { sehirSec(et.parentNode.getAttribute("data-slug")); return; }
     var r = kutu.getBoundingClientRect(), k = r.width / 440, x = (e.clientX - r.left) / k, y = (e.clientY - r.top) / k, en = null, m = 40 / k;
     pinler().forEach(function (p) { var d = Math.sqrt((p.x - x) * (p.x - x) + (p.y - y) * (p.y - y)); if (d < m) { m = d; en = p; } });
+    // bir noktaya 14 px'ten yakın dokunulduysa o şehir; etiket başka şehrin noktasını kapatsa bile
+    var et = e.target.closest(".hr-et");
+    if (et && !(en && m < 14 / k)) { sehirSec(et.parentNode.getAttribute("data-slug")); return; }
     if (en) sehirSec(en.s.slug);
   });
   $("harita").addEventListener("click", function (e) {
