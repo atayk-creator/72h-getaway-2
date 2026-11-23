@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-19T11:44:54.151Z",
+ "guncellendi": "2026-11-23T12:51:34.367Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -835,8 +835,8 @@
    14.505840000000001
   ],
   "lju-cubo": [
-   46.04914,
-   14.50199
+   46.049339999999994,
+   14.502
   ],
   "lju-zlata-ladjica": [
    46.04829,
@@ -968,7 +968,7 @@
   ],
   "dub-hendrick": [
    53.347879999999996,
-   -6.2809
+   -6.28089
   ],
   "ber-zoe-amano": [
    52.523050000000005,
@@ -1088,7 +1088,7 @@
   ],
   "beg-prag": [
    44.81084,
-   20.45977
+   20.45978
   ],
   "sjj-europe": [
    43.85833,
@@ -1123,36 +1123,36 @@
    18.42631
   ],
   "beg-metropol": [
-   44.806830000000005,
-   20.473869999999998
+   44.80682,
+   20.473860000000002
   ]
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 45.42
+  "usd": 50.8
  },
  "sonCalisma": {
-  "tarih": "2026-11-19T11:44:54.151Z",
+  "tarih": "2026-11-23T12:51:34.367Z",
   "mod": "takvim",
-  "hafta_sonu": 4,
-  "kontrol": 896,
-  "fiyatli": 735,
-  "dogrulanamadi": 34,
-  "supheli": 18,
+  "hafta_sonu": 8,
+  "kontrol": 1792,
+  "fiyatli": 1522,
+  "dogrulanamadi": 75,
+  "supheli": 32,
   "vergi": {
-   "dahil": 22,
-   "eklendi": 725,
-   "bilinmiyor": 40
+   "dahil": 72,
+   "eklendi": 1451,
+   "bilinmiyor": 105
   },
-  "tahminiMaliyetUsd": 2.69,
+  "tahminiMaliyetUsd": 5.38,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 87.12,
+  "usd": 93.24,
   "sinir": 100,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-19T11:44:54.151Z"
+  "kontrol": "2026-11-23T12:51:34.367Z"
  },
  "olcumler": [
   {
@@ -1245,6 +1245,13 @@
    "sorgu": 896,
    "usd": 2.47,
    "sorguBasi": 0.00276
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-23T12:51:34.367Z",
+   "sorgu": 1792,
+   "usd": 5.05,
+   "sorguBasi": 0.00282
   }
  ],
  "sehirler": {
