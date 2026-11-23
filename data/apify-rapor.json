@@ -1,22 +1,32 @@
 {
- "olusturuldu": "2026-11-18T23:17:35.229Z",
+ "olusturuldu": "2026-11-23T15:16:45.296Z",
  "donem": {
   "baslangic": "2026-10-28T00:00:00.000Z",
   "bitis": "2026-11-27T23:59:59.999Z"
  },
- "harcanan_usd": 84.65,
+ "harcanan_usd": 93.25,
  "sinir_usd": 100,
- "kalan_usd": 15.35,
- "calismalar_usd": 84.58,
- "depolama_ve_diger_usd": 0.06,
- "calisma_sayisi": 1291,
+ "kalan_usd": 6.75,
+ "calismalar_usd": 93.17,
+ "depolama_ve_diger_usd": 0.08,
+ "calisma_sayisi": 1357,
  "robotlar": [
   {
+   "ad": "Eşleşmedi (elle ya da başka yerden)",
+   "usd": 27.1,
+   "calisma": 307,
+   "aktorler": {
+    "compass~crawler-google-places": 10.65,
+    "eiv~google-hotels-scraper": 9.89,
+    "dz_omar~google-flights-scraper": 7.02
+   }
+  },
+  {
    "ad": "Otel fiyat robotu (Cuma-Pazar fiyatları)",
-   "usd": 19.17,
+   "usd": 19.7,
    "calisma": 33,
    "aktorler": {
-    "eiv~google-hotels-scraper": 19.19
+    "eiv~google-hotels-scraper": 19.74
    }
   },
   {
@@ -31,40 +41,32 @@
   },
   {
    "ad": "pages build and deployment",
-   "usd": 13.61,
-   "calisma": 150,
+   "usd": 8.25,
+   "calisma": 121,
    "aktorler": {
-    "compass~crawler-google-places": 2.45,
+    "compass~crawler-google-places": 0.44,
     "eiv~google-flights-scraper": 2.42,
-    "eiv~google-hotels-scraper": 7.89,
+    "eiv~google-hotels-scraper": 4.99,
     "s-r~airbnb-scraper": 0.1,
     "jindrich.bar~deutsche-bahn-ticket-scraper": 0,
     "jindrich.bar~oebb-ticket-scraper": 0,
-    "dz_omar~google-flights-scraper": 0.78
+    "dz_omar~google-flights-scraper": 0.3
    }
   },
   {
    "ad": "Uçak fiyat robotu (İstanbul çıkışlı, Cuma-Pazar)",
-   "usd": 13.38,
-   "calisma": 478,
+   "usd": 7.28,
+   "calisma": 260,
    "aktorler": {
-    "dz_omar~google-flights-scraper": 14.34
-   }
-  },
-  {
-   "ad": "Restoran robotu (Google Maps)",
-   "usd": 8.71,
-   "calisma": 48,
-   "aktorler": {
-    "compass~crawler-google-places": 8.7
+    "dz_omar~google-flights-scraper": 7.8
    }
   },
   {
    "ad": "Uçak fiyat robotu (İstanbul çıkışlı, Cuma sabah - Pazar akşam)",
-   "usd": 6.2,
-   "calisma": 158,
+   "usd": 6.56,
+   "calisma": 171,
    "aktorler": {
-    "eiv~google-flights-scraper": 1.66,
+    "eiv~google-flights-scraper": 2.03,
     "eiv~google-hotels-scraper": 1.87,
     "dz_omar~google-flights-scraper": 2.82
    }
@@ -81,6 +83,17 @@
    }
   },
   {
+   "ad": "Deplasman fiyat robotu (takımlar ve Noel)",
+   "usd": 1.63,
+   "calisma": 95,
+   "aktorler": {
+    "eiv~google-hotels-scraper": 0.64,
+    "eiv~google-flights-scraper": 0.96,
+    "jindrich.bar~deutsche-bahn-ticket-scraper": 0,
+    "jindrich.bar~oebb-ticket-scraper": 0
+   }
+  },
+  {
    "ad": "Şehir sayfaları (sehir/ ve sitemap.xml)",
    "usd": 0.97,
    "calisma": 24,
@@ -88,17 +101,6 @@
     "eiv~google-flights-scraper": 0.7,
     "compass~crawler-google-places": 0.17,
     "eiv~google-hotels-scraper": 0.12
-   }
-  },
-  {
-   "ad": "Deplasman fiyat robotu (takımlar ve Noel)",
-   "usd": 0.93,
-   "calisma": 54,
-   "aktorler": {
-    "eiv~google-hotels-scraper": 0.37,
-    "eiv~google-flights-scraper": 0.53,
-    "jindrich.bar~deutsche-bahn-ticket-scraper": 0,
-    "jindrich.bar~oebb-ticket-scraper": 0
    }
   },
   {
@@ -112,11 +114,11 @@
    }
   },
   {
-   "ad": "Gezi yerleri konum robotu (Google Maps)",
-   "usd": 0.73,
+   "ad": "Restoran robotu (Google Maps)",
+   "usd": 0.79,
    "calisma": 26,
    "aktorler": {
-    "compass~crawler-google-places": 0.72
+    "compass~crawler-google-places": 0.78
    }
   },
   {
@@ -174,8 +176,8 @@
  "aktorler": [
   {
    "ad": "eiv~google-hotels-scraper",
-   "usd": 44.27,
-   "calisma": 225
+   "usd": 52.06,
+   "calisma": 251
   },
   {
    "ad": "dz_omar~google-flights-scraper",
@@ -189,8 +191,8 @@
   },
   {
    "ad": "eiv~google-flights-scraper",
-   "usd": 10.21,
-   "calisma": 321
+   "usd": 10.99,
+   "calisma": 354
   },
   {
    "ad": "s-r~airbnb-scraper",
@@ -199,13 +201,13 @@
   },
   {
    "ad": "jindrich.bar~deutsche-bahn-ticket-scraper",
-   "usd": 0.07,
-   "calisma": 22
+   "usd": 0.08,
+   "calisma": 26
   },
   {
    "ad": "jindrich.bar~oebb-ticket-scraper",
    "usd": 0.02,
-   "calisma": 13
+   "calisma": 16
   }
  ]
 }
