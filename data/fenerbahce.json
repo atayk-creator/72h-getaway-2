@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-22",
+ "guncellendi": "2026-11-24",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -28,48 +28,42 @@
    "vize": "İngiltere vizesi gerekir (Schengen geçmez). Maça 16 gün var; vizen yoksa öncelikli başvuruya bak.",
    "ucus": {
     "oneri": {
-     "fiyat": 286,
+     "fiyat": 667,
      "havayolu": "Pegasus",
      "aktarma": 0,
-     "havalimani": "Stansted (STN)",
-     "gidis": "Çarşamba SAW 11:10 → STN 12:10 (PC1161)",
-     "donus": "Cuma LHR 07:00 → IST 13:55"
+     "havalimani": "Gatwick (LGW)",
+     "gidis": "Çarşamba SAW 09:50 → LGW 11:10 (PC1159)",
+     "donus": "Cuma LGW 12:15 → SAW 19:10"
     },
     "secenekler": [
      {
-      "fiyat": 286,
+      "fiyat": 667,
       "havayolu": "Pegasus",
-      "havalimani": "Stansted",
-      "not": "Çarşamba SAW 11:10 → STN 12:10"
+      "havalimani": "Gatwick",
+      "not": "Çarşamba SAW 09:50 → LGW 11:10, Cuma 12:15 dönüş"
      },
      {
-      "fiyat": 357,
-      "havayolu": "AJet",
-      "havalimani": "Stansted",
-      "not": "Çarşamba SAW 10:20 → STN 11:30"
-     },
-     {
-      "fiyat": 756,
+      "fiyat": 932,
       "havayolu": "British Airways",
       "havalimani": "Heathrow",
       "not": "Çarşamba IST 07:40 → LHR 09:05"
      },
      {
-      "fiyat": 881,
-      "havayolu": "THY",
-      "havalimani": "Stansted",
-      "not": "Çarşamba IST 08:50 → STN 09:55"
-     },
-     {
-      "fiyat": 1006,
+      "fiyat": 1041,
       "havayolu": "THY",
       "havalimani": "Heathrow",
       "not": "Çarşamba IST 08:40 → LHR 09:45"
+     },
+     {
+      "fiyat": 2135,
+      "havayolu": "THY",
+      "havalimani": "Gatwick",
+      "not": "Çarşamba IST 08:05 → LGW 09:10"
      }
     ],
     "yok": "Maç günü sabahı Heathrow ve Gatwick aramaları Google'da hata verdi; Luton'a aktarmasız uçuş yok.",
-    "seviye": "normal",
-    "normal_aralik": "140–330 €"
+    "seviye": "yuksek",
+    "normal_aralik": "195–330 €"
    },
    "havalimani_ulasim": {
     "fiyat": 40,
@@ -85,19 +79,19 @@
     {
      "ad": "The Savoy",
      "kategori": "ikonik",
-     "toplam": 2118,
+     "toplam": 2528,
      "arama": "The Savoy London"
     },
     {
      "ad": "The Ned",
      "kategori": "pahali",
-     "toplam": 1146,
+     "toplam": 1132,
      "arama": "The Ned London"
     },
     {
      "ad": "The Langham",
      "kategori": "pahali",
-     "toplam": 2254,
+     "toplam": 2362,
      "arama": "The Langham London"
     },
     {
@@ -110,25 +104,25 @@
     {
      "ad": "Strand Palace",
      "kategori": "konforlu",
-     "toplam": 966,
+     "toplam": 867,
      "arama": "Strand Palace Hotel London"
     },
     {
      "ad": "The Hoxton, Holborn",
      "kategori": "konforlu",
-     "toplam": 958,
+     "toplam": 960,
      "arama": "The Hoxton Holborn London"
     },
     {
      "ad": "Park Plaza Westminster Bridge",
      "kategori": "konforlu",
-     "toplam": 1008,
+     "toplam": 872,
      "arama": "Park Plaza Westminster Bridge London"
     },
     {
      "ad": "The Z Hotel Piccadilly",
      "kategori": "ucuz",
-     "toplam": 752,
+     "toplam": 963,
      "arama": "The Z Hotel Piccadilly London"
     }
    ],
@@ -143,18 +137,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 286,
+     "ucus": 667,
      "transfer": 40,
-     "otel": 483,
+     "otel": 434,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 150,
      "gezi": 38
     },
     "ucuz": {
-     "ucus": 286,
+     "ucus": 667,
      "transfer": 25,
-     "otel": 376,
+     "otel": 482,
      "bilet": 50,
      "ulasim": 25,
      "yemek": 110,
@@ -170,8 +164,7 @@
    "plan": "Maç günü sabah uçuş, en geç 12:00'de Londra'da; 2 gece (çarşamba + perşembe), cuma dönüş.",
    "ucus_saat": "0-11",
    "secim": {
-    "konforlu": "Strand Palace",
-    "ucuz": "The Z Hotel Piccadilly"
+    "konforlu": "Strand Palace"
    },
    "otel_not": "Ana öneri: Strand Palace, Covent Garden'ın yanında; stada District hattıyla ~25 dk. Uygun seçenek: The Z Hotel Piccadilly. Stada yürümek istersen Native Fulham Broadway (stada 5 dk) var, ama 25–27 Kasım için Booking'de müsait görünmüyor; otelin kendi sitesinden kontrol et. (Premier Inn County Hall bu tarihler için doldu.)",
    "akis": [
@@ -333,11 +326,13 @@
    "hikaye_poster": "/img/hikaye/fenerbahce-londra.jpg",
    "hikaye_video": "/img/hikaye/fenerbahce-londra.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
-   "uygun_plan": true,
+   "uygun_plan": false,
    "uyarilar": [
-    "The Langham (Lüks, 2254 €) üst sınıftaki The Savoy (İkonik, 2118 €) otelinden pahalı"
+    "The Z Hotel Piccadilly (Uygun, 963 €) üst sınıftaki Strand Palace (Konforlu, 867 €) otelinden pahalı",
+    "The Z Hotel Piccadilly (Uygun, 963 €) üst sınıftaki The Hoxton, Holborn (Konforlu, 960 €) otelinden pahalı",
+    "The Z Hotel Piccadilly (Uygun, 963 €) üst sınıftaki Park Plaza Westminster Bridge (Konforlu, 872 €) otelinden pahalı"
    ],
-   "robot_son_arama": "2026-11-22"
+   "robot_son_arama": "2026-11-24"
   },
   {
    "id": "linz",
@@ -1219,9 +1214,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-22",
+  "son_arama": "2026-11-24",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.03
+  "son_maliyet_usd": 0
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Fenerbahçe Spor Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "renk": {
