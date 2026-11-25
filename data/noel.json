@@ -11,13 +11,13 @@
   "ink": "#F6C453",
   "mk": "#FFFFFF"
  },
- "guncellendi": "2026-11-23",
+ "guncellendi": "2026-11-25",
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan hafta sonlarının uçak + otel fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-23",
+  "son_arama": "2026-11-25",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.19
+  "son_maliyet_usd": 0.12
  },
  "kaynaklar": [
   {
@@ -83,7 +83,8 @@
      "ad": "Le Méridien Grand Hotel Nürnberg",
      "kategori": "ikonik",
      "arama": "Le Meridien Grand Hotel Nuremberg",
-     "toplam": 802
+     "toplam": 802,
+     "eski": true
     },
     {
      "ad": "Sorat Hotel Saxx",
@@ -110,14 +111,14 @@
      "ad": "NH Collection Nürnberg City",
      "kategori": "konforlu",
      "arama": "NH Collection Nürnberg City",
-     "toplam": 602,
-     "eski": true
+     "toplam": 601
     },
     {
      "ad": "Motel One Nürnberg-Plärrer",
      "kategori": "ucuz",
      "arama": "Motel One Nürnberg-Plärrer",
-     "toplam": 475
+     "toplam": 475,
+     "eski": true
     },
     {
      "ad": "ibis Nürnberg Altstadt",
@@ -130,7 +131,7 @@
      "ad": "B&B Hotel Nürnberg-City",
      "kategori": "ucuz",
      "arama": "B&B Hotel Nürnberg-City",
-     "toplam": 501
+     "toplam": 492
     }
    ],
    "havalimani_ulasim": {
@@ -271,7 +272,7 @@
     "ucuz": {
      "ucus": 188,
      "transfer": 8,
-     "otel": 251,
+     "otel": 246,
      "ulasim": 8,
      "yemek": 75,
      "gezi": 10
@@ -315,7 +316,7 @@
    "hikaye_poster": "/img/hikaye/noel-nurnberg.jpg",
    "hikaye_video": "/img/hikaye/noel-nurnberg.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-23"
+   "robot_son_arama": "2026-11-25"
   },
   {
    "id": "dresden",
@@ -349,13 +350,14 @@
      "ad": "Hotel Gewandhaus Dresden",
      "kategori": "pahali",
      "arama": "Hotel Gewandhaus Dresden Autograph Collection",
-     "toplam": 848
+     "toplam": 1049
     },
     {
      "ad": "Hyperion Hotel Dresden am Schloss",
      "kategori": "konforlu",
      "arama": "Hyperion Hotel Dresden am Schloss",
-     "toplam": 742
+     "toplam": 742,
+     "eski": true
     },
     {
      "ad": "NH Collection Dresden Altmarkt",
@@ -368,20 +370,19 @@
      "ad": "Innside by Meliá Dresden",
      "kategori": "konforlu",
      "arama": "Innside by Melia Dresden",
-     "toplam": 865,
-     "eski": true
+     "toplam": 715
     },
     {
      "ad": "Motel One Dresden am Zwinger",
      "kategori": "ucuz",
      "arama": "Motel One Dresden am Zwinger",
-     "toplam": 464
+     "toplam": 509
     },
     {
      "ad": "ibis Dresden Zentrum",
      "kategori": "ucuz",
      "arama": "ibis Dresden Zentrum",
-     "toplam": 448
+     "toplam": 447
     }
    ],
    "sehir_ulasim": {
@@ -594,7 +595,7 @@
        "sure_dk": 141,
        "aktarma": 1,
        "tren": "FEX + RJ 175",
-       "fiyat": 67.99
+       "fiyat": 75.7
       },
       {
        "kalkis": "11:01",
@@ -602,7 +603,7 @@
        "sure_dk": 213,
        "aktarma": 2,
        "tren": "FEX + ICE 599 + RE50",
-       "fiyat": 72.99
+       "fiyat": 77.99
       },
       {
        "kalkis": "11:16",
@@ -618,7 +619,7 @@
        "sure_dk": 141,
        "aktarma": 1,
        "tren": "FEX + RJ 383",
-       "fiyat": 36.99
+       "fiyat": 69.99
       },
       {
        "kalkis": "13:01",
@@ -626,7 +627,7 @@
        "sure_dk": 213,
        "aktarma": 2,
        "tren": "FEX + ICE 691 + RE50",
-       "fiyat": 57.99
+       "fiyat": 77.99
       }
      ],
      "secili": {
@@ -670,7 +671,7 @@
        "sure_dk": 110,
        "aktarma": 1,
        "tren": "RJ 174 + FEX",
-       "fiyat": 57.99
+       "fiyat": 69.99
       },
       {
        "kalkis": "17:35",
@@ -678,7 +679,7 @@
        "sure_dk": 90,
        "aktarma": 0,
        "tren": "IC 2172",
-       "fiyat": 27.99
+       "fiyat": 29.99
       },
       {
        "kalkis": "18:53",
@@ -686,7 +687,7 @@
        "sure_dk": 110,
        "aktarma": 1,
        "tren": "RJ 172 + FEX",
-       "fiyat": 73.9
+       "fiyat": 69.99
       },
       {
        "kalkis": "19:00",
@@ -710,13 +711,11 @@
    "foto_alt": "Dresden eski şehir, Frauenkirche'ye uzanan sokak",
    "foto_kaynak": "Unsplash · Ruben Hanssen",
    "uygun_plan": true,
-   "uyarilar": [
-    "Innside by Meliá Dresden (Konforlu, 865 €) üst sınıftaki Hotel Gewandhaus Dresden (Lüks, 848 €) otelinden pahalı"
-   ],
+   "uyarilar": [],
    "hikaye_poster": "/img/hikaye/noel-dresden.jpg",
    "hikaye_video": "/img/hikaye/noel-dresden.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-23"
+   "robot_son_arama": "2026-11-25"
   },
   {
    "id": "salzburg",
@@ -752,7 +751,7 @@
      "ad": "Hotel Goldener Hirsch",
      "kategori": "pahali",
      "arama": "Hotel Goldener Hirsch Salzburg",
-     "toplam": 2888
+     "toplam": 2644
     },
     {
      "ad": "Hotel Elefant",
@@ -922,7 +921,7 @@
      "gezi": 35
     },
     "ucuz": {
-     "ucus": 211,
+     "ucus": 212,
      "transfer": 93,
      "otel": 251,
      "ulasim": 6,
@@ -945,7 +944,7 @@
     },
     "secenekler": [
      {
-      "fiyat": 211,
+      "fiyat": 212,
       "havayolu": "AJet gidiş + Pegasus dönüş",
       "havalimani": "Münih",
       "not": "Cuma SAW 11:45 → MUC 12:40, Pazar 18:00 dönüş"
@@ -990,7 +989,7 @@
        "sure_dk": 155,
        "aktarma": 1,
        "tren": "S8 + ICE 117",
-       "fiyat": 55.99
+       "fiyat": 45.99
       },
       {
        "kalkis": "12:04",
@@ -1022,7 +1021,7 @@
        "sure_dk": 144,
        "aktarma": 1,
        "tren": "S8 + EC 1217",
-       "fiyat": 37.99
+       "fiyat": 39.99
       }
      ],
      "secili": {
@@ -1108,7 +1107,7 @@
    "hikaye_poster": "/img/hikaye/noel-salzburg.jpg",
    "hikaye_video": "/img/hikaye/noel-salzburg.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-23"
+   "robot_son_arama": "2026-11-25"
   },
   {
    "id": "gdansk",
@@ -1163,7 +1162,7 @@
      "ad": "Mercure Gdańsk Stare Miasto",
      "kategori": "konforlu",
      "arama": "Mercure Gdansk Stare Miasto",
-     "toplam": 333
+     "toplam": 332
     },
     {
      "ad": "Hotel Hanza",
@@ -1176,13 +1175,14 @@
      "ad": "ibis Gdańsk Stare Miasto",
      "kategori": "ucuz",
      "arama": "ibis Gdansk Stare Miasto",
-     "toplam": 335
+     "toplam": 333
     },
     {
      "ad": "Hotel Wolne Miasto",
      "kategori": "ucuz",
      "arama": "Hotel Wolne Miasto Gdansk",
-     "toplam": 297
+     "toplam": 297,
+     "eski": true
     },
     {
      "ad": "Hampton by Hilton Gdańsk Old Town",
@@ -1327,7 +1327,7 @@
     "konforlu": {
      "ucus": 290,
      "transfer": 4,
-     "otel": 167,
+     "otel": 166,
      "ulasim": 4,
      "yemek": 70,
      "gezi": 20
@@ -1371,15 +1371,15 @@
    "uygun_plan": true,
    "uyarilar": [
     "Puro Gdańsk Stare Miasto (Konforlu, 645 €) üst sınıftaki Hotel Gdańsk Boutique (İkonik, 402 €) otelinden pahalı",
-    "ibis Gdańsk Stare Miasto (Uygun, 335 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 333 €) otelinden pahalı",
+    "ibis Gdańsk Stare Miasto (Uygun, 333 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 332 €) otelinden pahalı",
     "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Hotel Gdańsk Boutique (İkonik, 402 €) otelinden pahalı",
-    "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 333 €) otelinden pahalı"
+    "Hampton by Hilton Gdańsk Old Town (Uygun, 595 €) üst sınıftaki Mercure Gdańsk Stare Miasto (Konforlu, 332 €) otelinden pahalı"
    ],
    "dikkat": "6 Aralık Pazar günü Gdańsk'tan İstanbul'a direkt sefer yok (LOT direkt seferi haftada 4 gün). Pazar dönüşü aktarmalı: LOT 14:45 kalkış, Varşova'da gece aktarma, Pazartesi 14:00 İstanbul; ya da Lufthansa 06:10 kalkış, aynı gün 22:45 İstanbul. Pazartesi için izin gerekebilir.",
    "hikaye_poster": "/img/hikaye/noel-gdansk.jpg",
    "hikaye_video": "/img/hikaye/noel-gdansk.mp4",
    "hikaye_not": "Yapay zekâ ile üretilmiş Noel pazarı görüntüsü; temsilîdir.",
-   "robot_son_arama": "2026-11-23"
+   "robot_son_arama": "2026-11-25"
   },
   {
    "id": "munih",

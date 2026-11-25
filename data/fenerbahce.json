@@ -3,7 +3,7 @@
  "takim": "Fenerbahçe",
  "slug": "fenerbahce",
  "turnuva": "UEFA Şampiyonlar Ligi 2026-27 · lig aşaması",
- "guncellendi": "2026-11-24",
+ "guncellendi": "2026-11-25",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri Fenerbahçe üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde (Viagogo vb.) fiyatlar 170 €'dan başlıyor ve deplasman tribününe giriş garanti değil.",
@@ -413,7 +413,7 @@
     "konforlu": {
      "ucus": 169,
      "transfer": 30,
-     "otel": 328,
+     "otel": 327,
      "bilet": 50,
      "ulasim": 10,
      "yemek": 140,
@@ -422,7 +422,7 @@
     "ucuz": {
      "ucus": 163,
      "transfer": 30,
-     "otel": 138,
+     "otel": 134,
      "bilet": 50,
      "ulasim": 10,
      "yemek": 105,
@@ -815,43 +815,43 @@
       {
        "ad": "Hotel Sacher Wien",
        "kategori": "ikonik",
-       "toplam": 1218,
+       "toplam": 1440,
        "arama": "Hotel Sacher Vienna"
       },
       {
        "ad": "Park Hyatt Vienna",
        "kategori": "pahali",
-       "toplam": 1106,
+       "toplam": 1108,
        "arama": "Park Hyatt Vienna"
       },
       {
        "ad": "The Ritz-Carlton Vienna",
        "kategori": "pahali",
-       "toplam": 728,
+       "toplam": 739,
        "arama": "The Ritz-Carlton Vienna"
       },
       {
        "ad": "Hotel Kaiserhof Wien",
        "kategori": "konforlu",
-       "toplam": 256,
+       "toplam": 252,
        "arama": "Hotel Kaiserhof Wien"
       },
       {
        "ad": "Hotel MOTTO",
        "kategori": "konforlu",
-       "toplam": 455,
+       "toplam": 453,
        "arama": "Hotel MOTTO Vienna Mariahilfer Strasse"
       },
       {
        "ad": "Altstadt Vienna",
        "kategori": "konforlu",
-       "toplam": 452,
+       "toplam": 426,
        "arama": "Altstadt Vienna Hotel Neubau"
       },
       {
        "ad": "Motel One Wien-Westbahnhof",
        "kategori": "ucuz",
-       "toplam": 120,
+       "toplam": 111,
        "arama": "Motel One Wien-Westbahnhof"
       },
       {
@@ -880,31 +880,32 @@
       {
        "ad": "Park Inn by Radisson Linz",
        "kategori": "konforlu",
-       "toplam": 238,
+       "toplam": 249,
        "arama": "Park Inn by Radisson Linz"
       },
       {
        "ad": "Hotel Schillerpark (Radisson)",
        "kategori": "konforlu",
-       "toplam": 189,
+       "toplam": 231,
        "arama": "Austria Trend Hotel Schillerpark Linz"
       },
       {
        "ad": "Austria Classic Hotel Wolfinger",
        "kategori": "konforlu",
-       "toplam": 154,
+       "toplam": 171,
        "arama": "Hotel Wolfinger Linz"
       },
       {
        "ad": "Hotel Schwarzer Bär",
        "kategori": "ucuz",
        "toplam": 156,
-       "arama": "Hotel Schwarzer Bär Linz"
+       "arama": "Hotel Schwarzer Bär Linz",
+       "eski": true
       },
       {
        "ad": "ARCOTEL Nike",
        "kategori": "ucuz",
-       "toplam": 165,
+       "toplam": 137,
        "arama": "Arcotel Nike Linz"
       },
       {
@@ -926,11 +927,8 @@
    "hikaye_video": "/img/hikaye/fenerbahce-linz.mp4",
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
-   "uyarilar": [
-    "Hotel Schwarzer Bär (Uygun, 156 €) üst sınıftaki Austria Classic Hotel Wolfinger (Konforlu, 154 €) otelinden pahalı",
-    "ARCOTEL Nike (Uygun, 165 €) üst sınıftaki Austria Classic Hotel Wolfinger (Konforlu, 154 €) otelinden pahalı"
-   ],
-   "robot_son_arama": "2026-11-21"
+   "uyarilar": [],
+   "robot_son_arama": "2026-11-25"
   },
   {
    "id": "madrid",
@@ -1214,7 +1212,7 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel fiyatını günceller (2 günde bir). Kişi başı bütçenin uçak ve otel kalemleri buradan hesaplanır; diğer kalemler elle.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-24",
+  "son_arama": "2026-11-25",
   "butce_payi_usd": 5,
   "son_maliyet_usd": 0
  },
