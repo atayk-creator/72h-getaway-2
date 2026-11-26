@@ -7,7 +7,7 @@
   "a": "#FFFFFF",
   "b": "#111111"
  },
- "guncellendi": "2026-11-21",
+ "guncellendi": "2026-11-26",
  "bilet": {
   "fiyat": 50,
   "yazi": "Deplasman tribünü biletleri kulüp üzerinden satılır. UEFA'nın deplasman bileti tavanı 2025-26'da 50 €'du; bu sezonun tavanını kulübün duyurusundan teyit et. İkinci el sitelerde fiyatlar çok daha yüksek ve deplasman tribününe giriş garanti değil.",
@@ -16,9 +16,9 @@
  "robot": {
   "aciklama": "scripts/deplasman-fiyat.mjs: yaklaşan maçların uçak + otel (+ tren) fiyatını 2 günde bir günceller.",
   "her_kac_gun": 2,
-  "son_arama": "2026-11-21",
+  "son_arama": "2026-11-26",
   "butce_payi_usd": 5,
-  "son_maliyet_usd": 0.06
+  "son_maliyet_usd": 0.02
  },
  "bagimsiz": "Bağımsız bir seyahat planlayıcısıyız; Beşiktaş Jimnastik Kulübü ile resmî bir bağımız yoktur. Kulüp adı yalnızca maç bilgisini belirtmek için kullanılır.",
  "maclar": [
@@ -45,54 +45,49 @@
    ],
    "ucus": {
     "oneri": {
-     "fiyat": 128,
-     "havayolu": "AJet",
+     "fiyat": 142,
+     "havayolu": "Pegasus",
      "aktarma": 0,
-     "havalimani": "Düsseldorf (DUS)",
-     "gidis": "Çarşamba SAW 11:00 → DUS 12:30 (VF25)",
-     "donus": "Cuma DUS 10:55 → SAW 16:20"
+     "havalimani": "Köln/Bonn (CGN)",
+     "gidis": "Çarşamba SAW 22:20 → CGN 23:45 (PC1013)",
+     "donus": "Cuma CGN 11:25 → SAW 16:30"
     },
     "secenekler": [
      {
-      "fiyat": 128,
-      "havayolu": "AJet",
-      "havalimani": "Düsseldorf",
-      "not": "Çarşamba SAW 11:00 → DUS 12:30, Cuma 10:55 dönüş"
-     },
-     {
-      "fiyat": 138,
+      "fiyat": 142,
       "havayolu": "Pegasus",
-      "havalimani": "Düsseldorf",
-      "not": "Çarşamba SAW 07:45 → DUS 09:00, Cuma 07:30 dönüş"
+      "havalimani": "Köln/Bonn",
+      "not": "Çarşamba SAW 22:20 → CGN 23:45, Cuma 11:25 dönüş"
      },
      {
-      "fiyat": 253,
-      "havayolu": "THY",
-      "havalimani": "Düsseldorf",
-      "not": "Çarşamba IST 21:10 → DUS 22:30"
+      "fiyat": 155,
+      "havayolu": "AJet",
+      "havalimani": "Köln/Bonn",
+      "not": "Çarşamba SAW 21:40 → CGN 23:15, Cuma 15:55 dönüş"
      }
     ],
     "seviye": "normal",
-    "normal_aralik": "100–225 €"
+    "normal_aralik": "100–230 €"
    },
    "oteller": [
     {
      "ad": "Excelsior Hotel Ernst",
      "kategori": "ikonik",
      "arama": "Excelsior Hotel Ernst Köln",
-     "toplam": 1367
+     "toplam": 1260
     },
     {
      "ad": "Hyatt Regency Köln",
      "kategori": "pahali",
      "arama": "Hyatt Regency Köln",
-     "toplam": 607
+     "toplam": 559
     },
     {
      "ad": "Dorint Hotel am Heumarkt",
      "kategori": "pahali",
      "arama": "Dorint Hotel am Heumarkt Köln",
-     "toplam": 1402
+     "toplam": 1402,
+     "eski": true
     },
     {
      "ad": "Hotel Mondial am Dom",
@@ -105,13 +100,13 @@
      "ad": "25hours Hotel The Circle",
      "kategori": "konforlu",
      "arama": "25hours Hotel The Circle Köln",
-     "toplam": 539
+     "toplam": 480
     },
     {
      "ad": "NH Collection Köln Mediapark",
      "kategori": "konforlu",
      "arama": "NH Collection Köln Mediapark",
-     "toplam": 443
+     "toplam": 475
     },
     {
      "ad": "Motel One Köln-Altstadt",
@@ -124,7 +119,7 @@
      "ad": "ibis Köln Centrum",
      "kategori": "ucuz",
      "arama": "ibis Köln Centrum",
-     "toplam": 323
+     "toplam": 342
     }
    ],
    "trenler": [
@@ -333,18 +328,18 @@
    ],
    "butce": {
     "konforlu": {
-     "ucus": 128,
+     "ucus": 142,
      "transfer": 18,
-     "otel": 222,
+     "otel": 238,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 120,
      "gezi": 20
     },
     "ucuz": {
-     "ucus": 128,
+     "ucus": 142,
      "transfer": 18,
-     "otel": 162,
+     "otel": 171,
      "bilet": 50,
      "ulasim": 8,
      "yemek": 85,
@@ -362,12 +357,12 @@
    "hikaye_not": "Ana sayfa hikâye görseli yapay zekâ ile üretildi (Higgsfield); bayraklar takım renklerinde, logosuz.",
    "uygun_plan": true,
    "uyarilar": [
-    "Dorint Hotel am Heumarkt (Lüks, 1402 €) üst sınıftaki Excelsior Hotel Ernst (İkonik, 1367 €) otelinden pahalı"
+    "Dorint Hotel am Heumarkt (Lüks, 1402 €) üst sınıftaki Excelsior Hotel Ernst (İkonik, 1260 €) otelinden pahalı"
    ],
    "foto_kaynak": "Unsplash · Florian Schmetz",
    "foto_alt": "Köln Katedrali ve Hohenzollern Köprüsü, Ren kıyısı",
    "foto_url": "https://unsplash.com/photos/BB2S2ZwOVpM",
-   "robot_son_arama": "2026-11-21"
+   "robot_son_arama": "2026-11-26"
   },
   {
    "id": "lefkosa",
