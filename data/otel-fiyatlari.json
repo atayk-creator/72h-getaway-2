@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-23T12:51:34.367Z",
+ "guncellendi": "2026-11-26T12:40:32.524Z",
  "kaynak": "Google Hotels (Apify: eiv/google-hotels-scraper)",
  "paraBirimi": "EUR",
  "konaklama": "Cuma giriş, Pazar çıkış, 2 gece, 2 yetişkin",
@@ -191,7 +191,6 @@
   "rix-wellton-centrum": "ChkImvD1vqi-nIuvARoML2cvMXlmaF9qeXB3EAE",
   "vno-panorama": "ChgIzMiXk9j21JvKARoLL2cvMXRwbG5fZ2cQAQ",
   "bts-saffron": "ChkInJ-S77X9vJPCARoML2cvMWhjNnkwM19rEAE",
-  "lju-slon": "ChcIzv3mrMSN_L5-GgsvZy8xdGN2c240MRAB",
   "buh-jw-marriott": "ChgIoNbD5e-po8EPGgwvZy8xMV95bDNwbjUQAQ",
   "sof-radisson-grand": "ChoIq4Do35qzydb5ARoNL2cvMTF0NTNieG00eBAB",
   "ams-sofitel-the-grand": "ChoIsajSyfSr8aGmARoNL2cvMTFiNzc2d2g1cBAB",
@@ -483,8 +482,8 @@
    12.493649999999999
   ],
   "rom-hotel-locarno": [
-   41.90976,
-   12.47471
+   41.90975,
+   12.47472
   ],
   "rom-hotel-campo-de-fiori": [
    41.89561,
@@ -835,8 +834,8 @@
    14.505840000000001
   ],
   "lju-cubo": [
-   46.049339999999994,
-   14.502
+   46.049330000000005,
+   14.50206
   ],
   "lju-zlata-ladjica": [
    46.04829,
@@ -980,7 +979,7 @@
   ],
   "vno-astorija": [
    54.67741,
-   25.28745
+   25.28736
   ],
   "vno-stikliai": [
    54.68047,
@@ -1129,30 +1128,30 @@
  },
  "harcama": {
   "donem": "2026-10-28",
-  "usd": 50.8
+  "usd": 53.48
  },
  "sonCalisma": {
-  "tarih": "2026-11-23T12:51:34.367Z",
+  "tarih": "2026-11-26T12:40:32.524Z",
   "mod": "takvim",
-  "hafta_sonu": 8,
-  "kontrol": 1792,
-  "fiyatli": 1522,
-  "dogrulanamadi": 75,
-  "supheli": 32,
+  "hafta_sonu": 4,
+  "kontrol": 898,
+  "fiyatli": 687,
+  "dogrulanamadi": 31,
+  "supheli": 15,
   "vergi": {
-   "dahil": 72,
-   "eklendi": 1451,
-   "bilinmiyor": 105
+   "dahil": 27,
+   "eklendi": 649,
+   "bilinmiyor": 57
   },
-  "tahminiMaliyetUsd": 5.38,
+  "tahminiMaliyetUsd": 2.68,
   "butceAtlanan": 0
  },
  "apifyKullanim": {
-  "usd": 93.24,
+  "usd": 96.44,
   "sinir": 100,
   "donemBasi": "2026-10-28",
   "donemSonu": "2026-11-27",
-  "kontrol": "2026-11-23T12:51:34.367Z"
+  "kontrol": "2026-11-26T12:40:32.524Z"
  },
  "olcumler": [
   {
@@ -1252,6 +1251,13 @@
    "sorgu": 1792,
    "usd": 5.05,
    "sorguBasi": 0.00282
+  },
+  {
+   "robot": "otel",
+   "t": "2026-11-26T12:40:32.524Z",
+   "sorgu": 894,
+   "usd": 2.38,
+   "sorguBasi": 0.00266
   }
  ],
  "sehirler": {
